@@ -35,7 +35,7 @@ Example
 OAuth2 tokens are passed to endpoings via contexts. Example:
 ```
 	ctx := context.WithValue(context.TODO(), goesi.ContextOAuth2, ESIPublicToken)
-	struc, response, err := c.ctx.ESI.V1.UniverseApi.GetUniverseStructuresStructureId(ctx, s, nil)
+	struc, response, err := client.V1.UniverseApi.GetUniverseStructuresStructureId(ctx, structureID, nil)
 ```
 
 ## Documentation for API Endpoints

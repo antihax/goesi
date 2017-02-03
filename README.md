@@ -38,6 +38,16 @@ OAuth2 tokens are passed to endpoings via contexts. Example:
 	struc, response, err := client.V1.UniverseApi.GetUniverseStructuresStructureId(ctx, structureID, nil)
 ```
 
+## Testing
+If you would rather not rely on public ESI for testing, a mock ESI server is available for local and CI use.
+Information here: https://github.com/antihax/mock-esi
+
+## What about the other stuff?
+Legacy, Dev, and Latest endpoints are not covered by this module as they are not for production use.
+If you are using any of these endpoints, they will break! Use only versioned endpoints.
+If you need bleeding edge access, add the endpoint to the generator and rebuild this module. 
+Generator is here: https://github.com/antihax/swagger-esi-goclient
+
 ## Documentation for API Endpoints
 
 [V1 Endpoints](./v1/README.md)

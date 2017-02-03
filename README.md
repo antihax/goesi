@@ -41,12 +41,14 @@ OAuth2 tokens are passed to endpoings via contexts. Example:
 ## Documentation for API Endpoints
 
 [V1 Endpoints](./v1/README.md)
+
 [V2 Endpoints](./v2/README.md)
+
 [V3 Endpoints](./v3/README.md)
+
 [V4 Endpoints](./v4/README.md)
 
 ## Author
-  croakroach in game.
   antihax on #devfleet slack
 
 

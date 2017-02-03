@@ -24,7 +24,7 @@ It is also good manners to provide a user-agent describing the point of use of t
 
 Example
 ```
-  client, err := esi.NewClient(nil, "my esi client http://mysite.com contact <SomeDude> ingame")
+  client, err := goesi.NewClient(nil, "my esi client http://mysite.com contact <SomeDude> ingame")
   result, response, err := client.V#.Endpoint.Operation(requiredParam, map[string]interface{} { 
                                                                         "optionalParam1": "stringParam",
                                                                         "optionalParam2": 1234.56

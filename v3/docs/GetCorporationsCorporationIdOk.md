@@ -1,0 +1,19 @@
+# GetCorporationsCorporationIdOk
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**AllianceId** | **int32** | id of alliance that corporation is a member of, if any | [optional] [default to null]
+**CeoId** | **int32** | ceo_id integer | [default to null]
+**CorporationDescription** | **string** | corporation_description string | [default to null]
+**CorporationName** | **string** | the full name of the corporation | [default to null]
+**CreationDate** | [**time.Time**](time.Time.md) | creation_date string | [default to null]
+**CreatorId** | **int32** | creator_id integer | [default to null]
+**MemberCount** | **int32** | member_count integer | [default to null]
+**TaxRate** | **float32** | tax_rate number | [default to null]
+**Ticker** | **string** | the short name of the corporation | [default to null]
+**Url** | **string** | url string | [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -7,13 +7,21 @@ Method | HTTP request | Description
 [**GetUniverseBloodlines**](UniverseApi.md#GetUniverseBloodlines) | **Get** /universe/bloodlines/ | Get bloodlines
 [**GetUniverseCategories**](UniverseApi.md#GetUniverseCategories) | **Get** /universe/categories/ | Get item categories
 [**GetUniverseCategoriesCategoryId**](UniverseApi.md#GetUniverseCategoriesCategoryId) | **Get** /universe/categories/{category_id}/ | Get item category information
+[**GetUniverseConstellations**](UniverseApi.md#GetUniverseConstellations) | **Get** /universe/constellations/ | Get constellations
+[**GetUniverseConstellationsConstellationId**](UniverseApi.md#GetUniverseConstellationsConstellationId) | **Get** /universe/constellations/{constellation_id}/ | Get constellation information
 [**GetUniverseFactions**](UniverseApi.md#GetUniverseFactions) | **Get** /universe/factions/ | Get factions
 [**GetUniverseGroups**](UniverseApi.md#GetUniverseGroups) | **Get** /universe/groups/ | Get item groups
 [**GetUniverseGroupsGroupId**](UniverseApi.md#GetUniverseGroupsGroupId) | **Get** /universe/groups/{group_id}/ | Get item group information
+[**GetUniverseMoonsMoonId**](UniverseApi.md#GetUniverseMoonsMoonId) | **Get** /universe/moons/{moon_id}/ | Get moon information
+[**GetUniversePlanetsPlanetId**](UniverseApi.md#GetUniversePlanetsPlanetId) | **Get** /universe/planets/{planet_id}/ | Get planet information
 [**GetUniverseRaces**](UniverseApi.md#GetUniverseRaces) | **Get** /universe/races/ | Get character races
+[**GetUniverseRegions**](UniverseApi.md#GetUniverseRegions) | **Get** /universe/regions/ | Get regions
+[**GetUniverseRegionsRegionId**](UniverseApi.md#GetUniverseRegionsRegionId) | **Get** /universe/regions/{region_id}/ | Get region information
+[**GetUniverseStargatesStargateId**](UniverseApi.md#GetUniverseStargatesStargateId) | **Get** /universe/stargates/{stargate_id}/ | Get planet information
 [**GetUniverseStationsStationId**](UniverseApi.md#GetUniverseStationsStationId) | **Get** /universe/stations/{station_id}/ | Get station information
 [**GetUniverseStructures**](UniverseApi.md#GetUniverseStructures) | **Get** /universe/structures/ | List all public structures
 [**GetUniverseStructuresStructureId**](UniverseApi.md#GetUniverseStructuresStructureId) | **Get** /universe/structures/{structure_id}/ | Get structure information
+[**GetUniverseSystems**](UniverseApi.md#GetUniverseSystems) | **Get** /universe/systems/ | Get solar systems
 [**GetUniverseSystemsSystemId**](UniverseApi.md#GetUniverseSystemsSystemId) | **Get** /universe/systems/{system_id}/ | Get solar system information
 [**GetUniverseTypes**](UniverseApi.md#GetUniverseTypes) | **Get** /universe/types/ | Get types
 [**GetUniverseTypesTypeId**](UniverseApi.md#GetUniverseTypesTypeId) | **Get** /universe/types/{type_id}/ | Get type information
@@ -114,6 +122,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetUniverseCategoriesCategoryIdOk**](get_universe_categories_category_id_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniverseConstellations**
+> []int32 GetUniverseConstellations(optional)
+Get constellations
+
+Get a list of constellations  ---  Alternate route: `/legacy/universe/constellations/`  Alternate route: `/latest/universe/constellations/`  Alternate route: `/dev/universe/constellations/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+
+### Return type
+
+**[]int32**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniverseConstellationsConstellationId**
+> GetUniverseConstellationsConstellationIdOk GetUniverseConstellationsConstellationId(constellationId, optional)
+Get constellation information
+
+Get information on a constellation  ---  Alternate route: `/legacy/universe/constellations/{constellation_id}/`  Alternate route: `/latest/universe/constellations/{constellation_id}/`  Alternate route: `/dev/universe/constellations/{constellation_id}/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+  **constellationId** | **int32**| constellation_id integer | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **constellationId** | **int32**| constellation_id integer | 
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+
+### Return type
+
+[**GetUniverseConstellationsConstellationIdOk**](get_universe_constellations_constellation_id_ok.md)
 
 ### Authorization
 
@@ -233,6 +312,78 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetUniverseMoonsMoonId**
+> GetUniverseMoonsMoonIdOk GetUniverseMoonsMoonId(moonId, optional)
+Get moon information
+
+Get information on a moon  ---  Alternate route: `/legacy/universe/moons/{moon_id}/`  Alternate route: `/latest/universe/moons/{moon_id}/`  Alternate route: `/dev/universe/moons/{moon_id}/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+  **moonId** | **int32**| moon_id integer | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **moonId** | **int32**| moon_id integer | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+
+### Return type
+
+[**GetUniverseMoonsMoonIdOk**](get_universe_moons_moon_id_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniversePlanetsPlanetId**
+> GetUniversePlanetsPlanetIdOk GetUniversePlanetsPlanetId(planetId, optional)
+Get planet information
+
+Get information on a planet  ---  Alternate route: `/legacy/universe/planets/{planet_id}/`  Alternate route: `/latest/universe/planets/{planet_id}/`  Alternate route: `/dev/universe/planets/{planet_id}/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+  **planetId** | **int32**| planet_id integer | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **planetId** | **int32**| planet_id integer | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+
+### Return type
+
+[**GetUniversePlanetsPlanetIdOk**](get_universe_planets_planet_id_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetUniverseRaces**
 > []GetUniverseRaces200Ok GetUniverseRaces(optional)
 Get character races
@@ -268,11 +419,118 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetUniverseRegions**
+> []int32 GetUniverseRegions(optional)
+Get regions
+
+Get a list of regions  ---  Alternate route: `/legacy/universe/regions/`  Alternate route: `/latest/universe/regions/`  Alternate route: `/dev/universe/regions/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+
+### Return type
+
+**[]int32**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniverseRegionsRegionId**
+> GetUniverseRegionsRegionIdOk GetUniverseRegionsRegionId(regionId, optional)
+Get region information
+
+Get information on a region  ---  Alternate route: `/legacy/universe/regions/{region_id}/`  Alternate route: `/latest/universe/regions/{region_id}/`  Alternate route: `/dev/universe/regions/{region_id}/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+  **regionId** | **int32**| region_id integer | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **regionId** | **int32**| region_id integer | 
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+
+### Return type
+
+[**GetUniverseRegionsRegionIdOk**](get_universe_regions_region_id_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniverseStargatesStargateId**
+> GetUniverseStargatesStargateIdOk GetUniverseStargatesStargateId(stargateId, optional)
+Get planet information
+
+Get information on a planet  ---  Alternate route: `/legacy/universe/stargates/{stargate_id}/`  Alternate route: `/latest/universe/stargates/{stargate_id}/`  Alternate route: `/dev/universe/stargates/{stargate_id}/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+  **stargateId** | **int32**| stargate_id integer | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stargateId** | **int32**| stargate_id integer | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+
+### Return type
+
+[**GetUniverseStargatesStargateIdOk**](get_universe_stargates_stargate_id_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetUniverseStationsStationId**
 > GetUniverseStationsStationIdOk GetUniverseStationsStationId(stationId, optional)
 Get station information
 
-Public information on stations  ---  Alternate route: `/legacy/universe/stations/{station_id}/`  Alternate route: `/latest/universe/stations/{station_id}/`  Alternate route: `/dev/universe/stations/{station_id}/`   ---  This route is cached for up to 3600 seconds
+Public information on stations  ---  Alternate route: `/legacy/universe/stations/{station_id}/`  Alternate route: `/latest/universe/stations/{station_id}/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -375,11 +633,45 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetUniverseSystems**
+> []int32 GetUniverseSystems(optional)
+Get solar systems
+
+Get a list of solar systems  ---  Alternate route: `/legacy/universe/systems/`  Alternate route: `/latest/universe/systems/`  Alternate route: `/dev/universe/systems/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+
+### Return type
+
+**[]int32**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetUniverseSystemsSystemId**
 > GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(systemId, optional)
 Get solar system information
 
-Information on solar systems  ---  Alternate route: `/legacy/universe/systems/{system_id}/`  Alternate route: `/latest/universe/systems/{system_id}/`  Alternate route: `/dev/universe/systems/{system_id}/`   ---  This route is cached for up to 3600 seconds
+Information on solar systems  ---  Alternate route: `/legacy/universe/systems/{system_id}/`  Alternate route: `/latest/universe/systems/{system_id}/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

@@ -50,6 +50,8 @@ Class | Method | HTTP request | Description
 *SearchApi* | [**GetSearch**](docs/SearchApi.md#getsearch) | **Get** /search/ | Search on a string
 *SkillsApi* | [**GetCharactersCharacterIdSkillqueue**](docs/SkillsApi.md#getcharacterscharacteridskillqueue) | **Get** /characters/{character_id}/skillqueue/ | Get character&#39;s skill queue
 *SkillsApi* | [**GetCharactersCharacterIdSkills**](docs/SkillsApi.md#getcharacterscharacteridskills) | **Get** /characters/{character_id}/skills/ | Get character skills
+*UniverseApi* | [**GetUniverseStationsStationId**](docs/UniverseApi.md#getuniversestationsstationid) | **Get** /universe/stations/{station_id}/ | Get station information
+*UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /universe/systems/{system_id}/ | Get solar system information
 *UniverseApi* | [**GetUniverseTypesTypeId**](docs/UniverseApi.md#getuniversetypestypeid) | **Get** /universe/types/{type_id}/ | Get type information
 *UniverseApi* | [**PostUniverseNames**](docs/UniverseApi.md#postuniversenames) | **Post** /universe/names/ | Get names and categories for a set of ID&#39;s
 *UserInterfaceApi* | [**PostUiAutopilotWaypoint**](docs/UserInterfaceApi.md#postuiautopilotwaypoint) | **Post** /ui/autopilot/waypoint/ | Set Autopilot Waypoint
@@ -91,6 +93,15 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdOk](docs/GetCorporationsCorporationIdOk.md)
  - [GetSearchInternalServerError](docs/GetSearchInternalServerError.md)
  - [GetSearchOk](docs/GetSearchOk.md)
+ - [GetUniverseStationsStationIdInternalServerError](docs/GetUniverseStationsStationIdInternalServerError.md)
+ - [GetUniverseStationsStationIdNotFound](docs/GetUniverseStationsStationIdNotFound.md)
+ - [GetUniverseStationsStationIdOk](docs/GetUniverseStationsStationIdOk.md)
+ - [GetUniverseStationsStationIdPosition](docs/GetUniverseStationsStationIdPosition.md)
+ - [GetUniverseSystemsSystemIdInternalServerError](docs/GetUniverseSystemsSystemIdInternalServerError.md)
+ - [GetUniverseSystemsSystemIdNotFound](docs/GetUniverseSystemsSystemIdNotFound.md)
+ - [GetUniverseSystemsSystemIdOk](docs/GetUniverseSystemsSystemIdOk.md)
+ - [GetUniverseSystemsSystemIdPlanet](docs/GetUniverseSystemsSystemIdPlanet.md)
+ - [GetUniverseSystemsSystemIdPosition](docs/GetUniverseSystemsSystemIdPosition.md)
  - [GetUniverseTypesTypeIdDogmaAttribute](docs/GetUniverseTypesTypeIdDogmaAttribute.md)
  - [GetUniverseTypesTypeIdDogmaEffect](docs/GetUniverseTypesTypeIdDogmaEffect.md)
  - [GetUniverseTypesTypeIdInternalServerError](docs/GetUniverseTypesTypeIdInternalServerError.md)

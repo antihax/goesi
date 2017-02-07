@@ -106,13 +106,21 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseBloodlines**](docs/UniverseApi.md#getuniversebloodlines) | **Get** /universe/bloodlines/ | Get bloodlines
 *UniverseApi* | [**GetUniverseCategories**](docs/UniverseApi.md#getuniversecategories) | **Get** /universe/categories/ | Get item categories
 *UniverseApi* | [**GetUniverseCategoriesCategoryId**](docs/UniverseApi.md#getuniversecategoriescategoryid) | **Get** /universe/categories/{category_id}/ | Get item category information
+*UniverseApi* | [**GetUniverseConstellations**](docs/UniverseApi.md#getuniverseconstellations) | **Get** /universe/constellations/ | Get constellations
+*UniverseApi* | [**GetUniverseConstellationsConstellationId**](docs/UniverseApi.md#getuniverseconstellationsconstellationid) | **Get** /universe/constellations/{constellation_id}/ | Get constellation information
 *UniverseApi* | [**GetUniverseFactions**](docs/UniverseApi.md#getuniversefactions) | **Get** /universe/factions/ | Get factions
 *UniverseApi* | [**GetUniverseGroups**](docs/UniverseApi.md#getuniversegroups) | **Get** /universe/groups/ | Get item groups
 *UniverseApi* | [**GetUniverseGroupsGroupId**](docs/UniverseApi.md#getuniversegroupsgroupid) | **Get** /universe/groups/{group_id}/ | Get item group information
+*UniverseApi* | [**GetUniverseMoonsMoonId**](docs/UniverseApi.md#getuniversemoonsmoonid) | **Get** /universe/moons/{moon_id}/ | Get moon information
+*UniverseApi* | [**GetUniversePlanetsPlanetId**](docs/UniverseApi.md#getuniverseplanetsplanetid) | **Get** /universe/planets/{planet_id}/ | Get planet information
 *UniverseApi* | [**GetUniverseRaces**](docs/UniverseApi.md#getuniverseraces) | **Get** /universe/races/ | Get character races
+*UniverseApi* | [**GetUniverseRegions**](docs/UniverseApi.md#getuniverseregions) | **Get** /universe/regions/ | Get regions
+*UniverseApi* | [**GetUniverseRegionsRegionId**](docs/UniverseApi.md#getuniverseregionsregionid) | **Get** /universe/regions/{region_id}/ | Get region information
+*UniverseApi* | [**GetUniverseStargatesStargateId**](docs/UniverseApi.md#getuniversestargatesstargateid) | **Get** /universe/stargates/{stargate_id}/ | Get planet information
 *UniverseApi* | [**GetUniverseStationsStationId**](docs/UniverseApi.md#getuniversestationsstationid) | **Get** /universe/stations/{station_id}/ | Get station information
 *UniverseApi* | [**GetUniverseStructures**](docs/UniverseApi.md#getuniversestructures) | **Get** /universe/structures/ | List all public structures
 *UniverseApi* | [**GetUniverseStructuresStructureId**](docs/UniverseApi.md#getuniversestructuresstructureid) | **Get** /universe/structures/{structure_id}/ | Get structure information
+*UniverseApi* | [**GetUniverseSystems**](docs/UniverseApi.md#getuniversesystems) | **Get** /universe/systems/ | Get solar systems
 *UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /universe/systems/{system_id}/ | Get solar system information
 *UniverseApi* | [**GetUniverseTypes**](docs/UniverseApi.md#getuniversetypes) | **Get** /universe/types/ | Get types
 *UniverseApi* | [**GetUniverseTypesTypeId**](docs/UniverseApi.md#getuniversetypestypeid) | **Get** /universe/types/{type_id}/ | Get type information
@@ -304,17 +312,39 @@ Class | Method | HTTP request | Description
  - [GetUniverseCategoriesCategoryIdNotFound](docs/GetUniverseCategoriesCategoryIdNotFound.md)
  - [GetUniverseCategoriesCategoryIdOk](docs/GetUniverseCategoriesCategoryIdOk.md)
  - [GetUniverseCategoriesInternalServerError](docs/GetUniverseCategoriesInternalServerError.md)
+ - [GetUniverseConstellationsConstellationIdInternalServerError](docs/GetUniverseConstellationsConstellationIdInternalServerError.md)
+ - [GetUniverseConstellationsConstellationIdNotFound](docs/GetUniverseConstellationsConstellationIdNotFound.md)
+ - [GetUniverseConstellationsConstellationIdOk](docs/GetUniverseConstellationsConstellationIdOk.md)
+ - [GetUniverseConstellationsConstellationIdPosition](docs/GetUniverseConstellationsConstellationIdPosition.md)
+ - [GetUniverseConstellationsInternalServerError](docs/GetUniverseConstellationsInternalServerError.md)
  - [GetUniverseFactions200Ok](docs/GetUniverseFactions200Ok.md)
  - [GetUniverseFactionsInternalServerError](docs/GetUniverseFactionsInternalServerError.md)
  - [GetUniverseGroupsGroupIdInternalServerError](docs/GetUniverseGroupsGroupIdInternalServerError.md)
  - [GetUniverseGroupsGroupIdNotFound](docs/GetUniverseGroupsGroupIdNotFound.md)
  - [GetUniverseGroupsGroupIdOk](docs/GetUniverseGroupsGroupIdOk.md)
  - [GetUniverseGroupsInternalServerError](docs/GetUniverseGroupsInternalServerError.md)
+ - [GetUniverseMoonsMoonIdInternalServerError](docs/GetUniverseMoonsMoonIdInternalServerError.md)
+ - [GetUniverseMoonsMoonIdNotFound](docs/GetUniverseMoonsMoonIdNotFound.md)
+ - [GetUniverseMoonsMoonIdOk](docs/GetUniverseMoonsMoonIdOk.md)
+ - [GetUniverseMoonsMoonIdPosition](docs/GetUniverseMoonsMoonIdPosition.md)
+ - [GetUniversePlanetsPlanetIdInternalServerError](docs/GetUniversePlanetsPlanetIdInternalServerError.md)
+ - [GetUniversePlanetsPlanetIdNotFound](docs/GetUniversePlanetsPlanetIdNotFound.md)
+ - [GetUniversePlanetsPlanetIdOk](docs/GetUniversePlanetsPlanetIdOk.md)
+ - [GetUniversePlanetsPlanetIdPosition](docs/GetUniversePlanetsPlanetIdPosition.md)
  - [GetUniverseRaces200Ok](docs/GetUniverseRaces200Ok.md)
  - [GetUniverseRacesInternalServerError](docs/GetUniverseRacesInternalServerError.md)
+ - [GetUniverseRegionsInternalServerError](docs/GetUniverseRegionsInternalServerError.md)
+ - [GetUniverseRegionsRegionIdInternalServerError](docs/GetUniverseRegionsRegionIdInternalServerError.md)
+ - [GetUniverseRegionsRegionIdNotFound](docs/GetUniverseRegionsRegionIdNotFound.md)
+ - [GetUniverseRegionsRegionIdOk](docs/GetUniverseRegionsRegionIdOk.md)
  - [GetUniverseSchematicsSchematicIdInternalServerError](docs/GetUniverseSchematicsSchematicIdInternalServerError.md)
  - [GetUniverseSchematicsSchematicIdNotFound](docs/GetUniverseSchematicsSchematicIdNotFound.md)
  - [GetUniverseSchematicsSchematicIdOk](docs/GetUniverseSchematicsSchematicIdOk.md)
+ - [GetUniverseStargatesStargateIdDestination](docs/GetUniverseStargatesStargateIdDestination.md)
+ - [GetUniverseStargatesStargateIdInternalServerError](docs/GetUniverseStargatesStargateIdInternalServerError.md)
+ - [GetUniverseStargatesStargateIdNotFound](docs/GetUniverseStargatesStargateIdNotFound.md)
+ - [GetUniverseStargatesStargateIdOk](docs/GetUniverseStargatesStargateIdOk.md)
+ - [GetUniverseStargatesStargateIdPosition](docs/GetUniverseStargatesStargateIdPosition.md)
  - [GetUniverseStationsStationIdInternalServerError](docs/GetUniverseStationsStationIdInternalServerError.md)
  - [GetUniverseStationsStationIdOk](docs/GetUniverseStationsStationIdOk.md)
  - [GetUniverseStructuresInternalServerError](docs/GetUniverseStructuresInternalServerError.md)
@@ -323,6 +353,7 @@ Class | Method | HTTP request | Description
  - [GetUniverseStructuresStructureIdNotFound](docs/GetUniverseStructuresStructureIdNotFound.md)
  - [GetUniverseStructuresStructureIdOk](docs/GetUniverseStructuresStructureIdOk.md)
  - [GetUniverseStructuresStructureIdPosition](docs/GetUniverseStructuresStructureIdPosition.md)
+ - [GetUniverseSystemsInternalServerError](docs/GetUniverseSystemsInternalServerError.md)
  - [GetUniverseSystemsSystemIdInternalServerError](docs/GetUniverseSystemsSystemIdInternalServerError.md)
  - [GetUniverseSystemsSystemIdNotFound](docs/GetUniverseSystemsSystemIdNotFound.md)
  - [GetUniverseSystemsSystemIdOk](docs/GetUniverseSystemsSystemIdOk.md)

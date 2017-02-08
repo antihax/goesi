@@ -27,17 +27,16 @@ import (
 	"strings"
 	"time"
 
-	"golang.org/x/oauth2"
-
 	"github.com/antihax/goesi/v1"
 	"github.com/antihax/goesi/v2"
 	"github.com/antihax/goesi/v3"
 	"github.com/antihax/goesi/v4"
 )
 
-type contextOAuth2Key *oauth2.Token
+type key int
 
-var ContextOAuth2 contextOAuth2Key
+const ContextOAuth2 key = 0
+const ContextBasicAuth key = 1
 
 // APIClient manages communication with the EVE Swagger Interface API
 // In most cases there should be only one, shared, APIClient.

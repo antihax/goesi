@@ -22,22 +22,15 @@
 
 package goesiv1
 
-import (
-	"golang.org/x/oauth2"
-)
-
-
-type contextOAuth2Key *oauth2.Token
-
-var ContextOAuth2 contextOAuth2Key
+type key int
+const ContextOAuth2 key = 0
+const ContextBasicAuth key = 1
+const ContextAPIKey key = 2
 
 type BasicAuth struct {
 	UserName      string            `json:"userName,omitempty"`
 	Password      string            `json:"password,omitempty"`	
 }
-type contextBasicAuthKey *BasicAuth
-
-var ContextBasicAuth contextBasicAuthKey
 
 /*
 	APIKeyPrefix  map[string]string `json:"APIKeyPrefix,omitempty"`

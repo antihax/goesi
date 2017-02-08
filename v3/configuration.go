@@ -22,10 +22,8 @@
 
 package goesiv3
 
-type key int
-const ContextOAuth2 key = 0
-const ContextBasicAuth key = 1
-const ContextAPIKey key = 2
+const ContextOAuth2 int = 0
+const ContextBasicAuth int = 1
 
 type BasicAuth struct {
 	UserName      string            `json:"userName,omitempty"`

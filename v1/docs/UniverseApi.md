@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**GetUniverseRaces**](UniverseApi.md#GetUniverseRaces) | **Get** /universe/races/ | Get character races
 [**GetUniverseRegions**](UniverseApi.md#GetUniverseRegions) | **Get** /universe/regions/ | Get regions
 [**GetUniverseRegionsRegionId**](UniverseApi.md#GetUniverseRegionsRegionId) | **Get** /universe/regions/{region_id}/ | Get region information
-[**GetUniverseStargatesStargateId**](UniverseApi.md#GetUniverseStargatesStargateId) | **Get** /universe/stargates/{stargate_id}/ | Get planet information
+[**GetUniverseStargatesStargateId**](UniverseApi.md#GetUniverseStargatesStargateId) | **Get** /universe/stargates/{stargate_id}/ | Get stargate information
 [**GetUniverseStationsStationId**](UniverseApi.md#GetUniverseStationsStationId) | **Get** /universe/stations/{station_id}/ | Get station information
 [**GetUniverseStructures**](UniverseApi.md#GetUniverseStructures) | **Get** /universe/structures/ | List all public structures
 [**GetUniverseStructuresStructureId**](UniverseApi.md#GetUniverseStructuresStructureId) | **Get** /universe/structures/{structure_id}/ | Get structure information
@@ -492,9 +492,9 @@ No authorization required
 
 # **GetUniverseStargatesStargateId**
 > GetUniverseStargatesStargateIdOk GetUniverseStargatesStargateId(stargateId, optional)
-Get planet information
+Get stargate information
 
-Get information on a planet  ---  Alternate route: `/legacy/universe/stargates/{stargate_id}/`  Alternate route: `/latest/universe/stargates/{stargate_id}/`  Alternate route: `/dev/universe/stargates/{stargate_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a stargate  ---  Alternate route: `/legacy/universe/stargates/{stargate_id}/`  Alternate route: `/latest/universe/stargates/{stargate_id}/`  Alternate route: `/dev/universe/stargates/{stargate_id}/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

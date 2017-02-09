@@ -85,7 +85,7 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseRaces**](docs/UniverseApi.md#getuniverseraces) | **Get** /universe/races/ | Get character races
 *UniverseApi* | [**GetUniverseRegions**](docs/UniverseApi.md#getuniverseregions) | **Get** /universe/regions/ | Get regions
 *UniverseApi* | [**GetUniverseRegionsRegionId**](docs/UniverseApi.md#getuniverseregionsregionid) | **Get** /universe/regions/{region_id}/ | Get region information
-*UniverseApi* | [**GetUniverseStargatesStargateId**](docs/UniverseApi.md#getuniversestargatesstargateid) | **Get** /universe/stargates/{stargate_id}/ | Get planet information
+*UniverseApi* | [**GetUniverseStargatesStargateId**](docs/UniverseApi.md#getuniversestargatesstargateid) | **Get** /universe/stargates/{stargate_id}/ | Get stargate information
 *UniverseApi* | [**GetUniverseStationsStationId**](docs/UniverseApi.md#getuniversestationsstationid) | **Get** /universe/stations/{station_id}/ | Get station information
 *UniverseApi* | [**GetUniverseStructures**](docs/UniverseApi.md#getuniversestructures) | **Get** /universe/structures/ | List all public structures
 *UniverseApi* | [**GetUniverseStructuresStructureId**](docs/UniverseApi.md#getuniversestructuresstructureid) | **Get** /universe/structures/{structure_id}/ | Get structure information

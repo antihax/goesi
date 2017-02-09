@@ -1056,8 +1056,8 @@ func (a UniverseApiService) GetUniverseRegionsRegionId(regionId int32, localVarO
 	return successPayload, localVarHttpResponse, err
 }
 
-/* UniverseApiService Get planet information
- Get information on a planet  ---  Alternate route: &#x60;/legacy/universe/stargates/{stargate_id}/&#x60;  Alternate route: &#x60;/latest/universe/stargates/{stargate_id}/&#x60;  Alternate route: &#x60;/dev/universe/stargates/{stargate_id}/&#x60;   ---  This route is cached for up to 3600 seconds
+/* UniverseApiService Get stargate information
+ Get information on a stargate  ---  Alternate route: &#x60;/legacy/universe/stargates/{stargate_id}/&#x60;  Alternate route: &#x60;/latest/universe/stargates/{stargate_id}/&#x60;  Alternate route: &#x60;/dev/universe/stargates/{stargate_id}/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
  @param stargateId stargate_id integer

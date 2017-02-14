@@ -40,7 +40,7 @@ type UniverseApiService service
 
 
 /* UniverseApiService Get station information
- Get information on a station  ---  Alternate route: &#x60;/dev/universe/stations/{station_id}/&#x60;   ---  This route is cached for up to 300 seconds
+ Get information on a station  ---  Alternate route: &#x60;/latest/universe/stations/{station_id}/&#x60;  Alternate route: &#x60;/dev/universe/stations/{station_id}/&#x60;   ---  This route is cached for up to 300 seconds
 
 
  @param stationId station_id integer
@@ -115,7 +115,7 @@ func (a UniverseApiService) GetUniverseStationsStationId(stationId int32, localV
 }
 
 /* UniverseApiService Get solar system information
- Get information on a solar system  ---  Alternate route: &#x60;/dev/universe/systems/{system_id}/&#x60;   ---  This route is cached for up to 3600 seconds
+ Get information on a solar system  ---  Alternate route: &#x60;/latest/universe/systems/{system_id}/&#x60;  Alternate route: &#x60;/dev/universe/systems/{system_id}/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
  @param systemId system_id integer

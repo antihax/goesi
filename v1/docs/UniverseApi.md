@@ -530,7 +530,7 @@ No authorization required
 > GetUniverseStationsStationIdOk GetUniverseStationsStationId(stationId, optional)
 Get station information
 
-Public information on stations  ---  Alternate route: `/legacy/universe/stations/{station_id}/`  Alternate route: `/latest/universe/stations/{station_id}/`   ---  This route is cached for up to 3600 seconds
+Public information on stations  ---  Alternate route: `/legacy/universe/stations/{station_id}/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -671,7 +671,7 @@ No authorization required
 > GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(systemId, optional)
 Get solar system information
 
-Information on solar systems  ---  Alternate route: `/legacy/universe/systems/{system_id}/`  Alternate route: `/latest/universe/systems/{system_id}/`   ---  This route is cached for up to 3600 seconds
+Information on solar systems  ---  Alternate route: `/legacy/universe/systems/{system_id}/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 > GetUniverseStationsStationIdOk GetUniverseStationsStationId(stationId, optional)
 Get station information
 
-Get information on a station  ---  Alternate route: `/dev/universe/stations/{station_id}/`   ---  This route is cached for up to 300 seconds
+Get information on a station  ---  Alternate route: `/latest/universe/stations/{station_id}/`  Alternate route: `/dev/universe/stations/{station_id}/`   ---  This route is cached for up to 300 seconds
 
 ### Required Parameters
 
@@ -50,7 +50,7 @@ No authorization required
 > GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(systemId, optional)
 Get solar system information
 
-Get information on a solar system  ---  Alternate route: `/dev/universe/systems/{system_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a solar system  ---  Alternate route: `/latest/universe/systems/{system_id}/`  Alternate route: `/dev/universe/systems/{system_id}/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

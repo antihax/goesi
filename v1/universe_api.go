@@ -1132,7 +1132,7 @@ func (a UniverseApiService) GetUniverseStargatesStargateId(stargateId int32, loc
 }
 
 /* UniverseApiService Get station information
- Public information on stations  ---  Alternate route: &#x60;/legacy/universe/stations/{station_id}/&#x60;  Alternate route: &#x60;/latest/universe/stations/{station_id}/&#x60;   ---  This route is cached for up to 3600 seconds
+ Public information on stations  ---  Alternate route: &#x60;/legacy/universe/stations/{station_id}/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
  @param stationId An Eve station ID
@@ -1428,7 +1428,7 @@ func (a UniverseApiService) GetUniverseSystems(localVarOptionals map[string]inte
 }
 
 /* UniverseApiService Get solar system information
- Information on solar systems  ---  Alternate route: &#x60;/legacy/universe/systems/{system_id}/&#x60;  Alternate route: &#x60;/latest/universe/systems/{system_id}/&#x60;   ---  This route is cached for up to 3600 seconds
+ Information on solar systems  ---  Alternate route: &#x60;/legacy/universe/systems/{system_id}/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
  @param systemId An Eve solar system ID

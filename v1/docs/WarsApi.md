@@ -26,8 +26,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **maxWarId** | **int32**| Only return wars with ID smaller than this. | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **maxWarId** | **int32**| Only return wars with ID smaller than this. | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -64,6 +66,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **warId** | **int32**| ID for a war | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -99,8 +103,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **warId** | **int32**| A valid war ID | 
- **page** | **int32**| Which page to query, starting at 1, 2000 killmails per page. | [default to 1]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **page** | **int32**| Which page to query, starting at 1, 2000 killmails per page. | [default to 1]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

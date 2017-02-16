@@ -30,6 +30,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| Character id of the target character | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -50,7 +53,7 @@ Name | Type | Description  | Notes
 > GetCharactersCharacterIdPlanetsPlanetIdOk GetCharactersCharacterIdPlanetsPlanetId(ctx, characterId, planetId, optional)
 Get colony layout
 
-Returns full details on the layout of a single planetary colony, including links, pins and routes. Note: Planetary information is only recalculated when the colony is viewed through the client. Information on this endpoint will not update until this criteria is met.  ---  Alternate route: `/legacy/characters/{character_id}/planets/{planet_id}/`  Alternate route: `/latest/characters/{character_id}/planets/{planet_id}/`  Alternate route: `/dev/characters/{character_id}/planets/{planet_id}/`   ---  This route is cached for up to 600 seconds
+Returns full details on the layout of a single planetary colony, including links, pins and routes. Note: Planetary information is only recalculated when the colony is viewed through the client. Information on this endpoint will not update until this criteria is met.  ---  Alternate route: `/latest/characters/{character_id}/planets/{planet_id}/`  Alternate route: `/legacy/characters/{character_id}/planets/{planet_id}/`   ---  This route is cached for up to 600 seconds
 
 ### Required Parameters
 
@@ -69,6 +72,9 @@ Name | Type | Description  | Notes
  **characterId** | **int32**| Character id of the target character | 
  **planetId** | **int32**| Planet id of the target planet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -105,6 +111,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **schematicId** | **int32**| A PI schematic ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

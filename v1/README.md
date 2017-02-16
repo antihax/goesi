@@ -28,7 +28,9 @@ Class | Method | HTTP request | Description
 *CorporationApi* | [**GetCorporationsCorporationIdAlliancehistory**](docs/CorporationApi.md#getcorporationscorporationidalliancehistory) | **Get** /corporations/{corporation_id}/alliancehistory/ | Get alliance history
 *CorporationApi* | [**GetCorporationsCorporationIdIcons**](docs/CorporationApi.md#getcorporationscorporationidicons) | **Get** /corporations/{corporation_id}/icons/ | Get corporation icon
 *CorporationApi* | [**GetCorporationsCorporationIdRoles**](docs/CorporationApi.md#getcorporationscorporationidroles) | **Get** /corporations/{corporation_id}/roles/ | Get corporation member roles
+*CorporationApi* | [**GetCorporationsCorporationIdStructures**](docs/CorporationApi.md#getcorporationscorporationidstructures) | **Get** /corporations/{corporation_id}/structures/ | Get corporation structures
 *CorporationApi* | [**GetCorporationsNames**](docs/CorporationApi.md#getcorporationsnames) | **Get** /corporations/names/ | Get corporation names
+*CorporationApi* | [**GetCorporationsNpccorps**](docs/CorporationApi.md#getcorporationsnpccorps) | **Get** /corporations/npccorps/ | Get npc corporations
 *FittingsApi* | [**DeleteCharactersCharacterIdFittingsFittingId**](docs/FittingsApi.md#deletecharacterscharacteridfittingsfittingid) | **Delete** /characters/{character_id}/fittings/{fitting_id}/ | Delete fitting
 *FittingsApi* | [**GetCharactersCharacterIdFittings**](docs/FittingsApi.md#getcharacterscharacteridfittings) | **Get** /characters/{character_id}/fittings/ | Get fittings
 *FittingsApi* | [**PostCharactersCharacterIdFittings**](docs/FittingsApi.md#postcharacterscharacteridfittings) | **Post** /characters/{character_id}/fittings/ | Create fitting
@@ -224,8 +226,12 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdRoles200Ok](docs/GetCorporationsCorporationIdRoles200Ok.md)
  - [GetCorporationsCorporationIdRolesForbidden](docs/GetCorporationsCorporationIdRolesForbidden.md)
  - [GetCorporationsCorporationIdRolesInternalServerError](docs/GetCorporationsCorporationIdRolesInternalServerError.md)
+ - [GetCorporationsCorporationIdStructures200Ok](docs/GetCorporationsCorporationIdStructures200Ok.md)
+ - [GetCorporationsCorporationIdStructuresForbidden](docs/GetCorporationsCorporationIdStructuresForbidden.md)
+ - [GetCorporationsCorporationIdStructuresInternalServerError](docs/GetCorporationsCorporationIdStructuresInternalServerError.md)
  - [GetCorporationsNames200Ok](docs/GetCorporationsNames200Ok.md)
  - [GetCorporationsNamesInternalServerError](docs/GetCorporationsNamesInternalServerError.md)
+ - [GetCorporationsNpccorpsInternalServerError](docs/GetCorporationsNpccorpsInternalServerError.md)
  - [GetFleetsFleetIdForbidden](docs/GetFleetsFleetIdForbidden.md)
  - [GetFleetsFleetIdInternalServerError](docs/GetFleetsFleetIdInternalServerError.md)
  - [GetFleetsFleetIdMembers200Ok](docs/GetFleetsFleetIdMembers200Ok.md)
@@ -423,6 +429,7 @@ Class | Method | HTTP request | Description
  - **esi-characters.write_contacts.v1**: EVE SSO scope esi-characters.write_contacts.v1
  - **esi-clones.read_clones.v1**: EVE SSO scope esi-clones.read_clones.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
+ - **esi-corporations.read_structures.v1**: EVE SSO scope esi-corporations.read_structures.v1
  - **esi-fittings.read_fittings.v1**: EVE SSO scope esi-fittings.read_fittings.v1
  - **esi-fittings.write_fittings.v1**: EVE SSO scope esi-fittings.write_fittings.v1
  - **esi-fleets.read_fleet.v1**: EVE SSO scope esi-fleets.read_fleet.v1

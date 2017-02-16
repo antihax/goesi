@@ -45,8 +45,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **language** | **string**| Language to use in the response | [default to en-us]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -81,6 +83,8 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -116,8 +120,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **categoryId** | **int32**| An Eve item category ID | 
- **language** | **string**| Language to use in the response | [default to en-us]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -152,6 +158,8 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -187,8 +195,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **constellationId** | **int32**| constellation_id integer | 
- **language** | **string**| Language to use in the response | [default to en-us]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -222,8 +232,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **language** | **string**| Language to use in the response | [default to en-us]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -257,8 +269,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32**| Which page to query | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **page** | **int32**| Which page to query | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -294,8 +308,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **int32**| An Eve item group ID | 
- **language** | **string**| Language to use in the response | [default to en-us]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -332,6 +348,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **moonId** | **int32**| moon_id integer | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -368,6 +386,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **planetId** | **int32**| planet_id integer | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -401,8 +421,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **language** | **string**| Language to use in the response | [default to en-us]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -437,6 +459,8 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -472,8 +496,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regionId** | **int32**| region_id integer | 
- **language** | **string**| Language to use in the response | [default to en-us]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -510,6 +536,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stargateId** | **int32**| stargate_id integer | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -546,6 +574,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stationId** | **int32**| An Eve station ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -580,6 +610,8 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -617,6 +649,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **structureId** | **int64**| An Eve structure ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -651,6 +686,8 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -687,6 +724,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemId** | **int32**| An Eve solar system ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -720,8 +759,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32**| Which page to query | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **page** | **int32**| Which page to query | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -758,6 +799,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **typeId** | **int32**| An Eve item type ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -794,6 +837,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ids** | [**PostUniverseNamesIds**](PostUniverseNamesIds.md)| The ids to resolve | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

@@ -37,6 +37,9 @@ Name | Type | Description  | Notes
  **characterId** | **int32**| An EVE character ID | 
  **labelId** | **int32**| An EVE label id | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -76,6 +79,9 @@ Name | Type | Description  | Notes
  **characterId** | **int32**| An EVE character ID | 
  **mailId** | **int32**| An EVE mail ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -112,9 +118,12 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **labels** | [**[]int64**](int64.md)| Fetch only mails that match one or more of the given labels | 
  **lastMailId** | **int32**| List only mail with an ID lower than the given ID, if present | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -152,6 +161,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -191,6 +203,9 @@ Name | Type | Description  | Notes
  **characterId** | **int32**| An EVE character ID | 
  **mailId** | **int32**| An EVE mail ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -228,6 +243,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -267,6 +285,9 @@ Name | Type | Description  | Notes
  **characterId** | **int32**| The sender&#39;s character ID | 
  **mail** | [**PostCharactersCharacterIdMailMail**](PostCharactersCharacterIdMailMail.md)| The mail to send | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -284,7 +305,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PutCharactersCharacterIdMailMailId**
-> PutCharactersCharacterIdMailMailId(ctx, characterId, mailId, contents, optional)
+> PutCharactersCharacterIdMailMailId(ctx, characterId, contents, mailId, optional)
 Update metadata about a mail
 
 Update metadata about a mail  ---  Alternate route: `/legacy/characters/{character_id}/mail/{mail_id}/`  Alternate route: `/latest/characters/{character_id}/mail/{mail_id}/`  Alternate route: `/dev/characters/{character_id}/mail/{mail_id}/` 
@@ -295,8 +316,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
   **characterId** | **int32**| An EVE character ID | 
-  **mailId** | **int32**| An EVE mail ID | 
   **contents** | [**PutCharactersCharacterIdMailMailIdContents**](PutCharactersCharacterIdMailMailIdContents.md)| Data used to update the mail | 
+  **mailId** | **int32**| An EVE mail ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -305,9 +326,12 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
- **mailId** | **int32**| An EVE mail ID | 
  **contents** | [**PutCharactersCharacterIdMailMailIdContents**](PutCharactersCharacterIdMailMailIdContents.md)| Data used to update the mail | 
+ **mailId** | **int32**| An EVE mail ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

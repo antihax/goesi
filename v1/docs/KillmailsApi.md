@@ -28,9 +28,12 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **maxCount** | **int32**| How many killmails to return at maximum | [default to 50]
  **maxKillId** | **int32**| Only return killmails with ID smaller than this.  | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -48,7 +51,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetKillmailsKillmailIdKillmailHash**
-> GetKillmailsKillmailIdKillmailHashOk GetKillmailsKillmailIdKillmailHash(killmailId, killmailHash, optional)
+> GetKillmailsKillmailIdKillmailHashOk GetKillmailsKillmailIdKillmailHash(killmailHash, killmailId, optional)
 Get a single killmail
 
 Return a single killmail from its ID and hash  ---  Alternate route: `/legacy/killmails/{killmail_id}/{killmail_hash}/`  Alternate route: `/latest/killmails/{killmail_id}/{killmail_hash}/`  Alternate route: `/dev/killmails/{killmail_id}/{killmail_hash}/`   ---  This route is cached for up to 3600 seconds
@@ -57,8 +60,8 @@ Return a single killmail from its ID and hash  ---  Alternate route: `/legacy/ki
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-  **killmailId** | **int32**| The killmail ID to be queried | 
   **killmailHash** | **string**| The killmail hash for verification | 
+  **killmailId** | **int32**| The killmail ID to be queried | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -66,9 +69,11 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **killmailId** | **int32**| The killmail ID to be queried | 
  **killmailHash** | **string**| The killmail hash for verification | 
+ **killmailId** | **int32**| The killmail ID to be queried | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

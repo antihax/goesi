@@ -28,6 +28,8 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -66,6 +68,8 @@ Name | Type | Description  | Notes
  **regionId** | **int32**| Return statistics in this region | 
  **typeId** | **int32**| Return statistics for this type | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -83,7 +87,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMarketsRegionIdOrders**
-> []GetMarketsRegionIdOrders200Ok GetMarketsRegionIdOrders(regionId, orderType, optional)
+> []GetMarketsRegionIdOrders200Ok GetMarketsRegionIdOrders(orderType, regionId, optional)
 List orders in a region
 
 Return a list of orders in a region  ---  Alternate route: `/legacy/markets/{region_id}/orders/`  Alternate route: `/latest/markets/{region_id}/orders/`  Alternate route: `/dev/markets/{region_id}/orders/`   ---  This route is cached for up to 300 seconds
@@ -92,8 +96,8 @@ Return a list of orders in a region  ---  Alternate route: `/legacy/markets/{reg
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-  **regionId** | **int32**| Return orders in this region | 
   **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders.  | [default to all]
+  **regionId** | **int32**| Return orders in this region | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -101,11 +105,13 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **regionId** | **int32**| Return orders in this region | 
  **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders.  | [default to all]
- **typeId** | **int32**| Return orders only for this type | 
- **page** | **int32**| Which page to query, only used for querying without type_id. Starting at 1  | [default to 1]
+ **regionId** | **int32**| Return orders in this region | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **page** | **int32**| Which page to query, only used for querying without type_id. Starting at 1  | [default to 1]
+ **typeId** | **int32**| Return orders only for this type | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -142,8 +148,11 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **structureId** | **int64**| Return orders in this structure | 
- **page** | **int32**| Which page to query, starting at 1 | [default to 1]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **page** | **int32**| Which page to query, starting at 1 | [default to 1]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

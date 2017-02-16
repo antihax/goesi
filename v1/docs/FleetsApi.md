@@ -42,6 +42,9 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **memberId** | **int32**| The character ID of a member in this fleet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -81,6 +84,9 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **squadId** | **int64**| The squad to delete | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -120,6 +126,9 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **wingId** | **int64**| The wing to delete | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -157,6 +166,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleetId** | **int64**| ID for a fleet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -193,8 +205,11 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleetId** | **int64**| ID for a fleet | 
- **language** | **string**| Language to use in the response | [default to en-us]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -231,8 +246,11 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleetId** | **int64**| ID for a fleet | 
- **language** | **string**| Language to use in the response | [default to en-us]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -272,6 +290,9 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **invitation** | [**PostFleetsFleetIdMembersInvitation**](PostFleetsFleetIdMembersInvitation.md)| Details of the invitation | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -309,6 +330,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleetId** | **int64**| ID for a fleet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -348,6 +372,9 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **wingId** | **int64**| The wing_id to create squad in | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -387,6 +414,9 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **newSettings** | [**PutFleetsFleetIdNewSettings**](PutFleetsFleetIdNewSettings.md)| What to update for this fleet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -428,6 +458,9 @@ Name | Type | Description  | Notes
  **memberId** | **int32**| The character ID of a member in this fleet | 
  **movement** | [**PutFleetsFleetIdMembersMemberIdMovement**](PutFleetsFleetIdMembersMemberIdMovement.md)| Details of the invitation | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -445,7 +478,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PutFleetsFleetIdSquadsSquadId**
-> PutFleetsFleetIdSquadsSquadId(ctx, fleetId, squadId, naming, optional)
+> PutFleetsFleetIdSquadsSquadId(ctx, fleetId, naming, squadId, optional)
 Rename fleet squad
 
 Rename a fleet squad  ---  Alternate route: `/legacy/fleets/{fleet_id}/squads/{squad_id}/`  Alternate route: `/latest/fleets/{fleet_id}/squads/{squad_id}/`  Alternate route: `/dev/fleets/{fleet_id}/squads/{squad_id}/` 
@@ -456,8 +489,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
   **fleetId** | **int64**| ID for a fleet | 
-  **squadId** | **int64**| The squad to rename | 
   **naming** | [**PutFleetsFleetIdSquadsSquadIdNaming**](PutFleetsFleetIdSquadsSquadIdNaming.md)| New name of the squad | 
+  **squadId** | **int64**| The squad to rename | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -466,9 +499,12 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleetId** | **int64**| ID for a fleet | 
- **squadId** | **int64**| The squad to rename | 
  **naming** | [**PutFleetsFleetIdSquadsSquadIdNaming**](PutFleetsFleetIdSquadsSquadIdNaming.md)| New name of the squad | 
+ **squadId** | **int64**| The squad to rename | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -486,7 +522,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PutFleetsFleetIdWingsWingId**
-> PutFleetsFleetIdWingsWingId(ctx, fleetId, wingId, naming, optional)
+> PutFleetsFleetIdWingsWingId(ctx, fleetId, naming, wingId, optional)
 Rename fleet wing
 
 Rename a fleet wing  ---  Alternate route: `/legacy/fleets/{fleet_id}/wings/{wing_id}/`  Alternate route: `/latest/fleets/{fleet_id}/wings/{wing_id}/`  Alternate route: `/dev/fleets/{fleet_id}/wings/{wing_id}/` 
@@ -497,8 +533,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
   **fleetId** | **int64**| ID for a fleet | 
-  **wingId** | **int64**| The wing to rename | 
   **naming** | [**PutFleetsFleetIdWingsWingIdNaming**](PutFleetsFleetIdWingsWingIdNaming.md)| New name of the wing | 
+  **wingId** | **int64**| The wing to rename | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -507,9 +543,12 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleetId** | **int64**| ID for a fleet | 
- **wingId** | **int64**| The wing to rename | 
  **naming** | [**PutFleetsFleetIdWingsWingIdNaming**](PutFleetsFleetIdWingsWingIdNaming.md)| New name of the wing | 
+ **wingId** | **int64**| The wing to rename | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

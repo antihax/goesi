@@ -27,6 +27,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allianceId** | **int32**| An Eve alliance ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

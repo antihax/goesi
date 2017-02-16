@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **PostUiAutopilotWaypoint**
-> PostUiAutopilotWaypoint(ctx, solarSystemId, clearOtherWaypoints, addToBeginning, optional)
+> PostUiAutopilotWaypoint(ctx, addToBeginning, clearOtherWaypoints, solarSystemId, optional)
 Set Autopilot Waypoint
 
 Set a solar system as autopilot waypoint  ---  Alternate route: `/legacy/ui/autopilot/waypoint/` 
@@ -22,9 +22,9 @@ Set a solar system as autopilot waypoint  ---  Alternate route: `/legacy/ui/auto
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **solarSystemId** | **int32**| The solar system to set as autopilot waypoint | 
-  **clearOtherWaypoints** | **bool**| Whether clean other waypoints beforing adding this one | [default to false]
   **addToBeginning** | **bool**| Whether this solar system should be added to the beginning of all waypoints | [default to false]
+  **clearOtherWaypoints** | **bool**| Whether clean other waypoints beforing adding this one | [default to false]
+  **solarSystemId** | **int32**| The solar system to set as autopilot waypoint | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -32,10 +32,13 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **solarSystemId** | **int32**| The solar system to set as autopilot waypoint | 
- **clearOtherWaypoints** | **bool**| Whether clean other waypoints beforing adding this one | [default to false]
  **addToBeginning** | **bool**| Whether this solar system should be added to the beginning of all waypoints | [default to false]
+ **clearOtherWaypoints** | **bool**| Whether clean other waypoints beforing adding this one | [default to false]
+ **solarSystemId** | **int32**| The solar system to set as autopilot waypoint | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -73,6 +76,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contractId** | **int32**| The contract to open | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -110,6 +116,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetId** | **int32**| The target to open | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -147,6 +156,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **typeId** | **int32**| The item type to open in market window | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -184,6 +196,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **newMail** | [**PostUiOpenwindowNewmailNewMail**](PostUiOpenwindowNewmailNewMail.md)| The details of mail to create | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

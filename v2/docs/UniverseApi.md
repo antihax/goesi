@@ -30,6 +30,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stationId** | **int32**| station_id integer | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -65,8 +67,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemId** | **int32**| system_id integer | 
- **language** | **string**| Language to use in the response | [default to en-us]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -102,8 +106,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **typeId** | **int32**| An Eve item type ID | 
- **language** | **string**| Language to use in the response | [default to en-us]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -140,6 +146,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ids** | **[]int32**| The ids to resolve | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

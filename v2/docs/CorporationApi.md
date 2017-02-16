@@ -28,6 +28,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An Eve corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -65,6 +67,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| A corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

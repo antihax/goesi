@@ -34,8 +34,6 @@ Example
 ```
 
 ## Obeying the Cache Times
-Caching
-
 Caching is not implimented by the client and thus it is required to utilize
 a caching http client. It is highly recommended to utilize a client capable
 of caching the entire cluster of API clients.

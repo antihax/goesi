@@ -27,6 +27,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/antihax/goesi/eveapi"
 	"github.com/antihax/goesi/v1"
 	"github.com/antihax/goesi/v2"
 	"github.com/antihax/goesi/v3"
@@ -34,15 +35,15 @@ import (
 )
 
 const ContextOAuth2 int = 0
-const ContextBasicAuth int = 1
 
 // APIClient manages communication with the EVE Swagger Interface API
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
-	V1 *goesiv1.APIClient
-	V2 *goesiv2.APIClient
-	V3 *goesiv3.APIClient
-	V4 *goesiv4.APIClient
+	V1     *goesiv1.APIClient
+	V2     *goesiv2.APIClient
+	V3     *goesiv3.APIClient
+	V4     *goesiv4.APIClient
+	EVEAPI *eveapi.EVEAPIClient
 }
 
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
@@ -58,6 +59,7 @@ func NewAPIClient(httpClient *http.Client, userAgent string) *APIClient {
 	c.V2 = goesiv2.NewAPIClient(httpClient, userAgent)
 	c.V3 = goesiv3.NewAPIClient(httpClient, userAgent)
 	c.V4 = goesiv4.NewAPIClient(httpClient, userAgent)
+	c.EVEAPI = eveapi.NewEVEAPIClient(httpClient, userAgent)
 
 	return c
 }

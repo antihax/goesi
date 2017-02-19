@@ -57,7 +57,6 @@ type APIClient struct {
 	basePath string 	// 
 
 	 // API Services
-	AllianceApi	*AllianceApiService
 	CalendarApi	*CalendarApiService
 	CharacterApi	*CharacterApiService
 	ClonesApi	*ClonesApiService
@@ -66,7 +65,6 @@ type APIClient struct {
 	SearchApi	*SearchApiService
 	SkillsApi	*SkillsApiService
 	UniverseApi	*UniverseApiService
-	UserInterfaceApi	*UserInterfaceApiService
 }
 
 type service struct {
@@ -87,7 +85,6 @@ func NewAPIClient(httpClient *http.Client, userAgent string) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.AllianceApi = (*AllianceApiService)(&c.common)
 	c.CalendarApi = (*CalendarApiService)(&c.common)
 	c.CharacterApi = (*CharacterApiService)(&c.common)
 	c.ClonesApi = (*ClonesApiService)(&c.common)
@@ -96,7 +93,6 @@ func NewAPIClient(httpClient *http.Client, userAgent string) *APIClient {
 	c.SearchApi = (*SearchApiService)(&c.common)
 	c.SkillsApi = (*SkillsApiService)(&c.common)
 	c.UniverseApi = (*UniverseApiService)(&c.common)
-	c.UserInterfaceApi = (*UserInterfaceApiService)(&c.common)
 
 	return c
 }

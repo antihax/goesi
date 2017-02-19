@@ -6,6 +6,7 @@ All URIs are relative to *https://esi.tech.ccp.is/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AllianceApi* | [**GetAlliancesAllianceId**](docs/AllianceApi.md#getalliancesallianceid) | **Get** /alliances/{alliance_id}/ | Get alliance information
 *CalendarApi* | [**GetCharactersCharacterIdCalendarEventId**](docs/CalendarApi.md#getcharacterscharacteridcalendareventid) | **Get** /characters/{character_id}/calendar/{event_id}/ | Get an event
 *CalendarApi* | [**PutCharactersCharacterIdCalendarEventId**](docs/CalendarApi.md#putcharacterscharacteridcalendareventid) | **Put** /characters/{character_id}/calendar/{event_id}/ | Respond to an event
 *CharacterApi* | [**GetCharactersCharacterIdPortrait**](docs/CharacterApi.md#getcharacterscharacteridportrait) | **Get** /characters/{character_id}/portrait/ | Get character portraits
@@ -22,10 +23,14 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /universe/systems/{system_id}/ | Get solar system information
 *UniverseApi* | [**GetUniverseTypesTypeId**](docs/UniverseApi.md#getuniversetypestypeid) | **Get** /universe/types/{type_id}/ | Get type information
 *UniverseApi* | [**PostUniverseNames**](docs/UniverseApi.md#postuniversenames) | **Post** /universe/names/ | Get names and categories for a set of ID&#39;s
+*UserInterfaceApi* | [**PostUiAutopilotWaypoint**](docs/UserInterfaceApi.md#postuiautopilotwaypoint) | **Post** /ui/autopilot/waypoint/ | Set Autopilot Waypoint
 
 
 ## Documentation For Models
 
+ - [GetAlliancesAllianceIdInternalServerError](docs/GetAlliancesAllianceIdInternalServerError.md)
+ - [GetAlliancesAllianceIdNotFound](docs/GetAlliancesAllianceIdNotFound.md)
+ - [GetAlliancesAllianceIdOk](docs/GetAlliancesAllianceIdOk.md)
  - [GetCharactersCharacterIdCalendarEventIdForbidden](docs/GetCharactersCharacterIdCalendarEventIdForbidden.md)
  - [GetCharactersCharacterIdCalendarEventIdInternalServerError](docs/GetCharactersCharacterIdCalendarEventIdInternalServerError.md)
  - [GetCharactersCharacterIdCalendarEventIdOk](docs/GetCharactersCharacterIdCalendarEventIdOk.md)
@@ -74,6 +79,8 @@ Class | Method | HTTP request | Description
  - [PostCharactersCharacterIdMailLabelsForbidden](docs/PostCharactersCharacterIdMailLabelsForbidden.md)
  - [PostCharactersCharacterIdMailLabelsInternalServerError](docs/PostCharactersCharacterIdMailLabelsInternalServerError.md)
  - [PostCharactersCharacterIdMailLabelsLabel](docs/PostCharactersCharacterIdMailLabelsLabel.md)
+ - [PostUiAutopilotWaypointForbidden](docs/PostUiAutopilotWaypointForbidden.md)
+ - [PostUiAutopilotWaypointInternalServerError](docs/PostUiAutopilotWaypointInternalServerError.md)
  - [PostUniverseNames200Ok](docs/PostUniverseNames200Ok.md)
  - [PostUniverseNamesInternalServerError](docs/PostUniverseNamesInternalServerError.md)
  - [PostUniverseNamesNotFound](docs/PostUniverseNamesNotFound.md)
@@ -99,6 +106,7 @@ Class | Method | HTTP request | Description
  - **esi-search.search_structures.v1**: EVE SSO scope esi-search.search_structures.v1
  - **esi-skills.read_skillqueue.v1**: EVE SSO scope esi-skills.read_skillqueue.v1
  - **esi-skills.read_skills.v1**: EVE SSO scope esi-skills.read_skills.v1
+ - **esi-ui.write_waypoint.v1**: EVE SSO scope esi-ui.write_waypoint.v1
 
 Example:
 ```

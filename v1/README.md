@@ -28,7 +28,6 @@ Class | Method | HTTP request | Description
 *CorporationApi* | [**GetCorporationsCorporationIdAlliancehistory**](docs/CorporationApi.md#getcorporationscorporationidalliancehistory) | **Get** /corporations/{corporation_id}/alliancehistory/ | Get alliance history
 *CorporationApi* | [**GetCorporationsCorporationIdIcons**](docs/CorporationApi.md#getcorporationscorporationidicons) | **Get** /corporations/{corporation_id}/icons/ | Get corporation icon
 *CorporationApi* | [**GetCorporationsCorporationIdRoles**](docs/CorporationApi.md#getcorporationscorporationidroles) | **Get** /corporations/{corporation_id}/roles/ | Get corporation member roles
-*CorporationApi* | [**GetCorporationsCorporationIdStructures**](docs/CorporationApi.md#getcorporationscorporationidstructures) | **Get** /corporations/{corporation_id}/structures/ | Get corporation structures
 *CorporationApi* | [**GetCorporationsNames**](docs/CorporationApi.md#getcorporationsnames) | **Get** /corporations/names/ | Get corporation names
 *CorporationApi* | [**GetCorporationsNpccorps**](docs/CorporationApi.md#getcorporationsnpccorps) | **Get** /corporations/npccorps/ | Get npc corporations
 *FittingsApi* | [**DeleteCharactersCharacterIdFittingsFittingId**](docs/FittingsApi.md#deletecharacterscharacteridfittingsfittingid) | **Delete** /characters/{character_id}/fittings/{fitting_id}/ | Delete fitting
@@ -55,6 +54,8 @@ Class | Method | HTTP request | Description
 *KillmailsApi* | [**GetKillmailsKillmailIdKillmailHash**](docs/KillmailsApi.md#getkillmailskillmailidkillmailhash) | **Get** /killmails/{killmail_id}/{killmail_hash}/ | Get a single killmail
 *LocationApi* | [**GetCharactersCharacterIdLocation**](docs/LocationApi.md#getcharacterscharacteridlocation) | **Get** /characters/{character_id}/location/ | Get character location
 *LocationApi* | [**GetCharactersCharacterIdShip**](docs/LocationApi.md#getcharacterscharacteridship) | **Get** /characters/{character_id}/ship/ | Get current ship
+*LoyaltyApi* | [**GetCharactersCharacterIdLoyaltyPoints**](docs/LoyaltyApi.md#getcharacterscharacteridloyaltypoints) | **Get** /characters/{character_id}/loyalty/points/ | Get loyalty points
+*LoyaltyApi* | [**GetLoyaltyStoresCorporationIdOffers**](docs/LoyaltyApi.md#getloyaltystorescorporationidoffers) | **Get** /loyalty/stores/{corporation_id}/offers/ | List loyalty store offers
 *MailApi* | [**DeleteCharactersCharacterIdMailLabelsLabelId**](docs/MailApi.md#deletecharacterscharacteridmaillabelslabelid) | **Delete** /characters/{character_id}/mail/labels/{label_id}/ | Delete a mail label
 *MailApi* | [**DeleteCharactersCharacterIdMailMailId**](docs/MailApi.md#deletecharacterscharacteridmailmailid) | **Delete** /characters/{character_id}/mail/{mail_id}/ | Delete a mail
 *MailApi* | [**GetCharactersCharacterIdMail**](docs/MailApi.md#getcharacterscharacteridmail) | **Get** /characters/{character_id}/mail/ | Return mail headers
@@ -173,6 +174,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdLocationForbidden](docs/GetCharactersCharacterIdLocationForbidden.md)
  - [GetCharactersCharacterIdLocationInternalServerError](docs/GetCharactersCharacterIdLocationInternalServerError.md)
  - [GetCharactersCharacterIdLocationOk](docs/GetCharactersCharacterIdLocationOk.md)
+ - [GetCharactersCharacterIdLoyaltyPoints200Ok](docs/GetCharactersCharacterIdLoyaltyPoints200Ok.md)
+ - [GetCharactersCharacterIdLoyaltyPointsForbidden](docs/GetCharactersCharacterIdLoyaltyPointsForbidden.md)
+ - [GetCharactersCharacterIdLoyaltyPointsInternalServerError](docs/GetCharactersCharacterIdLoyaltyPointsInternalServerError.md)
  - [GetCharactersCharacterIdMail200Ok](docs/GetCharactersCharacterIdMail200Ok.md)
  - [GetCharactersCharacterIdMailForbidden](docs/GetCharactersCharacterIdMailForbidden.md)
  - [GetCharactersCharacterIdMailInternalServerError](docs/GetCharactersCharacterIdMailInternalServerError.md)
@@ -226,9 +230,6 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdRoles200Ok](docs/GetCorporationsCorporationIdRoles200Ok.md)
  - [GetCorporationsCorporationIdRolesForbidden](docs/GetCorporationsCorporationIdRolesForbidden.md)
  - [GetCorporationsCorporationIdRolesInternalServerError](docs/GetCorporationsCorporationIdRolesInternalServerError.md)
- - [GetCorporationsCorporationIdStructures200Ok](docs/GetCorporationsCorporationIdStructures200Ok.md)
- - [GetCorporationsCorporationIdStructuresForbidden](docs/GetCorporationsCorporationIdStructuresForbidden.md)
- - [GetCorporationsCorporationIdStructuresInternalServerError](docs/GetCorporationsCorporationIdStructuresInternalServerError.md)
  - [GetCorporationsNames200Ok](docs/GetCorporationsNames200Ok.md)
  - [GetCorporationsNamesInternalServerError](docs/GetCorporationsNamesInternalServerError.md)
  - [GetCorporationsNpccorpsInternalServerError](docs/GetCorporationsNpccorpsInternalServerError.md)
@@ -263,6 +264,9 @@ Class | Method | HTTP request | Description
  - [GetKillmailsKillmailIdKillmailHashPosition](docs/GetKillmailsKillmailIdKillmailHashPosition.md)
  - [GetKillmailsKillmailIdKillmailHashUnprocessableEntity](docs/GetKillmailsKillmailIdKillmailHashUnprocessableEntity.md)
  - [GetKillmailsKillmailIdKillmailHashVictim](docs/GetKillmailsKillmailIdKillmailHashVictim.md)
+ - [GetLoyaltyStoresCorporationIdOffers200Ok](docs/GetLoyaltyStoresCorporationIdOffers200Ok.md)
+ - [GetLoyaltyStoresCorporationIdOffersInternalServerError](docs/GetLoyaltyStoresCorporationIdOffersInternalServerError.md)
+ - [GetLoyaltyStoresCorporationIdOffersRequiredItem](docs/GetLoyaltyStoresCorporationIdOffersRequiredItem.md)
  - [GetMarketsPrices200Ok](docs/GetMarketsPrices200Ok.md)
  - [GetMarketsPricesInternalServerError](docs/GetMarketsPricesInternalServerError.md)
  - [GetMarketsRegionIdHistory200Ok](docs/GetMarketsRegionIdHistory200Ok.md)
@@ -426,10 +430,10 @@ Class | Method | HTTP request | Description
  - **esi-bookmarks.read_character_bookmarks.v1**: EVE SSO scope esi-bookmarks.read_character_bookmarks.v1
  - **esi-calendar.read_calendar_events.v1**: EVE SSO scope esi-calendar.read_calendar_events.v1
  - **esi-characters.read_contacts.v1**: EVE SSO scope esi-characters.read_contacts.v1
+ - **esi-characters.read_loyalty.v1**: EVE SSO scope esi-characters.read_loyalty.v1
  - **esi-characters.write_contacts.v1**: EVE SSO scope esi-characters.write_contacts.v1
  - **esi-clones.read_clones.v1**: EVE SSO scope esi-clones.read_clones.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
- - **esi-corporations.read_structures.v1**: EVE SSO scope esi-corporations.read_structures.v1
  - **esi-fittings.read_fittings.v1**: EVE SSO scope esi-fittings.read_fittings.v1
  - **esi-fittings.write_fittings.v1**: EVE SSO scope esi-fittings.write_fittings.v1
  - **esi-fleets.read_fleet.v1**: EVE SSO scope esi-fleets.read_fleet.v1

@@ -1,4 +1,4 @@
-# GetCorporationsCorporationIdStructuresInternalServerError
+# GetCharactersCharacterIdLoyaltyPointsInternalServerError
 
 ## Properties
 Name | Type | Description | Notes

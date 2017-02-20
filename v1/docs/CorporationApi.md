@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**GetCorporationsCorporationIdAlliancehistory**](CorporationApi.md#GetCorporationsCorporationIdAlliancehistory) | **Get** /corporations/{corporation_id}/alliancehistory/ | Get alliance history
 [**GetCorporationsCorporationIdIcons**](CorporationApi.md#GetCorporationsCorporationIdIcons) | **Get** /corporations/{corporation_id}/icons/ | Get corporation icon
 [**GetCorporationsCorporationIdRoles**](CorporationApi.md#GetCorporationsCorporationIdRoles) | **Get** /corporations/{corporation_id}/roles/ | Get corporation member roles
-[**GetCorporationsCorporationIdStructures**](CorporationApi.md#GetCorporationsCorporationIdStructures) | **Get** /corporations/{corporation_id}/structures/ | Get corporation structures
 [**GetCorporationsNames**](CorporationApi.md#GetCorporationsNames) | **Get** /corporations/names/ | Get corporation names
 [**GetCorporationsNpccorps**](CorporationApi.md#GetCorporationsNpccorps) | **Get** /corporations/npccorps/ | Get npc corporations
 
@@ -155,48 +154,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]GetCorporationsCorporationIdRoles200Ok**](get_corporations_corporation_id_roles_200_ok.md)
-
-### Authorization
-
-[evesso](../README.md#evesso)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetCorporationsCorporationIdStructures**
-> []GetCorporationsCorporationIdStructures200Ok GetCorporationsCorporationIdStructures(ctx, corporationId, optional)
-Get corporation structures
-
-Get a list of corporation structures  ---  Alternate route: `/legacy/corporations/{corporation_id}/structures/`  Alternate route: `/latest/corporations/{corporation_id}/structures/`  Alternate route: `/dev/corporations/{corporation_id}/structures/`   ---  This route is cached for up to 3600 seconds
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **corporationId** | **int32**| A corporation ID | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **corporationId** | **int32**| A corporation ID | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **language** | **string**| Language to use in the response | [default to en-us]
- **page** | **int32**| Which page to query, 250 structures per page | 
- **token** | **string**| Access token to use, if preferred over a header | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
-
-### Return type
-
-[**[]GetCorporationsCorporationIdStructures200Ok**](get_corporations_corporation_id_structures_200_ok.md)
 
 ### Authorization
 

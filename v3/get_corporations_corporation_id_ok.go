@@ -47,6 +47,9 @@ type GetCorporationsCorporationIdOk struct {
 	/* creator_id integer */
 	CreatorId int32 `json:"creator_id,omitempty"`
 
+	/* faction string */
+	Faction string `json:"faction,omitempty"`
+
 	/* member_count integer */
 	MemberCount int32 `json:"member_count,omitempty"`
 

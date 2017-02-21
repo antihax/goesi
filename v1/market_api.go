@@ -48,7 +48,7 @@ type MarketApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetMarketsPrices200Ok*/
-func (a MarketApiService) GetMarketsPrices(localVarOptionals map[string]interface{}) ([]GetMarketsPrices200Ok,  *http.Response, error) {
+func (a *MarketApiService) GetMarketsPrices(localVarOptionals map[string]interface{}) ([]GetMarketsPrices200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -137,7 +137,7 @@ func (a MarketApiService) GetMarketsPrices(localVarOptionals map[string]interfac
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetMarketsRegionIdHistory200Ok*/
-func (a MarketApiService) GetMarketsRegionIdHistory(regionId int32, typeId int32, localVarOptionals map[string]interface{}) ([]GetMarketsRegionIdHistory200Ok,  *http.Response, error) {
+func (a *MarketApiService) GetMarketsRegionIdHistory(regionId int32, typeId int32, localVarOptionals map[string]interface{}) ([]GetMarketsRegionIdHistory200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -230,7 +230,7 @@ func (a MarketApiService) GetMarketsRegionIdHistory(regionId int32, typeId int32
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetMarketsRegionIdOrders200Ok*/
-func (a MarketApiService) GetMarketsRegionIdOrders(orderType string, regionId int32, localVarOptionals map[string]interface{}) ([]GetMarketsRegionIdOrders200Ok,  *http.Response, error) {
+func (a *MarketApiService) GetMarketsRegionIdOrders(orderType string, regionId int32, localVarOptionals map[string]interface{}) ([]GetMarketsRegionIdOrders200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -334,7 +334,7 @@ func (a MarketApiService) GetMarketsRegionIdOrders(orderType string, regionId in
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetMarketsStructuresStructureId200Ok*/
-func (a MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, structureId int64, localVarOptionals map[string]interface{}) ([]GetMarketsStructuresStructureId200Ok,  *http.Response, error) {
+func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, structureId int64, localVarOptionals map[string]interface{}) ([]GetMarketsStructuresStructureId200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

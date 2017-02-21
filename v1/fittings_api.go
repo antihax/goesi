@@ -51,7 +51,7 @@ type FittingsApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a FittingsApiService) DeleteCharactersCharacterIdFittingsFittingId(ctx context.Context, characterId int32, fittingId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *FittingsApiService) DeleteCharactersCharacterIdFittingsFittingId(ctx context.Context, characterId int32, fittingId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody interface{}
@@ -142,7 +142,7 @@ func (a FittingsApiService) DeleteCharactersCharacterIdFittingsFittingId(ctx con
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdFittings200Ok*/
-func (a FittingsApiService) GetCharactersCharacterIdFittings(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdFittings200Ok,  *http.Response, error) {
+func (a *FittingsApiService) GetCharactersCharacterIdFittings(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdFittings200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -239,7 +239,7 @@ func (a FittingsApiService) GetCharactersCharacterIdFittings(ctx context.Context
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return PostCharactersCharacterIdFittingsCreated*/
-func (a FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (PostCharactersCharacterIdFittingsCreated,  *http.Response, error) {
+func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (PostCharactersCharacterIdFittingsCreated,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}

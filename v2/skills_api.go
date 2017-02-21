@@ -50,7 +50,7 @@ type SkillsApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdSkillqueue200Ok*/
-func (a SkillsApiService) GetCharactersCharacterIdSkillqueue(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdSkillqueue200Ok,  *http.Response, error) {
+func (a *SkillsApiService) GetCharactersCharacterIdSkillqueue(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdSkillqueue200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -146,7 +146,7 @@ func (a SkillsApiService) GetCharactersCharacterIdSkillqueue(ctx context.Context
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdSkills200Ok*/
-func (a SkillsApiService) GetCharactersCharacterIdSkills(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdSkills200Ok,  *http.Response, error) {
+func (a *SkillsApiService) GetCharactersCharacterIdSkills(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdSkills200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

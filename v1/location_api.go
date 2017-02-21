@@ -50,7 +50,7 @@ type LocationApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetCharactersCharacterIdLocationOk*/
-func (a LocationApiService) GetCharactersCharacterIdLocation(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdLocationOk,  *http.Response, error) {
+func (a *LocationApiService) GetCharactersCharacterIdLocation(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdLocationOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -146,7 +146,7 @@ func (a LocationApiService) GetCharactersCharacterIdLocation(ctx context.Context
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetCharactersCharacterIdShipOk*/
-func (a LocationApiService) GetCharactersCharacterIdShip(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdShipOk,  *http.Response, error) {
+func (a *LocationApiService) GetCharactersCharacterIdShip(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdShipOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

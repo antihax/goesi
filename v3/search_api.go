@@ -54,7 +54,7 @@ type SearchApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetCharactersCharacterIdSearchOk*/
-func (a SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, categories []string, characterId int32, search string, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdSearchOk,  *http.Response, error) {
+func (a *SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, categories []string, characterId int32, search string, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdSearchOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

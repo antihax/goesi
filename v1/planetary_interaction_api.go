@@ -50,7 +50,7 @@ type PlanetaryInteractionApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdPlanets200Ok*/
-func (a PlanetaryInteractionApiService) GetCharactersCharacterIdPlanets(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdPlanets200Ok,  *http.Response, error) {
+func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanets(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdPlanets200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -147,7 +147,7 @@ func (a PlanetaryInteractionApiService) GetCharactersCharacterIdPlanets(ctx cont
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetCharactersCharacterIdPlanetsPlanetIdOk*/
-func (a PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId(ctx context.Context, characterId int32, planetId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdPlanetsPlanetIdOk,  *http.Response, error) {
+func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId(ctx context.Context, characterId int32, planetId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdPlanetsPlanetIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -243,7 +243,7 @@ func (a PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId(
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetUniverseSchematicsSchematicIdOk*/
-func (a PlanetaryInteractionApiService) GetUniverseSchematicsSchematicId(schematicId int32, localVarOptionals map[string]interface{}) (GetUniverseSchematicsSchematicIdOk,  *http.Response, error) {
+func (a *PlanetaryInteractionApiService) GetUniverseSchematicsSchematicId(schematicId int32, localVarOptionals map[string]interface{}) (GetUniverseSchematicsSchematicIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

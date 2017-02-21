@@ -47,7 +47,7 @@ type IncursionsApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetIncursions200Ok*/
-func (a IncursionsApiService) GetIncursions(localVarOptionals map[string]interface{}) ([]GetIncursions200Ok,  *http.Response, error) {
+func (a *IncursionsApiService) GetIncursions(localVarOptionals map[string]interface{}) ([]GetIncursions200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

@@ -50,7 +50,7 @@ type UserInterfaceApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, addToBeginning bool, clearOtherWaypoints bool, destinationId int64, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, addToBeginning bool, clearOtherWaypoints bool, destinationId int64, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}

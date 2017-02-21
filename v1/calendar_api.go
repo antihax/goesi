@@ -51,7 +51,7 @@ type CalendarApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdCalendar200Ok*/
-func (a CalendarApiService) GetCharactersCharacterIdCalendar(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdCalendar200Ok,  *http.Response, error) {
+func (a *CalendarApiService) GetCharactersCharacterIdCalendar(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdCalendar200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

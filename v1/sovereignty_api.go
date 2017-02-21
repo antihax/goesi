@@ -47,7 +47,7 @@ type SovereigntyApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetSovereigntyCampaigns200Ok*/
-func (a SovereigntyApiService) GetSovereigntyCampaigns(localVarOptionals map[string]interface{}) ([]GetSovereigntyCampaigns200Ok,  *http.Response, error) {
+func (a *SovereigntyApiService) GetSovereigntyCampaigns(localVarOptionals map[string]interface{}) ([]GetSovereigntyCampaigns200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -134,7 +134,7 @@ func (a SovereigntyApiService) GetSovereigntyCampaigns(localVarOptionals map[str
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetSovereigntyStructures200Ok*/
-func (a SovereigntyApiService) GetSovereigntyStructures(localVarOptionals map[string]interface{}) ([]GetSovereigntyStructures200Ok,  *http.Response, error) {
+func (a *SovereigntyApiService) GetSovereigntyStructures(localVarOptionals map[string]interface{}) ([]GetSovereigntyStructures200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

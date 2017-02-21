@@ -50,7 +50,7 @@ type ClonesApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdClones200Ok*/
-func (a ClonesApiService) GetCharactersCharacterIdClones(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdClones200Ok,  *http.Response, error) {
+func (a *ClonesApiService) GetCharactersCharacterIdClones(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdClones200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

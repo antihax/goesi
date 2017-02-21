@@ -47,7 +47,7 @@ type IndustryApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetIndustryFacilities200Ok*/
-func (a IndustryApiService) GetIndustryFacilities(localVarOptionals map[string]interface{}) ([]GetIndustryFacilities200Ok,  *http.Response, error) {
+func (a *IndustryApiService) GetIndustryFacilities(localVarOptionals map[string]interface{}) ([]GetIndustryFacilities200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -134,7 +134,7 @@ func (a IndustryApiService) GetIndustryFacilities(localVarOptionals map[string]i
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetIndustrySystems200Ok*/
-func (a IndustryApiService) GetIndustrySystems(localVarOptionals map[string]interface{}) ([]GetIndustrySystems200Ok,  *http.Response, error) {
+func (a *IndustryApiService) GetIndustrySystems(localVarOptionals map[string]interface{}) ([]GetIndustrySystems200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

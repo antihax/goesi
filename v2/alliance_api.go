@@ -49,7 +49,7 @@ type AllianceApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetAlliancesAllianceIdOk*/
-func (a AllianceApiService) GetAlliancesAllianceId(allianceId int32, localVarOptionals map[string]interface{}) (GetAlliancesAllianceIdOk,  *http.Response, error) {
+func (a *AllianceApiService) GetAlliancesAllianceId(allianceId int32, localVarOptionals map[string]interface{}) (GetAlliancesAllianceIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

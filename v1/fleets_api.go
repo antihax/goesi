@@ -51,7 +51,7 @@ type FleetsApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a FleetsApiService) DeleteFleetsFleetIdMembersMemberId(ctx context.Context, fleetId int64, memberId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *FleetsApiService) DeleteFleetsFleetIdMembersMemberId(ctx context.Context, fleetId int64, memberId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody interface{}
@@ -143,7 +143,7 @@ func (a FleetsApiService) DeleteFleetsFleetIdMembersMemberId(ctx context.Context
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a FleetsApiService) DeleteFleetsFleetIdSquadsSquadId(ctx context.Context, fleetId int64, squadId int64, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *FleetsApiService) DeleteFleetsFleetIdSquadsSquadId(ctx context.Context, fleetId int64, squadId int64, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody interface{}
@@ -235,7 +235,7 @@ func (a FleetsApiService) DeleteFleetsFleetIdSquadsSquadId(ctx context.Context, 
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a FleetsApiService) DeleteFleetsFleetIdWingsWingId(ctx context.Context, fleetId int64, wingId int64, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *FleetsApiService) DeleteFleetsFleetIdWingsWingId(ctx context.Context, fleetId int64, wingId int64, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody interface{}
@@ -326,7 +326,7 @@ func (a FleetsApiService) DeleteFleetsFleetIdWingsWingId(ctx context.Context, fl
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetFleetsFleetIdOk*/
-func (a FleetsApiService) GetFleetsFleetId(ctx context.Context, fleetId int64, localVarOptionals map[string]interface{}) (GetFleetsFleetIdOk,  *http.Response, error) {
+func (a *FleetsApiService) GetFleetsFleetId(ctx context.Context, fleetId int64, localVarOptionals map[string]interface{}) (GetFleetsFleetIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -423,7 +423,7 @@ func (a FleetsApiService) GetFleetsFleetId(ctx context.Context, fleetId int64, l
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetFleetsFleetIdMembers200Ok*/
-func (a FleetsApiService) GetFleetsFleetIdMembers(ctx context.Context, fleetId int64, localVarOptionals map[string]interface{}) ([]GetFleetsFleetIdMembers200Ok,  *http.Response, error) {
+func (a *FleetsApiService) GetFleetsFleetIdMembers(ctx context.Context, fleetId int64, localVarOptionals map[string]interface{}) ([]GetFleetsFleetIdMembers200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -526,7 +526,7 @@ func (a FleetsApiService) GetFleetsFleetIdMembers(ctx context.Context, fleetId i
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetFleetsFleetIdWings200Ok*/
-func (a FleetsApiService) GetFleetsFleetIdWings(ctx context.Context, fleetId int64, localVarOptionals map[string]interface{}) ([]GetFleetsFleetIdWings200Ok,  *http.Response, error) {
+func (a *FleetsApiService) GetFleetsFleetIdWings(ctx context.Context, fleetId int64, localVarOptionals map[string]interface{}) ([]GetFleetsFleetIdWings200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -629,7 +629,7 @@ func (a FleetsApiService) GetFleetsFleetIdWings(ctx context.Context, fleetId int
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a FleetsApiService) PostFleetsFleetIdMembers(ctx context.Context, fleetId int64, invitation PostFleetsFleetIdMembersInvitation, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *FleetsApiService) PostFleetsFleetIdMembers(ctx context.Context, fleetId int64, invitation PostFleetsFleetIdMembersInvitation, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -721,7 +721,7 @@ func (a FleetsApiService) PostFleetsFleetIdMembers(ctx context.Context, fleetId 
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return PostFleetsFleetIdWingsCreated*/
-func (a FleetsApiService) PostFleetsFleetIdWings(ctx context.Context, fleetId int64, localVarOptionals map[string]interface{}) (PostFleetsFleetIdWingsCreated,  *http.Response, error) {
+func (a *FleetsApiService) PostFleetsFleetIdWings(ctx context.Context, fleetId int64, localVarOptionals map[string]interface{}) (PostFleetsFleetIdWingsCreated,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -818,7 +818,7 @@ func (a FleetsApiService) PostFleetsFleetIdWings(ctx context.Context, fleetId in
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return PostFleetsFleetIdWingsWingIdSquadsCreated*/
-func (a FleetsApiService) PostFleetsFleetIdWingsWingIdSquads(ctx context.Context, fleetId int64, wingId int64, localVarOptionals map[string]interface{}) (PostFleetsFleetIdWingsWingIdSquadsCreated,  *http.Response, error) {
+func (a *FleetsApiService) PostFleetsFleetIdWingsWingIdSquads(ctx context.Context, fleetId int64, wingId int64, localVarOptionals map[string]interface{}) (PostFleetsFleetIdWingsWingIdSquadsCreated,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -916,7 +916,7 @@ func (a FleetsApiService) PostFleetsFleetIdWingsWingIdSquads(ctx context.Context
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a FleetsApiService) PutFleetsFleetId(ctx context.Context, fleetId int64, newSettings PutFleetsFleetIdNewSettings, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *FleetsApiService) PutFleetsFleetId(ctx context.Context, fleetId int64, newSettings PutFleetsFleetIdNewSettings, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody interface{}
@@ -1010,7 +1010,7 @@ func (a FleetsApiService) PutFleetsFleetId(ctx context.Context, fleetId int64, n
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a FleetsApiService) PutFleetsFleetIdMembersMemberId(ctx context.Context, fleetId int64, memberId int32, movement PutFleetsFleetIdMembersMemberIdMovement, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *FleetsApiService) PutFleetsFleetIdMembersMemberId(ctx context.Context, fleetId int64, memberId int32, movement PutFleetsFleetIdMembersMemberIdMovement, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody interface{}
@@ -1105,7 +1105,7 @@ func (a FleetsApiService) PutFleetsFleetIdMembersMemberId(ctx context.Context, f
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a FleetsApiService) PutFleetsFleetIdSquadsSquadId(ctx context.Context, fleetId int64, naming PutFleetsFleetIdSquadsSquadIdNaming, squadId int64, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *FleetsApiService) PutFleetsFleetIdSquadsSquadId(ctx context.Context, fleetId int64, naming PutFleetsFleetIdSquadsSquadIdNaming, squadId int64, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody interface{}
@@ -1200,7 +1200,7 @@ func (a FleetsApiService) PutFleetsFleetIdSquadsSquadId(ctx context.Context, fle
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a FleetsApiService) PutFleetsFleetIdWingsWingId(ctx context.Context, fleetId int64, naming PutFleetsFleetIdWingsWingIdNaming, wingId int64, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *FleetsApiService) PutFleetsFleetIdWingsWingId(ctx context.Context, fleetId int64, naming PutFleetsFleetIdWingsWingIdNaming, wingId int64, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody interface{}

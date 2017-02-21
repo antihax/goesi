@@ -49,7 +49,7 @@ type UniverseApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetUniverseStationsStationIdOk*/
-func (a UniverseApiService) GetUniverseStationsStationId(stationId int32, localVarOptionals map[string]interface{}) (GetUniverseStationsStationIdOk,  *http.Response, error) {
+func (a *UniverseApiService) GetUniverseStationsStationId(stationId int32, localVarOptionals map[string]interface{}) (GetUniverseStationsStationIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -139,7 +139,7 @@ func (a UniverseApiService) GetUniverseStationsStationId(stationId int32, localV
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetUniverseSystemsSystemIdOk*/
-func (a UniverseApiService) GetUniverseSystemsSystemId(systemId int32, localVarOptionals map[string]interface{}) (GetUniverseSystemsSystemIdOk,  *http.Response, error) {
+func (a *UniverseApiService) GetUniverseSystemsSystemId(systemId int32, localVarOptionals map[string]interface{}) (GetUniverseSystemsSystemIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -235,7 +235,7 @@ func (a UniverseApiService) GetUniverseSystemsSystemId(systemId int32, localVarO
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetUniverseTypesTypeIdOk*/
-func (a UniverseApiService) GetUniverseTypesTypeId(typeId int32, localVarOptionals map[string]interface{}) (GetUniverseTypesTypeIdOk,  *http.Response, error) {
+func (a *UniverseApiService) GetUniverseTypesTypeId(typeId int32, localVarOptionals map[string]interface{}) (GetUniverseTypesTypeIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -330,7 +330,7 @@ func (a UniverseApiService) GetUniverseTypesTypeId(typeId int32, localVarOptiona
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []PostUniverseNames200Ok*/
-func (a UniverseApiService) PostUniverseNames(ids []int32, localVarOptionals map[string]interface{}) ([]PostUniverseNames200Ok,  *http.Response, error) {
+func (a *UniverseApiService) PostUniverseNames(ids []int32, localVarOptionals map[string]interface{}) ([]PostUniverseNames200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}

@@ -53,7 +53,7 @@ type SearchApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []int64*/
-func (a SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, categories []string, characterId int32, search string, localVarOptionals map[string]interface{}) ([]int64,  *http.Response, error) {
+func (a *SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, categories []string, characterId int32, search string, localVarOptionals map[string]interface{}) ([]int64,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -165,7 +165,7 @@ func (a SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, ca
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetSearchOk*/
-func (a SearchApiService) GetSearch(categories []string, search string, localVarOptionals map[string]interface{}) (GetSearchOk,  *http.Response, error) {
+func (a *SearchApiService) GetSearch(categories []string, search string, localVarOptionals map[string]interface{}) (GetSearchOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

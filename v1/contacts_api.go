@@ -51,7 +51,7 @@ type ContactsApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody interface{}
@@ -144,7 +144,7 @@ func (a ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Cont
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdContacts200Ok*/
-func (a ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdContacts200Ok,  *http.Response, error) {
+func (a *ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdContacts200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -246,7 +246,7 @@ func (a ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Context
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdContactsLabels200Ok*/
-func (a ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdContactsLabels200Ok,  *http.Response, error) {
+func (a *ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdContactsLabels200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -346,7 +346,7 @@ func (a ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.C
      @param "watched" (bool) Whether the new contact should be watched, note this is only effective on characters
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []int32*/
-func (a ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, standing float32, localVarOptionals map[string]interface{}) ([]int32,  *http.Response, error) {
+func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, standing float32, localVarOptionals map[string]interface{}) ([]int32,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -467,7 +467,7 @@ func (a ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Contex
      @param "watched" (bool) Whether the contact should be watched, note this is only effective on characters
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, standing float32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, standing float32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody interface{}

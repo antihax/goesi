@@ -50,7 +50,7 @@ type WalletApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdWallets200Ok*/
-func (a WalletApiService) GetCharactersCharacterIdWallets(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdWallets200Ok,  *http.Response, error) {
+func (a *WalletApiService) GetCharactersCharacterIdWallets(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdWallets200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

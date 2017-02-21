@@ -48,7 +48,7 @@ type InsuranceApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetInsurancePrices200Ok*/
-func (a InsuranceApiService) GetInsurancePrices(localVarOptionals map[string]interface{}) ([]GetInsurancePrices200Ok,  *http.Response, error) {
+func (a *InsuranceApiService) GetInsurancePrices(localVarOptionals map[string]interface{}) ([]GetInsurancePrices200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

@@ -50,7 +50,7 @@ type MailApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetCharactersCharacterIdMailLabelsOk*/
-func (a MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdMailLabelsOk,  *http.Response, error) {
+func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdMailLabelsOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

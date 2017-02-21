@@ -50,7 +50,7 @@ type MailApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdMailLabels200Ok*/
-func (a MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdMailLabels200Ok,  *http.Response, error) {
+func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdMailLabels200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -147,7 +147,7 @@ func (a MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context, 
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return int64*/
-func (a MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (int64,  *http.Response, error) {
+func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (int64,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}

@@ -51,7 +51,7 @@ type CalendarApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetCharactersCharacterIdCalendarEventIdOk*/
-func (a CalendarApiService) GetCharactersCharacterIdCalendarEventId(ctx context.Context, characterId int32, eventId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdCalendarEventIdOk,  *http.Response, error) {
+func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventId(ctx context.Context, characterId int32, eventId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdCalendarEventIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -150,7 +150,7 @@ func (a CalendarApiService) GetCharactersCharacterIdCalendarEventId(ctx context.
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a CalendarApiService) PutCharactersCharacterIdCalendarEventId(ctx context.Context, characterId int32, eventId int32, response string, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *CalendarApiService) PutCharactersCharacterIdCalendarEventId(ctx context.Context, characterId int32, eventId int32, response string, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody interface{}

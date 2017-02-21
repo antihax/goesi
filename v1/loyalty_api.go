@@ -50,7 +50,7 @@ type LoyaltyApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdLoyaltyPoints200Ok*/
-func (a LoyaltyApiService) GetCharactersCharacterIdLoyaltyPoints(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdLoyaltyPoints200Ok,  *http.Response, error) {
+func (a *LoyaltyApiService) GetCharactersCharacterIdLoyaltyPoints(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdLoyaltyPoints200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -145,7 +145,7 @@ func (a LoyaltyApiService) GetCharactersCharacterIdLoyaltyPoints(ctx context.Con
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetLoyaltyStoresCorporationIdOffers200Ok*/
-func (a LoyaltyApiService) GetLoyaltyStoresCorporationIdOffers(corporationId int32, localVarOptionals map[string]interface{}) ([]GetLoyaltyStoresCorporationIdOffers200Ok,  *http.Response, error) {
+func (a *LoyaltyApiService) GetLoyaltyStoresCorporationIdOffers(corporationId int32, localVarOptionals map[string]interface{}) ([]GetLoyaltyStoresCorporationIdOffers200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

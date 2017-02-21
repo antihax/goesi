@@ -50,7 +50,7 @@ type SkillsApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetCharactersCharacterIdSkillsOk*/
-func (a SkillsApiService) GetCharactersCharacterIdSkills(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdSkillsOk,  *http.Response, error) {
+func (a *SkillsApiService) GetCharactersCharacterIdSkills(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdSkillsOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

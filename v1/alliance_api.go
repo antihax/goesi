@@ -48,7 +48,7 @@ type AllianceApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []int32*/
-func (a AllianceApiService) GetAlliances(localVarOptionals map[string]interface{}) ([]int32,  *http.Response, error) {
+func (a *AllianceApiService) GetAlliances(localVarOptionals map[string]interface{}) ([]int32,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -136,7 +136,7 @@ func (a AllianceApiService) GetAlliances(localVarOptionals map[string]interface{
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetAlliancesAllianceIdOk*/
-func (a AllianceApiService) GetAlliancesAllianceId(allianceId int32, localVarOptionals map[string]interface{}) (GetAlliancesAllianceIdOk,  *http.Response, error) {
+func (a *AllianceApiService) GetAlliancesAllianceId(allianceId int32, localVarOptionals map[string]interface{}) (GetAlliancesAllianceIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -225,7 +225,7 @@ func (a AllianceApiService) GetAlliancesAllianceId(allianceId int32, localVarOpt
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []int32*/
-func (a AllianceApiService) GetAlliancesAllianceIdCorporations(allianceId int32, localVarOptionals map[string]interface{}) ([]int32,  *http.Response, error) {
+func (a *AllianceApiService) GetAlliancesAllianceIdCorporations(allianceId int32, localVarOptionals map[string]interface{}) ([]int32,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -314,7 +314,7 @@ func (a AllianceApiService) GetAlliancesAllianceIdCorporations(allianceId int32,
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetAlliancesAllianceIdIconsOk*/
-func (a AllianceApiService) GetAlliancesAllianceIdIcons(allianceId int32, localVarOptionals map[string]interface{}) (GetAlliancesAllianceIdIconsOk,  *http.Response, error) {
+func (a *AllianceApiService) GetAlliancesAllianceIdIcons(allianceId int32, localVarOptionals map[string]interface{}) (GetAlliancesAllianceIdIconsOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -403,7 +403,7 @@ func (a AllianceApiService) GetAlliancesAllianceIdIcons(allianceId int32, localV
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetAlliancesNames200Ok*/
-func (a AllianceApiService) GetAlliancesNames(allianceIds []int64, localVarOptionals map[string]interface{}) ([]GetAlliancesNames200Ok,  *http.Response, error) {
+func (a *AllianceApiService) GetAlliancesNames(allianceIds []int64, localVarOptionals map[string]interface{}) ([]GetAlliancesNames200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

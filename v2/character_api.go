@@ -49,7 +49,7 @@ type CharacterApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetCharactersCharacterIdPortraitOk*/
-func (a CharacterApiService) GetCharactersCharacterIdPortrait(characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdPortraitOk,  *http.Response, error) {
+func (a *CharacterApiService) GetCharactersCharacterIdPortrait(characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdPortraitOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

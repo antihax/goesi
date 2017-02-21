@@ -49,7 +49,7 @@ type CorporationApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetCorporationsCorporationIdOk*/
-func (a CorporationApiService) GetCorporationsCorporationId(corporationId int32, localVarOptionals map[string]interface{}) (GetCorporationsCorporationIdOk,  *http.Response, error) {
+func (a *CorporationApiService) GetCorporationsCorporationId(corporationId int32, localVarOptionals map[string]interface{}) (GetCorporationsCorporationIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -139,7 +139,7 @@ func (a CorporationApiService) GetCorporationsCorporationId(corporationId int32,
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCorporationsCorporationIdMembers200Ok*/
-func (a CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.Context, corporationId int32, localVarOptionals map[string]interface{}) ([]GetCorporationsCorporationIdMembers200Ok,  *http.Response, error) {
+func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.Context, corporationId int32, localVarOptionals map[string]interface{}) ([]GetCorporationsCorporationIdMembers200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

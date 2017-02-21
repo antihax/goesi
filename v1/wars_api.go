@@ -49,7 +49,7 @@ type WarsApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []int32*/
-func (a WarsApiService) GetWars(localVarOptionals map[string]interface{}) ([]int32,  *http.Response, error) {
+func (a *WarsApiService) GetWars(localVarOptionals map[string]interface{}) ([]int32,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -143,7 +143,7 @@ func (a WarsApiService) GetWars(localVarOptionals map[string]interface{}) ([]int
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetWarsWarIdOk*/
-func (a WarsApiService) GetWarsWarId(warId int32, localVarOptionals map[string]interface{}) (GetWarsWarIdOk,  *http.Response, error) {
+func (a *WarsApiService) GetWarsWarId(warId int32, localVarOptionals map[string]interface{}) (GetWarsWarIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -233,7 +233,7 @@ func (a WarsApiService) GetWarsWarId(warId int32, localVarOptionals map[string]i
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetWarsWarIdKillmails200Ok*/
-func (a WarsApiService) GetWarsWarIdKillmails(warId int32, localVarOptionals map[string]interface{}) ([]GetWarsWarIdKillmails200Ok,  *http.Response, error) {
+func (a *WarsApiService) GetWarsWarIdKillmails(warId int32, localVarOptionals map[string]interface{}) ([]GetWarsWarIdKillmails200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

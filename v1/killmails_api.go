@@ -52,7 +52,7 @@ type KillmailsApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdKillmailsRecent200Ok*/
-func (a KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdKillmailsRecent200Ok,  *http.Response, error) {
+func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdKillmailsRecent200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -160,7 +160,7 @@ func (a KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx context
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return GetKillmailsKillmailIdKillmailHashOk*/
-func (a KillmailsApiService) GetKillmailsKillmailIdKillmailHash(killmailHash string, killmailId int32, localVarOptionals map[string]interface{}) (GetKillmailsKillmailIdKillmailHashOk,  *http.Response, error) {
+func (a *KillmailsApiService) GetKillmailsKillmailIdKillmailHash(killmailHash string, killmailId int32, localVarOptionals map[string]interface{}) (GetKillmailsKillmailIdKillmailHashOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

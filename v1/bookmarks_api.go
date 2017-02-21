@@ -50,7 +50,7 @@ type BookmarksApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdBookmarks200Ok*/
-func (a BookmarksApiService) GetCharactersCharacterIdBookmarks(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdBookmarks200Ok,  *http.Response, error) {
+func (a *BookmarksApiService) GetCharactersCharacterIdBookmarks(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdBookmarks200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -146,7 +146,7 @@ func (a BookmarksApiService) GetCharactersCharacterIdBookmarks(ctx context.Conte
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdBookmarksFolders200Ok*/
-func (a BookmarksApiService) GetCharactersCharacterIdBookmarksFolders(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdBookmarksFolders200Ok,  *http.Response, error) {
+func (a *BookmarksApiService) GetCharactersCharacterIdBookmarksFolders(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdBookmarksFolders200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

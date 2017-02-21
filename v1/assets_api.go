@@ -50,7 +50,7 @@ type AssetsApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return []GetCharactersCharacterIdAssets200Ok*/
-func (a AssetsApiService) GetCharactersCharacterIdAssets(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdAssets200Ok,  *http.Response, error) {
+func (a *AssetsApiService) GetCharactersCharacterIdAssets(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdAssets200Ok,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

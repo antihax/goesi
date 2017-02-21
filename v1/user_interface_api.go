@@ -50,7 +50,7 @@ type UserInterfaceApiService service
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, addToBeginning bool, clearOtherWaypoints bool, solarSystemId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, addToBeginning bool, clearOtherWaypoints bool, solarSystemId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -142,7 +142,7 @@ func (a UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, ad
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, contractId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, contractId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -232,7 +232,7 @@ func (a UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, c
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Context, targetId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Context, targetId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -322,7 +322,7 @@ func (a UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Context
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Context, typeId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Context, typeId int32, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -412,7 +412,7 @@ func (a UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Conte
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
  @return */
-func (a UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, newMail PostUiOpenwindowNewmailNewMail, localVarOptionals map[string]interface{}) ( *http.Response, error) {
+func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, newMail PostUiOpenwindowNewmailNewMail, localVarOptionals map[string]interface{}) ( *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}

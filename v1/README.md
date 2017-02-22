@@ -29,7 +29,6 @@ Class | Method | HTTP request | Description
 *CorporationApi* | [**GetCorporationsCorporationIdIcons**](docs/CorporationApi.md#getcorporationscorporationidicons) | **Get** /corporations/{corporation_id}/icons/ | Get corporation icon
 *CorporationApi* | [**GetCorporationsCorporationIdRoles**](docs/CorporationApi.md#getcorporationscorporationidroles) | **Get** /corporations/{corporation_id}/roles/ | Get corporation member roles
 *CorporationApi* | [**GetCorporationsNames**](docs/CorporationApi.md#getcorporationsnames) | **Get** /corporations/names/ | Get corporation names
-*CorporationApi* | [**GetCorporationsNpccorps**](docs/CorporationApi.md#getcorporationsnpccorps) | **Get** /corporations/npccorps/ | Get npc corporations
 *FittingsApi* | [**DeleteCharactersCharacterIdFittingsFittingId**](docs/FittingsApi.md#deletecharacterscharacteridfittingsfittingid) | **Delete** /characters/{character_id}/fittings/{fitting_id}/ | Delete fitting
 *FittingsApi* | [**GetCharactersCharacterIdFittings**](docs/FittingsApi.md#getcharacterscharacteridfittings) | **Get** /characters/{character_id}/fittings/ | Get fittings
 *FittingsApi* | [**PostCharactersCharacterIdFittings**](docs/FittingsApi.md#postcharacterscharacteridfittings) | **Post** /characters/{character_id}/fittings/ | Create fitting
@@ -232,7 +231,6 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdRolesInternalServerError](docs/GetCorporationsCorporationIdRolesInternalServerError.md)
  - [GetCorporationsNames200Ok](docs/GetCorporationsNames200Ok.md)
  - [GetCorporationsNamesInternalServerError](docs/GetCorporationsNamesInternalServerError.md)
- - [GetCorporationsNpccorpsInternalServerError](docs/GetCorporationsNpccorpsInternalServerError.md)
  - [GetFleetsFleetIdForbidden](docs/GetFleetsFleetIdForbidden.md)
  - [GetFleetsFleetIdInternalServerError](docs/GetFleetsFleetIdInternalServerError.md)
  - [GetFleetsFleetIdMembers200Ok](docs/GetFleetsFleetIdMembers200Ok.md)

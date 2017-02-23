@@ -36,41 +36,35 @@ var (
 	_ context.Context
 )
 
-type PlanetaryInteractionApiService service
+type DogmaApiService service
 
 
-/* PlanetaryInteractionApiService Get colonies
- Returns a list of all planetary colonies owned by a character.  ---  Alternate route: &#x60;/legacy/characters/{character_id}/planets/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/planets/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/planets/&#x60;   ---  This route is cached for up to 600 seconds
+/* DogmaApiService Get attributes
+ Get a list of dogma attribute ids  ---  Alternate route: &#x60;/legacy/dogma/attributes/&#x60;  Alternate route: &#x60;/latest/dogma/attributes/&#x60;  Alternate route: &#x60;/dev/dogma/attributes/&#x60;   ---  This route is cached for up to 3600 seconds
 
- * @param ctx context.Context Authentication Context 
- @param characterId Character id of the target character
+
  @param optional (nil or map[string]interface{}) with one or more of:
      @param "datasource" (string) The server name you would like data from
-     @param "token" (string) Access token to use, if preferred over a header
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
- @return []GetCharactersCharacterIdPlanets200Ok*/
-func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanets(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdPlanets200Ok,  *http.Response, error) {
+ @return []int32*/
+func (a *DogmaApiService) GetDogmaAttributes(localVarOptionals map[string]interface{}) ([]int32,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
 		localVarFileName string
 		localVarFileBytes []byte
-	 	successPayload  []GetCharactersCharacterIdPlanets200Ok
+	 	successPayload  []int32
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/characters/{character_id}/planets/"
-	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+	localVarPath := a.client.basePath + "/dogma/attributes/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
-		return successPayload, nil, err
-	}
-	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
@@ -82,9 +76,6 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanets(ctx con
 
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
-	}
-	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
-		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
 		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
@@ -113,7 +104,7 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanets(ctx con
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
 	}
 
-	 r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	 r, err := a.client.prepareRequest(nil, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	 if err != nil {
 		  return successPayload, nil, err
 	 }
@@ -135,40 +126,34 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanets(ctx con
 	return successPayload, localVarHttpResponse, err
 }
 
-/* PlanetaryInteractionApiService Get colony layout
- Returns full details on the layout of a single planetary colony, including links, pins and routes. Note: Planetary information is only recalculated when the colony is viewed through the client. Information on this endpoint will not update until this criteria is met.  ---  Alternate route: &#x60;/legacy/characters/{character_id}/planets/{planet_id}/&#x60;   ---  This route is cached for up to 600 seconds
+/* DogmaApiService Get attribute information
+ Get information on a dogma attribute  ---  Alternate route: &#x60;/legacy/dogma/attributes/{attribute_id}/&#x60;  Alternate route: &#x60;/latest/dogma/attributes/{attribute_id}/&#x60;  Alternate route: &#x60;/dev/dogma/attributes/{attribute_id}/&#x60;   ---  This route is cached for up to 3600 seconds
 
- * @param ctx context.Context Authentication Context 
- @param characterId Character id of the target character
- @param planetId Planet id of the target planet
+
+ @param attributeId A dogma attribute ID
  @param optional (nil or map[string]interface{}) with one or more of:
      @param "datasource" (string) The server name you would like data from
-     @param "token" (string) Access token to use, if preferred over a header
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
- @return GetCharactersCharacterIdPlanetsPlanetIdOk*/
-func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId(ctx context.Context, characterId int32, planetId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdPlanetsPlanetIdOk,  *http.Response, error) {
+ @return GetDogmaAttributesAttributeIdOk*/
+func (a *DogmaApiService) GetDogmaAttributesAttributeId(attributeId int32, localVarOptionals map[string]interface{}) (GetDogmaAttributesAttributeIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
 		localVarFileName string
 		localVarFileBytes []byte
-	 	successPayload  GetCharactersCharacterIdPlanetsPlanetIdOk
+	 	successPayload  GetDogmaAttributesAttributeIdOk
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/characters/{character_id}/planets/{planet_id}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"planet_id"+"}", fmt.Sprintf("%v", planetId), -1)
+	localVarPath := a.client.basePath + "/dogma/attributes/{attribute_id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"attribute_id"+"}", fmt.Sprintf("%v", attributeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
-		return successPayload, nil, err
-	}
-	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
@@ -180,9 +165,6 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId
 
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
-	}
-	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
-		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
 		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
@@ -211,7 +193,7 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
 	}
 
-	 r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	 r, err := a.client.prepareRequest(nil, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	 if err != nil {
 		  return successPayload, nil, err
 	 }
@@ -233,28 +215,115 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId
 	return successPayload, localVarHttpResponse, err
 }
 
-/* PlanetaryInteractionApiService Get schematic information
- Get information on a planetary factory schematic  ---  Alternate route: &#x60;/legacy/universe/schematics/{schematic_id}/&#x60;  Alternate route: &#x60;/latest/universe/schematics/{schematic_id}/&#x60;  Alternate route: &#x60;/dev/universe/schematics/{schematic_id}/&#x60;   ---  This route is cached for up to 3600 seconds
+/* DogmaApiService Get effects
+ Get a list of dogma effect ids  ---  Alternate route: &#x60;/legacy/dogma/effects/&#x60;  Alternate route: &#x60;/latest/dogma/effects/&#x60;  Alternate route: &#x60;/dev/dogma/effects/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
- @param schematicId A PI schematic ID
  @param optional (nil or map[string]interface{}) with one or more of:
      @param "datasource" (string) The server name you would like data from
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
- @return GetUniverseSchematicsSchematicIdOk*/
-func (a *PlanetaryInteractionApiService) GetUniverseSchematicsSchematicId(schematicId int32, localVarOptionals map[string]interface{}) (GetUniverseSchematicsSchematicIdOk,  *http.Response, error) {
+ @return []int32*/
+func (a *DogmaApiService) GetDogmaEffects(localVarOptionals map[string]interface{}) ([]int32,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
 		localVarFileName string
 		localVarFileBytes []byte
-	 	successPayload  GetUniverseSchematicsSchematicIdOk
+	 	successPayload  []int32
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/universe/schematics/{schematic_id}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"schematic_id"+"}", fmt.Sprintf("%v", schematicId), -1)
+	localVarPath := a.client.basePath + "/dogma/effects/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["xUserAgent"], "string", "xUserAgent"); err != nil {
+		return successPayload, nil, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
+		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
+	}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["xUserAgent"].(string); localVarOk {
+		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
+	}
+
+	 r, err := a.client.prepareRequest(nil, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	 if err != nil {
+		  return successPayload, nil, err
+	 }
+
+	 localVarHttpResponse, err := a.client.callAPI(r)
+	 if err != nil || localVarHttpResponse == nil {
+		  return successPayload, localVarHttpResponse, err
+	 }
+	 defer localVarHttpResponse.Body.Close()
+	 if localVarHttpResponse.StatusCode >= 300 {
+		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
+	 }
+	
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	 	return successPayload, localVarHttpResponse, err
+	}
+
+
+	return successPayload, localVarHttpResponse, err
+}
+
+/* DogmaApiService Get effect information
+ Get information on a dogma effect  ---  Alternate route: &#x60;/legacy/dogma/effects/{effect_id}/&#x60;  Alternate route: &#x60;/latest/dogma/effects/{effect_id}/&#x60;  Alternate route: &#x60;/dev/dogma/effects/{effect_id}/&#x60;   ---  This route is cached for up to 3600 seconds
+
+
+ @param effectId A dogma effect ID
+ @param optional (nil or map[string]interface{}) with one or more of:
+     @param "datasource" (string) The server name you would like data from
+     @param "userAgent" (string) Client identifier, takes precedence over headers
+     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
+ @return GetDogmaEffectsEffectIdOk*/
+func (a *DogmaApiService) GetDogmaEffectsEffectId(effectId int32, localVarOptionals map[string]interface{}) (GetDogmaEffectsEffectIdOk,  *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetDogmaEffectsEffectIdOk
+	)
+
+	// create path and map variables
+	localVarPath := a.client.basePath + "/dogma/effects/{effect_id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"effect_id"+"}", fmt.Sprintf("%v", effectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

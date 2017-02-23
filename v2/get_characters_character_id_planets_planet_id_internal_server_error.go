@@ -20,17 +20,11 @@
  * limitations under the License.
  */
 
-package goesiv1
+package goesiv2
 
-/* logo_urls object */
-type GetCorporationsCorporationIdLogoUrls struct {
+/* Internal server error */
+type GetCharactersCharacterIdPlanetsPlanetIdInternalServerError struct {
 
-	/* 128x128 string */
-	Var128x128 string `json:"128x128,omitempty"`
-
-	/* 256x256 string */
-	Var256x256 string `json:"256x256,omitempty"`
-
-	/* 64x64 string */
-	Var64x64 string `json:"64x64,omitempty"`
+	/* Internal server error message */
+	Error_ string `json:"error,omitempty"`
 }

@@ -22,20 +22,9 @@
 
 package goesiv1
 
-/* 200 ok object */
-type GetCorporationsCorporationIdOk struct {
+/* Not found */
+type GetUniverseGraphicsGraphicIdNotFound struct {
 
-	/* id of alliance that corporation is a member of, if any */
-	AllianceId int32 `json:"alliance_id,omitempty"`
-
-	/* the full name of the corporation */
-	CorporationName string `json:"corporation_name,omitempty"`
-
-	LogoUrls GetCorporationsCorporationIdLogoUrls `json:"logo_urls,omitempty"`
-
-	/* member_count integer */
-	MemberCount int32 `json:"member_count,omitempty"`
-
-	/* the short name of the corporation */
-	Ticker string `json:"ticker,omitempty"`
+	/* Not found message */
+	Error_ string `json:"error,omitempty"`
 }

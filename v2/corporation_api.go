@@ -40,7 +40,7 @@ type CorporationApiService service
 
 
 /* CorporationApiService Get corporation information
- Public information about a corporation  ---  Alternate route: &#x60;/latest/corporations/{corporation_id}/&#x60;   ---  This route is cached for up to 3600 seconds
+ Public information about a corporation  ---  Alternate route: &#x60;/legacy/corporations/{corporation_id}/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
  @param corporationId An Eve corporation ID

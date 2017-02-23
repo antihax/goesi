@@ -23,7 +23,7 @@
 package goesiv1
 
 /* Internal server error */
-type GetCorporationsCorporationIdInternalServerError struct {
+type GetUniverseGraphicsGraphicIdInternalServerError struct {
 
 	/* Internal server error message */
 	Error_ string `json:"error,omitempty"`

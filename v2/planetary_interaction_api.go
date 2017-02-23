@@ -20,7 +20,7 @@
  * limitations under the License.
  */
 
-package goesiv3
+package goesiv2
 
 import (
 	"net/url"
@@ -36,37 +36,43 @@ var (
 	_ context.Context
 )
 
-type CorporationApiService service
+type PlanetaryInteractionApiService service
 
 
-/* CorporationApiService Get corporation information
- Public information about a corporation  ---  Alternate route: &#x60;/latest/corporations/{corporation_id}/&#x60;  Alternate route: &#x60;/dev/corporations/{corporation_id}/&#x60;   ---  This route is cached for up to 3600 seconds
+/* PlanetaryInteractionApiService Get colony layout
+ Returns full details on the layout of a single planetary colony, including links, pins and routes. Note: Planetary information is only recalculated when the colony is viewed through the client. Information on this endpoint will not update until this criteria is met.  ---  Alternate route: &#x60;/latest/characters/{character_id}/planets/{planet_id}/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/planets/{planet_id}/&#x60;   ---  This route is cached for up to 600 seconds
 
-
- @param corporationId An Eve corporation ID
+ * @param ctx context.Context Authentication Context 
+ @param characterId Character id of the target character
+ @param planetId Planet id of the target planet
  @param optional (nil or map[string]interface{}) with one or more of:
      @param "datasource" (string) The server name you would like data from
+     @param "token" (string) Access token to use, if preferred over a header
      @param "userAgent" (string) Client identifier, takes precedence over headers
      @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
- @return GetCorporationsCorporationIdOk*/
-func (a *CorporationApiService) GetCorporationsCorporationId(corporationId int32, localVarOptionals map[string]interface{}) (GetCorporationsCorporationIdOk,  *http.Response, error) {
+ @return GetCharactersCharacterIdPlanetsPlanetIdOk*/
+func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId(ctx context.Context, characterId int32, planetId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdPlanetsPlanetIdOk,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
 		localVarFileName string
 		localVarFileBytes []byte
-	 	successPayload  GetCorporationsCorporationIdOk
+	 	successPayload  GetCharactersCharacterIdPlanetsPlanetIdOk
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/corporations/{corporation_id}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
+	localVarPath := a.client.basePath + "/characters/{character_id}/planets/{planet_id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"planet_id"+"}", fmt.Sprintf("%v", planetId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
@@ -78,6 +84,9 @@ func (a *CorporationApiService) GetCorporationsCorporationId(corporationId int32
 
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
+		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
 		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
@@ -106,7 +115,7 @@ func (a *CorporationApiService) GetCorporationsCorporationId(corporationId int32
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
 	}
 
-	 r, err := a.client.prepareRequest(nil, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	 r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	 if err != nil {
 		  return successPayload, nil, err
 	 }

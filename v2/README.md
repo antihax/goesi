@@ -15,6 +15,7 @@ Class | Method | HTTP request | Description
 *CorporationApi* | [**GetCorporationsCorporationIdMembers**](docs/CorporationApi.md#getcorporationscorporationidmembers) | **Get** /corporations/{corporation_id}/members/ | Get corporation members
 *MailApi* | [**GetCharactersCharacterIdMailLabels**](docs/MailApi.md#getcharacterscharacteridmaillabels) | **Get** /characters/{character_id}/mail/labels/ | Get mail labels
 *MailApi* | [**PostCharactersCharacterIdMailLabels**](docs/MailApi.md#postcharacterscharacteridmaillabels) | **Post** /characters/{character_id}/mail/labels/ | Create a mail label
+*PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanetsPlanetId**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanetsplanetid) | **Get** /characters/{character_id}/planets/{planet_id}/ | Get colony layout
 *SearchApi* | [**GetCharactersCharacterIdSearch**](docs/SearchApi.md#getcharacterscharacteridsearch) | **Get** /characters/{character_id}/search/ | Search on a string
 *SearchApi* | [**GetSearch**](docs/SearchApi.md#getsearch) | **Get** /search/ | Search on a string
 *SkillsApi* | [**GetCharactersCharacterIdSkillqueue**](docs/SkillsApi.md#getcharacterscharacteridskillqueue) | **Get** /characters/{character_id}/skillqueue/ | Get character&#39;s skill queue
@@ -42,6 +43,17 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdMailLabels200Ok](docs/GetCharactersCharacterIdMailLabels200Ok.md)
  - [GetCharactersCharacterIdMailLabelsForbidden](docs/GetCharactersCharacterIdMailLabelsForbidden.md)
  - [GetCharactersCharacterIdMailLabelsInternalServerError](docs/GetCharactersCharacterIdMailLabelsInternalServerError.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails](docs/GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails](docs/GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdForbidden](docs/GetCharactersCharacterIdPlanetsPlanetIdForbidden.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdHead](docs/GetCharactersCharacterIdPlanetsPlanetIdHead.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdInternalServerError](docs/GetCharactersCharacterIdPlanetsPlanetIdInternalServerError.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdLink](docs/GetCharactersCharacterIdPlanetsPlanetIdLink.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdNotFound](docs/GetCharactersCharacterIdPlanetsPlanetIdNotFound.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdOk](docs/GetCharactersCharacterIdPlanetsPlanetIdOk.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdPin](docs/GetCharactersCharacterIdPlanetsPlanetIdPin.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdRoute](docs/GetCharactersCharacterIdPlanetsPlanetIdRoute.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdWaypoint](docs/GetCharactersCharacterIdPlanetsPlanetIdWaypoint.md)
  - [GetCharactersCharacterIdPortraitInternalServerError](docs/GetCharactersCharacterIdPortraitInternalServerError.md)
  - [GetCharactersCharacterIdPortraitNotFound](docs/GetCharactersCharacterIdPortraitNotFound.md)
  - [GetCharactersCharacterIdPortraitOk](docs/GetCharactersCharacterIdPortraitOk.md)
@@ -103,6 +115,7 @@ Class | Method | HTTP request | Description
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
  - **esi-mail.organize_mail.v1**: EVE SSO scope esi-mail.organize_mail.v1
  - **esi-mail.read_mail.v1**: EVE SSO scope esi-mail.read_mail.v1
+ - **esi-planets.manage_planets.v1**: EVE SSO scope esi-planets.manage_planets.v1
  - **esi-search.search_structures.v1**: EVE SSO scope esi-search.search_structures.v1
  - **esi-skills.read_skillqueue.v1**: EVE SSO scope esi-skills.read_skillqueue.v1
  - **esi-skills.read_skills.v1**: EVE SSO scope esi-skills.read_skills.v1

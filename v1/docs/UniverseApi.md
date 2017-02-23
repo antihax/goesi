@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**GetUniverseConstellations**](UniverseApi.md#GetUniverseConstellations) | **Get** /universe/constellations/ | Get constellations
 [**GetUniverseConstellationsConstellationId**](UniverseApi.md#GetUniverseConstellationsConstellationId) | **Get** /universe/constellations/{constellation_id}/ | Get constellation information
 [**GetUniverseFactions**](UniverseApi.md#GetUniverseFactions) | **Get** /universe/factions/ | Get factions
+[**GetUniverseGraphics**](UniverseApi.md#GetUniverseGraphics) | **Get** /universe/graphics/ | Get graphics
+[**GetUniverseGraphicsGraphicId**](UniverseApi.md#GetUniverseGraphicsGraphicId) | **Get** /universe/graphics/{graphic_id}/ | Get graphic information
 [**GetUniverseGroups**](UniverseApi.md#GetUniverseGroups) | **Get** /universe/groups/ | Get item groups
 [**GetUniverseGroupsGroupId**](UniverseApi.md#GetUniverseGroupsGroupId) | **Get** /universe/groups/{group_id}/ | Get item group information
 [**GetUniverseMoonsMoonId**](UniverseApi.md#GetUniverseMoonsMoonId) | **Get** /universe/moons/{moon_id}/ | Get moon information
@@ -240,6 +242,80 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]GetUniverseFactions200Ok**](get_universe_factions_200_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniverseGraphics**
+> []int32 GetUniverseGraphics(optional)
+Get graphics
+
+Get a list of graphics  ---  Alternate route: `/legacy/universe/graphics/`  Alternate route: `/latest/universe/graphics/`  Alternate route: `/dev/universe/graphics/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+**[]int32**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniverseGraphicsGraphicId**
+> GetUniverseGraphicsGraphicIdOk GetUniverseGraphicsGraphicId(graphicId, optional)
+Get graphic information
+
+Get information on a graphic  ---  Alternate route: `/legacy/universe/graphics/{graphic_id}/`  Alternate route: `/latest/universe/graphics/{graphic_id}/`  Alternate route: `/dev/universe/graphics/{graphic_id}/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+  **graphicId** | **int32**| graphic_id integer | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **graphicId** | **int32**| graphic_id integer | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**GetUniverseGraphicsGraphicIdOk**](get_universe_graphics_graphic_id_ok.md)
 
 ### Authorization
 

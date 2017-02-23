@@ -24,11 +24,17 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**GetCharactersCharacterIdContactsLabels**](docs/ContactsApi.md#getcharacterscharacteridcontactslabels) | **Get** /characters/{character_id}/contacts/labels/ | Get contact labels
 *ContactsApi* | [**PostCharactersCharacterIdContacts**](docs/ContactsApi.md#postcharacterscharacteridcontacts) | **Post** /characters/{character_id}/contacts/ | Add contacts
 *ContactsApi* | [**PutCharactersCharacterIdContacts**](docs/ContactsApi.md#putcharacterscharacteridcontacts) | **Put** /characters/{character_id}/contacts/ | Edit contacts
-*CorporationApi* | [**GetCorporationsCorporationId**](docs/CorporationApi.md#getcorporationscorporationid) | **Get** /corporations/{corporation_id}/ | Get corporation information
 *CorporationApi* | [**GetCorporationsCorporationIdAlliancehistory**](docs/CorporationApi.md#getcorporationscorporationidalliancehistory) | **Get** /corporations/{corporation_id}/alliancehistory/ | Get alliance history
 *CorporationApi* | [**GetCorporationsCorporationIdIcons**](docs/CorporationApi.md#getcorporationscorporationidicons) | **Get** /corporations/{corporation_id}/icons/ | Get corporation icon
 *CorporationApi* | [**GetCorporationsCorporationIdRoles**](docs/CorporationApi.md#getcorporationscorporationidroles) | **Get** /corporations/{corporation_id}/roles/ | Get corporation member roles
+*CorporationApi* | [**GetCorporationsCorporationIdStructures**](docs/CorporationApi.md#getcorporationscorporationidstructures) | **Get** /corporations/{corporation_id}/structures/ | Get corporation structures
 *CorporationApi* | [**GetCorporationsNames**](docs/CorporationApi.md#getcorporationsnames) | **Get** /corporations/names/ | Get corporation names
+*CorporationApi* | [**GetCorporationsNpccorps**](docs/CorporationApi.md#getcorporationsnpccorps) | **Get** /corporations/npccorps/ | Get npc corporations
+*CorporationApi* | [**PutCorporationsCorporationIdStructuresStructureId**](docs/CorporationApi.md#putcorporationscorporationidstructuresstructureid) | **Put** /corporations/{corporation_id}/structures/{structure_id}/ | Update structure vulnerability schedule
+*DogmaApi* | [**GetDogmaAttributes**](docs/DogmaApi.md#getdogmaattributes) | **Get** /dogma/attributes/ | Get attributes
+*DogmaApi* | [**GetDogmaAttributesAttributeId**](docs/DogmaApi.md#getdogmaattributesattributeid) | **Get** /dogma/attributes/{attribute_id}/ | Get attribute information
+*DogmaApi* | [**GetDogmaEffects**](docs/DogmaApi.md#getdogmaeffects) | **Get** /dogma/effects/ | Get effects
+*DogmaApi* | [**GetDogmaEffectsEffectId**](docs/DogmaApi.md#getdogmaeffectseffectid) | **Get** /dogma/effects/{effect_id}/ | Get effect information
 *FittingsApi* | [**DeleteCharactersCharacterIdFittingsFittingId**](docs/FittingsApi.md#deletecharacterscharacteridfittingsfittingid) | **Delete** /characters/{character_id}/fittings/{fitting_id}/ | Delete fitting
 *FittingsApi* | [**GetCharactersCharacterIdFittings**](docs/FittingsApi.md#getcharacterscharacteridfittings) | **Get** /characters/{character_id}/fittings/ | Get fittings
 *FittingsApi* | [**PostCharactersCharacterIdFittings**](docs/FittingsApi.md#postcharacterscharacteridfittings) | **Post** /characters/{character_id}/fittings/ | Create fitting
@@ -80,6 +86,8 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseConstellations**](docs/UniverseApi.md#getuniverseconstellations) | **Get** /universe/constellations/ | Get constellations
 *UniverseApi* | [**GetUniverseConstellationsConstellationId**](docs/UniverseApi.md#getuniverseconstellationsconstellationid) | **Get** /universe/constellations/{constellation_id}/ | Get constellation information
 *UniverseApi* | [**GetUniverseFactions**](docs/UniverseApi.md#getuniversefactions) | **Get** /universe/factions/ | Get factions
+*UniverseApi* | [**GetUniverseGraphics**](docs/UniverseApi.md#getuniversegraphics) | **Get** /universe/graphics/ | Get graphics
+*UniverseApi* | [**GetUniverseGraphicsGraphicId**](docs/UniverseApi.md#getuniversegraphicsgraphicid) | **Get** /universe/graphics/{graphic_id}/ | Get graphic information
 *UniverseApi* | [**GetUniverseGroups**](docs/UniverseApi.md#getuniversegroups) | **Get** /universe/groups/ | Get item groups
 *UniverseApi* | [**GetUniverseGroupsGroupId**](docs/UniverseApi.md#getuniversegroupsgroupid) | **Get** /universe/groups/{group_id}/ | Get item group information
 *UniverseApi* | [**GetUniverseMoonsMoonId**](docs/UniverseApi.md#getuniversemoonsmoonid) | **Get** /universe/moons/{moon_id}/ | Get moon information
@@ -223,14 +231,27 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdIconsInternalServerError](docs/GetCorporationsCorporationIdIconsInternalServerError.md)
  - [GetCorporationsCorporationIdIconsNotFound](docs/GetCorporationsCorporationIdIconsNotFound.md)
  - [GetCorporationsCorporationIdIconsOk](docs/GetCorporationsCorporationIdIconsOk.md)
- - [GetCorporationsCorporationIdInternalServerError](docs/GetCorporationsCorporationIdInternalServerError.md)
- - [GetCorporationsCorporationIdLogoUrls](docs/GetCorporationsCorporationIdLogoUrls.md)
- - [GetCorporationsCorporationIdOk](docs/GetCorporationsCorporationIdOk.md)
  - [GetCorporationsCorporationIdRoles200Ok](docs/GetCorporationsCorporationIdRoles200Ok.md)
  - [GetCorporationsCorporationIdRolesForbidden](docs/GetCorporationsCorporationIdRolesForbidden.md)
  - [GetCorporationsCorporationIdRolesInternalServerError](docs/GetCorporationsCorporationIdRolesInternalServerError.md)
+ - [GetCorporationsCorporationIdStructures200Ok](docs/GetCorporationsCorporationIdStructures200Ok.md)
+ - [GetCorporationsCorporationIdStructuresCurrentVul](docs/GetCorporationsCorporationIdStructuresCurrentVul.md)
+ - [GetCorporationsCorporationIdStructuresForbidden](docs/GetCorporationsCorporationIdStructuresForbidden.md)
+ - [GetCorporationsCorporationIdStructuresInternalServerError](docs/GetCorporationsCorporationIdStructuresInternalServerError.md)
+ - [GetCorporationsCorporationIdStructuresNextVul](docs/GetCorporationsCorporationIdStructuresNextVul.md)
+ - [GetCorporationsCorporationIdStructuresService](docs/GetCorporationsCorporationIdStructuresService.md)
  - [GetCorporationsNames200Ok](docs/GetCorporationsNames200Ok.md)
  - [GetCorporationsNamesInternalServerError](docs/GetCorporationsNamesInternalServerError.md)
+ - [GetCorporationsNpccorpsInternalServerError](docs/GetCorporationsNpccorpsInternalServerError.md)
+ - [GetDogmaAttributesAttributeIdInternalServerError](docs/GetDogmaAttributesAttributeIdInternalServerError.md)
+ - [GetDogmaAttributesAttributeIdNotFound](docs/GetDogmaAttributesAttributeIdNotFound.md)
+ - [GetDogmaAttributesAttributeIdOk](docs/GetDogmaAttributesAttributeIdOk.md)
+ - [GetDogmaAttributesInternalServerError](docs/GetDogmaAttributesInternalServerError.md)
+ - [GetDogmaEffectsEffectIdInternalServerError](docs/GetDogmaEffectsEffectIdInternalServerError.md)
+ - [GetDogmaEffectsEffectIdModifier](docs/GetDogmaEffectsEffectIdModifier.md)
+ - [GetDogmaEffectsEffectIdNotFound](docs/GetDogmaEffectsEffectIdNotFound.md)
+ - [GetDogmaEffectsEffectIdOk](docs/GetDogmaEffectsEffectIdOk.md)
+ - [GetDogmaEffectsInternalServerError](docs/GetDogmaEffectsInternalServerError.md)
  - [GetFleetsFleetIdForbidden](docs/GetFleetsFleetIdForbidden.md)
  - [GetFleetsFleetIdInternalServerError](docs/GetFleetsFleetIdInternalServerError.md)
  - [GetFleetsFleetIdMembers200Ok](docs/GetFleetsFleetIdMembers200Ok.md)
@@ -296,6 +317,10 @@ Class | Method | HTTP request | Description
  - [GetUniverseConstellationsInternalServerError](docs/GetUniverseConstellationsInternalServerError.md)
  - [GetUniverseFactions200Ok](docs/GetUniverseFactions200Ok.md)
  - [GetUniverseFactionsInternalServerError](docs/GetUniverseFactionsInternalServerError.md)
+ - [GetUniverseGraphicsGraphicIdInternalServerError](docs/GetUniverseGraphicsGraphicIdInternalServerError.md)
+ - [GetUniverseGraphicsGraphicIdNotFound](docs/GetUniverseGraphicsGraphicIdNotFound.md)
+ - [GetUniverseGraphicsGraphicIdOk](docs/GetUniverseGraphicsGraphicIdOk.md)
+ - [GetUniverseGraphicsInternalServerError](docs/GetUniverseGraphicsInternalServerError.md)
  - [GetUniverseGroupsGroupIdInternalServerError](docs/GetUniverseGroupsGroupIdInternalServerError.md)
  - [GetUniverseGroupsGroupIdNotFound](docs/GetUniverseGroupsGroupIdNotFound.md)
  - [GetUniverseGroupsGroupIdOk](docs/GetUniverseGroupsGroupIdOk.md)
@@ -395,6 +420,9 @@ Class | Method | HTTP request | Description
  - [PutCharactersCharacterIdMailMailIdContents](docs/PutCharactersCharacterIdMailMailIdContents.md)
  - [PutCharactersCharacterIdMailMailIdForbidden](docs/PutCharactersCharacterIdMailMailIdForbidden.md)
  - [PutCharactersCharacterIdMailMailIdInternalServerError](docs/PutCharactersCharacterIdMailMailIdInternalServerError.md)
+ - [PutCorporationsCorporationIdStructuresStructureIdForbidden](docs/PutCorporationsCorporationIdStructuresStructureIdForbidden.md)
+ - [PutCorporationsCorporationIdStructuresStructureIdInternalServerError](docs/PutCorporationsCorporationIdStructuresStructureIdInternalServerError.md)
+ - [PutCorporationsCorporationIdStructuresStructureIdNewSchedule](docs/PutCorporationsCorporationIdStructuresStructureIdNewSchedule.md)
  - [PutFleetsFleetIdBadRequest](docs/PutFleetsFleetIdBadRequest.md)
  - [PutFleetsFleetIdForbidden](docs/PutFleetsFleetIdForbidden.md)
  - [PutFleetsFleetIdInternalServerError](docs/PutFleetsFleetIdInternalServerError.md)
@@ -432,6 +460,8 @@ Class | Method | HTTP request | Description
  - **esi-characters.write_contacts.v1**: EVE SSO scope esi-characters.write_contacts.v1
  - **esi-clones.read_clones.v1**: EVE SSO scope esi-clones.read_clones.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
+ - **esi-corporations.read_structures.v1**: EVE SSO scope esi-corporations.read_structures.v1
+ - **esi-corporations.write_structures.v1**: EVE SSO scope esi-corporations.write_structures.v1
  - **esi-fittings.read_fittings.v1**: EVE SSO scope esi-fittings.read_fittings.v1
  - **esi-fittings.write_fittings.v1**: EVE SSO scope esi-fittings.write_fittings.v1
  - **esi-fleets.read_fleet.v1**: EVE SSO scope esi-fleets.read_fleet.v1

@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"encoding/xml"
 	"errors"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 
@@ -26,18 +25,7 @@ type ErrorMessage struct {
 
 // Executes a request generated with newRequest
 func (c *EVEAPIClient) executeRequest(req *http.Request) (*http.Response, error) {
-	res, err := c.httpClient.Do(req)
-
-	if err != nil {
-		return nil, err
-	}
-	if res.StatusCode == http.StatusOK ||
-		res.StatusCode == http.StatusCreated {
-		return res, nil
-	} else {
-		return res, errors.New(res.Status)
-	}
-
+	return c.httpClient.Do(req)
 }
 
 // Creates a new http.Request for a public resource.
@@ -79,17 +67,16 @@ func (c *EVEAPIClient) doXML(method, urlStr string, body interface{}, v interfac
 	}
 
 	res, err := c.executeRequest(req)
-
 	if err != nil {
-
 		return nil, err
 	}
 	defer res.Body.Close()
-	buf, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		return nil, err
+
+	if res.StatusCode < 200 || res.StatusCode >= 300 {
+		return nil, errors.New(res.Status)
 	}
-	if err := xml.Unmarshal([]byte(buf), v); err != nil {
+
+	if err := xml.NewDecoder(res.Body).Decode(v); err != nil {
 		return nil, err
 	}
 	return res, nil
@@ -116,25 +103,19 @@ func (c *EVEAPIClient) doJSON(method, urlStr string, body interface{}, v interfa
 	}
 
 	res, err := c.executeRequest(req)
-
 	if err != nil {
 		return nil, err
 	}
-
 	defer res.Body.Close()
-	buf, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		return nil, err
-	}
 
-	if res.StatusCode != http.StatusOK {
+	if res.StatusCode < 200 || res.StatusCode >= 300 {
 		e := &ErrorMessage{}
-		if err := json.Unmarshal([]byte(buf), e); err != nil {
+		if err := json.NewDecoder(res.Body).Decode(e); err != nil {
 			return nil, err
 		}
 		return nil, errors.New(e.Message)
 	}
-	if err := json.Unmarshal([]byte(buf), v); err != nil {
+	if err := json.NewDecoder(res.Body).Decode(v); err != nil {
 		return nil, err
 	}
 

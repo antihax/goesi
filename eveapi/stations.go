@@ -19,7 +19,7 @@ func (c *EVEAPIClient) ConquerableStationsListXML() (*ConquerableStationsXML, er
 	w := &ConquerableStationsXML{}
 
 	url := c.base.XML + fmt.Sprintf("/eve/ConquerableStationList.xml.aspx")
-	_, err := c.doXML("GET", url, nil, w, nil, nil)
+	_, err := c.doXML("GET", url, nil, w)
 	if err != nil {
 		return nil, err
 	}

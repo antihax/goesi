@@ -2,7 +2,6 @@ package eveapi
 
 import (
 	"bytes"
-	"context"
 	"encoding/json"
 	"encoding/xml"
 	"errors"
@@ -69,7 +68,7 @@ func (c *EVEAPIClient) newRequest(method, urlStr string, body interface{}, media
 }
 
 // Calls a resource from the public XML API
-func (c *EVEAPIClient) doXML(method, urlStr string, body interface{}, v interface{}, ctx context.Context, auth oauth2.TokenSource) (*http.Response, error) {
+func (c *EVEAPIClient) doXML(method, urlStr string, body interface{}, v interface{}) (*http.Response, error) {
 	xmlThrottle.throttleRequest()  // Throttle XML requests
 	connectionLimit.startRequest() // Limit concurrent requests
 	defer connectionLimit.endRequest()
@@ -79,17 +78,10 @@ func (c *EVEAPIClient) doXML(method, urlStr string, body interface{}, v interfac
 		return nil, err
 	}
 
-	if auth != nil {
-		// We were able to grab an oauth2 token from the context
-		var latestToken *oauth2.Token
-		if latestToken, err = auth.Token(); err != nil {
-			return nil, err
-		}
-		latestToken.SetAuthHeader(req)
-	}
 	res, err := c.executeRequest(req)
 
 	if err != nil {
+
 		return nil, err
 	}
 	defer res.Body.Close()

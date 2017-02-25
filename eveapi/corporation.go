@@ -35,7 +35,7 @@ func (c *EVEAPIClient) CorporationPublicSheetXML(corporationID int64) (*Corporat
 	w := &CorporationSheetXML{}
 
 	url := c.base.XML + fmt.Sprintf("corp/CorporationSheet.xml.aspx?corporationID=%d", corporationID)
-	_, err := c.doXML("GET", url, nil, w, nil, nil)
+	_, err := c.doXML("GET", url, nil, w)
 	if err != nil {
 		return nil, err
 	}

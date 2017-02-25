@@ -3,6 +3,8 @@ package eveapi
 import (
 	"fmt"
 
+	"github.com/guregu/null"
+
 	"golang.org/x/oauth2"
 )
 
@@ -41,7 +43,7 @@ func (c *EVEAPIClient) CharacterInfoXML(characterID int64) (*CharacterInfoXML, e
 	w := &CharacterInfoXML{}
 
 	url := c.base.XML + fmt.Sprintf("eve/CharacterInfo.xml.aspx?characterID=%d", characterID)
-	_, err := c.doXML("GET", url, nil, w, nil, nil)
+	_, err := c.doXML("GET", url, nil, w)
 	if err != nil {
 		return nil, err
 	}
@@ -62,8 +64,8 @@ type WalletJournalXML struct {
 		Amount        float64    `xml:"amount,attr"`
 		Balance       float64    `xml:"balance,attr"`
 		Reason        string     `xml:"reason,attr"`
-		TaxReceiverID int64      `xml:"taxReceiverID,attr"`
-		TaxAmount     float64    `xml:"taxAmount,attr"`
+		TaxReceiverID null.Int   `xml:"taxReceiverID,attr"`
+		TaxAmount     null.Float `xml:"taxAmount,attr"`
 		Date          EVEXMLTime `xml:"date,attr"`
 	} `xml:"result>rowset>row"`
 }
@@ -84,7 +86,7 @@ func (c *EVEAPIClient) CharacterWalletJournalXML(auth oauth2.TokenSource, charac
 
 	url := c.base.XML + fmt.Sprintf("char/WalletJournal.xml.aspx?characterID=%d&accessToken=%s&rowCount=2560%s", characterID, tok.AccessToken, from)
 
-	_, err = c.doXML("GET", url, nil, w, nil, nil)
+	_, err = c.doXML("GET", url, nil, w)
 	if err != nil {
 		return nil, err
 	}
@@ -104,7 +106,7 @@ func (c *EVEAPIClient) RefTypesXML() (*RefTypeXML, error) {
 	w := &RefTypeXML{}
 	url := c.base.XML + "eve/RefTypes.xml.aspx"
 
-	_, err := c.doXML("GET", url, nil, w, nil, nil)
+	_, err := c.doXML("GET", url, nil, w)
 	return w, err
 }
 
@@ -146,7 +148,7 @@ func (c *EVEAPIClient) CharacterWalletTransactionXML(auth oauth2.TokenSource, ch
 
 	url := c.base.XML + fmt.Sprintf("char/WalletTransactions.xml.aspx?characterID=%d&accessToken=%s&rowCount=2560%s", characterID, tok.AccessToken, from)
 
-	_, err = c.doXML("GET", url, nil, w, nil, nil)
+	_, err = c.doXML("GET", url, nil, w)
 	if err != nil {
 		return nil, err
 	}

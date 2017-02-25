@@ -12,3 +12,17 @@ func ValidCharacterName(name string) bool {
 	}
 	return true
 }
+
+func FactionNameToID(faction string) int32 {
+	switch faction {
+	case "Caldari":
+		return 500001
+	case "Minmatar":
+		return 500002
+	case "Amarr":
+		return 500003
+	case "Gallente":
+		return 500004
+	}
+	return 0
+}

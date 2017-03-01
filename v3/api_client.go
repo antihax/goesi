@@ -63,6 +63,7 @@ type APIClient struct {
 	MailApi	*MailApiService
 	SearchApi	*SearchApiService
 	SkillsApi	*SkillsApiService
+	UniverseApi	*UniverseApiService
 }
 
 type service struct {
@@ -89,6 +90,7 @@ func NewAPIClient(httpClient *http.Client, userAgent string) *APIClient {
 	c.MailApi = (*MailApiService)(&c.common)
 	c.SearchApi = (*SearchApiService)(&c.common)
 	c.SkillsApi = (*SkillsApiService)(&c.common)
+	c.UniverseApi = (*UniverseApiService)(&c.common)
 
 	return c
 }

@@ -91,7 +91,7 @@ No authorization required
 > GetUniverseTypesTypeIdOk GetUniverseTypesTypeId(typeId, optional)
 Get type information
 
-Get information on a type  ---  Alternate route: `/latest/universe/types/{type_id}/`  Alternate route: `/dev/universe/types/{type_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a type  ---  Alternate route: `/latest/universe/types/{type_id}/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

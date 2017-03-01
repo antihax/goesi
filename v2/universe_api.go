@@ -225,7 +225,7 @@ func (a *UniverseApiService) GetUniverseSystemsSystemId(systemId int32, localVar
 }
 
 /* UniverseApiService Get type information
- Get information on a type  ---  Alternate route: &#x60;/latest/universe/types/{type_id}/&#x60;  Alternate route: &#x60;/dev/universe/types/{type_id}/&#x60;   ---  This route is cached for up to 3600 seconds
+ Get information on a type  ---  Alternate route: &#x60;/latest/universe/types/{type_id}/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
  @param typeId An Eve item type ID

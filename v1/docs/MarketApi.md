@@ -4,88 +4,11 @@ All URIs are relative to *https://esi.tech.ccp.is/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMarketsGroups**](MarketApi.md#GetMarketsGroups) | **Get** /markets/groups/ | Get item groups
-[**GetMarketsGroupsMarketGroupId**](MarketApi.md#GetMarketsGroupsMarketGroupId) | **Get** /markets/groups/{market_group_id}/ | Get item group information
 [**GetMarketsPrices**](MarketApi.md#GetMarketsPrices) | **Get** /markets/prices/ | List market prices
 [**GetMarketsRegionIdHistory**](MarketApi.md#GetMarketsRegionIdHistory) | **Get** /markets/{region_id}/history/ | List historical market statistics in a region
 [**GetMarketsRegionIdOrders**](MarketApi.md#GetMarketsRegionIdOrders) | **Get** /markets/{region_id}/orders/ | List orders in a region
 [**GetMarketsStructuresStructureId**](MarketApi.md#GetMarketsStructuresStructureId) | **Get** /markets/structures/{structure_id}/ | List orders in a structure
 
-
-# **GetMarketsGroups**
-> []int32 GetMarketsGroups(optional)
-Get item groups
-
-Get a list of item groups  ---  Alternate route: `/legacy/markets/groups/`  Alternate route: `/latest/markets/groups/`  Alternate route: `/dev/markets/groups/`   ---  This route is cached for up to 3600 seconds
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
-
-### Return type
-
-**[]int32**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetMarketsGroupsMarketGroupId**
-> GetMarketsGroupsMarketGroupIdOk GetMarketsGroupsMarketGroupId(marketGroupId, optional)
-Get item group information
-
-Get information on an item group  ---  Alternate route: `/legacy/markets/groups/{market_group_id}/`  Alternate route: `/latest/markets/groups/{market_group_id}/`  Alternate route: `/dev/markets/groups/{market_group_id}/`   ---  This route is cached for up to 3600 seconds
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-  **marketGroupId** | **int32**| An Eve item group ID | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **marketGroupId** | **int32**| An Eve item group ID | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **language** | **string**| Language to use in the response | [default to en-us]
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
-
-### Return type
-
-[**GetMarketsGroupsMarketGroupIdOk**](get_markets_groups_market_group_id_ok.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMarketsPrices**
 > []GetMarketsPrices200Ok GetMarketsPrices(optional)

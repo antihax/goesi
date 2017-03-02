@@ -69,8 +69,6 @@ Class | Method | HTTP request | Description
 *MailApi* | [**GetCharactersCharacterIdMailUnread**](docs/MailApi.md#getcharacterscharacteridmailunread) | **Get** /characters/{character_id}/mail/unread/ | Return the number of unread mails
 *MailApi* | [**PostCharactersCharacterIdMail**](docs/MailApi.md#postcharacterscharacteridmail) | **Post** /characters/{character_id}/mail/ | Send a new mail
 *MailApi* | [**PutCharactersCharacterIdMailMailId**](docs/MailApi.md#putcharacterscharacteridmailmailid) | **Put** /characters/{character_id}/mail/{mail_id}/ | Update metadata about a mail
-*MarketApi* | [**GetMarketsGroups**](docs/MarketApi.md#getmarketsgroups) | **Get** /markets/groups/ | Get item groups
-*MarketApi* | [**GetMarketsGroupsMarketGroupId**](docs/MarketApi.md#getmarketsgroupsmarketgroupid) | **Get** /markets/groups/{market_group_id}/ | Get item group information
 *MarketApi* | [**GetMarketsPrices**](docs/MarketApi.md#getmarketsprices) | **Get** /markets/prices/ | List market prices
 *MarketApi* | [**GetMarketsRegionIdHistory**](docs/MarketApi.md#getmarketsregionidhistory) | **Get** /markets/{region_id}/history/ | List historical market statistics in a region
 *MarketApi* | [**GetMarketsRegionIdOrders**](docs/MarketApi.md#getmarketsregionidorders) | **Get** /markets/{region_id}/orders/ | List orders in a region
@@ -288,10 +286,6 @@ Class | Method | HTTP request | Description
  - [GetLoyaltyStoresCorporationIdOffers200Ok](docs/GetLoyaltyStoresCorporationIdOffers200Ok.md)
  - [GetLoyaltyStoresCorporationIdOffersInternalServerError](docs/GetLoyaltyStoresCorporationIdOffersInternalServerError.md)
  - [GetLoyaltyStoresCorporationIdOffersRequiredItem](docs/GetLoyaltyStoresCorporationIdOffersRequiredItem.md)
- - [GetMarketsGroupsInternalServerError](docs/GetMarketsGroupsInternalServerError.md)
- - [GetMarketsGroupsMarketGroupIdInternalServerError](docs/GetMarketsGroupsMarketGroupIdInternalServerError.md)
- - [GetMarketsGroupsMarketGroupIdNotFound](docs/GetMarketsGroupsMarketGroupIdNotFound.md)
- - [GetMarketsGroupsMarketGroupIdOk](docs/GetMarketsGroupsMarketGroupIdOk.md)
  - [GetMarketsPrices200Ok](docs/GetMarketsPrices200Ok.md)
  - [GetMarketsPricesInternalServerError](docs/GetMarketsPricesInternalServerError.md)
  - [GetMarketsRegionIdHistory200Ok](docs/GetMarketsRegionIdHistory200Ok.md)

@@ -91,7 +91,6 @@ func (c *SSOAuthenticator) AuthorizeURL(state string, onlineAccess bool, scopes 
 // the CREST server to an access token. A caching client must be passed.
 // This client MUST cache per CCP guidelines or face banning.
 func (c *SSOAuthenticator) TokenExchange(code string) (*CRESTToken, error) {
-
 	tok, err := c.oauthConfig.Exchange(createContext(c.httpClient), code)
 	if err != nil {
 		return nil, err
@@ -165,7 +164,6 @@ func (c *SSOAuthenticator) doJSON(method, urlStr string, body interface{}, v int
 	}
 
 	res, err := c.executeRequest(req)
-
 	if err != nil {
 		return nil, err
 	}

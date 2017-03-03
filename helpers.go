@@ -7,7 +7,7 @@ func ValidCharacterName(name string) bool {
 	if len(name) > 37 {
 		return false
 	}
-	if m, _ := regexp.MatchString("^[a-zA-Z0-9' -]+$", name); !m {
+	if m, _ := regexp.MatchString("^[\\p{L}\\d' -]+$", name); !m {
 		return false
 	}
 	return true

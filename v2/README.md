@@ -8,6 +8,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AllianceApi* | [**GetAlliancesAllianceId**](docs/AllianceApi.md#getalliancesallianceid) | **Get** /alliances/{alliance_id}/ | Get alliance information
 *CalendarApi* | [**GetCharactersCharacterIdCalendarEventId**](docs/CalendarApi.md#getcharacterscharacteridcalendareventid) | **Get** /characters/{character_id}/calendar/{event_id}/ | Get an event
+*CalendarApi* | [**PutCharactersCharacterIdCalendarEventId**](docs/CalendarApi.md#putcharacterscharacteridcalendareventid) | **Put** /characters/{character_id}/calendar/{event_id}/ | Respond to an event
 *CharacterApi* | [**GetCharactersCharacterIdPortrait**](docs/CharacterApi.md#getcharacterscharacteridportrait) | **Get** /characters/{character_id}/portrait/ | Get character portraits
 *ClonesApi* | [**GetCharactersCharacterIdClones**](docs/ClonesApi.md#getcharacterscharacteridclones) | **Get** /characters/{character_id}/clones/ | Get clones
 *CorporationApi* | [**GetCorporationsCorporationId**](docs/CorporationApi.md#getcorporationscorporationid) | **Get** /corporations/{corporation_id}/ | Get corporation information
@@ -95,6 +96,8 @@ Class | Method | HTTP request | Description
  - [PostUniverseNames200Ok](docs/PostUniverseNames200Ok.md)
  - [PostUniverseNamesInternalServerError](docs/PostUniverseNamesInternalServerError.md)
  - [PostUniverseNamesNotFound](docs/PostUniverseNamesNotFound.md)
+ - [PutCharactersCharacterIdCalendarEventIdForbidden](docs/PutCharactersCharacterIdCalendarEventIdForbidden.md)
+ - [PutCharactersCharacterIdCalendarEventIdInternalServerError](docs/PutCharactersCharacterIdCalendarEventIdInternalServerError.md)
 
 
 ## Documentation For Authorization
@@ -107,6 +110,7 @@ Class | Method | HTTP request | Description
 - **Authorization URL**: https://login.eveonline.com/oauth/authorize
 - **Scopes**: 
  - **esi-calendar.read_calendar_events.v1**: EVE SSO scope esi-calendar.read_calendar_events.v1
+ - **esi-calendar.respond_calendar_events.v1**: EVE SSO scope esi-calendar.respond_calendar_events.v1
  - **esi-clones.read_clones.v1**: EVE SSO scope esi-clones.read_clones.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
  - **esi-mail.organize_mail.v1**: EVE SSO scope esi-mail.organize_mail.v1

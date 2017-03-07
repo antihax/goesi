@@ -75,6 +75,11 @@ Class | Method | HTTP request | Description
 *MarketApi* | [**GetMarketsRegionIdHistory**](docs/MarketApi.md#getmarketsregionidhistory) | **Get** /markets/{region_id}/history/ | List historical market statistics in a region
 *MarketApi* | [**GetMarketsRegionIdOrders**](docs/MarketApi.md#getmarketsregionidorders) | **Get** /markets/{region_id}/orders/ | List orders in a region
 *MarketApi* | [**GetMarketsStructuresStructureId**](docs/MarketApi.md#getmarketsstructuresstructureid) | **Get** /markets/structures/{structure_id}/ | List orders in a structure
+*OpportunitiesApi* | [**GetCharactersCharacterIdOpportunities**](docs/OpportunitiesApi.md#getcharacterscharacteridopportunities) | **Get** /characters/{character_id}/opportunities/ | Get a character&#39;s completed tasks
+*OpportunitiesApi* | [**GetOpportunitiesGroups**](docs/OpportunitiesApi.md#getopportunitiesgroups) | **Get** /opportunities/groups/ | Get opportunities groups
+*OpportunitiesApi* | [**GetOpportunitiesGroupsGroupId**](docs/OpportunitiesApi.md#getopportunitiesgroupsgroupid) | **Get** /opportunities/groups/{group_id}/ | Get opportunities group
+*OpportunitiesApi* | [**GetOpportunitiesTasks**](docs/OpportunitiesApi.md#getopportunitiestasks) | **Get** /opportunities/tasks/ | Get opportunities tasks
+*OpportunitiesApi* | [**GetOpportunitiesTasksTaskId**](docs/OpportunitiesApi.md#getopportunitiestaskstaskid) | **Get** /opportunities/tasks/{task_id}/ | Get opportunities task
 *PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanets**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanets) | **Get** /characters/{character_id}/planets/ | Get colonies
 *PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanetsPlanetId**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanetsplanetid) | **Get** /characters/{character_id}/planets/{planet_id}/ | Get colony layout
 *PlanetaryInteractionApi* | [**GetUniverseSchematicsSchematicId**](docs/PlanetaryInteractionApi.md#getuniverseschematicsschematicid) | **Get** /universe/schematics/{schematic_id}/ | Get schematic information
@@ -200,6 +205,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdMailRecipient](docs/GetCharactersCharacterIdMailRecipient.md)
  - [GetCharactersCharacterIdMailUnreadForbidden](docs/GetCharactersCharacterIdMailUnreadForbidden.md)
  - [GetCharactersCharacterIdMailUnreadInternalServerError](docs/GetCharactersCharacterIdMailUnreadInternalServerError.md)
+ - [GetCharactersCharacterIdOpportunities200Ok](docs/GetCharactersCharacterIdOpportunities200Ok.md)
+ - [GetCharactersCharacterIdOpportunitiesForbidden](docs/GetCharactersCharacterIdOpportunitiesForbidden.md)
+ - [GetCharactersCharacterIdOpportunitiesInternalServerError](docs/GetCharactersCharacterIdOpportunitiesInternalServerError.md)
  - [GetCharactersCharacterIdPlanets200Ok](docs/GetCharactersCharacterIdPlanets200Ok.md)
  - [GetCharactersCharacterIdPlanetsForbidden](docs/GetCharactersCharacterIdPlanetsForbidden.md)
  - [GetCharactersCharacterIdPlanetsInternalServerError](docs/GetCharactersCharacterIdPlanetsInternalServerError.md)
@@ -303,6 +311,12 @@ Class | Method | HTTP request | Description
  - [GetMarketsStructuresStructureId200Ok](docs/GetMarketsStructuresStructureId200Ok.md)
  - [GetMarketsStructuresStructureIdForbidden](docs/GetMarketsStructuresStructureIdForbidden.md)
  - [GetMarketsStructuresStructureIdInternalServerError](docs/GetMarketsStructuresStructureIdInternalServerError.md)
+ - [GetOpportunitiesGroupsGroupIdInternalServerError](docs/GetOpportunitiesGroupsGroupIdInternalServerError.md)
+ - [GetOpportunitiesGroupsGroupIdOk](docs/GetOpportunitiesGroupsGroupIdOk.md)
+ - [GetOpportunitiesGroupsInternalServerError](docs/GetOpportunitiesGroupsInternalServerError.md)
+ - [GetOpportunitiesTasksInternalServerError](docs/GetOpportunitiesTasksInternalServerError.md)
+ - [GetOpportunitiesTasksTaskIdInternalServerError](docs/GetOpportunitiesTasksTaskIdInternalServerError.md)
+ - [GetOpportunitiesTasksTaskIdOk](docs/GetOpportunitiesTasksTaskIdOk.md)
  - [GetSearchInternalServerError](docs/GetSearchInternalServerError.md)
  - [GetSearchOk](docs/GetSearchOk.md)
  - [GetSovereigntyCampaigns200Ok](docs/GetSovereigntyCampaigns200Ok.md)
@@ -463,6 +477,7 @@ Class | Method | HTTP request | Description
  - **esi-calendar.read_calendar_events.v1**: EVE SSO scope esi-calendar.read_calendar_events.v1
  - **esi-characters.read_contacts.v1**: EVE SSO scope esi-characters.read_contacts.v1
  - **esi-characters.read_loyalty.v1**: EVE SSO scope esi-characters.read_loyalty.v1
+ - **esi-characters.read_opportunities.v1**: EVE SSO scope esi-characters.read_opportunities.v1
  - **esi-characters.write_contacts.v1**: EVE SSO scope esi-characters.write_contacts.v1
  - **esi-clones.read_clones.v1**: EVE SSO scope esi-clones.read_clones.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1

@@ -83,6 +83,7 @@ Class | Method | HTTP request | Description
 *PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanets**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanets) | **Get** /characters/{character_id}/planets/ | Get colonies
 *PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanetsPlanetId**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanetsplanetid) | **Get** /characters/{character_id}/planets/{planet_id}/ | Get colony layout
 *PlanetaryInteractionApi* | [**GetUniverseSchematicsSchematicId**](docs/PlanetaryInteractionApi.md#getuniverseschematicsschematicid) | **Get** /universe/schematics/{schematic_id}/ | Get schematic information
+*RoutesApi* | [**GetRouteOriginDestination**](docs/RoutesApi.md#getrouteorigindestination) | **Get** /route/{origin}/{destination}/ | Get route
 *SearchApi* | [**GetCharactersCharacterIdSearch**](docs/SearchApi.md#getcharacterscharacteridsearch) | **Get** /characters/{character_id}/search/ | Search on a string
 *SearchApi* | [**GetSearch**](docs/SearchApi.md#getsearch) | **Get** /search/ | Search on a string
 *SovereigntyApi* | [**GetSovereigntyCampaigns**](docs/SovereigntyApi.md#getsovereigntycampaigns) | **Get** /sovereignty/campaigns/ | List sovereignty campaigns
@@ -317,6 +318,8 @@ Class | Method | HTTP request | Description
  - [GetOpportunitiesTasksInternalServerError](docs/GetOpportunitiesTasksInternalServerError.md)
  - [GetOpportunitiesTasksTaskIdInternalServerError](docs/GetOpportunitiesTasksTaskIdInternalServerError.md)
  - [GetOpportunitiesTasksTaskIdOk](docs/GetOpportunitiesTasksTaskIdOk.md)
+ - [GetRouteOriginDestinationInternalServerError](docs/GetRouteOriginDestinationInternalServerError.md)
+ - [GetRouteOriginDestinationNotFound](docs/GetRouteOriginDestinationNotFound.md)
  - [GetSearchInternalServerError](docs/GetSearchInternalServerError.md)
  - [GetSearchOk](docs/GetSearchOk.md)
  - [GetSovereigntyCampaigns200Ok](docs/GetSovereigntyCampaigns200Ok.md)

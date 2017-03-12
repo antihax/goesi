@@ -708,7 +708,7 @@ No authorization required
 > GetUniverseStructuresStructureIdOk GetUniverseStructuresStructureId(ctx, structureId, optional)
 Get structure information
 
-Returns information on requested structure, if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  ---  Alternate route: `/legacy/universe/structures/{structure_id}/`  Alternate route: `/latest/universe/structures/{structure_id}/`  Alternate route: `/dev/universe/structures/{structure_id}/` 
+Returns information on requested structure, if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  ---  Alternate route: `/legacy/universe/structures/{structure_id}/`  Alternate route: `/latest/universe/structures/{structure_id}/`  Alternate route: `/dev/universe/structures/{structure_id}/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

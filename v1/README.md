@@ -15,9 +15,14 @@ Class | Method | HTTP request | Description
 *BookmarksApi* | [**GetCharactersCharacterIdBookmarks**](docs/BookmarksApi.md#getcharacterscharacteridbookmarks) | **Get** /characters/{character_id}/bookmarks/ | List bookmarks
 *BookmarksApi* | [**GetCharactersCharacterIdBookmarksFolders**](docs/BookmarksApi.md#getcharacterscharacteridbookmarksfolders) | **Get** /characters/{character_id}/bookmarks/folders/ | List bookmark folders
 *CalendarApi* | [**GetCharactersCharacterIdCalendar**](docs/CalendarApi.md#getcharacterscharacteridcalendar) | **Get** /characters/{character_id}/calendar/ | List calendar event summaries
+*CharacterApi* | [**GetCharactersCharacterIdAgentsResearch**](docs/CharacterApi.md#getcharacterscharacteridagentsresearch) | **Get** /characters/{character_id}/agents_research/ | Get agents research
+*CharacterApi* | [**GetCharactersCharacterIdChatChannels**](docs/CharacterApi.md#getcharacterscharacteridchatchannels) | **Get** /characters/{character_id}/chat_channels/ | Get chat channels
 *CharacterApi* | [**GetCharactersCharacterIdCorporationhistory**](docs/CharacterApi.md#getcharacterscharacteridcorporationhistory) | **Get** /characters/{character_id}/corporationhistory/ | Get corporation history
+*CharacterApi* | [**GetCharactersCharacterIdMedals**](docs/CharacterApi.md#getcharacterscharacteridmedals) | **Get** /characters/{character_id}/medals/ | Get medals
 *CharacterApi* | [**GetCharactersCharacterIdPortrait**](docs/CharacterApi.md#getcharacterscharacteridportrait) | **Get** /characters/{character_id}/portrait/ | Get character portraits
+*CharacterApi* | [**GetCharactersCharacterIdStandings**](docs/CharacterApi.md#getcharacterscharacteridstandings) | **Get** /characters/{character_id}/standings/ | Get standings
 *CharacterApi* | [**GetCharactersNames**](docs/CharacterApi.md#getcharactersnames) | **Get** /characters/names/ | Get character names
+*CharacterApi* | [**PostCharactersAffiliation**](docs/CharacterApi.md#postcharactersaffiliation) | **Post** /characters/affiliation/ | Character affiliation
 *ClonesApi* | [**GetCharactersCharacterIdClones**](docs/ClonesApi.md#getcharacterscharacteridclones) | **Get** /characters/{character_id}/clones/ | Get clones
 *ContactsApi* | [**DeleteCharactersCharacterIdContacts**](docs/ContactsApi.md#deletecharacterscharacteridcontacts) | **Delete** /characters/{character_id}/contacts/ | Delete contacts
 *ContactsApi* | [**GetCharactersCharacterIdContacts**](docs/ContactsApi.md#getcharacterscharacteridcontacts) | **Get** /characters/{character_id}/contacts/ | Get contacts
@@ -87,6 +92,7 @@ Class | Method | HTTP request | Description
 *SearchApi* | [**GetCharactersCharacterIdSearch**](docs/SearchApi.md#getcharacterscharacteridsearch) | **Get** /characters/{character_id}/search/ | Search on a string
 *SearchApi* | [**GetSearch**](docs/SearchApi.md#getsearch) | **Get** /search/ | Search on a string
 *SovereigntyApi* | [**GetSovereigntyCampaigns**](docs/SovereigntyApi.md#getsovereigntycampaigns) | **Get** /sovereignty/campaigns/ | List sovereignty campaigns
+*SovereigntyApi* | [**GetSovereigntyMap**](docs/SovereigntyApi.md#getsovereigntymap) | **Get** /sovereignty/map/ | List sovereignty of systems
 *SovereigntyApi* | [**GetSovereigntyStructures**](docs/SovereigntyApi.md#getsovereigntystructures) | **Get** /sovereignty/structures/ | List sovereignty structures
 *UniverseApi* | [**GetUniverseBloodlines**](docs/UniverseApi.md#getuniversebloodlines) | **Get** /universe/bloodlines/ | Get bloodlines
 *UniverseApi* | [**GetUniverseCategories**](docs/UniverseApi.md#getuniversecategories) | **Get** /universe/categories/ | Get item categories
@@ -107,6 +113,8 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseStationsStationId**](docs/UniverseApi.md#getuniversestationsstationid) | **Get** /universe/stations/{station_id}/ | Get station information
 *UniverseApi* | [**GetUniverseStructures**](docs/UniverseApi.md#getuniversestructures) | **Get** /universe/structures/ | List all public structures
 *UniverseApi* | [**GetUniverseStructuresStructureId**](docs/UniverseApi.md#getuniversestructuresstructureid) | **Get** /universe/structures/{structure_id}/ | Get structure information
+*UniverseApi* | [**GetUniverseSystemJumps**](docs/UniverseApi.md#getuniversesystemjumps) | **Get** /universe/system_jumps/ | Get system jumps
+*UniverseApi* | [**GetUniverseSystemKills**](docs/UniverseApi.md#getuniversesystemkills) | **Get** /universe/system_kills/ | Get system kills
 *UniverseApi* | [**GetUniverseSystems**](docs/UniverseApi.md#getuniversesystems) | **Get** /universe/systems/ | Get solar systems
 *UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /universe/systems/{system_id}/ | Get solar system information
 *UniverseApi* | [**GetUniverseTypes**](docs/UniverseApi.md#getuniversetypes) | **Get** /universe/types/ | Get types
@@ -153,6 +161,9 @@ Class | Method | HTTP request | Description
  - [GetAlliancesInternalServerError](docs/GetAlliancesInternalServerError.md)
  - [GetAlliancesNames200Ok](docs/GetAlliancesNames200Ok.md)
  - [GetAlliancesNamesInternalServerError](docs/GetAlliancesNamesInternalServerError.md)
+ - [GetCharactersCharacterIdAgentsResearch200Ok](docs/GetCharactersCharacterIdAgentsResearch200Ok.md)
+ - [GetCharactersCharacterIdAgentsResearchForbidden](docs/GetCharactersCharacterIdAgentsResearchForbidden.md)
+ - [GetCharactersCharacterIdAgentsResearchInternalServerError](docs/GetCharactersCharacterIdAgentsResearchInternalServerError.md)
  - [GetCharactersCharacterIdAssets200Ok](docs/GetCharactersCharacterIdAssets200Ok.md)
  - [GetCharactersCharacterIdAssetsForbidden](docs/GetCharactersCharacterIdAssetsForbidden.md)
  - [GetCharactersCharacterIdAssetsInternalServerError](docs/GetCharactersCharacterIdAssetsInternalServerError.md)
@@ -168,6 +179,13 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdCalendar200Ok](docs/GetCharactersCharacterIdCalendar200Ok.md)
  - [GetCharactersCharacterIdCalendarForbidden](docs/GetCharactersCharacterIdCalendarForbidden.md)
  - [GetCharactersCharacterIdCalendarInternalServerError](docs/GetCharactersCharacterIdCalendarInternalServerError.md)
+ - [GetCharactersCharacterIdChatChannels200Ok](docs/GetCharactersCharacterIdChatChannels200Ok.md)
+ - [GetCharactersCharacterIdChatChannelsAllowed](docs/GetCharactersCharacterIdChatChannelsAllowed.md)
+ - [GetCharactersCharacterIdChatChannelsBlocked](docs/GetCharactersCharacterIdChatChannelsBlocked.md)
+ - [GetCharactersCharacterIdChatChannelsForbidden](docs/GetCharactersCharacterIdChatChannelsForbidden.md)
+ - [GetCharactersCharacterIdChatChannelsInternalServerError](docs/GetCharactersCharacterIdChatChannelsInternalServerError.md)
+ - [GetCharactersCharacterIdChatChannelsMuted](docs/GetCharactersCharacterIdChatChannelsMuted.md)
+ - [GetCharactersCharacterIdChatChannelsOperator](docs/GetCharactersCharacterIdChatChannelsOperator.md)
  - [GetCharactersCharacterIdClones200Ok](docs/GetCharactersCharacterIdClones200Ok.md)
  - [GetCharactersCharacterIdClonesForbidden](docs/GetCharactersCharacterIdClonesForbidden.md)
  - [GetCharactersCharacterIdClonesInternalServerError](docs/GetCharactersCharacterIdClonesInternalServerError.md)
@@ -206,6 +224,10 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdMailRecipient](docs/GetCharactersCharacterIdMailRecipient.md)
  - [GetCharactersCharacterIdMailUnreadForbidden](docs/GetCharactersCharacterIdMailUnreadForbidden.md)
  - [GetCharactersCharacterIdMailUnreadInternalServerError](docs/GetCharactersCharacterIdMailUnreadInternalServerError.md)
+ - [GetCharactersCharacterIdMedals200Ok](docs/GetCharactersCharacterIdMedals200Ok.md)
+ - [GetCharactersCharacterIdMedalsForbidden](docs/GetCharactersCharacterIdMedalsForbidden.md)
+ - [GetCharactersCharacterIdMedalsGraphic](docs/GetCharactersCharacterIdMedalsGraphic.md)
+ - [GetCharactersCharacterIdMedalsInternalServerError](docs/GetCharactersCharacterIdMedalsInternalServerError.md)
  - [GetCharactersCharacterIdOpportunities200Ok](docs/GetCharactersCharacterIdOpportunities200Ok.md)
  - [GetCharactersCharacterIdOpportunitiesForbidden](docs/GetCharactersCharacterIdOpportunitiesForbidden.md)
  - [GetCharactersCharacterIdOpportunitiesInternalServerError](docs/GetCharactersCharacterIdOpportunitiesInternalServerError.md)
@@ -231,6 +253,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdShipForbidden](docs/GetCharactersCharacterIdShipForbidden.md)
  - [GetCharactersCharacterIdShipInternalServerError](docs/GetCharactersCharacterIdShipInternalServerError.md)
  - [GetCharactersCharacterIdShipOk](docs/GetCharactersCharacterIdShipOk.md)
+ - [GetCharactersCharacterIdStandings200Ok](docs/GetCharactersCharacterIdStandings200Ok.md)
+ - [GetCharactersCharacterIdStandingsForbidden](docs/GetCharactersCharacterIdStandingsForbidden.md)
+ - [GetCharactersCharacterIdStandingsInternalServerError](docs/GetCharactersCharacterIdStandingsInternalServerError.md)
  - [GetCharactersCharacterIdWallets200Ok](docs/GetCharactersCharacterIdWallets200Ok.md)
  - [GetCharactersCharacterIdWalletsForbidden](docs/GetCharactersCharacterIdWalletsForbidden.md)
  - [GetCharactersCharacterIdWalletsInternalServerError](docs/GetCharactersCharacterIdWalletsInternalServerError.md)
@@ -325,6 +350,8 @@ Class | Method | HTTP request | Description
  - [GetSovereigntyCampaigns200Ok](docs/GetSovereigntyCampaigns200Ok.md)
  - [GetSovereigntyCampaignsInternalServerError](docs/GetSovereigntyCampaignsInternalServerError.md)
  - [GetSovereigntyCampaignsParticipant](docs/GetSovereigntyCampaignsParticipant.md)
+ - [GetSovereigntyMap200Ok](docs/GetSovereigntyMap200Ok.md)
+ - [GetSovereigntyMapInternalServerError](docs/GetSovereigntyMapInternalServerError.md)
  - [GetSovereigntyStructures200Ok](docs/GetSovereigntyStructures200Ok.md)
  - [GetSovereigntyStructuresInternalServerError](docs/GetSovereigntyStructuresInternalServerError.md)
  - [GetUniverseBloodlines200Ok](docs/GetUniverseBloodlines200Ok.md)
@@ -378,6 +405,10 @@ Class | Method | HTTP request | Description
  - [GetUniverseStructuresStructureIdNotFound](docs/GetUniverseStructuresStructureIdNotFound.md)
  - [GetUniverseStructuresStructureIdOk](docs/GetUniverseStructuresStructureIdOk.md)
  - [GetUniverseStructuresStructureIdPosition](docs/GetUniverseStructuresStructureIdPosition.md)
+ - [GetUniverseSystemJumps200Ok](docs/GetUniverseSystemJumps200Ok.md)
+ - [GetUniverseSystemJumpsInternalServerError](docs/GetUniverseSystemJumpsInternalServerError.md)
+ - [GetUniverseSystemKills200Ok](docs/GetUniverseSystemKills200Ok.md)
+ - [GetUniverseSystemKillsInternalServerError](docs/GetUniverseSystemKillsInternalServerError.md)
  - [GetUniverseSystemsInternalServerError](docs/GetUniverseSystemsInternalServerError.md)
  - [GetUniverseSystemsSystemIdInternalServerError](docs/GetUniverseSystemsSystemIdInternalServerError.md)
  - [GetUniverseSystemsSystemIdNotFound](docs/GetUniverseSystemsSystemIdNotFound.md)
@@ -396,6 +427,9 @@ Class | Method | HTTP request | Description
  - [GetWarsWarIdKillmailsUnprocessableEntity](docs/GetWarsWarIdKillmailsUnprocessableEntity.md)
  - [GetWarsWarIdOk](docs/GetWarsWarIdOk.md)
  - [GetWarsWarIdUnprocessableEntity](docs/GetWarsWarIdUnprocessableEntity.md)
+ - [PostCharactersAffiliation200Ok](docs/PostCharactersAffiliation200Ok.md)
+ - [PostCharactersAffiliationInternalServerError](docs/PostCharactersAffiliationInternalServerError.md)
+ - [PostCharactersAffiliationUnprocessableEntity](docs/PostCharactersAffiliationUnprocessableEntity.md)
  - [PostCharactersCharacterIdContactsForbidden](docs/PostCharactersCharacterIdContactsForbidden.md)
  - [PostCharactersCharacterIdContactsInternalServerError](docs/PostCharactersCharacterIdContactsInternalServerError.md)
  - [PostCharactersCharacterIdFittingsCreated](docs/PostCharactersCharacterIdFittingsCreated.md)
@@ -478,9 +512,13 @@ Class | Method | HTTP request | Description
  - **esi-assets.read_assets.v1**: EVE SSO scope esi-assets.read_assets.v1
  - **esi-bookmarks.read_character_bookmarks.v1**: EVE SSO scope esi-bookmarks.read_character_bookmarks.v1
  - **esi-calendar.read_calendar_events.v1**: EVE SSO scope esi-calendar.read_calendar_events.v1
+ - **esi-characters.read_agents_research.v1**: EVE SSO scope esi-characters.read_agents_research.v1
+ - **esi-characters.read_chat_channels.v1**: EVE SSO scope esi-characters.read_chat_channels.v1
  - **esi-characters.read_contacts.v1**: EVE SSO scope esi-characters.read_contacts.v1
  - **esi-characters.read_loyalty.v1**: EVE SSO scope esi-characters.read_loyalty.v1
+ - **esi-characters.read_medals.v1**: EVE SSO scope esi-characters.read_medals.v1
  - **esi-characters.read_opportunities.v1**: EVE SSO scope esi-characters.read_opportunities.v1
+ - **esi-characters.read_standings.v1**: EVE SSO scope esi-characters.read_standings.v1
  - **esi-characters.write_contacts.v1**: EVE SSO scope esi-characters.write_contacts.v1
  - **esi-clones.read_clones.v1**: EVE SSO scope esi-clones.read_clones.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1

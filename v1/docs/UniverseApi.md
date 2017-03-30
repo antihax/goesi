@@ -23,6 +23,8 @@ Method | HTTP request | Description
 [**GetUniverseStationsStationId**](UniverseApi.md#GetUniverseStationsStationId) | **Get** /universe/stations/{station_id}/ | Get station information
 [**GetUniverseStructures**](UniverseApi.md#GetUniverseStructures) | **Get** /universe/structures/ | List all public structures
 [**GetUniverseStructuresStructureId**](UniverseApi.md#GetUniverseStructuresStructureId) | **Get** /universe/structures/{structure_id}/ | Get structure information
+[**GetUniverseSystemJumps**](UniverseApi.md#GetUniverseSystemJumps) | **Get** /universe/system_jumps/ | Get system jumps
+[**GetUniverseSystemKills**](UniverseApi.md#GetUniverseSystemKills) | **Get** /universe/system_kills/ | Get system kills
 [**GetUniverseSystems**](UniverseApi.md#GetUniverseSystems) | **Get** /universe/systems/ | Get solar systems
 [**GetUniverseSystemsSystemId**](UniverseApi.md#GetUniverseSystemsSystemId) | **Get** /universe/systems/{system_id}/ | Get solar system information
 [**GetUniverseTypes**](UniverseApi.md#GetUniverseTypes) | **Get** /universe/types/ | Get types
@@ -736,6 +738,78 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniverseSystemJumps**
+> []GetUniverseSystemJumps200Ok GetUniverseSystemJumps(optional)
+Get system jumps
+
+Get the number of jumps in solar systems within the last hour, excluding wormhole space. Only systems with jumps will be listed  ---  Alternate route: `/legacy/universe/system_jumps/`  Alternate route: `/latest/universe/system_jumps/`  Alternate route: `/dev/universe/system_jumps/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**[]GetUniverseSystemJumps200Ok**](get_universe_system_jumps_200_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniverseSystemKills**
+> []GetUniverseSystemKills200Ok GetUniverseSystemKills(optional)
+Get system kills
+
+Get the number of ship, pod and NPC kills per solar system within the last hour, excluding wormhole space. Only systems with kills will be listed  ---  Alternate route: `/legacy/universe/system_kills/`  Alternate route: `/latest/universe/system_kills/`  Alternate route: `/dev/universe/system_kills/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**[]GetUniverseSystemKills200Ok**](get_universe_system_kills_200_ok.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

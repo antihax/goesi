@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
 *MarketApi* | [**GetMarketsRegionIdHistory**](docs/MarketApi.md#getmarketsregionidhistory) | **Get** /markets/{region_id}/history/ | List historical market statistics in a region
 *MarketApi* | [**GetMarketsRegionIdOrders**](docs/MarketApi.md#getmarketsregionidorders) | **Get** /markets/{region_id}/orders/ | List orders in a region
 *MarketApi* | [**GetMarketsStructuresStructureId**](docs/MarketApi.md#getmarketsstructuresstructureid) | **Get** /markets/structures/{structure_id}/ | List orders in a structure
+*MedalsApi* | [**PostFanfestToast**](docs/MedalsApi.md#postfanfesttoast) | **Post** /fanfest/toast/ | Nothing to see here, move along
 *OpportunitiesApi* | [**GetCharactersCharacterIdOpportunities**](docs/OpportunitiesApi.md#getcharacterscharacteridopportunities) | **Get** /characters/{character_id}/opportunities/ | Get a character&#39;s completed tasks
 *OpportunitiesApi* | [**GetOpportunitiesGroups**](docs/OpportunitiesApi.md#getopportunitiesgroups) | **Get** /opportunities/groups/ | Get opportunities groups
 *OpportunitiesApi* | [**GetOpportunitiesGroupsGroupId**](docs/OpportunitiesApi.md#getopportunitiesgroupsgroupid) | **Get** /opportunities/groups/{group_id}/ | Get opportunities group
@@ -442,6 +443,10 @@ Class | Method | HTTP request | Description
  - [PostCharactersCharacterIdMailInternalServerError](docs/PostCharactersCharacterIdMailInternalServerError.md)
  - [PostCharactersCharacterIdMailMail](docs/PostCharactersCharacterIdMailMail.md)
  - [PostCharactersCharacterIdMailRecipient](docs/PostCharactersCharacterIdMailRecipient.md)
+ - [PostFanfestToastDetails](docs/PostFanfestToastDetails.md)
+ - [PostFanfestToastForbidden](docs/PostFanfestToastForbidden.md)
+ - [PostFanfestToastInternalServerError](docs/PostFanfestToastInternalServerError.md)
+ - [PostFanfestToastUnprocessableEntity](docs/PostFanfestToastUnprocessableEntity.md)
  - [PostFleetsFleetIdMembersForbidden](docs/PostFleetsFleetIdMembersForbidden.md)
  - [PostFleetsFleetIdMembersInternalServerError](docs/PostFleetsFleetIdMembersInternalServerError.md)
  - [PostFleetsFleetIdMembersInvitation](docs/PostFleetsFleetIdMembersInvitation.md)
@@ -524,6 +529,7 @@ Class | Method | HTTP request | Description
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
  - **esi-corporations.read_structures.v1**: EVE SSO scope esi-corporations.read_structures.v1
  - **esi-corporations.write_structures.v1**: EVE SSO scope esi-corporations.write_structures.v1
+ - **esi-fanfest2017.award_fanfest_medal.v1**: EVE SSO scope esi-fanfest2017.award_fanfest_medal.v1
  - **esi-fittings.read_fittings.v1**: EVE SSO scope esi-fittings.read_fittings.v1
  - **esi-fittings.write_fittings.v1**: EVE SSO scope esi-fittings.write_fittings.v1
  - **esi-fleets.read_fleet.v1**: EVE SSO scope esi-fleets.read_fleet.v1

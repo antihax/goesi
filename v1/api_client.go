@@ -76,7 +76,6 @@ type APIClient struct {
 	LoyaltyApi	*LoyaltyApiService
 	MailApi	*MailApiService
 	MarketApi	*MarketApiService
-	MedalsApi	*MedalsApiService
 	OpportunitiesApi	*OpportunitiesApiService
 	PlanetaryInteractionApi	*PlanetaryInteractionApiService
 	RoutesApi	*RoutesApiService
@@ -126,7 +125,6 @@ func NewAPIClient(httpClient *http.Client, userAgent string) *APIClient {
 	c.LoyaltyApi = (*LoyaltyApiService)(&c.common)
 	c.MailApi = (*MailApiService)(&c.common)
 	c.MarketApi = (*MarketApiService)(&c.common)
-	c.MedalsApi = (*MedalsApiService)(&c.common)
 	c.OpportunitiesApi = (*OpportunitiesApiService)(&c.common)
 	c.PlanetaryInteractionApi = (*PlanetaryInteractionApiService)(&c.common)
 	c.RoutesApi = (*RoutesApiService)(&c.common)

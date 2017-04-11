@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
 *SovereigntyApi* | [**GetSovereigntyCampaigns**](docs/SovereigntyApi.md#getsovereigntycampaigns) | **Get** /sovereignty/campaigns/ | List sovereignty campaigns
 *SovereigntyApi* | [**GetSovereigntyMap**](docs/SovereigntyApi.md#getsovereigntymap) | **Get** /sovereignty/map/ | List sovereignty of systems
 *SovereigntyApi* | [**GetSovereigntyStructures**](docs/SovereigntyApi.md#getsovereigntystructures) | **Get** /sovereignty/structures/ | List sovereignty structures
+*StatusApi* | [**GetStatus**](docs/StatusApi.md#getstatus) | **Get** /status/ | Retrieve the uptime and player counts
 *UniverseApi* | [**GetUniverseBloodlines**](docs/UniverseApi.md#getuniversebloodlines) | **Get** /universe/bloodlines/ | Get bloodlines
 *UniverseApi* | [**GetUniverseCategories**](docs/UniverseApi.md#getuniversecategories) | **Get** /universe/categories/ | Get item categories
 *UniverseApi* | [**GetUniverseCategoriesCategoryId**](docs/UniverseApi.md#getuniversecategoriescategoryid) | **Get** /universe/categories/{category_id}/ | Get item category information
@@ -355,6 +356,8 @@ Class | Method | HTTP request | Description
  - [GetSovereigntyMapInternalServerError](docs/GetSovereigntyMapInternalServerError.md)
  - [GetSovereigntyStructures200Ok](docs/GetSovereigntyStructures200Ok.md)
  - [GetSovereigntyStructuresInternalServerError](docs/GetSovereigntyStructuresInternalServerError.md)
+ - [GetStatusInternalServerError](docs/GetStatusInternalServerError.md)
+ - [GetStatusOk](docs/GetStatusOk.md)
  - [GetUniverseBloodlines200Ok](docs/GetUniverseBloodlines200Ok.md)
  - [GetUniverseBloodlinesInternalServerError](docs/GetUniverseBloodlinesInternalServerError.md)
  - [GetUniverseCategoriesCategoryIdInternalServerError](docs/GetUniverseCategoriesCategoryIdInternalServerError.md)

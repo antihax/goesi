@@ -29,7 +29,7 @@ type GetMarketsRegionIdHistory200Ok struct {
 	Average float32 `json:"average,omitempty"`
 
 	/* The date of this historical statistic entry */
-	Date SwaggerDateType `json:"date,omitempty"`
+	Date string `json:"date,omitempty"`
 
 	/* highest number */
 	Highest float32 `json:"highest,omitempty"`

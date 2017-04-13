@@ -32,7 +32,7 @@ type GetCorporationsCorporationIdStructures200Ok struct {
 	CurrentVul []GetCorporationsCorporationIdStructuresCurrentVul `json:"current_vul,omitempty"`
 
 	/* Date on which the structure will run out of fuel */
-	FuelExpires SwaggerDateType `json:"fuel_expires,omitempty"`
+	FuelExpires string `json:"fuel_expires,omitempty"`
 
 	/* Next week's vulnerability windows, Monday is day 0 */
 	NextVul []GetCorporationsCorporationIdStructuresNextVul `json:"next_vul,omitempty"`
@@ -44,10 +44,10 @@ type GetCorporationsCorporationIdStructures200Ok struct {
 	Services []GetCorporationsCorporationIdStructuresService `json:"services,omitempty"`
 
 	/* Date at which the structure will move to it's next state */
-	StateTimerEnd SwaggerDateType `json:"state_timer_end,omitempty"`
+	StateTimerEnd string `json:"state_timer_end,omitempty"`
 
 	/* Date at which the structure entered it's current state */
-	StateTimerStart SwaggerDateType `json:"state_timer_start,omitempty"`
+	StateTimerStart string `json:"state_timer_start,omitempty"`
 
 	/* The Item ID of the structure */
 	StructureId int64 `json:"structure_id,omitempty"`
@@ -59,5 +59,5 @@ type GetCorporationsCorporationIdStructures200Ok struct {
 	TypeId int32 `json:"type_id,omitempty"`
 
 	/* Date at which the structure will unanchor */
-	UnanchorsAt SwaggerDateType `json:"unanchors_at,omitempty"`
+	UnanchorsAt string `json:"unanchors_at,omitempty"`
 }

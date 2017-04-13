@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Average** | **float32** | average number | [default to null]
-**Date** | [**SwaggerDateType**](SwaggerDateType.md) | The date of this historical statistic entry | [default to null]
+**Date** | **string** | The date of this historical statistic entry | [default to null]
 **Highest** | **float32** | highest number | [default to null]
 **Lowest** | **float32** | lowest number | [default to null]
 **OrderCount** | **int64** | Total number of orders happened that day | [default to null]

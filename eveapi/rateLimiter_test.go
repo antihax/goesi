@@ -13,13 +13,13 @@ func TestRateLimiter(t *testing.T) {
 		count++
 		r.throttleRequest()
 		if count == 20 {
-			duration:=time.Now().Sub(start).Seconds()
+			duration := time.Now().Sub(start).Seconds()
 			if (int)(duration) != 0 {
 				t.Errorf("Burst failed") // This should be immediate
 			}
 		}
 		if count == 22 {
-			duration:=time.Now().Sub(start).Seconds()
+			duration := time.Now().Sub(start).Seconds()
 			if (int)(duration) != 2 { // after two seconds
 				t.Errorf("Rate limiter failed to properly limit %d", duration)
 			}
@@ -27,7 +27,7 @@ func TestRateLimiter(t *testing.T) {
 		}
 
 		if count == 25 {
-			duration:=time.Now().Sub(start).Seconds()
+			duration := time.Now().Sub(start).Seconds()
 			if (int)(duration) != 5 { // after five seconds
 				t.Errorf("Failed to recover burst tokens %d", duration)
 			}

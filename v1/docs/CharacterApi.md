@@ -5,6 +5,7 @@ All URIs are relative to *https://esi.tech.ccp.is/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCharactersCharacterIdAgentsResearch**](CharacterApi.md#GetCharactersCharacterIdAgentsResearch) | **Get** /characters/{character_id}/agents_research/ | Get agents research
+[**GetCharactersCharacterIdBlueprints**](CharacterApi.md#GetCharactersCharacterIdBlueprints) | **Get** /characters/{character_id}/blueprints/ | Get blueprints
 [**GetCharactersCharacterIdChatChannels**](CharacterApi.md#GetCharactersCharacterIdChatChannels) | **Get** /characters/{character_id}/chat_channels/ | Get chat channels
 [**GetCharactersCharacterIdCorporationhistory**](CharacterApi.md#GetCharactersCharacterIdCorporationhistory) | **Get** /characters/{character_id}/corporationhistory/ | Get corporation history
 [**GetCharactersCharacterIdMedals**](CharacterApi.md#GetCharactersCharacterIdMedals) | **Get** /characters/{character_id}/medals/ | Get medals
@@ -42,6 +43,46 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]GetCharactersCharacterIdAgentsResearch200Ok**](get_characters_character_id_agents_research_200_ok.md)
+
+### Authorization
+
+[evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCharactersCharacterIdBlueprints**
+> []GetCharactersCharacterIdBlueprints200Ok GetCharactersCharacterIdBlueprints(ctx, characterId, optional)
+Get blueprints
+
+Return a list of blueprints the character has  ---  Alternate route: `/legacy/characters/{character_id}/blueprints/`  Alternate route: `/latest/characters/{character_id}/blueprints/`  Alternate route: `/dev/characters/{character_id}/blueprints/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **characterId** | **int32**| ID for a character | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **characterId** | **int32**| ID for a character | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**[]GetCharactersCharacterIdBlueprints200Ok**](get_characters_character_id_blueprints_200_ok.md)
 
 ### Authorization
 

@@ -24,6 +24,7 @@ package goesiv1
 
 import (
 	"encoding/json"
+	"fmt"
 	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
@@ -36,6 +37,108 @@ var (
 )
 
 type IndustryApiService service
+
+/* IndustryApiService List character industry jobs
+List industry jobs placed by a character  ---  Alternate route: &#x60;/legacy/characters/{character_id}/industry/jobs/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/industry/jobs/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/industry/jobs/&#x60;   ---  This route is cached for up to 300 seconds
+
+* @param ctx context.Context Authentication Context
+@param characterId An EVE character ID
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "datasource" (string) The server name you would like data from
+    @param "includeCompleted" (bool) Whether retrieve completed character industry jobs as well
+    @param "token" (string) Access token to use, if preferred over a header
+    @param "userAgent" (string) Client identifier, takes precedence over headers
+    @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
+@return []GetCharactersCharacterIdIndustryJobs200Ok*/
+func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdIndustryJobs200Ok, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     []GetCharactersCharacterIdIndustryJobs200Ok
+	)
+
+	// create path and map variables
+	localVarPath := a.client.basePath + "/characters/{character_id}/industry/jobs/"
+	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["includeCompleted"], "bool", "includeCompleted"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["xUserAgent"], "string", "xUserAgent"); err != nil {
+		return successPayload, nil, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["includeCompleted"].(bool); localVarOk {
+		localVarQueryParams.Add("include_completed", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
+		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
+		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
+	}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["xUserAgent"].(string); localVarOk {
+		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
+	}
+
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
 
 /* IndustryApiService List industry facilities
 Return a list of industry facilities  ---  Alternate route: &#x60;/legacy/industry/facilities/&#x60;  Alternate route: &#x60;/latest/industry/facilities/&#x60;  Alternate route: &#x60;/dev/industry/facilities/&#x60;   ---  This route is cached for up to 3600 seconds

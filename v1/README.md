@@ -16,6 +16,7 @@ Class | Method | HTTP request | Description
 *BookmarksApi* | [**GetCharactersCharacterIdBookmarksFolders**](docs/BookmarksApi.md#getcharacterscharacteridbookmarksfolders) | **Get** /characters/{character_id}/bookmarks/folders/ | List bookmark folders
 *CalendarApi* | [**GetCharactersCharacterIdCalendar**](docs/CalendarApi.md#getcharacterscharacteridcalendar) | **Get** /characters/{character_id}/calendar/ | List calendar event summaries
 *CharacterApi* | [**GetCharactersCharacterIdAgentsResearch**](docs/CharacterApi.md#getcharacterscharacteridagentsresearch) | **Get** /characters/{character_id}/agents_research/ | Get agents research
+*CharacterApi* | [**GetCharactersCharacterIdBlueprints**](docs/CharacterApi.md#getcharacterscharacteridblueprints) | **Get** /characters/{character_id}/blueprints/ | Get blueprints
 *CharacterApi* | [**GetCharactersCharacterIdChatChannels**](docs/CharacterApi.md#getcharacterscharacteridchatchannels) | **Get** /characters/{character_id}/chat_channels/ | Get chat channels
 *CharacterApi* | [**GetCharactersCharacterIdCorporationhistory**](docs/CharacterApi.md#getcharacterscharacteridcorporationhistory) | **Get** /characters/{character_id}/corporationhistory/ | Get corporation history
 *CharacterApi* | [**GetCharactersCharacterIdMedals**](docs/CharacterApi.md#getcharacterscharacteridmedals) | **Get** /characters/{character_id}/medals/ | Get medals
@@ -57,6 +58,7 @@ Class | Method | HTTP request | Description
 *FleetsApi* | [**PutFleetsFleetIdSquadsSquadId**](docs/FleetsApi.md#putfleetsfleetidsquadssquadid) | **Put** /fleets/{fleet_id}/squads/{squad_id}/ | Rename fleet squad
 *FleetsApi* | [**PutFleetsFleetIdWingsWingId**](docs/FleetsApi.md#putfleetsfleetidwingswingid) | **Put** /fleets/{fleet_id}/wings/{wing_id}/ | Rename fleet wing
 *IncursionsApi* | [**GetIncursions**](docs/IncursionsApi.md#getincursions) | **Get** /incursions/ | List incursions
+*IndustryApi* | [**GetCharactersCharacterIdIndustryJobs**](docs/IndustryApi.md#getcharacterscharacteridindustryjobs) | **Get** /characters/{character_id}/industry/jobs/ | List character industry jobs
 *IndustryApi* | [**GetIndustryFacilities**](docs/IndustryApi.md#getindustryfacilities) | **Get** /industry/facilities/ | List industry facilities
 *IndustryApi* | [**GetIndustrySystems**](docs/IndustryApi.md#getindustrysystems) | **Get** /industry/systems/ | List solar system cost indices
 *InsuranceApi* | [**GetInsurancePrices**](docs/InsuranceApi.md#getinsuranceprices) | **Get** /insurance/prices/ | List insurance levels
@@ -74,6 +76,7 @@ Class | Method | HTTP request | Description
 *MailApi* | [**GetCharactersCharacterIdMailUnread**](docs/MailApi.md#getcharacterscharacteridmailunread) | **Get** /characters/{character_id}/mail/unread/ | Return the number of unread mails
 *MailApi* | [**PostCharactersCharacterIdMail**](docs/MailApi.md#postcharacterscharacteridmail) | **Post** /characters/{character_id}/mail/ | Send a new mail
 *MailApi* | [**PutCharactersCharacterIdMailMailId**](docs/MailApi.md#putcharacterscharacteridmailmailid) | **Put** /characters/{character_id}/mail/{mail_id}/ | Update metadata about a mail
+*MarketApi* | [**GetCharactersCharacterIdOrders**](docs/MarketApi.md#getcharacterscharacteridorders) | **Get** /characters/{character_id}/orders/ | List orders from a character
 *MarketApi* | [**GetMarketsGroups**](docs/MarketApi.md#getmarketsgroups) | **Get** /markets/groups/ | Get item groups
 *MarketApi* | [**GetMarketsGroupsMarketGroupId**](docs/MarketApi.md#getmarketsgroupsmarketgroupid) | **Get** /markets/groups/{market_group_id}/ | Get item group information
 *MarketApi* | [**GetMarketsPrices**](docs/MarketApi.md#getmarketsprices) | **Get** /markets/prices/ | List market prices
@@ -168,6 +171,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdAssets200Ok](docs/GetCharactersCharacterIdAssets200Ok.md)
  - [GetCharactersCharacterIdAssetsForbidden](docs/GetCharactersCharacterIdAssetsForbidden.md)
  - [GetCharactersCharacterIdAssetsInternalServerError](docs/GetCharactersCharacterIdAssetsInternalServerError.md)
+ - [GetCharactersCharacterIdBlueprints200Ok](docs/GetCharactersCharacterIdBlueprints200Ok.md)
+ - [GetCharactersCharacterIdBlueprintsForbidden](docs/GetCharactersCharacterIdBlueprintsForbidden.md)
+ - [GetCharactersCharacterIdBlueprintsInternalServerError](docs/GetCharactersCharacterIdBlueprintsInternalServerError.md)
  - [GetCharactersCharacterIdBookmarks200Ok](docs/GetCharactersCharacterIdBookmarks200Ok.md)
  - [GetCharactersCharacterIdBookmarksCoordinates](docs/GetCharactersCharacterIdBookmarksCoordinates.md)
  - [GetCharactersCharacterIdBookmarksFolders200Ok](docs/GetCharactersCharacterIdBookmarksFolders200Ok.md)
@@ -202,6 +208,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdFittingsForbidden](docs/GetCharactersCharacterIdFittingsForbidden.md)
  - [GetCharactersCharacterIdFittingsInternalServerError](docs/GetCharactersCharacterIdFittingsInternalServerError.md)
  - [GetCharactersCharacterIdFittingsItem](docs/GetCharactersCharacterIdFittingsItem.md)
+ - [GetCharactersCharacterIdIndustryJobs200Ok](docs/GetCharactersCharacterIdIndustryJobs200Ok.md)
+ - [GetCharactersCharacterIdIndustryJobsForbidden](docs/GetCharactersCharacterIdIndustryJobsForbidden.md)
+ - [GetCharactersCharacterIdIndustryJobsInternalServerError](docs/GetCharactersCharacterIdIndustryJobsInternalServerError.md)
  - [GetCharactersCharacterIdKillmailsRecent200Ok](docs/GetCharactersCharacterIdKillmailsRecent200Ok.md)
  - [GetCharactersCharacterIdKillmailsRecentForbidden](docs/GetCharactersCharacterIdKillmailsRecentForbidden.md)
  - [GetCharactersCharacterIdKillmailsRecentInternalServerError](docs/GetCharactersCharacterIdKillmailsRecentInternalServerError.md)
@@ -232,6 +241,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdOpportunities200Ok](docs/GetCharactersCharacterIdOpportunities200Ok.md)
  - [GetCharactersCharacterIdOpportunitiesForbidden](docs/GetCharactersCharacterIdOpportunitiesForbidden.md)
  - [GetCharactersCharacterIdOpportunitiesInternalServerError](docs/GetCharactersCharacterIdOpportunitiesInternalServerError.md)
+ - [GetCharactersCharacterIdOrders200Ok](docs/GetCharactersCharacterIdOrders200Ok.md)
+ - [GetCharactersCharacterIdOrdersForbidden](docs/GetCharactersCharacterIdOrdersForbidden.md)
+ - [GetCharactersCharacterIdOrdersInternalServerError](docs/GetCharactersCharacterIdOrdersInternalServerError.md)
  - [GetCharactersCharacterIdPlanets200Ok](docs/GetCharactersCharacterIdPlanets200Ok.md)
  - [GetCharactersCharacterIdPlanetsForbidden](docs/GetCharactersCharacterIdPlanetsForbidden.md)
  - [GetCharactersCharacterIdPlanetsInternalServerError](docs/GetCharactersCharacterIdPlanetsInternalServerError.md)
@@ -516,6 +528,7 @@ Class | Method | HTTP request | Description
  - **esi-bookmarks.read_character_bookmarks.v1**: EVE SSO scope esi-bookmarks.read_character_bookmarks.v1
  - **esi-calendar.read_calendar_events.v1**: EVE SSO scope esi-calendar.read_calendar_events.v1
  - **esi-characters.read_agents_research.v1**: EVE SSO scope esi-characters.read_agents_research.v1
+ - **esi-characters.read_blueprints.v1**: EVE SSO scope esi-characters.read_blueprints.v1
  - **esi-characters.read_chat_channels.v1**: EVE SSO scope esi-characters.read_chat_channels.v1
  - **esi-characters.read_contacts.v1**: EVE SSO scope esi-characters.read_contacts.v1
  - **esi-characters.read_loyalty.v1**: EVE SSO scope esi-characters.read_loyalty.v1
@@ -531,12 +544,14 @@ Class | Method | HTTP request | Description
  - **esi-fittings.write_fittings.v1**: EVE SSO scope esi-fittings.write_fittings.v1
  - **esi-fleets.read_fleet.v1**: EVE SSO scope esi-fleets.read_fleet.v1
  - **esi-fleets.write_fleet.v1**: EVE SSO scope esi-fleets.write_fleet.v1
+ - **esi-industry.read_character_jobs.v1**: EVE SSO scope esi-industry.read_character_jobs.v1
  - **esi-killmails.read_killmails.v1**: EVE SSO scope esi-killmails.read_killmails.v1
  - **esi-location.read_location.v1**: EVE SSO scope esi-location.read_location.v1
  - **esi-location.read_ship_type.v1**: EVE SSO scope esi-location.read_ship_type.v1
  - **esi-mail.organize_mail.v1**: EVE SSO scope esi-mail.organize_mail.v1
  - **esi-mail.read_mail.v1**: EVE SSO scope esi-mail.read_mail.v1
  - **esi-mail.send_mail.v1**: EVE SSO scope esi-mail.send_mail.v1
+ - **esi-markets.read_character_orders.v1**: EVE SSO scope esi-markets.read_character_orders.v1
  - **esi-markets.structure_markets.v1**: EVE SSO scope esi-markets.structure_markets.v1
  - **esi-planets.manage_planets.v1**: EVE SSO scope esi-planets.manage_planets.v1
  - **esi-search.search_structures.v1**: EVE SSO scope esi-search.search_structures.v1

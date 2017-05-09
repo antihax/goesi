@@ -4,6 +4,7 @@ All URIs are relative to *https://esi.tech.ccp.is/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GetCharactersCharacterIdOrders**](MarketApi.md#GetCharactersCharacterIdOrders) | **Get** /characters/{character_id}/orders/ | List orders from a character
 [**GetMarketsGroups**](MarketApi.md#GetMarketsGroups) | **Get** /markets/groups/ | Get item groups
 [**GetMarketsGroupsMarketGroupId**](MarketApi.md#GetMarketsGroupsMarketGroupId) | **Get** /markets/groups/{market_group_id}/ | Get item group information
 [**GetMarketsPrices**](MarketApi.md#GetMarketsPrices) | **Get** /markets/prices/ | List market prices
@@ -11,6 +12,46 @@ Method | HTTP request | Description
 [**GetMarketsRegionIdOrders**](MarketApi.md#GetMarketsRegionIdOrders) | **Get** /markets/{region_id}/orders/ | List orders in a region
 [**GetMarketsStructuresStructureId**](MarketApi.md#GetMarketsStructuresStructureId) | **Get** /markets/structures/{structure_id}/ | List orders in a structure
 
+
+# **GetCharactersCharacterIdOrders**
+> []GetCharactersCharacterIdOrders200Ok GetCharactersCharacterIdOrders(ctx, characterId, optional)
+List orders from a character
+
+List market orders placed by a character  ---  Alternate route: `/legacy/characters/{character_id}/orders/`  Alternate route: `/latest/characters/{character_id}/orders/`  Alternate route: `/dev/characters/{character_id}/orders/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **characterId** | **int32**| An EVE character ID | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **characterId** | **int32**| An EVE character ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use, if preferred over a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**[]GetCharactersCharacterIdOrders200Ok**](get_characters_character_id_orders_200_ok.md)
+
+### Authorization
+
+[evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMarketsGroups**
 > []int32 GetMarketsGroups(optional)

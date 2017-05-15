@@ -64,6 +64,8 @@ Class | Method | HTTP request | Description
 *InsuranceApi* | [**GetInsurancePrices**](docs/InsuranceApi.md#getinsuranceprices) | **Get** /insurance/prices/ | List insurance levels
 *KillmailsApi* | [**GetCharactersCharacterIdKillmailsRecent**](docs/KillmailsApi.md#getcharacterscharacteridkillmailsrecent) | **Get** /characters/{character_id}/killmails/recent/ | List kills and losses
 *KillmailsApi* | [**GetKillmailsKillmailIdKillmailHash**](docs/KillmailsApi.md#getkillmailskillmailidkillmailhash) | **Get** /killmails/{killmail_id}/{killmail_hash}/ | Get a single killmail
+*LocationApi* | [**GetCharactersCharacterIdLocation**](docs/LocationApi.md#getcharacterscharacteridlocation) | **Get** /characters/{character_id}/location/ | Get character location
+*LocationApi* | [**GetCharactersCharacterIdShip**](docs/LocationApi.md#getcharacterscharacteridship) | **Get** /characters/{character_id}/ship/ | Get current ship
 *LoyaltyApi* | [**GetCharactersCharacterIdLoyaltyPoints**](docs/LoyaltyApi.md#getcharacterscharacteridloyaltypoints) | **Get** /characters/{character_id}/loyalty/points/ | Get loyalty points
 *LoyaltyApi* | [**GetLoyaltyStoresCorporationIdOffers**](docs/LoyaltyApi.md#getloyaltystorescorporationidoffers) | **Get** /loyalty/stores/{corporation_id}/offers/ | List loyalty store offers
 *MailApi* | [**DeleteCharactersCharacterIdMailLabelsLabelId**](docs/MailApi.md#deletecharacterscharacteridmaillabelslabelid) | **Delete** /characters/{character_id}/mail/labels/{label_id}/ | Delete a mail label
@@ -212,6 +214,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdKillmailsRecent200Ok](docs/GetCharactersCharacterIdKillmailsRecent200Ok.md)
  - [GetCharactersCharacterIdKillmailsRecentForbidden](docs/GetCharactersCharacterIdKillmailsRecentForbidden.md)
  - [GetCharactersCharacterIdKillmailsRecentInternalServerError](docs/GetCharactersCharacterIdKillmailsRecentInternalServerError.md)
+ - [GetCharactersCharacterIdLocationForbidden](docs/GetCharactersCharacterIdLocationForbidden.md)
+ - [GetCharactersCharacterIdLocationInternalServerError](docs/GetCharactersCharacterIdLocationInternalServerError.md)
+ - [GetCharactersCharacterIdLocationOk](docs/GetCharactersCharacterIdLocationOk.md)
  - [GetCharactersCharacterIdLoyaltyPoints200Ok](docs/GetCharactersCharacterIdLoyaltyPoints200Ok.md)
  - [GetCharactersCharacterIdLoyaltyPointsForbidden](docs/GetCharactersCharacterIdLoyaltyPointsForbidden.md)
  - [GetCharactersCharacterIdLoyaltyPointsInternalServerError](docs/GetCharactersCharacterIdLoyaltyPointsInternalServerError.md)
@@ -258,6 +263,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdPortraitOk](docs/GetCharactersCharacterIdPortraitOk.md)
  - [GetCharactersCharacterIdSearchForbidden](docs/GetCharactersCharacterIdSearchForbidden.md)
  - [GetCharactersCharacterIdSearchInternalServerError](docs/GetCharactersCharacterIdSearchInternalServerError.md)
+ - [GetCharactersCharacterIdShipForbidden](docs/GetCharactersCharacterIdShipForbidden.md)
+ - [GetCharactersCharacterIdShipInternalServerError](docs/GetCharactersCharacterIdShipInternalServerError.md)
+ - [GetCharactersCharacterIdShipOk](docs/GetCharactersCharacterIdShipOk.md)
  - [GetCharactersCharacterIdStandings200Ok](docs/GetCharactersCharacterIdStandings200Ok.md)
  - [GetCharactersCharacterIdStandingsForbidden](docs/GetCharactersCharacterIdStandingsForbidden.md)
  - [GetCharactersCharacterIdStandingsInternalServerError](docs/GetCharactersCharacterIdStandingsInternalServerError.md)
@@ -538,6 +546,8 @@ Class | Method | HTTP request | Description
  - **esi-fleets.write_fleet.v1**: EVE SSO scope esi-fleets.write_fleet.v1
  - **esi-industry.read_character_jobs.v1**: EVE SSO scope esi-industry.read_character_jobs.v1
  - **esi-killmails.read_killmails.v1**: EVE SSO scope esi-killmails.read_killmails.v1
+ - **esi-location.read_location.v1**: EVE SSO scope esi-location.read_location.v1
+ - **esi-location.read_ship_type.v1**: EVE SSO scope esi-location.read_ship_type.v1
  - **esi-mail.organize_mail.v1**: EVE SSO scope esi-mail.organize_mail.v1
  - **esi-mail.read_mail.v1**: EVE SSO scope esi-mail.read_mail.v1
  - **esi-mail.send_mail.v1**: EVE SSO scope esi-mail.send_mail.v1

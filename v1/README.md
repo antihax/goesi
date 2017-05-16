@@ -21,6 +21,7 @@ Class | Method | HTTP request | Description
 *CharacterApi* | [**GetCharactersCharacterIdCorporationhistory**](docs/CharacterApi.md#getcharacterscharacteridcorporationhistory) | **Get** /characters/{character_id}/corporationhistory/ | Get corporation history
 *CharacterApi* | [**GetCharactersCharacterIdMedals**](docs/CharacterApi.md#getcharacterscharacteridmedals) | **Get** /characters/{character_id}/medals/ | Get medals
 *CharacterApi* | [**GetCharactersCharacterIdPortrait**](docs/CharacterApi.md#getcharacterscharacteridportrait) | **Get** /characters/{character_id}/portrait/ | Get character portraits
+*CharacterApi* | [**GetCharactersCharacterIdRoles**](docs/CharacterApi.md#getcharacterscharacteridroles) | **Get** /characters/{character_id}/roles/ | Get character corporation roles
 *CharacterApi* | [**GetCharactersCharacterIdStandings**](docs/CharacterApi.md#getcharacterscharacteridstandings) | **Get** /characters/{character_id}/standings/ | Get standings
 *CharacterApi* | [**GetCharactersNames**](docs/CharacterApi.md#getcharactersnames) | **Get** /characters/names/ | Get character names
 *CharacterApi* | [**PostCharactersAffiliation**](docs/CharacterApi.md#postcharactersaffiliation) | **Post** /characters/affiliation/ | Character affiliation
@@ -261,6 +262,8 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdPortraitInternalServerError](docs/GetCharactersCharacterIdPortraitInternalServerError.md)
  - [GetCharactersCharacterIdPortraitNotFound](docs/GetCharactersCharacterIdPortraitNotFound.md)
  - [GetCharactersCharacterIdPortraitOk](docs/GetCharactersCharacterIdPortraitOk.md)
+ - [GetCharactersCharacterIdRolesForbidden](docs/GetCharactersCharacterIdRolesForbidden.md)
+ - [GetCharactersCharacterIdRolesInternalServerError](docs/GetCharactersCharacterIdRolesInternalServerError.md)
  - [GetCharactersCharacterIdSearchForbidden](docs/GetCharactersCharacterIdSearchForbidden.md)
  - [GetCharactersCharacterIdSearchInternalServerError](docs/GetCharactersCharacterIdSearchInternalServerError.md)
  - [GetCharactersCharacterIdShipForbidden](docs/GetCharactersCharacterIdShipForbidden.md)
@@ -531,6 +534,7 @@ Class | Method | HTTP request | Description
  - **esi-characters.read_blueprints.v1**: EVE SSO scope esi-characters.read_blueprints.v1
  - **esi-characters.read_chat_channels.v1**: EVE SSO scope esi-characters.read_chat_channels.v1
  - **esi-characters.read_contacts.v1**: EVE SSO scope esi-characters.read_contacts.v1
+ - **esi-characters.read_corporation_roles.v1**: EVE SSO scope esi-characters.read_corporation_roles.v1
  - **esi-characters.read_loyalty.v1**: EVE SSO scope esi-characters.read_loyalty.v1
  - **esi-characters.read_medals.v1**: EVE SSO scope esi-characters.read_medals.v1
  - **esi-characters.read_opportunities.v1**: EVE SSO scope esi-characters.read_opportunities.v1

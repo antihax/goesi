@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **ProductTypeId** | **int32** | Type ID of product (manufactured, copied or invented) | [optional] [default to null]
 **Runs** | **int32** | Number of runs for a manufacturing job, or number of copies to make for a blueprint copy | [default to null]
 **StartDate** | [**time.Time**](time.Time.md) | Date and time when this job started | [default to null]
-**StationId** | **int32** | ID of the station where industry facility is located | [default to null]
+**StationId** | **int64** | ID of the station where industry facility is located | [default to null]
 **Status** | **string** | status string | [default to null]
 **SuccessfulRuns** | **int32** | Number of successful runs for this job. Equal to runs unless this is an invention job | [optional] [default to null]
 

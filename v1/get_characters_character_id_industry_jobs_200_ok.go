@@ -47,7 +47,7 @@ type GetCharactersCharacterIdIndustryJobs200Ok struct {
 	ProductTypeId        int32     `json:"product_type_id,omitempty"`        /* Type ID of product (manufactured, copied or invented) */
 	Runs                 int32     `json:"runs,omitempty"`                   /* Number of runs for a manufacturing job, or number of copies to make for a blueprint copy */
 	StartDate            time.Time `json:"start_date,omitempty"`             /* Date and time when this job started */
-	StationId            int32     `json:"station_id,omitempty"`             /* ID of the station where industry facility is located */
+	StationId            int64     `json:"station_id,omitempty"`             /* ID of the station where industry facility is located */
 	Status               string    `json:"status,omitempty"`                 /* status string */
 	SuccessfulRuns       int32     `json:"successful_runs,omitempty"`        /* Number of successful runs for this job. Equal to runs unless this is an invention job */
 }

@@ -24,7 +24,7 @@ package goesiv1
 
 /* 200 ok object */
 type GetUniverseGroupsGroupIdOk struct {
-	CategoryId float32 `json:"category_id,omitempty"` /* category_id number */
+	CategoryId int32   `json:"category_id,omitempty"` /* category_id integer */
 	GroupId    int32   `json:"group_id,omitempty"`    /* group_id integer */
 	Name       string  `json:"name,omitempty"`        /* name string */
 	Published  bool    `json:"published,omitempty"`   /* published boolean */

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CategoryId** | **float32** | category_id number | [default to null]
+**CategoryId** | **int32** | category_id integer | [default to null]
 **GroupId** | **int32** | group_id integer | [default to null]
 **Name** | **string** | name string | [default to null]
 **Published** | **bool** | published boolean | [default to null]

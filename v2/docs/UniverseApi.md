@@ -52,7 +52,7 @@ No authorization required
 > GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(systemId, optional)
 Get solar system information
 
-Get information on a solar system  ---  Alternate route: `/latest/universe/systems/{system_id}/`  Alternate route: `/dev/universe/systems/{system_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a solar system  ---  Alternate route: `/latest/universe/systems/{system_id}/`  Alternate route: `/dev/universe/systems/{system_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -91,7 +91,7 @@ No authorization required
 > GetUniverseTypesTypeIdOk GetUniverseTypesTypeId(typeId, optional)
 Get type information
 
-Get information on a type  ---  Alternate route: `/latest/universe/types/{type_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a type  ---  Alternate route: `/latest/universe/types/{type_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 > GetUniverseTypesTypeIdOk GetUniverseTypesTypeId(typeId, optional)
 Get type information
 
-Get information on a type  ---  Alternate route: `/dev/universe/types/{type_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a type  ---  Alternate route: `/dev/universe/types/{type_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 

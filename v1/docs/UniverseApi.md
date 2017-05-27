@@ -36,7 +36,7 @@ Method | HTTP request | Description
 > []GetUniverseBloodlines200Ok GetUniverseBloodlines(optional)
 Get bloodlines
 
-Get a list of bloodlines  ---  Alternate route: `/legacy/universe/bloodlines/`  Alternate route: `/latest/universe/bloodlines/`  Alternate route: `/dev/universe/bloodlines/`   ---  This route is cached for up to 3600 seconds
+Get a list of bloodlines  ---  Alternate route: `/legacy/universe/bloodlines/`  Alternate route: `/latest/universe/bloodlines/`  Alternate route: `/dev/universe/bloodlines/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -73,7 +73,7 @@ No authorization required
 > []int32 GetUniverseCategories(optional)
 Get item categories
 
-Get a list of item categories  ---  Alternate route: `/legacy/universe/categories/`  Alternate route: `/latest/universe/categories/`  Alternate route: `/dev/universe/categories/`   ---  This route is cached for up to 3600 seconds
+Get a list of item categories  ---  Alternate route: `/legacy/universe/categories/`  Alternate route: `/latest/universe/categories/`  Alternate route: `/dev/universe/categories/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -109,7 +109,7 @@ No authorization required
 > GetUniverseCategoriesCategoryIdOk GetUniverseCategoriesCategoryId(categoryId, optional)
 Get item category information
 
-Get information of an item category  ---  Alternate route: `/legacy/universe/categories/{category_id}/`  Alternate route: `/latest/universe/categories/{category_id}/`  Alternate route: `/dev/universe/categories/{category_id}/`   ---  This route is cached for up to 3600 seconds
+Get information of an item category  ---  Alternate route: `/legacy/universe/categories/{category_id}/`  Alternate route: `/latest/universe/categories/{category_id}/`  Alternate route: `/dev/universe/categories/{category_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -148,7 +148,7 @@ No authorization required
 > []int32 GetUniverseConstellations(optional)
 Get constellations
 
-Get a list of constellations  ---  Alternate route: `/legacy/universe/constellations/`  Alternate route: `/latest/universe/constellations/`  Alternate route: `/dev/universe/constellations/`   ---  This route is cached for up to 3600 seconds
+Get a list of constellations  ---  Alternate route: `/legacy/universe/constellations/`  Alternate route: `/latest/universe/constellations/`  Alternate route: `/dev/universe/constellations/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -184,7 +184,7 @@ No authorization required
 > GetUniverseConstellationsConstellationIdOk GetUniverseConstellationsConstellationId(constellationId, optional)
 Get constellation information
 
-Get information on a constellation  ---  Alternate route: `/legacy/universe/constellations/{constellation_id}/`  Alternate route: `/latest/universe/constellations/{constellation_id}/`  Alternate route: `/dev/universe/constellations/{constellation_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a constellation  ---  Alternate route: `/legacy/universe/constellations/{constellation_id}/`  Alternate route: `/latest/universe/constellations/{constellation_id}/`  Alternate route: `/dev/universe/constellations/{constellation_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -223,7 +223,7 @@ No authorization required
 > []GetUniverseFactions200Ok GetUniverseFactions(optional)
 Get factions
 
-Get a list of factions  ---  Alternate route: `/legacy/universe/factions/`  Alternate route: `/latest/universe/factions/`  Alternate route: `/dev/universe/factions/`   ---  This route is cached for up to 3600 seconds
+Get a list of factions  ---  Alternate route: `/legacy/universe/factions/`  Alternate route: `/latest/universe/factions/`  Alternate route: `/dev/universe/factions/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -260,7 +260,7 @@ No authorization required
 > []int32 GetUniverseGraphics(optional)
 Get graphics
 
-Get a list of graphics  ---  Alternate route: `/legacy/universe/graphics/`  Alternate route: `/latest/universe/graphics/`  Alternate route: `/dev/universe/graphics/`   ---  This route is cached for up to 3600 seconds
+Get a list of graphics  ---  Alternate route: `/legacy/universe/graphics/`  Alternate route: `/latest/universe/graphics/`  Alternate route: `/dev/universe/graphics/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -296,7 +296,7 @@ No authorization required
 > GetUniverseGraphicsGraphicIdOk GetUniverseGraphicsGraphicId(graphicId, optional)
 Get graphic information
 
-Get information on a graphic  ---  Alternate route: `/legacy/universe/graphics/{graphic_id}/`  Alternate route: `/latest/universe/graphics/{graphic_id}/`  Alternate route: `/dev/universe/graphics/{graphic_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a graphic  ---  Alternate route: `/legacy/universe/graphics/{graphic_id}/`  Alternate route: `/latest/universe/graphics/{graphic_id}/`  Alternate route: `/dev/universe/graphics/{graphic_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -334,7 +334,7 @@ No authorization required
 > []int32 GetUniverseGroups(optional)
 Get item groups
 
-Get a list of item groups  ---  Alternate route: `/legacy/universe/groups/`  Alternate route: `/latest/universe/groups/`  Alternate route: `/dev/universe/groups/`   ---  This route is cached for up to 3600 seconds
+Get a list of item groups  ---  Alternate route: `/legacy/universe/groups/`  Alternate route: `/latest/universe/groups/`  Alternate route: `/dev/universe/groups/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -371,7 +371,7 @@ No authorization required
 > GetUniverseGroupsGroupIdOk GetUniverseGroupsGroupId(groupId, optional)
 Get item group information
 
-Get information on an item group  ---  Alternate route: `/legacy/universe/groups/{group_id}/`  Alternate route: `/latest/universe/groups/{group_id}/`  Alternate route: `/dev/universe/groups/{group_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on an item group  ---  Alternate route: `/legacy/universe/groups/{group_id}/`  Alternate route: `/latest/universe/groups/{group_id}/`  Alternate route: `/dev/universe/groups/{group_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -410,7 +410,7 @@ No authorization required
 > GetUniverseMoonsMoonIdOk GetUniverseMoonsMoonId(moonId, optional)
 Get moon information
 
-Get information on a moon  ---  Alternate route: `/legacy/universe/moons/{moon_id}/`  Alternate route: `/latest/universe/moons/{moon_id}/`  Alternate route: `/dev/universe/moons/{moon_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a moon  ---  Alternate route: `/legacy/universe/moons/{moon_id}/`  Alternate route: `/latest/universe/moons/{moon_id}/`  Alternate route: `/dev/universe/moons/{moon_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -448,7 +448,7 @@ No authorization required
 > GetUniversePlanetsPlanetIdOk GetUniversePlanetsPlanetId(planetId, optional)
 Get planet information
 
-Get information on a planet  ---  Alternate route: `/legacy/universe/planets/{planet_id}/`  Alternate route: `/latest/universe/planets/{planet_id}/`  Alternate route: `/dev/universe/planets/{planet_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a planet  ---  Alternate route: `/legacy/universe/planets/{planet_id}/`  Alternate route: `/latest/universe/planets/{planet_id}/`  Alternate route: `/dev/universe/planets/{planet_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -486,7 +486,7 @@ No authorization required
 > []GetUniverseRaces200Ok GetUniverseRaces(optional)
 Get character races
 
-Get a list of character races  ---  Alternate route: `/legacy/universe/races/`  Alternate route: `/latest/universe/races/`  Alternate route: `/dev/universe/races/`   ---  This route is cached for up to 3600 seconds
+Get a list of character races  ---  Alternate route: `/legacy/universe/races/`  Alternate route: `/latest/universe/races/`  Alternate route: `/dev/universe/races/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -523,7 +523,7 @@ No authorization required
 > []int32 GetUniverseRegions(optional)
 Get regions
 
-Get a list of regions  ---  Alternate route: `/legacy/universe/regions/`  Alternate route: `/latest/universe/regions/`  Alternate route: `/dev/universe/regions/`   ---  This route is cached for up to 3600 seconds
+Get a list of regions  ---  Alternate route: `/legacy/universe/regions/`  Alternate route: `/latest/universe/regions/`  Alternate route: `/dev/universe/regions/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -559,7 +559,7 @@ No authorization required
 > GetUniverseRegionsRegionIdOk GetUniverseRegionsRegionId(regionId, optional)
 Get region information
 
-Get information on a region  ---  Alternate route: `/legacy/universe/regions/{region_id}/`  Alternate route: `/latest/universe/regions/{region_id}/`  Alternate route: `/dev/universe/regions/{region_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a region  ---  Alternate route: `/legacy/universe/regions/{region_id}/`  Alternate route: `/latest/universe/regions/{region_id}/`  Alternate route: `/dev/universe/regions/{region_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -598,7 +598,7 @@ No authorization required
 > GetUniverseStargatesStargateIdOk GetUniverseStargatesStargateId(stargateId, optional)
 Get stargate information
 
-Get information on a stargate  ---  Alternate route: `/legacy/universe/stargates/{stargate_id}/`  Alternate route: `/latest/universe/stargates/{stargate_id}/`  Alternate route: `/dev/universe/stargates/{stargate_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a stargate  ---  Alternate route: `/legacy/universe/stargates/{stargate_id}/`  Alternate route: `/latest/universe/stargates/{stargate_id}/`  Alternate route: `/dev/universe/stargates/{stargate_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -822,7 +822,7 @@ No authorization required
 > []int32 GetUniverseSystems(optional)
 Get solar systems
 
-Get a list of solar systems  ---  Alternate route: `/legacy/universe/systems/`  Alternate route: `/latest/universe/systems/`  Alternate route: `/dev/universe/systems/`   ---  This route is cached for up to 3600 seconds
+Get a list of solar systems  ---  Alternate route: `/legacy/universe/systems/`  Alternate route: `/latest/universe/systems/`  Alternate route: `/dev/universe/systems/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -858,7 +858,7 @@ No authorization required
 > GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(systemId, optional)
 Get solar system information
 
-Information on solar systems  ---  Alternate route: `/legacy/universe/systems/{system_id}/`   ---  This route is cached for up to 3600 seconds
+Information on solar systems  ---  Alternate route: `/legacy/universe/systems/{system_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -896,7 +896,7 @@ No authorization required
 > []int32 GetUniverseTypes(optional)
 Get types
 
-Get a list of type ids  ---  Alternate route: `/legacy/universe/types/`  Alternate route: `/latest/universe/types/`  Alternate route: `/dev/universe/types/`   ---  This route is cached for up to 3600 seconds
+Get a list of type ids  ---  Alternate route: `/legacy/universe/types/`  Alternate route: `/latest/universe/types/`  Alternate route: `/dev/universe/types/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -933,7 +933,7 @@ No authorization required
 > GetUniverseTypesTypeIdOk GetUniverseTypesTypeId(typeId, optional)
 Get type information
 
-Get information on a type  ---  Alternate route: `/legacy/universe/types/{type_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a type  ---  Alternate route: `/legacy/universe/types/{type_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 

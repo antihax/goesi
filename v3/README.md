@@ -7,6 +7,7 @@ All URIs are relative to *https://esi.tech.ccp.is/v3*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CalendarApi* | [**GetCharactersCharacterIdCalendarEventId**](docs/CalendarApi.md#getcharacterscharacteridcalendareventid) | **Get** /characters/{character_id}/calendar/{event_id}/ | Get an event
+*CalendarApi* | [**PutCharactersCharacterIdCalendarEventId**](docs/CalendarApi.md#putcharacterscharacteridcalendareventid) | **Put** /characters/{character_id}/calendar/{event_id}/ | Respond to an event
 *CharacterApi* | [**GetCharactersCharacterId**](docs/CharacterApi.md#getcharacterscharacterid) | **Get** /characters/{character_id}/ | Get character&#39;s public information
 *CharacterApi* | [**PostCharactersCharacterIdCspa**](docs/CharacterApi.md#postcharacterscharacteridcspa) | **Post** /characters/{character_id}/cspa/ | Calculate a CSPA charge cost
 *CorporationApi* | [**GetCorporationsCorporationId**](docs/CorporationApi.md#getcorporationscorporationid) | **Get** /corporations/{corporation_id}/ | Get corporation information
@@ -47,6 +48,9 @@ Class | Method | HTTP request | Description
  - [PostCharactersCharacterIdCspaCreated](docs/PostCharactersCharacterIdCspaCreated.md)
  - [PostCharactersCharacterIdCspaForbidden](docs/PostCharactersCharacterIdCspaForbidden.md)
  - [PostCharactersCharacterIdCspaInternalServerError](docs/PostCharactersCharacterIdCspaInternalServerError.md)
+ - [PutCharactersCharacterIdCalendarEventIdForbidden](docs/PutCharactersCharacterIdCalendarEventIdForbidden.md)
+ - [PutCharactersCharacterIdCalendarEventIdInternalServerError](docs/PutCharactersCharacterIdCalendarEventIdInternalServerError.md)
+ - [PutCharactersCharacterIdCalendarEventIdResponse](docs/PutCharactersCharacterIdCalendarEventIdResponse.md)
 
 
 ## Documentation For Authorization
@@ -59,6 +63,7 @@ Class | Method | HTTP request | Description
 - **Authorization URL**: https://login.eveonline.com/oauth/authorize
 - **Scopes**: 
  - **esi-calendar.read_calendar_events.v1**: EVE SSO scope esi-calendar.read_calendar_events.v1
+ - **esi-calendar.respond_calendar_events.v1**: EVE SSO scope esi-calendar.respond_calendar_events.v1
  - **esi-characters.read_contacts.v1**: EVE SSO scope esi-characters.read_contacts.v1
  - **esi-mail.read_mail.v1**: EVE SSO scope esi-mail.read_mail.v1
  - **esi-search.search_structures.v1**: EVE SSO scope esi-search.search_structures.v1

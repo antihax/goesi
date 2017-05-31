@@ -66,6 +66,7 @@ Class | Method | HTTP request | Description
 *KillmailsApi* | [**GetCharactersCharacterIdKillmailsRecent**](docs/KillmailsApi.md#getcharacterscharacteridkillmailsrecent) | **Get** /characters/{character_id}/killmails/recent/ | List kills and losses
 *KillmailsApi* | [**GetKillmailsKillmailIdKillmailHash**](docs/KillmailsApi.md#getkillmailskillmailidkillmailhash) | **Get** /killmails/{killmail_id}/{killmail_hash}/ | Get a single killmail
 *LocationApi* | [**GetCharactersCharacterIdLocation**](docs/LocationApi.md#getcharacterscharacteridlocation) | **Get** /characters/{character_id}/location/ | Get character location
+*LocationApi* | [**GetCharactersCharacterIdOnline**](docs/LocationApi.md#getcharacterscharacteridonline) | **Get** /characters/{character_id}/online/ | Get character online
 *LocationApi* | [**GetCharactersCharacterIdShip**](docs/LocationApi.md#getcharacterscharacteridship) | **Get** /characters/{character_id}/ship/ | Get current ship
 *LoyaltyApi* | [**GetCharactersCharacterIdLoyaltyPoints**](docs/LoyaltyApi.md#getcharacterscharacteridloyaltypoints) | **Get** /characters/{character_id}/loyalty/points/ | Get loyalty points
 *LoyaltyApi* | [**GetLoyaltyStoresCorporationIdOffers**](docs/LoyaltyApi.md#getloyaltystorescorporationidoffers) | **Get** /loyalty/stores/{corporation_id}/offers/ | List loyalty store offers
@@ -239,6 +240,8 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdMedalsForbidden](docs/GetCharactersCharacterIdMedalsForbidden.md)
  - [GetCharactersCharacterIdMedalsGraphic](docs/GetCharactersCharacterIdMedalsGraphic.md)
  - [GetCharactersCharacterIdMedalsInternalServerError](docs/GetCharactersCharacterIdMedalsInternalServerError.md)
+ - [GetCharactersCharacterIdOnlineForbidden](docs/GetCharactersCharacterIdOnlineForbidden.md)
+ - [GetCharactersCharacterIdOnlineInternalServerError](docs/GetCharactersCharacterIdOnlineInternalServerError.md)
  - [GetCharactersCharacterIdOpportunities200Ok](docs/GetCharactersCharacterIdOpportunities200Ok.md)
  - [GetCharactersCharacterIdOpportunitiesForbidden](docs/GetCharactersCharacterIdOpportunitiesForbidden.md)
  - [GetCharactersCharacterIdOpportunitiesInternalServerError](docs/GetCharactersCharacterIdOpportunitiesInternalServerError.md)
@@ -551,6 +554,7 @@ Class | Method | HTTP request | Description
  - **esi-industry.read_character_jobs.v1**: EVE SSO scope esi-industry.read_character_jobs.v1
  - **esi-killmails.read_killmails.v1**: EVE SSO scope esi-killmails.read_killmails.v1
  - **esi-location.read_location.v1**: EVE SSO scope esi-location.read_location.v1
+ - **esi-location.read_online.v1**: EVE SSO scope esi-location.read_online.v1
  - **esi-location.read_ship_type.v1**: EVE SSO scope esi-location.read_ship_type.v1
  - **esi-mail.organize_mail.v1**: EVE SSO scope esi-mail.organize_mail.v1
  - **esi-mail.read_mail.v1**: EVE SSO scope esi-mail.read_mail.v1

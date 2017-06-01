@@ -72,6 +72,9 @@ func (a *SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, c
 	if len(categories) < 1 {
 		return successPayload, nil, reportError("categories must have at least 1 elements")
 	}
+	if len(categories) > 12 {
+		return successPayload, nil, reportError("categories must have less than 12 elements")
+	}
 	if strlen(search) < 3 {
 		return successPayload, nil, reportError("search must have at least 3 elements")
 	}
@@ -181,6 +184,9 @@ func (a *SearchApiService) GetSearch(categories []string, search string, localVa
 
 	if len(categories) < 1 {
 		return successPayload, nil, reportError("categories must have at least 1 elements")
+	}
+	if len(categories) > 10 {
+		return successPayload, nil, reportError("categories must have less than 10 elements")
 	}
 	if strlen(search) < 3 {
 		return successPayload, nil, reportError("search must have at least 3 elements")

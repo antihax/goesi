@@ -124,7 +124,7 @@ No authorization required
 > GetDogmaEffectsEffectIdOk GetDogmaEffectsEffectId(effectId, optional)
 Get effect information
 
-Get information on a dogma effect  ---  Alternate route: `/legacy/dogma/effects/{effect_id}/`  Alternate route: `/latest/dogma/effects/{effect_id}/`  Alternate route: `/dev/dogma/effects/{effect_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a dogma effect  ---  Alternate route: `/legacy/dogma/effects/{effect_id}/`  Alternate route: `/latest/dogma/effects/{effect_id}/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

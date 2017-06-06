@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **warId** | **int32**| A valid war ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **page** | **int32**| Which page to query, starting at 1, 2000 killmails per page. | [default to 1]
+ **page** | **int32**| Which page to query, starting at 1 | [default to 1]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

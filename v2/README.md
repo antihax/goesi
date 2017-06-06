@@ -13,6 +13,7 @@ Class | Method | HTTP request | Description
 *ClonesApi* | [**GetCharactersCharacterIdClones**](docs/ClonesApi.md#getcharacterscharacteridclones) | **Get** /characters/{character_id}/clones/ | Get clones
 *CorporationApi* | [**GetCorporationsCorporationId**](docs/CorporationApi.md#getcorporationscorporationid) | **Get** /corporations/{corporation_id}/ | Get corporation information
 *CorporationApi* | [**GetCorporationsCorporationIdMembers**](docs/CorporationApi.md#getcorporationscorporationidmembers) | **Get** /corporations/{corporation_id}/members/ | Get corporation members
+*DogmaApi* | [**GetDogmaEffectsEffectId**](docs/DogmaApi.md#getdogmaeffectseffectid) | **Get** /dogma/effects/{effect_id}/ | Get effect information
 *MailApi* | [**GetCharactersCharacterIdMailLabels**](docs/MailApi.md#getcharacterscharacteridmaillabels) | **Get** /characters/{character_id}/mail/labels/ | Get mail labels
 *MailApi* | [**PostCharactersCharacterIdMailLabels**](docs/MailApi.md#postcharacterscharacteridmaillabels) | **Post** /characters/{character_id}/mail/labels/ | Create a mail label
 *PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanetsPlanetId**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanetsplanetid) | **Get** /characters/{character_id}/planets/{planet_id}/ | Get colony layout
@@ -72,6 +73,10 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdMembersInternalServerError](docs/GetCorporationsCorporationIdMembersInternalServerError.md)
  - [GetCorporationsCorporationIdNotFound](docs/GetCorporationsCorporationIdNotFound.md)
  - [GetCorporationsCorporationIdOk](docs/GetCorporationsCorporationIdOk.md)
+ - [GetDogmaEffectsEffectIdInternalServerError](docs/GetDogmaEffectsEffectIdInternalServerError.md)
+ - [GetDogmaEffectsEffectIdModifier](docs/GetDogmaEffectsEffectIdModifier.md)
+ - [GetDogmaEffectsEffectIdNotFound](docs/GetDogmaEffectsEffectIdNotFound.md)
+ - [GetDogmaEffectsEffectIdOk](docs/GetDogmaEffectsEffectIdOk.md)
  - [GetSearchInternalServerError](docs/GetSearchInternalServerError.md)
  - [GetSearchOk](docs/GetSearchOk.md)
  - [GetUniverseStationsStationIdInternalServerError](docs/GetUniverseStationsStationIdInternalServerError.md)

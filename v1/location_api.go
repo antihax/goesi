@@ -134,7 +134,7 @@ func (a *LocationApiService) GetCharactersCharacterIdLocation(ctx context.Contex
 }
 
 /* LocationApiService Get character online
-Checks if the character is currently online  ---  Alternate route: &#x60;/legacy/characters/{character_id}/online/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/online/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/online/&#x60;   ---  This route is cached for up to 60 seconds
+Checks if the character is currently online  ---  Alternate route: &#x60;/legacy/characters/{character_id}/online/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/online/&#x60;   ---  This route is cached for up to 60 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID

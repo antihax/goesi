@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 > bool GetCharactersCharacterIdOnline(ctx, characterId, optional)
 Get character online
 
-Checks if the character is currently online  ---  Alternate route: `/legacy/characters/{character_id}/online/`  Alternate route: `/latest/characters/{character_id}/online/`  Alternate route: `/dev/characters/{character_id}/online/`   ---  This route is cached for up to 60 seconds
+Checks if the character is currently online  ---  Alternate route: `/legacy/characters/{character_id}/online/`  Alternate route: `/latest/characters/{character_id}/online/`   ---  This route is cached for up to 60 seconds
 
 ### Required Parameters
 

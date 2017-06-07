@@ -39,11 +39,11 @@ var (
 type ContactsApiService service
 
 /* ContactsApiService Delete contacts
-Bulk delete contacts  ---  Alternate route: &#x60;/legacy/characters/{character_id}/contacts/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/contacts/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/contacts/&#x60;
+Bulk delete contacts  ---  Alternate route: &#x60;/legacy/characters/{character_id}/contacts/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/contacts/&#x60;
 
 * @param ctx context.Context Authentication Context
 @param characterId ID for a character
-@param contactIds A list of contacts to edit
+@param contactIds A list of contacts to delete
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use, if preferred over a header

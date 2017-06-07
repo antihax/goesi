@@ -11,6 +11,7 @@ Class | Method | HTTP request | Description
 *CalendarApi* | [**PutCharactersCharacterIdCalendarEventId**](docs/CalendarApi.md#putcharacterscharacteridcalendareventid) | **Put** /characters/{character_id}/calendar/{event_id}/ | Respond to an event
 *CharacterApi* | [**GetCharactersCharacterIdPortrait**](docs/CharacterApi.md#getcharacterscharacteridportrait) | **Get** /characters/{character_id}/portrait/ | Get character portraits
 *ClonesApi* | [**GetCharactersCharacterIdClones**](docs/ClonesApi.md#getcharacterscharacteridclones) | **Get** /characters/{character_id}/clones/ | Get clones
+*ContactsApi* | [**DeleteCharactersCharacterIdContacts**](docs/ContactsApi.md#deletecharacterscharacteridcontacts) | **Delete** /characters/{character_id}/contacts/ | Delete contacts
 *CorporationApi* | [**GetCorporationsCorporationId**](docs/CorporationApi.md#getcorporationscorporationid) | **Get** /corporations/{corporation_id}/ | Get corporation information
 *CorporationApi* | [**GetCorporationsCorporationIdMembers**](docs/CorporationApi.md#getcorporationscorporationidmembers) | **Get** /corporations/{corporation_id}/members/ | Get corporation members
 *DogmaApi* | [**GetDogmaEffectsEffectId**](docs/DogmaApi.md#getdogmaeffectseffectid) | **Get** /dogma/effects/{effect_id}/ | Get effect information
@@ -31,6 +32,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [DeleteCharactersCharacterIdContactsForbidden](docs/DeleteCharactersCharacterIdContactsForbidden.md)
+ - [DeleteCharactersCharacterIdContactsInternalServerError](docs/DeleteCharactersCharacterIdContactsInternalServerError.md)
  - [GetAlliancesAllianceIdInternalServerError](docs/GetAlliancesAllianceIdInternalServerError.md)
  - [GetAlliancesAllianceIdNotFound](docs/GetAlliancesAllianceIdNotFound.md)
  - [GetAlliancesAllianceIdOk](docs/GetAlliancesAllianceIdOk.md)
@@ -120,6 +123,7 @@ Class | Method | HTTP request | Description
 - **Scopes**: 
  - **esi-calendar.read_calendar_events.v1**: EVE SSO scope esi-calendar.read_calendar_events.v1
  - **esi-calendar.respond_calendar_events.v1**: EVE SSO scope esi-calendar.respond_calendar_events.v1
+ - **esi-characters.write_contacts.v1**: EVE SSO scope esi-characters.write_contacts.v1
  - **esi-clones.read_clones.v1**: EVE SSO scope esi-clones.read_clones.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
  - **esi-location.read_online.v1**: EVE SSO scope esi-location.read_online.v1

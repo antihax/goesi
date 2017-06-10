@@ -1,6 +1,9 @@
 package eveapi
 
-import "fmt"
+import (
+	"fmt"
+	"golang.org/x/oauth2"
+)
 
 // CharacterInfo returned data from XML API
 type CorporationSheetXML struct {
@@ -36,6 +39,69 @@ func (c *EVEAPIClient) CorporationPublicSheetXML(corporationID int64) (*Corporat
 
 	url := c.base.XML + fmt.Sprintf("corp/CorporationSheet.xml.aspx?corporationID=%d", corporationID)
 	_, err := c.doXML("GET", url, nil, w)
+	if err != nil {
+		return nil, err
+	}
+	return w, nil
+}
+
+type CorporationIndustryJobsXML struct {
+	xmlAPIFrame
+	Entries []struct {
+		JobID                int64      `xml:"jobID,attr"`
+		InstallerID          int64      `xml:"installerID,attr"`
+		InstallerName        string     `xml:"installerName,attr"`
+		FacilityID           int64      `xml:"facilityID,attr"`
+		SolarSystemName      string     `xml:"solarSystemName,attr"`
+		SolarSystemID        int64      `xml:"solarSystemID,attr"`
+		StationID            int64      `xml:"stationID,attr"`
+		ActivityID           int64      `xml:"activityID,attr"`
+		BlueprintID          int64      `xml:"blueprintID,attr"`
+		BlueprintTypeID      int64      `xml:"blueprintTypeID,attr"`
+		BlueprintTypeName    string     `xml:"blueprintTypeName,attr"`
+		BlueprintLocationID  int64      `xml:"blueprintLocationID,attr"`
+		OutputLocationID     int64      `xml:"outputLocationID,attr"`
+		ProductTypeID        int64      `xml:"productTypeID,attr"`
+		Runs                 int64      `xml:"runs,attr"`
+		Cost                 float64    `xml:"cost,attr"`
+		LicensedRuns         int64      `xml:"licensedRuns,attr"`
+		Probability          float64    `xml:"probability,attr"`
+		ProductTypeName      string     `xml:"productTypeName,attr"`
+		Status               int64      `xml:"status,attr"`
+		TimeInSeconds        int64      `xml:"timeInSeconds,attr"`
+		StartDate            EVEXMLTime `xml:"startDate,attr"`
+		EndDate              EVEXMLTime `xml:"endDate,attr"`
+		PauseDate            EVEXMLTime `xml:"pauseDate,attr"`
+		CompletedDate        EVEXMLTime `xml:"completedDate,attr"`
+		CompletedCharacterID int64      `xml:"completedCharacterID,attr"`
+		SuccessfulRuns       int64      `xml:"successfulRuns,attr"`
+	} `xml:"result>rowset>row"`
+}
+
+// CorporationIndustryJobsXML queries the XML API for active industry jobs for corporationID.
+func (c *EVEAPIClient) CorporationIndustryJobsXML(auth oauth2.TokenSource, corporationID int64) (*CorporationIndustryJobsXML, error) {
+	w := &CorporationIndustryJobsXML{}
+	tok, err := auth.Token()
+	if err != nil {
+		return nil, err
+	}
+	url := c.base.XML + fmt.Sprintf("corp/IndustryJobs.xml.aspx?corporationID=%d&accessToken=%s", corporationID, tok.AccessToken)
+	_, err = c.doXML("GET", url, nil, w)
+	if err != nil {
+		return nil, err
+	}
+	return w, nil
+}
+
+// CorporationIndustryJobsHistoryXML queries the XML API for finished industry jobs for corporationID.
+func (c *EVEAPIClient) CorporationIndustryJobsHistoryXML(auth oauth2.TokenSource, corporationID int64) (*CorporationIndustryJobsXML, error) {
+	w := &CorporationIndustryJobsXML{}
+	tok, err := auth.Token()
+	if err != nil {
+		return nil, err
+	}
+	url := c.base.XML + fmt.Sprintf("corp/IndustryJobsHistory.xml.aspx?corporationID=%d&accessToken=%s", corporationID, tok.AccessToken)
+	_, err = c.doXML("GET", url, nil, w)
 	if err != nil {
 		return nil, err
 	}

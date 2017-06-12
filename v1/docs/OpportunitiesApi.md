@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 > []int32 GetOpportunitiesGroups(optional)
 Get opportunities groups
 
-Return a list of opportunities groups  ---  Alternate route: `/legacy/opportunities/groups/`  Alternate route: `/latest/opportunities/groups/`  Alternate route: `/dev/opportunities/groups/`   ---  This route is cached for up to 3600 seconds
+Return a list of opportunities groups  ---  Alternate route: `/legacy/opportunities/groups/`  Alternate route: `/latest/opportunities/groups/`  Alternate route: `/dev/opportunities/groups/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -91,7 +91,7 @@ No authorization required
 > GetOpportunitiesGroupsGroupIdOk GetOpportunitiesGroupsGroupId(groupId, optional)
 Get opportunities group
 
-Return information of an opportunities group  ---  Alternate route: `/legacy/opportunities/groups/{group_id}/`  Alternate route: `/latest/opportunities/groups/{group_id}/`  Alternate route: `/dev/opportunities/groups/{group_id}/`   ---  This route is cached for up to 3600 seconds
+Return information of an opportunities group  ---  Alternate route: `/legacy/opportunities/groups/{group_id}/`  Alternate route: `/latest/opportunities/groups/{group_id}/`  Alternate route: `/dev/opportunities/groups/{group_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -130,7 +130,7 @@ No authorization required
 > []int32 GetOpportunitiesTasks(optional)
 Get opportunities tasks
 
-Return a list of opportunities tasks  ---  Alternate route: `/legacy/opportunities/tasks/`  Alternate route: `/latest/opportunities/tasks/`  Alternate route: `/dev/opportunities/tasks/`   ---  This route is cached for up to 3600 seconds
+Return a list of opportunities tasks  ---  Alternate route: `/legacy/opportunities/tasks/`  Alternate route: `/latest/opportunities/tasks/`  Alternate route: `/dev/opportunities/tasks/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -166,7 +166,7 @@ No authorization required
 > GetOpportunitiesTasksTaskIdOk GetOpportunitiesTasksTaskId(taskId, optional)
 Get opportunities task
 
-Return information of an opportunities task  ---  Alternate route: `/legacy/opportunities/tasks/{task_id}/`  Alternate route: `/latest/opportunities/tasks/{task_id}/`  Alternate route: `/dev/opportunities/tasks/{task_id}/`   ---  This route is cached for up to 3600 seconds
+Return information of an opportunities task  ---  Alternate route: `/legacy/opportunities/tasks/{task_id}/`  Alternate route: `/latest/opportunities/tasks/{task_id}/`  Alternate route: `/dev/opportunities/tasks/{task_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 

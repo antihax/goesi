@@ -213,7 +213,7 @@ No authorization required
 > []int32 GetCorporationsNpccorps(optional)
 Get npc corporations
 
-Get a list of npc corporations  ---  Alternate route: `/legacy/corporations/npccorps/`  Alternate route: `/latest/corporations/npccorps/`  Alternate route: `/dev/corporations/npccorps/`   ---  This route is cached for up to 3600 seconds
+Get a list of npc corporations  ---  Alternate route: `/legacy/corporations/npccorps/`  Alternate route: `/latest/corporations/npccorps/`  Alternate route: `/dev/corporations/npccorps/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 

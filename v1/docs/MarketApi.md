@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 > []int32 GetMarketsGroups(optional)
 Get item groups
 
-Get a list of item groups  ---  Alternate route: `/legacy/markets/groups/`  Alternate route: `/latest/markets/groups/`  Alternate route: `/dev/markets/groups/`   ---  This route is cached for up to 3600 seconds
+Get a list of item groups  ---  Alternate route: `/legacy/markets/groups/`  Alternate route: `/latest/markets/groups/`  Alternate route: `/dev/markets/groups/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -93,7 +93,7 @@ No authorization required
 > GetMarketsGroupsMarketGroupIdOk GetMarketsGroupsMarketGroupId(marketGroupId, optional)
 Get item group information
 
-Get information on an item group  ---  Alternate route: `/legacy/markets/groups/{market_group_id}/`  Alternate route: `/latest/markets/groups/{market_group_id}/`  Alternate route: `/dev/markets/groups/{market_group_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on an item group  ---  Alternate route: `/legacy/markets/groups/{market_group_id}/`  Alternate route: `/latest/markets/groups/{market_group_id}/`  Alternate route: `/dev/markets/groups/{market_group_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 

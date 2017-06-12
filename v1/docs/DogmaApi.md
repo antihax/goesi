@@ -14,7 +14,7 @@ Method | HTTP request | Description
 > []int32 GetDogmaAttributes(optional)
 Get attributes
 
-Get a list of dogma attribute ids  ---  Alternate route: `/legacy/dogma/attributes/`  Alternate route: `/latest/dogma/attributes/`  Alternate route: `/dev/dogma/attributes/`   ---  This route is cached for up to 3600 seconds
+Get a list of dogma attribute ids  ---  Alternate route: `/legacy/dogma/attributes/`  Alternate route: `/latest/dogma/attributes/`  Alternate route: `/dev/dogma/attributes/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -50,7 +50,7 @@ No authorization required
 > GetDogmaAttributesAttributeIdOk GetDogmaAttributesAttributeId(attributeId, optional)
 Get attribute information
 
-Get information on a dogma attribute  ---  Alternate route: `/legacy/dogma/attributes/{attribute_id}/`  Alternate route: `/latest/dogma/attributes/{attribute_id}/`  Alternate route: `/dev/dogma/attributes/{attribute_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a dogma attribute  ---  Alternate route: `/legacy/dogma/attributes/{attribute_id}/`  Alternate route: `/latest/dogma/attributes/{attribute_id}/`  Alternate route: `/dev/dogma/attributes/{attribute_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -88,7 +88,7 @@ No authorization required
 > []int32 GetDogmaEffects(optional)
 Get effects
 
-Get a list of dogma effect ids  ---  Alternate route: `/legacy/dogma/effects/`  Alternate route: `/latest/dogma/effects/`  Alternate route: `/dev/dogma/effects/`   ---  This route is cached for up to 3600 seconds
+Get a list of dogma effect ids  ---  Alternate route: `/legacy/dogma/effects/`  Alternate route: `/latest/dogma/effects/`  Alternate route: `/dev/dogma/effects/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -124,7 +124,7 @@ No authorization required
 > GetDogmaEffectsEffectIdOk GetDogmaEffectsEffectId(effectId, optional)
 Get effect information
 
-Get information on a dogma effect  ---  Alternate route: `/legacy/dogma/effects/{effect_id}/`  Alternate route: `/latest/dogma/effects/{effect_id}/`   ---  This route is cached for up to 3600 seconds
+Get information on a dogma effect  ---  Alternate route: `/legacy/dogma/effects/{effect_id}/`  Alternate route: `/latest/dogma/effects/{effect_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 

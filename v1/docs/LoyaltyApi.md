@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 > []GetLoyaltyStoresCorporationIdOffers200Ok GetLoyaltyStoresCorporationIdOffers(corporationId, optional)
 List loyalty store offers
 
-Return a list of offers from a specific corporation's loyalty store  ---  Alternate route: `/legacy/loyalty/stores/{corporation_id}/offers/`  Alternate route: `/latest/loyalty/stores/{corporation_id}/offers/`  Alternate route: `/dev/loyalty/stores/{corporation_id}/offers/`   ---  This route is cached for up to 3600 seconds
+Return a list of offers from a specific corporation's loyalty store  ---  Alternate route: `/legacy/loyalty/stores/{corporation_id}/offers/`  Alternate route: `/latest/loyalty/stores/{corporation_id}/offers/`  Alternate route: `/dev/loyalty/stores/{corporation_id}/offers/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 

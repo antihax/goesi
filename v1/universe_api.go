@@ -1756,7 +1756,7 @@ func (a *UniverseApiService) GetUniverseStructuresStructureId(ctx context.Contex
 }
 
 /* UniverseApiService Get system jumps
-Get the number of jumps in solar systems within the last hour, excluding wormhole space. Only systems with jumps will be listed  ---  Alternate route: &#x60;/legacy/universe/system_jumps/&#x60;  Alternate route: &#x60;/latest/universe/system_jumps/&#x60;  Alternate route: &#x60;/dev/universe/system_jumps/&#x60;   ---  This route is cached for up to 3600 seconds
+Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed  ---  Alternate route: &#x60;/legacy/universe/system_jumps/&#x60;  Alternate route: &#x60;/latest/universe/system_jumps/&#x60;  Alternate route: &#x60;/dev/universe/system_jumps/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
 @param optional (nil or map[string]interface{}) with one or more of:
@@ -1842,7 +1842,7 @@ func (a *UniverseApiService) GetUniverseSystemJumps(localVarOptionals map[string
 }
 
 /* UniverseApiService Get system kills
-Get the number of ship, pod and NPC kills per solar system within the last hour, excluding wormhole space. Only systems with kills will be listed  ---  Alternate route: &#x60;/legacy/universe/system_kills/&#x60;  Alternate route: &#x60;/latest/universe/system_kills/&#x60;  Alternate route: &#x60;/dev/universe/system_kills/&#x60;   ---  This route is cached for up to 3600 seconds
+Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  ---  Alternate route: &#x60;/legacy/universe/system_kills/&#x60;  Alternate route: &#x60;/latest/universe/system_kills/&#x60;  Alternate route: &#x60;/dev/universe/system_kills/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
 @param optional (nil or map[string]interface{}) with one or more of:

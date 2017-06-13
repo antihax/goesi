@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 > []GetUniverseSystemJumps200Ok GetUniverseSystemJumps(optional)
 Get system jumps
 
-Get the number of jumps in solar systems within the last hour, excluding wormhole space. Only systems with jumps will be listed  ---  Alternate route: `/legacy/universe/system_jumps/`  Alternate route: `/latest/universe/system_jumps/`  Alternate route: `/dev/universe/system_jumps/`   ---  This route is cached for up to 3600 seconds
+Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed  ---  Alternate route: `/legacy/universe/system_jumps/`  Alternate route: `/latest/universe/system_jumps/`  Alternate route: `/dev/universe/system_jumps/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -786,7 +786,7 @@ No authorization required
 > []GetUniverseSystemKills200Ok GetUniverseSystemKills(optional)
 Get system kills
 
-Get the number of ship, pod and NPC kills per solar system within the last hour, excluding wormhole space. Only systems with kills will be listed  ---  Alternate route: `/legacy/universe/system_kills/`  Alternate route: `/latest/universe/system_kills/`  Alternate route: `/dev/universe/system_kills/`   ---  This route is cached for up to 3600 seconds
+Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  ---  Alternate route: `/legacy/universe/system_kills/`  Alternate route: `/latest/universe/system_kills/`  Alternate route: `/dev/universe/system_kills/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

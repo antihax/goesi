@@ -15,6 +15,7 @@ Class | Method | HTTP request | Description
 *CorporationApi* | [**GetCorporationsCorporationId**](docs/CorporationApi.md#getcorporationscorporationid) | **Get** /corporations/{corporation_id}/ | Get corporation information
 *CorporationApi* | [**GetCorporationsCorporationIdMembers**](docs/CorporationApi.md#getcorporationscorporationidmembers) | **Get** /corporations/{corporation_id}/members/ | Get corporation members
 *DogmaApi* | [**GetDogmaEffectsEffectId**](docs/DogmaApi.md#getdogmaeffectseffectid) | **Get** /dogma/effects/{effect_id}/ | Get effect information
+*LocationApi* | [**GetCharactersCharacterIdOnline**](docs/LocationApi.md#getcharacterscharacteridonline) | **Get** /characters/{character_id}/online/ | Get character online
 *MailApi* | [**GetCharactersCharacterIdMailLabels**](docs/MailApi.md#getcharacterscharacteridmaillabels) | **Get** /characters/{character_id}/mail/labels/ | Get mail labels
 *MailApi* | [**PostCharactersCharacterIdMailLabels**](docs/MailApi.md#postcharacterscharacteridmaillabels) | **Post** /characters/{character_id}/mail/labels/ | Create a mail label
 *PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanetsPlanetId**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanetsplanetid) | **Get** /characters/{character_id}/planets/{planet_id}/ | Get colony layout
@@ -23,6 +24,7 @@ Class | Method | HTTP request | Description
 *SkillsApi* | [**GetCharactersCharacterIdSkillqueue**](docs/SkillsApi.md#getcharacterscharacteridskillqueue) | **Get** /characters/{character_id}/skillqueue/ | Get character&#39;s skill queue
 *SkillsApi* | [**GetCharactersCharacterIdSkills**](docs/SkillsApi.md#getcharacterscharacteridskills) | **Get** /characters/{character_id}/skills/ | Get character skills
 *UniverseApi* | [**GetUniverseStationsStationId**](docs/UniverseApi.md#getuniversestationsstationid) | **Get** /universe/stations/{station_id}/ | Get station information
+*UniverseApi* | [**GetUniverseSystemKills**](docs/UniverseApi.md#getuniversesystemkills) | **Get** /universe/system_kills/ | Get system kills
 *UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /universe/systems/{system_id}/ | Get solar system information
 *UniverseApi* | [**GetUniverseTypesTypeId**](docs/UniverseApi.md#getuniversetypestypeid) | **Get** /universe/types/{type_id}/ | Get type information
 *UniverseApi* | [**PostUniverseNames**](docs/UniverseApi.md#postuniversenames) | **Post** /universe/names/ | Get names and categories for a set of ID&#39;s
@@ -47,6 +49,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdMailLabels200Ok](docs/GetCharactersCharacterIdMailLabels200Ok.md)
  - [GetCharactersCharacterIdMailLabelsForbidden](docs/GetCharactersCharacterIdMailLabelsForbidden.md)
  - [GetCharactersCharacterIdMailLabelsInternalServerError](docs/GetCharactersCharacterIdMailLabelsInternalServerError.md)
+ - [GetCharactersCharacterIdOnlineForbidden](docs/GetCharactersCharacterIdOnlineForbidden.md)
+ - [GetCharactersCharacterIdOnlineInternalServerError](docs/GetCharactersCharacterIdOnlineInternalServerError.md)
+ - [GetCharactersCharacterIdOnlineOk](docs/GetCharactersCharacterIdOnlineOk.md)
  - [GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails](docs/GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails.md)
  - [GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails](docs/GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails.md)
  - [GetCharactersCharacterIdPlanetsPlanetIdForbidden](docs/GetCharactersCharacterIdPlanetsPlanetIdForbidden.md)
@@ -86,6 +91,8 @@ Class | Method | HTTP request | Description
  - [GetUniverseStationsStationIdNotFound](docs/GetUniverseStationsStationIdNotFound.md)
  - [GetUniverseStationsStationIdOk](docs/GetUniverseStationsStationIdOk.md)
  - [GetUniverseStationsStationIdPosition](docs/GetUniverseStationsStationIdPosition.md)
+ - [GetUniverseSystemKills200Ok](docs/GetUniverseSystemKills200Ok.md)
+ - [GetUniverseSystemKillsInternalServerError](docs/GetUniverseSystemKillsInternalServerError.md)
  - [GetUniverseSystemsSystemIdInternalServerError](docs/GetUniverseSystemsSystemIdInternalServerError.md)
  - [GetUniverseSystemsSystemIdNotFound](docs/GetUniverseSystemsSystemIdNotFound.md)
  - [GetUniverseSystemsSystemIdOk](docs/GetUniverseSystemsSystemIdOk.md)
@@ -122,6 +129,7 @@ Class | Method | HTTP request | Description
  - **esi-characters.write_contacts.v1**: EVE SSO scope esi-characters.write_contacts.v1
  - **esi-clones.read_clones.v1**: EVE SSO scope esi-clones.read_clones.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
+ - **esi-location.read_online.v1**: EVE SSO scope esi-location.read_online.v1
  - **esi-mail.organize_mail.v1**: EVE SSO scope esi-mail.organize_mail.v1
  - **esi-mail.read_mail.v1**: EVE SSO scope esi-mail.read_mail.v1
  - **esi-planets.manage_planets.v1**: EVE SSO scope esi-planets.manage_planets.v1

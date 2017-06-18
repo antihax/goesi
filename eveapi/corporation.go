@@ -2,6 +2,7 @@ package eveapi
 
 import (
 	"fmt"
+
 	"golang.org/x/oauth2"
 )
 
@@ -101,6 +102,36 @@ func (c *EVEAPIClient) CorporationIndustryJobsHistoryXML(auth oauth2.TokenSource
 		return nil, err
 	}
 	url := c.base.XML + fmt.Sprintf("corp/IndustryJobsHistory.xml.aspx?corporationID=%d&accessToken=%s", corporationID, tok.AccessToken)
+	_, err = c.doXML("GET", url, nil, w)
+	if err != nil {
+		return nil, err
+	}
+	return w, nil
+}
+
+type CorporationBlueprintsXML struct {
+	xmlAPIFrame
+	Entries []struct {
+		ItemID             int64  `xml:"itemID,attr"`
+		LocationID         int64  `xml:"locationID,attr"`
+		TypeID             int64  `xml:"typeID,attr"`
+		TypeName           string `xml:"typeName,attr"`
+		Quantity           int64  `xml:"quantity,attr"`
+		FlagID             int64  `xml:"flagID,attr"`
+		TimeEfficiency     int64  `xml:"timeEfficiency,attr"`
+		MaterialEfficiency int64  `xml:"materialEfficiency,attr"`
+		Runs               int64  `xml:"runs,attr"`
+	} `xml:"result>rowset>row"`
+}
+
+// CorporationBlueprintsXML queries the XML API for blueprints owned by corporationID.
+func (c *EVEAPIClient) CorporationBlueprintsXML(auth oauth2.TokenSource, corporationID int64) (*CorporationBlueprintsXML, error) {
+	tok, err := auth.Token()
+	if err != nil {
+		return nil, err
+	}
+	url := c.base.XML + fmt.Sprintf("corp/Blueprints.xml.aspx?corporationID=%d&accessToken=%s", corporationID, tok.AccessToken)
+	w := &CorporationBlueprintsXML{}
 	_, err = c.doXML("GET", url, nil, w)
 	if err != nil {
 		return nil, err

@@ -31,6 +31,9 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**GetCharactersCharacterIdContactsLabels**](docs/ContactsApi.md#getcharacterscharacteridcontactslabels) | **Get** /characters/{character_id}/contacts/labels/ | Get contact labels
 *ContactsApi* | [**PostCharactersCharacterIdContacts**](docs/ContactsApi.md#postcharacterscharacteridcontacts) | **Post** /characters/{character_id}/contacts/ | Add contacts
 *ContactsApi* | [**PutCharactersCharacterIdContacts**](docs/ContactsApi.md#putcharacterscharacteridcontacts) | **Put** /characters/{character_id}/contacts/ | Edit contacts
+*ContractsApi* | [**GetCharactersCharacterIdContracts**](docs/ContractsApi.md#getcharacterscharacteridcontracts) | **Get** /characters/{character_id}/contracts/ | Get contracts
+*ContractsApi* | [**GetCharactersCharacterIdContractsContractIdBids**](docs/ContractsApi.md#getcharacterscharacteridcontractscontractidbids) | **Get** /characters/{character_id}/contracts/{contract_id}/bids/ | Get contract bids
+*ContractsApi* | [**GetCharactersCharacterIdContractsContractIdItems**](docs/ContractsApi.md#getcharacterscharacteridcontractscontractiditems) | **Get** /characters/{character_id}/contracts/{contract_id}/items/ | Get contract items
 *CorporationApi* | [**GetCorporationsCorporationIdAlliancehistory**](docs/CorporationApi.md#getcorporationscorporationidalliancehistory) | **Get** /corporations/{corporation_id}/alliancehistory/ | Get alliance history
 *CorporationApi* | [**GetCorporationsCorporationIdIcons**](docs/CorporationApi.md#getcorporationscorporationidicons) | **Get** /corporations/{corporation_id}/icons/ | Get corporation icon
 *CorporationApi* | [**GetCorporationsCorporationIdRoles**](docs/CorporationApi.md#getcorporationscorporationidroles) | **Get** /corporations/{corporation_id}/roles/ | Get corporation member roles
@@ -204,6 +207,15 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdContactsLabels200Ok](docs/GetCharactersCharacterIdContactsLabels200Ok.md)
  - [GetCharactersCharacterIdContactsLabelsForbidden](docs/GetCharactersCharacterIdContactsLabelsForbidden.md)
  - [GetCharactersCharacterIdContactsLabelsInternalServerError](docs/GetCharactersCharacterIdContactsLabelsInternalServerError.md)
+ - [GetCharactersCharacterIdContracts200Ok](docs/GetCharactersCharacterIdContracts200Ok.md)
+ - [GetCharactersCharacterIdContractsContractIdBids200Ok](docs/GetCharactersCharacterIdContractsContractIdBids200Ok.md)
+ - [GetCharactersCharacterIdContractsContractIdBidsForbidden](docs/GetCharactersCharacterIdContractsContractIdBidsForbidden.md)
+ - [GetCharactersCharacterIdContractsContractIdBidsInternalServerError](docs/GetCharactersCharacterIdContractsContractIdBidsInternalServerError.md)
+ - [GetCharactersCharacterIdContractsContractIdItems200Ok](docs/GetCharactersCharacterIdContractsContractIdItems200Ok.md)
+ - [GetCharactersCharacterIdContractsContractIdItemsForbidden](docs/GetCharactersCharacterIdContractsContractIdItemsForbidden.md)
+ - [GetCharactersCharacterIdContractsContractIdItemsInternalServerError](docs/GetCharactersCharacterIdContractsContractIdItemsInternalServerError.md)
+ - [GetCharactersCharacterIdContractsForbidden](docs/GetCharactersCharacterIdContractsForbidden.md)
+ - [GetCharactersCharacterIdContractsInternalServerError](docs/GetCharactersCharacterIdContractsInternalServerError.md)
  - [GetCharactersCharacterIdCorporationhistory200Ok](docs/GetCharactersCharacterIdCorporationhistory200Ok.md)
  - [GetCharactersCharacterIdCorporationhistoryInternalServerError](docs/GetCharactersCharacterIdCorporationhistoryInternalServerError.md)
  - [GetCharactersCharacterIdFittings200Ok](docs/GetCharactersCharacterIdFittings200Ok.md)
@@ -544,6 +556,7 @@ Class | Method | HTTP request | Description
  - **esi-characters.read_standings.v1**: EVE SSO scope esi-characters.read_standings.v1
  - **esi-characters.write_contacts.v1**: EVE SSO scope esi-characters.write_contacts.v1
  - **esi-clones.read_clones.v1**: EVE SSO scope esi-clones.read_clones.v1
+ - **esi-contracts.read_character_contracts.v1**: EVE SSO scope esi-contracts.read_character_contracts.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
  - **esi-corporations.read_structures.v1**: EVE SSO scope esi-corporations.read_structures.v1
  - **esi-corporations.write_structures.v1**: EVE SSO scope esi-corporations.write_structures.v1

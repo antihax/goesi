@@ -135,6 +135,7 @@ Class | Method | HTTP request | Description
 *UserInterfaceApi* | [**PostUiOpenwindowMarketdetails**](docs/UserInterfaceApi.md#postuiopenwindowmarketdetails) | **Post** /ui/openwindow/marketdetails/ | Open Market Details
 *UserInterfaceApi* | [**PostUiOpenwindowNewmail**](docs/UserInterfaceApi.md#postuiopenwindownewmail) | **Post** /ui/openwindow/newmail/ | Open New Mail Window
 *WalletApi* | [**GetCharactersCharacterIdWallets**](docs/WalletApi.md#getcharacterscharacteridwallets) | **Get** /characters/{character_id}/wallets/ | List wallets and balances
+*WalletApi* | [**GetCharactersCharacterIdWalletsJournal**](docs/WalletApi.md#getcharacterscharacteridwalletsjournal) | **Get** /characters/{character_id}/wallets/journal/ | Get character wallet journal
 *WarsApi* | [**GetWars**](docs/WarsApi.md#getwars) | **Get** /wars/ | List wars
 *WarsApi* | [**GetWarsWarId**](docs/WarsApi.md#getwarswarid) | **Get** /wars/{war_id}/ | Get war information
 *WarsApi* | [**GetWarsWarIdKillmails**](docs/WarsApi.md#getwarswaridkillmails) | **Get** /wars/{war_id}/killmails/ | List kills for a war
@@ -290,6 +291,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdWallets200Ok](docs/GetCharactersCharacterIdWallets200Ok.md)
  - [GetCharactersCharacterIdWalletsForbidden](docs/GetCharactersCharacterIdWalletsForbidden.md)
  - [GetCharactersCharacterIdWalletsInternalServerError](docs/GetCharactersCharacterIdWalletsInternalServerError.md)
+ - [GetCharactersCharacterIdWalletsJournal200Ok](docs/GetCharactersCharacterIdWalletsJournal200Ok.md)
+ - [GetCharactersCharacterIdWalletsJournalForbidden](docs/GetCharactersCharacterIdWalletsJournalForbidden.md)
+ - [GetCharactersCharacterIdWalletsJournalInternalServerError](docs/GetCharactersCharacterIdWalletsJournalInternalServerError.md)
  - [GetCharactersNames200Ok](docs/GetCharactersNames200Ok.md)
  - [GetCharactersNamesInternalServerError](docs/GetCharactersNamesInternalServerError.md)
  - [GetCorporationsCorporationIdAlliancehistory200Ok](docs/GetCorporationsCorporationIdAlliancehistory200Ok.md)

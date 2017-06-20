@@ -213,7 +213,7 @@ func (a *UniverseApiService) GetUniverseSystemKills(localVarOptionals map[string
 }
 
 /* UniverseApiService Get solar system information
-Get information on a solar system  ---  Alternate route: &#x60;/latest/universe/systems/{system_id}/&#x60;  Alternate route: &#x60;/dev/universe/systems/{system_id}/&#x60;   ---  This route expires daily at 11:05
+Get information on a solar system  ---  Alternate route: &#x60;/latest/universe/systems/{system_id}/&#x60;   ---  This route expires daily at 11:05
 
 
 @param systemId system_id integer

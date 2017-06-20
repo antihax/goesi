@@ -89,7 +89,7 @@ No authorization required
 > GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(systemId, optional)
 Get solar system information
 
-Get information on a solar system  ---  Alternate route: `/latest/universe/systems/{system_id}/`  Alternate route: `/dev/universe/systems/{system_id}/`   ---  This route expires daily at 11:05
+Get information on a solar system  ---  Alternate route: `/latest/universe/systems/{system_id}/`   ---  This route expires daily at 11:05
 
 ### Required Parameters
 

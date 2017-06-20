@@ -1,6 +1,6 @@
 # \SkillsApi
 
-All URIs are relative to *https://esi.tech.ccp.is/v3*
+All URIs are relative to *https://esi.tech.ccp.is/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 > GetCharactersCharacterIdSkillsOk GetCharactersCharacterIdSkills(ctx, characterId, optional)
 Get character skills
 
-List all trained skills for the given character  ---  Alternate route: `/latest/characters/{character_id}/skills/`   ---  This route is cached for up to 120 seconds
+List all trained skills for the given character  ---  Alternate route: `/dev/characters/{character_id}/skills/`   ---  This route is cached for up to 120 seconds
 
 ### Required Parameters
 

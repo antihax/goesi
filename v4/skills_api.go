@@ -20,7 +20,7 @@
  * limitations under the License.
  */
 
-package goesiv3
+package goesiv4
 
 import (
 	"encoding/json"
@@ -39,7 +39,7 @@ var (
 type SkillsApiService service
 
 /* SkillsApiService Get character skills
-List all trained skills for the given character  ---  Alternate route: &#x60;/latest/characters/{character_id}/skills/&#x60;   ---  This route is cached for up to 120 seconds
+List all trained skills for the given character  ---  Alternate route: &#x60;/dev/characters/{character_id}/skills/&#x60;   ---  This route is cached for up to 120 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID

@@ -58,6 +58,7 @@ type APIClient struct {
 
 	// API Services
 	CharacterApi *CharacterApiService
+	SkillsApi    *SkillsApiService
 }
 
 type service struct {
@@ -79,6 +80,7 @@ func NewAPIClient(httpClient *http.Client, userAgent string) *APIClient {
 
 	// API Services
 	c.CharacterApi = (*CharacterApiService)(&c.common)
+	c.SkillsApi = (*SkillsApiService)(&c.common)
 
 	return c
 }

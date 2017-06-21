@@ -12,6 +12,7 @@ Class | Method | HTTP request | Description
 *CharacterApi* | [**PostCharactersCharacterIdCspa**](docs/CharacterApi.md#postcharacterscharacteridcspa) | **Post** /characters/{character_id}/cspa/ | Calculate a CSPA charge cost
 *CorporationApi* | [**GetCorporationsCorporationId**](docs/CorporationApi.md#getcorporationscorporationid) | **Get** /corporations/{corporation_id}/ | Get corporation information
 *MailApi* | [**GetCharactersCharacterIdMailLabels**](docs/MailApi.md#getcharacterscharacteridmaillabels) | **Get** /characters/{character_id}/mail/labels/ | Get mail labels and unread counts
+*PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanetsPlanetId**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanetsplanetid) | **Get** /characters/{character_id}/planets/{planet_id}/ | Get colony layout
 *SearchApi* | [**GetCharactersCharacterIdSearch**](docs/SearchApi.md#getcharacterscharacteridsearch) | **Get** /characters/{character_id}/search/ | Search on a string
 *SkillsApi* | [**GetCharactersCharacterIdSkills**](docs/SkillsApi.md#getcharacterscharacteridskills) | **Get** /characters/{character_id}/skills/ | Get character skills
 *UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /universe/systems/{system_id}/ | Get solar system information
@@ -29,6 +30,16 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdMailLabelsLabel](docs/GetCharactersCharacterIdMailLabelsLabel.md)
  - [GetCharactersCharacterIdMailLabelsOk](docs/GetCharactersCharacterIdMailLabelsOk.md)
  - [GetCharactersCharacterIdOk](docs/GetCharactersCharacterIdOk.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails](docs/GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails](docs/GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdForbidden](docs/GetCharactersCharacterIdPlanetsPlanetIdForbidden.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdHead](docs/GetCharactersCharacterIdPlanetsPlanetIdHead.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdInternalServerError](docs/GetCharactersCharacterIdPlanetsPlanetIdInternalServerError.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdLink](docs/GetCharactersCharacterIdPlanetsPlanetIdLink.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdNotFound](docs/GetCharactersCharacterIdPlanetsPlanetIdNotFound.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdOk](docs/GetCharactersCharacterIdPlanetsPlanetIdOk.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdPin](docs/GetCharactersCharacterIdPlanetsPlanetIdPin.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdRoute](docs/GetCharactersCharacterIdPlanetsPlanetIdRoute.md)
  - [GetCharactersCharacterIdSearchForbidden](docs/GetCharactersCharacterIdSearchForbidden.md)
  - [GetCharactersCharacterIdSearchInternalServerError](docs/GetCharactersCharacterIdSearchInternalServerError.md)
  - [GetCharactersCharacterIdSearchOk](docs/GetCharactersCharacterIdSearchOk.md)
@@ -72,6 +83,7 @@ Class | Method | HTTP request | Description
  - **esi-calendar.respond_calendar_events.v1**: EVE SSO scope esi-calendar.respond_calendar_events.v1
  - **esi-characters.read_contacts.v1**: EVE SSO scope esi-characters.read_contacts.v1
  - **esi-mail.read_mail.v1**: EVE SSO scope esi-mail.read_mail.v1
+ - **esi-planets.manage_planets.v1**: EVE SSO scope esi-planets.manage_planets.v1
  - **esi-search.search_structures.v1**: EVE SSO scope esi-search.search_structures.v1
  - **esi-skills.read_skills.v1**: EVE SSO scope esi-skills.read_skills.v1
 

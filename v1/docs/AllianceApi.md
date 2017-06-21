@@ -165,7 +165,7 @@ No authorization required
 > []GetAlliancesNames200Ok GetAlliancesNames(allianceIds, optional)
 Get alliance names
 
-Resolve a set of alliance IDs to alliance names  ---  Alternate route: `/legacy/alliances/names/`  Alternate route: `/latest/alliances/names/`  Alternate route: `/dev/alliances/names/`   ---  This route is cached for up to 3600 seconds
+Resolve a set of alliance IDs to alliance names  ---  Alternate route: `/legacy/alliances/names/`  Alternate route: `/latest/alliances/names/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

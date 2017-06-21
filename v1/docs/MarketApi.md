@@ -214,7 +214,7 @@ Return a list of orders in a region  ---  Alternate route: `/legacy/markets/{reg
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-  **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders.  | [default to all]
+  **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. | [default to all]
   **regionId** | **int32**| Return orders in this region | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -223,10 +223,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders.  | [default to all]
+ **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. | [default to all]
  **regionId** | **int32**| Return orders in this region | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **page** | **int32**| Which page to query, only used for querying without type_id. Starting at 1  | [default to 1]
+ **page** | **int32**| Which page to query, only used for querying without type_id. Starting at 1 | [default to 1]
  **typeId** | **int32**| Return orders only for this type | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

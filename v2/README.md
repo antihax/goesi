@@ -7,6 +7,7 @@ All URIs are relative to *https://esi.tech.ccp.is/v2*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AllianceApi* | [**GetAlliancesAllianceId**](docs/AllianceApi.md#getalliancesallianceid) | **Get** /alliances/{alliance_id}/ | Get alliance information
+*AllianceApi* | [**GetAlliancesNames**](docs/AllianceApi.md#getalliancesnames) | **Get** /alliances/names/ | Get alliance names
 *CalendarApi* | [**GetCharactersCharacterIdCalendarEventId**](docs/CalendarApi.md#getcharacterscharacteridcalendareventid) | **Get** /characters/{character_id}/calendar/{event_id}/ | Get an event
 *CalendarApi* | [**PutCharactersCharacterIdCalendarEventId**](docs/CalendarApi.md#putcharacterscharacteridcalendareventid) | **Put** /characters/{character_id}/calendar/{event_id}/ | Respond to an event
 *CharacterApi* | [**GetCharactersCharacterIdPortrait**](docs/CharacterApi.md#getcharacterscharacteridportrait) | **Get** /characters/{character_id}/portrait/ | Get character portraits
@@ -14,6 +15,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**DeleteCharactersCharacterIdContacts**](docs/ContactsApi.md#deletecharacterscharacteridcontacts) | **Delete** /characters/{character_id}/contacts/ | Delete contacts
 *CorporationApi* | [**GetCorporationsCorporationId**](docs/CorporationApi.md#getcorporationscorporationid) | **Get** /corporations/{corporation_id}/ | Get corporation information
 *CorporationApi* | [**GetCorporationsCorporationIdMembers**](docs/CorporationApi.md#getcorporationscorporationidmembers) | **Get** /corporations/{corporation_id}/members/ | Get corporation members
+*CorporationApi* | [**GetCorporationsNames**](docs/CorporationApi.md#getcorporationsnames) | **Get** /corporations/names/ | Get corporation names
 *DogmaApi* | [**GetDogmaEffectsEffectId**](docs/DogmaApi.md#getdogmaeffectseffectid) | **Get** /dogma/effects/{effect_id}/ | Get effect information
 *LocationApi* | [**GetCharactersCharacterIdOnline**](docs/LocationApi.md#getcharacterscharacteridonline) | **Get** /characters/{character_id}/online/ | Get character online
 *MailApi* | [**GetCharactersCharacterIdMailLabels**](docs/MailApi.md#getcharacterscharacteridmaillabels) | **Get** /characters/{character_id}/mail/labels/ | Get mail labels
@@ -38,6 +40,8 @@ Class | Method | HTTP request | Description
  - [GetAlliancesAllianceIdInternalServerError](docs/GetAlliancesAllianceIdInternalServerError.md)
  - [GetAlliancesAllianceIdNotFound](docs/GetAlliancesAllianceIdNotFound.md)
  - [GetAlliancesAllianceIdOk](docs/GetAlliancesAllianceIdOk.md)
+ - [GetAlliancesNames200Ok](docs/GetAlliancesNames200Ok.md)
+ - [GetAlliancesNamesInternalServerError](docs/GetAlliancesNamesInternalServerError.md)
  - [GetCharactersCharacterIdCalendarEventIdForbidden](docs/GetCharactersCharacterIdCalendarEventIdForbidden.md)
  - [GetCharactersCharacterIdCalendarEventIdInternalServerError](docs/GetCharactersCharacterIdCalendarEventIdInternalServerError.md)
  - [GetCharactersCharacterIdCalendarEventIdOk](docs/GetCharactersCharacterIdCalendarEventIdOk.md)
@@ -81,6 +85,8 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdMembersInternalServerError](docs/GetCorporationsCorporationIdMembersInternalServerError.md)
  - [GetCorporationsCorporationIdNotFound](docs/GetCorporationsCorporationIdNotFound.md)
  - [GetCorporationsCorporationIdOk](docs/GetCorporationsCorporationIdOk.md)
+ - [GetCorporationsNames200Ok](docs/GetCorporationsNames200Ok.md)
+ - [GetCorporationsNamesInternalServerError](docs/GetCorporationsNamesInternalServerError.md)
  - [GetDogmaEffectsEffectIdInternalServerError](docs/GetDogmaEffectsEffectIdInternalServerError.md)
  - [GetDogmaEffectsEffectIdModifier](docs/GetDogmaEffectsEffectIdModifier.md)
  - [GetDogmaEffectsEffectIdNotFound](docs/GetDogmaEffectsEffectIdNotFound.md)

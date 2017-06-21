@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsNames200Ok GetCorporationsNames(corporationIds, optional)
 Get corporation names
 
-Resolve a set of corporation IDs to corporation names  ---  Alternate route: `/legacy/corporations/names/`  Alternate route: `/latest/corporations/names/`  Alternate route: `/dev/corporations/names/`   ---  This route is cached for up to 3600 seconds
+Resolve a set of corporation IDs to corporation names  ---  Alternate route: `/legacy/corporations/names/`  Alternate route: `/latest/corporations/names/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

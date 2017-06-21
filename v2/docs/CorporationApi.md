@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCorporationsCorporationId**](CorporationApi.md#GetCorporationsCorporationId) | **Get** /corporations/{corporation_id}/ | Get corporation information
 [**GetCorporationsCorporationIdMembers**](CorporationApi.md#GetCorporationsCorporationIdMembers) | **Get** /corporations/{corporation_id}/members/ | Get corporation members
+[**GetCorporationsNames**](CorporationApi.md#GetCorporationsNames) | **Get** /corporations/names/ | Get corporation names
 
 
 # **GetCorporationsCorporationId**
@@ -78,6 +79,44 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCorporationsNames**
+> []GetCorporationsNames200Ok GetCorporationsNames(corporationIds, optional)
+Get corporation names
+
+Resolve a set of corporation IDs to corporation names  ---  Alternate route: `/dev/corporations/names/`   ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+  **corporationIds** | [**[]int32**](int32.md)| A comma separated list of corporation IDs | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **corporationIds** | [**[]int32**](int32.md)| A comma separated list of corporation IDs | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**[]GetCorporationsNames200Ok**](get_corporations_names_200_ok.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

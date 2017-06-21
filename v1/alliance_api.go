@@ -389,7 +389,7 @@ func (a *AllianceApiService) GetAlliancesAllianceIdIcons(allianceId int32, local
 }
 
 /* AllianceApiService Get alliance names
-Resolve a set of alliance IDs to alliance names  ---  Alternate route: &#x60;/legacy/alliances/names/&#x60;  Alternate route: &#x60;/latest/alliances/names/&#x60;  Alternate route: &#x60;/dev/alliances/names/&#x60;   ---  This route is cached for up to 3600 seconds
+Resolve a set of alliance IDs to alliance names  ---  Alternate route: &#x60;/legacy/alliances/names/&#x60;  Alternate route: &#x60;/latest/alliances/names/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
 @param allianceIds A comma separated list of alliance IDs

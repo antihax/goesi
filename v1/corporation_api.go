@@ -419,7 +419,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 }
 
 /* CorporationApiService Get corporation names
-Resolve a set of corporation IDs to corporation names  ---  Alternate route: &#x60;/legacy/corporations/names/&#x60;  Alternate route: &#x60;/latest/corporations/names/&#x60;  Alternate route: &#x60;/dev/corporations/names/&#x60;   ---  This route is cached for up to 3600 seconds
+Resolve a set of corporation IDs to corporation names  ---  Alternate route: &#x60;/legacy/corporations/names/&#x60;  Alternate route: &#x60;/latest/corporations/names/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
 @param corporationIds A comma separated list of corporation IDs

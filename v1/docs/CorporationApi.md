@@ -17,7 +17,7 @@ Method | HTTP request | Description
 > []GetCorporationsCorporationIdAlliancehistory200Ok GetCorporationsCorporationIdAlliancehistory(corporationId, optional)
 Get alliance history
 
-Get a list of all the alliances a corporation has been a member of  ---  Alternate route: `/legacy/corporations/{corporation_id}/alliancehistory/`  Alternate route: `/latest/corporations/{corporation_id}/alliancehistory/`  Alternate route: `/dev/corporations/{corporation_id}/alliancehistory/`   ---  This route is cached for up to 3600 seconds
+Get a list of all the alliances a corporation has been a member of  ---  Alternate route: `/legacy/corporations/{corporation_id}/alliancehistory/`  Alternate route: `/latest/corporations/{corporation_id}/alliancehistory/`   ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

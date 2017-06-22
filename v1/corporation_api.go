@@ -39,7 +39,7 @@ var (
 type CorporationApiService service
 
 /* CorporationApiService Get alliance history
-Get a list of all the alliances a corporation has been a member of  ---  Alternate route: &#x60;/legacy/corporations/{corporation_id}/alliancehistory/&#x60;  Alternate route: &#x60;/latest/corporations/{corporation_id}/alliancehistory/&#x60;  Alternate route: &#x60;/dev/corporations/{corporation_id}/alliancehistory/&#x60;   ---  This route is cached for up to 3600 seconds
+Get a list of all the alliances a corporation has been a member of  ---  Alternate route: &#x60;/legacy/corporations/{corporation_id}/alliancehistory/&#x60;  Alternate route: &#x60;/latest/corporations/{corporation_id}/alliancehistory/&#x60;   ---  This route is cached for up to 3600 seconds
 
 
 @param corporationId An EVE corporation ID

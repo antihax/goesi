@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdContracts200Ok GetCharactersCharacterIdContracts(ctx, characterId, optional)
 Get contracts
 
-Returns contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \"in_progress\".  ---  Alternate route: `/legacy/characters/{character_id}/contracts/`  Alternate route: `/latest/characters/{character_id}/contracts/`  Alternate route: `/dev/characters/{character_id}/contracts/`   ---  This route is cached for up to 3600 seconds
+Returns contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \"in_progress\".  ---  Alternate route: `/legacy/characters/{character_id}/contracts/`  Alternate route: `/latest/characters/{character_id}/contracts/`  Alternate route: `/dev/characters/{character_id}/contracts/`   ---  This route is cached for up to 300 seconds
 
 ### Required Parameters
 

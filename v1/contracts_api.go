@@ -39,7 +39,7 @@ var (
 type ContractsApiService service
 
 /* ContractsApiService Get contracts
-Returns contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \&quot;in_progress\&quot;.  ---  Alternate route: &#x60;/legacy/characters/{character_id}/contracts/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/contracts/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/contracts/&#x60;   ---  This route is cached for up to 3600 seconds
+Returns contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \&quot;in_progress\&quot;.  ---  Alternate route: &#x60;/legacy/characters/{character_id}/contracts/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/contracts/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/contracts/&#x60;   ---  This route is cached for up to 300 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId ID for a character

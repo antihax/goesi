@@ -12,13 +12,12 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [GetCharactersCharacterIdInternalServerError](docs/GetCharactersCharacterIdInternalServerError.md)
+ - [Forbidden](docs/Forbidden.md)
  - [GetCharactersCharacterIdNotFound](docs/GetCharactersCharacterIdNotFound.md)
  - [GetCharactersCharacterIdOk](docs/GetCharactersCharacterIdOk.md)
- - [GetCharactersCharacterIdSkillsForbidden](docs/GetCharactersCharacterIdSkillsForbidden.md)
- - [GetCharactersCharacterIdSkillsInternalServerError](docs/GetCharactersCharacterIdSkillsInternalServerError.md)
  - [GetCharactersCharacterIdSkillsOk](docs/GetCharactersCharacterIdSkillsOk.md)
  - [GetCharactersCharacterIdSkillsSkill](docs/GetCharactersCharacterIdSkillsSkill.md)
+ - [InternalServerError](docs/InternalServerError.md)
 
 
 ## Documentation For Authorization

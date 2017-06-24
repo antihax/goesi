@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetFleetsFleetIdMembers200Ok. */
+//easyjson:json
+type GetFleetsFleetIdMembers200OkList []GetFleetsFleetIdMembers200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetFleetsFleetIdMembers200Ok struct {
 	CharacterId    int32     `json:"character_id,omitempty"`     /* character_id integer */
 	JoinTime       time.Time `json:"join_time,omitempty"`        /* join_time string */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetAlliancesNames200Ok. */
+//easyjson:json
+type GetAlliancesNames200OkList []GetAlliancesNames200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetAlliancesNames200Ok struct {
 	AllianceId   int32  `json:"alliance_id,omitempty"`   /* alliance_id integer */
 	AllianceName string `json:"alliance_name,omitempty"` /* alliance_name string */

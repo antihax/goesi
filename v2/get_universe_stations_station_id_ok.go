@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetUniverseStationsStationIdOk. */
+//easyjson:json
+type GetUniverseStationsStationIdOkList []GetUniverseStationsStationIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseStationsStationIdOk struct {
 	MaxDockableShipVolume    float32                              `json:"max_dockable_ship_volume,omitempty"` /* max_dockable_ship_volume number */
 	Name                     string                               `json:"name,omitempty"`                     /* name string */

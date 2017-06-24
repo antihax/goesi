@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of InternalServerError. */
+//easyjson:json
+type InternalServerErrorList []InternalServerError
+
 /* Internal server error model */
+//easyjson:json
 type InternalServerError struct {
 	Error_ string `json:"error,omitempty"` /* Internal server error message */
 }

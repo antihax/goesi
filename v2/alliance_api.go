@@ -23,12 +23,15 @@
 package goesiv2
 
 import (
-	"encoding/json"
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"fmt"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -118,8 +121,7 @@ func (a *AllianceApiService) GetAlliancesAllianceId(allianceId int32, localVarOp
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -142,7 +144,7 @@ func (a *AllianceApiService) GetAlliancesNames(allianceIds []int32, localVarOpti
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetAlliancesNames200Ok
+		successPayload     GetAlliancesNames200OkList
 	)
 
 	// create path and map variables
@@ -212,8 +214,7 @@ func (a *AllianceApiService) GetAlliancesNames(allianceIds []int32, localVarOpti
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdClonesOk. */
+//easyjson:json
+type GetCharactersCharacterIdClonesOkList []GetCharactersCharacterIdClonesOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdClonesOk struct {
 	HomeLocation GetCharactersCharacterIdClonesHomeLocation `json:"home_location,omitempty"`
 	JumpClones   []GetCharactersCharacterIdClonesJumpClone  `json:"jump_clones,omitempty"`    /* jump_clones array */

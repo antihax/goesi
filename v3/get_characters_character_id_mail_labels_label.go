@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of GetCharactersCharacterIdMailLabelsLabel. */
+//easyjson:json
+type GetCharactersCharacterIdMailLabelsLabelList []GetCharactersCharacterIdMailLabelsLabel
+
 /* label object */
+//easyjson:json
 type GetCharactersCharacterIdMailLabelsLabel struct {
 	Color       string `json:"color,omitempty"`        /* color string */
 	LabelId     int32  `json:"label_id,omitempty"`     /* label_id integer */

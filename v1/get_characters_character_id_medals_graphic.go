@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdMedalsGraphic. */
+//easyjson:json
+type GetCharactersCharacterIdMedalsGraphicList []GetCharactersCharacterIdMedalsGraphic
+
 /* graphic object */
+//easyjson:json
 type GetCharactersCharacterIdMedalsGraphic struct {
 	Color   int32  `json:"color,omitempty"`   /* color integer */
 	Graphic string `json:"graphic,omitempty"` /* graphic string */

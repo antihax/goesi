@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdContactsLabels200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdContactsLabels200OkList []GetCharactersCharacterIdContactsLabels200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdContactsLabels200Ok struct {
 	LabelId   int64  `json:"label_id,omitempty"`   /* label_id integer */
 	LabelName string `json:"label_name,omitempty"` /* label_name string */

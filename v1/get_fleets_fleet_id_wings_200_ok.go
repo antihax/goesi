@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetFleetsFleetIdWings200Ok. */
+//easyjson:json
+type GetFleetsFleetIdWings200OkList []GetFleetsFleetIdWings200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetFleetsFleetIdWings200Ok struct {
 	Id     int64                        `json:"id,omitempty"`     /* id integer */
 	Name   string                       `json:"name,omitempty"`   /* name string */

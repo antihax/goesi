@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCorporationsCorporationIdOk. */
+//easyjson:json
+type GetCorporationsCorporationIdOkList []GetCorporationsCorporationIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCorporationsCorporationIdOk struct {
 	AllianceId             int32     `json:"alliance_id,omitempty"`             /* id of alliance that corporation is a member of, if any */
 	CeoId                  int32     `json:"ceo_id,omitempty"`                  /* ceo_id integer */

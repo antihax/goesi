@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCorporationsCorporationIdAlliancehistory200Ok. */
+//easyjson:json
+type GetCorporationsCorporationIdAlliancehistory200OkList []GetCorporationsCorporationIdAlliancehistory200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCorporationsCorporationIdAlliancehistory200Ok struct {
 	Alliance  GetCorporationsCorporationIdAlliancehistoryAlliance `json:"alliance,omitempty"`
 	RecordId  int32                                               `json:"record_id,omitempty"`  /* An incrementing ID that can be used to canonically establish order of records in cases where dates may be ambiguous */

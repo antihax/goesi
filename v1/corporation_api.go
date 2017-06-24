@@ -23,12 +23,16 @@
 package goesiv1
 
 import (
-	"encoding/json"
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"encoding/json"
+	"fmt"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -54,7 +58,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(corp
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCorporationsCorporationIdAlliancehistory200Ok
+		successPayload     GetCorporationsCorporationIdAlliancehistory200OkList
 	)
 
 	// create path and map variables
@@ -118,8 +122,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(corp
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -206,8 +209,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(corporationId 
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -231,7 +233,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCorporationsCorporationIdRoles200Ok
+		successPayload     GetCorporationsCorporationIdRoles200OkList
 	)
 
 	// create path and map variables
@@ -301,8 +303,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -328,7 +329,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCorporationsCorporationIdStructures200Ok
+		successPayload     GetCorporationsCorporationIdStructures200OkList
 	)
 
 	// create path and map variables
@@ -410,8 +411,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -434,7 +434,7 @@ func (a *CorporationApiService) GetCorporationsNames(corporationIds []int64, loc
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCorporationsNames200Ok
+		successPayload     GetCorporationsNames200OkList
 	)
 
 	// create path and map variables
@@ -504,8 +504,7 @@ func (a *CorporationApiService) GetCorporationsNames(corporationIds []int64, loc
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -590,7 +589,6 @@ func (a *CorporationApiService) GetCorporationsNpccorps(localVarOptionals map[st
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
 	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}

@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetUniverseStationsStationIdNotFound. */
+//easyjson:json
+type GetUniverseStationsStationIdNotFoundList []GetUniverseStationsStationIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetUniverseStationsStationIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdClones200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdClones200OkList []GetCharactersCharacterIdClones200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdClones200Ok struct {
 	Implants     []int32 `json:"implants,omitempty"`      /* implants array */
 	LocationId   int64   `json:"location_id,omitempty"`   /* location_id integer */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PutCorporationsCorporationIdStructuresStructureIdNewSchedule. */
+//easyjson:json
+type PutCorporationsCorporationIdStructuresStructureIdNewScheduleList []PutCorporationsCorporationIdStructuresStructureIdNewSchedule
+
 /* new_schedule object */
+//easyjson:json
 type PutCorporationsCorporationIdStructuresStructureIdNewSchedule struct {
 	Day  int32 `json:"day,omitempty"`  /* Day of the week, zero-indexed to Monday */
 	Hour int32 `json:"hour,omitempty"` /* Hour of the day evetime, zero-indexed to midnight */

@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of Forbidden. */
+//easyjson:json
+type ForbiddenList []Forbidden
+
 /* Forbidden model */
+//easyjson:json
 type Forbidden struct {
 	Error_ string `json:"error,omitempty"` /* Forbidden message */
 }

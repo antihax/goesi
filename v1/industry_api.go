@@ -23,12 +23,15 @@
 package goesiv1
 
 import (
-	"encoding/json"
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"fmt"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -56,7 +59,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdIndustryJobs200Ok
+		successPayload     GetCharactersCharacterIdIndustryJobs200OkList
 	)
 
 	// create path and map variables
@@ -132,8 +135,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -155,7 +157,7 @@ func (a *IndustryApiService) GetIndustryFacilities(localVarOptionals map[string]
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetIndustryFacilities200Ok
+		successPayload     GetIndustryFacilities200OkList
 	)
 
 	// create path and map variables
@@ -218,8 +220,7 @@ func (a *IndustryApiService) GetIndustryFacilities(localVarOptionals map[string]
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -241,7 +242,7 @@ func (a *IndustryApiService) GetIndustrySystems(localVarOptionals map[string]int
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetIndustrySystems200Ok
+		successPayload     GetIndustrySystems200OkList
 	)
 
 	// create path and map variables
@@ -304,8 +305,7 @@ func (a *IndustryApiService) GetIndustrySystems(localVarOptionals map[string]int
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

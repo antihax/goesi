@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseConstellationsConstellationIdNotFound. */
+//easyjson:json
+type GetUniverseConstellationsConstellationIdNotFoundList []GetUniverseConstellationsConstellationIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetUniverseConstellationsConstellationIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

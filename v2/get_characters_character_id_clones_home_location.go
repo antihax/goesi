@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetCharactersCharacterIdClonesHomeLocation. */
+//easyjson:json
+type GetCharactersCharacterIdClonesHomeLocationList []GetCharactersCharacterIdClonesHomeLocation
+
 /* home_location object */
+//easyjson:json
 type GetCharactersCharacterIdClonesHomeLocation struct {
 	LocationId   int64  `json:"location_id,omitempty"`   /* location_id integer */
 	LocationType string `json:"location_type,omitempty"` /* location_type string */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdWallets200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdWallets200OkList []GetCharactersCharacterIdWallets200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdWallets200Ok struct {
 	Balance  int64 `json:"balance,omitempty"`   /* Wallet's balance in ISK hundredths. */
 	WalletId int32 `json:"wallet_id,omitempty"` /* wallet_id integer */

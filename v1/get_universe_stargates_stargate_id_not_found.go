@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseStargatesStargateIdNotFound. */
+//easyjson:json
+type GetUniverseStargatesStargateIdNotFoundList []GetUniverseStargatesStargateIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetUniverseStargatesStargateIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

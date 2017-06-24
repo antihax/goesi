@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostCharactersCharacterIdMailBadRequest. */
+//easyjson:json
+type PostCharactersCharacterIdMailBadRequestList []PostCharactersCharacterIdMailBadRequest
+
 /* Bad request */
+//easyjson:json
 type PostCharactersCharacterIdMailBadRequest struct {
 	Error_ string `json:"error,omitempty"` /* Bad request message */
 }

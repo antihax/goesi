@@ -22,7 +22,12 @@
 
 package goesiv4
 
+/* A list of GetCharactersCharacterIdSkillsOk. */
+//easyjson:json
+type GetCharactersCharacterIdSkillsOkList []GetCharactersCharacterIdSkillsOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdSkillsOk struct {
 	Skills  []GetCharactersCharacterIdSkillsSkill `json:"skills,omitempty"`   /* skills array */
 	TotalSp int64                                 `json:"total_sp,omitempty"` /* total_sp integer */

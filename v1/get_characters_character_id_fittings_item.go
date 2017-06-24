@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdFittingsItem. */
+//easyjson:json
+type GetCharactersCharacterIdFittingsItemList []GetCharactersCharacterIdFittingsItem
+
 /* item object */
+//easyjson:json
 type GetCharactersCharacterIdFittingsItem struct {
 	Flag     int32 `json:"flag,omitempty"`     /* flag integer */
 	Quantity int32 `json:"quantity,omitempty"` /* quantity integer */

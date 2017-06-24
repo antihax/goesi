@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetUniverseSystemsSystemIdPlanet. */
+//easyjson:json
+type GetUniverseSystemsSystemIdPlanetList []GetUniverseSystemsSystemIdPlanet
+
 /* planet object */
+//easyjson:json
 type GetUniverseSystemsSystemIdPlanet struct {
 	Moons    []int32 `json:"moons,omitempty"`     /* moons array */
 	PlanetId int32   `json:"planet_id,omitempty"` /* planet_id integer */

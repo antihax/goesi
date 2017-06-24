@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseStructuresStructureIdPosition. */
+//easyjson:json
+type GetUniverseStructuresStructureIdPositionList []GetUniverseStructuresStructureIdPosition
+
 /* Coordinates of the structure in Cartesian space relative to the Sun, in metres.  */
+//easyjson:json
 type GetUniverseStructuresStructureIdPosition struct {
 	X float32 `json:"x,omitempty"` /* x number */
 	Y float32 `json:"y,omitempty"` /* y number */

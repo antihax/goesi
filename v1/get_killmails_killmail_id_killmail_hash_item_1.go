@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetKillmailsKillmailIdKillmailHashItem1. */
+//easyjson:json
+type GetKillmailsKillmailIdKillmailHashItem1List []GetKillmailsKillmailIdKillmailHashItem1
+
 /* item object */
+//easyjson:json
 type GetKillmailsKillmailIdKillmailHashItem1 struct {
 	Flag              int32                                    `json:"flag,omitempty"`               /* Flag for the location of the item  */
 	ItemTypeId        int32                                    `json:"item_type_id,omitempty"`       /* item_type_id integer */

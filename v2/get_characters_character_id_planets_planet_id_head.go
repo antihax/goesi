@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetCharactersCharacterIdPlanetsPlanetIdHead. */
+//easyjson:json
+type GetCharactersCharacterIdPlanetsPlanetIdHeadList []GetCharactersCharacterIdPlanetsPlanetIdHead
+
 /* head object */
+//easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdHead struct {
 	HeadId    int32   `json:"head_id,omitempty"`   /* head_id integer */
 	Latitude  float32 `json:"latitude,omitempty"`  /* latitude number */

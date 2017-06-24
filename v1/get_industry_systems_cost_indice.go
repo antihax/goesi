@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetIndustrySystemsCostIndice. */
+//easyjson:json
+type GetIndustrySystemsCostIndiceList []GetIndustrySystemsCostIndice
+
 /* cost_indice object */
+//easyjson:json
 type GetIndustrySystemsCostIndice struct {
 	Activity  string  `json:"activity,omitempty"`   /* activity string */
 	CostIndex float32 `json:"cost_index,omitempty"` /* cost_index number */

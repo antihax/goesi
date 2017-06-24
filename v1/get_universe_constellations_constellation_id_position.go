@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseConstellationsConstellationIdPosition. */
+//easyjson:json
+type GetUniverseConstellationsConstellationIdPositionList []GetUniverseConstellationsConstellationIdPosition
+
 /* position object */
+//easyjson:json
 type GetUniverseConstellationsConstellationIdPosition struct {
 	X float32 `json:"x,omitempty"` /* x number */
 	Y float32 `json:"y,omitempty"` /* y number */

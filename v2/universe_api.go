@@ -23,12 +23,15 @@
 package goesiv2
 
 import (
-	"encoding/json"
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"fmt"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -118,8 +121,7 @@ func (a *UniverseApiService) GetUniverseStationsStationId(stationId int32, local
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -141,7 +143,7 @@ func (a *UniverseApiService) GetUniverseSystemKills(localVarOptionals map[string
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetUniverseSystemKills200Ok
+		successPayload     GetUniverseSystemKills200OkList
 	)
 
 	// create path and map variables
@@ -204,8 +206,7 @@ func (a *UniverseApiService) GetUniverseSystemKills(localVarOptionals map[string
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -299,8 +300,7 @@ func (a *UniverseApiService) GetUniverseSystemsSystemId(systemId int32, localVar
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -394,8 +394,7 @@ func (a *UniverseApiService) GetUniverseTypesTypeId(typeId int32, localVarOption
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -418,7 +417,7 @@ func (a *UniverseApiService) PostUniverseNames(ids []int32, localVarOptionals ma
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []PostUniverseNames200Ok
+		successPayload     PostUniverseNames200OkList
 	)
 
 	// create path and map variables
@@ -483,8 +482,7 @@ func (a *UniverseApiService) PostUniverseNames(ids []int32, localVarOptionals ma
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

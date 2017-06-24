@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetKillmailsKillmailIdKillmailHashOk. */
+//easyjson:json
+type GetKillmailsKillmailIdKillmailHashOkList []GetKillmailsKillmailIdKillmailHashOk
+
 /* 200 ok object */
+//easyjson:json
 type GetKillmailsKillmailIdKillmailHashOk struct {
 	Attackers     []GetKillmailsKillmailIdKillmailHashAttacker `json:"attackers,omitempty"`       /* attackers array */
 	KillmailId    int32                                        `json:"killmail_id,omitempty"`     /* ID of the killmail */

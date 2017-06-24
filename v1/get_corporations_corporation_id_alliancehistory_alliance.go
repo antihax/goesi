@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCorporationsCorporationIdAlliancehistoryAlliance. */
+//easyjson:json
+type GetCorporationsCorporationIdAlliancehistoryAllianceList []GetCorporationsCorporationIdAlliancehistoryAlliance
+
 /* alliance object */
+//easyjson:json
 type GetCorporationsCorporationIdAlliancehistoryAlliance struct {
 	AllianceId int32 `json:"alliance_id,omitempty"` /* alliance_id integer */
 	IsDeleted  bool  `json:"is_deleted,omitempty"`  /* True if the alliance has been deleted */

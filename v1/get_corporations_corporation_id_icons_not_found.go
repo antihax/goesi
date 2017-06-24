@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCorporationsCorporationIdIconsNotFound. */
+//easyjson:json
+type GetCorporationsCorporationIdIconsNotFoundList []GetCorporationsCorporationIdIconsNotFound
+
 /* No image server for this datasource */
+//easyjson:json
 type GetCorporationsCorporationIdIconsNotFound struct {
 	Error_ string `json:"error,omitempty"` /* error message */
 }

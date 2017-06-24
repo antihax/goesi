@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetCorporationsNames200Ok. */
+//easyjson:json
+type GetCorporationsNames200OkList []GetCorporationsNames200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCorporationsNames200Ok struct {
 	CorporationId   int32  `json:"corporation_id,omitempty"`   /* corporation_id integer */
 	CorporationName string `json:"corporation_name,omitempty"` /* corporation_name string */

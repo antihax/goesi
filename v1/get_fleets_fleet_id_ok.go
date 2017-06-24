@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetFleetsFleetIdOk. */
+//easyjson:json
+type GetFleetsFleetIdOkList []GetFleetsFleetIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetFleetsFleetIdOk struct {
 	IsFreeMove     bool   `json:"is_free_move,omitempty"`     /* Is free-move enabled */
 	IsRegistered   bool   `json:"is_registered,omitempty"`    /* Does the fleet have an active fleet advertisement */

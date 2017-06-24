@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetCharactersCharacterIdMailLabels200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdMailLabels200OkList []GetCharactersCharacterIdMailLabels200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdMailLabels200Ok struct {
 	Color   string `json:"color,omitempty"`    /* color string */
 	LabelId int32  `json:"label_id,omitempty"` /* label_id integer */

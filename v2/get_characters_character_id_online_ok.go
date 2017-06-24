@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdOnlineOk. */
+//easyjson:json
+type GetCharactersCharacterIdOnlineOkList []GetCharactersCharacterIdOnlineOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdOnlineOk struct {
 	LastLogin  time.Time `json:"last_login,omitempty"`  /* Timestamp of the last login */
 	LastLogout time.Time `json:"last_logout,omitempty"` /* Timestamp of the last logout */

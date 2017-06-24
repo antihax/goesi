@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdCorporationhistory200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdCorporationhistory200OkList []GetCharactersCharacterIdCorporationhistory200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdCorporationhistory200Ok struct {
 	CorporationId int32     `json:"corporation_id,omitempty"` /* corporation_id integer */
 	IsDeleted     bool      `json:"is_deleted,omitempty"`     /* True if the corporation has been deleted */

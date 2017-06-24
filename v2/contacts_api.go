@@ -23,11 +23,13 @@
 package goesiv2
 
 import (
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"fmt"
 )
 
 // Linger please

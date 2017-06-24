@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetMarketsGroupsMarketGroupIdNotFound. */
+//easyjson:json
+type GetMarketsGroupsMarketGroupIdNotFoundList []GetMarketsGroupsMarketGroupIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetMarketsGroupsMarketGroupIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

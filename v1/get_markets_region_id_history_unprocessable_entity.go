@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetMarketsRegionIdHistoryUnprocessableEntity. */
+//easyjson:json
+type GetMarketsRegionIdHistoryUnprocessableEntityList []GetMarketsRegionIdHistoryUnprocessableEntity
+
 /* Unprocessable entity */
+//easyjson:json
 type GetMarketsRegionIdHistoryUnprocessableEntity struct {
 	Error_ string `json:"error,omitempty"` /* Unprocessable entity message */
 }

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetAlliancesAllianceIdIconsNotFound. */
+//easyjson:json
+type GetAlliancesAllianceIdIconsNotFoundList []GetAlliancesAllianceIdIconsNotFound
+
 /* No image server for this datasource */
+//easyjson:json
 type GetAlliancesAllianceIdIconsNotFound struct {
 	Error_ string `json:"error,omitempty"` /* error message */
 }

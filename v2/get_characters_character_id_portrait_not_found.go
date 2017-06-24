@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetCharactersCharacterIdPortraitNotFound. */
+//easyjson:json
+type GetCharactersCharacterIdPortraitNotFoundList []GetCharactersCharacterIdPortraitNotFound
+
 /* No image server for this datasource */
+//easyjson:json
 type GetCharactersCharacterIdPortraitNotFound struct {
 	Error_ string `json:"error,omitempty"` /* error message */
 }

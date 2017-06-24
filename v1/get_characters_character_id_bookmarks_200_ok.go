@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdBookmarks200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdBookmarks200OkList []GetCharactersCharacterIdBookmarks200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdBookmarks200Ok struct {
 	BookmarkId int64                                   `json:"bookmark_id,omitempty"` /* bookmark_id integer */
 	CreateDate time.Time                               `json:"create_date,omitempty"` /* create_date string */

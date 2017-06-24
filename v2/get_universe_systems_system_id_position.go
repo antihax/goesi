@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetUniverseSystemsSystemIdPosition. */
+//easyjson:json
+type GetUniverseSystemsSystemIdPositionList []GetUniverseSystemsSystemIdPosition
+
 /* position object */
+//easyjson:json
 type GetUniverseSystemsSystemIdPosition struct {
 	X float32 `json:"x,omitempty"` /* x number */
 	Y float32 `json:"y,omitempty"` /* y number */

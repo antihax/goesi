@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of PostCharactersCharacterIdCspaCreated. */
+//easyjson:json
+type PostCharactersCharacterIdCspaCreatedList []PostCharactersCharacterIdCspaCreated
+
 /* 201 created object */
+//easyjson:json
 type PostCharactersCharacterIdCspaCreated struct {
 	Cost int64 `json:"cost,omitempty"` /* cost integer */
 }

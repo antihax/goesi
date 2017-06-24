@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails. */
+//easyjson:json
+type GetCharactersCharacterIdPlanetsPlanetIdExtractorDetailsList []GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails
+
 /* extractor_details object */
+//easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails struct {
 	CycleTime     int32                                         `json:"cycle_time,omitempty"`      /* in seconds */
 	HeadRadius    float32                                       `json:"head_radius,omitempty"`     /* head_radius number */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCorporationsCorporationIdStructuresService. */
+//easyjson:json
+type GetCorporationsCorporationIdStructuresServiceList []GetCorporationsCorporationIdStructuresService
+
 /* service object */
+//easyjson:json
 type GetCorporationsCorporationIdStructuresService struct {
 	Name  string `json:"name,omitempty"`  /* name string */
 	State string `json:"state,omitempty"` /* state string */

@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdOk. */
+//easyjson:json
+type GetCharactersCharacterIdOkList []GetCharactersCharacterIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdOk struct {
 	AncestryId     int32     `json:"ancestry_id,omitempty"`     /* ancestry_id integer */
 	Birthday       time.Time `json:"birthday,omitempty"`        /* Creation date of the character */

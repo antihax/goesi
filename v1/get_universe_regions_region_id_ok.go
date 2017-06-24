@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseRegionsRegionIdOk. */
+//easyjson:json
+type GetUniverseRegionsRegionIdOkList []GetUniverseRegionsRegionIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseRegionsRegionIdOk struct {
 	Constellations []int32 `json:"constellations,omitempty"` /* constellations array */
 	Description    string  `json:"description,omitempty"`    /* description string */

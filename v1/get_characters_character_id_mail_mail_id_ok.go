@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdMailMailIdOk. */
+//easyjson:json
+type GetCharactersCharacterIdMailMailIdOkList []GetCharactersCharacterIdMailMailIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdMailMailIdOk struct {
 	Body       string                                        `json:"body,omitempty"`       /* Mail's body */
 	From       int32                                         `json:"from,omitempty"`       /* From whom the mail was sent */

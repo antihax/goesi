@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails. */
+//easyjson:json
+type GetCharactersCharacterIdPlanetsPlanetIdFactoryDetailsList []GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails
+
 /* factory_details object */
+//easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails struct {
 	SchematicId int32 `json:"schematic_id,omitempty"` /* schematic_id integer */
 }

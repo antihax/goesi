@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetStatusOk. */
+//easyjson:json
+type GetStatusOkList []GetStatusOk
+
 /* 200 ok object */
+//easyjson:json
 type GetStatusOk struct {
 	Players       int32     `json:"players,omitempty"`        /* Current online player count */
 	ServerVersion string    `json:"server_version,omitempty"` /* Running version as string */

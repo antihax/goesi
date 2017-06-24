@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetAlliancesAllianceIdNotFound. */
+//easyjson:json
+type GetAlliancesAllianceIdNotFoundList []GetAlliancesAllianceIdNotFound
+
 /* Alliance not found */
+//easyjson:json
 type GetAlliancesAllianceIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* error message */
 }

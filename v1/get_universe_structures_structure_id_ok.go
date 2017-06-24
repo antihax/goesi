@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseStructuresStructureIdOk. */
+//easyjson:json
+type GetUniverseStructuresStructureIdOkList []GetUniverseStructuresStructureIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseStructuresStructureIdOk struct {
 	Name          string                                   `json:"name,omitempty"` /* The full name of the structure */
 	Position      GetUniverseStructuresStructureIdPosition `json:"position,omitempty"`

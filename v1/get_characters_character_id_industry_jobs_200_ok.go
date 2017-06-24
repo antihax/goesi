@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdIndustryJobs200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdIndustryJobs200OkList []GetCharactersCharacterIdIndustryJobs200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdIndustryJobs200Ok struct {
 	ActivityId           int32     `json:"activity_id,omitempty"`            /* Job activity ID */
 	BlueprintId          int64     `json:"blueprint_id,omitempty"`           /* blueprint_id integer */

@@ -23,12 +23,14 @@
 package goesiv1
 
 import (
-	"encoding/json"
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"encoding/json"
+	"fmt"
 )
 
 // Linger please
@@ -135,7 +137,6 @@ func (a *RoutesApiService) GetRouteOriginDestination(destination int32, origin i
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
 	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}

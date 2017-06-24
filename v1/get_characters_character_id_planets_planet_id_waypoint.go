@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdPlanetsPlanetIdWaypoint. */
+//easyjson:json
+type GetCharactersCharacterIdPlanetsPlanetIdWaypointList []GetCharactersCharacterIdPlanetsPlanetIdWaypoint
+
 /* waypoint object */
+//easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdWaypoint struct {
 	Order int32 `json:"order,omitempty"`  /* order integer */
 	PinId int64 `json:"pin_id,omitempty"` /* pin_id integer */

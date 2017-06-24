@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PutFleetsFleetIdSquadsSquadIdNotFound. */
+//easyjson:json
+type PutFleetsFleetIdSquadsSquadIdNotFoundList []PutFleetsFleetIdSquadsSquadIdNotFound
+
 /* Not found */
+//easyjson:json
 type PutFleetsFleetIdSquadsSquadIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

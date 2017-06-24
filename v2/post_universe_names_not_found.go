@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of PostUniverseNamesNotFound. */
+//easyjson:json
+type PostUniverseNamesNotFoundList []PostUniverseNamesNotFound
+
 /* Not found */
+//easyjson:json
 type PostUniverseNamesNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

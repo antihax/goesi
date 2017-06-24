@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdBookmarksCoordinates. */
+//easyjson:json
+type GetCharactersCharacterIdBookmarksCoordinatesList []GetCharactersCharacterIdBookmarksCoordinates
+
 /* coordinates object */
+//easyjson:json
 type GetCharactersCharacterIdBookmarksCoordinates struct {
 	X float64 `json:"x,omitempty"` /* x number */
 	Y float64 `json:"y,omitempty"` /* y number */

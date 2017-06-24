@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetMarketsStructuresStructureId200Ok. */
+//easyjson:json
+type GetMarketsStructuresStructureId200OkList []GetMarketsStructuresStructureId200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetMarketsStructuresStructureId200Ok struct {
 	Duration     int32     `json:"duration,omitempty"`      /* duration integer */
 	IsBuyOrder   bool      `json:"is_buy_order,omitempty"`  /* is_buy_order boolean */

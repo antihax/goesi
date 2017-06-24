@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseSystemKills200Ok. */
+//easyjson:json
+type GetUniverseSystemKills200OkList []GetUniverseSystemKills200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseSystemKills200Ok struct {
 	NpcKills  int32 `json:"npc_kills,omitempty"`  /* Number of NPC ships killed in this system */
 	PodKills  int32 `json:"pod_kills,omitempty"`  /* Number of pods killed in this system */

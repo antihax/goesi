@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdPlanets200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdPlanets200OkList []GetCharactersCharacterIdPlanets200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdPlanets200Ok struct {
 	LastUpdate    time.Time `json:"last_update,omitempty"`     /* last_update string */
 	NumPins       int32     `json:"num_pins,omitempty"`        /* num_pins integer */

@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of GetCharactersCharacterIdPlanetsPlanetIdOk. */
+//easyjson:json
+type GetCharactersCharacterIdPlanetsPlanetIdOkList []GetCharactersCharacterIdPlanetsPlanetIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdOk struct {
 	Links  []GetCharactersCharacterIdPlanetsPlanetIdLink  `json:"links,omitempty"`  /* links array */
 	Pins   []GetCharactersCharacterIdPlanetsPlanetIdPin   `json:"pins,omitempty"`   /* pins array */

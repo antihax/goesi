@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetFleetsFleetIdWingsSquad. */
+//easyjson:json
+type GetFleetsFleetIdWingsSquadList []GetFleetsFleetIdWingsSquad
+
 /* squad object */
+//easyjson:json
 type GetFleetsFleetIdWingsSquad struct {
 	Id   int64  `json:"id,omitempty"`   /* id integer */
 	Name string `json:"name,omitempty"` /* name string */

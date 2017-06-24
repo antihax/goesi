@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCorporationsCorporationIdAlliancehistory200Ok. */
+//easyjson:json
+type GetCorporationsCorporationIdAlliancehistory200OkList []GetCorporationsCorporationIdAlliancehistory200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCorporationsCorporationIdAlliancehistory200Ok struct {
 	AllianceId int32     `json:"alliance_id,omitempty"` /* alliance_id integer */
 	IsDeleted  bool      `json:"is_deleted,omitempty"`  /* True if the alliance has been closed */

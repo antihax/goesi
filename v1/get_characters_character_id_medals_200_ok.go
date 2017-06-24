@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdMedals200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdMedals200OkList []GetCharactersCharacterIdMedals200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdMedals200Ok struct {
 	CorporationId int32                                   `json:"corporation_id,omitempty"` /* corporation_id integer */
 	Date          time.Time                               `json:"date,omitempty"`           /* date string */

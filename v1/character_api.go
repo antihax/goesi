@@ -23,12 +23,16 @@
 package goesiv1
 
 import (
-	"encoding/json"
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"encoding/json"
+	"fmt"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -55,7 +59,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdAgentsResearch200Ok
+		successPayload     GetCharactersCharacterIdAgentsResearch200OkList
 	)
 
 	// create path and map variables
@@ -125,8 +129,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -150,7 +153,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdBlueprints200Ok
+		successPayload     GetCharactersCharacterIdBlueprints200OkList
 	)
 
 	// create path and map variables
@@ -220,8 +223,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -245,7 +247,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdChatChannels(ctx context.C
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdChatChannels200Ok
+		successPayload     GetCharactersCharacterIdChatChannels200OkList
 	)
 
 	// create path and map variables
@@ -315,8 +317,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdChatChannels(ctx context.C
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -339,7 +340,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(charact
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdCorporationhistory200Ok
+		successPayload     GetCharactersCharacterIdCorporationhistory200OkList
 	)
 
 	// create path and map variables
@@ -403,8 +404,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(charact
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -428,7 +428,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdMedals200Ok
+		successPayload     GetCharactersCharacterIdMedals200OkList
 	)
 
 	// create path and map variables
@@ -498,8 +498,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -586,8 +585,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(characterId int32
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -681,7 +679,6 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
 	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
@@ -706,7 +703,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdStandings200Ok
+		successPayload     GetCharactersCharacterIdStandings200OkList
 	)
 
 	// create path and map variables
@@ -776,8 +773,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -800,7 +796,7 @@ func (a *CharacterApiService) GetCharactersNames(characterIds []int64, localVarO
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersNames200Ok
+		successPayload     GetCharactersNames200OkList
 	)
 
 	// create path and map variables
@@ -870,8 +866,7 @@ func (a *CharacterApiService) GetCharactersNames(characterIds []int64, localVarO
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -894,7 +889,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(characters []int32, loca
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []PostCharactersAffiliation200Ok
+		successPayload     PostCharactersAffiliation200OkList
 	)
 
 	// create path and map variables
@@ -959,8 +954,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(characters []int32, loca
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

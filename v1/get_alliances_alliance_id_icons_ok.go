@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetAlliancesAllianceIdIconsOk. */
+//easyjson:json
+type GetAlliancesAllianceIdIconsOkList []GetAlliancesAllianceIdIconsOk
+
 /* 200 ok object */
+//easyjson:json
 type GetAlliancesAllianceIdIconsOk struct {
 	Px128x128 string `json:"px128x128,omitempty"` /* px128x128 string */
 	Px64x64   string `json:"px64x64,omitempty"`   /* px64x64 string */

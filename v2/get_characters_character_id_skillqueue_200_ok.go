@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdSkillqueue200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdSkillqueue200OkList []GetCharactersCharacterIdSkillqueue200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdSkillqueue200Ok struct {
 	FinishDate      time.Time `json:"finish_date,omitempty"`       /* finish_date string */
 	FinishedLevel   int32     `json:"finished_level,omitempty"`    /* finished_level integer */

@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetCorporationsCorporationIdNotFound. */
+//easyjson:json
+type GetCorporationsCorporationIdNotFoundList []GetCorporationsCorporationIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetCorporationsCorporationIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

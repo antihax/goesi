@@ -23,11 +23,13 @@
 package goesiv1
 
 import (
-	"encoding/json"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -52,7 +54,7 @@ func (a *SovereigntyApiService) GetSovereigntyCampaigns(localVarOptionals map[st
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetSovereigntyCampaigns200Ok
+		successPayload     GetSovereigntyCampaigns200OkList
 	)
 
 	// create path and map variables
@@ -115,8 +117,7 @@ func (a *SovereigntyApiService) GetSovereigntyCampaigns(localVarOptionals map[st
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -138,7 +139,7 @@ func (a *SovereigntyApiService) GetSovereigntyMap(localVarOptionals map[string]i
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetSovereigntyMap200Ok
+		successPayload     GetSovereigntyMap200OkList
 	)
 
 	// create path and map variables
@@ -201,8 +202,7 @@ func (a *SovereigntyApiService) GetSovereigntyMap(localVarOptionals map[string]i
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -224,7 +224,7 @@ func (a *SovereigntyApiService) GetSovereigntyStructures(localVarOptionals map[s
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetSovereigntyStructures200Ok
+		successPayload     GetSovereigntyStructures200OkList
 	)
 
 	// create path and map variables
@@ -287,8 +287,7 @@ func (a *SovereigntyApiService) GetSovereigntyStructures(localVarOptionals map[s
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

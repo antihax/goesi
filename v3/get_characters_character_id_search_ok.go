@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of GetCharactersCharacterIdSearchOk. */
+//easyjson:json
+type GetCharactersCharacterIdSearchOkList []GetCharactersCharacterIdSearchOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdSearchOk struct {
 	Agent         []int32 `json:"agent,omitempty"`         /* agent array */
 	Alliance      []int32 `json:"alliance,omitempty"`      /* alliance array */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetOpportunitiesTasksTaskIdOk. */
+//easyjson:json
+type GetOpportunitiesTasksTaskIdOkList []GetOpportunitiesTasksTaskIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetOpportunitiesTasksTaskIdOk struct {
 	Description  string `json:"description,omitempty"`  /* description string */
 	Name         string `json:"name,omitempty"`         /* name string */

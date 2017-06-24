@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of GetCharactersCharacterIdUnprocessableEntity. */
+//easyjson:json
+type GetCharactersCharacterIdUnprocessableEntityList []GetCharactersCharacterIdUnprocessableEntity
+
 /* Is not a character ID */
+//easyjson:json
 type GetCharactersCharacterIdUnprocessableEntity struct {
 	Error_ string `json:"error,omitempty"` /* error message */
 }

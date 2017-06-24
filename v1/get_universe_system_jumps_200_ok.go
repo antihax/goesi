@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseSystemJumps200Ok. */
+//easyjson:json
+type GetUniverseSystemJumps200OkList []GetUniverseSystemJumps200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseSystemJumps200Ok struct {
 	ShipJumps int32 `json:"ship_jumps,omitempty"` /* ship_jumps integer */
 	SystemId  int32 `json:"system_id,omitempty"`  /* system_id integer */

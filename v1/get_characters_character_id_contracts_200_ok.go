@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdContracts200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdContracts200OkList []GetCharactersCharacterIdContracts200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdContracts200Ok struct {
 	AcceptorId          int32     `json:"acceptor_id,omitempty"`           /* Who will accept the contract. If assignee_id is same as acceptorID then character ID else corporation ID (The contract accepted by the corporation) */
 	AssigneeId          int32     `json:"assignee_id,omitempty"`           /* ID to whom the contract is assigned, can be corporation or character ID */

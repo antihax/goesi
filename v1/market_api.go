@@ -23,12 +23,16 @@
 package goesiv1
 
 import (
-	"encoding/json"
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"encoding/json"
+	"fmt"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -55,7 +59,7 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdOrders200Ok
+		successPayload     GetCharactersCharacterIdOrders200OkList
 	)
 
 	// create path and map variables
@@ -125,8 +129,7 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -211,7 +214,6 @@ func (a *MarketApiService) GetMarketsGroups(localVarOptionals map[string]interfa
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
 	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
@@ -306,8 +308,7 @@ func (a *MarketApiService) GetMarketsGroupsMarketGroupId(marketGroupId int32, lo
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -329,7 +330,7 @@ func (a *MarketApiService) GetMarketsPrices(localVarOptionals map[string]interfa
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetMarketsPrices200Ok
+		successPayload     GetMarketsPrices200OkList
 	)
 
 	// create path and map variables
@@ -392,8 +393,7 @@ func (a *MarketApiService) GetMarketsPrices(localVarOptionals map[string]interfa
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -417,7 +417,7 @@ func (a *MarketApiService) GetMarketsRegionIdHistory(regionId int32, typeId int3
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetMarketsRegionIdHistory200Ok
+		successPayload     GetMarketsRegionIdHistory200OkList
 	)
 
 	// create path and map variables
@@ -482,8 +482,7 @@ func (a *MarketApiService) GetMarketsRegionIdHistory(regionId int32, typeId int3
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -509,7 +508,7 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(orderType string, regionId i
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetMarketsRegionIdOrders200Ok
+		successPayload     GetMarketsRegionIdOrders200OkList
 	)
 
 	// create path and map variables
@@ -586,8 +585,7 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(orderType string, regionId i
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -612,7 +610,7 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetMarketsStructuresStructureId200Ok
+		successPayload     GetMarketsStructuresStructureId200OkList
 	)
 
 	// create path and map variables
@@ -688,8 +686,7 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

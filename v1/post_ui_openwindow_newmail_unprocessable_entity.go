@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostUiOpenwindowNewmailUnprocessableEntity. */
+//easyjson:json
+type PostUiOpenwindowNewmailUnprocessableEntityList []PostUiOpenwindowNewmailUnprocessableEntity
+
 /* Unprocessable entity */
+//easyjson:json
 type PostUiOpenwindowNewmailUnprocessableEntity struct {
 	Error_ string `json:"error,omitempty"` /* Unprocessable entity message */
 }

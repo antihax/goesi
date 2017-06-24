@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of GetUniverseTypesTypeIdDogmaAttribute. */
+//easyjson:json
+type GetUniverseTypesTypeIdDogmaAttributeList []GetUniverseTypesTypeIdDogmaAttribute
+
 /* dogma_attribute object */
+//easyjson:json
 type GetUniverseTypesTypeIdDogmaAttribute struct {
 	AttributeId int32   `json:"attribute_id,omitempty"` /* attribute_id integer */
 	Value       float32 `json:"value,omitempty"`        /* value number */

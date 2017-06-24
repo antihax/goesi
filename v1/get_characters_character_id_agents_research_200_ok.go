@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdAgentsResearch200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdAgentsResearch200OkList []GetCharactersCharacterIdAgentsResearch200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdAgentsResearch200Ok struct {
 	AgentId         int32     `json:"agent_id,omitempty"`         /* agent_id integer */
 	PointsPerDay    float32   `json:"points_per_day,omitempty"`   /* points_per_day number */

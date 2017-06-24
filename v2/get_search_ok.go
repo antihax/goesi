@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetSearchOk. */
+//easyjson:json
+type GetSearchOkList []GetSearchOk
+
 /* 200 ok object */
+//easyjson:json
 type GetSearchOk struct {
 	Agent         []int32 `json:"agent,omitempty"`         /* agent array */
 	Alliance      []int32 `json:"alliance,omitempty"`      /* alliance array */

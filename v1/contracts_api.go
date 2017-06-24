@@ -23,12 +23,15 @@
 package goesiv1
 
 import (
-	"encoding/json"
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"fmt"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -55,7 +58,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContracts(ctx context.Cont
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdContracts200Ok
+		successPayload     GetCharactersCharacterIdContracts200OkList
 	)
 
 	// create path and map variables
@@ -125,8 +128,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContracts(ctx context.Cont
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -151,7 +153,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdBids(ct
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdContractsContractIdBids200Ok
+		successPayload     GetCharactersCharacterIdContractsContractIdBids200OkList
 	)
 
 	// create path and map variables
@@ -222,8 +224,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdBids(ct
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -248,7 +249,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdItems(c
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdContractsContractIdItems200Ok
+		successPayload     GetCharactersCharacterIdContractsContractIdItems200OkList
 	)
 
 	// create path and map variables
@@ -319,8 +320,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdItems(c
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdWalletsJournal200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdWalletsJournal200OkList []GetCharactersCharacterIdWalletsJournal200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdWalletsJournal200Ok struct {
 	Amount          float32   `json:"amount,omitempty"`            /* Transaction amount. Positive when value transferred to the first party. Negative otherwise */
 	ArgumentName    string    `json:"argument_name,omitempty"`     /* argument_name string */

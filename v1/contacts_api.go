@@ -23,12 +23,16 @@
 package goesiv1
 
 import (
-	"encoding/json"
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"encoding/json"
+	"fmt"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -149,7 +153,7 @@ func (a *ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Contex
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdContacts200Ok
+		successPayload     GetCharactersCharacterIdContacts200OkList
 	)
 
 	// create path and map variables
@@ -225,8 +229,7 @@ func (a *ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Contex
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -250,7 +253,7 @@ func (a *ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdContactsLabels200Ok
+		successPayload     GetCharactersCharacterIdContactsLabels200OkList
 	)
 
 	// create path and map variables
@@ -320,8 +323,7 @@ func (a *ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -440,7 +442,6 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
 	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}

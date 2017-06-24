@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostFleetsFleetIdMembersUnprocessableEntity. */
+//easyjson:json
+type PostFleetsFleetIdMembersUnprocessableEntityList []PostFleetsFleetIdMembersUnprocessableEntity
+
 /* 422 unprocessable entity object */
+//easyjson:json
 type PostFleetsFleetIdMembersUnprocessableEntity struct {
 	Error_ string `json:"error,omitempty"` /* error message */
 }

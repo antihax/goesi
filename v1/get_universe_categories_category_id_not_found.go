@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseCategoriesCategoryIdNotFound. */
+//easyjson:json
+type GetUniverseCategoriesCategoryIdNotFoundList []GetUniverseCategoriesCategoryIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetUniverseCategoriesCategoryIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

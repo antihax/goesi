@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetCharactersCharacterIdPlanetsPlanetIdRoute. */
+//easyjson:json
+type GetCharactersCharacterIdPlanetsPlanetIdRouteList []GetCharactersCharacterIdPlanetsPlanetIdRoute
+
 /* route object */
+//easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdRoute struct {
 	ContentTypeId    int32                                             `json:"content_type_id,omitempty"`    /* content_type_id integer */
 	DestinationPinId int64                                             `json:"destination_pin_id,omitempty"` /* destination_pin_id integer */

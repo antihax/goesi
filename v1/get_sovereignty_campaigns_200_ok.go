@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetSovereigntyCampaigns200Ok. */
+//easyjson:json
+type GetSovereigntyCampaigns200OkList []GetSovereigntyCampaigns200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetSovereigntyCampaigns200Ok struct {
 	AttackersScore  float32                              `json:"attackers_score,omitempty"`  /* Score for all attacking parties, only present in Defense Events.  */
 	CampaignId      int32                                `json:"campaign_id,omitempty"`      /* Unique ID for this campaign. */

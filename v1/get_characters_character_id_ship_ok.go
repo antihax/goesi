@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdShipOk. */
+//easyjson:json
+type GetCharactersCharacterIdShipOkList []GetCharactersCharacterIdShipOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdShipOk struct {
 	ShipItemId int64  `json:"ship_item_id,omitempty"` /* Item id's are unique to a ship and persist until it is repackaged. This value can be used to track repeated uses of a ship, or detect when a pilot changes into a different instance of the same ship type. */
 	ShipName   string `json:"ship_name,omitempty"`    /* ship_name string */

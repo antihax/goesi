@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdLocationOk. */
+//easyjson:json
+type GetCharactersCharacterIdLocationOkList []GetCharactersCharacterIdLocationOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdLocationOk struct {
 	SolarSystemId int32 `json:"solar_system_id,omitempty"` /* solar_system_id integer */
 	StationId     int32 `json:"station_id,omitempty"`      /* station_id integer */

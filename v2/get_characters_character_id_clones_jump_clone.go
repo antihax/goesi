@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetCharactersCharacterIdClonesJumpClone. */
+//easyjson:json
+type GetCharactersCharacterIdClonesJumpCloneList []GetCharactersCharacterIdClonesJumpClone
+
 /* jump_clone object */
+//easyjson:json
 type GetCharactersCharacterIdClonesJumpClone struct {
 	Implants     []int32 `json:"implants,omitempty"`      /* implants array */
 	LocationId   int64   `json:"location_id,omitempty"`   /* location_id integer */

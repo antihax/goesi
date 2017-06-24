@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdPortraitOk. */
+//easyjson:json
+type GetCharactersCharacterIdPortraitOkList []GetCharactersCharacterIdPortraitOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdPortraitOk struct {
 	Var128x128 string `json:"128x128,omitempty"` /* 128x128 string */
 	Var256x256 string `json:"256x256,omitempty"` /* 256x256 string */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseRaces200Ok. */
+//easyjson:json
+type GetUniverseRaces200OkList []GetUniverseRaces200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseRaces200Ok struct {
 	AllianceId  int32  `json:"alliance_id,omitempty"` /* The alliance generally associated with this race */
 	Description string `json:"description,omitempty"` /* description string */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdAssets200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdAssets200OkList []GetCharactersCharacterIdAssets200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdAssets200Ok struct {
 	IsSingleton  bool   `json:"is_singleton,omitempty"`  /* is_singleton boolean */
 	ItemId       int64  `json:"item_id,omitempty"`       /* item_id integer */

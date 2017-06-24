@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdChatChannelsAllowed. */
+//easyjson:json
+type GetCharactersCharacterIdChatChannelsAllowedList []GetCharactersCharacterIdChatChannelsAllowed
+
 /* allowed object */
+//easyjson:json
 type GetCharactersCharacterIdChatChannelsAllowed struct {
 	AccessorId   int32  `json:"accessor_id,omitempty"`   /* ID of an allowed channel member */
 	AccessorType string `json:"accessor_type,omitempty"` /* accessor_type string */

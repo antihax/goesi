@@ -23,12 +23,15 @@
 package goesiv2
 
 import (
-	"encoding/json"
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"fmt"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -55,7 +58,7 @@ func (a *SkillsApiService) GetCharactersCharacterIdSkillqueue(ctx context.Contex
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdSkillqueue200Ok
+		successPayload     GetCharactersCharacterIdSkillqueue200OkList
 	)
 
 	// create path and map variables
@@ -125,8 +128,7 @@ func (a *SkillsApiService) GetCharactersCharacterIdSkillqueue(ctx context.Contex
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -150,7 +152,7 @@ func (a *SkillsApiService) GetCharactersCharacterIdSkills(ctx context.Context, c
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdSkills200Ok
+		successPayload     GetCharactersCharacterIdSkills200OkList
 	)
 
 	// create path and map variables
@@ -220,8 +222,7 @@ func (a *SkillsApiService) GetCharactersCharacterIdSkills(ctx context.Context, c
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

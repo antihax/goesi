@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostFleetsFleetIdMembersNotFound. */
+//easyjson:json
+type PostFleetsFleetIdMembersNotFoundList []PostFleetsFleetIdMembersNotFound
+
 /* Not found */
+//easyjson:json
 type PostFleetsFleetIdMembersNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

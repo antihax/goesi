@@ -23,12 +23,15 @@
 package goesiv1
 
 import (
-	"encoding/json"
-	"fmt"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"fmt"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -55,7 +58,7 @@ func (a *LoyaltyApiService) GetCharactersCharacterIdLoyaltyPoints(ctx context.Co
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetCharactersCharacterIdLoyaltyPoints200Ok
+		successPayload     GetCharactersCharacterIdLoyaltyPoints200OkList
 	)
 
 	// create path and map variables
@@ -125,8 +128,7 @@ func (a *LoyaltyApiService) GetCharactersCharacterIdLoyaltyPoints(ctx context.Co
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -149,7 +151,7 @@ func (a *LoyaltyApiService) GetLoyaltyStoresCorporationIdOffers(corporationId in
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetLoyaltyStoresCorporationIdOffers200Ok
+		successPayload     GetLoyaltyStoresCorporationIdOffers200OkList
 	)
 
 	// create path and map variables
@@ -213,8 +215,7 @@ func (a *LoyaltyApiService) GetLoyaltyStoresCorporationIdOffers(corporationId in
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetOpportunitiesGroupsGroupIdOk. */
+//easyjson:json
+type GetOpportunitiesGroupsGroupIdOkList []GetOpportunitiesGroupsGroupIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetOpportunitiesGroupsGroupIdOk struct {
 	ConnectedGroups []int32 `json:"connected_groups,omitempty"` /* The groups that are connected to this group on the opportunities map */
 	Description     string  `json:"description,omitempty"`      /* description string */

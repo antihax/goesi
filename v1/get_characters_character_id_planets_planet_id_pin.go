@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdPlanetsPlanetIdPin. */
+//easyjson:json
+type GetCharactersCharacterIdPlanetsPlanetIdPinList []GetCharactersCharacterIdPlanetsPlanetIdPin
+
 /* pin object */
+//easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdPin struct {
 	ExpiryTime       time.Time                                               `json:"expiry_time,omitempty"` /* expiry_time string */
 	ExtractorDetails GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails `json:"extractor_details,omitempty"`

@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of PostCharactersCharacterIdCspaCharacters. */
+//easyjson:json
+type PostCharactersCharacterIdCspaCharactersList []PostCharactersCharacterIdCspaCharacters
+
 /* characters object */
+//easyjson:json
 type PostCharactersCharacterIdCspaCharacters struct {
 	Characters []int32 `json:"characters,omitempty"` /* characters array */
 }

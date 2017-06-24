@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdMail200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdMail200OkList []GetCharactersCharacterIdMail200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdMail200Ok struct {
 	From       int32                                   `json:"from,omitempty"`       /* From whom the mail was sent */
 	IsRead     bool                                    `json:"is_read,omitempty"`    /* is_read boolean */

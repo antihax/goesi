@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseStationsStationIdOk. */
+//easyjson:json
+type GetUniverseStationsStationIdOkList []GetUniverseStationsStationIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseStationsStationIdOk struct {
 	SolarSystemId int32  `json:"solar_system_id,omitempty"` /* solar_system_id integer */
 	StationName   string `json:"station_name,omitempty"`    /* the full name of the station */

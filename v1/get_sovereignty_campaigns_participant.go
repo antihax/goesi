@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetSovereigntyCampaignsParticipant. */
+//easyjson:json
+type GetSovereigntyCampaignsParticipantList []GetSovereigntyCampaignsParticipant
+
 /* participant object */
+//easyjson:json
 type GetSovereigntyCampaignsParticipant struct {
 	AllianceId int32   `json:"alliance_id,omitempty"` /* alliance_id integer */
 	Score      float32 `json:"score,omitempty"`       /* score number */

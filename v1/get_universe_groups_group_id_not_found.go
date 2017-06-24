@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseGroupsGroupIdNotFound. */
+//easyjson:json
+type GetUniverseGroupsGroupIdNotFoundList []GetUniverseGroupsGroupIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetUniverseGroupsGroupIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

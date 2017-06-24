@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdBlueprints200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdBlueprints200OkList []GetCharactersCharacterIdBlueprints200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdBlueprints200Ok struct {
 	ItemId             int64  `json:"item_id,omitempty"`             /* Unique ID for this item. The ID of an item is stable if that item is not repackaged, stacked, detached from a stack, assembled, or otherwise altered. If an item is changed in one of these ways, then the ID will also change (see notes below). */
 	LocationFlag       string `json:"location_flag,omitempty"`       /* Indicates something about this item's storage location. The flag is used to differentiate between hangar divisions, drone bay, fitting location, and similar. */

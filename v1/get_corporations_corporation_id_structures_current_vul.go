@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCorporationsCorporationIdStructuresCurrentVul. */
+//easyjson:json
+type GetCorporationsCorporationIdStructuresCurrentVulList []GetCorporationsCorporationIdStructuresCurrentVul
+
 /* current_vul object */
+//easyjson:json
 type GetCorporationsCorporationIdStructuresCurrentVul struct {
 	Day  int32 `json:"day,omitempty"`  /* day integer */
 	Hour int32 `json:"hour,omitempty"` /* hour integer */

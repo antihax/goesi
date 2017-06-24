@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of GetUniverseTypesTypeIdDogmaEffect. */
+//easyjson:json
+type GetUniverseTypesTypeIdDogmaEffectList []GetUniverseTypesTypeIdDogmaEffect
+
 /* dogma_effect object */
+//easyjson:json
 type GetUniverseTypesTypeIdDogmaEffect struct {
 	EffectId  int32 `json:"effect_id,omitempty"`  /* effect_id integer */
 	IsDefault bool  `json:"is_default,omitempty"` /* is_default boolean */

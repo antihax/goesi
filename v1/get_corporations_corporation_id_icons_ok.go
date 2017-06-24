@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCorporationsCorporationIdIconsOk. */
+//easyjson:json
+type GetCorporationsCorporationIdIconsOkList []GetCorporationsCorporationIdIconsOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCorporationsCorporationIdIconsOk struct {
 	Px128x128 string `json:"px128x128,omitempty"` /* px128x128 string */
 	Px256x256 string `json:"px256x256,omitempty"` /* px256x256 string */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostCharactersAffiliation200Ok. */
+//easyjson:json
+type PostCharactersAffiliation200OkList []PostCharactersAffiliation200Ok
+
 /* 200 ok object */
+//easyjson:json
 type PostCharactersAffiliation200Ok struct {
 	AllianceId    int32 `json:"alliance_id,omitempty"`    /* The character's alliance ID, if their corporation is in an alliance */
 	CharacterId   int32 `json:"character_id,omitempty"`   /* The character's ID */

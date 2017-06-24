@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostCharactersCharacterIdMailMail. */
+//easyjson:json
+type PostCharactersCharacterIdMailMailList []PostCharactersCharacterIdMailMail
+
 /* mail schema */
+//easyjson:json
 type PostCharactersCharacterIdMailMail struct {
 	ApprovedCost int64                                    `json:"approved_cost,omitempty"` /* approved_cost integer */
 	Body         string                                   `json:"body,omitempty"`          /* body string */

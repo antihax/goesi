@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseGraphicsGraphicIdOk. */
+//easyjson:json
+type GetUniverseGraphicsGraphicIdOkList []GetUniverseGraphicsGraphicIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseGraphicsGraphicIdOk struct {
 	CollisionFile string `json:"collision_file,omitempty"`  /* collision_file string */
 	GraphicFile   string `json:"graphic_file,omitempty"`    /* graphic_file string */

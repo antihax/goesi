@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetInsurancePricesLevel. */
+//easyjson:json
+type GetInsurancePricesLevelList []GetInsurancePricesLevel
+
 /* level object */
+//easyjson:json
 type GetInsurancePricesLevel struct {
 	Cost   float32 `json:"cost,omitempty"`   /* cost number */
 	Name   string  `json:"name,omitempty"`   /* Localized insurance level */

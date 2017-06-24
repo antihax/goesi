@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCorporationsCorporationIdRoles200Ok. */
+//easyjson:json
+type GetCorporationsCorporationIdRoles200OkList []GetCorporationsCorporationIdRoles200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCorporationsCorporationIdRoles200Ok struct {
 	CharacterId           int32    `json:"character_id,omitempty"`             /* character_id integer */
 	GrantableRoles        []string `json:"grantable_roles,omitempty"`          /* grantable_roles array */

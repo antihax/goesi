@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetSovereigntyMap200Ok. */
+//easyjson:json
+type GetSovereigntyMap200OkList []GetSovereigntyMap200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetSovereigntyMap200Ok struct {
 	AllianceId    int32 `json:"alliance_id,omitempty"`    /* alliance_id integer */
 	CorporationId int32 `json:"corporation_id,omitempty"` /* corporation_id integer */

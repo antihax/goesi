@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetIndustrySystems200Ok. */
+//easyjson:json
+type GetIndustrySystems200OkList []GetIndustrySystems200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetIndustrySystems200Ok struct {
 	CostIndices   []GetIndustrySystemsCostIndice `json:"cost_indices,omitempty"`    /* cost_indices array */
 	SolarSystemId int32                          `json:"solar_system_id,omitempty"` /* solar_system_id integer */

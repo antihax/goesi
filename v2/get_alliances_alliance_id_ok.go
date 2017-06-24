@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetAlliancesAllianceIdOk. */
+//easyjson:json
+type GetAlliancesAllianceIdOkList []GetAlliancesAllianceIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetAlliancesAllianceIdOk struct {
 	AllianceName string    `json:"alliance_name,omitempty"` /* the full name of the alliance */
 	DateFounded  time.Time `json:"date_founded,omitempty"`  /* date_founded string */

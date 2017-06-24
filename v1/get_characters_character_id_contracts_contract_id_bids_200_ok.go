@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdContractsContractIdBids200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdContractsContractIdBids200OkList []GetCharactersCharacterIdContractsContractIdBids200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdContractsContractIdBids200Ok struct {
 	Amount   float32   `json:"amount,omitempty"`    /* The ammount bid */
 	BidId    int32     `json:"bid_id,omitempty"`    /* Unique ID for the bid */

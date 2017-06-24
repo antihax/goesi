@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdBookmarksItem. */
+//easyjson:json
+type GetCharactersCharacterIdBookmarksItemList []GetCharactersCharacterIdBookmarksItem
+
 /* item object */
+//easyjson:json
 type GetCharactersCharacterIdBookmarksItem struct {
 	ItemId int64 `json:"item_id,omitempty"` /* item_id integer */
 	TypeId int32 `json:"type_id,omitempty"` /* type_id integer */

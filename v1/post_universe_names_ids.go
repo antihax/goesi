@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostUniverseNamesIds. */
+//easyjson:json
+type PostUniverseNamesIdsList []PostUniverseNamesIds
+
 /* ids schema */
+//easyjson:json
 type PostUniverseNamesIds struct {
 	Ids []int32 `json:"ids,omitempty"` /* ids array */
 }

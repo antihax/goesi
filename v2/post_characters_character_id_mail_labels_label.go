@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of PostCharactersCharacterIdMailLabelsLabel. */
+//easyjson:json
+type PostCharactersCharacterIdMailLabelsLabelList []PostCharactersCharacterIdMailLabelsLabel
+
 /* label object */
+//easyjson:json
 type PostCharactersCharacterIdMailLabelsLabel struct {
 	Color string `json:"color,omitempty"` /* Hexadecimal string representing label color, in RGB format  */
 	Name  string `json:"name,omitempty"`  /* name string */

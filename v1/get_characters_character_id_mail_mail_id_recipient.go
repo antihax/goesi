@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdMailMailIdRecipient. */
+//easyjson:json
+type GetCharactersCharacterIdMailMailIdRecipientList []GetCharactersCharacterIdMailMailIdRecipient
+
 /* recipient object */
+//easyjson:json
 type GetCharactersCharacterIdMailMailIdRecipient struct {
 	RecipientId   int32  `json:"recipient_id,omitempty"`   /* recipient_id integer */
 	RecipientType string `json:"recipient_type,omitempty"` /* recipient_type string */

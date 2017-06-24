@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetRouteOriginDestinationNotFound. */
+//easyjson:json
+type GetRouteOriginDestinationNotFoundList []GetRouteOriginDestinationNotFound
+
 /* Not found */
+//easyjson:json
 type GetRouteOriginDestinationNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

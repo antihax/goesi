@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetKillmailsKillmailIdKillmailHashPosition. */
+//easyjson:json
+type GetKillmailsKillmailIdKillmailHashPositionList []GetKillmailsKillmailIdKillmailHashPosition
+
 /* Coordinates of the victim in Cartesian space relative to the Sun  */
+//easyjson:json
 type GetKillmailsKillmailIdKillmailHashPosition struct {
 	X float32 `json:"x,omitempty"` /* x number */
 	Y float32 `json:"y,omitempty"` /* y number */

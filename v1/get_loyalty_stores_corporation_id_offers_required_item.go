@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetLoyaltyStoresCorporationIdOffersRequiredItem. */
+//easyjson:json
+type GetLoyaltyStoresCorporationIdOffersRequiredItemList []GetLoyaltyStoresCorporationIdOffersRequiredItem
+
 /* required_item object */
+//easyjson:json
 type GetLoyaltyStoresCorporationIdOffersRequiredItem struct {
 	Quantity int32 `json:"quantity,omitempty"` /* quantity integer */
 	TypeId   int32 `json:"type_id,omitempty"`  /* type_id integer */

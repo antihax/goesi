@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseCategoriesCategoryIdOk. */
+//easyjson:json
+type GetUniverseCategoriesCategoryIdOkList []GetUniverseCategoriesCategoryIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseCategoriesCategoryIdOk struct {
 	CategoryId int32   `json:"category_id,omitempty"` /* category_id integer */
 	Groups     []int32 `json:"groups,omitempty"`      /* groups array */

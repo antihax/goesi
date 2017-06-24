@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetMarketsRegionIdHistory200Ok. */
+//easyjson:json
+type GetMarketsRegionIdHistory200OkList []GetMarketsRegionIdHistory200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetMarketsRegionIdHistory200Ok struct {
 	Average    float32 `json:"average,omitempty"`     /* average number */
 	Date       string  `json:"date,omitempty"`        /* The date of this historical statistic entry */

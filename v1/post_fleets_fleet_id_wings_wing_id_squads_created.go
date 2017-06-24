@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostFleetsFleetIdWingsWingIdSquadsCreated. */
+//easyjson:json
+type PostFleetsFleetIdWingsWingIdSquadsCreatedList []PostFleetsFleetIdWingsWingIdSquadsCreated
+
 /* 201 created object */
+//easyjson:json
 type PostFleetsFleetIdWingsWingIdSquadsCreated struct {
 	SquadId int64 `json:"squad_id,omitempty"` /* The squad_id of the newly created squad */
 }

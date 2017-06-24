@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetDogmaEffectsEffectIdNotFound. */
+//easyjson:json
+type GetDogmaEffectsEffectIdNotFoundList []GetDogmaEffectsEffectIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetDogmaEffectsEffectIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

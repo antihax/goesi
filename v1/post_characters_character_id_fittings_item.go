@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostCharactersCharacterIdFittingsItem. */
+//easyjson:json
+type PostCharactersCharacterIdFittingsItemList []PostCharactersCharacterIdFittingsItem
+
 /* item object */
+//easyjson:json
 type PostCharactersCharacterIdFittingsItem struct {
 	Flag     int32 `json:"flag,omitempty"`     /* flag integer */
 	Quantity int32 `json:"quantity,omitempty"` /* quantity integer */

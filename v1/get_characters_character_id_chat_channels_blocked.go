@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdChatChannelsBlocked. */
+//easyjson:json
+type GetCharactersCharacterIdChatChannelsBlockedList []GetCharactersCharacterIdChatChannelsBlocked
+
 /* blocked object */
+//easyjson:json
 type GetCharactersCharacterIdChatChannelsBlocked struct {
 	AccessorId   int32     `json:"accessor_id,omitempty"`   /* ID of a blocked channel member */
 	AccessorType string    `json:"accessor_type,omitempty"` /* accessor_type string */

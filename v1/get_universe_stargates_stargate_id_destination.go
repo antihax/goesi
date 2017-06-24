@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseStargatesStargateIdDestination. */
+//easyjson:json
+type GetUniverseStargatesStargateIdDestinationList []GetUniverseStargatesStargateIdDestination
+
 /* destination object */
+//easyjson:json
 type GetUniverseStargatesStargateIdDestination struct {
 	StargateId int32 `json:"stargate_id,omitempty"` /* The stargate this stargate connects to */
 	SystemId   int32 `json:"system_id,omitempty"`   /* The solar system this stargate connects to */

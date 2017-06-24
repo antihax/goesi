@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetDogmaAttributesAttributeIdOk. */
+//easyjson:json
+type GetDogmaAttributesAttributeIdOkList []GetDogmaAttributesAttributeIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetDogmaAttributesAttributeIdOk struct {
 	AttributeId  int32   `json:"attribute_id,omitempty"`  /* attribute_id integer */
 	DefaultValue float32 `json:"default_value,omitempty"` /* default_value number */

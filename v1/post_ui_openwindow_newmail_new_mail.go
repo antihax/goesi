@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostUiOpenwindowNewmailNewMail. */
+//easyjson:json
+type PostUiOpenwindowNewmailNewMailList []PostUiOpenwindowNewmailNewMail
+
 /* new_mail object */
+//easyjson:json
 type PostUiOpenwindowNewmailNewMail struct {
 	Body               string  `json:"body,omitempty"`                   /* body string */
 	Recipients         []int32 `json:"recipients,omitempty"`             /* recipients array */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetMarketsGroupsMarketGroupIdOk. */
+//easyjson:json
+type GetMarketsGroupsMarketGroupIdOkList []GetMarketsGroupsMarketGroupIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetMarketsGroupsMarketGroupIdOk struct {
 	Description   string  `json:"description,omitempty"`     /* description string */
 	MarketGroupId int32   `json:"market_group_id,omitempty"` /* market_group_id integer */

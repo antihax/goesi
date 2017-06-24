@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetWarsWarIdDefender. */
+//easyjson:json
+type GetWarsWarIdDefenderList []GetWarsWarIdDefender
+
 /* The defending corporation or alliance that declared this war, only contains either corporation_id or alliance_id */
+//easyjson:json
 type GetWarsWarIdDefender struct {
 	AllianceId    int32   `json:"alliance_id,omitempty"`    /* Alliance ID if and only if the defender is an alliance */
 	CorporationId int32   `json:"corporation_id,omitempty"` /* Corporation ID if and only if the defender is a corporation */

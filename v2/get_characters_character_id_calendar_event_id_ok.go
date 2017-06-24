@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdCalendarEventIdOk. */
+//easyjson:json
+type GetCharactersCharacterIdCalendarEventIdOkList []GetCharactersCharacterIdCalendarEventIdOk
+
 /* Full details of a specific event */
+//easyjson:json
 type GetCharactersCharacterIdCalendarEventIdOk struct {
 	DurationInMinutes int32     `json:"duration_in_minutes,omitempty"` /* duration_in_minutes integer */
 	EventDate         time.Time `json:"event_date,omitempty"`          /* event_date string */

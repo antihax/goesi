@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of PutCharactersCharacterIdCalendarEventIdResponse. */
+//easyjson:json
+type PutCharactersCharacterIdCalendarEventIdResponseList []PutCharactersCharacterIdCalendarEventIdResponse
+
 /* response schema */
+//easyjson:json
 type PutCharactersCharacterIdCalendarEventIdResponse struct {
 	Response string `json:"response,omitempty"` /* response string */
 }

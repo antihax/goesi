@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdPlanetsPlanetIdNotFound. */
+//easyjson:json
+type GetCharactersCharacterIdPlanetsPlanetIdNotFoundList []GetCharactersCharacterIdPlanetsPlanetIdNotFound
+
 /* Colony not found */
+//easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* error message */
 }

@@ -23,11 +23,13 @@
 package goesiv1
 
 import (
-	"encoding/json"
-	"golang.org/x/net/context"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"golang.org/x/net/context"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -53,7 +55,7 @@ func (a *InsuranceApiService) GetInsurancePrices(localVarOptionals map[string]in
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []GetInsurancePrices200Ok
+		successPayload     GetInsurancePrices200OkList
 	)
 
 	// create path and map variables
@@ -122,8 +124,7 @@ func (a *InsuranceApiService) GetInsurancePrices(localVarOptionals map[string]in
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

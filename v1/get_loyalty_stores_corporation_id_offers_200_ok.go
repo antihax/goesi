@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetLoyaltyStoresCorporationIdOffers200Ok. */
+//easyjson:json
+type GetLoyaltyStoresCorporationIdOffers200OkList []GetLoyaltyStoresCorporationIdOffers200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetLoyaltyStoresCorporationIdOffers200Ok struct {
 	IskCost       float32                                           `json:"isk_cost,omitempty"`       /* isk_cost number */
 	LpCost        int32                                             `json:"lp_cost,omitempty"`        /* lp_cost integer */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCorporationsCorporationIdStructures200Ok. */
+//easyjson:json
+type GetCorporationsCorporationIdStructures200OkList []GetCorporationsCorporationIdStructures200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCorporationsCorporationIdStructures200Ok struct {
 	CorporationId   int32                                              `json:"corporation_id,omitempty"`    /* ID of the corporation that owns the structure */
 	CurrentVul      []GetCorporationsCorporationIdStructuresCurrentVul `json:"current_vul,omitempty"`       /* This week's vulnerability windows, Monday is day 0 */

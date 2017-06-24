@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetDogmaAttributesAttributeIdNotFound. */
+//easyjson:json
+type GetDogmaAttributesAttributeIdNotFoundList []GetDogmaAttributesAttributeIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetDogmaAttributesAttributeIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

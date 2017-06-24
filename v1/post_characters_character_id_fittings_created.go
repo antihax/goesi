@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostCharactersCharacterIdFittingsCreated. */
+//easyjson:json
+type PostCharactersCharacterIdFittingsCreatedList []PostCharactersCharacterIdFittingsCreated
+
 /* 201 created object */
+//easyjson:json
 type PostCharactersCharacterIdFittingsCreated struct {
 	FittingId int32 `json:"fitting_id,omitempty"` /* fitting_id integer */
 }

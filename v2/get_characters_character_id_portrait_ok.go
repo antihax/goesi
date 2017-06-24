@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetCharactersCharacterIdPortraitOk. */
+//easyjson:json
+type GetCharactersCharacterIdPortraitOkList []GetCharactersCharacterIdPortraitOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdPortraitOk struct {
 	Px128x128 string `json:"px128x128,omitempty"` /* px128x128 string */
 	Px256x256 string `json:"px256x256,omitempty"` /* px256x256 string */

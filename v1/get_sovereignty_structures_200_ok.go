@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetSovereigntyStructures200Ok. */
+//easyjson:json
+type GetSovereigntyStructures200OkList []GetSovereigntyStructures200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetSovereigntyStructures200Ok struct {
 	AllianceId                  int32     `json:"alliance_id,omitempty"`                   /* The alliance that owns the structure.  */
 	SolarSystemId               int32     `json:"solar_system_id,omitempty"`               /* Solar system in which the structure is located.  */

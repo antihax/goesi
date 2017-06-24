@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of GetCharactersCharacterIdMailLabelsOk. */
+//easyjson:json
+type GetCharactersCharacterIdMailLabelsOkList []GetCharactersCharacterIdMailLabelsOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdMailLabelsOk struct {
 	Labels           []GetCharactersCharacterIdMailLabelsLabel `json:"labels,omitempty"`             /* labels array */
 	TotalUnreadCount int32                                     `json:"total_unread_count,omitempty"` /* total_unread_count integer */

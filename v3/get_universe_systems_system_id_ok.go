@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of GetUniverseSystemsSystemIdOk. */
+//easyjson:json
+type GetUniverseSystemsSystemIdOkList []GetUniverseSystemsSystemIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseSystemsSystemIdOk struct {
 	ConstellationId int32                              `json:"constellation_id,omitempty"` /* The constellation this solar system is in */
 	Name            string                             `json:"name,omitempty"`             /* name string */

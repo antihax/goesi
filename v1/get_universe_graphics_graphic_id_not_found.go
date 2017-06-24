@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseGraphicsGraphicIdNotFound. */
+//easyjson:json
+type GetUniverseGraphicsGraphicIdNotFoundList []GetUniverseGraphicsGraphicIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetUniverseGraphicsGraphicIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

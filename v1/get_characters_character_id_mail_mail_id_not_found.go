@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdMailMailIdNotFound. */
+//easyjson:json
+type GetCharactersCharacterIdMailMailIdNotFoundList []GetCharactersCharacterIdMailMailIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetCharactersCharacterIdMailMailIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

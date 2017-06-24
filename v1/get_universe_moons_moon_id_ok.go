@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseMoonsMoonIdOk. */
+//easyjson:json
+type GetUniverseMoonsMoonIdOkList []GetUniverseMoonsMoonIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseMoonsMoonIdOk struct {
 	MoonId   int32                          `json:"moon_id,omitempty"` /* moon_id integer */
 	Name     string                         `json:"name,omitempty"`    /* name string */

@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetWarsWarIdOk. */
+//easyjson:json
+type GetWarsWarIdOkList []GetWarsWarIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetWarsWarIdOk struct {
 	Aggressor     GetWarsWarIdAggressor `json:"aggressor,omitempty"`
 	Allies        []GetWarsWarIdAlly    `json:"allies,omitempty"`   /* allied corporations or alliances, each object contains either corporation_id or alliance_id */

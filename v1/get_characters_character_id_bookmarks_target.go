@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdBookmarksTarget. */
+//easyjson:json
+type GetCharactersCharacterIdBookmarksTargetList []GetCharactersCharacterIdBookmarksTarget
+
 /* target object */
+//easyjson:json
 type GetCharactersCharacterIdBookmarksTarget struct {
 	Coordinates GetCharactersCharacterIdBookmarksCoordinates `json:"coordinates,omitempty"`
 	Item        GetCharactersCharacterIdBookmarksItem        `json:"item,omitempty"`

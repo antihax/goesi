@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetCharactersCharacterIdSkills200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdSkills200OkList []GetCharactersCharacterIdSkills200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdSkills200Ok struct {
 	CurrentSkillLevel  int32 `json:"current_skill_level,omitempty"`  /* current_skill_level integer */
 	SkillId            int32 `json:"skill_id,omitempty"`             /* skill_id integer */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseStargatesStargateIdOk. */
+//easyjson:json
+type GetUniverseStargatesStargateIdOkList []GetUniverseStargatesStargateIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseStargatesStargateIdOk struct {
 	Destination GetUniverseStargatesStargateIdDestination `json:"destination,omitempty"`
 	Name        string                                    `json:"name,omitempty"` /* name string */

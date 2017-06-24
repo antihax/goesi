@@ -22,7 +22,12 @@
 
 package goesiv2
 
+/* A list of GetDogmaEffectsEffectIdModifier. */
+//easyjson:json
+type GetDogmaEffectsEffectIdModifierList []GetDogmaEffectsEffectIdModifier
+
 /* modifier object */
+//easyjson:json
 type GetDogmaEffectsEffectIdModifier struct {
 	Domain               string `json:"domain,omitempty"`                 /* domain string */
 	EffectId             int32  `json:"effect_id,omitempty"`              /* effect_id integer */

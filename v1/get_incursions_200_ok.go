@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetIncursions200Ok. */
+//easyjson:json
+type GetIncursions200OkList []GetIncursions200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetIncursions200Ok struct {
 	ConstellationId      int32   `json:"constellation_id,omitempty"`        /* The constellation id in which this incursion takes place */
 	FactionId            int32   `json:"faction_id,omitempty"`              /* The attacking faction's id */

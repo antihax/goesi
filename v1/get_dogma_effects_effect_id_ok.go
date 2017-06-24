@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetDogmaEffectsEffectIdOk. */
+//easyjson:json
+type GetDogmaEffectsEffectIdOkList []GetDogmaEffectsEffectIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetDogmaEffectsEffectIdOk struct {
 	Description              string                            `json:"description,omitempty"`                 /* description string */
 	DisallowAutoRepeat       bool                              `json:"disallow_auto_repeat,omitempty"`        /* disallow_auto_repeat boolean */

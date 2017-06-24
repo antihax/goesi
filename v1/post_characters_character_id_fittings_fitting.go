@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostCharactersCharacterIdFittingsFitting. */
+//easyjson:json
+type PostCharactersCharacterIdFittingsFittingList []PostCharactersCharacterIdFittingsFitting
+
 /* fitting object */
+//easyjson:json
 type PostCharactersCharacterIdFittingsFitting struct {
 	Description string                                  `json:"description,omitempty"`  /* description string */
 	Items       []PostCharactersCharacterIdFittingsItem `json:"items,omitempty"`        /* items array */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetIndustryFacilities200Ok. */
+//easyjson:json
+type GetIndustryFacilities200OkList []GetIndustryFacilities200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetIndustryFacilities200Ok struct {
 	FacilityId    int64   `json:"facility_id,omitempty"`     /* ID of the facility */
 	OwnerId       int32   `json:"owner_id,omitempty"`        /* Owner of the facility */

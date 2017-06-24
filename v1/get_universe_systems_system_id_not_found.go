@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseSystemsSystemIdNotFound. */
+//easyjson:json
+type GetUniverseSystemsSystemIdNotFoundList []GetUniverseSystemsSystemIdNotFound
+
 /* System not found */
+//easyjson:json
 type GetUniverseSystemsSystemIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* error message */
 }

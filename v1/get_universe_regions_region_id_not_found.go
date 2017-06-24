@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseRegionsRegionIdNotFound. */
+//easyjson:json
+type GetUniverseRegionsRegionIdNotFoundList []GetUniverseRegionsRegionIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetUniverseRegionsRegionIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PutFleetsFleetIdWingsWingIdNaming. */
+//easyjson:json
+type PutFleetsFleetIdWingsWingIdNamingList []PutFleetsFleetIdWingsWingIdNaming
+
 /* naming object */
+//easyjson:json
 type PutFleetsFleetIdWingsWingIdNaming struct {
 	Name string `json:"name,omitempty"` /* name string */
 }

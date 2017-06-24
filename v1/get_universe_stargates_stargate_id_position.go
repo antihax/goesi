@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseStargatesStargateIdPosition. */
+//easyjson:json
+type GetUniverseStargatesStargateIdPositionList []GetUniverseStargatesStargateIdPosition
+
 /* position object */
+//easyjson:json
 type GetUniverseStargatesStargateIdPosition struct {
 	X float32 `json:"x,omitempty"` /* x number */
 	Y float32 `json:"y,omitempty"` /* y number */

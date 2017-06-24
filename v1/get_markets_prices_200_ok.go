@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetMarketsPrices200Ok. */
+//easyjson:json
+type GetMarketsPrices200OkList []GetMarketsPrices200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetMarketsPrices200Ok struct {
 	AdjustedPrice float32 `json:"adjusted_price,omitempty"` /* adjusted_price number */
 	AveragePrice  float32 `json:"average_price,omitempty"`  /* average_price number */

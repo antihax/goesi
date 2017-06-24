@@ -22,7 +22,12 @@
 
 package goesiv4
 
+/* A list of GetCharactersCharacterIdNotFound. */
+//easyjson:json
+type GetCharactersCharacterIdNotFoundList []GetCharactersCharacterIdNotFound
+
 /* Not found */
+//easyjson:json
 type GetCharactersCharacterIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* Not found message */
 }

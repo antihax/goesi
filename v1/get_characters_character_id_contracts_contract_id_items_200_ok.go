@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdContractsContractIdItems200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdContractsContractIdItems200OkList []GetCharactersCharacterIdContractsContractIdItems200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdContractsContractIdItems200Ok struct {
 	IsIncluded  bool  `json:"is_included,omitempty"`  /* true if the contract issuer has submitted this item with the contract, false if the isser is asking for this item in the contract. */
 	IsSingleton bool  `json:"is_singleton,omitempty"` /* is_singleton boolean */

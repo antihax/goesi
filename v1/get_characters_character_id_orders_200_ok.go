@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdOrders200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdOrders200OkList []GetCharactersCharacterIdOrders200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdOrders200Ok struct {
 	AccountId    int32     `json:"account_id,omitempty"`    /* Wallet division for the buyer or seller of this order. Always 1000 for characters. Currently 1000 through 1006 for corporations */
 	Duration     int32     `json:"duration,omitempty"`      /* Numer of days for which order is valid (starting from the issued date). An order expires at time issued + duration */

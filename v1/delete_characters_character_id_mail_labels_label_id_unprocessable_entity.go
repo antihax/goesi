@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of DeleteCharactersCharacterIdMailLabelsLabelIdUnprocessableEntity. */
+//easyjson:json
+type DeleteCharactersCharacterIdMailLabelsLabelIdUnprocessableEntityList []DeleteCharactersCharacterIdMailLabelsLabelIdUnprocessableEntity
+
 /* Unprocessable entity */
+//easyjson:json
 type DeleteCharactersCharacterIdMailLabelsLabelIdUnprocessableEntity struct {
 	Error_ string `json:"error,omitempty"` /* Unprocessable entity message */
 }

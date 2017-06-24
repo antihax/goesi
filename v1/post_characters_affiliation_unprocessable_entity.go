@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PostCharactersAffiliationUnprocessableEntity. */
+//easyjson:json
+type PostCharactersAffiliationUnprocessableEntityList []PostCharactersAffiliationUnprocessableEntity
+
 /* Unprocessable entity */
+//easyjson:json
 type PostCharactersAffiliationUnprocessableEntity struct {
 	Error_ string `json:"error,omitempty"` /* Unprocessable entity message */
 }

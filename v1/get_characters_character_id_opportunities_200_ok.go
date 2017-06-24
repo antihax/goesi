@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdOpportunities200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdOpportunities200OkList []GetCharactersCharacterIdOpportunities200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdOpportunities200Ok struct {
 	CompletedAt time.Time `json:"completed_at,omitempty"` /* completed_at string */
 	TaskId      int32     `json:"task_id,omitempty"`      /* task_id integer */

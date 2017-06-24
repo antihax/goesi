@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdFittings200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdFittings200OkList []GetCharactersCharacterIdFittings200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdFittings200Ok struct {
 	Description string                                 `json:"description,omitempty"`  /* description string */
 	FittingId   int32                                  `json:"fitting_id,omitempty"`   /* fitting_id integer */

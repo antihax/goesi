@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseSchematicsSchematicIdNotFound. */
+//easyjson:json
+type GetUniverseSchematicsSchematicIdNotFoundList []GetUniverseSchematicsSchematicIdNotFound
+
 /* Schematic not found */
+//easyjson:json
 type GetUniverseSchematicsSchematicIdNotFound struct {
 	Error_ string `json:"error,omitempty"` /* error message */
 }

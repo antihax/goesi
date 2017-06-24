@@ -22,7 +22,12 @@
 
 package goesiv3
 
+/* A list of GetUniverseTypesTypeIdOk. */
+//easyjson:json
+type GetUniverseTypesTypeIdOkList []GetUniverseTypesTypeIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseTypesTypeIdOk struct {
 	Capacity        float32                                `json:"capacity,omitempty"`         /* capacity number */
 	Description     string                                 `json:"description,omitempty"`      /* description string */

@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetCharactersCharacterIdChatChannels200Ok. */
+//easyjson:json
+type GetCharactersCharacterIdChatChannels200OkList []GetCharactersCharacterIdChatChannels200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdChatChannels200Ok struct {
 	Allowed       []GetCharactersCharacterIdChatChannelsAllowed  `json:"allowed,omitempty"`        /* allowed array */
 	Blocked       []GetCharactersCharacterIdChatChannelsBlocked  `json:"blocked,omitempty"`        /* blocked array */

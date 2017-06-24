@@ -26,7 +26,12 @@ import (
 	"time"
 )
 
+/* A list of GetCharactersCharacterIdOk. */
+//easyjson:json
+type GetCharactersCharacterIdOkList []GetCharactersCharacterIdOk
+
 /* 200 ok object */
+//easyjson:json
 type GetCharactersCharacterIdOk struct {
 	AllianceId     int32     `json:"alliance_id,omitempty"`     /* The character's alliance ID */
 	AncestryId     int32     `json:"ancestry_id,omitempty"`     /* ancestry_id integer */

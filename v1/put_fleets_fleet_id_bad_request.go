@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of PutFleetsFleetIdBadRequest. */
+//easyjson:json
+type PutFleetsFleetIdBadRequestList []PutFleetsFleetIdBadRequest
+
 /* Bad request */
+//easyjson:json
 type PutFleetsFleetIdBadRequest struct {
 	Error_ string `json:"error,omitempty"` /* Bad request message */
 }

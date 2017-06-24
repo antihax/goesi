@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetUniverseBloodlines200Ok. */
+//easyjson:json
+type GetUniverseBloodlines200OkList []GetUniverseBloodlines200Ok
+
 /* 200 ok object */
+//easyjson:json
 type GetUniverseBloodlines200Ok struct {
 	BloodlineId   int32  `json:"bloodline_id,omitempty"`   /* bloodline_id integer */
 	Charisma      int32  `json:"charisma,omitempty"`       /* charisma integer */

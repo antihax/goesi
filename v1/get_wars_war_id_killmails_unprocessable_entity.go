@@ -22,7 +22,12 @@
 
 package goesiv1
 
+/* A list of GetWarsWarIdKillmailsUnprocessableEntity. */
+//easyjson:json
+type GetWarsWarIdKillmailsUnprocessableEntityList []GetWarsWarIdKillmailsUnprocessableEntity
+
 /* Unprocessable entity */
+//easyjson:json
 type GetWarsWarIdKillmailsUnprocessableEntity struct {
 	Error_ string `json:"error,omitempty"` /* Unprocessable entity message */
 }

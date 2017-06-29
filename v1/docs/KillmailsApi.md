@@ -12,7 +12,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdKillmailsRecent200Ok GetCharactersCharacterIdKillmailsRecent(ctx, characterId, optional)
 List kills and losses
 
-Return a list of character's recent kills and losses  ---  Alternate route: `/legacy/characters/{character_id}/killmails/recent/`  Alternate route: `/latest/characters/{character_id}/killmails/recent/`  Alternate route: `/dev/characters/{character_id}/killmails/recent/`   ---  This route is cached for up to 120 seconds
+Return a list of character's recent kills and losses  --- Alternate route: `/legacy/characters/{character_id}/killmails/recent/`  Alternate route: `/latest/characters/{character_id}/killmails/recent/`  Alternate route: `/dev/characters/{character_id}/killmails/recent/`  --- This route is cached for up to 120 seconds
 
 ### Required Parameters
 
@@ -28,10 +28,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **maxCount** | **int32**| How many killmails to return at maximum | [default to 50]
  **maxKillId** | **int32**| Only return killmails with ID smaller than this.  | 
- **token** | **string**| Access token to use, if preferred over a header | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 > GetKillmailsKillmailIdKillmailHashOk GetKillmailsKillmailIdKillmailHash(killmailHash, killmailId, optional)
 Get a single killmail
 
-Return a single killmail from its ID and hash  ---  Alternate route: `/legacy/killmails/{killmail_id}/{killmail_hash}/`  Alternate route: `/latest/killmails/{killmail_id}/{killmail_hash}/`  Alternate route: `/dev/killmails/{killmail_id}/{killmail_hash}/`   ---  This route is cached for up to 3600 seconds
+Return a single killmail from its ID and hash  --- Alternate route: `/legacy/killmails/{killmail_id}/{killmail_hash}/`  Alternate route: `/latest/killmails/{killmail_id}/{killmail_hash}/`  Alternate route: `/dev/killmails/{killmail_id}/{killmail_hash}/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

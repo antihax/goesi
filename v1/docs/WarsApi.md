@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > []int32 GetWars(optional)
 List wars
 
-Return a list of wars  ---  Alternate route: `/legacy/wars/`  Alternate route: `/latest/wars/`  Alternate route: `/dev/wars/`   ---  This route is cached for up to 3600 seconds
+Return a list of wars  --- Alternate route: `/legacy/wars/`  Alternate route: `/latest/wars/`  Alternate route: `/dev/wars/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -26,8 +26,8 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **maxWarId** | **int32**| Only return wars with ID smaller than this. | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -50,7 +50,7 @@ No authorization required
 > GetWarsWarIdOk GetWarsWarId(warId, optional)
 Get war information
 
-Return details about a war  ---  Alternate route: `/legacy/wars/{war_id}/`  Alternate route: `/latest/wars/{war_id}/`  Alternate route: `/dev/wars/{war_id}/`   ---  This route is cached for up to 3600 seconds
+Return details about a war  --- Alternate route: `/legacy/wars/{war_id}/`  Alternate route: `/latest/wars/{war_id}/`  Alternate route: `/dev/wars/{war_id}/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -88,7 +88,7 @@ No authorization required
 > []GetWarsWarIdKillmails200Ok GetWarsWarIdKillmails(warId, optional)
 List kills for a war
 
-Return a list of kills related to a war  ---  Alternate route: `/legacy/wars/{war_id}/killmails/`  Alternate route: `/latest/wars/{war_id}/killmails/`  Alternate route: `/dev/wars/{war_id}/killmails/`   ---  This route is cached for up to 3600 seconds
+Return a list of kills related to a war  --- Alternate route: `/legacy/wars/{war_id}/killmails/`  Alternate route: `/latest/wars/{war_id}/killmails/`  Alternate route: `/dev/wars/{war_id}/killmails/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **warId** | **int32**| A valid war ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **page** | **int32**| Which page to query, starting at 1 | [default to 1]
+ **page** | **float32**| Which page of results to return | [default to 1]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

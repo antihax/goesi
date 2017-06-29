@@ -15,7 +15,7 @@ Method | HTTP request | Description
 > []int32 GetAlliances(optional)
 List all alliances
 
-List all active player alliances  ---  Alternate route: `/latest/alliances/`  Alternate route: `/legacy/alliances/`  Alternate route: `/dev/alliances/`   ---  This route is cached for up to 3600 seconds
+List all active player alliances  --- Alternate route: `/latest/alliances/`  Alternate route: `/legacy/alliances/`  Alternate route: `/dev/alliances/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -51,13 +51,13 @@ No authorization required
 > GetAlliancesAllianceIdOk GetAlliancesAllianceId(allianceId, optional)
 Get alliance information
 
-Public information about an alliance  ---  Alternate route: `/dev/alliances/{alliance_id}/`   ---  This route is cached for up to 3600 seconds
+Public information about an alliance  --- Alternate route: `/dev/alliances/{alliance_id}/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-  **allianceId** | **int32**| An Eve alliance ID | 
+  **allianceId** | **int32**| An EVE alliance ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -65,7 +65,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allianceId** | **int32**| An Eve alliance ID | 
+ **allianceId** | **int32**| An EVE alliance ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -89,7 +89,7 @@ No authorization required
 > []int32 GetAlliancesAllianceIdCorporations(allianceId, optional)
 List alliance's corporations
 
-List all current member corporations of an alliance  ---  Alternate route: `/latest/alliances/{alliance_id}/corporations/`  Alternate route: `/legacy/alliances/{alliance_id}/corporations/`  Alternate route: `/dev/alliances/{alliance_id}/corporations/`   ---  This route is cached for up to 3600 seconds
+List all current member corporations of an alliance  --- Alternate route: `/latest/alliances/{alliance_id}/corporations/`  Alternate route: `/legacy/alliances/{alliance_id}/corporations/`  Alternate route: `/dev/alliances/{alliance_id}/corporations/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -127,7 +127,7 @@ No authorization required
 > GetAlliancesAllianceIdIconsOk GetAlliancesAllianceIdIcons(allianceId, optional)
 Get alliance icon
 
-Get the icon urls for a alliance  ---  Alternate route: `/legacy/alliances/{alliance_id}/icons/`  Alternate route: `/latest/alliances/{alliance_id}/icons/`  Alternate route: `/dev/alliances/{alliance_id}/icons/`   ---  This route is cached for up to 3600 seconds
+Get the icon urls for a alliance  --- Alternate route: `/legacy/alliances/{alliance_id}/icons/`  Alternate route: `/latest/alliances/{alliance_id}/icons/`  Alternate route: `/dev/alliances/{alliance_id}/icons/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -165,7 +165,7 @@ No authorization required
 > []GetAlliancesNames200Ok GetAlliancesNames(allianceIds, optional)
 Get alliance names
 
-Resolve a set of alliance IDs to alliance names  ---  Alternate route: `/legacy/alliances/names/`  Alternate route: `/latest/alliances/names/`   ---  This route is cached for up to 3600 seconds
+Resolve a set of alliance IDs to alliance names  --- Alternate route: `/legacy/alliances/names/`  Alternate route: `/latest/alliances/names/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

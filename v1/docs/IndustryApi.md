@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdIndustryJobs200Ok GetCharactersCharacterIdIndustryJobs(ctx, characterId, optional)
 List character industry jobs
 
-List industry jobs placed by a character  ---  Alternate route: `/legacy/characters/{character_id}/industry/jobs/`  Alternate route: `/latest/characters/{character_id}/industry/jobs/`  Alternate route: `/dev/characters/{character_id}/industry/jobs/`   ---  This route is cached for up to 300 seconds
+List industry jobs placed by a character  --- Alternate route: `/legacy/characters/{character_id}/industry/jobs/`  Alternate route: `/latest/characters/{character_id}/industry/jobs/`  Alternate route: `/dev/characters/{character_id}/industry/jobs/`  --- This route is cached for up to 300 seconds
 
 ### Required Parameters
 
@@ -29,9 +29,9 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **includeCompleted** | **bool**| Whether retrieve completed character industry jobs as well | 
- **token** | **string**| Access token to use, if preferred over a header | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 > []GetIndustryFacilities200Ok GetIndustryFacilities(optional)
 List industry facilities
 
-Return a list of industry facilities  ---  Alternate route: `/legacy/industry/facilities/`  Alternate route: `/latest/industry/facilities/`  Alternate route: `/dev/industry/facilities/`   ---  This route is cached for up to 3600 seconds
+Return a list of industry facilities  --- Alternate route: `/legacy/industry/facilities/`  Alternate route: `/latest/industry/facilities/`  Alternate route: `/dev/industry/facilities/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -90,7 +90,7 @@ No authorization required
 > []GetIndustrySystems200Ok GetIndustrySystems(optional)
 List solar system cost indices
 
-Return cost indices for solar systems  ---  Alternate route: `/legacy/industry/systems/`  Alternate route: `/latest/industry/systems/`  Alternate route: `/dev/industry/systems/`   ---  This route is cached for up to 3600 seconds
+Return cost indices for solar systems  --- Alternate route: `/legacy/industry/systems/`  Alternate route: `/latest/industry/systems/`  Alternate route: `/dev/industry/systems/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

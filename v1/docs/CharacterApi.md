@@ -20,14 +20,14 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdAgentsResearch200Ok GetCharactersCharacterIdAgentsResearch(ctx, characterId, optional)
 Get agents research
 
-Return a list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)  ---  Alternate route: `/legacy/characters/{character_id}/agents_research/`  Alternate route: `/latest/characters/{character_id}/agents_research/`  Alternate route: `/dev/characters/{character_id}/agents_research/`   ---  This route is cached for up to 3600 seconds
+Return a list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)  --- Alternate route: `/legacy/characters/{character_id}/agents_research/`  Alternate route: `/latest/characters/{character_id}/agents_research/`  Alternate route: `/dev/characters/{character_id}/agents_research/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **characterId** | **int32**| ID for a character | 
+  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -35,9 +35,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int32**| ID for a character | 
+ **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -60,14 +60,14 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdBlueprints200Ok GetCharactersCharacterIdBlueprints(ctx, characterId, optional)
 Get blueprints
 
-Return a list of blueprints the character has  ---  Alternate route: `/legacy/characters/{character_id}/blueprints/`  Alternate route: `/latest/characters/{character_id}/blueprints/`  Alternate route: `/dev/characters/{character_id}/blueprints/`   ---  This route is cached for up to 3600 seconds
+Return a list of blueprints the character has  --- Alternate route: `/legacy/characters/{character_id}/blueprints/`  Alternate route: `/latest/characters/{character_id}/blueprints/`  Alternate route: `/dev/characters/{character_id}/blueprints/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **characterId** | **int32**| ID for a character | 
+  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -75,9 +75,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int32**| ID for a character | 
+ **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -100,14 +100,14 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdChatChannels200Ok GetCharactersCharacterIdChatChannels(ctx, characterId, optional)
 Get chat channels
 
-Return chat channels that a character is the owner or an operator of  ---  Alternate route: `/legacy/characters/{character_id}/chat_channels/`  Alternate route: `/latest/characters/{character_id}/chat_channels/`  Alternate route: `/dev/characters/{character_id}/chat_channels/`   ---  This route is cached for up to 300 seconds
+Return chat channels that a character is the owner or an operator of  --- Alternate route: `/legacy/characters/{character_id}/chat_channels/`  Alternate route: `/latest/characters/{character_id}/chat_channels/`  Alternate route: `/dev/characters/{character_id}/chat_channels/`  --- This route is cached for up to 300 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **characterId** | **int32**| ID for a character | 
+  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -115,9 +115,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int32**| ID for a character | 
+ **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdCorporationhistory200Ok GetCharactersCharacterIdCorporationhistory(characterId, optional)
 Get corporation history
 
-Get a list of all the corporations a character has been a member of  ---  Alternate route: `/legacy/characters/{character_id}/corporationhistory/`  Alternate route: `/latest/characters/{character_id}/corporationhistory/`  Alternate route: `/dev/characters/{character_id}/corporationhistory/`   ---  This route is cached for up to 3600 seconds
+Get a list of all the corporations a character has been a member of  --- Alternate route: `/legacy/characters/{character_id}/corporationhistory/`  Alternate route: `/latest/characters/{character_id}/corporationhistory/`  Alternate route: `/dev/characters/{character_id}/corporationhistory/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -178,14 +178,14 @@ No authorization required
 > []GetCharactersCharacterIdMedals200Ok GetCharactersCharacterIdMedals(ctx, characterId, optional)
 Get medals
 
-Return a list of medals the character has  ---  Alternate route: `/legacy/characters/{character_id}/medals/`  Alternate route: `/latest/characters/{character_id}/medals/`  Alternate route: `/dev/characters/{character_id}/medals/`   ---  This route is cached for up to 3600 seconds
+Return a list of medals the character has  --- Alternate route: `/legacy/characters/{character_id}/medals/`  Alternate route: `/latest/characters/{character_id}/medals/`  Alternate route: `/dev/characters/{character_id}/medals/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **characterId** | **int32**| ID for a character | 
+  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -193,9 +193,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int32**| ID for a character | 
+ **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 > GetCharactersCharacterIdPortraitOk GetCharactersCharacterIdPortrait(characterId, optional)
 Get character portraits
 
-Get portrait urls for a character  ---  Alternate route: `/legacy/characters/{character_id}/portrait/`   ---  This route is cached for up to 3600 seconds
+Get portrait urls for a character  --- Alternate route: `/legacy/characters/{character_id}/portrait/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -256,14 +256,14 @@ No authorization required
 > []string GetCharactersCharacterIdRoles(ctx, characterId, optional)
 Get character corporation roles
 
-Returns a character's corporation roles  ---  Alternate route: `/legacy/characters/{character_id}/roles/`  Alternate route: `/latest/characters/{character_id}/roles/`  Alternate route: `/dev/characters/{character_id}/roles/`   ---  This route is cached for up to 3600 seconds
+Returns a character's corporation roles  --- Alternate route: `/legacy/characters/{character_id}/roles/`  Alternate route: `/latest/characters/{character_id}/roles/`  Alternate route: `/dev/characters/{character_id}/roles/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **characterId** | **int32**| A character ID | 
+  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -271,9 +271,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int32**| A character ID | 
+ **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -296,14 +296,14 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdStandings200Ok GetCharactersCharacterIdStandings(ctx, characterId, optional)
 Get standings
 
-Return character standings from agents, NPC corporations, and factions  ---  Alternate route: `/legacy/characters/{character_id}/standings/`  Alternate route: `/latest/characters/{character_id}/standings/`  Alternate route: `/dev/characters/{character_id}/standings/`   ---  This route is cached for up to 3600 seconds
+Return character standings from agents, NPC corporations, and factions  --- Alternate route: `/legacy/characters/{character_id}/standings/`  Alternate route: `/latest/characters/{character_id}/standings/`  Alternate route: `/dev/characters/{character_id}/standings/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **characterId** | **int32**| ID for a character | 
+  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -311,9 +311,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int32**| ID for a character | 
+ **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 > []GetCharactersNames200Ok GetCharactersNames(characterIds, optional)
 Get character names
 
-Resolve a set of character IDs to character names  ---  Alternate route: `/legacy/characters/names/`  Alternate route: `/latest/characters/names/`  Alternate route: `/dev/characters/names/`   ---  This route is cached for up to 3600 seconds
+Resolve a set of character IDs to character names  --- Alternate route: `/legacy/characters/names/`  Alternate route: `/latest/characters/names/`  Alternate route: `/dev/characters/names/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -374,7 +374,7 @@ No authorization required
 > []PostCharactersAffiliation200Ok PostCharactersAffiliation(characters, optional)
 Character affiliation
 
-Bulk lookup of character IDs to corporation, alliance and faction  ---  Alternate route: `/legacy/characters/affiliation/`  Alternate route: `/latest/characters/affiliation/`  Alternate route: `/dev/characters/affiliation/`   ---  This route is cached for up to 3600 seconds
+Bulk lookup of character IDs to corporation, alliance and faction  --- Alternate route: `/legacy/characters/affiliation/`  Alternate route: `/latest/characters/affiliation/`  Alternate route: `/dev/characters/affiliation/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

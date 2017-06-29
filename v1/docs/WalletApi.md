@@ -12,7 +12,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdWallets200Ok GetCharactersCharacterIdWallets(ctx, characterId, optional)
 List wallets and balances
 
-List your wallets and their balances. Characters typically have only one wallet, with wallet_id 1000 being the master wallet.  ---  Alternate route: `/legacy/characters/{character_id}/wallets/`  Alternate route: `/latest/characters/{character_id}/wallets/`  Alternate route: `/dev/characters/{character_id}/wallets/`   ---  This route is cached for up to 120 seconds
+List your wallets and their balances. Characters typically have only one wallet, with wallet_id 1000 being the master wallet.  --- Alternate route: `/legacy/characters/{character_id}/wallets/`  Alternate route: `/latest/characters/{character_id}/wallets/`  Alternate route: `/dev/characters/{character_id}/wallets/`  --- This route is cached for up to 120 seconds
 
 ### Required Parameters
 
@@ -29,7 +29,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdWalletsJournal200Ok GetCharactersCharacterIdWalletsJournal(ctx, characterId, optional)
 Get character wallet journal
 
-Retrieve character wallet journal  ---  Alternate route: `/legacy/characters/{character_id}/wallets/journal/`  Alternate route: `/latest/characters/{character_id}/wallets/journal/`  Alternate route: `/dev/characters/{character_id}/wallets/journal/`   ---  This route is cached for up to 3600 seconds
+Retrieve character wallet journal  --- Alternate route: `/legacy/characters/{character_id}/wallets/journal/`  Alternate route: `/latest/characters/{character_id}/wallets/journal/`  Alternate route: `/dev/characters/{character_id}/wallets/journal/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -68,9 +68,9 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **fromId** | **int64**| Only show journal entries happened before the transaction referenced by this id | 
- **token** | **string**| Access token to use, if preferred over a header | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

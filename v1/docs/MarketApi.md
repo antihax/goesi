@@ -17,7 +17,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdOrders200Ok GetCharactersCharacterIdOrders(ctx, characterId, optional)
 List orders from a character
 
-List market orders placed by a character  ---  Alternate route: `/legacy/characters/{character_id}/orders/`  Alternate route: `/latest/characters/{character_id}/orders/`  Alternate route: `/dev/characters/{character_id}/orders/`   ---  This route is cached for up to 3600 seconds
+List market orders placed by a character  --- Alternate route: `/legacy/characters/{character_id}/orders/`  Alternate route: `/latest/characters/{character_id}/orders/`  Alternate route: `/dev/characters/{character_id}/orders/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -34,7 +34,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 > []int32 GetMarketsGroups(optional)
 Get item groups
 
-Get a list of item groups  ---  Alternate route: `/legacy/markets/groups/`  Alternate route: `/latest/markets/groups/`  Alternate route: `/dev/markets/groups/`   ---  This route expires daily at 11:05
+Get a list of item groups  --- Alternate route: `/legacy/markets/groups/`  Alternate route: `/latest/markets/groups/`  Alternate route: `/dev/markets/groups/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -93,7 +93,7 @@ No authorization required
 > GetMarketsGroupsMarketGroupIdOk GetMarketsGroupsMarketGroupId(marketGroupId, optional)
 Get item group information
 
-Get information on an item group  ---  Alternate route: `/legacy/markets/groups/{market_group_id}/`  Alternate route: `/latest/markets/groups/{market_group_id}/`  Alternate route: `/dev/markets/groups/{market_group_id}/`   ---  This route expires daily at 11:05
+Get information on an item group  --- Alternate route: `/legacy/markets/groups/{market_group_id}/`  Alternate route: `/latest/markets/groups/{market_group_id}/`  Alternate route: `/dev/markets/groups/{market_group_id}/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -132,7 +132,7 @@ No authorization required
 > []GetMarketsPrices200Ok GetMarketsPrices(optional)
 List market prices
 
-Return a list of prices  ---  Alternate route: `/legacy/markets/prices/`  Alternate route: `/latest/markets/prices/`  Alternate route: `/dev/markets/prices/`   ---  This route is cached for up to 3600 seconds
+Return a list of prices  --- Alternate route: `/legacy/markets/prices/`  Alternate route: `/latest/markets/prices/`  Alternate route: `/dev/markets/prices/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -168,7 +168,7 @@ No authorization required
 > []GetMarketsRegionIdHistory200Ok GetMarketsRegionIdHistory(regionId, typeId, optional)
 List historical market statistics in a region
 
-Return a list of historical market statistics for the specified type in a region  ---  Alternate route: `/legacy/markets/{region_id}/history/`  Alternate route: `/latest/markets/{region_id}/history/`  Alternate route: `/dev/markets/{region_id}/history/`   ---  This route is cached for up to 3600 seconds
+Return a list of historical market statistics for the specified type in a region  --- Alternate route: `/legacy/markets/{region_id}/history/`  Alternate route: `/latest/markets/{region_id}/history/`  Alternate route: `/dev/markets/{region_id}/history/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -208,7 +208,7 @@ No authorization required
 > []GetMarketsRegionIdOrders200Ok GetMarketsRegionIdOrders(orderType, regionId, optional)
 List orders in a region
 
-Return a list of orders in a region  ---  Alternate route: `/legacy/markets/{region_id}/orders/`  Alternate route: `/latest/markets/{region_id}/orders/`  Alternate route: `/dev/markets/{region_id}/orders/`   ---  This route is cached for up to 300 seconds
+Return a list of orders in a region  --- Alternate route: `/legacy/markets/{region_id}/orders/`  Alternate route: `/latest/markets/{region_id}/orders/`  Alternate route: `/dev/markets/{region_id}/orders/`  --- This route is cached for up to 300 seconds
 
 ### Required Parameters
 
@@ -225,9 +225,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. | [default to all]
  **regionId** | **int32**| Return orders in this region | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **page** | **int32**| Which page to query, only used for querying without type_id. Starting at 1 | [default to 1]
  **typeId** | **int32**| Return orders only for this type | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **page** | **float32**| Which page of results to return | [default to 1]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -250,7 +250,7 @@ No authorization required
 > []GetMarketsStructuresStructureId200Ok GetMarketsStructuresStructureId(ctx, structureId, optional)
 List orders in a structure
 
-Return all orders in a structure  ---  Alternate route: `/legacy/markets/structures/{structure_id}/`  Alternate route: `/latest/markets/structures/{structure_id}/`  Alternate route: `/dev/markets/structures/{structure_id}/`   ---  This route is cached for up to 300 seconds
+Return all orders in a structure  --- Alternate route: `/legacy/markets/structures/{structure_id}/`  Alternate route: `/latest/markets/structures/{structure_id}/`  Alternate route: `/dev/markets/structures/{structure_id}/`  --- This route is cached for up to 300 seconds
 
 ### Required Parameters
 
@@ -267,8 +267,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **structureId** | **int64**| Return orders in this structure | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **page** | **int32**| Which page to query, starting at 1 | [default to 1]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **page** | **float32**| Which page of results to return | [default to 1]
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

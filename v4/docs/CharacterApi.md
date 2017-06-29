@@ -11,7 +11,7 @@ Method | HTTP request | Description
 > GetCharactersCharacterIdOk GetCharactersCharacterId(characterId, optional)
 Get character's public information
 
-Public information about a character  ---  Alternate route: `/latest/characters/{character_id}/`  Alternate route: `/dev/characters/{character_id}/`   ---  This route is cached for up to 3600 seconds
+Public information about a character  --- Alternate route: `/latest/characters/{character_id}/`  Alternate route: `/dev/characters/{character_id}/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

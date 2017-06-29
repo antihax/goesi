@@ -14,13 +14,13 @@ Method | HTTP request | Description
 > GetCorporationsCorporationIdOk GetCorporationsCorporationId(corporationId, optional)
 Get corporation information
 
-Public information about a corporation  ---  Alternate route: `/legacy/corporations/{corporation_id}/`   ---  This route is cached for up to 3600 seconds
+Public information about a corporation  --- Alternate route: `/legacy/corporations/{corporation_id}/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-  **corporationId** | **int32**| An Eve corporation ID | 
+  **corporationId** | **int32**| An EVE corporation ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -28,7 +28,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **corporationId** | **int32**| An Eve corporation ID | 
+ **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -52,7 +52,7 @@ No authorization required
 > []GetCorporationsCorporationIdAlliancehistory200Ok GetCorporationsCorporationIdAlliancehistory(corporationId, optional)
 Get alliance history
 
-Get a list of all the alliances a corporation has been a member of  ---  Alternate route: `/dev/corporations/{corporation_id}/alliancehistory/`   ---  This route is cached for up to 3600 seconds
+Get a list of all the alliances a corporation has been a member of  --- Alternate route: `/dev/corporations/{corporation_id}/alliancehistory/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -90,14 +90,14 @@ No authorization required
 > []GetCorporationsCorporationIdMembers200Ok GetCorporationsCorporationIdMembers(ctx, corporationId, optional)
 Get corporation members
 
-Read the current list of members if the calling character is a member.  ---  Alternate route: `/legacy/corporations/{corporation_id}/members/`  Alternate route: `/latest/corporations/{corporation_id}/members/`   ---  This route is cached for up to 3600 seconds
+Read the current list of members if the calling character is a member.  --- Alternate route: `/legacy/corporations/{corporation_id}/members/`  Alternate route: `/latest/corporations/{corporation_id}/members/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **corporationId** | **int32**| A corporation ID | 
+  **corporationId** | **int32**| An EVE corporation ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -105,9 +105,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **corporationId** | **int32**| A corporation ID | 
+ **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsNames200Ok GetCorporationsNames(corporationIds, optional)
 Get corporation names
 
-Resolve a set of corporation IDs to corporation names  ---  Alternate route: `/dev/corporations/names/`   ---  This route is cached for up to 3600 seconds
+Resolve a set of corporation IDs to corporation names  --- Alternate route: `/dev/corporations/names/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

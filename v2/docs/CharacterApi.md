@@ -11,7 +11,7 @@ Method | HTTP request | Description
 > GetCharactersCharacterIdPortraitOk GetCharactersCharacterIdPortrait(characterId, optional)
 Get character portraits
 
-Get portrait urls for a character  ---  Alternate route: `/latest/characters/{character_id}/portrait/`  Alternate route: `/dev/characters/{character_id}/portrait/`   ---  This route is cached for up to 3600 seconds
+Get portrait urls for a character  --- Alternate route: `/latest/characters/{character_id}/portrait/`  Alternate route: `/dev/characters/{character_id}/portrait/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

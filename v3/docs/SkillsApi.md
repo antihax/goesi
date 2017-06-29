@@ -11,7 +11,7 @@ Method | HTTP request | Description
 > GetCharactersCharacterIdSkillsOk GetCharactersCharacterIdSkills(ctx, characterId, optional)
 Get character skills
 
-List all trained skills for the given character  ---  Alternate route: `/latest/characters/{character_id}/skills/`   ---  This route is cached for up to 120 seconds
+List all trained skills for the given character  --- Alternate route: `/latest/characters/{character_id}/skills/`  --- This route is cached for up to 120 seconds
 
 ### Required Parameters
 
@@ -28,7 +28,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

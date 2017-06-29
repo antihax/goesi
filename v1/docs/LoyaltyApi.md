@@ -12,14 +12,14 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdLoyaltyPoints200Ok GetCharactersCharacterIdLoyaltyPoints(ctx, characterId, optional)
 Get loyalty points
 
-Return a list of loyalty points for all corporations the character has worked for  ---  Alternate route: `/legacy/characters/{character_id}/loyalty/points/`  Alternate route: `/latest/characters/{character_id}/loyalty/points/`  Alternate route: `/dev/characters/{character_id}/loyalty/points/` 
+Return a list of loyalty points for all corporations the character has worked for  --- Alternate route: `/legacy/characters/{character_id}/loyalty/points/`  Alternate route: `/latest/characters/{character_id}/loyalty/points/`  Alternate route: `/dev/characters/{character_id}/loyalty/points/` 
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **characterId** | **int32**| ID for a character | 
+  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -27,9 +27,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int32**| ID for a character | 
+ **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -52,13 +52,13 @@ Name | Type | Description  | Notes
 > []GetLoyaltyStoresCorporationIdOffers200Ok GetLoyaltyStoresCorporationIdOffers(corporationId, optional)
 List loyalty store offers
 
-Return a list of offers from a specific corporation's loyalty store  ---  Alternate route: `/legacy/loyalty/stores/{corporation_id}/offers/`  Alternate route: `/latest/loyalty/stores/{corporation_id}/offers/`  Alternate route: `/dev/loyalty/stores/{corporation_id}/offers/`   ---  This route expires daily at 11:05
+Return a list of offers from a specific corporation's loyalty store  --- Alternate route: `/legacy/loyalty/stores/{corporation_id}/offers/`  Alternate route: `/latest/loyalty/stores/{corporation_id}/offers/`  Alternate route: `/dev/loyalty/stores/{corporation_id}/offers/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-  **corporationId** | **int32**| ID of a corporation | 
+  **corporationId** | **int32**| An EVE corporation ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -66,7 +66,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **corporationId** | **int32**| ID of a corporation | 
+ **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 > []int32 GetRouteOriginDestination(destination, origin, optional)
 Get route
 
-Get the systems between origin and destination  ---  Alternate route: `/latest/route/{origin}/{destination}/`  Alternate route: `/legacy/route/{origin}/{destination}/`  Alternate route: `/dev/route/{origin}/{destination}/`   ---  This route is cached for up to 86400 seconds
+Get the systems between origin and destination  --- Alternate route: `/latest/route/{origin}/{destination}/`  Alternate route: `/legacy/route/{origin}/{destination}/`  Alternate route: `/dev/route/{origin}/{destination}/`  --- This route is cached for up to 86400 seconds
 
 ### Required Parameters
 
@@ -30,8 +30,8 @@ Name | Type | Description  | Notes
  **origin** | **int32**| origin solar system ID | 
  **avoid** | [**[]int32**](int32.md)| avoid solar system ID(s) | 
  **connections** | [**[][]int32**]([]int32.md)| connected solar system pairs | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **flag** | **string**| route security preference | [default to shortest]
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

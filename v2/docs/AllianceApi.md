@@ -12,13 +12,13 @@ Method | HTTP request | Description
 > GetAlliancesAllianceIdOk GetAlliancesAllianceId(allianceId, optional)
 Get alliance information
 
-Public information about an alliance  ---  Alternate route: `/latest/alliances/{alliance_id}/`   ---  This route is cached for up to 3600 seconds
+Public information about an alliance  --- Alternate route: `/latest/alliances/{alliance_id}/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-  **allianceId** | **int32**| An Eve alliance ID | 
+  **allianceId** | **int32**| An EVE alliance ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -26,7 +26,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allianceId** | **int32**| An Eve alliance ID | 
+ **allianceId** | **int32**| An EVE alliance ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -50,7 +50,7 @@ No authorization required
 > []GetAlliancesNames200Ok GetAlliancesNames(allianceIds, optional)
 Get alliance names
 
-Resolve a set of alliance IDs to alliance names  ---  Alternate route: `/dev/alliances/names/`   ---  This route is cached for up to 3600 seconds
+Resolve a set of alliance IDs to alliance names  --- Alternate route: `/dev/alliances/names/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

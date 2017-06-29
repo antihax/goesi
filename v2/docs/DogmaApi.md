@@ -11,7 +11,7 @@ Method | HTTP request | Description
 > GetDogmaEffectsEffectIdOk GetDogmaEffectsEffectId(effectId, optional)
 Get effect information
 
-Get information on a dogma effect  ---  Alternate route: `/dev/dogma/effects/{effect_id}/`   ---  This route expires daily at 11:05
+Get information on a dogma effect  --- Alternate route: `/dev/dogma/effects/{effect_id}/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 

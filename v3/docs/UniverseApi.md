@@ -12,7 +12,7 @@ Method | HTTP request | Description
 > GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(systemId, optional)
 Get solar system information
 
-Get information on a solar system  ---  Alternate route: `/dev/universe/systems/{system_id}/`   ---  This route expires daily at 11:05
+Get information on a solar system  --- Alternate route: `/dev/universe/systems/{system_id}/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -51,7 +51,7 @@ No authorization required
 > GetUniverseTypesTypeIdOk GetUniverseTypesTypeId(typeId, optional)
 Get type information
 
-Get information on a type  ---  Alternate route: `/dev/universe/types/{type_id}/`   ---  This route expires daily at 11:05
+Get information on a type  --- Alternate route: `/dev/universe/types/{type_id}/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 

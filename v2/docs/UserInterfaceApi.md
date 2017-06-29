@@ -11,7 +11,7 @@ Method | HTTP request | Description
 > PostUiAutopilotWaypoint(ctx, addToBeginning, clearOtherWaypoints, destinationId, optional)
 Set Autopilot Waypoint
 
-Set a solar system as autopilot waypoint  ---  Alternate route: `/latest/ui/autopilot/waypoint/`  Alternate route: `/dev/ui/autopilot/waypoint/` 
+Set a solar system as autopilot waypoint  --- Alternate route: `/latest/ui/autopilot/waypoint/`  Alternate route: `/dev/ui/autopilot/waypoint/` 
 
 ### Required Parameters
 
@@ -32,7 +32,7 @@ Name | Type | Description  | Notes
  **clearOtherWaypoints** | **bool**| Whether clean other waypoints beforing adding this one | [default to false]
  **destinationId** | **int64**| The destination to travel to, can be solar system, station or structure&#39;s id | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

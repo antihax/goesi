@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > []GetSovereigntyCampaigns200Ok GetSovereigntyCampaigns(optional)
 List sovereignty campaigns
 
-Shows sovereignty data for campaigns.  ---  Alternate route: `/legacy/sovereignty/campaigns/`  Alternate route: `/latest/sovereignty/campaigns/`  Alternate route: `/dev/sovereignty/campaigns/`   ---  This route is cached for up to 5 seconds
+Shows sovereignty data for campaigns.  --- Alternate route: `/legacy/sovereignty/campaigns/`  Alternate route: `/latest/sovereignty/campaigns/`  Alternate route: `/dev/sovereignty/campaigns/`  --- This route is cached for up to 5 seconds
 
 ### Required Parameters
 
@@ -49,7 +49,7 @@ No authorization required
 > []GetSovereigntyMap200Ok GetSovereigntyMap(optional)
 List sovereignty of systems
 
-Shows sovereignty information for solar systems  ---  Alternate route: `/legacy/sovereignty/map/`  Alternate route: `/latest/sovereignty/map/`  Alternate route: `/dev/sovereignty/map/`   ---  This route is cached for up to 3600 seconds
+Shows sovereignty information for solar systems  --- Alternate route: `/legacy/sovereignty/map/`  Alternate route: `/latest/sovereignty/map/`  Alternate route: `/dev/sovereignty/map/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -85,7 +85,7 @@ No authorization required
 > []GetSovereigntyStructures200Ok GetSovereigntyStructures(optional)
 List sovereignty structures
 
-Shows sovereignty data for structures.  ---  Alternate route: `/legacy/sovereignty/structures/`  Alternate route: `/latest/sovereignty/structures/`  Alternate route: `/dev/sovereignty/structures/`   ---  This route is cached for up to 120 seconds
+Shows sovereignty data for structures.  --- Alternate route: `/legacy/sovereignty/structures/`  Alternate route: `/latest/sovereignty/structures/`  Alternate route: `/dev/sovereignty/structures/`  --- This route is cached for up to 120 seconds
 
 ### Required Parameters
 

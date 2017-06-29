@@ -15,7 +15,7 @@ Method | HTTP request | Description
 > GetUniverseStationsStationIdOk GetUniverseStationsStationId(stationId, optional)
 Get station information
 
-Get information on a station  ---  Alternate route: `/latest/universe/stations/{station_id}/`  Alternate route: `/dev/universe/stations/{station_id}/`   ---  This route is cached for up to 300 seconds
+Get information on a station  --- Alternate route: `/latest/universe/stations/{station_id}/`  Alternate route: `/dev/universe/stations/{station_id}/`  --- This route is cached for up to 300 seconds
 
 ### Required Parameters
 
@@ -53,7 +53,7 @@ No authorization required
 > []GetUniverseSystemKills200Ok GetUniverseSystemKills(optional)
 Get system kills
 
-Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  ---  Alternate route: `/dev/universe/system_kills/`   ---  This route is cached for up to 3600 seconds
+Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  --- Alternate route: `/dev/universe/system_kills/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -89,7 +89,7 @@ No authorization required
 > GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(systemId, optional)
 Get solar system information
 
-Get information on a solar system  ---  Alternate route: `/latest/universe/systems/{system_id}/`   ---  This route expires daily at 11:05
+Get information on a solar system  --- Alternate route: `/latest/universe/systems/{system_id}/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -128,7 +128,7 @@ No authorization required
 > GetUniverseTypesTypeIdOk GetUniverseTypesTypeId(typeId, optional)
 Get type information
 
-Get information on a type  ---  Alternate route: `/latest/universe/types/{type_id}/`   ---  This route expires daily at 11:05
+Get information on a type  --- Alternate route: `/latest/universe/types/{type_id}/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -167,7 +167,7 @@ No authorization required
 > []PostUniverseNames200Ok PostUniverseNames(ids, optional)
 Get names and categories for a set of ID's
 
-Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types.  ---  Alternate route: `/latest/universe/names/`  Alternate route: `/dev/universe/names/` 
+Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types.  --- Alternate route: `/latest/universe/names/`  Alternate route: `/dev/universe/names/` 
 
 ### Required Parameters
 

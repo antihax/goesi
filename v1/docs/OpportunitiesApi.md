@@ -15,14 +15,14 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdOpportunities200Ok GetCharactersCharacterIdOpportunities(ctx, characterId, optional)
 Get a character's completed tasks
 
-Return a list of tasks finished by a character  ---  Alternate route: `/legacy/characters/{character_id}/opportunities/`  Alternate route: `/latest/characters/{character_id}/opportunities/`  Alternate route: `/dev/characters/{character_id}/opportunities/`   ---  This route is cached for up to 3600 seconds
+Return a list of tasks finished by a character  --- Alternate route: `/legacy/characters/{character_id}/opportunities/`  Alternate route: `/latest/characters/{character_id}/opportunities/`  Alternate route: `/dev/characters/{character_id}/opportunities/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **characterId** | **int32**| ID for a character | 
+  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -30,9 +30,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int32**| ID for a character | 
+ **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 > []int32 GetOpportunitiesGroups(optional)
 Get opportunities groups
 
-Return a list of opportunities groups  ---  Alternate route: `/legacy/opportunities/groups/`  Alternate route: `/latest/opportunities/groups/`  Alternate route: `/dev/opportunities/groups/`   ---  This route expires daily at 11:05
+Return a list of opportunities groups  --- Alternate route: `/legacy/opportunities/groups/`  Alternate route: `/latest/opportunities/groups/`  Alternate route: `/dev/opportunities/groups/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -91,7 +91,7 @@ No authorization required
 > GetOpportunitiesGroupsGroupIdOk GetOpportunitiesGroupsGroupId(groupId, optional)
 Get opportunities group
 
-Return information of an opportunities group  ---  Alternate route: `/legacy/opportunities/groups/{group_id}/`  Alternate route: `/latest/opportunities/groups/{group_id}/`  Alternate route: `/dev/opportunities/groups/{group_id}/`   ---  This route expires daily at 11:05
+Return information of an opportunities group  --- Alternate route: `/legacy/opportunities/groups/{group_id}/`  Alternate route: `/latest/opportunities/groups/{group_id}/`  Alternate route: `/dev/opportunities/groups/{group_id}/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -130,7 +130,7 @@ No authorization required
 > []int32 GetOpportunitiesTasks(optional)
 Get opportunities tasks
 
-Return a list of opportunities tasks  ---  Alternate route: `/legacy/opportunities/tasks/`  Alternate route: `/latest/opportunities/tasks/`  Alternate route: `/dev/opportunities/tasks/`   ---  This route expires daily at 11:05
+Return a list of opportunities tasks  --- Alternate route: `/legacy/opportunities/tasks/`  Alternate route: `/latest/opportunities/tasks/`  Alternate route: `/dev/opportunities/tasks/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -166,7 +166,7 @@ No authorization required
 > GetOpportunitiesTasksTaskIdOk GetOpportunitiesTasksTaskId(taskId, optional)
 Get opportunities task
 
-Return information of an opportunities task  ---  Alternate route: `/legacy/opportunities/tasks/{task_id}/`  Alternate route: `/latest/opportunities/tasks/{task_id}/`  Alternate route: `/dev/opportunities/tasks/{task_id}/`   ---  This route expires daily at 11:05
+Return information of an opportunities task  --- Alternate route: `/legacy/opportunities/tasks/{task_id}/`  Alternate route: `/latest/opportunities/tasks/{task_id}/`  Alternate route: `/dev/opportunities/tasks/{task_id}/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 

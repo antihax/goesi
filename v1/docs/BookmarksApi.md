@@ -12,7 +12,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdBookmarks200Ok GetCharactersCharacterIdBookmarks(ctx, characterId, optional)
 List bookmarks
 
-List your character's personal bookmarks  ---  Alternate route: `/legacy/characters/{character_id}/bookmarks/`  Alternate route: `/latest/characters/{character_id}/bookmarks/`  Alternate route: `/dev/characters/{character_id}/bookmarks/`   ---  This route is cached for up to 3600 seconds
+List your character's personal bookmarks  --- Alternate route: `/legacy/characters/{character_id}/bookmarks/`  Alternate route: `/latest/characters/{character_id}/bookmarks/`  Alternate route: `/dev/characters/{character_id}/bookmarks/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -29,7 +29,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdBookmarksFolders200Ok GetCharactersCharacterIdBookmarksFolders(ctx, characterId, optional)
 List bookmark folders
 
-List your character's personal bookmark folders  ---  Alternate route: `/legacy/characters/{character_id}/bookmarks/folders/`  Alternate route: `/latest/characters/{character_id}/bookmarks/folders/`  Alternate route: `/dev/characters/{character_id}/bookmarks/folders/`   ---  This route is cached for up to 3600 seconds
+List your character's personal bookmark folders  --- Alternate route: `/legacy/characters/{character_id}/bookmarks/folders/`  Alternate route: `/latest/characters/{character_id}/bookmarks/folders/`  Alternate route: `/dev/characters/{character_id}/bookmarks/folders/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

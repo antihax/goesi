@@ -11,7 +11,7 @@ Method | HTTP request | Description
 > GetStatusOk GetStatus(optional)
 Retrieve the uptime and player counts
 
-EVE Server status  ---  Alternate route: `/legacy/status/`  Alternate route: `/latest/status/`  Alternate route: `/dev/status/`   ---  This route is cached for up to 30 seconds
+EVE Server status  --- Alternate route: `/legacy/status/`  Alternate route: `/latest/status/`  Alternate route: `/dev/status/`  --- This route is cached for up to 30 seconds
 
 ### Required Parameters
 

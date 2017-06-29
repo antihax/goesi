@@ -17,7 +17,7 @@ Method | HTTP request | Description
 > []GetCorporationsCorporationIdAlliancehistory200Ok GetCorporationsCorporationIdAlliancehistory(corporationId, optional)
 Get alliance history
 
-Get a list of all the alliances a corporation has been a member of  ---  Alternate route: `/legacy/corporations/{corporation_id}/alliancehistory/`  Alternate route: `/latest/corporations/{corporation_id}/alliancehistory/`   ---  This route is cached for up to 3600 seconds
+Get a list of all the alliances a corporation has been a member of  --- Alternate route: `/legacy/corporations/{corporation_id}/alliancehistory/`  Alternate route: `/latest/corporations/{corporation_id}/alliancehistory/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -55,7 +55,7 @@ No authorization required
 > GetCorporationsCorporationIdIconsOk GetCorporationsCorporationIdIcons(corporationId, optional)
 Get corporation icon
 
-Get the icon urls for a corporation  ---  Alternate route: `/legacy/corporations/{corporation_id}/icons/`  Alternate route: `/latest/corporations/{corporation_id}/icons/`  Alternate route: `/dev/corporations/{corporation_id}/icons/`   ---  This route is cached for up to 3600 seconds
+Get the icon urls for a corporation  --- Alternate route: `/legacy/corporations/{corporation_id}/icons/`  Alternate route: `/latest/corporations/{corporation_id}/icons/`  Alternate route: `/dev/corporations/{corporation_id}/icons/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -93,14 +93,14 @@ No authorization required
 > []GetCorporationsCorporationIdRoles200Ok GetCorporationsCorporationIdRoles(ctx, corporationId, optional)
 Get corporation member roles
 
-Return the roles of all members if the character has the personnel manager role or any grantable role.  ---  Alternate route: `/legacy/corporations/{corporation_id}/roles/`  Alternate route: `/latest/corporations/{corporation_id}/roles/`  Alternate route: `/dev/corporations/{corporation_id}/roles/`   ---  This route is cached for up to 3600 seconds
+Return the roles of all members if the character has the personnel manager role or any grantable role.  --- Alternate route: `/legacy/corporations/{corporation_id}/roles/`  Alternate route: `/latest/corporations/{corporation_id}/roles/`  Alternate route: `/dev/corporations/{corporation_id}/roles/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **corporationId** | **int32**| A corporation ID | 
+  **corporationId** | **int32**| An EVE corporation ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -108,9 +108,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **corporationId** | **int32**| A corporation ID | 
+ **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -133,14 +133,14 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdStructures200Ok GetCorporationsCorporationIdStructures(ctx, corporationId, optional)
 Get corporation structures
 
-Get a list of corporation structures  ---  Alternate route: `/legacy/corporations/{corporation_id}/structures/`  Alternate route: `/latest/corporations/{corporation_id}/structures/`  Alternate route: `/dev/corporations/{corporation_id}/structures/`   ---  This route is cached for up to 3600 seconds
+Get a list of corporation structures  --- Alternate route: `/legacy/corporations/{corporation_id}/structures/`  Alternate route: `/latest/corporations/{corporation_id}/structures/`  Alternate route: `/dev/corporations/{corporation_id}/structures/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **corporationId** | **int32**| A corporation ID | 
+  **corporationId** | **int32**| An EVE corporation ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -148,11 +148,11 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **corporationId** | **int32**| A corporation ID | 
+ **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **language** | **string**| Language to use in the response | [default to en-us]
- **page** | **int32**| Which page to query, 250 structures per page | 
- **token** | **string**| Access token to use, if preferred over a header | 
+ **page** | **float32**| Which page of results to return | [default to 1]
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsNames200Ok GetCorporationsNames(corporationIds, optional)
 Get corporation names
 
-Resolve a set of corporation IDs to corporation names  ---  Alternate route: `/legacy/corporations/names/`  Alternate route: `/latest/corporations/names/`   ---  This route is cached for up to 3600 seconds
+Resolve a set of corporation IDs to corporation names  --- Alternate route: `/legacy/corporations/names/`  Alternate route: `/latest/corporations/names/`  --- This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -213,7 +213,7 @@ No authorization required
 > []int32 GetCorporationsNpccorps(optional)
 Get npc corporations
 
-Get a list of npc corporations  ---  Alternate route: `/legacy/corporations/npccorps/`  Alternate route: `/latest/corporations/npccorps/`  Alternate route: `/dev/corporations/npccorps/`   ---  This route expires daily at 11:05
+Get a list of npc corporations  --- Alternate route: `/legacy/corporations/npccorps/`  Alternate route: `/latest/corporations/npccorps/`  Alternate route: `/dev/corporations/npccorps/`  --- This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -246,19 +246,19 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PutCorporationsCorporationIdStructuresStructureId**
-> PutCorporationsCorporationIdStructuresStructureId(ctx, corporationId, newSchedule, structureId, optional)
+> PutCorporationsCorporationIdStructuresStructureId(ctx, newSchedule, structureId, corporationId, optional)
 Update structure vulnerability schedule
 
-Update the vulnerability window schedule of a corporation structure  ---  Alternate route: `/legacy/corporations/{corporation_id}/structures/{structure_id}/`  Alternate route: `/latest/corporations/{corporation_id}/structures/{structure_id}/`  Alternate route: `/dev/corporations/{corporation_id}/structures/{structure_id}/` 
+Update the vulnerability window schedule of a corporation structure  --- Alternate route: `/legacy/corporations/{corporation_id}/structures/{structure_id}/`  Alternate route: `/latest/corporations/{corporation_id}/structures/{structure_id}/`  Alternate route: `/dev/corporations/{corporation_id}/structures/{structure_id}/` 
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **corporationId** | **int32**| A corporation ID | 
   **newSchedule** | [**[]PutCorporationsCorporationIdStructuresStructureIdNewSchedule**](put_corporations_corporation_id_structures_structure_id_new_schedule.md)| New vulnerability window schedule for the structure | 
   **structureId** | **int64**| A structure ID | 
+  **corporationId** | **int32**| An EVE corporation ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -266,11 +266,11 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **corporationId** | **int32**| A corporation ID | 
  **newSchedule** | [**[]PutCorporationsCorporationIdStructuresStructureIdNewSchedule**](put_corporations_corporation_id_structures_structure_id_new_schedule.md)| New vulnerability window schedule for the structure | 
  **structureId** | **int64**| A structure ID | 
+ **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

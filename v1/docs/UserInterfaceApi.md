@@ -15,7 +15,7 @@ Method | HTTP request | Description
 > PostUiAutopilotWaypoint(ctx, addToBeginning, clearOtherWaypoints, solarSystemId, optional)
 Set Autopilot Waypoint
 
-Set a solar system as autopilot waypoint  ---  Alternate route: `/legacy/ui/autopilot/waypoint/` 
+Set a solar system as autopilot waypoint  --- Alternate route: `/legacy/ui/autopilot/waypoint/` 
 
 ### Required Parameters
 
@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
  **clearOtherWaypoints** | **bool**| Whether clean other waypoints beforing adding this one | [default to false]
  **solarSystemId** | **int32**| The solar system to set as autopilot waypoint | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 > PostUiOpenwindowContract(ctx, contractId, optional)
 Open Contract Window
 
-Open the contract window inside the client  ---  Alternate route: `/legacy/ui/openwindow/contract/`  Alternate route: `/latest/ui/openwindow/contract/`  Alternate route: `/dev/ui/openwindow/contract/` 
+Open the contract window inside the client  --- Alternate route: `/legacy/ui/openwindow/contract/`  Alternate route: `/latest/ui/openwindow/contract/`  Alternate route: `/dev/ui/openwindow/contract/` 
 
 ### Required Parameters
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contractId** | **int32**| The contract to open | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 > PostUiOpenwindowInformation(ctx, targetId, optional)
 Open Information Window
 
-Open the information window for a character, corporation or alliance inside the client  ---  Alternate route: `/legacy/ui/openwindow/information/`  Alternate route: `/latest/ui/openwindow/information/`  Alternate route: `/dev/ui/openwindow/information/` 
+Open the information window for a character, corporation or alliance inside the client  --- Alternate route: `/legacy/ui/openwindow/information/`  Alternate route: `/latest/ui/openwindow/information/`  Alternate route: `/dev/ui/openwindow/information/` 
 
 ### Required Parameters
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetId** | **int32**| The target to open | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 > PostUiOpenwindowMarketdetails(ctx, typeId, optional)
 Open Market Details
 
-Open the market details window for a specific typeID inside the client  ---  Alternate route: `/legacy/ui/openwindow/marketdetails/`  Alternate route: `/latest/ui/openwindow/marketdetails/`  Alternate route: `/dev/ui/openwindow/marketdetails/` 
+Open the market details window for a specific typeID inside the client  --- Alternate route: `/legacy/ui/openwindow/marketdetails/`  Alternate route: `/latest/ui/openwindow/marketdetails/`  Alternate route: `/dev/ui/openwindow/marketdetails/` 
 
 ### Required Parameters
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **typeId** | **int32**| The item type to open in market window | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 > PostUiOpenwindowNewmail(ctx, newMail, optional)
 Open New Mail Window
 
-Open the New Mail window, according to settings from the request if applicable  ---  Alternate route: `/legacy/ui/openwindow/newmail/`  Alternate route: `/latest/ui/openwindow/newmail/`  Alternate route: `/dev/ui/openwindow/newmail/` 
+Open the New Mail window, according to settings from the request if applicable  --- Alternate route: `/legacy/ui/openwindow/newmail/`  Alternate route: `/latest/ui/openwindow/newmail/`  Alternate route: `/dev/ui/openwindow/newmail/` 
 
 ### Required Parameters
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **newMail** | [**PostUiOpenwindowNewmailNewMail**](PostUiOpenwindowNewmailNewMail.md)| The details of mail to create | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

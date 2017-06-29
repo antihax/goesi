@@ -12,7 +12,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdMailLabels200Ok GetCharactersCharacterIdMailLabels(ctx, characterId, optional)
 Get mail labels
 
-Return a list of the users mail labels  ---  Alternate route: `/legacy/characters/{character_id}/mail/labels/`   ---  This route is cached for up to 30 seconds
+Return a list of the users mail labels  --- Alternate route: `/legacy/characters/{character_id}/mail/labels/`  --- This route is cached for up to 30 seconds
 
 ### Required Parameters
 
@@ -29,7 +29,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 > int64 PostCharactersCharacterIdMailLabels(ctx, characterId, optional)
 Create a mail label
 
-Create a mail label  ---  Alternate route: `/legacy/characters/{character_id}/mail/labels/`  Alternate route: `/latest/characters/{character_id}/mail/labels/`  Alternate route: `/dev/characters/{character_id}/mail/labels/` 
+Create a mail label  --- Alternate route: `/legacy/characters/{character_id}/mail/labels/`  Alternate route: `/latest/characters/{character_id}/mail/labels/`  Alternate route: `/dev/characters/{character_id}/mail/labels/` 
 
 ### Required Parameters
 
@@ -68,9 +68,9 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **label** | [**PostCharactersCharacterIdMailLabelsLabel**](PostCharactersCharacterIdMailLabelsLabel.md)| Label to create | 
- **token** | **string**| Access token to use, if preferred over a header | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

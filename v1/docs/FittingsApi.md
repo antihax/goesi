@@ -10,18 +10,18 @@ Method | HTTP request | Description
 
 
 # **DeleteCharactersCharacterIdFittingsFittingId**
-> DeleteCharactersCharacterIdFittingsFittingId(ctx, characterId, fittingId, optional)
+> DeleteCharactersCharacterIdFittingsFittingId(ctx, fittingId, characterId, optional)
 Delete fitting
 
-Delete a fitting from a character  ---  Alternate route: `/legacy/characters/{character_id}/fittings/{fitting_id}/`  Alternate route: `/latest/characters/{character_id}/fittings/{fitting_id}/`  Alternate route: `/dev/characters/{character_id}/fittings/{fitting_id}/` 
+Delete a fitting from a character  --- Alternate route: `/legacy/characters/{character_id}/fittings/{fitting_id}/`  Alternate route: `/latest/characters/{character_id}/fittings/{fitting_id}/`  Alternate route: `/dev/characters/{character_id}/fittings/{fitting_id}/` 
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **characterId** | **int32**| ID for a character | 
   **fittingId** | **int32**| ID for a fitting of this character | 
+  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -29,10 +29,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int32**| ID for a character | 
  **fittingId** | **int32**| ID for a fitting of this character | 
+ **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -55,14 +55,14 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdFittings200Ok GetCharactersCharacterIdFittings(ctx, characterId, optional)
 Get fittings
 
-Return fittings of a character  ---  Alternate route: `/legacy/characters/{character_id}/fittings/`  Alternate route: `/latest/characters/{character_id}/fittings/`  Alternate route: `/dev/characters/{character_id}/fittings/`   ---  This route is cached for up to 300 seconds
+Return fittings of a character  --- Alternate route: `/legacy/characters/{character_id}/fittings/`  Alternate route: `/latest/characters/{character_id}/fittings/`  Alternate route: `/dev/characters/{character_id}/fittings/`  --- This route is cached for up to 300 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **characterId** | **int32**| ID for a character | 
+  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -70,9 +70,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int32**| ID for a character | 
+ **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -95,14 +95,14 @@ Name | Type | Description  | Notes
 > PostCharactersCharacterIdFittingsCreated PostCharactersCharacterIdFittings(ctx, characterId, optional)
 Create fitting
 
-Save a new fitting for a character  ---  Alternate route: `/legacy/characters/{character_id}/fittings/`  Alternate route: `/latest/characters/{character_id}/fittings/`  Alternate route: `/dev/characters/{character_id}/fittings/` 
+Save a new fitting for a character  --- Alternate route: `/legacy/characters/{character_id}/fittings/`  Alternate route: `/latest/characters/{character_id}/fittings/`  Alternate route: `/dev/characters/{character_id}/fittings/` 
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **characterId** | **int32**| ID for a character | 
+  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -110,10 +110,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int32**| ID for a character | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **characterId** | **int32**| An EVE character ID | 
  **fitting** | [**PostCharactersCharacterIdFittingsFitting**](PostCharactersCharacterIdFittingsFitting.md)| Details about the new fitting | 
- **token** | **string**| Access token to use, if preferred over a header | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

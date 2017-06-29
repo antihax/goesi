@@ -23,7 +23,7 @@ Method | HTTP request | Description
 > DeleteFleetsFleetIdMembersMemberId(ctx, fleetId, memberId, optional)
 Kick fleet member
 
-Kick a fleet member  ---  Alternate route: `/legacy/fleets/{fleet_id}/members/{member_id}/`  Alternate route: `/latest/fleets/{fleet_id}/members/{member_id}/`  Alternate route: `/dev/fleets/{fleet_id}/members/{member_id}/` 
+Kick a fleet member  --- Alternate route: `/legacy/fleets/{fleet_id}/members/{member_id}/`  Alternate route: `/latest/fleets/{fleet_id}/members/{member_id}/`  Alternate route: `/dev/fleets/{fleet_id}/members/{member_id}/` 
 
 ### Required Parameters
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **memberId** | **int32**| The character ID of a member in this fleet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 > DeleteFleetsFleetIdSquadsSquadId(ctx, fleetId, squadId, optional)
 Delete fleet squad
 
-Delete a fleet squad, only empty squads can be deleted  ---  Alternate route: `/legacy/fleets/{fleet_id}/squads/{squad_id}/`  Alternate route: `/latest/fleets/{fleet_id}/squads/{squad_id}/`  Alternate route: `/dev/fleets/{fleet_id}/squads/{squad_id}/` 
+Delete a fleet squad, only empty squads can be deleted  --- Alternate route: `/legacy/fleets/{fleet_id}/squads/{squad_id}/`  Alternate route: `/latest/fleets/{fleet_id}/squads/{squad_id}/`  Alternate route: `/dev/fleets/{fleet_id}/squads/{squad_id}/` 
 
 ### Required Parameters
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **squadId** | **int64**| The squad to delete | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 > DeleteFleetsFleetIdWingsWingId(ctx, fleetId, wingId, optional)
 Delete fleet wing
 
-Delete a fleet wing, only empty wings can be deleted. The wing may contain squads, but the squads must be empty  ---  Alternate route: `/legacy/fleets/{fleet_id}/wings/{wing_id}/`  Alternate route: `/latest/fleets/{fleet_id}/wings/{wing_id}/`  Alternate route: `/dev/fleets/{fleet_id}/wings/{wing_id}/` 
+Delete a fleet wing, only empty wings can be deleted. The wing may contain squads, but the squads must be empty  --- Alternate route: `/legacy/fleets/{fleet_id}/wings/{wing_id}/`  Alternate route: `/latest/fleets/{fleet_id}/wings/{wing_id}/`  Alternate route: `/dev/fleets/{fleet_id}/wings/{wing_id}/` 
 
 ### Required Parameters
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **wingId** | **int64**| The wing to delete | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 > GetFleetsFleetIdOk GetFleetsFleetId(ctx, fleetId, optional)
 Get fleet information
 
-Return details about a fleet  ---  Alternate route: `/legacy/fleets/{fleet_id}/`  Alternate route: `/latest/fleets/{fleet_id}/`  Alternate route: `/dev/fleets/{fleet_id}/`   ---  This route is cached for up to 5 seconds
+Return details about a fleet  --- Alternate route: `/legacy/fleets/{fleet_id}/`  Alternate route: `/latest/fleets/{fleet_id}/`  Alternate route: `/dev/fleets/{fleet_id}/`  --- This route is cached for up to 5 seconds
 
 ### Required Parameters
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleetId** | **int64**| ID for a fleet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 > []GetFleetsFleetIdMembers200Ok GetFleetsFleetIdMembers(ctx, fleetId, optional)
 Get fleet members
 
-Return information about fleet members  ---  Alternate route: `/legacy/fleets/{fleet_id}/members/`  Alternate route: `/latest/fleets/{fleet_id}/members/`  Alternate route: `/dev/fleets/{fleet_id}/members/`   ---  This route is cached for up to 5 seconds
+Return information about fleet members  --- Alternate route: `/legacy/fleets/{fleet_id}/members/`  Alternate route: `/latest/fleets/{fleet_id}/members/`  Alternate route: `/dev/fleets/{fleet_id}/members/`  --- This route is cached for up to 5 seconds
 
 ### Required Parameters
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **language** | **string**| Language to use in the response | [default to en-us]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 > []GetFleetsFleetIdWings200Ok GetFleetsFleetIdWings(ctx, fleetId, optional)
 Get fleet wings
 
-Return information about wings in a fleet  ---  Alternate route: `/legacy/fleets/{fleet_id}/wings/`  Alternate route: `/latest/fleets/{fleet_id}/wings/`  Alternate route: `/dev/fleets/{fleet_id}/wings/`   ---  This route is cached for up to 5 seconds
+Return information about wings in a fleet  --- Alternate route: `/legacy/fleets/{fleet_id}/wings/`  Alternate route: `/latest/fleets/{fleet_id}/wings/`  Alternate route: `/dev/fleets/{fleet_id}/wings/`  --- This route is cached for up to 5 seconds
 
 ### Required Parameters
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **language** | **string**| Language to use in the response | [default to en-us]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 > PostFleetsFleetIdMembers(ctx, fleetId, invitation, optional)
 Create fleet invitation
 
-Invite a character into the fleet, if a character has a CSPA charge set, it is not possible to invite them to the fleet using ESI  ---  Alternate route: `/legacy/fleets/{fleet_id}/members/`  Alternate route: `/latest/fleets/{fleet_id}/members/`  Alternate route: `/dev/fleets/{fleet_id}/members/` 
+Invite a character into the fleet, if a character has a CSPA charge set, it is not possible to invite them to the fleet using ESI  --- Alternate route: `/legacy/fleets/{fleet_id}/members/`  Alternate route: `/latest/fleets/{fleet_id}/members/`  Alternate route: `/dev/fleets/{fleet_id}/members/` 
 
 ### Required Parameters
 
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **invitation** | [**PostFleetsFleetIdMembersInvitation**](PostFleetsFleetIdMembersInvitation.md)| Details of the invitation | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 > PostFleetsFleetIdWingsCreated PostFleetsFleetIdWings(ctx, fleetId, optional)
 Create fleet wing
 
-Create a new wing in a fleet  ---  Alternate route: `/legacy/fleets/{fleet_id}/wings/`  Alternate route: `/latest/fleets/{fleet_id}/wings/`  Alternate route: `/dev/fleets/{fleet_id}/wings/` 
+Create a new wing in a fleet  --- Alternate route: `/legacy/fleets/{fleet_id}/wings/`  Alternate route: `/latest/fleets/{fleet_id}/wings/`  Alternate route: `/dev/fleets/{fleet_id}/wings/` 
 
 ### Required Parameters
 
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fleetId** | **int64**| ID for a fleet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 > PostFleetsFleetIdWingsWingIdSquadsCreated PostFleetsFleetIdWingsWingIdSquads(ctx, fleetId, wingId, optional)
 Create fleet squad
 
-Create a new squad in a fleet  ---  Alternate route: `/legacy/fleets/{fleet_id}/wings/{wing_id}/squads/`  Alternate route: `/latest/fleets/{fleet_id}/wings/{wing_id}/squads/`  Alternate route: `/dev/fleets/{fleet_id}/wings/{wing_id}/squads/` 
+Create a new squad in a fleet  --- Alternate route: `/legacy/fleets/{fleet_id}/wings/{wing_id}/squads/`  Alternate route: `/latest/fleets/{fleet_id}/wings/{wing_id}/squads/`  Alternate route: `/dev/fleets/{fleet_id}/wings/{wing_id}/squads/` 
 
 ### Required Parameters
 
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **wingId** | **int64**| The wing_id to create squad in | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 > PutFleetsFleetId(ctx, fleetId, newSettings, optional)
 Update fleet
 
-Update settings about a fleet  ---  Alternate route: `/legacy/fleets/{fleet_id}/`  Alternate route: `/latest/fleets/{fleet_id}/`  Alternate route: `/dev/fleets/{fleet_id}/` 
+Update settings about a fleet  --- Alternate route: `/legacy/fleets/{fleet_id}/`  Alternate route: `/latest/fleets/{fleet_id}/`  Alternate route: `/dev/fleets/{fleet_id}/` 
 
 ### Required Parameters
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
  **fleetId** | **int64**| ID for a fleet | 
  **newSettings** | [**PutFleetsFleetIdNewSettings**](PutFleetsFleetIdNewSettings.md)| What to update for this fleet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 > PutFleetsFleetIdMembersMemberId(ctx, fleetId, memberId, movement, optional)
 Move fleet member
 
-Move a fleet member around  ---  Alternate route: `/legacy/fleets/{fleet_id}/members/{member_id}/`  Alternate route: `/latest/fleets/{fleet_id}/members/{member_id}/`  Alternate route: `/dev/fleets/{fleet_id}/members/{member_id}/` 
+Move a fleet member around  --- Alternate route: `/legacy/fleets/{fleet_id}/members/{member_id}/`  Alternate route: `/latest/fleets/{fleet_id}/members/{member_id}/`  Alternate route: `/dev/fleets/{fleet_id}/members/{member_id}/` 
 
 ### Required Parameters
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
  **memberId** | **int32**| The character ID of a member in this fleet | 
  **movement** | [**PutFleetsFleetIdMembersMemberIdMovement**](PutFleetsFleetIdMembersMemberIdMovement.md)| Details of the invitation | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 > PutFleetsFleetIdSquadsSquadId(ctx, fleetId, naming, squadId, optional)
 Rename fleet squad
 
-Rename a fleet squad  ---  Alternate route: `/legacy/fleets/{fleet_id}/squads/{squad_id}/`  Alternate route: `/latest/fleets/{fleet_id}/squads/{squad_id}/`  Alternate route: `/dev/fleets/{fleet_id}/squads/{squad_id}/` 
+Rename a fleet squad  --- Alternate route: `/legacy/fleets/{fleet_id}/squads/{squad_id}/`  Alternate route: `/latest/fleets/{fleet_id}/squads/{squad_id}/`  Alternate route: `/dev/fleets/{fleet_id}/squads/{squad_id}/` 
 
 ### Required Parameters
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
  **naming** | [**PutFleetsFleetIdSquadsSquadIdNaming**](PutFleetsFleetIdSquadsSquadIdNaming.md)| New name of the squad | 
  **squadId** | **int64**| The squad to rename | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 > PutFleetsFleetIdWingsWingId(ctx, fleetId, naming, wingId, optional)
 Rename fleet wing
 
-Rename a fleet wing  ---  Alternate route: `/legacy/fleets/{fleet_id}/wings/{wing_id}/`  Alternate route: `/latest/fleets/{fleet_id}/wings/{wing_id}/`  Alternate route: `/dev/fleets/{fleet_id}/wings/{wing_id}/` 
+Rename a fleet wing  --- Alternate route: `/legacy/fleets/{fleet_id}/wings/{wing_id}/`  Alternate route: `/latest/fleets/{fleet_id}/wings/{wing_id}/`  Alternate route: `/dev/fleets/{fleet_id}/wings/{wing_id}/` 
 
 ### Required Parameters
 
@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
  **naming** | [**PutFleetsFleetIdWingsWingIdNaming**](PutFleetsFleetIdWingsWingIdNaming.md)| New name of the wing | 
  **wingId** | **int64**| The wing to rename | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

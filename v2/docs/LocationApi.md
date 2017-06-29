@@ -11,7 +11,7 @@ Method | HTTP request | Description
 > GetCharactersCharacterIdOnlineOk GetCharactersCharacterIdOnline(ctx, characterId, optional)
 Get character online
 
-Checks if the character is currently online  ---  Alternate route: `/dev/characters/{character_id}/online/`   ---  This route is cached for up to 60 seconds
+Checks if the character is currently online  --- Alternate route: `/dev/characters/{character_id}/online/`  --- This route is cached for up to 60 seconds
 
 ### Required Parameters
 
@@ -28,7 +28,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | 
+ **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

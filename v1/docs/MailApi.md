@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **DeleteCharactersCharacterIdMailLabelsLabelId**
-> DeleteCharactersCharacterIdMailLabelsLabelId(ctx, labelId, characterId, optional)
+> DeleteCharactersCharacterIdMailLabelsLabelId(ctx, characterId, labelId, optional)
 Delete a mail label
 
 Delete a mail label  --- Alternate route: `/legacy/characters/{character_id}/mail/labels/{label_id}/`  Alternate route: `/latest/characters/{character_id}/mail/labels/{label_id}/`  Alternate route: `/dev/characters/{character_id}/mail/labels/{label_id}/` 
@@ -25,8 +25,8 @@ Delete a mail label  --- Alternate route: `/legacy/characters/{character_id}/mai
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **labelId** | **int32**| An EVE label id | 
   **characterId** | **int32**| An EVE character ID | 
+  **labelId** | **int32**| An EVE label id | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -34,8 +34,8 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **labelId** | **int32**| An EVE label id | 
  **characterId** | **int32**| An EVE character ID | 
+ **labelId** | **int32**| An EVE label id | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteCharactersCharacterIdMailMailId**
-> DeleteCharactersCharacterIdMailMailId(ctx, mailId, characterId, optional)
+> DeleteCharactersCharacterIdMailMailId(ctx, characterId, mailId, optional)
 Delete a mail
 
 Delete a mail  --- Alternate route: `/legacy/characters/{character_id}/mail/{mail_id}/`  Alternate route: `/latest/characters/{character_id}/mail/{mail_id}/`  Alternate route: `/dev/characters/{character_id}/mail/{mail_id}/` 
@@ -67,8 +67,8 @@ Delete a mail  --- Alternate route: `/legacy/characters/{character_id}/mail/{mai
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **mailId** | **int32**| An EVE mail ID | 
   **characterId** | **int32**| An EVE character ID | 
+  **mailId** | **int32**| An EVE mail ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -76,8 +76,8 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mailId** | **int32**| An EVE mail ID | 
  **characterId** | **int32**| An EVE character ID | 
+ **mailId** | **int32**| An EVE mail ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -118,9 +118,9 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **labels** | [**[]int64**](int64.md)| Fetch only mails that match one or more of the given labels | 
  **lastMailId** | **int32**| List only mail with an ID lower than the given ID, if present | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCharactersCharacterIdMailMailId**
-> GetCharactersCharacterIdMailMailIdOk GetCharactersCharacterIdMailMailId(ctx, mailId, characterId, optional)
+> GetCharactersCharacterIdMailMailIdOk GetCharactersCharacterIdMailMailId(ctx, characterId, mailId, optional)
 Return a mail
 
 Return the contents of an EVE mail  --- Alternate route: `/legacy/characters/{character_id}/mail/{mail_id}/`  Alternate route: `/latest/characters/{character_id}/mail/{mail_id}/`  Alternate route: `/dev/characters/{character_id}/mail/{mail_id}/`  --- This route is cached for up to 30 seconds
@@ -191,8 +191,8 @@ Return the contents of an EVE mail  --- Alternate route: `/legacy/characters/{ch
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **mailId** | **int32**| An EVE mail ID | 
   **characterId** | **int32**| An EVE character ID | 
+  **mailId** | **int32**| An EVE mail ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -200,8 +200,8 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mailId** | **int32**| An EVE mail ID | 
  **characterId** | **int32**| An EVE character ID | 
+ **mailId** | **int32**| An EVE mail ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PostCharactersCharacterIdMail**
-> int32 PostCharactersCharacterIdMail(ctx, mail, characterId, optional)
+> int32 PostCharactersCharacterIdMail(ctx, characterId, mail, optional)
 Send a new mail
 
 Create and send a new mail  --- Alternate route: `/legacy/characters/{character_id}/mail/`  Alternate route: `/latest/characters/{character_id}/mail/`  Alternate route: `/dev/characters/{character_id}/mail/` 
@@ -273,8 +273,8 @@ Create and send a new mail  --- Alternate route: `/legacy/characters/{character_
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **mail** | [**PostCharactersCharacterIdMailMail**](PostCharactersCharacterIdMailMail.md)| The mail to send | 
   **characterId** | **int32**| An EVE character ID | 
+  **mail** | [**PostCharactersCharacterIdMailMail**](PostCharactersCharacterIdMailMail.md)| The mail to send | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -282,8 +282,8 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mail** | [**PostCharactersCharacterIdMailMail**](PostCharactersCharacterIdMailMail.md)| The mail to send | 
  **characterId** | **int32**| An EVE character ID | 
+ **mail** | [**PostCharactersCharacterIdMailMail**](PostCharactersCharacterIdMailMail.md)| The mail to send | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PutCharactersCharacterIdMailMailId**
-> PutCharactersCharacterIdMailMailId(ctx, contents, mailId, characterId, optional)
+> PutCharactersCharacterIdMailMailId(ctx, characterId, contents, mailId, optional)
 Update metadata about a mail
 
 Update metadata about a mail  --- Alternate route: `/legacy/characters/{character_id}/mail/{mail_id}/`  Alternate route: `/latest/characters/{character_id}/mail/{mail_id}/`  Alternate route: `/dev/characters/{character_id}/mail/{mail_id}/` 
@@ -315,9 +315,9 @@ Update metadata about a mail  --- Alternate route: `/legacy/characters/{characte
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **characterId** | **int32**| An EVE character ID | 
   **contents** | [**PutCharactersCharacterIdMailMailIdContents**](PutCharactersCharacterIdMailMailIdContents.md)| Data used to update the mail | 
   **mailId** | **int32**| An EVE mail ID | 
-  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -325,9 +325,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **characterId** | **int32**| An EVE character ID | 
  **contents** | [**PutCharactersCharacterIdMailMailIdContents**](PutCharactersCharacterIdMailMailIdContents.md)| Data used to update the mail | 
  **mailId** | **int32**| An EVE mail ID | 
- **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 

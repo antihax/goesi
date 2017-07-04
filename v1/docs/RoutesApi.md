@@ -30,8 +30,8 @@ Name | Type | Description  | Notes
  **origin** | **int32**| origin solar system ID | 
  **avoid** | [**[]int32**](int32.md)| avoid solar system ID(s) | 
  **connections** | [**[][]int32**]([]int32.md)| connected solar system pairs | 
- **flag** | **string**| route security preference | [default to shortest]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **flag** | **string**| route security preference | [default to shortest]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

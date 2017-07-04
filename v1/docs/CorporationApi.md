@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **language** | **string**| Language to use in the response | [default to en-us]
- **page** | **float32**| Which page of results to return | [default to 1]
+ **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -246,7 +246,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PutCorporationsCorporationIdStructuresStructureId**
-> PutCorporationsCorporationIdStructuresStructureId(ctx, newSchedule, structureId, corporationId, optional)
+> PutCorporationsCorporationIdStructuresStructureId(ctx, corporationId, newSchedule, structureId, optional)
 Update structure vulnerability schedule
 
 Update the vulnerability window schedule of a corporation structure  --- Alternate route: `/legacy/corporations/{corporation_id}/structures/{structure_id}/`  Alternate route: `/latest/corporations/{corporation_id}/structures/{structure_id}/`  Alternate route: `/dev/corporations/{corporation_id}/structures/{structure_id}/` 
@@ -256,9 +256,9 @@ Update the vulnerability window schedule of a corporation structure  --- Alterna
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **corporationId** | **int32**| An EVE corporation ID | 
   **newSchedule** | [**[]PutCorporationsCorporationIdStructuresStructureIdNewSchedule**](put_corporations_corporation_id_structures_structure_id_new_schedule.md)| New vulnerability window schedule for the structure | 
   **structureId** | **int64**| A structure ID | 
-  **corporationId** | **int32**| An EVE corporation ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -266,9 +266,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **corporationId** | **int32**| An EVE corporation ID | 
  **newSchedule** | [**[]PutCorporationsCorporationIdStructuresStructureIdNewSchedule**](put_corporations_corporation_id_structures_structure_id_new_schedule.md)| New vulnerability window schedule for the structure | 
  **structureId** | **int64**| A structure ID | 
- **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 

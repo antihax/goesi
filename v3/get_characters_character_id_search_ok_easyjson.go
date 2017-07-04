@@ -241,25 +241,25 @@ func easyjson67db0fd7DecodeGithubComAntihaxGoesiV31(in *jlexer.Lexer, out *GetCh
 				}
 				in.Delim(']')
 			}
-		case "inventorytype":
+		case "inventory_type":
 			if in.IsNull() {
 				in.Skip()
-				out.Inventorytype = nil
+				out.InventoryType = nil
 			} else {
 				in.Delim('[')
-				if out.Inventorytype == nil {
+				if out.InventoryType == nil {
 					if !in.IsDelim(']') {
-						out.Inventorytype = make([]int32, 0, 16)
+						out.InventoryType = make([]int32, 0, 16)
 					} else {
-						out.Inventorytype = []int32{}
+						out.InventoryType = []int32{}
 					}
 				} else {
-					out.Inventorytype = (out.Inventorytype)[:0]
+					out.InventoryType = (out.InventoryType)[:0]
 				}
 				for !in.IsDelim(']') {
 					var v10 int32
 					v10 = int32(in.Int32())
-					out.Inventorytype = append(out.Inventorytype, v10)
+					out.InventoryType = append(out.InventoryType, v10)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -287,25 +287,25 @@ func easyjson67db0fd7DecodeGithubComAntihaxGoesiV31(in *jlexer.Lexer, out *GetCh
 				}
 				in.Delim(']')
 			}
-		case "solarsystem":
+		case "solar_system":
 			if in.IsNull() {
 				in.Skip()
-				out.Solarsystem = nil
+				out.SolarSystem = nil
 			} else {
 				in.Delim('[')
-				if out.Solarsystem == nil {
+				if out.SolarSystem == nil {
 					if !in.IsDelim(']') {
-						out.Solarsystem = make([]int32, 0, 16)
+						out.SolarSystem = make([]int32, 0, 16)
 					} else {
-						out.Solarsystem = []int32{}
+						out.SolarSystem = []int32{}
 					}
 				} else {
-					out.Solarsystem = (out.Solarsystem)[:0]
+					out.SolarSystem = (out.SolarSystem)[:0]
 				}
 				for !in.IsDelim(']') {
 					var v12 int32
 					v12 = int32(in.Int32())
-					out.Solarsystem = append(out.Solarsystem, v12)
+					out.SolarSystem = append(out.SolarSystem, v12)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -484,17 +484,17 @@ func easyjson67db0fd7EncodeGithubComAntihaxGoesiV31(out *jwriter.Writer, in GetC
 			out.RawByte(']')
 		}
 	}
-	if len(in.Inventorytype) != 0 {
+	if len(in.InventoryType) != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"inventorytype\":")
-		if in.Inventorytype == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+		out.RawString("\"inventory_type\":")
+		if in.InventoryType == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v27, v28 := range in.Inventorytype {
+			for v27, v28 := range in.InventoryType {
 				if v27 > 0 {
 					out.RawByte(',')
 				}
@@ -522,17 +522,17 @@ func easyjson67db0fd7EncodeGithubComAntihaxGoesiV31(out *jwriter.Writer, in GetC
 			out.RawByte(']')
 		}
 	}
-	if len(in.Solarsystem) != 0 {
+	if len(in.SolarSystem) != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"solarsystem\":")
-		if in.Solarsystem == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+		out.RawString("\"solar_system\":")
+		if in.SolarSystem == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v31, v32 := range in.Solarsystem {
+			for v31, v32 := range in.SolarSystem {
 				if v31 > 0 {
 					out.RawByte(',')
 				}

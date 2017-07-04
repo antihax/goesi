@@ -43,15 +43,15 @@ type ContactsApiService service
 Bulk delete contacts  --- Alternate route: &#x60;/dev/characters/{character_id}/contacts/&#x60;
 
 * @param ctx context.Context Authentication Context
-@param contactIds A list of contacts to delete
 @param characterId An EVE character ID
+@param contactIds A list of contacts to delete
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return */
-func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Context, contactIds []int32, characterId int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
+func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}

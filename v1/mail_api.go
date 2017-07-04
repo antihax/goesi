@@ -46,15 +46,15 @@ type MailApiService service
 Delete a mail label  --- Alternate route: &#x60;/legacy/characters/{character_id}/mail/labels/{label_id}/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/mail/labels/{label_id}/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/mail/labels/{label_id}/&#x60;
 
 * @param ctx context.Context Authentication Context
-@param labelId An EVE label id
 @param characterId An EVE character ID
+@param labelId An EVE label id
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return */
-func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx context.Context, labelId int32, characterId int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
+func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx context.Context, characterId int32, labelId int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -64,8 +64,8 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx contex
 
 	// create path and map variables
 	localVarPath := a.client.basePath + "/characters/{character_id}/mail/labels/{label_id}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"label_id"+"}", fmt.Sprintf("%v", labelId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"label_id"+"}", fmt.Sprintf("%v", labelId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -138,15 +138,15 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx contex
 Delete a mail  --- Alternate route: &#x60;/legacy/characters/{character_id}/mail/{mail_id}/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/mail/{mail_id}/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/mail/{mail_id}/&#x60;
 
 * @param ctx context.Context Authentication Context
-@param mailId An EVE mail ID
 @param characterId An EVE character ID
+@param mailId An EVE mail ID
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return */
-func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Context, mailId int32, characterId int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
+func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Context, characterId int32, mailId int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -156,8 +156,8 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Conte
 
 	// create path and map variables
 	localVarPath := a.client.basePath + "/characters/{character_id}/mail/{mail_id}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"mail_id"+"}", fmt.Sprintf("%v", mailId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"mail_id"+"}", fmt.Sprintf("%v", mailId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -232,9 +232,9 @@ Return the 50 most recent mail headers belonging to the character that match the
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
 @param optional (nil or map[string]interface{}) with one or more of:
+    @param "datasource" (string) The server name you would like data from
     @param "labels" ([]int64) Fetch only mails that match one or more of the given labels
     @param "lastMailId" (int32) List only mail with an ID lower than the given ID, if present
-    @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
@@ -256,10 +256,10 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if err := typeCheckParameter(localVarOptionals["lastMailId"], "int32", "lastMailId"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["lastMailId"], "int32", "lastMailId"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
@@ -272,14 +272,14 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 		return successPayload, nil, err
 	}
 
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
 	if localVarTempParam, localVarOk := localVarOptionals["labels"].([]int64); localVarOk {
 		localVarQueryParams.Add("labels", parameterToString(localVarTempParam, "csv"))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["lastMailId"].(int32); localVarOk {
 		localVarQueryParams.Add("last_mail_id", parameterToString(localVarTempParam, ""))
-	}
-	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
-		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
 		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
@@ -429,15 +429,15 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 Return the contents of an EVE mail  --- Alternate route: &#x60;/legacy/characters/{character_id}/mail/{mail_id}/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/mail/{mail_id}/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/mail/{mail_id}/&#x60;  --- This route is cached for up to 30 seconds
 
 * @param ctx context.Context Authentication Context
-@param mailId An EVE mail ID
 @param characterId An EVE character ID
+@param mailId An EVE mail ID
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return GetCharactersCharacterIdMailMailIdOk*/
-func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context, mailId int32, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdMailMailIdOk, *http.Response, error) {
+func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context, characterId int32, mailId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdMailMailIdOk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -448,8 +448,8 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 
 	// create path and map variables
 	localVarPath := a.client.basePath + "/characters/{character_id}/mail/{mail_id}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"mail_id"+"}", fmt.Sprintf("%v", mailId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"mail_id"+"}", fmt.Sprintf("%v", mailId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -619,15 +619,15 @@ func (a *MailApiService) GetCharactersCharacterIdMailUnread(ctx context.Context,
 Create and send a new mail  --- Alternate route: &#x60;/legacy/characters/{character_id}/mail/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/mail/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/mail/&#x60;
 
 * @param ctx context.Context Authentication Context
-@param mail The mail to send
 @param characterId An EVE character ID
+@param mail The mail to send
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return int32*/
-func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, mail PostCharactersCharacterIdMailMail, characterId int32, localVarOptionals map[string]interface{}) (int32, *http.Response, error) {
+func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, characterId int32, mail PostCharactersCharacterIdMailMail, localVarOptionals map[string]interface{}) (int32, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -716,16 +716,16 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, mail
 Update metadata about a mail  --- Alternate route: &#x60;/legacy/characters/{character_id}/mail/{mail_id}/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/mail/{mail_id}/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/mail/{mail_id}/&#x60;
 
 * @param ctx context.Context Authentication Context
+@param characterId An EVE character ID
 @param contents Data used to update the mail
 @param mailId An EVE mail ID
-@param characterId An EVE character ID
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return */
-func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context, contents PutCharactersCharacterIdMailMailIdContents, mailId int32, characterId int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
+func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context, characterId int32, contents PutCharactersCharacterIdMailMailIdContents, mailId int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -735,8 +735,8 @@ func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context,
 
 	// create path and map variables
 	localVarPath := a.client.basePath + "/characters/{character_id}/mail/{mail_id}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"mail_id"+"}", fmt.Sprintf("%v", mailId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"mail_id"+"}", fmt.Sprintf("%v", mailId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

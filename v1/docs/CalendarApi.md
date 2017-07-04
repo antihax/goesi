@@ -27,8 +27,8 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
- **fromEvent** | **int32**| The event ID to retrieve events from | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **fromEvent** | **int32**| The event ID to retrieve events from | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

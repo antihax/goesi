@@ -28,9 +28,9 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **maxCount** | **int32**| How many killmails to return at maximum | [default to 50]
  **maxKillId** | **int32**| Only return killmails with ID smaller than this.  | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

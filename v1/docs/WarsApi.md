@@ -26,8 +26,8 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **maxWarId** | **int32**| Only return wars with ID smaller than this. | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **maxWarId** | **int32**| Only return wars with ID smaller than this. | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **warId** | **int32**| A valid war ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **page** | **float32**| Which page of results to return | [default to 1]
+ **page** | **int32**| Which page of results to return | [default to 1]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 

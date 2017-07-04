@@ -29,8 +29,9 @@ import (
 
 	"golang.org/x/net/context"
 
-	"encoding/json"
 	"fmt"
+
+	"github.com/mailru/easyjson"
 )
 
 // Linger please
@@ -38,35 +39,31 @@ var (
 	_ context.Context
 )
 
-type RoutesApiService service
+type SkillsApiService service
 
-/* RoutesApiService Get route
-Get the systems between origin and destination  --- Alternate route: &#x60;/latest/route/{origin}/{destination}/&#x60;  Alternate route: &#x60;/legacy/route/{origin}/{destination}/&#x60;  Alternate route: &#x60;/dev/route/{origin}/{destination}/&#x60;  --- This route is cached for up to 86400 seconds
+/* SkillsApiService Get character attributes
+Return attributes of a character  --- Alternate route: &#x60;/legacy/characters/{character_id}/attributes/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/attributes/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/attributes/&#x60;  --- This route is cached for up to 3600 seconds
 
-
-@param destination destination solar system ID
-@param origin origin solar system ID
+* @param ctx context.Context Authentication Context
+@param characterId An EVE character ID
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "avoid" ([]int32) avoid solar system ID(s)
-    @param "connections" ([][]int32) connected solar system pairs
     @param "datasource" (string) The server name you would like data from
-    @param "flag" (string) route security preference
+    @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
-@return []int32*/
-func (a *RoutesApiService) GetRouteOriginDestination(destination int32, origin int32, localVarOptionals map[string]interface{}) ([]int32, *http.Response, error) {
+@return GetCharactersCharacterIdAttributesOk*/
+func (a *SkillsApiService) GetCharactersCharacterIdAttributes(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdAttributesOk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []int32
+		successPayload     GetCharactersCharacterIdAttributesOk
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/route/{origin}/{destination}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"destination"+"}", fmt.Sprintf("%v", destination), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"origin"+"}", fmt.Sprintf("%v", origin), -1)
+	localVarPath := a.client.basePath + "/characters/{character_id}/attributes/"
+	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -75,7 +72,7 @@ func (a *RoutesApiService) GetRouteOriginDestination(destination int32, origin i
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["flag"], "string", "flag"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
@@ -85,17 +82,11 @@ func (a *RoutesApiService) GetRouteOriginDestination(destination int32, origin i
 		return successPayload, nil, err
 	}
 
-	if localVarTempParam, localVarOk := localVarOptionals["avoid"].([]int32); localVarOk {
-		localVarQueryParams.Add("avoid", parameterToString(localVarTempParam, "csv"))
-	}
-	if localVarTempParam, localVarOk := localVarOptionals["connections"].([][]int32); localVarOk {
-		localVarQueryParams.Add("connections", parameterToString(localVarTempParam, "csv"))
-	}
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
-	if localVarTempParam, localVarOk := localVarOptionals["flag"].(string); localVarOk {
-		localVarQueryParams.Add("flag", parameterToString(localVarTempParam, ""))
+	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
+		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
 		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
@@ -124,7 +115,7 @@ func (a *RoutesApiService) GetRouteOriginDestination(destination int32, origin i
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
 	}
 
-	r, err := a.client.prepareRequest(nil, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return successPayload, nil, err
 	}
@@ -137,7 +128,7 @@ func (a *RoutesApiService) GetRouteOriginDestination(destination int32, origin i
 	if localVarHttpResponse.StatusCode >= 300 {
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

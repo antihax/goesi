@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **DeleteCharactersCharacterIdContacts**
-> DeleteCharactersCharacterIdContacts(ctx, contactIds, characterId, optional)
+> DeleteCharactersCharacterIdContacts(ctx, characterId, contactIds, optional)
 Delete contacts
 
 Bulk delete contacts  --- Alternate route: `/dev/characters/{character_id}/contacts/` 
@@ -18,8 +18,8 @@ Bulk delete contacts  --- Alternate route: `/dev/characters/{character_id}/conta
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **contactIds** | [**[]int32**](int32.md)| A list of contacts to delete | 
   **characterId** | **int32**| An EVE character ID | 
+  **contactIds** | [**[]int32**](int32.md)| A list of contacts to delete | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -27,8 +27,8 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contactIds** | [**[]int32**](int32.md)| A list of contacts to delete | 
  **characterId** | **int32**| An EVE character ID | 
+ **contactIds** | [**[]int32**](int32.md)| A list of contacts to delete | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 

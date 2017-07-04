@@ -762,7 +762,7 @@ Get a list of item groups  --- Alternate route: &#x60;/legacy/universe/groups/&#
 
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
-    @param "page" (float32) Which page of results to return
+    @param "page" (int32) Which page of results to return
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return []int32*/
@@ -785,7 +785,7 @@ func (a *UniverseApiService) GetUniverseGroups(localVarOptionals map[string]inte
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["page"], "float32", "page"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["page"], "int32", "page"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
@@ -798,7 +798,7 @@ func (a *UniverseApiService) GetUniverseGroups(localVarOptionals map[string]inte
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
-	if localVarTempParam, localVarOk := localVarOptionals["page"].(float32); localVarOk {
+	if localVarTempParam, localVarOk := localVarOptionals["page"].(int32); localVarOk {
 		localVarQueryParams.Add("page", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
@@ -2088,7 +2088,7 @@ Get a list of type ids  --- Alternate route: &#x60;/legacy/universe/types/&#x60;
 
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
-    @param "page" (float32) Which page of results to return
+    @param "page" (int32) Which page of results to return
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return []int32*/
@@ -2111,7 +2111,7 @@ func (a *UniverseApiService) GetUniverseTypes(localVarOptionals map[string]inter
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["page"], "float32", "page"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["page"], "int32", "page"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
@@ -2124,7 +2124,7 @@ func (a *UniverseApiService) GetUniverseTypes(localVarOptionals map[string]inter
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
-	if localVarTempParam, localVarOk := localVarOptionals["page"].(float32); localVarOk {
+	if localVarTempParam, localVarOk := localVarOptionals["page"].(int32); localVarOk {
 		localVarQueryParams.Add("page", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {

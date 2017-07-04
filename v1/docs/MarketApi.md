@@ -225,9 +225,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. | [default to all]
  **regionId** | **int32**| Return orders in this region | 
- **typeId** | **int32**| Return orders only for this type | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **page** | **float32**| Which page of results to return | [default to 1]
+ **page** | **int32**| Which page of results to return | [default to 1]
+ **typeId** | **int32**| Return orders only for this type | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **structureId** | **int64**| Return orders in this structure | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **page** | **float32**| Which page of results to return | [default to 1]
+ **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

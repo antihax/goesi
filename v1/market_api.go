@@ -438,10 +438,10 @@ func (a *MarketApiService) GetMarketsRegionIdHistory(regionId int32, typeId int3
 		return successPayload, nil, err
 	}
 
-	localVarQueryParams.Add("type_id", parameterToString(typeId, ""))
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
+	localVarQueryParams.Add("type_id", parameterToString(typeId, ""))
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
 		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
 	}
@@ -496,9 +496,9 @@ Return a list of orders in a region  --- Alternate route: &#x60;/legacy/markets/
 @param orderType Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders.
 @param regionId Return orders in this region
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "typeId" (int32) Return orders only for this type
     @param "datasource" (string) The server name you would like data from
-    @param "page" (float32) Which page of results to return
+    @param "page" (int32) Which page of results to return
+    @param "typeId" (int32) Return orders only for this type
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return []GetMarketsRegionIdOrders200Ok*/
@@ -519,13 +519,13 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(orderType string, regionId i
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if err := typeCheckParameter(localVarOptionals["typeId"], "int32", "typeId"); err != nil {
-		return successPayload, nil, err
-	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["page"], "float32", "page"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["page"], "int32", "page"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["typeId"], "int32", "typeId"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
@@ -535,15 +535,15 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(orderType string, regionId i
 		return successPayload, nil, err
 	}
 
-	localVarQueryParams.Add("order_type", parameterToString(orderType, ""))
-	if localVarTempParam, localVarOk := localVarOptionals["typeId"].(int32); localVarOk {
-		localVarQueryParams.Add("type_id", parameterToString(localVarTempParam, ""))
-	}
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
-	if localVarTempParam, localVarOk := localVarOptionals["page"].(float32); localVarOk {
+	localVarQueryParams.Add("order_type", parameterToString(orderType, ""))
+	if localVarTempParam, localVarOk := localVarOptionals["page"].(int32); localVarOk {
 		localVarQueryParams.Add("page", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["typeId"].(int32); localVarOk {
+		localVarQueryParams.Add("type_id", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
 		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
@@ -599,7 +599,7 @@ Return all orders in a structure  --- Alternate route: &#x60;/legacy/markets/str
 @param structureId Return orders in this structure
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
-    @param "page" (float32) Which page of results to return
+    @param "page" (int32) Which page of results to return
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
@@ -624,7 +624,7 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["page"], "float32", "page"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["page"], "int32", "page"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
@@ -640,7 +640,7 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
-	if localVarTempParam, localVarOk := localVarOptionals["page"].(float32); localVarOk {
+	if localVarTempParam, localVarOk := localVarOptionals["page"].(int32); localVarOk {
 		localVarQueryParams.Add("page", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {

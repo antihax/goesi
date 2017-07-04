@@ -29,6 +29,7 @@ type GetCharactersCharacterIdSkillsOkList []GetCharactersCharacterIdSkillsOk
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdSkillsOk struct {
-	Skills  []GetCharactersCharacterIdSkillsSkill `json:"skills,omitempty"`   /* skills array */
-	TotalSp int64                                 `json:"total_sp,omitempty"` /* total_sp integer */
+	Skills        []GetCharactersCharacterIdSkillsSkill `json:"skills,omitempty"`         /* skills array */
+	TotalSp       int64                                 `json:"total_sp,omitempty"`       /* total_sp integer */
+	UnallocatedSp int32                                 `json:"unallocated_sp,omitempty"` /* Skill points available to be assigned */
 }

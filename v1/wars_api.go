@@ -47,8 +47,8 @@ Return a list of wars  --- Alternate route: &#x60;/legacy/wars/&#x60;  Alternate
 
 
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "maxWarId" (int32) Only return wars with ID smaller than this.
     @param "datasource" (string) The server name you would like data from
+    @param "maxWarId" (int32) Only return wars with ID smaller than this.
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return []int32*/
@@ -68,10 +68,10 @@ func (a *WarsApiService) GetWars(localVarOptionals map[string]interface{}) ([]in
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if err := typeCheckParameter(localVarOptionals["maxWarId"], "int32", "maxWarId"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["maxWarId"], "int32", "maxWarId"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
@@ -81,11 +81,11 @@ func (a *WarsApiService) GetWars(localVarOptionals map[string]interface{}) ([]in
 		return successPayload, nil, err
 	}
 
-	if localVarTempParam, localVarOk := localVarOptionals["maxWarId"].(int32); localVarOk {
-		localVarQueryParams.Add("max_war_id", parameterToString(localVarTempParam, ""))
-	}
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["maxWarId"].(int32); localVarOk {
+		localVarQueryParams.Add("max_war_id", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
 		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
@@ -228,7 +228,7 @@ Return a list of kills related to a war  --- Alternate route: &#x60;/legacy/wars
 @param warId A valid war ID
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
-    @param "page" (float32) Which page of results to return
+    @param "page" (int32) Which page of results to return
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return []GetWarsWarIdKillmails200Ok*/
@@ -252,7 +252,7 @@ func (a *WarsApiService) GetWarsWarIdKillmails(warId int32, localVarOptionals ma
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["page"], "float32", "page"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["page"], "int32", "page"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
@@ -265,7 +265,7 @@ func (a *WarsApiService) GetWarsWarIdKillmails(warId int32, localVarOptionals ma
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
-	if localVarTempParam, localVarOk := localVarOptionals["page"].(float32); localVarOk {
+	if localVarTempParam, localVarOk := localVarOptionals["page"].(int32); localVarOk {
 		localVarQueryParams.Add("page", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {

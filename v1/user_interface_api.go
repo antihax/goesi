@@ -80,10 +80,10 @@ func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, a
 
 	localVarQueryParams.Add("add_to_beginning", parameterToString(addToBeginning, ""))
 	localVarQueryParams.Add("clear_other_waypoints", parameterToString(clearOtherWaypoints, ""))
-	localVarQueryParams.Add("solar_system_id", parameterToString(solarSystemId, ""))
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
+	localVarQueryParams.Add("solar_system_id", parameterToString(solarSystemId, ""))
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
 		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
 	}
@@ -260,10 +260,10 @@ func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Contex
 		return nil, err
 	}
 
-	localVarQueryParams.Add("target_id", parameterToString(targetId, ""))
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
+	localVarQueryParams.Add("target_id", parameterToString(targetId, ""))
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
 		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
 	}
@@ -350,13 +350,13 @@ func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Cont
 		return nil, err
 	}
 
-	localVarQueryParams.Add("type_id", parameterToString(typeId, ""))
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
 		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
 	}
+	localVarQueryParams.Add("type_id", parameterToString(typeId, ""))
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
 		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
 	}

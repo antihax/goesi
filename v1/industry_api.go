@@ -47,8 +47,8 @@ List industry jobs placed by a character  --- Alternate route: &#x60;/legacy/cha
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "includeCompleted" (bool) Whether retrieve completed character industry jobs as well
     @param "datasource" (string) The server name you would like data from
+    @param "includeCompleted" (bool) Whether retrieve completed character industry jobs as well
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
@@ -70,10 +70,10 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if err := typeCheckParameter(localVarOptionals["includeCompleted"], "bool", "includeCompleted"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["includeCompleted"], "bool", "includeCompleted"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
@@ -86,11 +86,11 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 		return successPayload, nil, err
 	}
 
-	if localVarTempParam, localVarOk := localVarOptionals["includeCompleted"].(bool); localVarOk {
-		localVarQueryParams.Add("include_completed", parameterToString(localVarTempParam, ""))
-	}
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["includeCompleted"].(bool); localVarOk {
+		localVarQueryParams.Add("include_completed", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
 		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))

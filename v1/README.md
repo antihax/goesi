@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
 *RoutesApi* | [**GetRouteOriginDestination**](docs/RoutesApi.md#getrouteorigindestination) | **Get** /route/{origin}/{destination}/ | Get route
 *SearchApi* | [**GetCharactersCharacterIdSearch**](docs/SearchApi.md#getcharacterscharacteridsearch) | **Get** /characters/{character_id}/search/ | Search on a string
 *SearchApi* | [**GetSearch**](docs/SearchApi.md#getsearch) | **Get** /search/ | Search on a string
+*SkillsApi* | [**GetCharactersCharacterIdAttributes**](docs/SkillsApi.md#getcharacterscharacteridattributes) | **Get** /characters/{character_id}/attributes/ | Get character attributes
 *SovereigntyApi* | [**GetSovereigntyCampaigns**](docs/SovereigntyApi.md#getsovereigntycampaigns) | **Get** /sovereignty/campaigns/ | List sovereignty campaigns
 *SovereigntyApi* | [**GetSovereigntyMap**](docs/SovereigntyApi.md#getsovereigntymap) | **Get** /sovereignty/map/ | List sovereignty of systems
 *SovereigntyApi* | [**GetSovereigntyStructures**](docs/SovereigntyApi.md#getsovereigntystructures) | **Get** /sovereignty/structures/ | List sovereignty structures
@@ -134,6 +135,9 @@ Class | Method | HTTP request | Description
 *UserInterfaceApi* | [**PostUiOpenwindowInformation**](docs/UserInterfaceApi.md#postuiopenwindowinformation) | **Post** /ui/openwindow/information/ | Open Information Window
 *UserInterfaceApi* | [**PostUiOpenwindowMarketdetails**](docs/UserInterfaceApi.md#postuiopenwindowmarketdetails) | **Post** /ui/openwindow/marketdetails/ | Open Market Details
 *UserInterfaceApi* | [**PostUiOpenwindowNewmail**](docs/UserInterfaceApi.md#postuiopenwindownewmail) | **Post** /ui/openwindow/newmail/ | Open New Mail Window
+*WalletApi* | [**GetCharactersCharacterIdWallet**](docs/WalletApi.md#getcharacterscharacteridwallet) | **Get** /characters/{character_id}/wallet/ | Get a character&#39;s wallet balance
+*WalletApi* | [**GetCharactersCharacterIdWalletJournal**](docs/WalletApi.md#getcharacterscharacteridwalletjournal) | **Get** /characters/{character_id}/wallet/journal/ | Get character wallet journal
+*WalletApi* | [**GetCharactersCharacterIdWalletTransactions**](docs/WalletApi.md#getcharacterscharacteridwallettransactions) | **Get** /characters/{character_id}/wallet/transactions/ | Get wallet transactions
 *WalletApi* | [**GetCharactersCharacterIdWallets**](docs/WalletApi.md#getcharacterscharacteridwallets) | **Get** /characters/{character_id}/wallets/ | List wallets and balances
 *WalletApi* | [**GetCharactersCharacterIdWalletsJournal**](docs/WalletApi.md#getcharacterscharacteridwalletsjournal) | **Get** /characters/{character_id}/wallets/journal/ | Get character wallet journal
 *WarsApi* | [**GetWars**](docs/WarsApi.md#getwars) | **Get** /wars/ | List wars
@@ -155,6 +159,7 @@ Class | Method | HTTP request | Description
  - [GetAlliancesNames200Ok](docs/GetAlliancesNames200Ok.md)
  - [GetCharactersCharacterIdAgentsResearch200Ok](docs/GetCharactersCharacterIdAgentsResearch200Ok.md)
  - [GetCharactersCharacterIdAssets200Ok](docs/GetCharactersCharacterIdAssets200Ok.md)
+ - [GetCharactersCharacterIdAttributesOk](docs/GetCharactersCharacterIdAttributesOk.md)
  - [GetCharactersCharacterIdBlueprints200Ok](docs/GetCharactersCharacterIdBlueprints200Ok.md)
  - [GetCharactersCharacterIdBookmarks200Ok](docs/GetCharactersCharacterIdBookmarks200Ok.md)
  - [GetCharactersCharacterIdBookmarksCoordinates](docs/GetCharactersCharacterIdBookmarksCoordinates.md)
@@ -204,6 +209,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdPortraitOk](docs/GetCharactersCharacterIdPortraitOk.md)
  - [GetCharactersCharacterIdShipOk](docs/GetCharactersCharacterIdShipOk.md)
  - [GetCharactersCharacterIdStandings200Ok](docs/GetCharactersCharacterIdStandings200Ok.md)
+ - [GetCharactersCharacterIdWalletJournal200Ok](docs/GetCharactersCharacterIdWalletJournal200Ok.md)
+ - [GetCharactersCharacterIdWalletJournalExtraInfo](docs/GetCharactersCharacterIdWalletJournalExtraInfo.md)
+ - [GetCharactersCharacterIdWalletTransactions200Ok](docs/GetCharactersCharacterIdWalletTransactions200Ok.md)
  - [GetCharactersCharacterIdWallets200Ok](docs/GetCharactersCharacterIdWallets200Ok.md)
  - [GetCharactersCharacterIdWalletsJournal200Ok](docs/GetCharactersCharacterIdWalletsJournal200Ok.md)
  - [GetCharactersNames200Ok](docs/GetCharactersNames200Ok.md)
@@ -383,6 +391,7 @@ Class | Method | HTTP request | Description
  - **esi-markets.structure_markets.v1**: EVE SSO scope esi-markets.structure_markets.v1
  - **esi-planets.manage_planets.v1**: EVE SSO scope esi-planets.manage_planets.v1
  - **esi-search.search_structures.v1**: EVE SSO scope esi-search.search_structures.v1
+ - **esi-skills.read_skills.v1**: EVE SSO scope esi-skills.read_skills.v1
  - **esi-ui.open_window.v1**: EVE SSO scope esi-ui.open_window.v1
  - **esi-ui.write_waypoint.v1**: EVE SSO scope esi-ui.write_waypoint.v1
  - **esi-universe.read_structures.v1**: EVE SSO scope esi-universe.read_structures.v1

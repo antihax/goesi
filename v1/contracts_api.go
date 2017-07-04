@@ -139,15 +139,15 @@ func (a *ContractsApiService) GetCharactersCharacterIdContracts(ctx context.Cont
 Lists bids on a particular auction contract  --- Alternate route: &#x60;/legacy/characters/{character_id}/contracts/{contract_id}/bids/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/contracts/{contract_id}/bids/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/contracts/{contract_id}/bids/&#x60;  --- This route is cached for up to 300 seconds
 
 * @param ctx context.Context Authentication Context
-@param contractId ID of a contract
 @param characterId An EVE character ID
+@param contractId ID of a contract
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return []GetCharactersCharacterIdContractsContractIdBids200Ok*/
-func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdBids(ctx context.Context, contractId int32, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdContractsContractIdBids200Ok, *http.Response, error) {
+func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdBids(ctx context.Context, characterId int32, contractId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdContractsContractIdBids200Ok, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -158,8 +158,8 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdBids(ct
 
 	// create path and map variables
 	localVarPath := a.client.basePath + "/characters/{character_id}/contracts/{contract_id}/bids/"
-	localVarPath = strings.Replace(localVarPath, "{"+"contract_id"+"}", fmt.Sprintf("%v", contractId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"contract_id"+"}", fmt.Sprintf("%v", contractId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -235,15 +235,15 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdBids(ct
 Lists Items and details of a particular contract  --- Alternate route: &#x60;/legacy/characters/{character_id}/contracts/{contract_id}/items/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/contracts/{contract_id}/items/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/contracts/{contract_id}/items/&#x60;  --- This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
-@param contractId ID of a contract
 @param characterId An EVE character ID
+@param contractId ID of a contract
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return []GetCharactersCharacterIdContractsContractIdItems200Ok*/
-func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdItems(ctx context.Context, contractId int32, characterId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdContractsContractIdItems200Ok, *http.Response, error) {
+func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdItems(ctx context.Context, characterId int32, contractId int32, localVarOptionals map[string]interface{}) ([]GetCharactersCharacterIdContractsContractIdItems200Ok, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -254,8 +254,8 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdItems(c
 
 	// create path and map variables
 	localVarPath := a.client.basePath + "/characters/{character_id}/contracts/{contract_id}/items/"
-	localVarPath = strings.Replace(localVarPath, "{"+"contract_id"+"}", fmt.Sprintf("%v", contractId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"contract_id"+"}", fmt.Sprintf("%v", contractId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

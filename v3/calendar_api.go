@@ -45,15 +45,15 @@ type CalendarApiService service
 Get all the information for a specific event  --- Alternate route: &#x60;/latest/characters/{character_id}/calendar/{event_id}/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/calendar/{event_id}/&#x60;  --- This route is cached for up to 5 seconds
 
 * @param ctx context.Context Authentication Context
-@param eventId The id of the event requested
 @param characterId An EVE character ID
+@param eventId The id of the event requested
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return GetCharactersCharacterIdCalendarEventIdOk*/
-func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventId(ctx context.Context, eventId int32, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdCalendarEventIdOk, *http.Response, error) {
+func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventId(ctx context.Context, characterId int32, eventId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdCalendarEventIdOk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -64,8 +64,8 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventId(ctx context
 
 	// create path and map variables
 	localVarPath := a.client.basePath + "/characters/{character_id}/calendar/{event_id}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_id"+"}", fmt.Sprintf("%v", eventId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_id"+"}", fmt.Sprintf("%v", eventId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -141,16 +141,16 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventId(ctx context
 Set your response status to an event  --- Alternate route: &#x60;/latest/characters/{character_id}/calendar/{event_id}/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/calendar/{event_id}/&#x60;
 
 * @param ctx context.Context Authentication Context
+@param characterId An EVE character ID
 @param eventId The ID of the event requested
 @param response The response value to set, overriding current value.
-@param characterId An EVE character ID
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return */
-func (a *CalendarApiService) PutCharactersCharacterIdCalendarEventId(ctx context.Context, eventId int32, response PutCharactersCharacterIdCalendarEventIdResponse, characterId int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
+func (a *CalendarApiService) PutCharactersCharacterIdCalendarEventId(ctx context.Context, characterId int32, eventId int32, response PutCharactersCharacterIdCalendarEventIdResponse, localVarOptionals map[string]interface{}) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -160,8 +160,8 @@ func (a *CalendarApiService) PutCharactersCharacterIdCalendarEventId(ctx context
 
 	// create path and map variables
 	localVarPath := a.client.basePath + "/characters/{character_id}/calendar/{event_id}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"event_id"+"}", fmt.Sprintf("%v", eventId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"event_id"+"}", fmt.Sprintf("%v", eventId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

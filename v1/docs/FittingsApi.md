@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **DeleteCharactersCharacterIdFittingsFittingId**
-> DeleteCharactersCharacterIdFittingsFittingId(ctx, fittingId, characterId, optional)
+> DeleteCharactersCharacterIdFittingsFittingId(ctx, characterId, fittingId, optional)
 Delete fitting
 
 Delete a fitting from a character  --- Alternate route: `/legacy/characters/{character_id}/fittings/{fitting_id}/`  Alternate route: `/latest/characters/{character_id}/fittings/{fitting_id}/`  Alternate route: `/dev/characters/{character_id}/fittings/{fitting_id}/` 
@@ -20,8 +20,8 @@ Delete a fitting from a character  --- Alternate route: `/legacy/characters/{cha
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **fittingId** | **int32**| ID for a fitting of this character | 
   **characterId** | **int32**| An EVE character ID | 
+  **fittingId** | **int32**| ID for a fitting of this character | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -29,8 +29,8 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fittingId** | **int32**| ID for a fitting of this character | 
  **characterId** | **int32**| An EVE character ID | 
+ **fittingId** | **int32**| ID for a fitting of this character | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -111,8 +111,8 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
- **fitting** | [**PostCharactersCharacterIdFittingsFitting**](PostCharactersCharacterIdFittingsFitting.md)| Details about the new fitting | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **fitting** | [**PostCharactersCharacterIdFittingsFitting**](PostCharactersCharacterIdFittingsFitting.md)| Details about the new fitting | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

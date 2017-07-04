@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **DeleteCharactersCharacterIdContacts**
-> DeleteCharactersCharacterIdContacts(ctx, contactIds, characterId, optional)
+> DeleteCharactersCharacterIdContacts(ctx, characterId, contactIds, optional)
 Delete contacts
 
 Bulk delete contacts  --- Alternate route: `/legacy/characters/{character_id}/contacts/`  Alternate route: `/latest/characters/{character_id}/contacts/` 
@@ -22,8 +22,8 @@ Bulk delete contacts  --- Alternate route: `/legacy/characters/{character_id}/co
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **contactIds** | **[]int32**| A list of contacts to delete | 
   **characterId** | **int32**| An EVE character ID | 
+  **contactIds** | **[]int32**| A list of contacts to delete | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -31,8 +31,8 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contactIds** | **[]int32**| A list of contacts to delete | 
  **characterId** | **int32**| An EVE character ID | 
+ **contactIds** | **[]int32**| A list of contacts to delete | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **page** | **float32**| Which page of results to return | [default to 1]
+ **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PostCharactersCharacterIdContacts**
-> []int32 PostCharactersCharacterIdContacts(ctx, contactIds, standing, characterId, optional)
+> []int32 PostCharactersCharacterIdContacts(ctx, characterId, contactIds, standing, optional)
 Add contacts
 
 Bulk add contacts with same settings  --- Alternate route: `/legacy/characters/{character_id}/contacts/`  Alternate route: `/latest/characters/{character_id}/contacts/`  Alternate route: `/dev/characters/{character_id}/contacts/` 
@@ -145,9 +145,9 @@ Bulk add contacts with same settings  --- Alternate route: `/legacy/characters/{
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **characterId** | **int32**| An EVE character ID | 
   **contactIds** | **[]int32**| A list of contacts to add | 
   **standing** | **float32**| Standing for the new contact | 
-  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -155,14 +155,14 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **characterId** | **int32**| An EVE character ID | 
  **contactIds** | **[]int32**| A list of contacts to add | 
  **standing** | **float32**| Standing for the new contact | 
- **characterId** | **int32**| An EVE character ID | 
- **labelId** | **int64**| Add a custom label to the new contact | [default to 0]
- **watched** | **bool**| Whether the new contact should be watched, note this is only effective on characters | [default to false]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **labelId** | **int64**| Add a custom label to the new contact | [default to 0]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **watched** | **bool**| Whether the new contact should be watched, note this is only effective on characters | [default to false]
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PutCharactersCharacterIdContacts**
-> PutCharactersCharacterIdContacts(ctx, contactIds, standing, characterId, optional)
+> PutCharactersCharacterIdContacts(ctx, characterId, contactIds, standing, optional)
 Edit contacts
 
 Bulk edit contacts with same settings  --- Alternate route: `/legacy/characters/{character_id}/contacts/`  Alternate route: `/latest/characters/{character_id}/contacts/`  Alternate route: `/dev/characters/{character_id}/contacts/` 
@@ -191,9 +191,9 @@ Bulk edit contacts with same settings  --- Alternate route: `/legacy/characters/
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **characterId** | **int32**| An EVE character ID | 
   **contactIds** | **[]int32**| A list of contacts to edit | 
   **standing** | **float32**| Standing for the contact | 
-  **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -201,14 +201,14 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **characterId** | **int32**| An EVE character ID | 
  **contactIds** | **[]int32**| A list of contacts to edit | 
  **standing** | **float32**| Standing for the contact | 
- **characterId** | **int32**| An EVE character ID | 
- **labelId** | **int64**| Add a custom label to the contact, use 0 for clearing label | [default to 0]
- **watched** | **bool**| Whether the contact should be watched, note this is only effective on characters | [default to false]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **labelId** | **int64**| Add a custom label to the contact, use 0 for clearing label | [default to 0]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **watched** | **bool**| Whether the contact should be watched, note this is only effective on characters | [default to false]
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type

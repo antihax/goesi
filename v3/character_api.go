@@ -132,15 +132,15 @@ func (a *CharacterApiService) GetCharactersCharacterId(characterId int32, localV
 Takes a source character ID in the url and a set of target character ID&#39;s in the body, returns a CSPA charge cost  --- Alternate route: &#x60;/legacy/characters/{character_id}/cspa/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/cspa/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/cspa/&#x60;
 
 * @param ctx context.Context Authentication Context
-@param characters The target characters to calculate the charge for
 @param characterId An EVE character ID
+@param characters The target characters to calculate the charge for
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return PostCharactersCharacterIdCspaCreated*/
-func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context, characters PostCharactersCharacterIdCspaCharacters, characterId int32, localVarOptionals map[string]interface{}) (PostCharactersCharacterIdCspaCreated, *http.Response, error) {
+func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context, characterId int32, characters PostCharactersCharacterIdCspaCharacters, localVarOptionals map[string]interface{}) (PostCharactersCharacterIdCspaCreated, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}

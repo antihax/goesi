@@ -46,15 +46,15 @@ type ContactsApiService service
 Bulk delete contacts  --- Alternate route: &#x60;/legacy/characters/{character_id}/contacts/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/contacts/&#x60;
 
 * @param ctx context.Context Authentication Context
-@param contactIds A list of contacts to delete
 @param characterId An EVE character ID
+@param contactIds A list of contacts to delete
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return */
-func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Context, contactIds []int32, characterId int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
+func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -142,7 +142,7 @@ Return contacts of a character  --- Alternate route: &#x60;/legacy/characters/{c
 @param characterId An EVE character ID
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
-    @param "page" (float32) Which page of results to return
+    @param "page" (int32) Which page of results to return
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
@@ -167,7 +167,7 @@ func (a *ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Contex
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["page"], "float32", "page"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["page"], "int32", "page"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
@@ -183,7 +183,7 @@ func (a *ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Contex
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
-	if localVarTempParam, localVarOk := localVarOptionals["page"].(float32); localVarOk {
+	if localVarTempParam, localVarOk := localVarOptionals["page"].(int32); localVarOk {
 		localVarQueryParams.Add("page", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
@@ -334,18 +334,18 @@ func (a *ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.
 Bulk add contacts with same settings  --- Alternate route: &#x60;/legacy/characters/{character_id}/contacts/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/contacts/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/contacts/&#x60;
 
 * @param ctx context.Context Authentication Context
+@param characterId An EVE character ID
 @param contactIds A list of contacts to add
 @param standing Standing for the new contact
-@param characterId An EVE character ID
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "labelId" (int64) Add a custom label to the new contact
-    @param "watched" (bool) Whether the new contact should be watched, note this is only effective on characters
     @param "datasource" (string) The server name you would like data from
+    @param "labelId" (int64) Add a custom label to the new contact
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
+    @param "watched" (bool) Whether the new contact should be watched, note this is only effective on characters
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return []int32*/
-func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Context, contactIds []int32, standing float32, characterId int32, localVarOptionals map[string]interface{}) ([]int32, *http.Response, error) {
+func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, standing float32, localVarOptionals map[string]interface{}) ([]int32, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -368,13 +368,10 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 	if standing > 10 {
 		return successPayload, nil, reportError("standing must be less than 10")
 	}
-	if err := typeCheckParameter(localVarOptionals["labelId"], "int64", "labelId"); err != nil {
-		return successPayload, nil, err
-	}
-	if err := typeCheckParameter(localVarOptionals["watched"], "bool", "watched"); err != nil {
-		return successPayload, nil, err
-	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["labelId"], "int64", "labelId"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
@@ -383,25 +380,28 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
 		return successPayload, nil, err
 	}
+	if err := typeCheckParameter(localVarOptionals["watched"], "bool", "watched"); err != nil {
+		return successPayload, nil, err
+	}
 	if err := typeCheckParameter(localVarOptionals["xUserAgent"], "string", "xUserAgent"); err != nil {
 		return successPayload, nil, err
 	}
 
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
 	if localVarTempParam, localVarOk := localVarOptionals["labelId"].(int64); localVarOk {
 		localVarQueryParams.Add("label_id", parameterToString(localVarTempParam, ""))
 	}
 	localVarQueryParams.Add("standing", parameterToString(standing, ""))
-	if localVarTempParam, localVarOk := localVarOptionals["watched"].(bool); localVarOk {
-		localVarQueryParams.Add("watched", parameterToString(localVarTempParam, ""))
-	}
-	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
-		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
-	}
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
 		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
 		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["watched"].(bool); localVarOk {
+		localVarQueryParams.Add("watched", parameterToString(localVarTempParam, ""))
 	}
 
 	// to determine the Content-Type header
@@ -453,18 +453,18 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 Bulk edit contacts with same settings  --- Alternate route: &#x60;/legacy/characters/{character_id}/contacts/&#x60;  Alternate route: &#x60;/latest/characters/{character_id}/contacts/&#x60;  Alternate route: &#x60;/dev/characters/{character_id}/contacts/&#x60;
 
 * @param ctx context.Context Authentication Context
+@param characterId An EVE character ID
 @param contactIds A list of contacts to edit
 @param standing Standing for the contact
-@param characterId An EVE character ID
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "labelId" (int64) Add a custom label to the contact, use 0 for clearing label
-    @param "watched" (bool) Whether the contact should be watched, note this is only effective on characters
     @param "datasource" (string) The server name you would like data from
+    @param "labelId" (int64) Add a custom label to the contact, use 0 for clearing label
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
+    @param "watched" (bool) Whether the contact should be watched, note this is only effective on characters
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return */
-func (a *ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Context, contactIds []int32, standing float32, characterId int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
+func (a *ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, standing float32, localVarOptionals map[string]interface{}) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -486,13 +486,10 @@ func (a *ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Contex
 	if standing > 10 {
 		return nil, reportError("standing must be less than 10")
 	}
-	if err := typeCheckParameter(localVarOptionals["labelId"], "int64", "labelId"); err != nil {
-		return nil, err
-	}
-	if err := typeCheckParameter(localVarOptionals["watched"], "bool", "watched"); err != nil {
-		return nil, err
-	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["labelId"], "int64", "labelId"); err != nil {
 		return nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
@@ -501,25 +498,28 @@ func (a *ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Contex
 	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
 		return nil, err
 	}
+	if err := typeCheckParameter(localVarOptionals["watched"], "bool", "watched"); err != nil {
+		return nil, err
+	}
 	if err := typeCheckParameter(localVarOptionals["xUserAgent"], "string", "xUserAgent"); err != nil {
 		return nil, err
 	}
 
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
 	if localVarTempParam, localVarOk := localVarOptionals["labelId"].(int64); localVarOk {
 		localVarQueryParams.Add("label_id", parameterToString(localVarTempParam, ""))
 	}
 	localVarQueryParams.Add("standing", parameterToString(standing, ""))
-	if localVarTempParam, localVarOk := localVarOptionals["watched"].(bool); localVarOk {
-		localVarQueryParams.Add("watched", parameterToString(localVarTempParam, ""))
-	}
-	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
-		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
-	}
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
 		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
 		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["watched"].(bool); localVarOk {
+		localVarQueryParams.Add("watched", parameterToString(localVarTempParam, ""))
 	}
 
 	// to determine the Content-Type header

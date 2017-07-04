@@ -80,10 +80,10 @@ func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, a
 
 	localVarQueryParams.Add("add_to_beginning", parameterToString(addToBeginning, ""))
 	localVarQueryParams.Add("clear_other_waypoints", parameterToString(clearOtherWaypoints, ""))
-	localVarQueryParams.Add("destination_id", parameterToString(destinationId, ""))
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
+	localVarQueryParams.Add("destination_id", parameterToString(destinationId, ""))
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
 		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
 	}

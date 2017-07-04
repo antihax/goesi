@@ -47,9 +47,9 @@ Return a list of character&#39;s recent kills and losses  --- Alternate route: &
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
 @param optional (nil or map[string]interface{}) with one or more of:
+    @param "datasource" (string) The server name you would like data from
     @param "maxCount" (int32) How many killmails to return at maximum
     @param "maxKillId" (int32) Only return killmails with ID smaller than this.
-    @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
@@ -71,13 +71,13 @@ func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
 	if err := typeCheckParameter(localVarOptionals["maxCount"], "int32", "maxCount"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["maxKillId"], "int32", "maxKillId"); err != nil {
-		return successPayload, nil, err
-	}
-	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
@@ -90,14 +90,14 @@ func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx contex
 		return successPayload, nil, err
 	}
 
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
 	if localVarTempParam, localVarOk := localVarOptionals["maxCount"].(int32); localVarOk {
 		localVarQueryParams.Add("max_count", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["maxKillId"].(int32); localVarOk {
 		localVarQueryParams.Add("max_kill_id", parameterToString(localVarTempParam, ""))
-	}
-	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
-		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
 		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))

@@ -139,15 +139,15 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanets(ctx con
 Returns full details on the layout of a single planetary colony, including links, pins and routes. Note: Planetary information is only recalculated when the colony is viewed through the client. Information will not update until this criteria is met.  --- Alternate route: &#x60;/legacy/characters/{character_id}/planets/{planet_id}/&#x60;  --- This route is cached for up to 600 seconds
 
 * @param ctx context.Context Authentication Context
-@param planetId Planet id of the target planet
 @param characterId An EVE character ID
+@param planetId Planet id of the target planet
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return GetCharactersCharacterIdPlanetsPlanetIdOk*/
-func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId(ctx context.Context, planetId int32, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdPlanetsPlanetIdOk, *http.Response, error) {
+func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId(ctx context.Context, characterId int32, planetId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdPlanetsPlanetIdOk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -158,8 +158,8 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId
 
 	// create path and map variables
 	localVarPath := a.client.basePath + "/characters/{character_id}/planets/{planet_id}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"planet_id"+"}", fmt.Sprintf("%v", planetId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"planet_id"+"}", fmt.Sprintf("%v", planetId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

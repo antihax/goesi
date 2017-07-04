@@ -318,7 +318,7 @@ Get a list of corporation structures  --- Alternate route: &#x60;/legacy/corpora
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "language" (string) Language to use in the response
-    @param "page" (float32) Which page of results to return
+    @param "page" (int32) Which page of results to return
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
@@ -346,7 +346,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 	if err := typeCheckParameter(localVarOptionals["language"], "string", "language"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["page"], "float32", "page"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["page"], "int32", "page"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
@@ -365,7 +365,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 	if localVarTempParam, localVarOk := localVarOptionals["language"].(string); localVarOk {
 		localVarQueryParams.Add("language", parameterToString(localVarTempParam, ""))
 	}
-	if localVarTempParam, localVarOk := localVarOptionals["page"].(float32); localVarOk {
+	if localVarTempParam, localVarOk := localVarOptionals["page"].(int32); localVarOk {
 		localVarQueryParams.Add("page", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
@@ -600,16 +600,16 @@ func (a *CorporationApiService) GetCorporationsNpccorps(localVarOptionals map[st
 Update the vulnerability window schedule of a corporation structure  --- Alternate route: &#x60;/legacy/corporations/{corporation_id}/structures/{structure_id}/&#x60;  Alternate route: &#x60;/latest/corporations/{corporation_id}/structures/{structure_id}/&#x60;  Alternate route: &#x60;/dev/corporations/{corporation_id}/structures/{structure_id}/&#x60;
 
 * @param ctx context.Context Authentication Context
+@param corporationId An EVE corporation ID
 @param newSchedule New vulnerability window schedule for the structure
 @param structureId A structure ID
-@param corporationId An EVE corporation ID
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return */
-func (a *CorporationApiService) PutCorporationsCorporationIdStructuresStructureId(ctx context.Context, newSchedule []PutCorporationsCorporationIdStructuresStructureIdNewSchedule, structureId int64, corporationId int32, localVarOptionals map[string]interface{}) (*http.Response, error) {
+func (a *CorporationApiService) PutCorporationsCorporationIdStructuresStructureId(ctx context.Context, corporationId int32, newSchedule []PutCorporationsCorporationIdStructuresStructureIdNewSchedule, structureId int64, localVarOptionals map[string]interface{}) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -619,8 +619,8 @@ func (a *CorporationApiService) PutCorporationsCorporationIdStructuresStructureI
 
 	// create path and map variables
 	localVarPath := a.client.basePath + "/corporations/{corporation_id}/structures/{structure_id}/"
-	localVarPath = strings.Replace(localVarPath, "{"+"structure_id"+"}", fmt.Sprintf("%v", structureId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"structure_id"+"}", fmt.Sprintf("%v", structureId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

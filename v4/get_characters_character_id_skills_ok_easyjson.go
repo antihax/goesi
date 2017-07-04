@@ -27,7 +27,7 @@ func easyjson2298aef5DecodeGithubComAntihaxGoesiV4(in *jlexer.Lexer, out *GetCha
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetCharactersCharacterIdSkillsOkList, 0, 2)
+				*out = make(GetCharactersCharacterIdSkillsOkList, 0, 1)
 			} else {
 				*out = GetCharactersCharacterIdSkillsOkList{}
 			}
@@ -128,6 +128,8 @@ func easyjson2298aef5DecodeGithubComAntihaxGoesiV41(in *jlexer.Lexer, out *GetCh
 			}
 		case "total_sp":
 			out.TotalSp = int64(in.Int64())
+		case "unallocated_sp":
+			out.UnallocatedSp = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -168,6 +170,14 @@ func easyjson2298aef5EncodeGithubComAntihaxGoesiV41(out *jwriter.Writer, in GetC
 		first = false
 		out.RawString("\"total_sp\":")
 		out.Int64(int64(in.TotalSp))
+	}
+	if in.UnallocatedSp != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"unallocated_sp\":")
+		out.Int32(int32(in.UnallocatedSp))
 	}
 	out.RawByte('}')
 }

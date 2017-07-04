@@ -47,8 +47,8 @@ Get 50 event summaries from the calendar. If no event ID is given, the resource 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fromEvent" (int32) The event ID to retrieve events from
     @param "datasource" (string) The server name you would like data from
+    @param "fromEvent" (int32) The event ID to retrieve events from
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
@@ -70,10 +70,10 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendar(ctx context.Contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if err := typeCheckParameter(localVarOptionals["fromEvent"], "int32", "fromEvent"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["fromEvent"], "int32", "fromEvent"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
@@ -86,11 +86,11 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendar(ctx context.Contex
 		return successPayload, nil, err
 	}
 
-	if localVarTempParam, localVarOk := localVarOptionals["fromEvent"].(int32); localVarOk {
-		localVarQueryParams.Add("from_event", parameterToString(localVarTempParam, ""))
-	}
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["fromEvent"].(int32); localVarOk {
+		localVarQueryParams.Add("from_event", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
 		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))

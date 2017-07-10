@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Domain** | **string** | domain string | [default to null]
+**Domain** | **string** | domain string | [optional] [default to null]
 **EffectId** | **int32** | effect_id integer | [optional] [default to null]
 **Func_** | **string** | func string | [default to null]
 **ModifiedAttributeId** | **int32** | modified_attribute_id integer | [optional] [default to null]

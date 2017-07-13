@@ -27,11 +27,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/antihax/goesi/esi"
 	"github.com/antihax/goesi/eveapi"
-	"github.com/antihax/goesi/v1"
-	"github.com/antihax/goesi/v2"
-	"github.com/antihax/goesi/v3"
-	"github.com/antihax/goesi/v4"
 )
 
 const ContextOAuth2 int = 0
@@ -39,10 +36,7 @@ const ContextOAuth2 int = 0
 // APIClient manages communication with the EVE Swagger Interface API
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
-	V1     *goesiv1.APIClient
-	V2     *goesiv2.APIClient
-	V3     *goesiv3.APIClient
-	V4     *goesiv4.APIClient
+	ESI    *goesiv1.APIClient
 	EVEAPI *eveapi.EVEAPIClient
 }
 
@@ -55,20 +49,14 @@ func NewAPIClient(httpClient *http.Client, userAgent string) *APIClient {
 
 	c := &APIClient{}
 
-	c.V1 = goesiv1.NewAPIClient(httpClient, userAgent)
-	c.V2 = goesiv2.NewAPIClient(httpClient, userAgent)
-	c.V3 = goesiv3.NewAPIClient(httpClient, userAgent)
-	c.V4 = goesiv4.NewAPIClient(httpClient, userAgent)
+	c.ESI = esi.NewAPIClient(httpClient, userAgent)
 	c.EVEAPI = eveapi.NewEVEAPIClient(httpClient, userAgent)
 
 	return c
 }
 
 func (c *APIClient) ChangeBasePath(path string) {
-	c.V1.ChangeBasePath(path)
-	c.V2.ChangeBasePath(path)
-	c.V3.ChangeBasePath(path)
-	c.V4.ChangeBasePath(path)
+	c.ESI.ChangeBasePath(path)
 }
 
 // Ripped from https://github.com/gregjones/httpcache/blob/master/httpcache.go

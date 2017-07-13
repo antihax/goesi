@@ -36,7 +36,7 @@ const ContextOAuth2 int = 0
 // APIClient manages communication with the EVE Swagger Interface API
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
-	ESI    *goesiv1.APIClient
+	ESI    *esi.APIClient
 	EVEAPI *eveapi.EVEAPIClient
 }
 

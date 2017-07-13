@@ -165,20 +165,11 @@ If you would rather not rely on public ESI for testing, a mock ESI server is ava
 Information here: https://github.com/antihax/mock-esi
 
 ## What about the other stuff?
-Legacy, Dev, and Latest endpoints are _not covered_ by this module as they are *not for production use!*
-If you are using any of these endpoints, your application will break! Use only versioned endpoints.
 If you need bleeding edge access, add the endpoint to the generator and rebuild this module. 
 Generator is here: https://github.com/antihax/swagger-esi-goclient
 
 ## Documentation for API Endpoints
-
-[V1 Endpoints](./v1/README.md)
-
-[V2 Endpoints](./v2/README.md)
-
-[V3 Endpoints](./v3/README.md)
-
-[V4 Endpoints](./v4/README.md)
+[ESI Endpoints](./esi/README.md)
 
 ## Author
   antihax on #devfleet slack

@@ -43,7 +43,7 @@ var (
 type WalletApiService service
 
 /* WalletApiService Get a character&#39;s wallet balance
-Returns a character&#39;s wallet_id and balance  ---  This route is cached for up to 120 seconds
+Returns a character&#39;s wallet balance  ---  This route is cached for up to 120 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -339,7 +339,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletTransactions(ctx contex
 }
 
 /* WalletApiService List wallets and balances
-List your wallets and their balances. Characters typically have only one wallet, with wallet_id 1000 being the master wallet.  ---  This route is cached for up to 120 seconds
+List your wallets and their balances. Characters typically have only one wallet, with wallet_id 1000 being the master wallet.  ---  This route is cached for up to 120 seconds  --- Warning: Since a character has only 1 wallet, this route will be moved to /characters/{character_id}/wallet, this route will be removed on 2017-07-31.
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -433,7 +433,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWallets(ctx context.Context, 
 }
 
 /* WalletApiService Get character wallet journal
-Retrieve character wallet journal  ---  This route is cached for up to 3600 seconds
+Retrieve character wallet journal  ---  This route is cached for up to 3600 seconds  --- Warning: Since a character has only 1 wallet, this route will be moved to /characters/{character_id}/wallet/journal, this route will be removed on 2017-07-31.
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID

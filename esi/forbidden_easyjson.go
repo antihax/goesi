@@ -27,7 +27,7 @@ func easyjson7d8677f5DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *Forbi
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(ForbiddenList, 0, 4)
+				*out = make(ForbiddenList, 0, 2)
 			} else {
 				*out = ForbiddenList{}
 			}
@@ -105,6 +105,8 @@ func easyjson7d8677f5DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Forb
 		switch key {
 		case "error":
 			out.Error_ = string(in.String())
+		case "sso_status":
+			out.SsoStatus = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -126,6 +128,14 @@ func easyjson7d8677f5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in For
 		first = false
 		out.RawString("\"error\":")
 		out.String(string(in.Error_))
+	}
+	if in.SsoStatus != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"sso_status\":")
+		out.Int32(int32(in.SsoStatus))
 	}
 	out.RawByte('}')
 }

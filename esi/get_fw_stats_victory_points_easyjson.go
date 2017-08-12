@@ -18,7 +18,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson76ba4e56DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCharactersCharacterIdWallets200OkList) {
+func easyjsonAc671b93DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetFwStatsVictoryPointsList) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		in.Skip()
@@ -27,15 +27,15 @@ func easyjson76ba4e56DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCh
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetCharactersCharacterIdWallets200OkList, 0, 4)
+				*out = make(GetFwStatsVictoryPointsList, 0, 5)
 			} else {
-				*out = GetCharactersCharacterIdWallets200OkList{}
+				*out = GetFwStatsVictoryPointsList{}
 			}
 		} else {
 			*out = (*out)[:0]
 		}
 		for !in.IsDelim(']') {
-			var v1 GetCharactersCharacterIdWallets200Ok
+			var v1 GetFwStatsVictoryPoints
 			(v1).UnmarshalEasyJSON(in)
 			*out = append(*out, v1)
 			in.WantComma()
@@ -46,7 +46,7 @@ func easyjson76ba4e56DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCh
 		in.Consumed()
 	}
 }
-func easyjson76ba4e56EncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in GetCharactersCharacterIdWallets200OkList) {
+func easyjsonAc671b93EncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in GetFwStatsVictoryPointsList) {
 	if in == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 		out.RawString("null")
 	} else {
@@ -62,29 +62,29 @@ func easyjson76ba4e56EncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in GetC
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v GetCharactersCharacterIdWallets200OkList) MarshalJSON() ([]byte, error) {
+func (v GetFwStatsVictoryPointsList) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson76ba4e56EncodeGithubComAntihaxGoesiEsi(&w, v)
+	easyjsonAc671b93EncodeGithubComAntihaxGoesiEsi(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v GetCharactersCharacterIdWallets200OkList) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson76ba4e56EncodeGithubComAntihaxGoesiEsi(w, v)
+func (v GetFwStatsVictoryPointsList) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjsonAc671b93EncodeGithubComAntihaxGoesiEsi(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *GetCharactersCharacterIdWallets200OkList) UnmarshalJSON(data []byte) error {
+func (v *GetFwStatsVictoryPointsList) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson76ba4e56DecodeGithubComAntihaxGoesiEsi(&r, v)
+	easyjsonAc671b93DecodeGithubComAntihaxGoesiEsi(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *GetCharactersCharacterIdWallets200OkList) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson76ba4e56DecodeGithubComAntihaxGoesiEsi(l, v)
+func (v *GetFwStatsVictoryPointsList) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjsonAc671b93DecodeGithubComAntihaxGoesiEsi(l, v)
 }
-func easyjson76ba4e56DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCharactersCharacterIdWallets200Ok) {
+func easyjsonAc671b93DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetFwStatsVictoryPoints) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -103,10 +103,12 @@ func easyjson76ba4e56DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "balance":
-			out.Balance = int64(in.Int64())
-		case "wallet_id":
-			out.WalletId = int32(in.Int32())
+		case "last_week":
+			out.LastWeek = int32(in.Int32())
+		case "total":
+			out.Total = int32(in.Int32())
+		case "yesterday":
+			out.Yesterday = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -117,49 +119,57 @@ func easyjson76ba4e56DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson76ba4e56EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetCharactersCharacterIdWallets200Ok) {
+func easyjsonAc671b93EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetFwStatsVictoryPoints) {
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Balance != 0 {
+	if in.LastWeek != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"balance\":")
-		out.Int64(int64(in.Balance))
+		out.RawString("\"last_week\":")
+		out.Int32(int32(in.LastWeek))
 	}
-	if in.WalletId != 0 {
+	if in.Total != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"wallet_id\":")
-		out.Int32(int32(in.WalletId))
+		out.RawString("\"total\":")
+		out.Int32(int32(in.Total))
+	}
+	if in.Yesterday != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"yesterday\":")
+		out.Int32(int32(in.Yesterday))
 	}
 	out.RawByte('}')
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v GetCharactersCharacterIdWallets200Ok) MarshalJSON() ([]byte, error) {
+func (v GetFwStatsVictoryPoints) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson76ba4e56EncodeGithubComAntihaxGoesiEsi1(&w, v)
+	easyjsonAc671b93EncodeGithubComAntihaxGoesiEsi1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v GetCharactersCharacterIdWallets200Ok) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson76ba4e56EncodeGithubComAntihaxGoesiEsi1(w, v)
+func (v GetFwStatsVictoryPoints) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjsonAc671b93EncodeGithubComAntihaxGoesiEsi1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *GetCharactersCharacterIdWallets200Ok) UnmarshalJSON(data []byte) error {
+func (v *GetFwStatsVictoryPoints) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson76ba4e56DecodeGithubComAntihaxGoesiEsi1(&r, v)
+	easyjsonAc671b93DecodeGithubComAntihaxGoesiEsi1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *GetCharactersCharacterIdWallets200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson76ba4e56DecodeGithubComAntihaxGoesiEsi1(l, v)
+func (v *GetFwStatsVictoryPoints) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjsonAc671b93DecodeGithubComAntihaxGoesiEsi1(l, v)
 }

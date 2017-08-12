@@ -4,13 +4,13 @@ All URIs are relative to *https://esi.tech.ccp.is*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCharactersCharacterIdKillmailsRecent**](KillmailsApi.md#GetCharactersCharacterIdKillmailsRecent) | **Get** /v1/characters/{character_id}/killmails/recent/ | List kills and losses
+[**GetCharactersCharacterIdKillmailsRecent**](KillmailsApi.md#GetCharactersCharacterIdKillmailsRecent) | **Get** /v1/characters/{character_id}/killmails/recent/ | Get character kills and losses
 [**GetKillmailsKillmailIdKillmailHash**](KillmailsApi.md#GetKillmailsKillmailIdKillmailHash) | **Get** /v1/killmails/{killmail_id}/{killmail_hash}/ | Get a single killmail
 
 
 # **GetCharactersCharacterIdKillmailsRecent**
 > []GetCharactersCharacterIdKillmailsRecent200Ok GetCharactersCharacterIdKillmailsRecent(ctx, characterId, optional)
-List kills and losses
+Get character kills and losses
 
 Return a list of character's recent kills and losses  ---  This route is cached for up to 120 seconds
 

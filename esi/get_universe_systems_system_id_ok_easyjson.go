@@ -136,6 +136,8 @@ func easyjsonB8c84fd0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			out.SecurityClass = string(in.String())
 		case "security_status":
 			out.SecurityStatus = float32(in.Float32())
+		case "star_id":
+			out.StarId = int32(in.Int32())
 		case "stargates":
 			if in.IsNull() {
 				in.Skip()
@@ -233,6 +235,14 @@ func easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"security_status\":")
 		out.Float32(float32(in.SecurityStatus))
+	}
+	if in.StarId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"star_id\":")
+		out.Int32(int32(in.StarId))
 	}
 	if len(in.Stargates) != 0 {
 		if !first {

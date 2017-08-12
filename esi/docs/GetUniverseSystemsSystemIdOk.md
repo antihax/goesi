@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Position** | [**GetUniverseSystemsSystemIdPosition**](get_universe_systems_system_id_position.md) |  | [optional] [default to null]
 **SecurityClass** | **string** | security_class string | [optional] [default to null]
 **SecurityStatus** | **float32** | security_status number | [default to null]
+**StarId** | **int32** | star_id integer | [optional] [default to null]
 **Stargates** | **[]int32** | stargates array | [default to null]
 **SystemId** | **int32** | system_id integer | [default to null]
 

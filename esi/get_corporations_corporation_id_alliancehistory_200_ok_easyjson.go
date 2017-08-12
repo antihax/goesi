@@ -103,8 +103,10 @@ func easyjsonE012c571DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "alliance":
-			easyjsonE012c571DecodeGithubComAntihaxGoesiEsi2(in, &out.Alliance)
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "is_deleted":
+			out.IsDeleted = bool(in.Bool())
 		case "record_id":
 			out.RecordId = int32(in.Int32())
 		case "start_date":
@@ -125,13 +127,21 @@ func easyjsonE012c571EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if true {
+	if in.AllianceId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"alliance\":")
-		easyjsonE012c571EncodeGithubComAntihaxGoesiEsi2(out, in.Alliance)
+		out.RawString("\"alliance_id\":")
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.IsDeleted {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"is_deleted\":")
+		out.Bool(bool(in.IsDeleted))
 	}
 	if in.RecordId != 0 {
 		if !first {
@@ -174,59 +184,4 @@ func (v *GetCorporationsCorporationIdAlliancehistory200Ok) UnmarshalJSON(data []
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCorporationsCorporationIdAlliancehistory200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonE012c571DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjsonE012c571DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdAlliancehistoryAlliance) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "alliance_id":
-			out.AllianceId = int32(in.Int32())
-		case "is_deleted":
-			out.IsDeleted = bool(in.Bool())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonE012c571EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdAlliancehistoryAlliance) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"alliance_id\":")
-		out.Int32(int32(in.AllianceId))
-	}
-	if in.IsDeleted {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"is_deleted\":")
-		out.Bool(bool(in.IsDeleted))
-	}
-	out.RawByte('}')
 }

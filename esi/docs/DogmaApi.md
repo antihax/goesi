@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**GetDogmaAttributes**](DogmaApi.md#GetDogmaAttributes) | **Get** /v1/dogma/attributes/ | Get attributes
 [**GetDogmaAttributesAttributeId**](DogmaApi.md#GetDogmaAttributesAttributeId) | **Get** /v1/dogma/attributes/{attribute_id}/ | Get attribute information
 [**GetDogmaEffects**](DogmaApi.md#GetDogmaEffects) | **Get** /v1/dogma/effects/ | Get effects
-[**GetDogmaEffectsEffectId**](DogmaApi.md#GetDogmaEffectsEffectId) | **Get** /v1/dogma/effects/{effect_id}/ | Get effect information
+[**GetDogmaEffectsEffectId**](DogmaApi.md#GetDogmaEffectsEffectId) | **Get** /v2/dogma/effects/{effect_id}/ | Get effect information
 
 
 # **GetDogmaAttributes**

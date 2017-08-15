@@ -441,7 +441,7 @@ Example:
 ```
   auth, err = oauth2conf.TokenSource(http.Client, token) // Access and Refresh token structure
 
-  client, err := esi.NewClient(nil, "esi client http://mysite.com")
+  client, err := esi.NewAPIClient(nil, "esi client http://mysite.com")
   ctx := context.WithValue(context.TODO(), esi.ContextOAuth2, auth)
   result, response, err := client.Endpoint.AuthenticatedOperation(  ctx, 
                                                                     requiredParam, 

@@ -18,7 +18,7 @@ This module offers:
 
 ## New Client
 ```
-  client, err := goesi.NewClient(*http.Client, userAgent string)
+  client, err := goesi.NewAPIClient(*http.Client, userAgent string)
 ```
 
 One client should be created that will serve as an agent for all requests. This allows http2 multiplexing and keep-alive be used to optimize connections.
@@ -26,7 +26,7 @@ It is also good manners to provide a user-agent describing the point of use of t
 
 Example
 ```
-  client, err := goesi.NewClient(nil, "my esi client http://mysite.com contact <SomeDude> ingame")
+  client, err := goesi.NewAPIClient(nil, "my esi client http://mysite.com contact <SomeDude> ingame")
   result, response, err := client.V#.Endpoint.Operation(requiredParam, map[string]interface{} { 
                                                                         "optionalParam1": "stringParam",
                                                                         "optionalParam2": 1234.56
@@ -56,7 +56,7 @@ An example using gregjones/httpcache and memcache:
 		client = &http.Client{Transport: transport}
 
 		// Get our API Client.
-		eve := goesi.NewClient(client, "My user agent, contact somewhere@nowhere")
+		eve := goesi.NewAPIClient(client, "My user agent, contact somewhere@nowhere")
 	}
 ```
 
@@ -74,7 +74,7 @@ pseudocode example:
   func main() {
     var err error
     ctx := appContext.AppContext{}
-    ctx.ESI, err = goesi.NewClient(httpClient, "My App, contact someone@nowhere")
+    ctx.ESI, err = goesi.NewAPIClient(httpClient, "My App, contact someone@nowhere")
     ctx.SSOAuthenticator = goesi.NewSSOAuthenticator(httpClient, clientID, secretKey, scopes)
   }
 

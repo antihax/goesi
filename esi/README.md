@@ -142,6 +142,7 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /v2/universe/systems/{system_id}/ | Get solar system information
 *UniverseApi* | [**GetUniverseTypes**](docs/UniverseApi.md#getuniversetypes) | **Get** /v1/universe/types/ | Get types
 *UniverseApi* | [**GetUniverseTypesTypeId**](docs/UniverseApi.md#getuniversetypestypeid) | **Get** /v2/universe/types/{type_id}/ | Get type information
+*UniverseApi* | [**PostUniverseNames**](docs/UniverseApi.md#postuniversenames) | **Post** /v2/universe/names/ | Get names and categories for a set of ID&#39;s
 *UserInterfaceApi* | [**PostUiAutopilotWaypoint**](docs/UserInterfaceApi.md#postuiautopilotwaypoint) | **Post** /v2/ui/autopilot/waypoint/ | Set Autopilot Waypoint
 *UserInterfaceApi* | [**PostUiOpenwindowContract**](docs/UserInterfaceApi.md#postuiopenwindowcontract) | **Post** /v1/ui/openwindow/contract/ | Open Contract Window
 *UserInterfaceApi* | [**PostUiOpenwindowInformation**](docs/UserInterfaceApi.md#postuiopenwindowinformation) | **Post** /v1/ui/openwindow/information/ | Open Information Window
@@ -365,6 +366,8 @@ Class | Method | HTTP request | Description
  - [PostFleetsFleetIdWingsWingIdSquadsNotFound](docs/PostFleetsFleetIdWingsWingIdSquadsNotFound.md)
  - [PostUiOpenwindowNewmailNewMail](docs/PostUiOpenwindowNewmailNewMail.md)
  - [PostUiOpenwindowNewmailUnprocessableEntity](docs/PostUiOpenwindowNewmailUnprocessableEntity.md)
+ - [PostUniverseNames200Ok](docs/PostUniverseNames200Ok.md)
+ - [PostUniverseNamesNotFound](docs/PostUniverseNamesNotFound.md)
  - [PutCharactersCharacterIdCalendarEventIdResponse](docs/PutCharactersCharacterIdCalendarEventIdResponse.md)
  - [PutCharactersCharacterIdMailMailIdBadRequest](docs/PutCharactersCharacterIdMailMailIdBadRequest.md)
  - [PutCharactersCharacterIdMailMailIdContents](docs/PutCharactersCharacterIdMailMailIdContents.md)

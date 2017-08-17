@@ -29,7 +29,6 @@ Method | HTTP request | Description
 [**GetUniverseSystemsSystemId**](UniverseApi.md#GetUniverseSystemsSystemId) | **Get** /v2/universe/systems/{system_id}/ | Get solar system information
 [**GetUniverseTypes**](UniverseApi.md#GetUniverseTypes) | **Get** /v1/universe/types/ | Get types
 [**GetUniverseTypesTypeId**](UniverseApi.md#GetUniverseTypesTypeId) | **Get** /v2/universe/types/{type_id}/ | Get type information
-[**PostUniverseNames**](UniverseApi.md#PostUniverseNames) | **Post** /v2/universe/names/ | Get names and categories for a set of ID&#39;s
 
 
 # **GetUniverseBloodlines**
@@ -957,44 +956,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetUniverseTypesTypeIdOk**](get_universe_types_type_id_ok.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **PostUniverseNames**
-> []PostUniverseNames200Ok PostUniverseNames(ids, optional)
-Get names and categories for a set of ID's
-
-Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types.  --- 
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-  **ids** | **[]int32**| The ids to resolve | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ids** | **[]int32**| The ids to resolve | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
-
-### Return type
-
-[**[]PostUniverseNames200Ok**](post_universe_names_200_ok.md)
 
 ### Authorization
 

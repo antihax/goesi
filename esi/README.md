@@ -78,6 +78,9 @@ Class | Method | HTTP request | Description
 *InsuranceApi* | [**GetInsurancePrices**](docs/InsuranceApi.md#getinsuranceprices) | **Get** /v1/insurance/prices/ | List insurance levels
 *KillmailsApi* | [**GetCharactersCharacterIdKillmailsRecent**](docs/KillmailsApi.md#getcharacterscharacteridkillmailsrecent) | **Get** /v1/characters/{character_id}/killmails/recent/ | Get character kills and losses
 *KillmailsApi* | [**GetKillmailsKillmailIdKillmailHash**](docs/KillmailsApi.md#getkillmailskillmailidkillmailhash) | **Get** /v1/killmails/{killmail_id}/{killmail_hash}/ | Get a single killmail
+*LocationApi* | [**GetCharactersCharacterIdLocation**](docs/LocationApi.md#getcharacterscharacteridlocation) | **Get** /v1/characters/{character_id}/location/ | Get character location
+*LocationApi* | [**GetCharactersCharacterIdOnline**](docs/LocationApi.md#getcharacterscharacteridonline) | **Get** /v1/characters/{character_id}/online/ | Get character online
+*LocationApi* | [**GetCharactersCharacterIdShip**](docs/LocationApi.md#getcharacterscharacteridship) | **Get** /v1/characters/{character_id}/ship/ | Get current ship
 *LoyaltyApi* | [**GetCharactersCharacterIdLoyaltyPoints**](docs/LoyaltyApi.md#getcharacterscharacteridloyaltypoints) | **Get** /v1/characters/{character_id}/loyalty/points/ | Get loyalty points
 *LoyaltyApi* | [**GetLoyaltyStoresCorporationIdOffers**](docs/LoyaltyApi.md#getloyaltystorescorporationidoffers) | **Get** /v1/loyalty/stores/{corporation_id}/offers/ | List loyalty store offers
 *MailApi* | [**DeleteCharactersCharacterIdMailLabelsLabelId**](docs/MailApi.md#deletecharacterscharacteridmaillabelslabelid) | **Delete** /v1/characters/{character_id}/mail/labels/{label_id}/ | Delete a mail label
@@ -130,6 +133,7 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseRegions**](docs/UniverseApi.md#getuniverseregions) | **Get** /v1/universe/regions/ | Get regions
 *UniverseApi* | [**GetUniverseRegionsRegionId**](docs/UniverseApi.md#getuniverseregionsregionid) | **Get** /v1/universe/regions/{region_id}/ | Get region information
 *UniverseApi* | [**GetUniverseStargatesStargateId**](docs/UniverseApi.md#getuniversestargatesstargateid) | **Get** /v1/universe/stargates/{stargate_id}/ | Get stargate information
+*UniverseApi* | [**GetUniverseStarsStarId**](docs/UniverseApi.md#getuniversestarsstarid) | **Get** /v1/universe/stars/{star_id}/ | Get star information
 *UniverseApi* | [**GetUniverseStationsStationId**](docs/UniverseApi.md#getuniversestationsstationid) | **Get** /v2/universe/stations/{station_id}/ | Get station information
 *UniverseApi* | [**GetUniverseStructures**](docs/UniverseApi.md#getuniversestructures) | **Get** /v1/universe/structures/ | List all public structures
 *UniverseApi* | [**GetUniverseStructuresStructureId**](docs/UniverseApi.md#getuniversestructuresstructureid) | **Get** /v1/universe/structures/{structure_id}/ | Get structure information
@@ -194,6 +198,7 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdFittingsItem](docs/GetCharactersCharacterIdFittingsItem.md)
  - [GetCharactersCharacterIdIndustryJobs200Ok](docs/GetCharactersCharacterIdIndustryJobs200Ok.md)
  - [GetCharactersCharacterIdKillmailsRecent200Ok](docs/GetCharactersCharacterIdKillmailsRecent200Ok.md)
+ - [GetCharactersCharacterIdLocationOk](docs/GetCharactersCharacterIdLocationOk.md)
  - [GetCharactersCharacterIdLoyaltyPoints200Ok](docs/GetCharactersCharacterIdLoyaltyPoints200Ok.md)
  - [GetCharactersCharacterIdMail200Ok](docs/GetCharactersCharacterIdMail200Ok.md)
  - [GetCharactersCharacterIdMailLabelsLabel](docs/GetCharactersCharacterIdMailLabelsLabel.md)
@@ -222,6 +227,7 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdPortraitNotFound](docs/GetCharactersCharacterIdPortraitNotFound.md)
  - [GetCharactersCharacterIdPortraitOk](docs/GetCharactersCharacterIdPortraitOk.md)
  - [GetCharactersCharacterIdSearchOk](docs/GetCharactersCharacterIdSearchOk.md)
+ - [GetCharactersCharacterIdShipOk](docs/GetCharactersCharacterIdShipOk.md)
  - [GetCharactersCharacterIdSkillqueue200Ok](docs/GetCharactersCharacterIdSkillqueue200Ok.md)
  - [GetCharactersCharacterIdSkillsOk](docs/GetCharactersCharacterIdSkillsOk.md)
  - [GetCharactersCharacterIdSkillsSkill](docs/GetCharactersCharacterIdSkillsSkill.md)
@@ -316,6 +322,7 @@ Class | Method | HTTP request | Description
  - [GetUniverseStargatesStargateIdNotFound](docs/GetUniverseStargatesStargateIdNotFound.md)
  - [GetUniverseStargatesStargateIdOk](docs/GetUniverseStargatesStargateIdOk.md)
  - [GetUniverseStargatesStargateIdPosition](docs/GetUniverseStargatesStargateIdPosition.md)
+ - [GetUniverseStarsStarIdOk](docs/GetUniverseStarsStarIdOk.md)
  - [GetUniverseStationsStationIdNotFound](docs/GetUniverseStationsStationIdNotFound.md)
  - [GetUniverseStationsStationIdOk](docs/GetUniverseStationsStationIdOk.md)
  - [GetUniverseStationsStationIdPosition](docs/GetUniverseStationsStationIdPosition.md)
@@ -412,6 +419,9 @@ Class | Method | HTTP request | Description
  - **esi-fleets.write_fleet.v1**: EVE SSO scope esi-fleets.write_fleet.v1
  - **esi-industry.read_character_jobs.v1**: EVE SSO scope esi-industry.read_character_jobs.v1
  - **esi-killmails.read_killmails.v1**: EVE SSO scope esi-killmails.read_killmails.v1
+ - **esi-location.read_location.v1**: EVE SSO scope esi-location.read_location.v1
+ - **esi-location.read_online.v1**: EVE SSO scope esi-location.read_online.v1
+ - **esi-location.read_ship_type.v1**: EVE SSO scope esi-location.read_ship_type.v1
  - **esi-mail.organize_mail.v1**: EVE SSO scope esi-mail.organize_mail.v1
  - **esi-mail.read_mail.v1**: EVE SSO scope esi-mail.read_mail.v1
  - **esi-mail.send_mail.v1**: EVE SSO scope esi-mail.send_mail.v1

@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**GetUniverseRegions**](UniverseApi.md#GetUniverseRegions) | **Get** /v1/universe/regions/ | Get regions
 [**GetUniverseRegionsRegionId**](UniverseApi.md#GetUniverseRegionsRegionId) | **Get** /v1/universe/regions/{region_id}/ | Get region information
 [**GetUniverseStargatesStargateId**](UniverseApi.md#GetUniverseStargatesStargateId) | **Get** /v1/universe/stargates/{stargate_id}/ | Get stargate information
+[**GetUniverseStarsStarId**](UniverseApi.md#GetUniverseStarsStarId) | **Get** /v1/universe/stars/{star_id}/ | Get star information
 [**GetUniverseStationsStationId**](UniverseApi.md#GetUniverseStationsStationId) | **Get** /v2/universe/stations/{station_id}/ | Get station information
 [**GetUniverseStructures**](UniverseApi.md#GetUniverseStructures) | **Get** /v1/universe/structures/ | List all public structures
 [**GetUniverseStructuresStructureId**](UniverseApi.md#GetUniverseStructuresStructureId) | **Get** /v1/universe/structures/{structure_id}/ | Get structure information
@@ -619,6 +620,44 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetUniverseStargatesStargateIdOk**](get_universe_stargates_stargate_id_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniverseStarsStarId**
+> GetUniverseStarsStarIdOk GetUniverseStarsStarId(starId, optional)
+Get star information
+
+Get information on a star  ---  This route expires daily at 11:05
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+  **starId** | **int32**| star_id integer | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **starId** | **int32**| star_id integer | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**GetUniverseStarsStarIdOk**](get_universe_stars_star_id_ok.md)
 
 ### Authorization
 

@@ -130,7 +130,7 @@ func easyjsonEbea04a9DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 				}
 				for !in.IsDelim(']') {
 					var v4 GetKillmailsKillmailIdKillmailHashItem1
-					(v4).UnmarshalEasyJSON(in)
+					easyjsonEbea04a9DecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Items = append(out.Items, v4)
 					in.WantComma()
 				}
@@ -208,7 +208,7 @@ func easyjsonEbea04a9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjsonEbea04a9EncodeGithubComAntihaxGoesiEsi2(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -254,4 +254,131 @@ func (v *GetKillmailsKillmailIdKillmailHashVictim) UnmarshalJSON(data []byte) er
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetKillmailsKillmailIdKillmailHashVictim) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonEbea04a9DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjsonEbea04a9DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashItem1) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "flag":
+			out.Flag = int32(in.Int32())
+		case "item_type_id":
+			out.ItemTypeId = int32(in.Int32())
+		case "items":
+			if in.IsNull() {
+				in.Skip()
+				out.Items = nil
+			} else {
+				in.Delim('[')
+				if out.Items == nil {
+					if !in.IsDelim(']') {
+						out.Items = make([]GetKillmailsKillmailIdKillmailHashItem, 0, 2)
+					} else {
+						out.Items = []GetKillmailsKillmailIdKillmailHashItem{}
+					}
+				} else {
+					out.Items = (out.Items)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v7 GetKillmailsKillmailIdKillmailHashItem
+					(v7).UnmarshalEasyJSON(in)
+					out.Items = append(out.Items, v7)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "quantity_destroyed":
+			out.QuantityDestroyed = int64(in.Int64())
+		case "quantity_dropped":
+			out.QuantityDropped = int64(in.Int64())
+		case "singleton":
+			out.Singleton = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonEbea04a9EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashItem1) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Flag != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"flag\":")
+		out.Int32(int32(in.Flag))
+	}
+	if in.ItemTypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"item_type_id\":")
+		out.Int32(int32(in.ItemTypeId))
+	}
+	if len(in.Items) != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"items\":")
+		if in.Items == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+			out.RawString("null")
+		} else {
+			out.RawByte('[')
+			for v8, v9 := range in.Items {
+				if v8 > 0 {
+					out.RawByte(',')
+				}
+				(v9).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
+	}
+	if in.QuantityDestroyed != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"quantity_destroyed\":")
+		out.Int64(int64(in.QuantityDestroyed))
+	}
+	if in.QuantityDropped != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"quantity_dropped\":")
+		out.Int64(int64(in.QuantityDropped))
+	}
+	if in.Singleton != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"singleton\":")
+		out.Int32(int32(in.Singleton))
+	}
+	out.RawByte('}')
 }

@@ -124,7 +124,7 @@ func easyjson15ff5640DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				for !in.IsDelim(']') {
 					var v4 GetUniverseTypesTypeIdDogmaAttribute
-					(v4).UnmarshalEasyJSON(in)
+					easyjson15ff5640DecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.DogmaAttributes = append(out.DogmaAttributes, v4)
 					in.WantComma()
 				}
@@ -147,7 +147,7 @@ func easyjson15ff5640DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				for !in.IsDelim(']') {
 					var v5 GetUniverseTypesTypeIdDogmaEffect
-					(v5).UnmarshalEasyJSON(in)
+					easyjson15ff5640DecodeGithubComAntihaxGoesiEsi3(in, &v5)
 					out.DogmaEffects = append(out.DogmaEffects, v5)
 					in.WantComma()
 				}
@@ -217,7 +217,7 @@ func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v6 > 0 {
 					out.RawByte(',')
 				}
-				(v7).MarshalEasyJSON(out)
+				easyjson15ff5640EncodeGithubComAntihaxGoesiEsi2(out, v7)
 			}
 			out.RawByte(']')
 		}
@@ -236,7 +236,7 @@ func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v8 > 0 {
 					out.RawByte(',')
 				}
-				(v9).MarshalEasyJSON(out)
+				easyjson15ff5640EncodeGithubComAntihaxGoesiEsi3(out, v9)
 			}
 			out.RawByte(']')
 		}
@@ -346,4 +346,114 @@ func (v *GetUniverseTypesTypeIdOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetUniverseTypesTypeIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson15ff5640DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson15ff5640DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetUniverseTypesTypeIdDogmaEffect) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "effect_id":
+			out.EffectId = int32(in.Int32())
+		case "is_default":
+			out.IsDefault = bool(in.Bool())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetUniverseTypesTypeIdDogmaEffect) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.EffectId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"effect_id\":")
+		out.Int32(int32(in.EffectId))
+	}
+	if in.IsDefault {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"is_default\":")
+		out.Bool(bool(in.IsDefault))
+	}
+	out.RawByte('}')
+}
+func easyjson15ff5640DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetUniverseTypesTypeIdDogmaAttribute) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "attribute_id":
+			out.AttributeId = int32(in.Int32())
+		case "value":
+			out.Value = float32(in.Float32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetUniverseTypesTypeIdDogmaAttribute) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AttributeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"attribute_id\":")
+		out.Int32(int32(in.AttributeId))
+	}
+	if in.Value != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"value\":")
+		out.Float32(float32(in.Value))
+	}
+	out.RawByte('}')
 }

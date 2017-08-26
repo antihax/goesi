@@ -33,6 +33,7 @@ type GetCharactersCharacterIdPlanetsPlanetIdPinList []GetCharactersCharacterIdPl
 /* pin object */
 //easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdPin struct {
+	Contents         []GetCharactersCharacterIdPlanetsPlanetIdContent        `json:"contents,omitempty"`    /* contents array */
 	ExpiryTime       time.Time                                               `json:"expiry_time,omitempty"` /* expiry_time string */
 	ExtractorDetails GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails `json:"extractor_details,omitempty"`
 	FactoryDetails   GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails   `json:"factory_details,omitempty"`

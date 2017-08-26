@@ -174,7 +174,7 @@ func easyjson15e3e24fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v6 GetCharactersCharacterIdChatChannelsMuted
-					easyjson15e3e24fDecodeGithubComAntihaxGoesiEsi4(in, &v6)
+					(v6).UnmarshalEasyJSON(in)
 					out.Muted = append(out.Muted, v6)
 					in.WantComma()
 				}
@@ -199,7 +199,7 @@ func easyjson15e3e24fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v7 GetCharactersCharacterIdChatChannelsOperator
-					easyjson15e3e24fDecodeGithubComAntihaxGoesiEsi5(in, &v7)
+					easyjson15e3e24fDecodeGithubComAntihaxGoesiEsi4(in, &v7)
 					out.Operators = append(out.Operators, v7)
 					in.WantComma()
 				}
@@ -305,7 +305,7 @@ func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v12 > 0 {
 					out.RawByte(',')
 				}
-				easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi4(out, v13)
+				(v13).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -332,7 +332,7 @@ func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v14 > 0 {
 					out.RawByte(',')
 				}
-				easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi5(out, v15)
+				easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi4(out, v15)
 			}
 			out.RawByte(']')
 		}
@@ -371,7 +371,7 @@ func (v *GetCharactersCharacterIdChatChannels200Ok) UnmarshalJSON(data []byte) e
 func (v *GetCharactersCharacterIdChatChannels200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson15e3e24fDecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson15e3e24fDecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *GetCharactersCharacterIdChatChannelsOperator) {
+func easyjson15e3e24fDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCharactersCharacterIdChatChannelsOperator) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -404,7 +404,7 @@ func easyjson15e3e24fDecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in GetCharactersCharacterIdChatChannelsOperator) {
+func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCharactersCharacterIdChatChannelsOperator) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -423,83 +423,6 @@ func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"accessor_type\":")
 		out.String(string(in.AccessorType))
-	}
-	out.RawByte('}')
-}
-func easyjson15e3e24fDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCharactersCharacterIdChatChannelsMuted) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "accessor_id":
-			out.AccessorId = int32(in.Int32())
-		case "accessor_type":
-			out.AccessorType = string(in.String())
-		case "end_at":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.EndAt).UnmarshalJSON(data))
-			}
-		case "reason":
-			out.Reason = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCharactersCharacterIdChatChannelsMuted) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.AccessorId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"accessor_id\":")
-		out.Int32(int32(in.AccessorId))
-	}
-	if in.AccessorType != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"accessor_type\":")
-		out.String(string(in.AccessorType))
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"end_at\":")
-		out.Raw((in.EndAt).MarshalJSON())
-	}
-	if in.Reason != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"reason\":")
-		out.String(string(in.Reason))
 	}
 	out.RawByte('}')
 }

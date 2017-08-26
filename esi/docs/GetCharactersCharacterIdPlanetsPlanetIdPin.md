@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Contents** | [**[]GetCharactersCharacterIdPlanetsPlanetIdContent**](get_characters_character_id_planets_planet_id_content.md) | contents array | [optional] [default to null]
 **ExpiryTime** | [**time.Time**](time.Time.md) | expiry_time string | [optional] [default to null]
 **ExtractorDetails** | [**GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails**](get_characters_character_id_planets_planet_id_extractor_details.md) |  | [optional] [default to null]
 **FactoryDetails** | [**GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails**](get_characters_character_id_planets_planet_id_factory_details.md) |  | [optional] [default to null]

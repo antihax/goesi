@@ -157,7 +157,7 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/characters/{character_id}/planets/{planet_id}/"
+	localVarPath := a.client.basePath + "/v3/characters/{character_id}/planets/{planet_id}/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"planet_id"+"}", fmt.Sprintf("%v", planetId), -1)
 

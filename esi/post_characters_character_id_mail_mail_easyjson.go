@@ -124,7 +124,7 @@ func easyjson71405a3bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v4 PostCharactersCharacterIdMailRecipient
-					easyjson71405a3bDecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Recipients = append(out.Recipients, v4)
 					in.WantComma()
 				}
@@ -176,7 +176,7 @@ func easyjson71405a3bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson71405a3bEncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -214,59 +214,4 @@ func (v *PostCharactersCharacterIdMailMail) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *PostCharactersCharacterIdMailMail) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson71405a3bDecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson71405a3bDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *PostCharactersCharacterIdMailRecipient) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "recipient_id":
-			out.RecipientId = int32(in.Int32())
-		case "recipient_type":
-			out.RecipientType = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson71405a3bEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in PostCharactersCharacterIdMailRecipient) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.RecipientId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"recipient_id\":")
-		out.Int32(int32(in.RecipientId))
-	}
-	if in.RecipientType != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"recipient_type\":")
-		out.String(string(in.RecipientType))
-	}
-	out.RawByte('}')
 }

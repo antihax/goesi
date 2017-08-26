@@ -39,6 +39,261 @@ var (
 
 type FactionWarfareApiService service
 
+/* FactionWarfareApiService List of the top factions in faction warfare
+Top 4 leaderboard of factions for kills and victory points separated by total, last week and yesterday.  ---  This route expires daily at 11:05
+
+
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "datasource" (string) The server name you would like data from
+    @param "userAgent" (string) Client identifier, takes precedence over headers
+    @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
+@return GetFwLeaderboardsOk*/
+func (a *FactionWarfareApiService) GetFwLeaderboards(localVarOptionals map[string]interface{}) (GetFwLeaderboardsOk, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetFwLeaderboardsOk
+	)
+
+	// create path and map variables
+	localVarPath := a.client.basePath + "/v1/fw/leaderboards/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["xUserAgent"], "string", "xUserAgent"); err != nil {
+		return successPayload, nil, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
+		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
+	}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["xUserAgent"].(string); localVarOk {
+		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
+	}
+
+	r, err := a.client.prepareRequest(nil, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
+	}
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
+/* FactionWarfareApiService List of the top pilots in faction warfare
+Top 100 leaderboard of pilots for kills and victory points separated by total, last week and yesterday.  ---  This route expires daily at 11:05
+
+
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "datasource" (string) The server name you would like data from
+    @param "userAgent" (string) Client identifier, takes precedence over headers
+    @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
+@return GetFwLeaderboardsCharactersOk*/
+func (a *FactionWarfareApiService) GetFwLeaderboardsCharacters(localVarOptionals map[string]interface{}) (GetFwLeaderboardsCharactersOk, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetFwLeaderboardsCharactersOk
+	)
+
+	// create path and map variables
+	localVarPath := a.client.basePath + "/v1/fw/leaderboards/characters/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["xUserAgent"], "string", "xUserAgent"); err != nil {
+		return successPayload, nil, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
+		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
+	}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["xUserAgent"].(string); localVarOk {
+		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
+	}
+
+	r, err := a.client.prepareRequest(nil, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
+	}
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
+/* FactionWarfareApiService List of the top corporations in faction warfare
+Top 10 leaderboard of corporations for kills and victory points separated by total, last week and yesterday.  ---  This route expires daily at 11:05
+
+
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "datasource" (string) The server name you would like data from
+    @param "userAgent" (string) Client identifier, takes precedence over headers
+    @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
+@return GetFwLeaderboardsCorporationsOk*/
+func (a *FactionWarfareApiService) GetFwLeaderboardsCorporations(localVarOptionals map[string]interface{}) (GetFwLeaderboardsCorporationsOk, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetFwLeaderboardsCorporationsOk
+	)
+
+	// create path and map variables
+	localVarPath := a.client.basePath + "/v1/fw/leaderboards/corporations/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["xUserAgent"], "string", "xUserAgent"); err != nil {
+		return successPayload, nil, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
+		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
+	}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["xUserAgent"].(string); localVarOk {
+		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
+	}
+
+	r, err := a.client.prepareRequest(nil, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
+	}
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
 /* FactionWarfareApiService An overview of statistics about factions involved in faction warfare
 Statistical overviews of factions involved in faction warfare  ---  This route expires daily at 11:05
 
@@ -59,6 +314,91 @@ func (a *FactionWarfareApiService) GetFwStats(localVarOptionals map[string]inter
 
 	// create path and map variables
 	localVarPath := a.client.basePath + "/v1/fw/stats/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["xUserAgent"], "string", "xUserAgent"); err != nil {
+		return successPayload, nil, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
+		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
+	}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["xUserAgent"].(string); localVarOk {
+		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
+	}
+
+	r, err := a.client.prepareRequest(nil, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
+	}
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
+/* FactionWarfareApiService Ownership of faction warfare systems
+An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 3600 seconds
+
+
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "datasource" (string) The server name you would like data from
+    @param "userAgent" (string) Client identifier, takes precedence over headers
+    @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
+@return []GetFwSystems200Ok*/
+func (a *FactionWarfareApiService) GetFwSystems(localVarOptionals map[string]interface{}) ([]GetFwSystems200Ok, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetFwSystems200OkList
+	)
+
+	// create path and map variables
+	localVarPath := a.client.basePath + "/v1/fw/systems/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

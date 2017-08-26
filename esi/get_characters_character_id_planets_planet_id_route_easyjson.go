@@ -121,16 +121,16 @@ func easyjson5a671d6eDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.Delim('[')
 				if out.Waypoints == nil {
 					if !in.IsDelim(']') {
-						out.Waypoints = make([]GetCharactersCharacterIdPlanetsPlanetIdWaypoint, 0, 4)
+						out.Waypoints = make([]int64, 0, 8)
 					} else {
-						out.Waypoints = []GetCharactersCharacterIdPlanetsPlanetIdWaypoint{}
+						out.Waypoints = []int64{}
 					}
 				} else {
 					out.Waypoints = (out.Waypoints)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v4 GetCharactersCharacterIdPlanetsPlanetIdWaypoint
-					easyjson5a671d6eDecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					var v4 int64
+					v4 = int64(in.Int64())
 					out.Waypoints = append(out.Waypoints, v4)
 					in.WantComma()
 				}
@@ -204,7 +204,7 @@ func easyjson5a671d6eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson5a671d6eEncodeGithubComAntihaxGoesiEsi2(out, v6)
+				out.Int64(int64(v6))
 			}
 			out.RawByte(']')
 		}
@@ -234,59 +234,4 @@ func (v *GetCharactersCharacterIdPlanetsPlanetIdRoute) UnmarshalJSON(data []byte
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCharactersCharacterIdPlanetsPlanetIdRoute) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson5a671d6eDecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson5a671d6eDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdWaypoint) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "order":
-			out.Order = int32(in.Int32())
-		case "pin_id":
-			out.PinId = int64(in.Int64())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson5a671d6eEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdWaypoint) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Order != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"order\":")
-		out.Int32(int32(in.Order))
-	}
-	if in.PinId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"pin_id\":")
-		out.Int64(int64(in.PinId))
-	}
-	out.RawByte('}')
 }

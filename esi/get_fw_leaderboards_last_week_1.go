@@ -22,12 +22,13 @@
 
 package esi
 
-/* A list of PostCharactersAffiliationUnprocessableEntity. */
+/* A list of GetFwLeaderboardsLastWeek1. */
 //easyjson:json
-type PostCharactersAffiliationUnprocessableEntityList []PostCharactersAffiliationUnprocessableEntity
+type GetFwLeaderboardsLastWeek1List []GetFwLeaderboardsLastWeek1
 
-/* Unprocessable entity */
+/* last_week object */
 //easyjson:json
-type PostCharactersAffiliationUnprocessableEntity struct {
-	Error_ string `json:"error,omitempty"` /* Unprocessable entity message */
+type GetFwLeaderboardsLastWeek1 struct {
+	Amount    int32 `json:"amount,omitempty"`     /* Amount of victory points */
+	FactionId int32 `json:"faction_id,omitempty"` /* faction_id integer */
 }

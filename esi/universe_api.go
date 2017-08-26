@@ -2361,3 +2361,91 @@ func (a *UniverseApiService) GetUniverseTypesTypeId(typeId int32, localVarOption
 
 	return successPayload, localVarHttpResponse, err
 }
+
+/* UniverseApiService Get names and categories for a set of ID&#39;s
+Resolve a set of IDs to names and categories. Supported ID&#39;s for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types.  ---
+
+
+@param ids The ids to resolve
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "datasource" (string) The server name you would like data from
+    @param "userAgent" (string) Client identifier, takes precedence over headers
+    @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
+@return []PostUniverseNames200Ok*/
+func (a *UniverseApiService) PostUniverseNames(ids []int32, localVarOptionals map[string]interface{}) ([]PostUniverseNames200Ok, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     PostUniverseNames200OkList
+	)
+
+	// create path and map variables
+	localVarPath := a.client.basePath + "/v2/universe/names/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["xUserAgent"], "string", "xUserAgent"); err != nil {
+		return successPayload, nil, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
+		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
+	}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["xUserAgent"].(string); localVarOk {
+		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
+	}
+	// body params
+	localVarPostBody = &ids
+
+	r, err := a.client.prepareRequest(nil, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
+	}
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}

@@ -44,6 +44,7 @@ Class | Method | HTTP request | Description
 *CorporationApi* | [**GetCorporationsCorporationIdAlliancehistory**](docs/CorporationApi.md#getcorporationscorporationidalliancehistory) | **Get** /v2/corporations/{corporation_id}/alliancehistory/ | Get alliance history
 *CorporationApi* | [**GetCorporationsCorporationIdIcons**](docs/CorporationApi.md#getcorporationscorporationidicons) | **Get** /v1/corporations/{corporation_id}/icons/ | Get corporation icon
 *CorporationApi* | [**GetCorporationsCorporationIdMembers**](docs/CorporationApi.md#getcorporationscorporationidmembers) | **Get** /v2/corporations/{corporation_id}/members/ | Get corporation members
+*CorporationApi* | [**GetCorporationsCorporationIdMembertracking**](docs/CorporationApi.md#getcorporationscorporationidmembertracking) | **Get** /v1/corporations/{corporation_id}/membertracking/ | Get corporation members
 *CorporationApi* | [**GetCorporationsCorporationIdRoles**](docs/CorporationApi.md#getcorporationscorporationidroles) | **Get** /v1/corporations/{corporation_id}/roles/ | Get corporation member roles
 *CorporationApi* | [**GetCorporationsCorporationIdStructures**](docs/CorporationApi.md#getcorporationscorporationidstructures) | **Get** /v1/corporations/{corporation_id}/structures/ | Get corporation structures
 *CorporationApi* | [**GetCorporationsNames**](docs/CorporationApi.md#getcorporationsnames) | **Get** /v1/corporations/names/ | Get corporation names
@@ -53,7 +54,11 @@ Class | Method | HTTP request | Description
 *DogmaApi* | [**GetDogmaAttributesAttributeId**](docs/DogmaApi.md#getdogmaattributesattributeid) | **Get** /v1/dogma/attributes/{attribute_id}/ | Get attribute information
 *DogmaApi* | [**GetDogmaEffects**](docs/DogmaApi.md#getdogmaeffects) | **Get** /v1/dogma/effects/ | Get effects
 *DogmaApi* | [**GetDogmaEffectsEffectId**](docs/DogmaApi.md#getdogmaeffectseffectid) | **Get** /v2/dogma/effects/{effect_id}/ | Get effect information
+*FactionWarfareApi* | [**GetFwLeaderboards**](docs/FactionWarfareApi.md#getfwleaderboards) | **Get** /v1/fw/leaderboards/ | List of the top factions in faction warfare
+*FactionWarfareApi* | [**GetFwLeaderboardsCharacters**](docs/FactionWarfareApi.md#getfwleaderboardscharacters) | **Get** /v1/fw/leaderboards/characters/ | List of the top pilots in faction warfare
+*FactionWarfareApi* | [**GetFwLeaderboardsCorporations**](docs/FactionWarfareApi.md#getfwleaderboardscorporations) | **Get** /v1/fw/leaderboards/corporations/ | List of the top corporations in faction warfare
 *FactionWarfareApi* | [**GetFwStats**](docs/FactionWarfareApi.md#getfwstats) | **Get** /v1/fw/stats/ | An overview of statistics about factions involved in faction warfare
+*FactionWarfareApi* | [**GetFwSystems**](docs/FactionWarfareApi.md#getfwsystems) | **Get** /v1/fw/systems/ | Ownership of faction warfare systems
 *FactionWarfareApi* | [**GetFwWars**](docs/FactionWarfareApi.md#getfwwars) | **Get** /v1/fw/wars/ | Data about which NPC factions are at war
 *FittingsApi* | [**DeleteCharactersCharacterIdFittingsFittingId**](docs/FittingsApi.md#deletecharacterscharacteridfittingsfittingid) | **Delete** /v1/characters/{character_id}/fittings/{fitting_id}/ | Delete fitting
 *FittingsApi* | [**GetCharactersCharacterIdFittings**](docs/FittingsApi.md#getcharacterscharacteridfittings) | **Get** /v1/characters/{character_id}/fittings/ | Get fittings
@@ -105,7 +110,7 @@ Class | Method | HTTP request | Description
 *OpportunitiesApi* | [**GetOpportunitiesTasks**](docs/OpportunitiesApi.md#getopportunitiestasks) | **Get** /v1/opportunities/tasks/ | Get opportunities tasks
 *OpportunitiesApi* | [**GetOpportunitiesTasksTaskId**](docs/OpportunitiesApi.md#getopportunitiestaskstaskid) | **Get** /v1/opportunities/tasks/{task_id}/ | Get opportunities task
 *PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanets**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanets) | **Get** /v1/characters/{character_id}/planets/ | Get colonies
-*PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanetsPlanetId**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanetsplanetid) | **Get** /v2/characters/{character_id}/planets/{planet_id}/ | Get colony layout
+*PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanetsPlanetId**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanetsplanetid) | **Get** /v3/characters/{character_id}/planets/{planet_id}/ | Get colony layout
 *PlanetaryInteractionApi* | [**GetUniverseSchematicsSchematicId**](docs/PlanetaryInteractionApi.md#getuniverseschematicsschematicid) | **Get** /v1/universe/schematics/{schematic_id}/ | Get schematic information
 *RoutesApi* | [**GetRouteOriginDestination**](docs/RoutesApi.md#getrouteorigindestination) | **Get** /v1/route/{origin}/{destination}/ | Get route
 *SearchApi* | [**GetCharactersCharacterIdSearch**](docs/SearchApi.md#getcharacterscharacteridsearch) | **Get** /v2/characters/{character_id}/search/ | Search on a string
@@ -143,6 +148,7 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /v2/universe/systems/{system_id}/ | Get solar system information
 *UniverseApi* | [**GetUniverseTypes**](docs/UniverseApi.md#getuniversetypes) | **Get** /v1/universe/types/ | Get types
 *UniverseApi* | [**GetUniverseTypesTypeId**](docs/UniverseApi.md#getuniversetypestypeid) | **Get** /v2/universe/types/{type_id}/ | Get type information
+*UniverseApi* | [**PostUniverseNames**](docs/UniverseApi.md#postuniversenames) | **Post** /v2/universe/names/ | Get names and categories for a set of ID&#39;s
 *UserInterfaceApi* | [**PostUiAutopilotWaypoint**](docs/UserInterfaceApi.md#postuiautopilotwaypoint) | **Post** /v2/ui/autopilot/waypoint/ | Set Autopilot Waypoint
 *UserInterfaceApi* | [**PostUiOpenwindowContract**](docs/UserInterfaceApi.md#postuiopenwindowcontract) | **Post** /v1/ui/openwindow/contract/ | Open Contract Window
 *UserInterfaceApi* | [**PostUiOpenwindowInformation**](docs/UserInterfaceApi.md#postuiopenwindowinformation) | **Post** /v1/ui/openwindow/information/ | Open Information Window
@@ -151,6 +157,7 @@ Class | Method | HTTP request | Description
 *WalletApi* | [**GetCharactersCharacterIdWallet**](docs/WalletApi.md#getcharacterscharacteridwallet) | **Get** /v1/characters/{character_id}/wallet/ | Get a character&#39;s wallet balance
 *WalletApi* | [**GetCharactersCharacterIdWalletJournal**](docs/WalletApi.md#getcharacterscharacteridwalletjournal) | **Get** /v1/characters/{character_id}/wallet/journal/ | Get character wallet journal
 *WalletApi* | [**GetCharactersCharacterIdWalletTransactions**](docs/WalletApi.md#getcharacterscharacteridwallettransactions) | **Get** /v1/characters/{character_id}/wallet/transactions/ | Get wallet transactions
+*WalletApi* | [**GetCorporationsCorporationIdWallets**](docs/WalletApi.md#getcorporationscorporationidwallets) | **Get** /v1/corporations/{corporation_id}/wallets/ | Returns a corporation&#39;s wallet balance
 *WarsApi* | [**GetWars**](docs/WarsApi.md#getwars) | **Get** /v1/wars/ | List wars
 *WarsApi* | [**GetWarsWarId**](docs/WarsApi.md#getwarswarid) | **Get** /v1/wars/{war_id}/ | Get war information
 *WarsApi* | [**GetWarsWarIdKillmails**](docs/WarsApi.md#getwarswaridkillmails) | **Get** /v1/wars/{war_id}/killmails/ | List kills for a war
@@ -215,6 +222,7 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdOpportunities200Ok](docs/GetCharactersCharacterIdOpportunities200Ok.md)
  - [GetCharactersCharacterIdOrders200Ok](docs/GetCharactersCharacterIdOrders200Ok.md)
  - [GetCharactersCharacterIdPlanets200Ok](docs/GetCharactersCharacterIdPlanets200Ok.md)
+ - [GetCharactersCharacterIdPlanetsPlanetIdContent](docs/GetCharactersCharacterIdPlanetsPlanetIdContent.md)
  - [GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails](docs/GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails.md)
  - [GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails](docs/GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails.md)
  - [GetCharactersCharacterIdPlanetsPlanetIdHead](docs/GetCharactersCharacterIdPlanetsPlanetIdHead.md)
@@ -223,7 +231,6 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdPlanetsPlanetIdOk](docs/GetCharactersCharacterIdPlanetsPlanetIdOk.md)
  - [GetCharactersCharacterIdPlanetsPlanetIdPin](docs/GetCharactersCharacterIdPlanetsPlanetIdPin.md)
  - [GetCharactersCharacterIdPlanetsPlanetIdRoute](docs/GetCharactersCharacterIdPlanetsPlanetIdRoute.md)
- - [GetCharactersCharacterIdPlanetsPlanetIdWaypoint](docs/GetCharactersCharacterIdPlanetsPlanetIdWaypoint.md)
  - [GetCharactersCharacterIdPortraitNotFound](docs/GetCharactersCharacterIdPortraitNotFound.md)
  - [GetCharactersCharacterIdPortraitOk](docs/GetCharactersCharacterIdPortraitOk.md)
  - [GetCharactersCharacterIdSearchOk](docs/GetCharactersCharacterIdSearchOk.md)
@@ -240,6 +247,7 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdIconsNotFound](docs/GetCorporationsCorporationIdIconsNotFound.md)
  - [GetCorporationsCorporationIdIconsOk](docs/GetCorporationsCorporationIdIconsOk.md)
  - [GetCorporationsCorporationIdMembers200Ok](docs/GetCorporationsCorporationIdMembers200Ok.md)
+ - [GetCorporationsCorporationIdMembertracking200Ok](docs/GetCorporationsCorporationIdMembertracking200Ok.md)
  - [GetCorporationsCorporationIdNotFound](docs/GetCorporationsCorporationIdNotFound.md)
  - [GetCorporationsCorporationIdOk](docs/GetCorporationsCorporationIdOk.md)
  - [GetCorporationsCorporationIdRoles200Ok](docs/GetCorporationsCorporationIdRoles200Ok.md)
@@ -247,6 +255,7 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdStructuresCurrentVul](docs/GetCorporationsCorporationIdStructuresCurrentVul.md)
  - [GetCorporationsCorporationIdStructuresNextVul](docs/GetCorporationsCorporationIdStructuresNextVul.md)
  - [GetCorporationsCorporationIdStructuresService](docs/GetCorporationsCorporationIdStructuresService.md)
+ - [GetCorporationsCorporationIdWallets200Ok](docs/GetCorporationsCorporationIdWallets200Ok.md)
  - [GetCorporationsNames200Ok](docs/GetCorporationsNames200Ok.md)
  - [GetDogmaAttributesAttributeIdNotFound](docs/GetDogmaAttributesAttributeIdNotFound.md)
  - [GetDogmaAttributesAttributeIdOk](docs/GetDogmaAttributesAttributeIdOk.md)
@@ -260,9 +269,37 @@ Class | Method | HTTP request | Description
  - [GetFleetsFleetIdWings200Ok](docs/GetFleetsFleetIdWings200Ok.md)
  - [GetFleetsFleetIdWingsNotFound](docs/GetFleetsFleetIdWingsNotFound.md)
  - [GetFleetsFleetIdWingsSquad](docs/GetFleetsFleetIdWingsSquad.md)
+ - [GetFwLeaderboardsActiveTotal](docs/GetFwLeaderboardsActiveTotal.md)
+ - [GetFwLeaderboardsActiveTotal1](docs/GetFwLeaderboardsActiveTotal1.md)
+ - [GetFwLeaderboardsCharactersActiveTotal](docs/GetFwLeaderboardsCharactersActiveTotal.md)
+ - [GetFwLeaderboardsCharactersActiveTotal1](docs/GetFwLeaderboardsCharactersActiveTotal1.md)
+ - [GetFwLeaderboardsCharactersKills](docs/GetFwLeaderboardsCharactersKills.md)
+ - [GetFwLeaderboardsCharactersLastWeek](docs/GetFwLeaderboardsCharactersLastWeek.md)
+ - [GetFwLeaderboardsCharactersLastWeek1](docs/GetFwLeaderboardsCharactersLastWeek1.md)
+ - [GetFwLeaderboardsCharactersOk](docs/GetFwLeaderboardsCharactersOk.md)
+ - [GetFwLeaderboardsCharactersVictoryPoints](docs/GetFwLeaderboardsCharactersVictoryPoints.md)
+ - [GetFwLeaderboardsCharactersYesterday](docs/GetFwLeaderboardsCharactersYesterday.md)
+ - [GetFwLeaderboardsCharactersYesterday1](docs/GetFwLeaderboardsCharactersYesterday1.md)
+ - [GetFwLeaderboardsCorporationsActiveTotal](docs/GetFwLeaderboardsCorporationsActiveTotal.md)
+ - [GetFwLeaderboardsCorporationsActiveTotal1](docs/GetFwLeaderboardsCorporationsActiveTotal1.md)
+ - [GetFwLeaderboardsCorporationsKills](docs/GetFwLeaderboardsCorporationsKills.md)
+ - [GetFwLeaderboardsCorporationsLastWeek](docs/GetFwLeaderboardsCorporationsLastWeek.md)
+ - [GetFwLeaderboardsCorporationsLastWeek1](docs/GetFwLeaderboardsCorporationsLastWeek1.md)
+ - [GetFwLeaderboardsCorporationsOk](docs/GetFwLeaderboardsCorporationsOk.md)
+ - [GetFwLeaderboardsCorporationsVictoryPoints](docs/GetFwLeaderboardsCorporationsVictoryPoints.md)
+ - [GetFwLeaderboardsCorporationsYesterday](docs/GetFwLeaderboardsCorporationsYesterday.md)
+ - [GetFwLeaderboardsCorporationsYesterday1](docs/GetFwLeaderboardsCorporationsYesterday1.md)
+ - [GetFwLeaderboardsKills](docs/GetFwLeaderboardsKills.md)
+ - [GetFwLeaderboardsLastWeek](docs/GetFwLeaderboardsLastWeek.md)
+ - [GetFwLeaderboardsLastWeek1](docs/GetFwLeaderboardsLastWeek1.md)
+ - [GetFwLeaderboardsOk](docs/GetFwLeaderboardsOk.md)
+ - [GetFwLeaderboardsVictoryPoints](docs/GetFwLeaderboardsVictoryPoints.md)
+ - [GetFwLeaderboardsYesterday](docs/GetFwLeaderboardsYesterday.md)
+ - [GetFwLeaderboardsYesterday1](docs/GetFwLeaderboardsYesterday1.md)
  - [GetFwStats200Ok](docs/GetFwStats200Ok.md)
  - [GetFwStatsKills](docs/GetFwStatsKills.md)
  - [GetFwStatsVictoryPoints](docs/GetFwStatsVictoryPoints.md)
+ - [GetFwSystems200Ok](docs/GetFwSystems200Ok.md)
  - [GetFwWars200Ok](docs/GetFwWars200Ok.md)
  - [GetIncursions200Ok](docs/GetIncursions200Ok.md)
  - [GetIndustryFacilities200Ok](docs/GetIndustryFacilities200Ok.md)
@@ -348,7 +385,7 @@ Class | Method | HTTP request | Description
  - [GetWarsWarIdUnprocessableEntity](docs/GetWarsWarIdUnprocessableEntity.md)
  - [InternalServerError](docs/InternalServerError.md)
  - [PostCharactersAffiliation200Ok](docs/PostCharactersAffiliation200Ok.md)
- - [PostCharactersAffiliationUnprocessableEntity](docs/PostCharactersAffiliationUnprocessableEntity.md)
+ - [PostCharactersAffiliationNotFound](docs/PostCharactersAffiliationNotFound.md)
  - [PostCharactersCharacterIdCspaCharacters](docs/PostCharactersCharacterIdCspaCharacters.md)
  - [PostCharactersCharacterIdCspaCreated](docs/PostCharactersCharacterIdCspaCreated.md)
  - [PostCharactersCharacterIdFittingsCreated](docs/PostCharactersCharacterIdFittingsCreated.md)
@@ -367,6 +404,8 @@ Class | Method | HTTP request | Description
  - [PostFleetsFleetIdWingsWingIdSquadsNotFound](docs/PostFleetsFleetIdWingsWingIdSquadsNotFound.md)
  - [PostUiOpenwindowNewmailNewMail](docs/PostUiOpenwindowNewmailNewMail.md)
  - [PostUiOpenwindowNewmailUnprocessableEntity](docs/PostUiOpenwindowNewmailUnprocessableEntity.md)
+ - [PostUniverseNames200Ok](docs/PostUniverseNames200Ok.md)
+ - [PostUniverseNamesNotFound](docs/PostUniverseNamesNotFound.md)
  - [PutCharactersCharacterIdCalendarEventIdResponse](docs/PutCharactersCharacterIdCalendarEventIdResponse.md)
  - [PutCharactersCharacterIdMailMailIdBadRequest](docs/PutCharactersCharacterIdMailMailIdBadRequest.md)
  - [PutCharactersCharacterIdMailMailIdContents](docs/PutCharactersCharacterIdMailMailIdContents.md)
@@ -412,6 +451,7 @@ Class | Method | HTTP request | Description
  - **esi-contracts.read_character_contracts.v1**: EVE SSO scope esi-contracts.read_character_contracts.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
  - **esi-corporations.read_structures.v1**: EVE SSO scope esi-corporations.read_structures.v1
+ - **esi-corporations.track_members.v1**: EVE SSO scope esi-corporations.track_members.v1
  - **esi-corporations.write_structures.v1**: EVE SSO scope esi-corporations.write_structures.v1
  - **esi-fittings.read_fittings.v1**: EVE SSO scope esi-fittings.read_fittings.v1
  - **esi-fittings.write_fittings.v1**: EVE SSO scope esi-fittings.write_fittings.v1
@@ -435,6 +475,7 @@ Class | Method | HTTP request | Description
  - **esi-ui.write_waypoint.v1**: EVE SSO scope esi-ui.write_waypoint.v1
  - **esi-universe.read_structures.v1**: EVE SSO scope esi-universe.read_structures.v1
  - **esi-wallet.read_character_wallet.v1**: EVE SSO scope esi-wallet.read_character_wallet.v1
+ - **esi-wallet.read_corporation_wallets.v1**: EVE SSO scope esi-wallet.read_corporation_wallets.v1
 
 Example:
 ```

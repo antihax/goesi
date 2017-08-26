@@ -132,7 +132,7 @@ func easyjson645b03b8DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetS
 				}
 				for !in.IsDelim(']') {
 					var v4 GetSovereigntyCampaignsParticipant
-					easyjson645b03b8DecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Participants = append(out.Participants, v4)
 					in.WantComma()
 				}
@@ -222,7 +222,7 @@ func easyjson645b03b8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson645b03b8EncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -276,59 +276,4 @@ func (v *GetSovereigntyCampaigns200Ok) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetSovereigntyCampaigns200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson645b03b8DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson645b03b8DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetSovereigntyCampaignsParticipant) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "alliance_id":
-			out.AllianceId = int32(in.Int32())
-		case "score":
-			out.Score = float32(in.Float32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson645b03b8EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetSovereigntyCampaignsParticipant) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"alliance_id\":")
-		out.Int32(int32(in.AllianceId))
-	}
-	if in.Score != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"score\":")
-		out.Float32(float32(in.Score))
-	}
-	out.RawByte('}')
 }

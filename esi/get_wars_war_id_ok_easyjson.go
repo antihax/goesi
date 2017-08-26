@@ -122,7 +122,7 @@ func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetW
 				}
 				for !in.IsDelim(']') {
 					var v4 GetWarsWarIdAlly
-					(v4).UnmarshalEasyJSON(in)
+					easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Allies = append(out.Allies, v4)
 					in.WantComma()
 				}
@@ -133,7 +133,7 @@ func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetW
 				in.AddError((out.Declared).UnmarshalJSON(data))
 			}
 		case "defender":
-			(out.Defender).UnmarshalEasyJSON(in)
+			easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi3(in, &out.Defender)
 		case "finished":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Finished).UnmarshalJSON(data))
@@ -188,7 +188,7 @@ func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi2(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -207,7 +207,7 @@ func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		first = false
 		out.RawString("\"defender\":")
-		(in.Defender).MarshalEasyJSON(out)
+		easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi3(out, in.Defender)
 	}
 	if true {
 		if !first {
@@ -282,4 +282,134 @@ func (v *GetWarsWarIdOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetWarsWarIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetWarsWarIdDefender) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		case "isk_destroyed":
+			out.IskDestroyed = float32(in.Float32())
+		case "ships_killed":
+			out.ShipsKilled = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetWarsWarIdDefender) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AllianceId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"alliance_id\":")
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.CorporationId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"corporation_id\":")
+		out.Int32(int32(in.CorporationId))
+	}
+	if in.IskDestroyed != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"isk_destroyed\":")
+		out.Float32(float32(in.IskDestroyed))
+	}
+	if in.ShipsKilled != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"ships_killed\":")
+		out.Int32(int32(in.ShipsKilled))
+	}
+	out.RawByte('}')
+}
+func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetWarsWarIdAlly) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetWarsWarIdAlly) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AllianceId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"alliance_id\":")
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.CorporationId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"corporation_id\":")
+		out.Int32(int32(in.CorporationId))
+	}
+	out.RawByte('}')
 }

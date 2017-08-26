@@ -5,7 +5,7 @@ All URIs are relative to *https://esi.tech.ccp.is*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCharactersCharacterIdPlanets**](PlanetaryInteractionApi.md#GetCharactersCharacterIdPlanets) | **Get** /v1/characters/{character_id}/planets/ | Get colonies
-[**GetCharactersCharacterIdPlanetsPlanetId**](PlanetaryInteractionApi.md#GetCharactersCharacterIdPlanetsPlanetId) | **Get** /v2/characters/{character_id}/planets/{planet_id}/ | Get colony layout
+[**GetCharactersCharacterIdPlanetsPlanetId**](PlanetaryInteractionApi.md#GetCharactersCharacterIdPlanetsPlanetId) | **Get** /v3/characters/{character_id}/planets/{planet_id}/ | Get colony layout
 [**GetUniverseSchematicsSchematicId**](PlanetaryInteractionApi.md#GetUniverseSchematicsSchematicId) | **Get** /v1/universe/schematics/{schematic_id}/ | Get schematic information
 
 

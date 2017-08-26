@@ -106,7 +106,7 @@ func easyjson9ad1a102DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 		case "name":
 			out.Name = string(in.String())
 		case "position":
-			easyjson9ad1a102DecodeGithubComAntihaxGoesiEsi2(in, &out.Position)
+			(out.Position).UnmarshalEasyJSON(in)
 		case "solar_system_id":
 			out.SolarSystemId = int32(in.Int32())
 		case "type_id":
@@ -139,7 +139,7 @@ func easyjson9ad1a102EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		first = false
 		out.RawString("\"position\":")
-		easyjson9ad1a102EncodeGithubComAntihaxGoesiEsi2(out, in.Position)
+		(in.Position).MarshalEasyJSON(out)
 	}
 	if in.SolarSystemId != 0 {
 		if !first {
@@ -182,69 +182,4 @@ func (v *GetUniverseStructuresStructureIdOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetUniverseStructuresStructureIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson9ad1a102DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson9ad1a102DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetUniverseStructuresStructureIdPosition) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "x":
-			out.X = float32(in.Float32())
-		case "y":
-			out.Y = float32(in.Float32())
-		case "z":
-			out.Z = float32(in.Float32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson9ad1a102EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetUniverseStructuresStructureIdPosition) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.X != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"x\":")
-		out.Float32(float32(in.X))
-	}
-	if in.Y != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"y\":")
-		out.Float32(float32(in.Y))
-	}
-	if in.Z != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"z\":")
-		out.Float32(float32(in.Z))
-	}
-	out.RawByte('}')
 }

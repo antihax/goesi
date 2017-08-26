@@ -22,13 +22,13 @@
 
 package esi
 
-/* A list of GetCharactersCharacterIdPlanetsPlanetIdWaypoint. */
+/* A list of GetFwLeaderboardsActiveTotal. */
 //easyjson:json
-type GetCharactersCharacterIdPlanetsPlanetIdWaypointList []GetCharactersCharacterIdPlanetsPlanetIdWaypoint
+type GetFwLeaderboardsActiveTotalList []GetFwLeaderboardsActiveTotal
 
-/* waypoint object */
+/* active_total object */
 //easyjson:json
-type GetCharactersCharacterIdPlanetsPlanetIdWaypoint struct {
-	Order int32 `json:"order,omitempty"`  /* order integer */
-	PinId int64 `json:"pin_id,omitempty"` /* pin_id integer */
+type GetFwLeaderboardsActiveTotal struct {
+	Amount    int32 `json:"amount,omitempty"`     /* Amount of kills */
+	FactionId int32 `json:"faction_id,omitempty"` /* faction_id integer */
 }

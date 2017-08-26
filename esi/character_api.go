@@ -1058,7 +1058,7 @@ func (a *CharacterApiService) GetCharactersNames(characterIds []int64, localVarO
 Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds
 
 
-@param characters The character IDs to fetch affiliations for
+@param characters The character IDs to fetch affiliations for. All characters must exist, or none will be returned.
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
     @param "userAgent" (string) Client identifier, takes precedence over headers

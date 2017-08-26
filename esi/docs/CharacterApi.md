@@ -461,7 +461,7 @@ Bulk lookup of character IDs to corporation, alliance and faction  ---  This rou
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-  **characters** | **[]int32**| The character IDs to fetch affiliations for | 
+  **characters** | **[]int32**| The character IDs to fetch affiliations for. All characters must exist, or none will be returned. | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -469,7 +469,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characters** | **[]int32**| The character IDs to fetch affiliations for | 
+ **characters** | **[]int32**| The character IDs to fetch affiliations for. All characters must exist, or none will be returned. | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

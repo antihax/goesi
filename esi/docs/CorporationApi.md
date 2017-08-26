@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**GetCorporationsCorporationIdAlliancehistory**](CorporationApi.md#GetCorporationsCorporationIdAlliancehistory) | **Get** /v2/corporations/{corporation_id}/alliancehistory/ | Get alliance history
 [**GetCorporationsCorporationIdIcons**](CorporationApi.md#GetCorporationsCorporationIdIcons) | **Get** /v1/corporations/{corporation_id}/icons/ | Get corporation icon
 [**GetCorporationsCorporationIdMembers**](CorporationApi.md#GetCorporationsCorporationIdMembers) | **Get** /v2/corporations/{corporation_id}/members/ | Get corporation members
+[**GetCorporationsCorporationIdMembertracking**](CorporationApi.md#GetCorporationsCorporationIdMembertracking) | **Get** /v1/corporations/{corporation_id}/membertracking/ | Get corporation members
 [**GetCorporationsCorporationIdRoles**](CorporationApi.md#GetCorporationsCorporationIdRoles) | **Get** /v1/corporations/{corporation_id}/roles/ | Get corporation member roles
 [**GetCorporationsCorporationIdStructures**](CorporationApi.md#GetCorporationsCorporationIdStructures) | **Get** /v1/corporations/{corporation_id}/structures/ | Get corporation structures
 [**GetCorporationsNames**](CorporationApi.md#GetCorporationsNames) | **Get** /v1/corporations/names/ | Get corporation names
@@ -157,6 +158,46 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]GetCorporationsCorporationIdMembers200Ok**](get_corporations_corporation_id_members_200_ok.md)
+
+### Authorization
+
+[evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCorporationsCorporationIdMembertracking**
+> []GetCorporationsCorporationIdMembertracking200Ok GetCorporationsCorporationIdMembertracking(ctx, corporationId, optional)
+Get corporation members
+
+Read the current list of members if the calling character is a member.  ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **corporationId** | **int32**| An EVE corporation ID | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **corporationId** | **int32**| An EVE corporation ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use if unable to set a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**[]GetCorporationsCorporationIdMembertracking200Ok**](get_corporations_corporation_id_membertracking_200_ok.md)
 
 ### Authorization
 

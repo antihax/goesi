@@ -437,7 +437,6 @@ Class | Method | HTTP request | Description
  - **esi-bookmarks.read_character_bookmarks.v1**: EVE SSO scope esi-bookmarks.read_character_bookmarks.v1
  - **esi-calendar.read_calendar_events.v1**: EVE SSO scope esi-calendar.read_calendar_events.v1
  - **esi-calendar.respond_calendar_events.v1**: EVE SSO scope esi-calendar.respond_calendar_events.v1
- - **esi-characters.character_notifications.v1**: EVE SSO scope esi-characters.character_notifications.v1
  - **esi-characters.read_agents_research.v1**: EVE SSO scope esi-characters.read_agents_research.v1
  - **esi-characters.read_blueprints.v1**: EVE SSO scope esi-characters.read_blueprints.v1
  - **esi-characters.read_chat_channels.v1**: EVE SSO scope esi-characters.read_chat_channels.v1
@@ -446,6 +445,7 @@ Class | Method | HTTP request | Description
  - **esi-characters.read_fatigue.v1**: EVE SSO scope esi-characters.read_fatigue.v1
  - **esi-characters.read_loyalty.v1**: EVE SSO scope esi-characters.read_loyalty.v1
  - **esi-characters.read_medals.v1**: EVE SSO scope esi-characters.read_medals.v1
+ - **esi-characters.read_notifications.v1**: EVE SSO scope esi-characters.read_notifications.v1
  - **esi-characters.read_opportunities.v1**: EVE SSO scope esi-characters.read_opportunities.v1
  - **esi-characters.read_standings.v1**: EVE SSO scope esi-characters.read_standings.v1
  - **esi-characters.write_contacts.v1**: EVE SSO scope esi-characters.write_contacts.v1

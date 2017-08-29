@@ -160,7 +160,7 @@ No authorization required
 > []GetFwSystems200Ok GetFwSystems(optional)
 Ownership of faction warfare systems
 
-An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 3600 seconds
+An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 1800 seconds
 
 ### Required Parameters
 

@@ -24,6 +24,7 @@ Class | Method | HTTP request | Description
 *CharacterApi* | [**GetCharactersCharacterIdCorporationhistory**](docs/CharacterApi.md#getcharacterscharacteridcorporationhistory) | **Get** /v1/characters/{character_id}/corporationhistory/ | Get corporation history
 *CharacterApi* | [**GetCharactersCharacterIdFatigue**](docs/CharacterApi.md#getcharacterscharacteridfatigue) | **Get** /v1/characters/{character_id}/fatigue/ | Get jump fatigue
 *CharacterApi* | [**GetCharactersCharacterIdMedals**](docs/CharacterApi.md#getcharacterscharacteridmedals) | **Get** /v1/characters/{character_id}/medals/ | Get medals
+*CharacterApi* | [**GetCharactersCharacterIdNotificationsContacts**](docs/CharacterApi.md#getcharacterscharacteridnotificationscontacts) | **Get** /v1/characters/{character_id}/notifications/contacts/ | Get new contact notifications
 *CharacterApi* | [**GetCharactersCharacterIdPortrait**](docs/CharacterApi.md#getcharacterscharacteridportrait) | **Get** /v2/characters/{character_id}/portrait/ | Get character portraits
 *CharacterApi* | [**GetCharactersCharacterIdRoles**](docs/CharacterApi.md#getcharacterscharacteridroles) | **Get** /v1/characters/{character_id}/roles/ | Get character corporation roles
 *CharacterApi* | [**GetCharactersCharacterIdStandings**](docs/CharacterApi.md#getcharacterscharacteridstandings) | **Get** /v1/characters/{character_id}/standings/ | Get standings
@@ -218,6 +219,7 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdMedals200Ok](docs/GetCharactersCharacterIdMedals200Ok.md)
  - [GetCharactersCharacterIdMedalsGraphic](docs/GetCharactersCharacterIdMedalsGraphic.md)
  - [GetCharactersCharacterIdNotFound](docs/GetCharactersCharacterIdNotFound.md)
+ - [GetCharactersCharacterIdNotificationsContacts200Ok](docs/GetCharactersCharacterIdNotificationsContacts200Ok.md)
  - [GetCharactersCharacterIdOk](docs/GetCharactersCharacterIdOk.md)
  - [GetCharactersCharacterIdOpportunities200Ok](docs/GetCharactersCharacterIdOpportunities200Ok.md)
  - [GetCharactersCharacterIdOrders200Ok](docs/GetCharactersCharacterIdOrders200Ok.md)
@@ -435,6 +437,7 @@ Class | Method | HTTP request | Description
  - **esi-bookmarks.read_character_bookmarks.v1**: EVE SSO scope esi-bookmarks.read_character_bookmarks.v1
  - **esi-calendar.read_calendar_events.v1**: EVE SSO scope esi-calendar.read_calendar_events.v1
  - **esi-calendar.respond_calendar_events.v1**: EVE SSO scope esi-calendar.respond_calendar_events.v1
+ - **esi-characters.character_notifications.v1**: EVE SSO scope esi-characters.character_notifications.v1
  - **esi-characters.read_agents_research.v1**: EVE SSO scope esi-characters.read_agents_research.v1
  - **esi-characters.read_blueprints.v1**: EVE SSO scope esi-characters.read_blueprints.v1
  - **esi-characters.read_chat_channels.v1**: EVE SSO scope esi-characters.read_chat_channels.v1

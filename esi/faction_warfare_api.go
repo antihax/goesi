@@ -380,7 +380,7 @@ func (a *FactionWarfareApiService) GetFwStats(localVarOptionals map[string]inter
 }
 
 /* FactionWarfareApiService Ownership of faction warfare systems
-An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 3600 seconds
+An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 1800 seconds
 
 
 @param optional (nil or map[string]interface{}) with one or more of:

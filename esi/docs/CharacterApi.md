@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**GetCharactersCharacterIdCorporationhistory**](CharacterApi.md#GetCharactersCharacterIdCorporationhistory) | **Get** /v1/characters/{character_id}/corporationhistory/ | Get corporation history
 [**GetCharactersCharacterIdFatigue**](CharacterApi.md#GetCharactersCharacterIdFatigue) | **Get** /v1/characters/{character_id}/fatigue/ | Get jump fatigue
 [**GetCharactersCharacterIdMedals**](CharacterApi.md#GetCharactersCharacterIdMedals) | **Get** /v1/characters/{character_id}/medals/ | Get medals
+[**GetCharactersCharacterIdNotificationsContacts**](CharacterApi.md#GetCharactersCharacterIdNotificationsContacts) | **Get** /v1/characters/{character_id}/notifications/contacts/ | Get new contact notifications
 [**GetCharactersCharacterIdPortrait**](CharacterApi.md#GetCharactersCharacterIdPortrait) | **Get** /v2/characters/{character_id}/portrait/ | Get character portraits
 [**GetCharactersCharacterIdRoles**](CharacterApi.md#GetCharactersCharacterIdRoles) | **Get** /v1/characters/{character_id}/roles/ | Get character corporation roles
 [**GetCharactersCharacterIdStandings**](CharacterApi.md#GetCharactersCharacterIdStandings) | **Get** /v1/characters/{character_id}/standings/ | Get standings
@@ -283,6 +284,46 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]GetCharactersCharacterIdMedals200Ok**](get_characters_character_id_medals_200_ok.md)
+
+### Authorization
+
+[evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCharactersCharacterIdNotificationsContacts**
+> []GetCharactersCharacterIdNotificationsContacts200Ok GetCharactersCharacterIdNotificationsContacts(ctx, characterId, optional)
+Get new contact notifications
+
+Return notifications about having been added to someone's contact list  ---  This route is cached for up to 600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **characterId** | **int32**| An EVE character ID | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **characterId** | **int32**| An EVE character ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use if unable to set a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**[]GetCharactersCharacterIdNotificationsContacts200Ok**](get_characters_character_id_notifications_contacts_200_ok.md)
 
 ### Authorization
 

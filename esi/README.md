@@ -83,6 +83,7 @@ Class | Method | HTTP request | Description
 *IndustryApi* | [**GetIndustrySystems**](docs/IndustryApi.md#getindustrysystems) | **Get** /v1/industry/systems/ | List solar system cost indices
 *InsuranceApi* | [**GetInsurancePrices**](docs/InsuranceApi.md#getinsuranceprices) | **Get** /v1/insurance/prices/ | List insurance levels
 *KillmailsApi* | [**GetCharactersCharacterIdKillmailsRecent**](docs/KillmailsApi.md#getcharacterscharacteridkillmailsrecent) | **Get** /v1/characters/{character_id}/killmails/recent/ | Get character kills and losses
+*KillmailsApi* | [**GetCorporationsCorporationIdKillmailsRecent**](docs/KillmailsApi.md#getcorporationscorporationidkillmailsrecent) | **Get** /v1/corporations/{corporation_id}/killmails/recent/ | Get corporation kills and losses
 *KillmailsApi* | [**GetKillmailsKillmailIdKillmailHash**](docs/KillmailsApi.md#getkillmailskillmailidkillmailhash) | **Get** /v1/killmails/{killmail_id}/{killmail_hash}/ | Get a single killmail
 *LocationApi* | [**GetCharactersCharacterIdLocation**](docs/LocationApi.md#getcharacterscharacteridlocation) | **Get** /v1/characters/{character_id}/location/ | Get character location
 *LocationApi* | [**GetCharactersCharacterIdOnline**](docs/LocationApi.md#getcharacterscharacteridonline) | **Get** /v1/characters/{character_id}/online/ | Get character online
@@ -249,6 +250,7 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdAlliancehistory200Ok](docs/GetCorporationsCorporationIdAlliancehistory200Ok.md)
  - [GetCorporationsCorporationIdIconsNotFound](docs/GetCorporationsCorporationIdIconsNotFound.md)
  - [GetCorporationsCorporationIdIconsOk](docs/GetCorporationsCorporationIdIconsOk.md)
+ - [GetCorporationsCorporationIdKillmailsRecent200Ok](docs/GetCorporationsCorporationIdKillmailsRecent200Ok.md)
  - [GetCorporationsCorporationIdMembers200Ok](docs/GetCorporationsCorporationIdMembers200Ok.md)
  - [GetCorporationsCorporationIdMembertracking200Ok](docs/GetCorporationsCorporationIdMembertracking200Ok.md)
  - [GetCorporationsCorporationIdNotFound](docs/GetCorporationsCorporationIdNotFound.md)
@@ -464,6 +466,7 @@ Class | Method | HTTP request | Description
  - **esi-fleets.read_fleet.v1**: EVE SSO scope esi-fleets.read_fleet.v1
  - **esi-fleets.write_fleet.v1**: EVE SSO scope esi-fleets.write_fleet.v1
  - **esi-industry.read_character_jobs.v1**: EVE SSO scope esi-industry.read_character_jobs.v1
+ - **esi-killmails.read_corporation_killmails.v1**: EVE SSO scope esi-killmails.read_corporation_killmails.v1
  - **esi-killmails.read_killmails.v1**: EVE SSO scope esi-killmails.read_killmails.v1
  - **esi-location.read_location.v1**: EVE SSO scope esi-location.read_location.v1
  - **esi-location.read_online.v1**: EVE SSO scope esi-location.read_online.v1

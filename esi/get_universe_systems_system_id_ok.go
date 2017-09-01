@@ -37,5 +37,6 @@ type GetUniverseSystemsSystemIdOk struct {
 	SecurityStatus  float32                            `json:"security_status,omitempty"` /* security_status number */
 	StarId          int32                              `json:"star_id,omitempty"`         /* star_id integer */
 	Stargates       []int32                            `json:"stargates,omitempty"`       /* stargates array */
+	Stations        []int32                            `json:"stations,omitempty"`        /* stations array */
 	SystemId        int32                              `json:"system_id,omitempty"`       /* system_id integer */
 }

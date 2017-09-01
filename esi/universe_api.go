@@ -2103,7 +2103,7 @@ func (a *UniverseApiService) GetUniverseSystemsSystemId(systemId int32, localVar
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/universe/systems/{system_id}/"
+	localVarPath := a.client.basePath + "/v3/universe/systems/{system_id}/"
 	localVarPath = strings.Replace(localVarPath, "{"+"system_id"+"}", fmt.Sprintf("%v", systemId), -1)
 
 	localVarHeaderParams := make(map[string]string)

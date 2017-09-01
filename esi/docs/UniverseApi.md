@@ -27,7 +27,7 @@ Method | HTTP request | Description
 [**GetUniverseSystemJumps**](UniverseApi.md#GetUniverseSystemJumps) | **Get** /v1/universe/system_jumps/ | Get system jumps
 [**GetUniverseSystemKills**](UniverseApi.md#GetUniverseSystemKills) | **Get** /v2/universe/system_kills/ | Get system kills
 [**GetUniverseSystems**](UniverseApi.md#GetUniverseSystems) | **Get** /v1/universe/systems/ | Get solar systems
-[**GetUniverseSystemsSystemId**](UniverseApi.md#GetUniverseSystemsSystemId) | **Get** /v2/universe/systems/{system_id}/ | Get solar system information
+[**GetUniverseSystemsSystemId**](UniverseApi.md#GetUniverseSystemsSystemId) | **Get** /v3/universe/systems/{system_id}/ | Get solar system information
 [**GetUniverseTypes**](UniverseApi.md#GetUniverseTypes) | **Get** /v1/universe/types/ | Get types
 [**GetUniverseTypesTypeId**](UniverseApi.md#GetUniverseTypesTypeId) | **Get** /v2/universe/types/{type_id}/ | Get type information
 [**PostUniverseNames**](UniverseApi.md#PostUniverseNames) | **Post** /v2/universe/names/ | Get names and categories for a set of ID&#39;s

@@ -161,6 +161,29 @@ func easyjsonB8c84fd0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
+		case "stations":
+			if in.IsNull() {
+				in.Skip()
+				out.Stations = nil
+			} else {
+				in.Delim('[')
+				if out.Stations == nil {
+					if !in.IsDelim(']') {
+						out.Stations = make([]int32, 0, 16)
+					} else {
+						out.Stations = []int32{}
+					}
+				} else {
+					out.Stations = (out.Stations)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v6 int32
+					v6 = int32(in.Int32())
+					out.Stations = append(out.Stations, v6)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
 		case "system_id":
 			out.SystemId = int32(in.Int32())
 		default:
@@ -203,11 +226,11 @@ func easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v6, v7 := range in.Planets {
-				if v6 > 0 {
+			for v7, v8 := range in.Planets {
+				if v7 > 0 {
 					out.RawByte(',')
 				}
-				(v7).MarshalEasyJSON(out)
+				(v8).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -254,11 +277,30 @@ func easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v8, v9 := range in.Stargates {
-				if v8 > 0 {
+			for v9, v10 := range in.Stargates {
+				if v9 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v9))
+				out.Int32(int32(v10))
+			}
+			out.RawByte(']')
+		}
+	}
+	if len(in.Stations) != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"stations\":")
+		if in.Stations == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+			out.RawString("null")
+		} else {
+			out.RawByte('[')
+			for v11, v12 := range in.Stations {
+				if v11 > 0 {
+					out.RawByte(',')
+				}
+				out.Int32(int32(v12))
 			}
 			out.RawByte(']')
 		}

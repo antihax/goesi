@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **SecurityClass** | **string** | security_class string | [optional] [default to null]
 **SecurityStatus** | **float32** | security_status number | [default to null]
 **StarId** | **int32** | star_id integer | [default to null]
-**Stargates** | **[]int32** | stargates array | [default to null]
+**Stargates** | **[]int32** | stargates array | [optional] [default to null]
+**Stations** | **[]int32** | stations array | [optional] [default to null]
 **SystemId** | **int32** | system_id integer | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

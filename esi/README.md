@@ -147,7 +147,7 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseSystemJumps**](docs/UniverseApi.md#getuniversesystemjumps) | **Get** /v1/universe/system_jumps/ | Get system jumps
 *UniverseApi* | [**GetUniverseSystemKills**](docs/UniverseApi.md#getuniversesystemkills) | **Get** /v2/universe/system_kills/ | Get system kills
 *UniverseApi* | [**GetUniverseSystems**](docs/UniverseApi.md#getuniversesystems) | **Get** /v1/universe/systems/ | Get solar systems
-*UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /v2/universe/systems/{system_id}/ | Get solar system information
+*UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /v3/universe/systems/{system_id}/ | Get solar system information
 *UniverseApi* | [**GetUniverseTypes**](docs/UniverseApi.md#getuniversetypes) | **Get** /v1/universe/types/ | Get types
 *UniverseApi* | [**GetUniverseTypesTypeId**](docs/UniverseApi.md#getuniversetypestypeid) | **Get** /v2/universe/types/{type_id}/ | Get type information
 *UniverseApi* | [**PostUniverseNames**](docs/UniverseApi.md#postuniversenames) | **Post** /v2/universe/names/ | Get names and categories for a set of ID&#39;s

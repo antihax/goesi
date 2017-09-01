@@ -397,8 +397,8 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 	return successPayload, localVarHttpResponse, err
 }
 
-/* CorporationApiService Get corporation members
-Read the current list of members if the calling character is a member.  ---  This route is cached for up to 3600 seconds
+/* CorporationApiService Track corporation members
+Returns additional information about a corporation&#39;s members which helps tracking their activities  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID

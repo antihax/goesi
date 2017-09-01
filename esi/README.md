@@ -45,7 +45,7 @@ Class | Method | HTTP request | Description
 *CorporationApi* | [**GetCorporationsCorporationIdAlliancehistory**](docs/CorporationApi.md#getcorporationscorporationidalliancehistory) | **Get** /v2/corporations/{corporation_id}/alliancehistory/ | Get alliance history
 *CorporationApi* | [**GetCorporationsCorporationIdIcons**](docs/CorporationApi.md#getcorporationscorporationidicons) | **Get** /v1/corporations/{corporation_id}/icons/ | Get corporation icon
 *CorporationApi* | [**GetCorporationsCorporationIdMembers**](docs/CorporationApi.md#getcorporationscorporationidmembers) | **Get** /v2/corporations/{corporation_id}/members/ | Get corporation members
-*CorporationApi* | [**GetCorporationsCorporationIdMembertracking**](docs/CorporationApi.md#getcorporationscorporationidmembertracking) | **Get** /v1/corporations/{corporation_id}/membertracking/ | Get corporation members
+*CorporationApi* | [**GetCorporationsCorporationIdMembertracking**](docs/CorporationApi.md#getcorporationscorporationidmembertracking) | **Get** /v1/corporations/{corporation_id}/membertracking/ | Track corporation members
 *CorporationApi* | [**GetCorporationsCorporationIdRoles**](docs/CorporationApi.md#getcorporationscorporationidroles) | **Get** /v1/corporations/{corporation_id}/roles/ | Get corporation member roles
 *CorporationApi* | [**GetCorporationsCorporationIdStructures**](docs/CorporationApi.md#getcorporationscorporationidstructures) | **Get** /v1/corporations/{corporation_id}/structures/ | Get corporation structures
 *CorporationApi* | [**GetCorporationsNames**](docs/CorporationApi.md#getcorporationsnames) | **Get** /v1/corporations/names/ | Get corporation names

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**GetCorporationsCorporationIdAlliancehistory**](CorporationApi.md#GetCorporationsCorporationIdAlliancehistory) | **Get** /v2/corporations/{corporation_id}/alliancehistory/ | Get alliance history
 [**GetCorporationsCorporationIdIcons**](CorporationApi.md#GetCorporationsCorporationIdIcons) | **Get** /v1/corporations/{corporation_id}/icons/ | Get corporation icon
 [**GetCorporationsCorporationIdMembers**](CorporationApi.md#GetCorporationsCorporationIdMembers) | **Get** /v2/corporations/{corporation_id}/members/ | Get corporation members
-[**GetCorporationsCorporationIdMembertracking**](CorporationApi.md#GetCorporationsCorporationIdMembertracking) | **Get** /v1/corporations/{corporation_id}/membertracking/ | Get corporation members
+[**GetCorporationsCorporationIdMembertracking**](CorporationApi.md#GetCorporationsCorporationIdMembertracking) | **Get** /v1/corporations/{corporation_id}/membertracking/ | Track corporation members
 [**GetCorporationsCorporationIdRoles**](CorporationApi.md#GetCorporationsCorporationIdRoles) | **Get** /v1/corporations/{corporation_id}/roles/ | Get corporation member roles
 [**GetCorporationsCorporationIdStructures**](CorporationApi.md#GetCorporationsCorporationIdStructures) | **Get** /v1/corporations/{corporation_id}/structures/ | Get corporation structures
 [**GetCorporationsNames**](CorporationApi.md#GetCorporationsNames) | **Get** /v1/corporations/names/ | Get corporation names
@@ -172,9 +172,9 @@ Name | Type | Description  | Notes
 
 # **GetCorporationsCorporationIdMembertracking**
 > []GetCorporationsCorporationIdMembertracking200Ok GetCorporationsCorporationIdMembertracking(ctx, corporationId, optional)
-Get corporation members
+Track corporation members
 
-Read the current list of members if the calling character is a member.  ---  This route is cached for up to 3600 seconds
+Returns additional information about a corporation's members which helps tracking their activities  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

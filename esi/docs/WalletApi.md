@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**GetCharactersCharacterIdWalletJournal**](WalletApi.md#GetCharactersCharacterIdWalletJournal) | **Get** /v1/characters/{character_id}/wallet/journal/ | Get character wallet journal
 [**GetCharactersCharacterIdWalletTransactions**](WalletApi.md#GetCharactersCharacterIdWalletTransactions) | **Get** /v1/characters/{character_id}/wallet/transactions/ | Get wallet transactions
 [**GetCorporationsCorporationIdWallets**](WalletApi.md#GetCorporationsCorporationIdWallets) | **Get** /v1/corporations/{corporation_id}/wallets/ | Returns a corporation&#39;s wallet balance
-[**GetCorporationsCorporationIdWalletsDivisionJournal**](WalletApi.md#GetCorporationsCorporationIdWalletsDivisionJournal) | **Get** /v1/corporations/{corporation_id}/wallets/{division}/journal/ | Get character wallet journal
+[**GetCorporationsCorporationIdWalletsDivisionJournal**](WalletApi.md#GetCorporationsCorporationIdWalletsDivisionJournal) | **Get** /v1/corporations/{corporation_id}/wallets/{division}/journal/ | Get corporation wallet journal
 
 
 # **GetCharactersCharacterIdWallet**
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 # **GetCorporationsCorporationIdWalletsDivisionJournal**
 > []GetCorporationsCorporationIdWalletsDivisionJournal200Ok GetCorporationsCorporationIdWalletsDivisionJournal(ctx, corporationId, division, optional)
-Get character wallet journal
+Get corporation wallet journal
 
 Retrieve corporation wallet journal  ---  This route is cached for up to 300 seconds
 

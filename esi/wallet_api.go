@@ -432,7 +432,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWallets(ctx context.Conte
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WalletApiService Get character wallet journal
+/* WalletApiService Get corporation wallet journal
 Retrieve corporation wallet journal  ---  This route is cached for up to 300 seconds
 
 * @param ctx context.Context Authentication Context

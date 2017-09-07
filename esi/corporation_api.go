@@ -216,6 +216,100 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(corp
 	return successPayload, localVarHttpResponse, err
 }
 
+/* CorporationApiService Get corporation divisions
+Return corporation hangar and wallet division names, only show if a division is not using the default name  ---  This route is cached for up to 3600 seconds
+
+* @param ctx context.Context Authentication Context
+@param corporationId An EVE corporation ID
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "datasource" (string) The server name you would like data from
+    @param "token" (string) Access token to use if unable to set a header
+    @param "userAgent" (string) Client identifier, takes precedence over headers
+    @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
+@return GetCorporationsCorporationIdDivisionsOk*/
+func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx context.Context, corporationId int32, localVarOptionals map[string]interface{}) (GetCorporationsCorporationIdDivisionsOk, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCorporationsCorporationIdDivisionsOk
+	)
+
+	// create path and map variables
+	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/divisions/"
+	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["xUserAgent"], "string", "xUserAgent"); err != nil {
+		return successPayload, nil, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
+		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
+		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
+	}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["xUserAgent"].(string); localVarOk {
+		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
+	}
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
 /* CorporationApiService Get corporation icon
 Get the icon urls for a corporation  ---  This route is cached for up to 3600 seconds
 
@@ -391,6 +485,100 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
 	}
 	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
+/* CorporationApiService Get corporation member limit
+Return a corporation&#39;s member limit, not including CEO himself  ---  This route is cached for up to 3600 seconds
+
+* @param ctx context.Context Authentication Context
+@param corporationId An EVE corporation ID
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "datasource" (string) The server name you would like data from
+    @param "token" (string) Access token to use if unable to set a header
+    @param "userAgent" (string) Client identifier, takes precedence over headers
+    @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
+@return int32*/
+func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx context.Context, corporationId int32, localVarOptionals map[string]interface{}) (int32, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     int32
+	)
+
+	// create path and map variables
+	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/members/limit/"
+	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["userAgent"], "string", "userAgent"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["xUserAgent"], "string", "xUserAgent"); err != nil {
+		return successPayload, nil, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
+		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
+		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["userAgent"].(string); localVarOk {
+		localVarQueryParams.Add("user_agent", parameterToString(localVarTempParam, ""))
+	}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["xUserAgent"].(string); localVarOk {
+		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		return successPayload, localVarHttpResponse, reportError(localVarHttpResponse.Status)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

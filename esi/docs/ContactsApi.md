@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**DeleteCharactersCharacterIdContacts**](ContactsApi.md#DeleteCharactersCharacterIdContacts) | **Delete** /v1/characters/{character_id}/contacts/ | Delete contacts
 [**GetCharactersCharacterIdContacts**](ContactsApi.md#GetCharactersCharacterIdContacts) | **Get** /v1/characters/{character_id}/contacts/ | Get contacts
 [**GetCharactersCharacterIdContactsLabels**](ContactsApi.md#GetCharactersCharacterIdContactsLabels) | **Get** /v1/characters/{character_id}/contacts/labels/ | Get contact labels
+[**GetCorporationsCorporationIdContacts**](ContactsApi.md#GetCorporationsCorporationIdContacts) | **Get** /v1/corporations/{corporation_id}/contacts/ | Get corporation contacts
 [**PostCharactersCharacterIdContacts**](ContactsApi.md#PostCharactersCharacterIdContacts) | **Post** /v1/characters/{character_id}/contacts/ | Add contacts
 [**PutCharactersCharacterIdContacts**](ContactsApi.md#PutCharactersCharacterIdContacts) | **Put** /v1/characters/{character_id}/contacts/ | Edit contacts
 
@@ -122,6 +123,47 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]GetCharactersCharacterIdContactsLabels200Ok**](get_characters_character_id_contacts_labels_200_ok.md)
+
+### Authorization
+
+[evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCorporationsCorporationIdContacts**
+> []GetCorporationsCorporationIdContacts200Ok GetCorporationsCorporationIdContacts(ctx, corporationId, optional)
+Get corporation contacts
+
+Return contacts of a corporation  ---  This route is cached for up to 300 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **corporationId** | **int32**| An EVE corporation ID | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **corporationId** | **int32**| An EVE corporation ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **page** | **int32**| Which page of results to return | [default to 1]
+ **token** | **string**| Access token to use if unable to set a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**[]GetCorporationsCorporationIdContacts200Ok**](get_corporations_corporation_id_contacts_200_ok.md)
 
 ### Authorization
 

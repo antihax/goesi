@@ -36,6 +36,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**DeleteCharactersCharacterIdContacts**](docs/ContactsApi.md#deletecharacterscharacteridcontacts) | **Delete** /v1/characters/{character_id}/contacts/ | Delete contacts
 *ContactsApi* | [**GetCharactersCharacterIdContacts**](docs/ContactsApi.md#getcharacterscharacteridcontacts) | **Get** /v1/characters/{character_id}/contacts/ | Get contacts
 *ContactsApi* | [**GetCharactersCharacterIdContactsLabels**](docs/ContactsApi.md#getcharacterscharacteridcontactslabels) | **Get** /v1/characters/{character_id}/contacts/labels/ | Get contact labels
+*ContactsApi* | [**GetCorporationsCorporationIdContacts**](docs/ContactsApi.md#getcorporationscorporationidcontacts) | **Get** /v1/corporations/{corporation_id}/contacts/ | Get corporation contacts
 *ContactsApi* | [**PostCharactersCharacterIdContacts**](docs/ContactsApi.md#postcharacterscharacteridcontacts) | **Post** /v1/characters/{character_id}/contacts/ | Add contacts
 *ContactsApi* | [**PutCharactersCharacterIdContacts**](docs/ContactsApi.md#putcharacterscharacteridcontacts) | **Put** /v1/characters/{character_id}/contacts/ | Edit contacts
 *ContractsApi* | [**GetCharactersCharacterIdContracts**](docs/ContractsApi.md#getcharacterscharacteridcontracts) | **Get** /v1/characters/{character_id}/contracts/ | Get contracts
@@ -43,8 +44,10 @@ Class | Method | HTTP request | Description
 *ContractsApi* | [**GetCharactersCharacterIdContractsContractIdItems**](docs/ContractsApi.md#getcharacterscharacteridcontractscontractiditems) | **Get** /v1/characters/{character_id}/contracts/{contract_id}/items/ | Get contract items
 *CorporationApi* | [**GetCorporationsCorporationId**](docs/CorporationApi.md#getcorporationscorporationid) | **Get** /v3/corporations/{corporation_id}/ | Get corporation information
 *CorporationApi* | [**GetCorporationsCorporationIdAlliancehistory**](docs/CorporationApi.md#getcorporationscorporationidalliancehistory) | **Get** /v2/corporations/{corporation_id}/alliancehistory/ | Get alliance history
+*CorporationApi* | [**GetCorporationsCorporationIdDivisions**](docs/CorporationApi.md#getcorporationscorporationiddivisions) | **Get** /v1/corporations/{corporation_id}/divisions/ | Get corporation divisions
 *CorporationApi* | [**GetCorporationsCorporationIdIcons**](docs/CorporationApi.md#getcorporationscorporationidicons) | **Get** /v1/corporations/{corporation_id}/icons/ | Get corporation icon
 *CorporationApi* | [**GetCorporationsCorporationIdMembers**](docs/CorporationApi.md#getcorporationscorporationidmembers) | **Get** /v2/corporations/{corporation_id}/members/ | Get corporation members
+*CorporationApi* | [**GetCorporationsCorporationIdMembersLimit**](docs/CorporationApi.md#getcorporationscorporationidmemberslimit) | **Get** /v1/corporations/{corporation_id}/members/limit/ | Get corporation member limit
 *CorporationApi* | [**GetCorporationsCorporationIdMembertracking**](docs/CorporationApi.md#getcorporationscorporationidmembertracking) | **Get** /v1/corporations/{corporation_id}/membertracking/ | Track corporation members
 *CorporationApi* | [**GetCorporationsCorporationIdRoles**](docs/CorporationApi.md#getcorporationscorporationidroles) | **Get** /v1/corporations/{corporation_id}/roles/ | Get corporation member roles
 *CorporationApi* | [**GetCorporationsCorporationIdStructures**](docs/CorporationApi.md#getcorporationscorporationidstructures) | **Get** /v1/corporations/{corporation_id}/structures/ | Get corporation structures
@@ -105,6 +108,7 @@ Class | Method | HTTP request | Description
 *MarketApi* | [**GetMarketsPrices**](docs/MarketApi.md#getmarketsprices) | **Get** /v1/markets/prices/ | List market prices
 *MarketApi* | [**GetMarketsRegionIdHistory**](docs/MarketApi.md#getmarketsregionidhistory) | **Get** /v1/markets/{region_id}/history/ | List historical market statistics in a region
 *MarketApi* | [**GetMarketsRegionIdOrders**](docs/MarketApi.md#getmarketsregionidorders) | **Get** /v1/markets/{region_id}/orders/ | List orders in a region
+*MarketApi* | [**GetMarketsRegionIdTypes**](docs/MarketApi.md#getmarketsregionidtypes) | **Get** /v1/markets/{region_id}/types/ | List type IDs relevant to a market
 *MarketApi* | [**GetMarketsStructuresStructureId**](docs/MarketApi.md#getmarketsstructuresstructureid) | **Get** /v1/markets/structures/{structure_id}/ | List orders in a structure
 *OpportunitiesApi* | [**GetCharactersCharacterIdOpportunities**](docs/OpportunitiesApi.md#getcharacterscharacteridopportunities) | **Get** /v1/characters/{character_id}/opportunities/ | Get a character&#39;s completed tasks
 *OpportunitiesApi* | [**GetOpportunitiesGroups**](docs/OpportunitiesApi.md#getopportunitiesgroups) | **Get** /v1/opportunities/groups/ | Get opportunities groups
@@ -248,6 +252,10 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdWalletTransactions200Ok](docs/GetCharactersCharacterIdWalletTransactions200Ok.md)
  - [GetCharactersNames200Ok](docs/GetCharactersNames200Ok.md)
  - [GetCorporationsCorporationIdAlliancehistory200Ok](docs/GetCorporationsCorporationIdAlliancehistory200Ok.md)
+ - [GetCorporationsCorporationIdContacts200Ok](docs/GetCorporationsCorporationIdContacts200Ok.md)
+ - [GetCorporationsCorporationIdDivisionsHangar](docs/GetCorporationsCorporationIdDivisionsHangar.md)
+ - [GetCorporationsCorporationIdDivisionsOk](docs/GetCorporationsCorporationIdDivisionsOk.md)
+ - [GetCorporationsCorporationIdDivisionsWallet](docs/GetCorporationsCorporationIdDivisionsWallet.md)
  - [GetCorporationsCorporationIdIconsNotFound](docs/GetCorporationsCorporationIdIconsNotFound.md)
  - [GetCorporationsCorporationIdIconsOk](docs/GetCorporationsCorporationIdIconsOk.md)
  - [GetCorporationsCorporationIdKillmailsRecent200Ok](docs/GetCorporationsCorporationIdKillmailsRecent200Ok.md)
@@ -457,7 +465,9 @@ Class | Method | HTTP request | Description
  - **esi-clones.read_clones.v1**: EVE SSO scope esi-clones.read_clones.v1
  - **esi-clones.read_implants.v1**: EVE SSO scope esi-clones.read_implants.v1
  - **esi-contracts.read_character_contracts.v1**: EVE SSO scope esi-contracts.read_character_contracts.v1
+ - **esi-corporations.read_contacts.v1**: EVE SSO scope esi-corporations.read_contacts.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
+ - **esi-corporations.read_divisions.v1**: EVE SSO scope esi-corporations.read_divisions.v1
  - **esi-corporations.read_structures.v1**: EVE SSO scope esi-corporations.read_structures.v1
  - **esi-corporations.track_members.v1**: EVE SSO scope esi-corporations.track_members.v1
  - **esi-corporations.write_structures.v1**: EVE SSO scope esi-corporations.write_structures.v1

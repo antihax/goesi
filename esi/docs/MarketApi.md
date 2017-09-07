@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**GetMarketsPrices**](MarketApi.md#GetMarketsPrices) | **Get** /v1/markets/prices/ | List market prices
 [**GetMarketsRegionIdHistory**](MarketApi.md#GetMarketsRegionIdHistory) | **Get** /v1/markets/{region_id}/history/ | List historical market statistics in a region
 [**GetMarketsRegionIdOrders**](MarketApi.md#GetMarketsRegionIdOrders) | **Get** /v1/markets/{region_id}/orders/ | List orders in a region
+[**GetMarketsRegionIdTypes**](MarketApi.md#GetMarketsRegionIdTypes) | **Get** /v1/markets/{region_id}/types/ | List type IDs relevant to a market
 [**GetMarketsStructuresStructureId**](MarketApi.md#GetMarketsStructuresStructureId) | **Get** /v1/markets/structures/{structure_id}/ | List orders in a structure
 
 
@@ -234,6 +235,45 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]GetMarketsRegionIdOrders200Ok**](get_markets_region_id_orders_200_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetMarketsRegionIdTypes**
+> []int32 GetMarketsRegionIdTypes(regionId, optional)
+List type IDs relevant to a market
+
+Return a list of type IDs that have active orders in the region, for efficient market indexing.  ---  This route is cached for up to 600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+  **regionId** | **int32**| Return statistics in this region | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **regionId** | **int32**| Return statistics in this region | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **page** | **int32**| Which page of results to return | [default to 1]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+**[]int32**
 
 ### Authorization
 

@@ -42,7 +42,7 @@ var (
 type LoyaltyApiService service
 
 /* LoyaltyApiService Get loyalty points
-Return a list of loyalty points for all corporations the character has worked for  ---
+Return a list of loyalty points for all corporations the character has worked for  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID

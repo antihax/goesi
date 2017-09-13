@@ -12,7 +12,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdLoyaltyPoints200Ok GetCharactersCharacterIdLoyaltyPoints(ctx, characterId, optional)
 Get loyalty points
 
-Return a list of loyalty points for all corporations the character has worked for  --- 
+Return a list of loyalty points for all corporations the character has worked for  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

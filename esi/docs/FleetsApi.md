@@ -29,7 +29,7 @@ Kick a fleet member  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
   **memberId** | **int32**| The character ID of a member in this fleet | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -71,7 +71,7 @@ Delete a fleet squad, only empty squads can be deleted  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
   **squadId** | **int64**| The squad to delete | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -113,7 +113,7 @@ Delete a fleet wing, only empty wings can be deleted. The wing may contain squad
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
   **wingId** | **int64**| The wing to delete | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -155,7 +155,7 @@ Return details about a fleet  ---  This route is cached for up to 5 seconds
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -195,7 +195,7 @@ Return information about fleet members  ---  This route is cached for up to 5 se
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -236,7 +236,7 @@ Return information about wings in a fleet  ---  This route is cached for up to 5
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -271,13 +271,13 @@ Name | Type | Description  | Notes
 > PostFleetsFleetIdMembers(ctx, fleetId, invitation, optional)
 Create fleet invitation
 
-Invite a character into the fleet, if a character has a CSPA charge set, it is not possible to invite them to the fleet using ESI  --- 
+Invite a character into the fleet. If a character has a CSPA charge set it is not possible to invite them to the fleet using ESI  --- 
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
   **invitation** | [**PostFleetsFleetIdMembersInvitation**](PostFleetsFleetIdMembersInvitation.md)| Details of the invitation | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -319,7 +319,7 @@ Create a new wing in a fleet  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -359,7 +359,7 @@ Create a new squad in a fleet  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
   **wingId** | **int64**| The wing_id to create squad in | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -401,7 +401,7 @@ Update settings about a fleet  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
   **newSettings** | [**PutFleetsFleetIdNewSettings**](PutFleetsFleetIdNewSettings.md)| What to update for this fleet | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -443,7 +443,7 @@ Move a fleet member around  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
   **memberId** | **int32**| The character ID of a member in this fleet | 
   **movement** | [**PutFleetsFleetIdMembersMemberIdMovement**](PutFleetsFleetIdMembersMemberIdMovement.md)| Details of the invitation | 
@@ -487,7 +487,7 @@ Rename a fleet squad  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
   **naming** | [**PutFleetsFleetIdSquadsSquadIdNaming**](PutFleetsFleetIdSquadsSquadIdNaming.md)| New name of the squad | 
   **squadId** | **int64**| The squad to rename | 
@@ -531,7 +531,7 @@ Rename a fleet wing  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **fleetId** | **int64**| ID for a fleet | 
   **naming** | [**PutFleetsFleetIdWingsWingIdNaming**](PutFleetsFleetIdWingsWingIdNaming.md)| New name of the wing | 
   **wingId** | **int64**| The wing to rename | 

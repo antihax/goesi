@@ -22,7 +22,7 @@ Bulk delete contacts  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
   **contactIds** | **[]int32**| A list of contacts to delete | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -64,7 +64,7 @@ Return contacts of a character  ---  This route is cached for up to 300 seconds
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -105,7 +105,7 @@ Return custom labels for contacts the character defined  ---  This route is cach
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -145,7 +145,7 @@ Return contacts of a corporation  ---  This route is cached for up to 300 second
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **corporationId** | **int32**| An EVE corporation ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -186,7 +186,7 @@ Bulk add contacts with same settings  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
   **contactIds** | **[]int32**| A list of contacts to add | 
   **standing** | **float32**| Standing for the new contact | 
@@ -232,7 +232,7 @@ Bulk edit contacts with same settings  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
   **contactIds** | **[]int32**| A list of contacts to edit | 
   **standing** | **float32**| Standing for the contact | 

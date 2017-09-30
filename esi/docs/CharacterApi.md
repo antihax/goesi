@@ -31,6 +31,7 @@ Public information about a character  ---  This route is cached for up to 3600 s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -69,7 +70,7 @@ Return a list of agents research information for a character. The formula for fi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -109,7 +110,7 @@ Return a list of blueprints the character has  ---  This route is cached for up 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -143,13 +144,13 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdChatChannels200Ok GetCharactersCharacterIdChatChannels(ctx, characterId, optional)
 Get chat channels
 
-Return chat channels that a character is the owner or an operator of  ---  This route is cached for up to 300 seconds
+Return chat channels that a character is the owner or operator of  ---  This route is cached for up to 300 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -189,6 +190,7 @@ Get a list of all the corporations a character has been a member of  ---  This r
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -227,7 +229,7 @@ Return a character's jump activation and fatigue information  ---  This route is
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -267,7 +269,7 @@ Return a list of medals the character has  ---  This route is cached for up to 3
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -307,7 +309,7 @@ Return character notifications  ---  This route is cached for up to 1800 seconds
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -347,7 +349,7 @@ Return notifications about having been added to someone's contact list  ---  Thi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -387,6 +389,7 @@ Get portrait urls for a character  ---  This route is cached for up to 3600 seco
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -425,7 +428,7 @@ Returns a character's corporation roles  ---  This route is cached for up to 360
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -465,7 +468,7 @@ Return character standings from agents, NPC corporations, and factions  ---  Thi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -505,6 +508,7 @@ Resolve a set of character IDs to character names  ---  This route is cached for
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterIds** | [**[]int64**](int64.md)| A comma separated list of character IDs | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -543,6 +547,7 @@ Bulk lookup of character IDs to corporation, alliance and faction  ---  This rou
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characters** | **[]int32**| The character IDs to fetch affiliations for. All characters must exist, or none will be returned. | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -581,7 +586,7 @@ Takes a source character ID in the url and a set of target character ID's in the
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
   **characters** | [**PostCharactersCharacterIdCspaCharacters**](PostCharactersCharacterIdCspaCharacters.md)| The target characters to calculate the charge for | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters

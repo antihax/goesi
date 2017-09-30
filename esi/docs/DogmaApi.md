@@ -20,6 +20,7 @@ Get a list of dogma attribute ids  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -56,6 +57,7 @@ Get information on a dogma attribute  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **attributeId** | **int32**| A dogma attribute ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -94,6 +96,7 @@ Get a list of dogma effect ids  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -130,6 +133,7 @@ Get information on a dogma effect  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **effectId** | **int32**| A dogma effect ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 

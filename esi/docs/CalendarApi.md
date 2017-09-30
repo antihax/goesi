@@ -20,7 +20,7 @@ Get 50 event summaries from the calendar. If no from_event ID is given, the reso
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -61,7 +61,7 @@ Get all the information for a specific event  ---  This route is cached for up t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
   **eventId** | **int32**| The id of the event requested | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -103,7 +103,7 @@ Get all invited attendees for a given event  ---  This route is cached for up to
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
   **eventId** | **int32**| The id of the event requested | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -145,7 +145,7 @@ Set your response status to an event  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
   **eventId** | **int32**| The ID of the event requested | 
   **response** | [**PutCharactersCharacterIdCalendarEventIdResponse**](PutCharactersCharacterIdCalendarEventIdResponse.md)| The response value to set, overriding current value. | 

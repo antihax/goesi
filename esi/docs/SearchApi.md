@@ -18,7 +18,7 @@ Search for entities that match a given sub-string.  ---  This route is cached fo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **categories** | [**[]string**](string.md)| Type of entities to search for | 
   **characterId** | **int32**| An EVE character ID | 
   **search** | **string**| The string to search on | 
@@ -64,6 +64,7 @@ Search for entities that match a given sub-string.  ---  This route is cached fo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **categories** | [**[]string**](string.md)| Type of entities to search for | 
   **search** | **string**| The string to search on | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters

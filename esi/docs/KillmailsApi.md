@@ -19,7 +19,7 @@ Return a list of character's recent kills and losses  ---  This route is cached 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -61,7 +61,7 @@ Get a list of corporation's recent kills and losses  ---  This route is cached f
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **corporationId** | **int32**| An EVE corporation ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -102,6 +102,7 @@ Return a single killmail from its ID and hash  ---  This route is cached for up 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **killmailHash** | **string**| The killmail hash for verification | 
   **killmailId** | **int32**| The killmail ID to be queried | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters

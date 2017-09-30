@@ -21,7 +21,7 @@ Set a solar system as autopilot waypoint  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **addToBeginning** | **bool**| Whether this solar system should be added to the beginning of all waypoints | [default to false]
   **clearOtherWaypoints** | **bool**| Whether clean other waypoints beforing adding this one | [default to false]
   **destinationId** | **int64**| The destination to travel to, can be solar system, station or structure&#39;s id | 
@@ -65,7 +65,7 @@ Open the contract window inside the client  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **contractId** | **int32**| The contract to open | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -105,7 +105,7 @@ Open the information window for a character, corporation or alliance inside the 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **targetId** | **int32**| The target to open | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -145,7 +145,7 @@ Open the market details window for a specific typeID inside the client  ---
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **typeId** | **int32**| The item type to open in market window | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -185,7 +185,7 @@ Open the New Mail window, according to settings from the request if applicable  
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **newMail** | [**PostUiOpenwindowNewmailNewMail**](PostUiOpenwindowNewmailNewMail.md)| The details of mail to create | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 

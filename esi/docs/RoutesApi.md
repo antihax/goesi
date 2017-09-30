@@ -17,6 +17,7 @@ Get the systems between origin and destination  ---  This route is cached for up
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **destination** | **int32**| destination solar system ID | 
   **origin** | **int32**| origin solar system ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters

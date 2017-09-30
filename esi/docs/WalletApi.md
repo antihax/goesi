@@ -22,7 +22,7 @@ Returns a character's wallet balance  ---  This route is cached for up to 120 se
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -62,7 +62,7 @@ Retrieve character wallet journal  ---  This route is cached for up to 3600 seco
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -103,7 +103,7 @@ Get wallet transactions of a character  ---  This route is cached for up to 3600
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -144,7 +144,7 @@ Get a corporation's wallets  ---  This route is cached for up to 300 seconds
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **corporationId** | **int32**| An EVE corporation ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -184,7 +184,7 @@ Retrieve corporation wallet journal  ---  This route is cached for up to 3600 se
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **corporationId** | **int32**| An EVE corporation ID | 
   **division** | **int32**| Wallet key of the division to fetch journals from | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -227,7 +227,7 @@ Get wallet transactions of a corporation  ---  This route is cached for up to 36
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **corporationId** | **int32**| An EVE corporation ID | 
   **division** | **int32**| Wallet key of the division to fetch journals from | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters

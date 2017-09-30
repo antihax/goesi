@@ -19,7 +19,7 @@ Returns contracts available to a character, only if the character is issuer, acc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -59,7 +59,7 @@ Lists bids on a particular auction contract  ---  This route is cached for up to
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
   **contractId** | **int32**| ID of a contract | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -101,7 +101,7 @@ Lists Items and details of a particular contract  ---  This route is cached for 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
   **contractId** | **int32**| ID of a contract | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters

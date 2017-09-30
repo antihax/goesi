@@ -18,7 +18,7 @@ Return a list of loyalty points for all corporations the character has worked fo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -58,6 +58,7 @@ Return a list of offers from a specific corporation's loyalty store  ---  This r
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **corporationId** | **int32**| An EVE corporation ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 

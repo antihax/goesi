@@ -43,6 +43,7 @@ Get a list of bloodlines  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -80,6 +81,7 @@ Get a list of item categories  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -116,6 +118,7 @@ Get information of an item category  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **categoryId** | **int32**| An Eve item category ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -155,6 +158,7 @@ Get a list of constellations  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -191,6 +195,7 @@ Get information on a constellation  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **constellationId** | **int32**| constellation_id integer | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -230,6 +235,7 @@ Get a list of factions  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -267,6 +273,7 @@ Get a list of graphics  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -303,6 +310,7 @@ Get information on a graphic  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **graphicId** | **int32**| graphic_id integer | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -341,6 +349,7 @@ Get a list of item groups  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -378,6 +387,7 @@ Get information on an item group  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **groupId** | **int32**| An Eve item group ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -417,6 +427,7 @@ Get information on a moon  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **moonId** | **int32**| moon_id integer | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -455,6 +466,7 @@ Get information on a planet  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **planetId** | **int32**| planet_id integer | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -493,6 +505,7 @@ Get a list of character races  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -530,6 +543,7 @@ Get a list of regions  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -566,6 +580,7 @@ Get information on a region  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **regionId** | **int32**| region_id integer | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -605,6 +620,7 @@ Get information on a stargate  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **stargateId** | **int32**| stargate_id integer | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -643,6 +659,7 @@ Get information on a star  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **starId** | **int32**| star_id integer | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -681,6 +698,7 @@ Get information on a station  ---  This route is cached for up to 300 seconds
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **stationId** | **int32**| station_id integer | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -719,6 +737,7 @@ List all public structures  ---  This route is cached for up to 3600 seconds
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -755,7 +774,7 @@ Returns information on requested structure, if you are on the ACL. Otherwise, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **structureId** | **int64**| An Eve structure ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -795,6 +814,7 @@ Get the number of jumps in solar systems within the last hour ending at the time
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -831,6 +851,7 @@ Get the number of ship, pod and NPC kills per solar system within the last hour 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -867,6 +888,7 @@ Get a list of solar systems  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -903,6 +925,7 @@ Get information on a solar system  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **systemId** | **int32**| system_id integer | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -942,6 +965,7 @@ Get a list of type ids  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -979,6 +1003,7 @@ Get information on a type  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **typeId** | **int32**| An Eve item type ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -1018,6 +1043,7 @@ Resolve a set of IDs to names and categories. Supported ID's for resolving are: 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **ids** | **[]int32**| The ids to resolve | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 

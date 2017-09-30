@@ -19,7 +19,7 @@ Returns a list of all planetary colonies owned by a character.  ---  This route 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -59,7 +59,7 @@ Returns full details on the layout of a single planetary colony, including links
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
   **planetId** | **int32**| Planet id of the target planet | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -101,6 +101,7 @@ Get information on a planetary factory schematic  ---  This route is cached for 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **schematicId** | **int32**| A PI schematic ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 

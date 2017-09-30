@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Blocked** | [**[]GetCharactersCharacterIdChatChannelsBlocked**](get_characters_character_id_chat_channels_blocked.md) | blocked array | [default to null]
 **ChannelId** | **int32** | Unique channel ID. Always negative for player-created channels. Permanent (CCP created) channels have a positive ID, but don&#39;t appear in the API | [default to null]
 **ComparisonKey** | **string** | Normalized, unique string used to compare channel names | [default to null]
-**HasPassword** | **bool** | Whether this is a password protected channel | [default to null]
+**HasPassword** | **bool** | If this is a password protected channel | [default to null]
 **Motd** | **string** | Message of the day for this channel | [default to null]
 **Muted** | [**[]GetCharactersCharacterIdChatChannelsMuted**](get_characters_character_id_chat_channels_muted.md) | muted array | [default to null]
 **Name** | **string** | Displayed name of channel | [default to null]

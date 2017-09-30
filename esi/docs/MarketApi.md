@@ -24,7 +24,7 @@ List market orders placed by a character  ---  This route is cached for up to 36
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -64,6 +64,7 @@ Get a list of item groups  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -100,6 +101,7 @@ Get information on an item group  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **marketGroupId** | **int32**| An Eve item group ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -139,6 +141,7 @@ Return a list of prices  ---  This route is cached for up to 3600 seconds
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -175,6 +178,7 @@ Return a list of historical market statistics for the specified type in a region
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **regionId** | **int32**| Return statistics in this region | 
   **typeId** | **int32**| Return statistics for this type | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -215,6 +219,7 @@ Return a list of orders in a region  ---  This route is cached for up to 300 sec
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. | [default to all]
   **regionId** | **int32**| Return orders in this region | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
@@ -257,6 +262,7 @@ Return a list of type IDs that have active orders in the region, for efficient m
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **regionId** | **int32**| Return statistics in this region | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -296,7 +302,7 @@ Return all orders in a structure  ---  This route is cached for up to 300 second
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **structureId** | **int64**| Return orders in this structure | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 

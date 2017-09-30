@@ -21,7 +21,7 @@ Return a list of tasks finished by a character  ---  This route is cached for up
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -61,6 +61,7 @@ Return a list of opportunities groups  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -97,6 +98,7 @@ Return information of an opportunities group  ---  This route expires daily at 1
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **groupId** | **int32**| ID of an opportunities group | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -136,6 +138,7 @@ Return a list of opportunities tasks  ---  This route expires daily at 11:05
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -172,6 +175,7 @@ Return information of an opportunities task  ---  This route expires daily at 11
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **taskId** | **int32**| ID of an opportunities task | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 

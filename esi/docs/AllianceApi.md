@@ -21,6 +21,7 @@ List all active player alliances  ---  This route is cached for up to 3600 secon
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -57,6 +58,7 @@ Public information about an alliance  ---  This route is cached for up to 3600 s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **allianceId** | **int32**| An EVE alliance ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -95,6 +97,7 @@ List all current member corporations of an alliance  ---  This route is cached f
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **allianceId** | **int32**| An EVE alliance ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -133,6 +136,7 @@ Get the icon urls for a alliance  ---  This route is cached for up to 3600 secon
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **allianceId** | **int32**| An EVE alliance ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -171,6 +175,7 @@ Resolve a set of alliance IDs to alliance names  ---  This route is cached for u
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **allianceIds** | [**[]int64**](int64.md)| A comma separated list of alliance IDs | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 

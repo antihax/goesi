@@ -19,6 +19,7 @@ Return a list of wars  ---  This route is cached for up to 3600 seconds
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -56,6 +57,7 @@ Return details about a war  ---  This route is cached for up to 3600 seconds
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **warId** | **int32**| ID for a war | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -94,6 +96,7 @@ Return a list of kills related to a war  ---  This route is cached for up to 360
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **warId** | **int32**| A valid war ID | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 

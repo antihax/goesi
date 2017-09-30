@@ -27,7 +27,7 @@ It is also good manners to provide a user-agent describing the point of use of t
 Example
 ```
   client, err := goesi.NewAPIClient(nil, "my esi client http://mysite.com contact <SomeDude> ingame")
-  result, response, err := client.V#.Endpoint.Operation(requiredParam, map[string]interface{} { 
+  result, response, err := client.V#.Endpoint.Operation(requestContext, requiredParam, map[string]interface{} { 
                                                                         "optionalParam1": "stringParam",
                                                                         "optionalParam2": 1234.56
                                                                     })
@@ -178,7 +178,6 @@ Generator is here: https://github.com/antihax/swagger-esi-goclient
 
 ## Author
   antihax on #devfleet slack
-
 
 ## Credits
 https://github.com/go-resty/resty (MIT license) Copyright Â© 2015-2016 Jeevanandam M (jeeva@myjeeva.com)

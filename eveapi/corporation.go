@@ -6,12 +6,12 @@ import (
 	"golang.org/x/oauth2"
 )
 
-// CharacterInfo returned data from XML API
+// CorporationSheetXML contains parsed data from XML API
 type CorporationSheetXML struct {
 	xmlAPIFrame
 	CorporationID   int64  `xml:"result>corporationID"`
 	CorporationName string `xml:"result>corporationName"`
-	Ticker          string `xml:"result>ricker"`
+	Ticker          string `xml:"result>ticker"`
 	CEOID           int64  `xml:"result>ceoID"`
 	CEOName         string `xml:"result>ceoName"`
 	StationID       int64  `xml:"result>stationID"`
@@ -34,12 +34,38 @@ type CorporationSheetXML struct {
 	} `xml:"result>logo"`
 }
 
-// GetCharacterInfo queries the XML API for a given characterID.
+// CorporationPublicSheetXML queries the XML API for a given corporationID.
 func (c *EVEAPIClient) CorporationPublicSheetXML(corporationID int64) (*CorporationSheetXML, error) {
 	w := &CorporationSheetXML{}
 
 	url := c.base.XML + fmt.Sprintf("corp/CorporationSheet.xml.aspx?corporationID=%d", corporationID)
 	_, err := c.doXML("GET", url, nil, w)
+	if err != nil {
+		return nil, err
+	}
+	return w, nil
+}
+
+type CorporationSheetDetailXML struct {
+	CorporationSheetXML
+	Divisions []struct {
+		Name     string `xml:"name,attr"`
+		Accounts []struct {
+			Key         string `xml:"accountKey,attr"`
+			Description string `xml:"description,attr"`
+		} `xml:"row"`
+	} `xml:"result>rowset"`
+}
+
+// CorporationSheetXML queries the XML API for details of the token's corporation.
+func (c *EVEAPIClient) CorporationSheetXML(auth oauth2.TokenSource) (*CorporationSheetDetailXML, error) {
+	w := &CorporationSheetDetailXML{}
+	tok, err := auth.Token()
+	if err != nil {
+		return nil, err
+	}
+	url := c.base.XML + fmt.Sprintf("corp/CorporationSheet.xml.aspx?accessToken=%s&accessType=corporation", tok.AccessToken)
+	_, err = c.doXML("GET", url, nil, w)
 	if err != nil {
 		return nil, err
 	}
@@ -132,6 +158,85 @@ func (c *EVEAPIClient) CorporationBlueprintsXML(auth oauth2.TokenSource, corpora
 	}
 	url := c.base.XML + fmt.Sprintf("corp/Blueprints.xml.aspx?corporationID=%d&accessToken=%s", corporationID, tok.AccessToken)
 	w := &CorporationBlueprintsXML{}
+	_, err = c.doXML("GET", url, nil, w)
+	if err != nil {
+		return nil, err
+	}
+	return w, nil
+}
+
+type CorporationAssetsXML struct {
+	xmlAPIFrame
+	Entries []struct {
+		ItemID      int64 `xml:"itemID,attr"`
+		LocationID  int64 `xml:"locationID,attr"`
+		TypeID      int64 `xml:"typeID,attr"`
+		Quantity    int64 `xml:"quantity,attr"`
+		FlagID      int64 `xml:"flagID,attr"`
+		Singleton   bool  `xml:"singleton,attr"`
+		RawQuantity int64 `xml:"rawQuantity,attr"`
+	} `xml:"result>rowset>row"`
+}
+
+// CorporationAssetsXML queries the XML API for assets owned by corporationID.
+func (c *EVEAPIClient) CorporationAssetsXML(auth oauth2.TokenSource, corporationID int64) (*CorporationAssetsXML, error) {
+	tok, err := auth.Token()
+	if err != nil {
+		return nil, err
+	}
+	url := c.base.XML + fmt.Sprintf("corp/AssetList.xml.aspx?corporationID=%d&accessToken=%s&flat=1", corporationID, tok.AccessToken)
+	w := &CorporationAssetsXML{}
+	_, err = c.doXML("GET", url, nil, w)
+	if err != nil {
+		return nil, err
+	}
+	return w, nil
+}
+
+type CorporationMarketOrdersXML struct {
+	xmlAPIFrame
+	Entries []struct {
+		OrderID      int64      `xml:"orderID,attr"`
+		CharID       int64      `xml:"charID,attr"`
+		StationID    int64      `xml:"stationID,attr"`
+		VolEntered   int32      `xml:"volEntered,attr"`
+		VolRemaining int32      `xml:"volRemaining,attr"`
+		MinVolume    int32      `xml:"minVolume,attr"`
+		OrderState   int32      `xml:"orderState,attr"`
+		TypeID       int64      `xml:"typeID,attr"`
+		Range        int32      `xml:"range,attr"`
+		AccountKey   int32      `xml:"accountKey,attr"`
+		Duration     int32      `xml:"duration,attr"`
+		Escrow       float64    `xml:"escrow,attr"`
+		Price        float64    `xml:"price,attr"`
+		Bid          bool       `xml:"bid,attr"`
+		Issued       EVEXMLTime `xml:"issued,attr"`
+	} `xml:"result>rowset>row"`
+}
+
+// CorporationMarketOrdersXML queries the XML API for orders placed by characters in corporationID.
+func (c *EVEAPIClient) CorporationMarketOrdersXML(auth oauth2.TokenSource, corporationID int64) (*CorporationMarketOrdersXML, error) {
+	tok, err := auth.Token()
+	if err != nil {
+		return nil, err
+	}
+	url := c.base.XML + fmt.Sprintf("corp/MarketOrders.xml.aspx?corporationID=%d&accessToken=%s", corporationID, tok.AccessToken)
+	w := &CorporationMarketOrdersXML{}
+	_, err = c.doXML("GET", url, nil, w)
+	if err != nil {
+		return nil, err
+	}
+	return w, nil
+}
+
+// CorporationMarketOrdersXML queries the XML API for a specific order.
+func (c *EVEAPIClient) CorporationMarketOrderXML(auth oauth2.TokenSource, corporationID, orderID int64) (*CorporationMarketOrdersXML, error) {
+	tok, err := auth.Token()
+	if err != nil {
+		return nil, err
+	}
+	url := c.base.XML + fmt.Sprintf("corp/MarketOrders.xml.aspx?corporationID=%d&orderID=%d&accessToken=%s", corporationID, orderID, tok.AccessToken)
+	w := &CorporationMarketOrdersXML{}
 	_, err = c.doXML("GET", url, nil, w)
 	if err != nil {
 		return nil, err

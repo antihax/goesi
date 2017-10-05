@@ -60,6 +60,9 @@ type EVEAPIKeyInfoXML struct {
 	} `xml:"result>key"`
 }
 
+// APIKeyInfoXML queries the EVE API for information about the given API token.
+//
+// The accessType parameter should be one of: character, corporation.
 func (c *EVEAPIClient) APIKeyInfoXML(auth oauth2.TokenSource, accessType string) (*EVEAPIKeyInfoXML, error) {
 	w := &EVEAPIKeyInfoXML{}
 	tok, err := auth.Token()

@@ -2289,7 +2289,7 @@ func (a *UniverseApiService) GetUniverseTypesTypeId(ctx context.Context, typeId 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/universe/types/{type_id}/"
+	localVarPath := a.client.basePath + "/v3/universe/types/{type_id}/"
 	localVarPath = strings.Replace(localVarPath, "{"+"type_id"+"}", fmt.Sprintf("%v", typeId), -1)
 
 	localVarHeaderParams := make(map[string]string)

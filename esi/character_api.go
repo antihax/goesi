@@ -224,12 +224,13 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 }
 
 /* CharacterApiService Get blueprints
-Return a list of blueprints the character has  ---  This route is cached for up to 3600 seconds
+Return a list of blueprints the character owns  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
+    @param "page" (int32) Which page of results to return
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
@@ -244,7 +245,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/characters/{character_id}/blueprints/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/blueprints/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -252,6 +253,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 	localVarFormParams := url.Values{}
 
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["page"], "int32", "page"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
@@ -266,6 +270,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["page"].(int32); localVarOk {
+		localVarQueryParams.Add("page", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {
 		localVarQueryParams.Add("token", parameterToString(localVarTempParam, ""))

@@ -29,12 +29,12 @@ type GetCharactersCharacterIdBlueprints200OkList []GetCharactersCharacterIdBluep
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdBlueprints200Ok struct {
-	ItemId             int64  `json:"item_id,omitempty"`             /* Unique ID for this item. The ID of an item is stable if that item is not repackaged, stacked, detached from a stack, assembled, or otherwise altered. If an item is changed in one of these ways, then the ID will also change. */
-	LocationFlag       string `json:"location_flag,omitempty"`       /* Indicates something about this item's storage location. The flag is used to differentiate between hangar divisions, drone bay, fitting location, and similar. */
-	LocationId         int64  `json:"location_id,omitempty"`         /* References a solar system, station or item_id if this blueprint is located within a container. If an item_id the Character - AssetList API must be queried to find the container using the item_id, from which the correct location of the Blueprint can be derived. */
-	MaterialEfficiency int32  `json:"material_efficiency,omitempty"` /* Material Efficiency Level of the blueprint, can be any integer between 0 and 10. */
-	Quantity           int32  `json:"quantity,omitempty"`            /* Typically will be -1 or -2 designating a singleton item, where -1 is an original and -2 is a copy. It can be a positive integer if it is a stack of blueprint originals fresh from the market (no activities performed on them yet). */
+	ItemId             int64  `json:"item_id,omitempty"`             /* Unique ID for this item. */
+	LocationFlag       string `json:"location_flag,omitempty"`       /* Type of the location_id */
+	LocationId         int64  `json:"location_id,omitempty"`         /* References a solar system, station or item_id if this blueprint is located within a container. If the return value is an item_id, then the Character AssetList API must be queried to find the container using the given item_id to determine the correct location of the Blueprint. */
+	MaterialEfficiency int32  `json:"material_efficiency,omitempty"` /* Material Efficiency Level of the blueprint. */
+	Quantity           int32  `json:"quantity,omitempty"`            /* A range of numbers with a minimum of -2 and no maximum value where -1 is an original and -2 is a copy. It can be a positive integer if it is a stack of blueprint originals fresh from the market (e.g. no activities performed on them yet). */
 	Runs               int32  `json:"runs,omitempty"`                /* Number of runs remaining if the blueprint is a copy, -1 if it is an original. */
-	TimeEfficiency     int32  `json:"time_efficiency,omitempty"`     /* Time Efficiency Level of the blueprint, can be any even integer between 0 and 20. */
+	TimeEfficiency     int32  `json:"time_efficiency,omitempty"`     /* Time Efficiency Level of the blueprint. */
 	TypeId             int32  `json:"type_id,omitempty"`             /* type_id integer */
 }

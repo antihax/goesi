@@ -29,7 +29,7 @@ Method | HTTP request | Description
 [**GetUniverseSystems**](UniverseApi.md#GetUniverseSystems) | **Get** /v1/universe/systems/ | Get solar systems
 [**GetUniverseSystemsSystemId**](UniverseApi.md#GetUniverseSystemsSystemId) | **Get** /v3/universe/systems/{system_id}/ | Get solar system information
 [**GetUniverseTypes**](UniverseApi.md#GetUniverseTypes) | **Get** /v1/universe/types/ | Get types
-[**GetUniverseTypesTypeId**](UniverseApi.md#GetUniverseTypesTypeId) | **Get** /v2/universe/types/{type_id}/ | Get type information
+[**GetUniverseTypesTypeId**](UniverseApi.md#GetUniverseTypesTypeId) | **Get** /v3/universe/types/{type_id}/ | Get type information
 [**PostUniverseNames**](UniverseApi.md#PostUniverseNames) | **Post** /v2/universe/names/ | Get names and categories for a set of ID&#39;s
 
 

@@ -36,8 +36,10 @@ type GetUniverseTypesTypeIdOk struct {
 	GraphicId       int32                                  `json:"graphic_id,omitempty"`       /* graphic_id integer */
 	GroupId         int32                                  `json:"group_id,omitempty"`         /* group_id integer */
 	IconId          int32                                  `json:"icon_id,omitempty"`          /* icon_id integer */
+	MarketGroupId   int32                                  `json:"market_group_id,omitempty"`  /* This only exists for types that can be put on the market */
 	Mass            float32                                `json:"mass,omitempty"`             /* mass number */
 	Name            string                                 `json:"name,omitempty"`             /* name string */
+	PackagedVolume  float32                                `json:"packaged_volume,omitempty"`  /* packaged_volume number */
 	PortionSize     int32                                  `json:"portion_size,omitempty"`     /* portion_size integer */
 	Published       bool                                   `json:"published,omitempty"`        /* published boolean */
 	Radius          float32                                `json:"radius,omitempty"`           /* radius number */

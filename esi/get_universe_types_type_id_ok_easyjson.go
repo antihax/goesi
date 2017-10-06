@@ -159,10 +159,14 @@ func easyjson15ff5640DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			out.GroupId = int32(in.Int32())
 		case "icon_id":
 			out.IconId = int32(in.Int32())
+		case "market_group_id":
+			out.MarketGroupId = int32(in.Int32())
 		case "mass":
 			out.Mass = float32(in.Float32())
 		case "name":
 			out.Name = string(in.String())
+		case "packaged_volume":
+			out.PackagedVolume = float32(in.Float32())
 		case "portion_size":
 			out.PortionSize = int32(in.Int32())
 		case "published":
@@ -265,6 +269,14 @@ func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"icon_id\":")
 		out.Int32(int32(in.IconId))
 	}
+	if in.MarketGroupId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"market_group_id\":")
+		out.Int32(int32(in.MarketGroupId))
+	}
 	if in.Mass != 0 {
 		if !first {
 			out.RawByte(',')
@@ -280,6 +292,14 @@ func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"name\":")
 		out.String(string(in.Name))
+	}
+	if in.PackagedVolume != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"packaged_volume\":")
+		out.Float32(float32(in.PackagedVolume))
 	}
 	if in.PortionSize != 0 {
 		if !first {

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCharactersCharacterId**](CharacterApi.md#GetCharactersCharacterId) | **Get** /v4/characters/{character_id}/ | Get character&#39;s public information
 [**GetCharactersCharacterIdAgentsResearch**](CharacterApi.md#GetCharactersCharacterIdAgentsResearch) | **Get** /v1/characters/{character_id}/agents_research/ | Get agents research
-[**GetCharactersCharacterIdBlueprints**](CharacterApi.md#GetCharactersCharacterIdBlueprints) | **Get** /v1/characters/{character_id}/blueprints/ | Get blueprints
+[**GetCharactersCharacterIdBlueprints**](CharacterApi.md#GetCharactersCharacterIdBlueprints) | **Get** /v2/characters/{character_id}/blueprints/ | Get blueprints
 [**GetCharactersCharacterIdChatChannels**](CharacterApi.md#GetCharactersCharacterIdChatChannels) | **Get** /v1/characters/{character_id}/chat_channels/ | Get chat channels
 [**GetCharactersCharacterIdCorporationhistory**](CharacterApi.md#GetCharactersCharacterIdCorporationhistory) | **Get** /v1/characters/{character_id}/corporationhistory/ | Get corporation history
 [**GetCharactersCharacterIdFatigue**](CharacterApi.md#GetCharactersCharacterIdFatigue) | **Get** /v1/characters/{character_id}/fatigue/ | Get jump fatigue
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdBlueprints200Ok GetCharactersCharacterIdBlueprints(ctx, characterId, optional)
 Get blueprints
 
-Return a list of blueprints the character has  ---  This route is cached for up to 3600 seconds
+Return a list of blueprints the character owns  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -121,6 +121,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

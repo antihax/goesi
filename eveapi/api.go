@@ -27,7 +27,7 @@ type EVEAPICallListXML struct {
 	} `xml:"result>rowset"`
 }
 
-func (c *EVEAPIClient) CallList(auth oauth2.TokenSource) (*EVEAPICallListXML, error) {
+func (c *EVEAPIClient) CallListXML(auth oauth2.TokenSource) (*EVEAPICallListXML, error) {
 	w := &EVEAPICallListXML{}
 	tok, err := auth.Token()
 	if err != nil {
@@ -60,13 +60,16 @@ type EVEAPIKeyInfoXML struct {
 	} `xml:"result>key"`
 }
 
-func (c *EVEAPIClient) APIKeyInfo(auth oauth2.TokenSource) (*EVEAPIKeyInfoXML, error) {
+// APIKeyInfoXML queries the EVE API for information about the given API token.
+//
+// The accessType parameter should be one of: character, corporation.
+func (c *EVEAPIClient) APIKeyInfoXML(auth oauth2.TokenSource, accessType string) (*EVEAPIKeyInfoXML, error) {
 	w := &EVEAPIKeyInfoXML{}
 	tok, err := auth.Token()
 	if err != nil {
 		return nil, err
 	}
-	url := c.base.XML + fmt.Sprintf("account/APIKeyInfo.xml.aspx?accessToken=%s&accessType=corporation", tok.AccessToken)
+	url := c.base.XML + fmt.Sprintf("account/APIKeyInfo.xml.aspx?accessToken=%s&accessType=%s", tok.AccessToken, accessType)
 	_, err = c.doXML("GET", url, nil, w)
 	if err != nil {
 		return nil, err

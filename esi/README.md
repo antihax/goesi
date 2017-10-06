@@ -89,6 +89,9 @@ Class | Method | HTTP request | Description
 *FleetsApi* | [**PutFleetsFleetIdWingsWingId**](docs/FleetsApi.md#putfleetsfleetidwingswingid) | **Put** /v1/fleets/{fleet_id}/wings/{wing_id}/ | Rename fleet wing
 *IncursionsApi* | [**GetIncursions**](docs/IncursionsApi.md#getincursions) | **Get** /v1/incursions/ | List incursions
 *IndustryApi* | [**GetCharactersCharacterIdIndustryJobs**](docs/IndustryApi.md#getcharacterscharacteridindustryjobs) | **Get** /v1/characters/{character_id}/industry/jobs/ | List character industry jobs
+*IndustryApi* | [**GetCharactersCharacterIdMining**](docs/IndustryApi.md#getcharacterscharacteridmining) | **Get** /v1/characters/{character_id}/mining/ | Character mining ledger
+*IndustryApi* | [**GetCorporationCorporationIdMiningObservers**](docs/IndustryApi.md#getcorporationcorporationidminingobservers) | **Get** /v1/corporation/{corporation_id}/mining/observers/ | Corporation mining observers
+*IndustryApi* | [**GetCorporationCorporationIdMiningObserversObserverId**](docs/IndustryApi.md#getcorporationcorporationidminingobserversobserverid) | **Get** /v1/corporation/{corporation_id}/mining/observers/{observer_id}/ | Observed corporation mining
 *IndustryApi* | [**GetIndustryFacilities**](docs/IndustryApi.md#getindustryfacilities) | **Get** /v1/industry/facilities/ | List industry facilities
 *IndustryApi* | [**GetIndustrySystems**](docs/IndustryApi.md#getindustrysystems) | **Get** /v1/industry/systems/ | List solar system cost indices
 *InsuranceApi* | [**GetInsurancePrices**](docs/InsuranceApi.md#getinsuranceprices) | **Get** /v1/insurance/prices/ | List insurance levels
@@ -233,6 +236,7 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdMailRecipient](docs/GetCharactersCharacterIdMailRecipient.md)
  - [GetCharactersCharacterIdMedals200Ok](docs/GetCharactersCharacterIdMedals200Ok.md)
  - [GetCharactersCharacterIdMedalsGraphic](docs/GetCharactersCharacterIdMedalsGraphic.md)
+ - [GetCharactersCharacterIdMining200Ok](docs/GetCharactersCharacterIdMining200Ok.md)
  - [GetCharactersCharacterIdNotFound](docs/GetCharactersCharacterIdNotFound.md)
  - [GetCharactersCharacterIdNotifications200Ok](docs/GetCharactersCharacterIdNotifications200Ok.md)
  - [GetCharactersCharacterIdNotificationsContacts200Ok](docs/GetCharactersCharacterIdNotificationsContacts200Ok.md)
@@ -261,6 +265,8 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdWalletJournalExtraInfo](docs/GetCharactersCharacterIdWalletJournalExtraInfo.md)
  - [GetCharactersCharacterIdWalletTransactions200Ok](docs/GetCharactersCharacterIdWalletTransactions200Ok.md)
  - [GetCharactersNames200Ok](docs/GetCharactersNames200Ok.md)
+ - [GetCorporationCorporationIdMiningObservers200Ok](docs/GetCorporationCorporationIdMiningObservers200Ok.md)
+ - [GetCorporationCorporationIdMiningObserversObserverId200Ok](docs/GetCorporationCorporationIdMiningObserversObserverId200Ok.md)
  - [GetCorporationsCorporationIdAlliancehistory200Ok](docs/GetCorporationsCorporationIdAlliancehistory200Ok.md)
  - [GetCorporationsCorporationIdAssets200Ok](docs/GetCorporationsCorporationIdAssets200Ok.md)
  - [GetCorporationsCorporationIdBlueprints200Ok](docs/GetCorporationsCorporationIdBlueprints200Ok.md)
@@ -495,6 +501,8 @@ Class | Method | HTTP request | Description
  - **esi-fleets.read_fleet.v1**: EVE SSO scope esi-fleets.read_fleet.v1
  - **esi-fleets.write_fleet.v1**: EVE SSO scope esi-fleets.write_fleet.v1
  - **esi-industry.read_character_jobs.v1**: EVE SSO scope esi-industry.read_character_jobs.v1
+ - **esi-industry.read_character_mining.v1**: EVE SSO scope esi-industry.read_character_mining.v1
+ - **esi-industry.read_corporation_mining.v1**: EVE SSO scope esi-industry.read_corporation_mining.v1
  - **esi-killmails.read_corporation_killmails.v1**: EVE SSO scope esi-killmails.read_corporation_killmails.v1
  - **esi-killmails.read_killmails.v1**: EVE SSO scope esi-killmails.read_killmails.v1
  - **esi-location.read_location.v1**: EVE SSO scope esi-location.read_location.v1

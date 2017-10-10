@@ -124,7 +124,7 @@ func easyjsonD831633DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCh
 		case "type_id":
 			out.TypeId = int32(in.Int32())
 		case "unit_price":
-			out.UnitPrice = int32(in.Int32())
+			out.UnitPrice = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -217,7 +217,7 @@ func easyjsonD831633EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 		}
 		first = false
 		out.RawString("\"unit_price\":")
-		out.Int32(int32(in.UnitPrice))
+		out.Float32(float32(in.UnitPrice))
 	}
 	out.RawByte('}')
 }

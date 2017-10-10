@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Quantity** | **int32** | quantity integer | [default to null]
 **TransactionId** | **int64** | Unique transaction ID | [default to null]
 **TypeId** | **int32** | type_id integer | [default to null]
-**UnitPrice** | **int32** | Amount paid per unit | [default to null]
+**UnitPrice** | **float32** | Amount paid per unit | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

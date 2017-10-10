@@ -57,12 +57,12 @@ func NewSSOAuthenticator(client *http.Client, clientID string, clientSecret stri
 }
 
 // ChangeAuthURL changes the oauth2 configuration url for authentication
-func (c *SSOAuthenticator) ChangeAuthURL(url string) string {
+func (c *SSOAuthenticator) ChangeAuthURL(url string) {
 	c.oauthConfig.Endpoint.AuthURL = url
 }
 
 // ChangeTokenURL changes the oauth2 configuration url for token
-func (c *SSOAuthenticator) ChangeTokenURL(url string) string {
+func (c *SSOAuthenticator) ChangeTokenURL(url string) {
 	c.oauthConfig.Endpoint.TokenURL = url
 }
 

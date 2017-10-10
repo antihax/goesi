@@ -52,7 +52,18 @@ func NewSSOAuthenticator(client *http.Client, clientID string, clientSecret stri
 		Scopes:      scopes,
 		RedirectURL: redirectURL,
 	}
+
 	return c
+}
+
+// ChangeAuthURL changes the oauth2 configuration url for authentication
+func (c *SSOAuthenticator) ChangeAuthURL(url string) string {
+	c.oauthConfig.Endpoint.AuthURL = url
+}
+
+// ChangeTokenURL changes the oauth2 configuration url for token
+func (c *SSOAuthenticator) ChangeTokenURL(url string) string {
+	c.oauthConfig.Endpoint.TokenURL = url
 }
 
 // AuthorizeURL returns a url for an end user to authenticate with EVE SSO

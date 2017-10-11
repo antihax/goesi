@@ -17,6 +17,8 @@ Class | Method | HTTP request | Description
 *AssetsApi* | [**PostCharactersCharacterIdAssetsNames**](docs/AssetsApi.md#postcharacterscharacteridassetsnames) | **Post** /v1/characters/{character_id}/assets/names/ | Get character asset names
 *BookmarksApi* | [**GetCharactersCharacterIdBookmarks**](docs/BookmarksApi.md#getcharacterscharacteridbookmarks) | **Get** /v1/characters/{character_id}/bookmarks/ | List bookmarks
 *BookmarksApi* | [**GetCharactersCharacterIdBookmarksFolders**](docs/BookmarksApi.md#getcharacterscharacteridbookmarksfolders) | **Get** /v1/characters/{character_id}/bookmarks/folders/ | List bookmark folders
+*BookmarksApi* | [**GetCorporationsCorporationIdBookmarks**](docs/BookmarksApi.md#getcorporationscorporationidbookmarks) | **Get** /v1/corporations/{corporation_id}/bookmarks/ | List corporation bookmarks
+*BookmarksApi* | [**GetCorporationsCorporationIdBookmarksFolders**](docs/BookmarksApi.md#getcorporationscorporationidbookmarksfolders) | **Get** /v1/corporations/{corporation_id}/bookmarks/folders/ | List corporation bookmark folders
 *CalendarApi* | [**GetCharactersCharacterIdCalendar**](docs/CalendarApi.md#getcharacterscharacteridcalendar) | **Get** /v1/characters/{character_id}/calendar/ | List calendar event summaries
 *CalendarApi* | [**GetCharactersCharacterIdCalendarEventId**](docs/CalendarApi.md#getcharacterscharacteridcalendareventid) | **Get** /v3/characters/{character_id}/calendar/{event_id}/ | Get an event
 *CalendarApi* | [**GetCharactersCharacterIdCalendarEventIdAttendees**](docs/CalendarApi.md#getcharacterscharacteridcalendareventidattendees) | **Get** /v1/characters/{character_id}/calendar/{event_id}/attendees/ | Get attendees
@@ -264,6 +266,10 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdAlliancehistory200Ok](docs/GetCorporationsCorporationIdAlliancehistory200Ok.md)
  - [GetCorporationsCorporationIdAssets200Ok](docs/GetCorporationsCorporationIdAssets200Ok.md)
  - [GetCorporationsCorporationIdBlueprints200Ok](docs/GetCorporationsCorporationIdBlueprints200Ok.md)
+ - [GetCorporationsCorporationIdBookmarks200Ok](docs/GetCorporationsCorporationIdBookmarks200Ok.md)
+ - [GetCorporationsCorporationIdBookmarksCoordinates](docs/GetCorporationsCorporationIdBookmarksCoordinates.md)
+ - [GetCorporationsCorporationIdBookmarksFolders200Ok](docs/GetCorporationsCorporationIdBookmarksFolders200Ok.md)
+ - [GetCorporationsCorporationIdBookmarksItem](docs/GetCorporationsCorporationIdBookmarksItem.md)
  - [GetCorporationsCorporationIdContacts200Ok](docs/GetCorporationsCorporationIdContacts200Ok.md)
  - [GetCorporationsCorporationIdDivisionsHangar](docs/GetCorporationsCorporationIdDivisionsHangar.md)
  - [GetCorporationsCorporationIdDivisionsOk](docs/GetCorporationsCorporationIdDivisionsOk.md)
@@ -465,6 +471,7 @@ Class | Method | HTTP request | Description
  - **esi-assets.read_assets.v1**: EVE SSO scope esi-assets.read_assets.v1
  - **esi-assets.read_corporation_assets.v1**: EVE SSO scope esi-assets.read_corporation_assets.v1
  - **esi-bookmarks.read_character_bookmarks.v1**: EVE SSO scope esi-bookmarks.read_character_bookmarks.v1
+ - **esi-bookmarks.read_corporation_bookmarks.v1**: EVE SSO scope esi-bookmarks.read_corporation_bookmarks.v1
  - **esi-calendar.read_calendar_events.v1**: EVE SSO scope esi-calendar.read_calendar_events.v1
  - **esi-calendar.respond_calendar_events.v1**: EVE SSO scope esi-calendar.respond_calendar_events.v1
  - **esi-characters.read_agents_research.v1**: EVE SSO scope esi-characters.read_agents_research.v1

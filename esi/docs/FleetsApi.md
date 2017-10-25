@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**DeleteFleetsFleetIdMembersMemberId**](FleetsApi.md#DeleteFleetsFleetIdMembersMemberId) | **Delete** /v1/fleets/{fleet_id}/members/{member_id}/ | Kick fleet member
 [**DeleteFleetsFleetIdSquadsSquadId**](FleetsApi.md#DeleteFleetsFleetIdSquadsSquadId) | **Delete** /v1/fleets/{fleet_id}/squads/{squad_id}/ | Delete fleet squad
 [**DeleteFleetsFleetIdWingsWingId**](FleetsApi.md#DeleteFleetsFleetIdWingsWingId) | **Delete** /v1/fleets/{fleet_id}/wings/{wing_id}/ | Delete fleet wing
+[**GetCharactersCharacterIdFleet**](FleetsApi.md#GetCharactersCharacterIdFleet) | **Get** /v1/characters/{character_id}/fleet/ | Get character fleet info
 [**GetFleetsFleetId**](FleetsApi.md#GetFleetsFleetId) | **Get** /v1/fleets/{fleet_id}/ | Get fleet information
 [**GetFleetsFleetIdMembers**](FleetsApi.md#GetFleetsFleetIdMembers) | **Get** /v1/fleets/{fleet_id}/members/ | Get fleet members
 [**GetFleetsFleetIdWings**](FleetsApi.md#GetFleetsFleetIdWings) | **Get** /v1/fleets/{fleet_id}/wings/ | Get fleet wings
@@ -133,6 +134,46 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
+
+### Authorization
+
+[evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCharactersCharacterIdFleet**
+> GetCharactersCharacterIdFleetOk GetCharactersCharacterIdFleet(ctx, characterId, optional)
+Get character fleet info
+
+Return the fleet ID the character is in, if any.  ---  This route is cached for up to 60 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+  **characterId** | **int32**| An EVE character ID | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **characterId** | **int32**| An EVE character ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use if unable to set a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**GetCharactersCharacterIdFleetOk**](get_characters_character_id_fleet_ok.md)
 
 ### Authorization
 

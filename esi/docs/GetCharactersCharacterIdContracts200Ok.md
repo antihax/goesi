@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AcceptorId** | **int32** | Who will accept the contract. If assignee_id is same as acceptorID then character ID else corporation ID (The contract accepted by the corporation) | [default to null]
+**AcceptorId** | **int32** | Who will accept the contract | [default to null]
 **AssigneeId** | **int32** | ID to whom the contract is assigned, can be corporation or character ID | [default to null]
 **Availability** | **string** | To whom the contract is available | [default to null]
 **Buyout** | **float32** | Buyout price (for Auctions only) | [optional] [default to null]

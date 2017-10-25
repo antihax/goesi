@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdNotifications200Ok GetCharactersCharacterIdNotifications(ctx, characterId, optional)
 Get character notifications
 
-Return character notifications  ---  This route is cached for up to 1800 seconds
+Return character notifications  ---  This route is cached for up to 600 seconds
 
 ### Required Parameters
 

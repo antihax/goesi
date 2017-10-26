@@ -43,7 +43,6 @@ Class | Method | HTTP request | Description
 *ClonesApi* | [**GetCharactersCharacterIdClones**](docs/ClonesApi.md#getcharacterscharacteridclones) | **Get** /v2/characters/{character_id}/clones/ | Get clones
 *ClonesApi* | [**GetCharactersCharacterIdImplants**](docs/ClonesApi.md#getcharacterscharacteridimplants) | **Get** /v1/characters/{character_id}/implants/ | Get active implants
 *ContactsApi* | [**DeleteCharactersCharacterIdContacts**](docs/ContactsApi.md#deletecharacterscharacteridcontacts) | **Delete** /v1/characters/{character_id}/contacts/ | Delete contacts
-*ContactsApi* | [**GetAlliancesAllianceIdContacts**](docs/ContactsApi.md#getalliancesallianceidcontacts) | **Get** /v1/alliances/{alliance_id}/contacts/ | Get alliance contacts
 *ContactsApi* | [**GetCharactersCharacterIdContacts**](docs/ContactsApi.md#getcharacterscharacteridcontacts) | **Get** /v1/characters/{character_id}/contacts/ | Get contacts
 *ContactsApi* | [**GetCharactersCharacterIdContactsLabels**](docs/ContactsApi.md#getcharacterscharacteridcontactslabels) | **Get** /v1/characters/{character_id}/contacts/labels/ | Get contact labels
 *ContactsApi* | [**GetCorporationsCorporationIdContacts**](docs/ContactsApi.md#getcorporationscorporationidcontacts) | **Get** /v1/corporations/{corporation_id}/contacts/ | Get corporation contacts
@@ -203,7 +202,6 @@ Class | Method | HTTP request | Description
  - [DeleteFleetsFleetIdSquadsSquadIdNotFound](docs/DeleteFleetsFleetIdSquadsSquadIdNotFound.md)
  - [DeleteFleetsFleetIdWingsWingIdNotFound](docs/DeleteFleetsFleetIdWingsWingIdNotFound.md)
  - [Forbidden](docs/Forbidden.md)
- - [GetAlliancesAllianceIdContacts200Ok](docs/GetAlliancesAllianceIdContacts200Ok.md)
  - [GetAlliancesAllianceIdIconsNotFound](docs/GetAlliancesAllianceIdIconsNotFound.md)
  - [GetAlliancesAllianceIdIconsOk](docs/GetAlliancesAllianceIdIconsOk.md)
  - [GetAlliancesAllianceIdNotFound](docs/GetAlliancesAllianceIdNotFound.md)
@@ -501,7 +499,6 @@ Class | Method | HTTP request | Description
 - **Flow**: implicit
 - **Authorization URL**: https://login.eveonline.com/oauth/authorize
 - **Scopes**: 
- - **esi-alliances.read_contacts.v1**: EVE SSO scope esi-alliances.read_contacts.v1
  - **esi-assets.read_assets.v1**: EVE SSO scope esi-assets.read_assets.v1
  - **esi-assets.read_corporation_assets.v1**: EVE SSO scope esi-assets.read_corporation_assets.v1
  - **esi-bookmarks.read_character_bookmarks.v1**: EVE SSO scope esi-bookmarks.read_character_bookmarks.v1

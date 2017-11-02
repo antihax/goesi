@@ -117,6 +117,8 @@ func easyjson4fc9c45eDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.CorporationId = int32(in.Int32())
 		case "description":
 			out.Description = string(in.String())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
 		case "gender":
 			out.Gender = string(in.String())
 		case "name":
@@ -186,6 +188,14 @@ func easyjson4fc9c45eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"description\":")
 		out.String(string(in.Description))
+	}
+	if in.FactionId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"faction_id\":")
+		out.Int32(int32(in.FactionId))
 	}
 	if in.Gender != "" {
 		if !first {

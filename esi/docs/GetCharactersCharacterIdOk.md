@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **BloodlineId** | **int32** | bloodline_id integer | [default to null]
 **CorporationId** | **int32** | The character&#39;s corporation ID | [default to null]
 **Description** | **string** | description string | [optional] [default to null]
+**FactionId** | **int32** | ID of the faction the character is fighting for, if the character is enlisted in Factional Warfare | [optional] [default to null]
 **Gender** | **string** | gender string | [default to null]
 **Name** | **string** | name string | [default to null]
 **RaceId** | **int32** | race_id integer | [default to null]

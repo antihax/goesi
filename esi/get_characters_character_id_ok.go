@@ -39,6 +39,7 @@ type GetCharactersCharacterIdOk struct {
 	BloodlineId    int32     `json:"bloodline_id,omitempty"`    /* bloodline_id integer */
 	CorporationId  int32     `json:"corporation_id,omitempty"`  /* The character's corporation ID */
 	Description    string    `json:"description,omitempty"`     /* description string */
+	FactionId      int32     `json:"faction_id,omitempty"`      /* ID of the faction the character is fighting for, if the character is enlisted in Factional Warfare */
 	Gender         string    `json:"gender,omitempty"`          /* gender string */
 	Name           string    `json:"name,omitempty"`            /* name string */
 	RaceId         int32     `json:"race_id,omitempty"`         /* race_id integer */

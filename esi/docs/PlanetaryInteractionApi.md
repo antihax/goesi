@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCharactersCharacterIdPlanets**](PlanetaryInteractionApi.md#GetCharactersCharacterIdPlanets) | **Get** /v1/characters/{character_id}/planets/ | Get colonies
 [**GetCharactersCharacterIdPlanetsPlanetId**](PlanetaryInteractionApi.md#GetCharactersCharacterIdPlanetsPlanetId) | **Get** /v3/characters/{character_id}/planets/{planet_id}/ | Get colony layout
+[**GetCorporationsCorporationIdCustomsOffices**](PlanetaryInteractionApi.md#GetCorporationsCorporationIdCustomsOffices) | **Get** /v1/corporations/{corporation_id}/customs_offices/ | List corporation customs offices
 [**GetUniverseSchematicsSchematicId**](PlanetaryInteractionApi.md#GetUniverseSchematicsSchematicId) | **Get** /v1/universe/schematics/{schematic_id}/ | Get schematic information
 
 
@@ -79,6 +80,47 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetCharactersCharacterIdPlanetsPlanetIdOk**](get_characters_character_id_planets_planet_id_ok.md)
+
+### Authorization
+
+[evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCorporationsCorporationIdCustomsOffices**
+> []GetCorporationsCorporationIdCustomsOffices200Ok GetCorporationsCorporationIdCustomsOffices(ctx, corporationId, optional)
+List corporation customs offices
+
+List customs offices owned by a corporation  ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+  **corporationId** | **int32**| An EVE corporation ID | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **corporationId** | **int32**| An EVE corporation ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **page** | **int32**| Which page of results to return | [default to 1]
+ **token** | **string**| Access token to use if unable to set a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**[]GetCorporationsCorporationIdCustomsOffices200Ok**](get_corporations_corporation_id_customs_offices_200_ok.md)
 
 ### Authorization
 

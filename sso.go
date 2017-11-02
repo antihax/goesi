@@ -76,9 +76,9 @@ func (c *SSOAuthenticator) AuthorizeURL(state string, onlineAccess bool, scopes 
 
 	// Generate the URL
 	if onlineAccess == true {
-		url = c.oauthConfig.AuthCodeURL(state, oauth2.AccessTypeOnline, oauth2.SetAuthURLParam("scopes", strings.Join(scopes, " ")))
+		url = c.oauthConfig.AuthCodeURL(state, oauth2.AccessTypeOnline, oauth2.SetAuthURLParam("scope", strings.Join(scopes, " ")))
 	} else {
-		url = c.oauthConfig.AuthCodeURL(state, oauth2.AccessTypeOffline, oauth2.SetAuthURLParam("scopes", strings.Join(scopes, " ")))
+		url = c.oauthConfig.AuthCodeURL(state, oauth2.AccessTypeOffline, oauth2.SetAuthURLParam("scope", strings.Join(scopes, " ")))
 	}
 
 	return url

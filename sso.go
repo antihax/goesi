@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strings"
 	"sync"
 
 	"golang.org/x/net/context"
@@ -73,27 +74,12 @@ func (c *SSOAuthenticator) ChangeTokenURL(url string) {
 func (c *SSOAuthenticator) AuthorizeURL(state string, onlineAccess bool, scopes []string) string {
 	var url string
 
-	// lock so we cannot use another requests scopes by racing.
-	c.scopeLock.Lock()
-
-	// Save the default scopes.
-	saveScopes := c.oauthConfig.Scopes
-	if scopes != nil {
-		c.oauthConfig.Scopes = scopes
-	}
-
 	// Generate the URL
 	if onlineAccess == true {
-		url = c.oauthConfig.AuthCodeURL(state, oauth2.AccessTypeOnline)
+		url = c.oauthConfig.AuthCodeURL(state, oauth2.AccessTypeOnline, oauth2.SetAuthURLParam("scopes", strings.Join(scopes, " ")))
 	} else {
-		url = c.oauthConfig.AuthCodeURL(state, oauth2.AccessTypeOffline)
+		url = c.oauthConfig.AuthCodeURL(state, oauth2.AccessTypeOffline, oauth2.SetAuthURLParam("scopes", strings.Join(scopes, " ")))
 	}
-
-	// Return the scopes
-	c.oauthConfig.Scopes = saveScopes
-
-	// Unlock mutex. [TODO] This is seriously hacky... need to fix
-	c.scopeLock.Unlock()
 
 	return url
 }

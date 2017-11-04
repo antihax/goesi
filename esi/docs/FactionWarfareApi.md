@@ -4,6 +4,8 @@ All URIs are relative to *https://esi.tech.ccp.is*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GetCharactersCharacterIdFwStats**](FactionWarfareApi.md#GetCharactersCharacterIdFwStats) | **Get** /v1/characters/{character_id}/fw/stats/ | Overview of a character involved in faction warfare
+[**GetCorporationsCorporationIdFwStats**](FactionWarfareApi.md#GetCorporationsCorporationIdFwStats) | **Get** /v1/corporations/{corporation_id}/fw/stats/ | Overview of a corporation involved in faction warfare
 [**GetFwLeaderboards**](FactionWarfareApi.md#GetFwLeaderboards) | **Get** /v1/fw/leaderboards/ | List of the top factions in faction warfare
 [**GetFwLeaderboardsCharacters**](FactionWarfareApi.md#GetFwLeaderboardsCharacters) | **Get** /v1/fw/leaderboards/characters/ | List of the top pilots in faction warfare
 [**GetFwLeaderboardsCorporations**](FactionWarfareApi.md#GetFwLeaderboardsCorporations) | **Get** /v1/fw/leaderboards/corporations/ | List of the top corporations in faction warfare
@@ -11,6 +13,86 @@ Method | HTTP request | Description
 [**GetFwSystems**](FactionWarfareApi.md#GetFwSystems) | **Get** /v1/fw/systems/ | Ownership of faction warfare systems
 [**GetFwWars**](FactionWarfareApi.md#GetFwWars) | **Get** /v1/fw/wars/ | Data about which NPC factions are at war
 
+
+# **GetCharactersCharacterIdFwStats**
+> GetCharactersCharacterIdFwStatsOk GetCharactersCharacterIdFwStats(ctx, characterId, optional)
+Overview of a character involved in faction warfare
+
+Statistical overview of a character involved in faction warfare  ---  This route expires daily at 11:05
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+  **characterId** | **int32**| An EVE character ID | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **characterId** | **int32**| An EVE character ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use if unable to set a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**GetCharactersCharacterIdFwStatsOk**](get_characters_character_id_fw_stats_ok.md)
+
+### Authorization
+
+[evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCorporationsCorporationIdFwStats**
+> GetCorporationsCorporationIdFwStatsOk GetCorporationsCorporationIdFwStats(ctx, corporationId, optional)
+Overview of a corporation involved in faction warfare
+
+Statistics about a corporation involved in faction warfare  ---  This route expires daily at 11:05
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+  **corporationId** | **int32**| An EVE corporation ID | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **corporationId** | **int32**| An EVE corporation ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use if unable to set a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**GetCorporationsCorporationIdFwStatsOk**](get_corporations_corporation_id_fw_stats_ok.md)
+
+### Authorization
+
+[evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetFwLeaderboards**
 > GetFwLeaderboardsOk GetFwLeaderboards(optional)

@@ -84,6 +84,8 @@ Class | Method | HTTP request | Description
 *DogmaApi* | [**GetDogmaAttributesAttributeId**](docs/DogmaApi.md#getdogmaattributesattributeid) | **Get** /v1/dogma/attributes/{attribute_id}/ | Get attribute information
 *DogmaApi* | [**GetDogmaEffects**](docs/DogmaApi.md#getdogmaeffects) | **Get** /v1/dogma/effects/ | Get effects
 *DogmaApi* | [**GetDogmaEffectsEffectId**](docs/DogmaApi.md#getdogmaeffectseffectid) | **Get** /v2/dogma/effects/{effect_id}/ | Get effect information
+*FactionWarfareApi* | [**GetCharactersCharacterIdFwStats**](docs/FactionWarfareApi.md#getcharacterscharacteridfwstats) | **Get** /v1/characters/{character_id}/fw/stats/ | Overview of a character involved in faction warfare
+*FactionWarfareApi* | [**GetCorporationsCorporationIdFwStats**](docs/FactionWarfareApi.md#getcorporationscorporationidfwstats) | **Get** /v1/corporations/{corporation_id}/fw/stats/ | Overview of a corporation involved in faction warfare
 *FactionWarfareApi* | [**GetFwLeaderboards**](docs/FactionWarfareApi.md#getfwleaderboards) | **Get** /v1/fw/leaderboards/ | List of the top factions in faction warfare
 *FactionWarfareApi* | [**GetFwLeaderboardsCharacters**](docs/FactionWarfareApi.md#getfwleaderboardscharacters) | **Get** /v1/fw/leaderboards/characters/ | List of the top pilots in faction warfare
 *FactionWarfareApi* | [**GetFwLeaderboardsCorporations**](docs/FactionWarfareApi.md#getfwleaderboardscorporations) | **Get** /v1/fw/leaderboards/corporations/ | List of the top corporations in faction warfare
@@ -249,6 +251,9 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdFittingsItem](docs/GetCharactersCharacterIdFittingsItem.md)
  - [GetCharactersCharacterIdFleetNotFound](docs/GetCharactersCharacterIdFleetNotFound.md)
  - [GetCharactersCharacterIdFleetOk](docs/GetCharactersCharacterIdFleetOk.md)
+ - [GetCharactersCharacterIdFwStatsKills](docs/GetCharactersCharacterIdFwStatsKills.md)
+ - [GetCharactersCharacterIdFwStatsOk](docs/GetCharactersCharacterIdFwStatsOk.md)
+ - [GetCharactersCharacterIdFwStatsVictoryPoints](docs/GetCharactersCharacterIdFwStatsVictoryPoints.md)
  - [GetCharactersCharacterIdIndustryJobs200Ok](docs/GetCharactersCharacterIdIndustryJobs200Ok.md)
  - [GetCharactersCharacterIdKillmailsRecent200Ok](docs/GetCharactersCharacterIdKillmailsRecent200Ok.md)
  - [GetCharactersCharacterIdLocationOk](docs/GetCharactersCharacterIdLocationOk.md)
@@ -313,6 +318,9 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdDivisionsOk](docs/GetCorporationsCorporationIdDivisionsOk.md)
  - [GetCorporationsCorporationIdDivisionsWallet](docs/GetCorporationsCorporationIdDivisionsWallet.md)
  - [GetCorporationsCorporationIdFacilities200Ok](docs/GetCorporationsCorporationIdFacilities200Ok.md)
+ - [GetCorporationsCorporationIdFwStatsKills](docs/GetCorporationsCorporationIdFwStatsKills.md)
+ - [GetCorporationsCorporationIdFwStatsOk](docs/GetCorporationsCorporationIdFwStatsOk.md)
+ - [GetCorporationsCorporationIdFwStatsVictoryPoints](docs/GetCorporationsCorporationIdFwStatsVictoryPoints.md)
  - [GetCorporationsCorporationIdIconsNotFound](docs/GetCorporationsCorporationIdIconsNotFound.md)
  - [GetCorporationsCorporationIdIconsOk](docs/GetCorporationsCorporationIdIconsOk.md)
  - [GetCorporationsCorporationIdIndustryJobs200Ok](docs/GetCorporationsCorporationIdIndustryJobs200Ok.md)
@@ -533,6 +541,7 @@ Class | Method | HTTP request | Description
  - **esi-characters.read_contacts.v1**: EVE SSO scope esi-characters.read_contacts.v1
  - **esi-characters.read_corporation_roles.v1**: EVE SSO scope esi-characters.read_corporation_roles.v1
  - **esi-characters.read_fatigue.v1**: EVE SSO scope esi-characters.read_fatigue.v1
+ - **esi-characters.read_fw_stats.v1**: EVE SSO scope esi-characters.read_fw_stats.v1
  - **esi-characters.read_loyalty.v1**: EVE SSO scope esi-characters.read_loyalty.v1
  - **esi-characters.read_medals.v1**: EVE SSO scope esi-characters.read_medals.v1
  - **esi-characters.read_notifications.v1**: EVE SSO scope esi-characters.read_notifications.v1
@@ -550,6 +559,7 @@ Class | Method | HTTP request | Description
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
  - **esi-corporations.read_divisions.v1**: EVE SSO scope esi-corporations.read_divisions.v1
  - **esi-corporations.read_facilities.v1**: EVE SSO scope esi-corporations.read_facilities.v1
+ - **esi-corporations.read_fw_stats.v1**: EVE SSO scope esi-corporations.read_fw_stats.v1
  - **esi-corporations.read_medals.v1**: EVE SSO scope esi-corporations.read_medals.v1
  - **esi-corporations.read_standings.v1**: EVE SSO scope esi-corporations.read_standings.v1
  - **esi-corporations.read_starbases.v1**: EVE SSO scope esi-corporations.read_starbases.v1

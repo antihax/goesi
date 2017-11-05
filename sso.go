@@ -101,7 +101,7 @@ func (c *SSOAuthenticator) TokenSource(token *CRESTToken) (CRESTTokenSource, err
 }
 
 type VerifyResponse struct {
-	CharacterID        int64
+	CharacterID        int32
 	CharacterName      string
 	ExpiresOn          string
 	Scopes             string

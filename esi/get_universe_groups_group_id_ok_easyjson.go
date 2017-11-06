@@ -103,14 +103,14 @@ func easyjson320a592aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "category_id":
-			out.CategoryId = int32(in.Int32())
 		case "group_id":
 			out.GroupId = int32(in.Int32())
 		case "name":
 			out.Name = string(in.String())
 		case "published":
 			out.Published = bool(in.Bool())
+		case "category_id":
+			out.CategoryId = int32(in.Int32())
 		case "types":
 			if in.IsNull() {
 				in.Skip()
@@ -148,14 +148,6 @@ func easyjson320a592aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.CategoryId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"category_id\":")
-		out.Int32(int32(in.CategoryId))
-	}
 	if in.GroupId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -179,6 +171,14 @@ func easyjson320a592aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"published\":")
 		out.Bool(bool(in.Published))
+	}
+	if in.CategoryId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"category_id\":")
+		out.Int32(int32(in.CategoryId))
 	}
 	if len(in.Types) != 0 {
 		if !first {

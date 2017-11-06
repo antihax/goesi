@@ -103,14 +103,16 @@ func easyjson53553d35DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetL
 			continue
 		}
 		switch key {
-		case "isk_cost":
-			out.IskCost = float32(in.Float32())
-		case "lp_cost":
-			out.LpCost = int32(in.Int32())
 		case "offer_id":
 			out.OfferId = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		case "quantity":
 			out.Quantity = int32(in.Int32())
+		case "lp_cost":
+			out.LpCost = int32(in.Int32())
+		case "isk_cost":
+			out.IskCost = float32(in.Float32())
 		case "required_items":
 			if in.IsNull() {
 				in.Skip()
@@ -134,8 +136,6 @@ func easyjson53553d35DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetL
 				}
 				in.Delim(']')
 			}
-		case "type_id":
-			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -150,13 +150,29 @@ func easyjson53553d35EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.IskCost != 0 {
+	if in.OfferId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"isk_cost\":")
-		out.Float32(float32(in.IskCost))
+		out.RawString("\"offer_id\":")
+		out.Int32(int32(in.OfferId))
+	}
+	if in.TypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"type_id\":")
+		out.Int32(int32(in.TypeId))
+	}
+	if in.Quantity != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"quantity\":")
+		out.Int32(int32(in.Quantity))
 	}
 	if in.LpCost != 0 {
 		if !first {
@@ -166,21 +182,13 @@ func easyjson53553d35EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"lp_cost\":")
 		out.Int32(int32(in.LpCost))
 	}
-	if in.OfferId != 0 {
+	if in.IskCost != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"offer_id\":")
-		out.Int32(int32(in.OfferId))
-	}
-	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"quantity\":")
-		out.Int32(int32(in.Quantity))
+		out.RawString("\"isk_cost\":")
+		out.Float32(float32(in.IskCost))
 	}
 	if len(in.RequiredItems) != 0 {
 		if !first {
@@ -200,14 +208,6 @@ func easyjson53553d35EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"type_id\":")
-		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }
@@ -254,10 +254,10 @@ func easyjson53553d35DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetL
 			continue
 		}
 		switch key {
-		case "quantity":
-			out.Quantity = int32(in.Int32())
 		case "type_id":
 			out.TypeId = int32(in.Int32())
+		case "quantity":
+			out.Quantity = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -272,14 +272,6 @@ func easyjson53553d35EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"quantity\":")
-		out.Int32(int32(in.Quantity))
-	}
 	if in.TypeId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -287,6 +279,14 @@ func easyjson53553d35EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
+	}
+	if in.Quantity != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"quantity\":")
+		out.Int32(int32(in.Quantity))
 	}
 	out.RawByte('}')
 }

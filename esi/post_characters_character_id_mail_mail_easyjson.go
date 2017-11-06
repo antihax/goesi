@@ -103,10 +103,6 @@ func easyjson71405a3bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 			continue
 		}
 		switch key {
-		case "approved_cost":
-			out.ApprovedCost = int64(in.Int64())
-		case "body":
-			out.Body = string(in.String())
 		case "recipients":
 			if in.IsNull() {
 				in.Skip()
@@ -132,6 +128,10 @@ func easyjson71405a3bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 			}
 		case "subject":
 			out.Subject = string(in.String())
+		case "body":
+			out.Body = string(in.String())
+		case "approved_cost":
+			out.ApprovedCost = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -146,22 +146,6 @@ func easyjson71405a3bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.ApprovedCost != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"approved_cost\":")
-		out.Int64(int64(in.ApprovedCost))
-	}
-	if in.Body != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"body\":")
-		out.String(string(in.Body))
-	}
 	if len(in.Recipients) != 0 {
 		if !first {
 			out.RawByte(',')
@@ -188,6 +172,22 @@ func easyjson71405a3bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 		first = false
 		out.RawString("\"subject\":")
 		out.String(string(in.Subject))
+	}
+	if in.Body != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"body\":")
+		out.String(string(in.Body))
+	}
+	if in.ApprovedCost != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"approved_cost\":")
+		out.Int64(int64(in.ApprovedCost))
 	}
 	out.RawByte('}')
 }

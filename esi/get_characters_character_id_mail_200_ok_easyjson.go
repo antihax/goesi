@@ -103,10 +103,16 @@ func easyjson824e3c25DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "mail_id":
+			out.MailId = int64(in.Int64())
+		case "subject":
+			out.Subject = string(in.String())
 		case "from":
 			out.From = int32(in.Int32())
-		case "is_read":
-			out.IsRead = bool(in.Bool())
+		case "timestamp":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.Timestamp).UnmarshalJSON(data))
+			}
 		case "labels":
 			if in.IsNull() {
 				in.Skip()
@@ -130,8 +136,6 @@ func easyjson824e3c25DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "mail_id":
-			out.MailId = int64(in.Int64())
 		case "recipients":
 			if in.IsNull() {
 				in.Skip()
@@ -155,12 +159,8 @@ func easyjson824e3c25DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "subject":
-			out.Subject = string(in.String())
-		case "timestamp":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.Timestamp).UnmarshalJSON(data))
-			}
+		case "is_read":
+			out.IsRead = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -175,6 +175,22 @@ func easyjson824e3c25EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.MailId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"mail_id\":")
+		out.Int64(int64(in.MailId))
+	}
+	if in.Subject != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"subject\":")
+		out.String(string(in.Subject))
+	}
 	if in.From != 0 {
 		if !first {
 			out.RawByte(',')
@@ -183,13 +199,13 @@ func easyjson824e3c25EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"from\":")
 		out.Int32(int32(in.From))
 	}
-	if in.IsRead {
+	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"is_read\":")
-		out.Bool(bool(in.IsRead))
+		out.RawString("\"timestamp\":")
+		out.Raw((in.Timestamp).MarshalJSON())
 	}
 	if len(in.Labels) != 0 {
 		if !first {
@@ -210,14 +226,6 @@ func easyjson824e3c25EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
-	if in.MailId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"mail_id\":")
-		out.Int64(int64(in.MailId))
-	}
 	if len(in.Recipients) != 0 {
 		if !first {
 			out.RawByte(',')
@@ -237,21 +245,13 @@ func easyjson824e3c25EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
-	if in.Subject != "" {
+	if in.IsRead {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"subject\":")
-		out.String(string(in.Subject))
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"timestamp\":")
-		out.Raw((in.Timestamp).MarshalJSON())
+		out.RawString("\"is_read\":")
+		out.Bool(bool(in.IsRead))
 	}
 	out.RawByte('}')
 }
@@ -298,10 +298,10 @@ func easyjson824e3c25DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "recipient_id":
-			out.RecipientId = int32(in.Int32())
 		case "recipient_type":
 			out.RecipientType = string(in.String())
+		case "recipient_id":
+			out.RecipientId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -316,14 +316,6 @@ func easyjson824e3c25EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.RecipientId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"recipient_id\":")
-		out.Int32(int32(in.RecipientId))
-	}
 	if in.RecipientType != "" {
 		if !first {
 			out.RawByte(',')
@@ -331,6 +323,14 @@ func easyjson824e3c25EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"recipient_type\":")
 		out.String(string(in.RecipientType))
+	}
+	if in.RecipientId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"recipient_id\":")
+		out.Int32(int32(in.RecipientId))
 	}
 	out.RawByte('}')
 }

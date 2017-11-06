@@ -103,14 +103,14 @@ func easyjsonC17a1f4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetSt
 			continue
 		}
 		switch key {
-		case "players":
-			out.Players = int32(in.Int32())
-		case "server_version":
-			out.ServerVersion = string(in.String())
 		case "start_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.StartTime).UnmarshalJSON(data))
 			}
+		case "players":
+			out.Players = int32(in.Int32())
+		case "server_version":
+			out.ServerVersion = string(in.String())
 		case "vip":
 			out.Vip = bool(in.Bool())
 		default:
@@ -127,6 +127,14 @@ func easyjsonC17a1f4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetS
 	out.RawByte('{')
 	first := true
 	_ = first
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"start_time\":")
+		out.Raw((in.StartTime).MarshalJSON())
+	}
 	if in.Players != 0 {
 		if !first {
 			out.RawByte(',')
@@ -142,14 +150,6 @@ func easyjsonC17a1f4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetS
 		first = false
 		out.RawString("\"server_version\":")
 		out.String(string(in.ServerVersion))
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"start_time\":")
-		out.Raw((in.StartTime).MarshalJSON())
 	}
 	if in.Vip {
 		if !first {

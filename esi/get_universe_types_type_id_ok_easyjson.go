@@ -103,10 +103,34 @@ func easyjson15ff5640DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "capacity":
-			out.Capacity = float32(in.Float32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
 		case "description":
 			out.Description = string(in.String())
+		case "published":
+			out.Published = bool(in.Bool())
+		case "group_id":
+			out.GroupId = int32(in.Int32())
+		case "market_group_id":
+			out.MarketGroupId = int32(in.Int32())
+		case "radius":
+			out.Radius = float32(in.Float32())
+		case "volume":
+			out.Volume = float32(in.Float32())
+		case "packaged_volume":
+			out.PackagedVolume = float32(in.Float32())
+		case "icon_id":
+			out.IconId = int32(in.Int32())
+		case "capacity":
+			out.Capacity = float32(in.Float32())
+		case "portion_size":
+			out.PortionSize = int32(in.Int32())
+		case "mass":
+			out.Mass = float32(in.Float32())
+		case "graphic_id":
+			out.GraphicId = int32(in.Int32())
 		case "dogma_attributes":
 			if in.IsNull() {
 				in.Skip()
@@ -153,30 +177,6 @@ func easyjson15ff5640DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
-		case "graphic_id":
-			out.GraphicId = int32(in.Int32())
-		case "group_id":
-			out.GroupId = int32(in.Int32())
-		case "icon_id":
-			out.IconId = int32(in.Int32())
-		case "market_group_id":
-			out.MarketGroupId = int32(in.Int32())
-		case "mass":
-			out.Mass = float32(in.Float32())
-		case "name":
-			out.Name = string(in.String())
-		case "packaged_volume":
-			out.PackagedVolume = float32(in.Float32())
-		case "portion_size":
-			out.PortionSize = int32(in.Int32())
-		case "published":
-			out.Published = bool(in.Bool())
-		case "radius":
-			out.Radius = float32(in.Float32())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "volume":
-			out.Volume = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -191,13 +191,21 @@ func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Capacity != 0 {
+	if in.TypeId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"capacity\":")
-		out.Float32(float32(in.Capacity))
+		out.RawString("\"type_id\":")
+		out.Int32(int32(in.TypeId))
+	}
+	if in.Name != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"name\":")
+		out.String(string(in.Name))
 	}
 	if in.Description != "" {
 		if !first {
@@ -206,6 +214,94 @@ func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"description\":")
 		out.String(string(in.Description))
+	}
+	if in.Published {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"published\":")
+		out.Bool(bool(in.Published))
+	}
+	if in.GroupId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"group_id\":")
+		out.Int32(int32(in.GroupId))
+	}
+	if in.MarketGroupId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"market_group_id\":")
+		out.Int32(int32(in.MarketGroupId))
+	}
+	if in.Radius != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"radius\":")
+		out.Float32(float32(in.Radius))
+	}
+	if in.Volume != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"volume\":")
+		out.Float32(float32(in.Volume))
+	}
+	if in.PackagedVolume != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"packaged_volume\":")
+		out.Float32(float32(in.PackagedVolume))
+	}
+	if in.IconId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"icon_id\":")
+		out.Int32(int32(in.IconId))
+	}
+	if in.Capacity != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"capacity\":")
+		out.Float32(float32(in.Capacity))
+	}
+	if in.PortionSize != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"portion_size\":")
+		out.Int32(int32(in.PortionSize))
+	}
+	if in.Mass != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"mass\":")
+		out.Float32(float32(in.Mass))
+	}
+	if in.GraphicId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"graphic_id\":")
+		out.Int32(int32(in.GraphicId))
 	}
 	if len(in.DogmaAttributes) != 0 {
 		if !first {
@@ -244,102 +340,6 @@ func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.GraphicId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"graphic_id\":")
-		out.Int32(int32(in.GraphicId))
-	}
-	if in.GroupId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"group_id\":")
-		out.Int32(int32(in.GroupId))
-	}
-	if in.IconId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"icon_id\":")
-		out.Int32(int32(in.IconId))
-	}
-	if in.MarketGroupId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"market_group_id\":")
-		out.Int32(int32(in.MarketGroupId))
-	}
-	if in.Mass != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"mass\":")
-		out.Float32(float32(in.Mass))
-	}
-	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"name\":")
-		out.String(string(in.Name))
-	}
-	if in.PackagedVolume != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"packaged_volume\":")
-		out.Float32(float32(in.PackagedVolume))
-	}
-	if in.PortionSize != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"portion_size\":")
-		out.Int32(int32(in.PortionSize))
-	}
-	if in.Published {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"published\":")
-		out.Bool(bool(in.Published))
-	}
-	if in.Radius != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"radius\":")
-		out.Float32(float32(in.Radius))
-	}
-	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"type_id\":")
-		out.Int32(int32(in.TypeId))
-	}
-	if in.Volume != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"volume\":")
-		out.Float32(float32(in.Volume))
 	}
 	out.RawByte('}')
 }

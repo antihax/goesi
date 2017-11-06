@@ -103,14 +103,12 @@ func easyjson288d22fbDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetM
 			continue
 		}
 		switch key {
-		case "description":
-			out.Description = string(in.String())
 		case "market_group_id":
 			out.MarketGroupId = int32(in.Int32())
 		case "name":
 			out.Name = string(in.String())
-		case "parent_group_id":
-			out.ParentGroupId = int32(in.Int32())
+		case "description":
+			out.Description = string(in.String())
 		case "types":
 			if in.IsNull() {
 				in.Skip()
@@ -134,6 +132,8 @@ func easyjson288d22fbDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetM
 				}
 				in.Delim(']')
 			}
+		case "parent_group_id":
+			out.ParentGroupId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -148,14 +148,6 @@ func easyjson288d22fbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Description != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"description\":")
-		out.String(string(in.Description))
-	}
 	if in.MarketGroupId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -172,13 +164,13 @@ func easyjson288d22fbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
-	if in.ParentGroupId != 0 {
+	if in.Description != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"parent_group_id\":")
-		out.Int32(int32(in.ParentGroupId))
+		out.RawString("\"description\":")
+		out.String(string(in.Description))
 	}
 	if len(in.Types) != 0 {
 		if !first {
@@ -198,6 +190,14 @@ func easyjson288d22fbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.ParentGroupId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"parent_group_id\":")
+		out.Int32(int32(in.ParentGroupId))
 	}
 	out.RawByte('}')
 }

@@ -103,18 +103,18 @@ func easyjson8effd27bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "contact_id":
-			out.ContactId = int32(in.Int32())
-		case "contact_type":
-			out.ContactType = string(in.String())
-		case "is_blocked":
-			out.IsBlocked = bool(in.Bool())
-		case "is_watched":
-			out.IsWatched = bool(in.Bool())
-		case "label_id":
-			out.LabelId = int64(in.Int64())
 		case "standing":
 			out.Standing = float32(in.Float32())
+		case "contact_type":
+			out.ContactType = string(in.String())
+		case "contact_id":
+			out.ContactId = int32(in.Int32())
+		case "is_watched":
+			out.IsWatched = bool(in.Bool())
+		case "is_blocked":
+			out.IsBlocked = bool(in.Bool())
+		case "label_id":
+			out.LabelId = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,13 +129,13 @@ func easyjson8effd27bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.ContactId != 0 {
+	if in.Standing != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"contact_id\":")
-		out.Int32(int32(in.ContactId))
+		out.RawString("\"standing\":")
+		out.Float32(float32(in.Standing))
 	}
 	if in.ContactType != "" {
 		if !first {
@@ -145,13 +145,13 @@ func easyjson8effd27bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"contact_type\":")
 		out.String(string(in.ContactType))
 	}
-	if in.IsBlocked {
+	if in.ContactId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"is_blocked\":")
-		out.Bool(bool(in.IsBlocked))
+		out.RawString("\"contact_id\":")
+		out.Int32(int32(in.ContactId))
 	}
 	if in.IsWatched {
 		if !first {
@@ -161,6 +161,14 @@ func easyjson8effd27bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"is_watched\":")
 		out.Bool(bool(in.IsWatched))
 	}
+	if in.IsBlocked {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"is_blocked\":")
+		out.Bool(bool(in.IsBlocked))
+	}
 	if in.LabelId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -168,14 +176,6 @@ func easyjson8effd27bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"label_id\":")
 		out.Int64(int64(in.LabelId))
-	}
-	if in.Standing != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"standing\":")
-		out.Float32(float32(in.Standing))
 	}
 	out.RawByte('}')
 }

@@ -105,12 +105,12 @@ func easyjson9ad1a102DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 		switch key {
 		case "name":
 			out.Name = string(in.String())
-		case "position":
-			(out.Position).UnmarshalEasyJSON(in)
 		case "solar_system_id":
 			out.SolarSystemId = int32(in.Int32())
 		case "type_id":
 			out.TypeId = int32(in.Int32())
+		case "position":
+			(out.Position).UnmarshalEasyJSON(in)
 		default:
 			in.SkipRecursive()
 		}
@@ -133,14 +133,6 @@ func easyjson9ad1a102EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"position\":")
-		(in.Position).MarshalEasyJSON(out)
-	}
 	if in.SolarSystemId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -156,6 +148,14 @@ func easyjson9ad1a102EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"position\":")
+		(in.Position).MarshalEasyJSON(out)
 	}
 	out.RawByte('}')
 }

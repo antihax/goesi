@@ -30,7 +30,7 @@ type GetCharactersCharacterIdMining200OkList []GetCharactersCharacterIdMining200
 //easyjson:json
 type GetCharactersCharacterIdMining200Ok struct {
 	Date          string `json:"date,omitempty"`            /* date string */
-	Quantity      int64  `json:"quantity,omitempty"`        /* quantity integer */
 	SolarSystemId int32  `json:"solar_system_id,omitempty"` /* solar_system_id integer */
 	TypeId        int32  `json:"type_id,omitempty"`         /* type_id integer */
+	Quantity      int64  `json:"quantity,omitempty"`        /* quantity integer */
 }

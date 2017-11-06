@@ -103,18 +103,18 @@ func easyjson156ccbf9DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
-		case "contested":
-			out.Contested = bool(in.Bool())
-		case "occupier_faction_id":
-			out.OccupierFactionId = int32(in.Int32())
-		case "owner_faction_id":
-			out.OwnerFactionId = int32(in.Int32())
 		case "solar_system_id":
 			out.SolarSystemId = int32(in.Int32())
+		case "owner_faction_id":
+			out.OwnerFactionId = int32(in.Int32())
+		case "occupier_faction_id":
+			out.OccupierFactionId = int32(in.Int32())
 		case "victory_points":
 			out.VictoryPoints = int32(in.Int32())
 		case "victory_points_threshold":
 			out.VictoryPointsThreshold = int32(in.Int32())
+		case "contested":
+			out.Contested = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,21 +129,13 @@ func easyjson156ccbf9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Contested {
+	if in.SolarSystemId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"contested\":")
-		out.Bool(bool(in.Contested))
-	}
-	if in.OccupierFactionId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"occupier_faction_id\":")
-		out.Int32(int32(in.OccupierFactionId))
+		out.RawString("\"solar_system_id\":")
+		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.OwnerFactionId != 0 {
 		if !first {
@@ -153,13 +145,13 @@ func easyjson156ccbf9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"owner_faction_id\":")
 		out.Int32(int32(in.OwnerFactionId))
 	}
-	if in.SolarSystemId != 0 {
+	if in.OccupierFactionId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"solar_system_id\":")
-		out.Int32(int32(in.SolarSystemId))
+		out.RawString("\"occupier_faction_id\":")
+		out.Int32(int32(in.OccupierFactionId))
 	}
 	if in.VictoryPoints != 0 {
 		if !first {
@@ -176,6 +168,14 @@ func easyjson156ccbf9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"victory_points_threshold\":")
 		out.Int32(int32(in.VictoryPointsThreshold))
+	}
+	if in.Contested {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"contested\":")
+		out.Bool(bool(in.Contested))
 	}
 	out.RawByte('}')
 }

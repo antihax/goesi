@@ -103,56 +103,56 @@ func easyjson5182cc53DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "job_id":
+			out.JobId = int32(in.Int32())
+		case "installer_id":
+			out.InstallerId = int32(in.Int32())
+		case "facility_id":
+			out.FacilityId = int64(in.Int64())
+		case "station_id":
+			out.StationId = int64(in.Int64())
 		case "activity_id":
 			out.ActivityId = int32(in.Int32())
 		case "blueprint_id":
 			out.BlueprintId = int64(in.Int64())
-		case "blueprint_location_id":
-			out.BlueprintLocationId = int64(in.Int64())
 		case "blueprint_type_id":
 			out.BlueprintTypeId = int32(in.Int32())
-		case "completed_character_id":
-			out.CompletedCharacterId = int32(in.Int32())
-		case "completed_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.CompletedDate).UnmarshalJSON(data))
-			}
-		case "cost":
-			out.Cost = float32(in.Float32())
-		case "duration":
-			out.Duration = int32(in.Int32())
-		case "end_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.EndDate).UnmarshalJSON(data))
-			}
-		case "facility_id":
-			out.FacilityId = int64(in.Int64())
-		case "installer_id":
-			out.InstallerId = int32(in.Int32())
-		case "job_id":
-			out.JobId = int32(in.Int32())
-		case "licensed_runs":
-			out.LicensedRuns = int32(in.Int32())
+		case "blueprint_location_id":
+			out.BlueprintLocationId = int64(in.Int64())
 		case "output_location_id":
 			out.OutputLocationId = int64(in.Int64())
-		case "pause_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.PauseDate).UnmarshalJSON(data))
-			}
+		case "runs":
+			out.Runs = int32(in.Int32())
+		case "cost":
+			out.Cost = float32(in.Float32())
+		case "licensed_runs":
+			out.LicensedRuns = int32(in.Int32())
 		case "probability":
 			out.Probability = float32(in.Float32())
 		case "product_type_id":
 			out.ProductTypeId = int32(in.Int32())
-		case "runs":
-			out.Runs = int32(in.Int32())
+		case "status":
+			out.Status = string(in.String())
+		case "duration":
+			out.Duration = int32(in.Int32())
 		case "start_date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.StartDate).UnmarshalJSON(data))
 			}
-		case "station_id":
-			out.StationId = int64(in.Int64())
-		case "status":
-			out.Status = string(in.String())
+		case "end_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.EndDate).UnmarshalJSON(data))
+			}
+		case "pause_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.PauseDate).UnmarshalJSON(data))
+			}
+		case "completed_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.CompletedDate).UnmarshalJSON(data))
+			}
+		case "completed_character_id":
+			out.CompletedCharacterId = int32(in.Int32())
 		case "successful_runs":
 			out.SuccessfulRuns = int32(in.Int32())
 		default:
@@ -169,6 +169,38 @@ func easyjson5182cc53EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.JobId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"job_id\":")
+		out.Int32(int32(in.JobId))
+	}
+	if in.InstallerId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"installer_id\":")
+		out.Int32(int32(in.InstallerId))
+	}
+	if in.FacilityId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"facility_id\":")
+		out.Int64(int64(in.FacilityId))
+	}
+	if in.StationId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"station_id\":")
+		out.Int64(int64(in.StationId))
+	}
 	if in.ActivityId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -185,14 +217,6 @@ func easyjson5182cc53EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"blueprint_id\":")
 		out.Int64(int64(in.BlueprintId))
 	}
-	if in.BlueprintLocationId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"blueprint_location_id\":")
-		out.Int64(int64(in.BlueprintLocationId))
-	}
 	if in.BlueprintTypeId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -201,77 +225,13 @@ func easyjson5182cc53EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"blueprint_type_id\":")
 		out.Int32(int32(in.BlueprintTypeId))
 	}
-	if in.CompletedCharacterId != 0 {
+	if in.BlueprintLocationId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"completed_character_id\":")
-		out.Int32(int32(in.CompletedCharacterId))
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"completed_date\":")
-		out.Raw((in.CompletedDate).MarshalJSON())
-	}
-	if in.Cost != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"cost\":")
-		out.Float32(float32(in.Cost))
-	}
-	if in.Duration != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"duration\":")
-		out.Int32(int32(in.Duration))
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"end_date\":")
-		out.Raw((in.EndDate).MarshalJSON())
-	}
-	if in.FacilityId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"facility_id\":")
-		out.Int64(int64(in.FacilityId))
-	}
-	if in.InstallerId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"installer_id\":")
-		out.Int32(int32(in.InstallerId))
-	}
-	if in.JobId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"job_id\":")
-		out.Int32(int32(in.JobId))
-	}
-	if in.LicensedRuns != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"licensed_runs\":")
-		out.Int32(int32(in.LicensedRuns))
+		out.RawString("\"blueprint_location_id\":")
+		out.Int64(int64(in.BlueprintLocationId))
 	}
 	if in.OutputLocationId != 0 {
 		if !first {
@@ -281,13 +241,29 @@ func easyjson5182cc53EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"output_location_id\":")
 		out.Int64(int64(in.OutputLocationId))
 	}
-	if true {
+	if in.Runs != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"pause_date\":")
-		out.Raw((in.PauseDate).MarshalJSON())
+		out.RawString("\"runs\":")
+		out.Int32(int32(in.Runs))
+	}
+	if in.Cost != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"cost\":")
+		out.Float32(float32(in.Cost))
+	}
+	if in.LicensedRuns != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"licensed_runs\":")
+		out.Int32(int32(in.LicensedRuns))
 	}
 	if in.Probability != 0 {
 		if !first {
@@ -305,13 +281,21 @@ func easyjson5182cc53EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"product_type_id\":")
 		out.Int32(int32(in.ProductTypeId))
 	}
-	if in.Runs != 0 {
+	if in.Status != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"runs\":")
-		out.Int32(int32(in.Runs))
+		out.RawString("\"status\":")
+		out.String(string(in.Status))
+	}
+	if in.Duration != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"duration\":")
+		out.Int32(int32(in.Duration))
 	}
 	if true {
 		if !first {
@@ -321,21 +305,37 @@ func easyjson5182cc53EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"start_date\":")
 		out.Raw((in.StartDate).MarshalJSON())
 	}
-	if in.StationId != 0 {
+	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"station_id\":")
-		out.Int64(int64(in.StationId))
+		out.RawString("\"end_date\":")
+		out.Raw((in.EndDate).MarshalJSON())
 	}
-	if in.Status != "" {
+	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"status\":")
-		out.String(string(in.Status))
+		out.RawString("\"pause_date\":")
+		out.Raw((in.PauseDate).MarshalJSON())
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"completed_date\":")
+		out.Raw((in.CompletedDate).MarshalJSON())
+	}
+	if in.CompletedCharacterId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"completed_character_id\":")
+		out.Int32(int32(in.CompletedCharacterId))
 	}
 	if in.SuccessfulRuns != 0 {
 		if !first {

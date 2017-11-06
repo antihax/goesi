@@ -34,8 +34,8 @@ type GetCharactersCharacterIdAgentsResearch200OkList []GetCharactersCharacterIdA
 //easyjson:json
 type GetCharactersCharacterIdAgentsResearch200Ok struct {
 	AgentId         int32     `json:"agent_id,omitempty"`         /* agent_id integer */
-	PointsPerDay    float32   `json:"points_per_day,omitempty"`   /* points_per_day number */
-	RemainderPoints float32   `json:"remainder_points,omitempty"` /* remainder_points number */
 	SkillTypeId     int32     `json:"skill_type_id,omitempty"`    /* skill_type_id integer */
 	StartedAt       time.Time `json:"started_at,omitempty"`       /* started_at string */
+	PointsPerDay    float32   `json:"points_per_day,omitempty"`   /* points_per_day number */
+	RemainderPoints float32   `json:"remainder_points,omitempty"` /* remainder_points number */
 }

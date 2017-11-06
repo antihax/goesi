@@ -29,10 +29,10 @@ type GetUniverseStargatesStargateIdOkList []GetUniverseStargatesStargateIdOk
 /* 200 ok object */
 //easyjson:json
 type GetUniverseStargatesStargateIdOk struct {
-	Destination GetUniverseStargatesStargateIdDestination `json:"destination,omitempty"`
-	Name        string                                    `json:"name,omitempty"` /* name string */
-	Position    GetUniverseStargatesStargateIdPosition    `json:"position,omitempty"`
 	StargateId  int32                                     `json:"stargate_id,omitempty"` /* stargate_id integer */
-	SystemId    int32                                     `json:"system_id,omitempty"`   /* The solar system this stargate is in */
+	Name        string                                    `json:"name,omitempty"`        /* name string */
 	TypeId      int32                                     `json:"type_id,omitempty"`     /* type_id integer */
+	Position    GetUniverseStargatesStargateIdPosition    `json:"position,omitempty"`
+	SystemId    int32                                     `json:"system_id,omitempty"` /* The solar system this stargate is in */
+	Destination GetUniverseStargatesStargateIdDestination `json:"destination,omitempty"`
 }

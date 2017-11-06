@@ -33,15 +33,15 @@ type GetCharactersCharacterIdPlanetsPlanetIdPinList []GetCharactersCharacterIdPl
 /* pin object */
 //easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdPin struct {
-	Contents         []GetCharactersCharacterIdPlanetsPlanetIdContent        `json:"contents,omitempty"`    /* contents array */
-	ExpiryTime       time.Time                                               `json:"expiry_time,omitempty"` /* expiry_time string */
+	Latitude         float32                                                 `json:"latitude,omitempty"`     /* latitude number */
+	Longitude        float32                                                 `json:"longitude,omitempty"`    /* longitude number */
+	PinId            int64                                                   `json:"pin_id,omitempty"`       /* pin_id integer */
+	TypeId           int32                                                   `json:"type_id,omitempty"`      /* type_id integer */
+	SchematicId      int32                                                   `json:"schematic_id,omitempty"` /* schematic_id integer */
 	ExtractorDetails GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails `json:"extractor_details,omitempty"`
 	FactoryDetails   GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails   `json:"factory_details,omitempty"`
+	Contents         []GetCharactersCharacterIdPlanetsPlanetIdContent        `json:"contents,omitempty"`         /* contents array */
 	InstallTime      time.Time                                               `json:"install_time,omitempty"`     /* install_time string */
+	ExpiryTime       time.Time                                               `json:"expiry_time,omitempty"`      /* expiry_time string */
 	LastCycleStart   time.Time                                               `json:"last_cycle_start,omitempty"` /* last_cycle_start string */
-	Latitude         float32                                                 `json:"latitude,omitempty"`         /* latitude number */
-	Longitude        float32                                                 `json:"longitude,omitempty"`        /* longitude number */
-	PinId            int64                                                   `json:"pin_id,omitempty"`           /* pin_id integer */
-	SchematicId      int32                                                   `json:"schematic_id,omitempty"`     /* schematic_id integer */
-	TypeId           int32                                                   `json:"type_id,omitempty"`          /* type_id integer */
 }

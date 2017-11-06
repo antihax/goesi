@@ -103,6 +103,8 @@ func easyjsonCb1e1ff4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
+		case "planet_id":
+			out.PlanetId = int32(in.Int32())
 		case "moons":
 			if in.IsNull() {
 				in.Skip()
@@ -126,8 +128,6 @@ func easyjsonCb1e1ff4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
-		case "planet_id":
-			out.PlanetId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -142,6 +142,14 @@ func easyjsonCb1e1ff4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.PlanetId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"planet_id\":")
+		out.Int32(int32(in.PlanetId))
+	}
 	if len(in.Moons) != 0 {
 		if !first {
 			out.RawByte(',')
@@ -160,14 +168,6 @@ func easyjsonCb1e1ff4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.PlanetId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"planet_id\":")
-		out.Int32(int32(in.PlanetId))
 	}
 	out.RawByte('}')
 }

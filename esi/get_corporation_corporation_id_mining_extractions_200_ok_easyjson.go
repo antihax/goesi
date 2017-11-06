@@ -103,22 +103,22 @@ func easyjsonCeaeb3dcDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "chunk_arrival_time":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.ChunkArrivalTime).UnmarshalJSON(data))
-			}
+		case "structure_id":
+			out.StructureId = int64(in.Int64())
+		case "moon_id":
+			out.MoonId = int32(in.Int32())
 		case "extraction_start_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.ExtractionStartTime).UnmarshalJSON(data))
 			}
-		case "moon_id":
-			out.MoonId = int32(in.Int32())
+		case "chunk_arrival_time":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.ChunkArrivalTime).UnmarshalJSON(data))
+			}
 		case "natural_decay_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.NaturalDecayTime).UnmarshalJSON(data))
 			}
-		case "structure_id":
-			out.StructureId = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -133,21 +133,13 @@ func easyjsonCeaeb3dcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if true {
+	if in.StructureId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"chunk_arrival_time\":")
-		out.Raw((in.ChunkArrivalTime).MarshalJSON())
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"extraction_start_time\":")
-		out.Raw((in.ExtractionStartTime).MarshalJSON())
+		out.RawString("\"structure_id\":")
+		out.Int64(int64(in.StructureId))
 	}
 	if in.MoonId != 0 {
 		if !first {
@@ -162,16 +154,24 @@ func easyjsonCeaeb3dcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"natural_decay_time\":")
-		out.Raw((in.NaturalDecayTime).MarshalJSON())
+		out.RawString("\"extraction_start_time\":")
+		out.Raw((in.ExtractionStartTime).MarshalJSON())
 	}
-	if in.StructureId != 0 {
+	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"structure_id\":")
-		out.Int64(int64(in.StructureId))
+		out.RawString("\"chunk_arrival_time\":")
+		out.Raw((in.ChunkArrivalTime).MarshalJSON())
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"natural_decay_time\":")
+		out.Raw((in.NaturalDecayTime).MarshalJSON())
 	}
 	out.RawByte('}')
 }

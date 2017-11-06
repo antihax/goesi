@@ -29,10 +29,10 @@ type GetKillmailsKillmailIdKillmailHashItem1List []GetKillmailsKillmailIdKillmai
 /* item object */
 //easyjson:json
 type GetKillmailsKillmailIdKillmailHashItem1 struct {
-	Flag              int32                                    `json:"flag,omitempty"`               /* Flag for the location of the item  */
 	ItemTypeId        int32                                    `json:"item_type_id,omitempty"`       /* item_type_id integer */
-	Items             []GetKillmailsKillmailIdKillmailHashItem `json:"items,omitempty"`              /* items array */
 	QuantityDestroyed int64                                    `json:"quantity_destroyed,omitempty"` /* How many of the item were destroyed if any  */
 	QuantityDropped   int64                                    `json:"quantity_dropped,omitempty"`   /* How many of the item were dropped if any  */
 	Singleton         int32                                    `json:"singleton,omitempty"`          /* singleton integer */
+	Flag              int32                                    `json:"flag,omitempty"`               /* Flag for the location of the item  */
+	Items             []GetKillmailsKillmailIdKillmailHashItem `json:"items,omitempty"`              /* items array */
 }

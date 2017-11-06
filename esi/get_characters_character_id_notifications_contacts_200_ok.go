@@ -33,9 +33,9 @@ type GetCharactersCharacterIdNotificationsContacts200OkList []GetCharactersChara
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdNotificationsContacts200Ok struct {
-	Message           string    `json:"message,omitempty"`             /* message string */
 	NotificationId    int32     `json:"notification_id,omitempty"`     /* notification_id integer */
 	SendDate          time.Time `json:"send_date,omitempty"`           /* send_date string */
-	SenderCharacterId int32     `json:"sender_character_id,omitempty"` /* sender_character_id integer */
 	StandingLevel     float32   `json:"standing_level,omitempty"`      /* A number representing the standing level the receiver has been added at by the sender. The standing levels are as follows: -10 -> Terrible | -5 -> Bad |  0 -> Neutral |  5 -> Good |  10 -> Excellent */
+	Message           string    `json:"message,omitempty"`             /* message string */
+	SenderCharacterId int32     `json:"sender_character_id,omitempty"` /* sender_character_id integer */
 }

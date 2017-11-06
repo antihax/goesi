@@ -103,8 +103,16 @@ func easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "structure_id":
+			out.StructureId = int64(in.Int64())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		case "corporation_id":
 			out.CorporationId = int32(in.Int32())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
+		case "profile_id":
+			out.ProfileId = int32(in.Int32())
 		case "current_vul":
 			if in.IsNull() {
 				in.Skip()
@@ -128,8 +136,6 @@ func easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "fuel_expires":
-			out.FuelExpires = string(in.String())
 		case "next_vul":
 			if in.IsNull() {
 				in.Skip()
@@ -153,8 +159,8 @@ func easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "profile_id":
-			out.ProfileId = int32(in.Int32())
+		case "fuel_expires":
+			out.FuelExpires = string(in.String())
 		case "services":
 			if in.IsNull() {
 				in.Skip()
@@ -178,16 +184,10 @@ func easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "state_timer_end":
-			out.StateTimerEnd = string(in.String())
 		case "state_timer_start":
 			out.StateTimerStart = string(in.String())
-		case "structure_id":
-			out.StructureId = int64(in.Int64())
-		case "system_id":
-			out.SystemId = int32(in.Int32())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
+		case "state_timer_end":
+			out.StateTimerEnd = string(in.String())
 		case "unanchors_at":
 			out.UnanchorsAt = string(in.String())
 		default:
@@ -204,6 +204,22 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.StructureId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"structure_id\":")
+		out.Int64(int64(in.StructureId))
+	}
+	if in.TypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"type_id\":")
+		out.Int32(int32(in.TypeId))
+	}
 	if in.CorporationId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -211,6 +227,22 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
+	}
+	if in.SystemId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"system_id\":")
+		out.Int32(int32(in.SystemId))
+	}
+	if in.ProfileId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"profile_id\":")
+		out.Int32(int32(in.ProfileId))
 	}
 	if len(in.CurrentVul) != 0 {
 		if !first {
@@ -231,14 +263,6 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
-	if in.FuelExpires != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"fuel_expires\":")
-		out.String(string(in.FuelExpires))
-	}
 	if len(in.NextVul) != 0 {
 		if !first {
 			out.RawByte(',')
@@ -258,13 +282,13 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
-	if in.ProfileId != 0 {
+	if in.FuelExpires != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"profile_id\":")
-		out.Int32(int32(in.ProfileId))
+		out.RawString("\"fuel_expires\":")
+		out.String(string(in.FuelExpires))
 	}
 	if len(in.Services) != 0 {
 		if !first {
@@ -285,14 +309,6 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
-	if in.StateTimerEnd != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"state_timer_end\":")
-		out.String(string(in.StateTimerEnd))
-	}
 	if in.StateTimerStart != "" {
 		if !first {
 			out.RawByte(',')
@@ -301,29 +317,13 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"state_timer_start\":")
 		out.String(string(in.StateTimerStart))
 	}
-	if in.StructureId != 0 {
+	if in.StateTimerEnd != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"structure_id\":")
-		out.Int64(int64(in.StructureId))
-	}
-	if in.SystemId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"system_id\":")
-		out.Int32(int32(in.SystemId))
-	}
-	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"type_id\":")
-		out.Int32(int32(in.TypeId))
+		out.RawString("\"state_timer_end\":")
+		out.String(string(in.StateTimerEnd))
 	}
 	if in.UnanchorsAt != "" {
 		if !first {

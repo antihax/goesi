@@ -29,8 +29,8 @@ type PostCharactersCharacterIdFittingsFittingList []PostCharactersCharacterIdFit
 /* fitting object */
 //easyjson:json
 type PostCharactersCharacterIdFittingsFitting struct {
-	Description string                                  `json:"description,omitempty"`  /* description string */
-	Items       []PostCharactersCharacterIdFittingsItem `json:"items,omitempty"`        /* items array */
 	Name        string                                  `json:"name,omitempty"`         /* name string */
+	Description string                                  `json:"description,omitempty"`  /* description string */
 	ShipTypeId  int32                                   `json:"ship_type_id,omitempty"` /* ship_type_id integer */
+	Items       []PostCharactersCharacterIdFittingsItem `json:"items,omitempty"`        /* items array */
 }

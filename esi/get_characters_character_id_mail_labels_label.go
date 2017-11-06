@@ -29,8 +29,8 @@ type GetCharactersCharacterIdMailLabelsLabelList []GetCharactersCharacterIdMailL
 /* label object */
 //easyjson:json
 type GetCharactersCharacterIdMailLabelsLabel struct {
-	Color       string `json:"color,omitempty"`        /* color string */
+	UnreadCount int32  `json:"unread_count,omitempty"` /* unread_count integer */
 	LabelId     int32  `json:"label_id,omitempty"`     /* label_id integer */
 	Name        string `json:"name,omitempty"`         /* name string */
-	UnreadCount int32  `json:"unread_count,omitempty"` /* unread_count integer */
+	Color       string `json:"color,omitempty"`        /* color string */
 }

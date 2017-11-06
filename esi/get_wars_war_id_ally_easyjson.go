@@ -103,10 +103,10 @@ func easyjsonC890d350DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetW
 			continue
 		}
 		switch key {
-		case "alliance_id":
-			out.AllianceId = int32(in.Int32())
 		case "corporation_id":
 			out.CorporationId = int32(in.Int32())
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -121,14 +121,6 @@ func easyjsonC890d350EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"alliance_id\":")
-		out.Int32(int32(in.AllianceId))
-	}
 	if in.CorporationId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -136,6 +128,14 @@ func easyjsonC890d350EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
+	}
+	if in.AllianceId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"alliance_id\":")
+		out.Int32(int32(in.AllianceId))
 	}
 	out.RawByte('}')
 }

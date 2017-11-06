@@ -103,12 +103,12 @@ func easyjson3aa1a036DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "share_count":
-			out.ShareCount = int64(in.Int64())
 		case "shareholder_id":
 			out.ShareholderId = int32(in.Int32())
 		case "shareholder_type":
 			out.ShareholderType = string(in.String())
+		case "share_count":
+			out.ShareCount = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -123,14 +123,6 @@ func easyjson3aa1a036EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.ShareCount != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"share_count\":")
-		out.Int64(int64(in.ShareCount))
-	}
 	if in.ShareholderId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -146,6 +138,14 @@ func easyjson3aa1a036EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"shareholder_type\":")
 		out.String(string(in.ShareholderType))
+	}
+	if in.ShareCount != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"share_count\":")
+		out.Int64(int64(in.ShareCount))
 	}
 	out.RawByte('}')
 }

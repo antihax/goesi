@@ -29,6 +29,6 @@ type GetFwLeaderboardsLastWeekList []GetFwLeaderboardsLastWeek
 /* last_week object */
 //easyjson:json
 type GetFwLeaderboardsLastWeek struct {
-	Amount    int32 `json:"amount,omitempty"`     /* Amount of kills */
 	FactionId int32 `json:"faction_id,omitempty"` /* faction_id integer */
+	Amount    int32 `json:"amount,omitempty"`     /* Amount of kills */
 }

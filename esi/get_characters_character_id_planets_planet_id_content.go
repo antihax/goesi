@@ -29,6 +29,6 @@ type GetCharactersCharacterIdPlanetsPlanetIdContentList []GetCharactersCharacter
 /* content object */
 //easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdContent struct {
-	Amount int64 `json:"amount,omitempty"`  /* amount integer */
 	TypeId int32 `json:"type_id,omitempty"` /* type_id integer */
+	Amount int64 `json:"amount,omitempty"`  /* amount integer */
 }

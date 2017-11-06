@@ -105,14 +105,14 @@ func easyjson67f82948DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetA
 		switch key {
 		case "alliance_name":
 			out.AllianceName = string(in.String())
+		case "ticker":
+			out.Ticker = string(in.String())
+		case "executor_corp":
+			out.ExecutorCorp = int32(in.Int32())
 		case "date_founded":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.DateFounded).UnmarshalJSON(data))
 			}
-		case "executor_corp":
-			out.ExecutorCorp = int32(in.Int32())
-		case "ticker":
-			out.Ticker = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -135,13 +135,13 @@ func easyjson67f82948EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"alliance_name\":")
 		out.String(string(in.AllianceName))
 	}
-	if true {
+	if in.Ticker != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"date_founded\":")
-		out.Raw((in.DateFounded).MarshalJSON())
+		out.RawString("\"ticker\":")
+		out.String(string(in.Ticker))
 	}
 	if in.ExecutorCorp != 0 {
 		if !first {
@@ -151,13 +151,13 @@ func easyjson67f82948EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"executor_corp\":")
 		out.Int32(int32(in.ExecutorCorp))
 	}
-	if in.Ticker != "" {
+	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"ticker\":")
-		out.String(string(in.Ticker))
+		out.RawString("\"date_founded\":")
+		out.Raw((in.DateFounded).MarshalJSON())
 	}
 	out.RawByte('}')
 }

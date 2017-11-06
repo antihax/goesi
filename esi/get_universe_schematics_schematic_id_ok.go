@@ -29,6 +29,6 @@ type GetUniverseSchematicsSchematicIdOkList []GetUniverseSchematicsSchematicIdOk
 /* 200 ok object */
 //easyjson:json
 type GetUniverseSchematicsSchematicIdOk struct {
-	CycleTime     int32  `json:"cycle_time,omitempty"`     /* Time in seconds to process a run */
 	SchematicName string `json:"schematic_name,omitempty"` /* schematic_name string */
+	CycleTime     int32  `json:"cycle_time,omitempty"`     /* Time in seconds to process a run */
 }

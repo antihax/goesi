@@ -29,10 +29,10 @@ type GetLoyaltyStoresCorporationIdOffers200OkList []GetLoyaltyStoresCorporationI
 /* 200 ok object */
 //easyjson:json
 type GetLoyaltyStoresCorporationIdOffers200Ok struct {
-	IskCost       float32                                           `json:"isk_cost,omitempty"`       /* isk_cost number */
-	LpCost        int32                                             `json:"lp_cost,omitempty"`        /* lp_cost integer */
 	OfferId       int32                                             `json:"offer_id,omitempty"`       /* offer_id integer */
-	Quantity      int32                                             `json:"quantity,omitempty"`       /* quantity integer */
-	RequiredItems []GetLoyaltyStoresCorporationIdOffersRequiredItem `json:"required_items,omitempty"` /* required_items array */
 	TypeId        int32                                             `json:"type_id,omitempty"`        /* type_id integer */
+	Quantity      int32                                             `json:"quantity,omitempty"`       /* quantity integer */
+	LpCost        int32                                             `json:"lp_cost,omitempty"`        /* lp_cost integer */
+	IskCost       float32                                           `json:"isk_cost,omitempty"`       /* isk_cost number */
+	RequiredItems []GetLoyaltyStoresCorporationIdOffersRequiredItem `json:"required_items,omitempty"` /* required_items array */
 }

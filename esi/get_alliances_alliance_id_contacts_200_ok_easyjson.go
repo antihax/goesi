@@ -103,14 +103,14 @@ func easyjson35938af9DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetA
 			continue
 		}
 		switch key {
-		case "contact_id":
-			out.ContactId = int32(in.Int32())
-		case "contact_type":
-			out.ContactType = string(in.String())
-		case "label_id":
-			out.LabelId = int64(in.Int64())
 		case "standing":
 			out.Standing = float32(in.Float32())
+		case "contact_type":
+			out.ContactType = string(in.String())
+		case "contact_id":
+			out.ContactId = int32(in.Int32())
+		case "label_id":
+			out.LabelId = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -125,13 +125,13 @@ func easyjson35938af9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.ContactId != 0 {
+	if in.Standing != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"contact_id\":")
-		out.Int32(int32(in.ContactId))
+		out.RawString("\"standing\":")
+		out.Float32(float32(in.Standing))
 	}
 	if in.ContactType != "" {
 		if !first {
@@ -141,6 +141,14 @@ func easyjson35938af9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"contact_type\":")
 		out.String(string(in.ContactType))
 	}
+	if in.ContactId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"contact_id\":")
+		out.Int32(int32(in.ContactId))
+	}
 	if in.LabelId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -148,14 +156,6 @@ func easyjson35938af9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"label_id\":")
 		out.Int64(int64(in.LabelId))
-	}
-	if in.Standing != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"standing\":")
-		out.Float32(float32(in.Standing))
 	}
 	out.RawByte('}')
 }

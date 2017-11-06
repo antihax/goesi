@@ -33,12 +33,12 @@ type GetCorporationsCorporationIdStarbases200OkList []GetCorporationsCorporation
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdStarbases200Ok struct {
-	MoonId          int32     `json:"moon_id,omitempty"`          /* The moon this starbase (POS) is anchored on, unanchored POSes do not have this information */
-	OnlinedSince    time.Time `json:"onlined_since,omitempty"`    /* When the POS onlined, for starbases (POSes) in online state */
-	ReinforcedUntil time.Time `json:"reinforced_until,omitempty"` /* When the POS will be out of reinforcement, for starbases (POSes) in reinforced state */
 	StarbaseId      int64     `json:"starbase_id,omitempty"`      /* Unique ID for this starbase (POS) */
-	State           string    `json:"state,omitempty"`            /* state string */
-	SystemId        int32     `json:"system_id,omitempty"`        /* The solar system this starbase (POS) is in, unanchored POSes have this information */
 	TypeId          int32     `json:"type_id,omitempty"`          /* Starbase (POS) type */
+	SystemId        int32     `json:"system_id,omitempty"`        /* The solar system this starbase (POS) is in, unanchored POSes have this information */
+	MoonId          int32     `json:"moon_id,omitempty"`          /* The moon this starbase (POS) is anchored on, unanchored POSes do not have this information */
+	State           string    `json:"state,omitempty"`            /* state string */
 	UnanchorAt      time.Time `json:"unanchor_at,omitempty"`      /* When the POS started unanchoring, for starbases (POSes) in unanchoring state */
+	ReinforcedUntil time.Time `json:"reinforced_until,omitempty"` /* When the POS will be out of reinforcement, for starbases (POSes) in reinforced state */
+	OnlinedSince    time.Time `json:"onlined_since,omitempty"`    /* When the POS onlined, for starbases (POSes) in online state */
 }

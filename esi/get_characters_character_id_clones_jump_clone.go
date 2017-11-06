@@ -29,7 +29,7 @@ type GetCharactersCharacterIdClonesJumpCloneList []GetCharactersCharacterIdClone
 /* jump_clone object */
 //easyjson:json
 type GetCharactersCharacterIdClonesJumpClone struct {
-	Implants     []int32 `json:"implants,omitempty"`      /* implants array */
 	LocationId   int64   `json:"location_id,omitempty"`   /* location_id integer */
 	LocationType string  `json:"location_type,omitempty"` /* location_type string */
+	Implants     []int32 `json:"implants,omitempty"`      /* implants array */
 }

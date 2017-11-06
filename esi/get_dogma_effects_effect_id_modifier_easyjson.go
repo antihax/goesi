@@ -103,16 +103,16 @@ func easyjson5c9803ceDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetD
 			continue
 		}
 		switch key {
-		case "domain":
-			out.Domain = string(in.String())
-		case "effect_id":
-			out.EffectId = int32(in.Int32())
 		case "func":
 			out.Func_ = string(in.String())
+		case "domain":
+			out.Domain = string(in.String())
 		case "modified_attribute_id":
 			out.ModifiedAttributeId = int32(in.Int32())
 		case "modifying_attribute_id":
 			out.ModifyingAttributeId = int32(in.Int32())
+		case "effect_id":
+			out.EffectId = int32(in.Int32())
 		case "operator":
 			out.Operator = int32(in.Int32())
 		default:
@@ -129,22 +129,6 @@ func easyjson5c9803ceEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Domain != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"domain\":")
-		out.String(string(in.Domain))
-	}
-	if in.EffectId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"effect_id\":")
-		out.Int32(int32(in.EffectId))
-	}
 	if in.Func_ != "" {
 		if !first {
 			out.RawByte(',')
@@ -152,6 +136,14 @@ func easyjson5c9803ceEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"func\":")
 		out.String(string(in.Func_))
+	}
+	if in.Domain != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"domain\":")
+		out.String(string(in.Domain))
 	}
 	if in.ModifiedAttributeId != 0 {
 		if !first {
@@ -168,6 +160,14 @@ func easyjson5c9803ceEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"modifying_attribute_id\":")
 		out.Int32(int32(in.ModifyingAttributeId))
+	}
+	if in.EffectId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"effect_id\":")
+		out.Int32(int32(in.EffectId))
 	}
 	if in.Operator != 0 {
 		if !first {

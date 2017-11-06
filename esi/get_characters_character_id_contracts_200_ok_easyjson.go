@@ -103,56 +103,56 @@ func easyjson755fff33DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "acceptor_id":
-			out.AcceptorId = int32(in.Int32())
-		case "assignee_id":
-			out.AssigneeId = int32(in.Int32())
-		case "availability":
-			out.Availability = string(in.String())
-		case "buyout":
-			out.Buyout = float32(in.Float32())
-		case "collateral":
-			out.Collateral = float32(in.Float32())
 		case "contract_id":
 			out.ContractId = int32(in.Int32())
-		case "date_accepted":
+		case "issuer_id":
+			out.IssuerId = int32(in.Int32())
+		case "issuer_corporation_id":
+			out.IssuerCorporationId = int32(in.Int32())
+		case "assignee_id":
+			out.AssigneeId = int32(in.Int32())
+		case "acceptor_id":
+			out.AcceptorId = int32(in.Int32())
+		case "start_location_id":
+			out.StartLocationId = int64(in.Int64())
+		case "end_location_id":
+			out.EndLocationId = int64(in.Int64())
+		case "type":
+			out.Type_ = string(in.String())
+		case "status":
+			out.Status = string(in.String())
+		case "title":
+			out.Title = string(in.String())
+		case "for_corporation":
+			out.ForCorporation = bool(in.Bool())
+		case "availability":
+			out.Availability = string(in.String())
+		case "date_issued":
 			if data := in.Raw(); in.Ok() {
-				in.AddError((out.DateAccepted).UnmarshalJSON(data))
-			}
-		case "date_completed":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.DateCompleted).UnmarshalJSON(data))
+				in.AddError((out.DateIssued).UnmarshalJSON(data))
 			}
 		case "date_expired":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.DateExpired).UnmarshalJSON(data))
 			}
-		case "date_issued":
+		case "date_accepted":
 			if data := in.Raw(); in.Ok() {
-				in.AddError((out.DateIssued).UnmarshalJSON(data))
+				in.AddError((out.DateAccepted).UnmarshalJSON(data))
 			}
 		case "days_to_complete":
 			out.DaysToComplete = int32(in.Int32())
-		case "end_location_id":
-			out.EndLocationId = int64(in.Int64())
-		case "for_corporation":
-			out.ForCorporation = bool(in.Bool())
-		case "issuer_corporation_id":
-			out.IssuerCorporationId = int32(in.Int32())
-		case "issuer_id":
-			out.IssuerId = int32(in.Int32())
+		case "date_completed":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.DateCompleted).UnmarshalJSON(data))
+			}
 		case "price":
 			out.Price = float32(in.Float32())
 		case "reward":
 			out.Reward = float32(in.Float32())
-		case "start_location_id":
-			out.StartLocationId = int64(in.Int64())
-		case "status":
-			out.Status = string(in.String())
-		case "title":
-			out.Title = string(in.String())
-		case "type":
-			out.Type_ = string(in.String())
+		case "collateral":
+			out.Collateral = float32(in.Float32())
+		case "buyout":
+			out.Buyout = float32(in.Float32())
 		case "volume":
 			out.Volume = float32(in.Float32())
 		default:
@@ -169,46 +169,6 @@ func easyjson755fff33EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.AcceptorId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"acceptor_id\":")
-		out.Int32(int32(in.AcceptorId))
-	}
-	if in.AssigneeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"assignee_id\":")
-		out.Int32(int32(in.AssigneeId))
-	}
-	if in.Availability != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"availability\":")
-		out.String(string(in.Availability))
-	}
-	if in.Buyout != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"buyout\":")
-		out.Float32(float32(in.Buyout))
-	}
-	if in.Collateral != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"collateral\":")
-		out.Float32(float32(in.Collateral))
-	}
 	if in.ContractId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -216,70 +176,6 @@ func easyjson755fff33EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"contract_id\":")
 		out.Int32(int32(in.ContractId))
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"date_accepted\":")
-		out.Raw((in.DateAccepted).MarshalJSON())
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"date_completed\":")
-		out.Raw((in.DateCompleted).MarshalJSON())
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"date_expired\":")
-		out.Raw((in.DateExpired).MarshalJSON())
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"date_issued\":")
-		out.Raw((in.DateIssued).MarshalJSON())
-	}
-	if in.DaysToComplete != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"days_to_complete\":")
-		out.Int32(int32(in.DaysToComplete))
-	}
-	if in.EndLocationId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"end_location_id\":")
-		out.Int64(int64(in.EndLocationId))
-	}
-	if in.ForCorporation {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"for_corporation\":")
-		out.Bool(bool(in.ForCorporation))
-	}
-	if in.IssuerCorporationId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"issuer_corporation_id\":")
-		out.Int32(int32(in.IssuerCorporationId))
 	}
 	if in.IssuerId != 0 {
 		if !first {
@@ -289,21 +185,29 @@ func easyjson755fff33EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"issuer_id\":")
 		out.Int32(int32(in.IssuerId))
 	}
-	if in.Price != 0 {
+	if in.IssuerCorporationId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"price\":")
-		out.Float32(float32(in.Price))
+		out.RawString("\"issuer_corporation_id\":")
+		out.Int32(int32(in.IssuerCorporationId))
 	}
-	if in.Reward != 0 {
+	if in.AssigneeId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"reward\":")
-		out.Float32(float32(in.Reward))
+		out.RawString("\"assignee_id\":")
+		out.Int32(int32(in.AssigneeId))
+	}
+	if in.AcceptorId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"acceptor_id\":")
+		out.Int32(int32(in.AcceptorId))
 	}
 	if in.StartLocationId != 0 {
 		if !first {
@@ -312,6 +216,22 @@ func easyjson755fff33EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"start_location_id\":")
 		out.Int64(int64(in.StartLocationId))
+	}
+	if in.EndLocationId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"end_location_id\":")
+		out.Int64(int64(in.EndLocationId))
+	}
+	if in.Type_ != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"type\":")
+		out.String(string(in.Type_))
 	}
 	if in.Status != "" {
 		if !first {
@@ -329,13 +249,93 @@ func easyjson755fff33EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"title\":")
 		out.String(string(in.Title))
 	}
-	if in.Type_ != "" {
+	if in.ForCorporation {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"type\":")
-		out.String(string(in.Type_))
+		out.RawString("\"for_corporation\":")
+		out.Bool(bool(in.ForCorporation))
+	}
+	if in.Availability != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"availability\":")
+		out.String(string(in.Availability))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"date_issued\":")
+		out.Raw((in.DateIssued).MarshalJSON())
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"date_expired\":")
+		out.Raw((in.DateExpired).MarshalJSON())
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"date_accepted\":")
+		out.Raw((in.DateAccepted).MarshalJSON())
+	}
+	if in.DaysToComplete != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"days_to_complete\":")
+		out.Int32(int32(in.DaysToComplete))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"date_completed\":")
+		out.Raw((in.DateCompleted).MarshalJSON())
+	}
+	if in.Price != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"price\":")
+		out.Float32(float32(in.Price))
+	}
+	if in.Reward != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"reward\":")
+		out.Float32(float32(in.Reward))
+	}
+	if in.Collateral != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"collateral\":")
+		out.Float32(float32(in.Collateral))
+	}
+	if in.Buyout != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"buyout\":")
+		out.Float32(float32(in.Buyout))
 	}
 	if in.Volume != 0 {
 		if !first {

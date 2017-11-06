@@ -103,14 +103,14 @@ func easyjson191b3d72DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetO
 			continue
 		}
 		switch key {
-		case "description":
-			out.Description = string(in.String())
-		case "name":
-			out.Name = string(in.String())
-		case "notification":
-			out.Notification = string(in.String())
 		case "task_id":
 			out.TaskId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		case "description":
+			out.Description = string(in.String())
+		case "notification":
+			out.Notification = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -125,13 +125,13 @@ func easyjson191b3d72EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Description != "" {
+	if in.TaskId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"description\":")
-		out.String(string(in.Description))
+		out.RawString("\"task_id\":")
+		out.Int32(int32(in.TaskId))
 	}
 	if in.Name != "" {
 		if !first {
@@ -141,6 +141,14 @@ func easyjson191b3d72EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
+	if in.Description != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"description\":")
+		out.String(string(in.Description))
+	}
 	if in.Notification != "" {
 		if !first {
 			out.RawByte(',')
@@ -148,14 +156,6 @@ func easyjson191b3d72EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"notification\":")
 		out.String(string(in.Notification))
-	}
-	if in.TaskId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"task_id\":")
-		out.Int32(int32(in.TaskId))
 	}
 	out.RawByte('}')
 }

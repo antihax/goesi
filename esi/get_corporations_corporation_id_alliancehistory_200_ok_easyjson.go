@@ -103,16 +103,16 @@ func easyjsonE012c571DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "start_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.StartDate).UnmarshalJSON(data))
+			}
 		case "alliance_id":
 			out.AllianceId = int32(in.Int32())
 		case "is_deleted":
 			out.IsDeleted = bool(in.Bool())
 		case "record_id":
 			out.RecordId = int32(in.Int32())
-		case "start_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.StartDate).UnmarshalJSON(data))
-			}
 		default:
 			in.SkipRecursive()
 		}
@@ -127,6 +127,14 @@ func easyjsonE012c571EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"start_date\":")
+		out.Raw((in.StartDate).MarshalJSON())
+	}
 	if in.AllianceId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -150,14 +158,6 @@ func easyjsonE012c571EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"record_id\":")
 		out.Int32(int32(in.RecordId))
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"start_date\":")
-		out.Raw((in.StartDate).MarshalJSON())
 	}
 	out.RawByte('}')
 }

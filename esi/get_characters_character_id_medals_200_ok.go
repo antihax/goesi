@@ -33,13 +33,13 @@ type GetCharactersCharacterIdMedals200OkList []GetCharactersCharacterIdMedals200
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdMedals200Ok struct {
-	CorporationId int32                                   `json:"corporation_id,omitempty"` /* corporation_id integer */
-	Date          time.Time                               `json:"date,omitempty"`           /* date string */
-	Description   string                                  `json:"description,omitempty"`    /* description string */
-	Graphics      []GetCharactersCharacterIdMedalsGraphic `json:"graphics,omitempty"`       /* graphics array */
-	IssuerId      int32                                   `json:"issuer_id,omitempty"`      /* issuer_id integer */
 	MedalId       int32                                   `json:"medal_id,omitempty"`       /* medal_id integer */
+	Title         string                                  `json:"title,omitempty"`          /* title string */
+	Description   string                                  `json:"description,omitempty"`    /* description string */
+	CorporationId int32                                   `json:"corporation_id,omitempty"` /* corporation_id integer */
+	IssuerId      int32                                   `json:"issuer_id,omitempty"`      /* issuer_id integer */
+	Date          time.Time                               `json:"date,omitempty"`           /* date string */
 	Reason        string                                  `json:"reason,omitempty"`         /* reason string */
 	Status        string                                  `json:"status,omitempty"`         /* status string */
-	Title         string                                  `json:"title,omitempty"`          /* title string */
+	Graphics      []GetCharactersCharacterIdMedalsGraphic `json:"graphics,omitempty"`       /* graphics array */
 }

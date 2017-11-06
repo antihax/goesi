@@ -29,8 +29,8 @@ type PostCharactersCharacterIdMailMailList []PostCharactersCharacterIdMailMail
 /* mail schema */
 //easyjson:json
 type PostCharactersCharacterIdMailMail struct {
-	ApprovedCost int64                                    `json:"approved_cost,omitempty"` /* approved_cost integer */
-	Body         string                                   `json:"body,omitempty"`          /* body string */
 	Recipients   []PostCharactersCharacterIdMailRecipient `json:"recipients,omitempty"`    /* recipients array */
 	Subject      string                                   `json:"subject,omitempty"`       /* subject string */
+	Body         string                                   `json:"body,omitempty"`          /* body string */
+	ApprovedCost int64                                    `json:"approved_cost,omitempty"` /* approved_cost integer */
 }

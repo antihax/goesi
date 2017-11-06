@@ -103,6 +103,8 @@ func easyjsonA53f7cDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetIns
 			continue
 		}
 		switch key {
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		case "levels":
 			if in.IsNull() {
 				in.Skip()
@@ -126,8 +128,6 @@ func easyjsonA53f7cDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetIns
 				}
 				in.Delim(']')
 			}
-		case "type_id":
-			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -142,6 +142,14 @@ func easyjsonA53f7cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetIn
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.TypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"type_id\":")
+		out.Int32(int32(in.TypeId))
+	}
 	if len(in.Levels) != 0 {
 		if !first {
 			out.RawByte(',')
@@ -160,14 +168,6 @@ func easyjsonA53f7cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetIn
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"type_id\":")
-		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }
@@ -216,10 +216,10 @@ func easyjsonA53f7cDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetIns
 		switch key {
 		case "cost":
 			out.Cost = float32(in.Float32())
-		case "name":
-			out.Name = string(in.String())
 		case "payout":
 			out.Payout = float32(in.Float32())
+		case "name":
+			out.Name = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -242,14 +242,6 @@ func easyjsonA53f7cEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetIn
 		out.RawString("\"cost\":")
 		out.Float32(float32(in.Cost))
 	}
-	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"name\":")
-		out.String(string(in.Name))
-	}
 	if in.Payout != 0 {
 		if !first {
 			out.RawByte(',')
@@ -257,6 +249,14 @@ func easyjsonA53f7cEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetIn
 		first = false
 		out.RawString("\"payout\":")
 		out.Float32(float32(in.Payout))
+	}
+	if in.Name != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"name\":")
+		out.String(string(in.Name))
 	}
 	out.RawByte('}')
 }

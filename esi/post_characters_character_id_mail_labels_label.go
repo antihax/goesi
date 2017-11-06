@@ -29,6 +29,6 @@ type PostCharactersCharacterIdMailLabelsLabelList []PostCharactersCharacterIdMai
 /* label object */
 //easyjson:json
 type PostCharactersCharacterIdMailLabelsLabel struct {
-	Color string `json:"color,omitempty"` /* Hexadecimal string representing label color, in RGB format */
 	Name  string `json:"name,omitempty"`  /* name string */
+	Color string `json:"color,omitempty"` /* Hexadecimal string representing label color, in RGB format */
 }

@@ -113,13 +113,13 @@ func easyjson95a81519DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetS
 			out.StructureTypeId = int32(in.Int32())
 		case "vulnerability_occupancy_level":
 			out.VulnerabilityOccupancyLevel = float32(in.Float32())
-		case "vulnerable_end_time":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.VulnerableEndTime).UnmarshalJSON(data))
-			}
 		case "vulnerable_start_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.VulnerableStartTime).UnmarshalJSON(data))
+			}
+		case "vulnerable_end_time":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.VulnerableEndTime).UnmarshalJSON(data))
 			}
 		default:
 			in.SkipRecursive()
@@ -180,16 +180,16 @@ func easyjson95a81519EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"vulnerable_end_time\":")
-		out.Raw((in.VulnerableEndTime).MarshalJSON())
+		out.RawString("\"vulnerable_start_time\":")
+		out.Raw((in.VulnerableStartTime).MarshalJSON())
 	}
 	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"vulnerable_start_time\":")
-		out.Raw((in.VulnerableStartTime).MarshalJSON())
+		out.RawString("\"vulnerable_end_time\":")
+		out.Raw((in.VulnerableEndTime).MarshalJSON())
 	}
 	out.RawByte('}')
 }

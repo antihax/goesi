@@ -29,6 +29,6 @@ type GetCharactersCharacterIdTitles200OkList []GetCharactersCharacterIdTitles200
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdTitles200Ok struct {
-	Name    string `json:"name,omitempty"`     /* name string */
 	TitleId int32  `json:"title_id,omitempty"` /* title_id integer */
+	Name    string `json:"name,omitempty"`     /* name string */
 }

@@ -103,12 +103,12 @@ func easyjsonC6adb315DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "coordinates":
-			(out.Coordinates).UnmarshalEasyJSON(in)
-		case "item":
-			(out.Item).UnmarshalEasyJSON(in)
 		case "location_id":
 			out.LocationId = int64(in.Int64())
+		case "item":
+			(out.Item).UnmarshalEasyJSON(in)
+		case "coordinates":
+			(out.Coordinates).UnmarshalEasyJSON(in)
 		default:
 			in.SkipRecursive()
 		}
@@ -123,13 +123,13 @@ func easyjsonC6adb315EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if true {
+	if in.LocationId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"coordinates\":")
-		(in.Coordinates).MarshalEasyJSON(out)
+		out.RawString("\"location_id\":")
+		out.Int64(int64(in.LocationId))
 	}
 	if true {
 		if !first {
@@ -139,13 +139,13 @@ func easyjsonC6adb315EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"item\":")
 		(in.Item).MarshalEasyJSON(out)
 	}
-	if in.LocationId != 0 {
+	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"location_id\":")
-		out.Int64(int64(in.LocationId))
+		out.RawString("\"coordinates\":")
+		(in.Coordinates).MarshalEasyJSON(out)
 	}
 	out.RawByte('}')
 }

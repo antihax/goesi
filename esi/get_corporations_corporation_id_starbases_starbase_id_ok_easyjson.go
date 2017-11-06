@@ -103,24 +103,32 @@ func easyjsonA8ee052dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "allow_alliance_members":
-			out.AllowAllianceMembers = bool(in.Bool())
-		case "allow_corporation_members":
-			out.AllowCorporationMembers = bool(in.Bool())
-		case "anchor":
-			out.Anchor = string(in.String())
-		case "attack_if_at_war":
-			out.AttackIfAtWar = bool(in.Bool())
-		case "attack_if_other_security_status_dropping":
-			out.AttackIfOtherSecurityStatusDropping = bool(in.Bool())
-		case "attack_security_status_threshold":
-			out.AttackSecurityStatusThreshold = float32(in.Float32())
-		case "attack_standing_threshold":
-			out.AttackStandingThreshold = float32(in.Float32())
-		case "fuel_bay_take":
-			out.FuelBayTake = string(in.String())
 		case "fuel_bay_view":
 			out.FuelBayView = string(in.String())
+		case "fuel_bay_take":
+			out.FuelBayTake = string(in.String())
+		case "anchor":
+			out.Anchor = string(in.String())
+		case "unanchor":
+			out.Unanchor = string(in.String())
+		case "online":
+			out.Online = string(in.String())
+		case "offline":
+			out.Offline = string(in.String())
+		case "allow_corporation_members":
+			out.AllowCorporationMembers = bool(in.Bool())
+		case "allow_alliance_members":
+			out.AllowAllianceMembers = bool(in.Bool())
+		case "use_alliance_standings":
+			out.UseAllianceStandings = bool(in.Bool())
+		case "attack_standing_threshold":
+			out.AttackStandingThreshold = float32(in.Float32())
+		case "attack_security_status_threshold":
+			out.AttackSecurityStatusThreshold = float32(in.Float32())
+		case "attack_if_other_security_status_dropping":
+			out.AttackIfOtherSecurityStatusDropping = bool(in.Bool())
+		case "attack_if_at_war":
+			out.AttackIfAtWar = bool(in.Bool())
 		case "fuels":
 			if in.IsNull() {
 				in.Skip()
@@ -144,14 +152,6 @@ func easyjsonA8ee052dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "offline":
-			out.Offline = string(in.String())
-		case "online":
-			out.Online = string(in.String())
-		case "unanchor":
-			out.Unanchor = string(in.String())
-		case "use_alliance_standings":
-			out.UseAllianceStandings = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -166,61 +166,13 @@ func easyjsonA8ee052dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.AllowAllianceMembers {
+	if in.FuelBayView != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"allow_alliance_members\":")
-		out.Bool(bool(in.AllowAllianceMembers))
-	}
-	if in.AllowCorporationMembers {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"allow_corporation_members\":")
-		out.Bool(bool(in.AllowCorporationMembers))
-	}
-	if in.Anchor != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"anchor\":")
-		out.String(string(in.Anchor))
-	}
-	if in.AttackIfAtWar {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"attack_if_at_war\":")
-		out.Bool(bool(in.AttackIfAtWar))
-	}
-	if in.AttackIfOtherSecurityStatusDropping {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"attack_if_other_security_status_dropping\":")
-		out.Bool(bool(in.AttackIfOtherSecurityStatusDropping))
-	}
-	if in.AttackSecurityStatusThreshold != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"attack_security_status_threshold\":")
-		out.Float32(float32(in.AttackSecurityStatusThreshold))
-	}
-	if in.AttackStandingThreshold != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"attack_standing_threshold\":")
-		out.Float32(float32(in.AttackStandingThreshold))
+		out.RawString("\"fuel_bay_view\":")
+		out.String(string(in.FuelBayView))
 	}
 	if in.FuelBayTake != "" {
 		if !first {
@@ -230,13 +182,93 @@ func easyjsonA8ee052dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"fuel_bay_take\":")
 		out.String(string(in.FuelBayTake))
 	}
-	if in.FuelBayView != "" {
+	if in.Anchor != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"fuel_bay_view\":")
-		out.String(string(in.FuelBayView))
+		out.RawString("\"anchor\":")
+		out.String(string(in.Anchor))
+	}
+	if in.Unanchor != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"unanchor\":")
+		out.String(string(in.Unanchor))
+	}
+	if in.Online != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"online\":")
+		out.String(string(in.Online))
+	}
+	if in.Offline != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"offline\":")
+		out.String(string(in.Offline))
+	}
+	if in.AllowCorporationMembers {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"allow_corporation_members\":")
+		out.Bool(bool(in.AllowCorporationMembers))
+	}
+	if in.AllowAllianceMembers {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"allow_alliance_members\":")
+		out.Bool(bool(in.AllowAllianceMembers))
+	}
+	if in.UseAllianceStandings {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"use_alliance_standings\":")
+		out.Bool(bool(in.UseAllianceStandings))
+	}
+	if in.AttackStandingThreshold != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"attack_standing_threshold\":")
+		out.Float32(float32(in.AttackStandingThreshold))
+	}
+	if in.AttackSecurityStatusThreshold != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"attack_security_status_threshold\":")
+		out.Float32(float32(in.AttackSecurityStatusThreshold))
+	}
+	if in.AttackIfOtherSecurityStatusDropping {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"attack_if_other_security_status_dropping\":")
+		out.Bool(bool(in.AttackIfOtherSecurityStatusDropping))
+	}
+	if in.AttackIfAtWar {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"attack_if_at_war\":")
+		out.Bool(bool(in.AttackIfAtWar))
 	}
 	if len(in.Fuels) != 0 {
 		if !first {
@@ -256,38 +288,6 @@ func easyjsonA8ee052dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.Offline != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"offline\":")
-		out.String(string(in.Offline))
-	}
-	if in.Online != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"online\":")
-		out.String(string(in.Online))
-	}
-	if in.Unanchor != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"unanchor\":")
-		out.String(string(in.Unanchor))
-	}
-	if in.UseAllianceStandings {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"use_alliance_standings\":")
-		out.Bool(bool(in.UseAllianceStandings))
 	}
 	out.RawByte('}')
 }
@@ -334,10 +334,10 @@ func easyjsonA8ee052dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "quantity":
-			out.Quantity = int32(in.Int32())
 		case "type_id":
 			out.TypeId = int32(in.Int32())
+		case "quantity":
+			out.Quantity = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -352,14 +352,6 @@ func easyjsonA8ee052dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"quantity\":")
-		out.Int32(int32(in.Quantity))
-	}
 	if in.TypeId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -367,6 +359,14 @@ func easyjsonA8ee052dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
+	}
+	if in.Quantity != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"quantity\":")
+		out.Int32(int32(in.Quantity))
 	}
 	out.RawByte('}')
 }

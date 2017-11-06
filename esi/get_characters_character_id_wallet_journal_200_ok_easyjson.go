@@ -103,34 +103,34 @@ func easyjson46989833DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "amount":
-			out.Amount = float32(in.Float32())
-		case "balance":
-			out.Balance = float32(in.Float32())
 		case "date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Date).UnmarshalJSON(data))
 			}
-		case "extra_info":
-			easyjson46989833DecodeGithubComAntihaxGoesiEsi2(in, &out.ExtraInfo)
-		case "first_party_id":
-			out.FirstPartyId = int32(in.Int32())
-		case "first_party_type":
-			out.FirstPartyType = string(in.String())
-		case "reason":
-			out.Reason = string(in.String())
 		case "ref_id":
 			out.RefId = int64(in.Int64())
 		case "ref_type":
 			out.RefType = string(in.String())
+		case "first_party_id":
+			out.FirstPartyId = int32(in.Int32())
+		case "first_party_type":
+			out.FirstPartyType = string(in.String())
 		case "second_party_id":
 			out.SecondPartyId = int32(in.Int32())
 		case "second_party_type":
 			out.SecondPartyType = string(in.String())
-		case "tax":
-			out.Tax = float32(in.Float32())
+		case "amount":
+			out.Amount = float32(in.Float32())
+		case "balance":
+			out.Balance = float32(in.Float32())
+		case "reason":
+			out.Reason = string(in.String())
 		case "tax_reciever_id":
 			out.TaxRecieverId = int32(in.Int32())
+		case "tax":
+			out.Tax = float32(in.Float32())
+		case "extra_info":
+			easyjson46989833DecodeGithubComAntihaxGoesiEsi2(in, &out.ExtraInfo)
 		default:
 			in.SkipRecursive()
 		}
@@ -145,22 +145,6 @@ func easyjson46989833EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Amount != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"amount\":")
-		out.Float32(float32(in.Amount))
-	}
-	if in.Balance != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"balance\":")
-		out.Float32(float32(in.Balance))
-	}
 	if true {
 		if !first {
 			out.RawByte(',')
@@ -168,38 +152,6 @@ func easyjson46989833EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"date\":")
 		out.Raw((in.Date).MarshalJSON())
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"extra_info\":")
-		easyjson46989833EncodeGithubComAntihaxGoesiEsi2(out, in.ExtraInfo)
-	}
-	if in.FirstPartyId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"first_party_id\":")
-		out.Int32(int32(in.FirstPartyId))
-	}
-	if in.FirstPartyType != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"first_party_type\":")
-		out.String(string(in.FirstPartyType))
-	}
-	if in.Reason != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"reason\":")
-		out.String(string(in.Reason))
 	}
 	if in.RefId != 0 {
 		if !first {
@@ -217,6 +169,22 @@ func easyjson46989833EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"ref_type\":")
 		out.String(string(in.RefType))
 	}
+	if in.FirstPartyId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"first_party_id\":")
+		out.Int32(int32(in.FirstPartyId))
+	}
+	if in.FirstPartyType != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"first_party_type\":")
+		out.String(string(in.FirstPartyType))
+	}
 	if in.SecondPartyId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -233,13 +201,29 @@ func easyjson46989833EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"second_party_type\":")
 		out.String(string(in.SecondPartyType))
 	}
-	if in.Tax != 0 {
+	if in.Amount != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"tax\":")
-		out.Float32(float32(in.Tax))
+		out.RawString("\"amount\":")
+		out.Float32(float32(in.Amount))
+	}
+	if in.Balance != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"balance\":")
+		out.Float32(float32(in.Balance))
+	}
+	if in.Reason != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"reason\":")
+		out.String(string(in.Reason))
 	}
 	if in.TaxRecieverId != 0 {
 		if !first {
@@ -248,6 +232,22 @@ func easyjson46989833EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"tax_reciever_id\":")
 		out.Int32(int32(in.TaxRecieverId))
+	}
+	if in.Tax != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"tax\":")
+		out.Float32(float32(in.Tax))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"extra_info\":")
+		easyjson46989833EncodeGithubComAntihaxGoesiEsi2(out, in.ExtraInfo)
 	}
 	out.RawByte('}')
 }
@@ -294,30 +294,30 @@ func easyjson46989833DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "alliance_id":
-			out.AllianceId = int32(in.Int32())
-		case "character_id":
-			out.CharacterId = int32(in.Int32())
-		case "contract_id":
-			out.ContractId = int32(in.Int32())
-		case "corporation_id":
-			out.CorporationId = int32(in.Int32())
-		case "destroyed_ship_type_id":
-			out.DestroyedShipTypeId = int32(in.Int32())
-		case "job_id":
-			out.JobId = int32(in.Int32())
 		case "location_id":
 			out.LocationId = int64(in.Int64())
-		case "npc_id":
-			out.NpcId = int32(in.Int32())
-		case "npc_name":
-			out.NpcName = string(in.String())
-		case "planet_id":
-			out.PlanetId = int32(in.Int32())
-		case "system_id":
-			out.SystemId = int32(in.Int32())
 		case "transaction_id":
 			out.TransactionId = int64(in.Int64())
+		case "npc_name":
+			out.NpcName = string(in.String())
+		case "npc_id":
+			out.NpcId = int32(in.Int32())
+		case "destroyed_ship_type_id":
+			out.DestroyedShipTypeId = int32(in.Int32())
+		case "character_id":
+			out.CharacterId = int32(in.Int32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "job_id":
+			out.JobId = int32(in.Int32())
+		case "contract_id":
+			out.ContractId = int32(in.Int32())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
+		case "planet_id":
+			out.PlanetId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -332,54 +332,6 @@ func easyjson46989833EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"alliance_id\":")
-		out.Int32(int32(in.AllianceId))
-	}
-	if in.CharacterId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"character_id\":")
-		out.Int32(int32(in.CharacterId))
-	}
-	if in.ContractId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"contract_id\":")
-		out.Int32(int32(in.ContractId))
-	}
-	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"corporation_id\":")
-		out.Int32(int32(in.CorporationId))
-	}
-	if in.DestroyedShipTypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"destroyed_ship_type_id\":")
-		out.Int32(int32(in.DestroyedShipTypeId))
-	}
-	if in.JobId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"job_id\":")
-		out.Int32(int32(in.JobId))
-	}
 	if in.LocationId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -388,13 +340,13 @@ func easyjson46989833EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		out.RawString("\"location_id\":")
 		out.Int64(int64(in.LocationId))
 	}
-	if in.NpcId != 0 {
+	if in.TransactionId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"npc_id\":")
-		out.Int32(int32(in.NpcId))
+		out.RawString("\"transaction_id\":")
+		out.Int64(int64(in.TransactionId))
 	}
 	if in.NpcName != "" {
 		if !first {
@@ -404,13 +356,61 @@ func easyjson46989833EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		out.RawString("\"npc_name\":")
 		out.String(string(in.NpcName))
 	}
-	if in.PlanetId != 0 {
+	if in.NpcId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"planet_id\":")
-		out.Int32(int32(in.PlanetId))
+		out.RawString("\"npc_id\":")
+		out.Int32(int32(in.NpcId))
+	}
+	if in.DestroyedShipTypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"destroyed_ship_type_id\":")
+		out.Int32(int32(in.DestroyedShipTypeId))
+	}
+	if in.CharacterId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"character_id\":")
+		out.Int32(int32(in.CharacterId))
+	}
+	if in.CorporationId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"corporation_id\":")
+		out.Int32(int32(in.CorporationId))
+	}
+	if in.AllianceId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"alliance_id\":")
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.JobId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"job_id\":")
+		out.Int32(int32(in.JobId))
+	}
+	if in.ContractId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"contract_id\":")
+		out.Int32(int32(in.ContractId))
 	}
 	if in.SystemId != 0 {
 		if !first {
@@ -420,13 +420,13 @@ func easyjson46989833EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		out.RawString("\"system_id\":")
 		out.Int32(int32(in.SystemId))
 	}
-	if in.TransactionId != 0 {
+	if in.PlanetId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"transaction_id\":")
-		out.Int64(int64(in.TransactionId))
+		out.RawString("\"planet_id\":")
+		out.Int32(int32(in.PlanetId))
 	}
 	out.RawByte('}')
 }

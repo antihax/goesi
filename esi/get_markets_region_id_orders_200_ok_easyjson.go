@@ -103,30 +103,30 @@ func easyjson8fa263f5DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetM
 			continue
 		}
 		switch key {
-		case "duration":
-			out.Duration = int32(in.Int32())
+		case "order_id":
+			out.OrderId = int64(in.Int64())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		case "location_id":
+			out.LocationId = int64(in.Int64())
+		case "volume_total":
+			out.VolumeTotal = int32(in.Int32())
+		case "volume_remain":
+			out.VolumeRemain = int32(in.Int32())
+		case "min_volume":
+			out.MinVolume = int32(in.Int32())
+		case "price":
+			out.Price = float32(in.Float32())
 		case "is_buy_order":
 			out.IsBuyOrder = bool(in.Bool())
+		case "duration":
+			out.Duration = int32(in.Int32())
 		case "issued":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Issued).UnmarshalJSON(data))
 			}
-		case "location_id":
-			out.LocationId = int64(in.Int64())
-		case "min_volume":
-			out.MinVolume = int32(in.Int32())
-		case "order_id":
-			out.OrderId = int64(in.Int64())
-		case "price":
-			out.Price = float32(in.Float32())
 		case "range":
 			out.Range_ = string(in.String())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "volume_remain":
-			out.VolumeRemain = int32(in.Int32())
-		case "volume_total":
-			out.VolumeTotal = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -141,46 +141,6 @@ func easyjson8fa263f5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Duration != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"duration\":")
-		out.Int32(int32(in.Duration))
-	}
-	if in.IsBuyOrder {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"is_buy_order\":")
-		out.Bool(bool(in.IsBuyOrder))
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"issued\":")
-		out.Raw((in.Issued).MarshalJSON())
-	}
-	if in.LocationId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"location_id\":")
-		out.Int64(int64(in.LocationId))
-	}
-	if in.MinVolume != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"min_volume\":")
-		out.Int32(int32(in.MinVolume))
-	}
 	if in.OrderId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -188,22 +148,6 @@ func easyjson8fa263f5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"order_id\":")
 		out.Int64(int64(in.OrderId))
-	}
-	if in.Price != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"price\":")
-		out.Float32(float32(in.Price))
-	}
-	if in.Range_ != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"range\":")
-		out.String(string(in.Range_))
 	}
 	if in.TypeId != 0 {
 		if !first {
@@ -213,13 +157,13 @@ func easyjson8fa263f5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
-	if in.VolumeRemain != 0 {
+	if in.LocationId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"volume_remain\":")
-		out.Int32(int32(in.VolumeRemain))
+		out.RawString("\"location_id\":")
+		out.Int64(int64(in.LocationId))
 	}
 	if in.VolumeTotal != 0 {
 		if !first {
@@ -228,6 +172,62 @@ func easyjson8fa263f5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"volume_total\":")
 		out.Int32(int32(in.VolumeTotal))
+	}
+	if in.VolumeRemain != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"volume_remain\":")
+		out.Int32(int32(in.VolumeRemain))
+	}
+	if in.MinVolume != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"min_volume\":")
+		out.Int32(int32(in.MinVolume))
+	}
+	if in.Price != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"price\":")
+		out.Float32(float32(in.Price))
+	}
+	if in.IsBuyOrder {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"is_buy_order\":")
+		out.Bool(bool(in.IsBuyOrder))
+	}
+	if in.Duration != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"duration\":")
+		out.Int32(int32(in.Duration))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"issued\":")
+		out.Raw((in.Issued).MarshalJSON())
+	}
+	if in.Range_ != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"range\":")
+		out.String(string(in.Range_))
 	}
 	out.RawByte('}')
 }

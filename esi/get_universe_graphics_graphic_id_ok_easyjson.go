@@ -103,22 +103,22 @@ func easyjsonD86c7128DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "collision_file":
-			out.CollisionFile = string(in.String())
-		case "graphic_file":
-			out.GraphicFile = string(in.String())
 		case "graphic_id":
 			out.GraphicId = int32(in.Int32())
-		case "icon_folder":
-			out.IconFolder = string(in.String())
-		case "sof_dna":
-			out.SofDna = string(in.String())
-		case "sof_fation_name":
-			out.SofFationName = string(in.String())
-		case "sof_hull_name":
-			out.SofHullName = string(in.String())
+		case "graphic_file":
+			out.GraphicFile = string(in.String())
 		case "sof_race_name":
 			out.SofRaceName = string(in.String())
+		case "sof_fation_name":
+			out.SofFationName = string(in.String())
+		case "sof_dna":
+			out.SofDna = string(in.String())
+		case "sof_hull_name":
+			out.SofHullName = string(in.String())
+		case "collision_file":
+			out.CollisionFile = string(in.String())
+		case "icon_folder":
+			out.IconFolder = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -133,13 +133,13 @@ func easyjsonD86c7128EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.CollisionFile != "" {
+	if in.GraphicId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"collision_file\":")
-		out.String(string(in.CollisionFile))
+		out.RawString("\"graphic_id\":")
+		out.Int32(int32(in.GraphicId))
 	}
 	if in.GraphicFile != "" {
 		if !first {
@@ -149,29 +149,13 @@ func easyjsonD86c7128EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"graphic_file\":")
 		out.String(string(in.GraphicFile))
 	}
-	if in.GraphicId != 0 {
+	if in.SofRaceName != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"graphic_id\":")
-		out.Int32(int32(in.GraphicId))
-	}
-	if in.IconFolder != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"icon_folder\":")
-		out.String(string(in.IconFolder))
-	}
-	if in.SofDna != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"sof_dna\":")
-		out.String(string(in.SofDna))
+		out.RawString("\"sof_race_name\":")
+		out.String(string(in.SofRaceName))
 	}
 	if in.SofFationName != "" {
 		if !first {
@@ -181,6 +165,14 @@ func easyjsonD86c7128EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"sof_fation_name\":")
 		out.String(string(in.SofFationName))
 	}
+	if in.SofDna != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"sof_dna\":")
+		out.String(string(in.SofDna))
+	}
 	if in.SofHullName != "" {
 		if !first {
 			out.RawByte(',')
@@ -189,13 +181,21 @@ func easyjsonD86c7128EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"sof_hull_name\":")
 		out.String(string(in.SofHullName))
 	}
-	if in.SofRaceName != "" {
+	if in.CollisionFile != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"sof_race_name\":")
-		out.String(string(in.SofRaceName))
+		out.RawString("\"collision_file\":")
+		out.String(string(in.CollisionFile))
+	}
+	if in.IconFolder != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"icon_folder\":")
+		out.String(string(in.IconFolder))
 	}
 	out.RawByte('}')
 }

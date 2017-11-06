@@ -29,14 +29,14 @@ type GetUniverseSystemsSystemIdOkList []GetUniverseSystemsSystemIdOk
 /* 200 ok object */
 //easyjson:json
 type GetUniverseSystemsSystemIdOk struct {
-	ConstellationId int32                              `json:"constellation_id,omitempty"` /* The constellation this solar system is in */
-	Name            string                             `json:"name,omitempty"`             /* name string */
-	Planets         []GetUniverseSystemsSystemIdPlanet `json:"planets,omitempty"`          /* planets array */
+	StarId          int32                              `json:"star_id,omitempty"`   /* star_id integer */
+	SystemId        int32                              `json:"system_id,omitempty"` /* system_id integer */
+	Name            string                             `json:"name,omitempty"`      /* name string */
 	Position        GetUniverseSystemsSystemIdPosition `json:"position,omitempty"`
-	SecurityClass   string                             `json:"security_class,omitempty"`  /* security_class string */
-	SecurityStatus  float32                            `json:"security_status,omitempty"` /* security_status number */
-	StarId          int32                              `json:"star_id,omitempty"`         /* star_id integer */
-	Stargates       []int32                            `json:"stargates,omitempty"`       /* stargates array */
-	Stations        []int32                            `json:"stations,omitempty"`        /* stations array */
-	SystemId        int32                              `json:"system_id,omitempty"`       /* system_id integer */
+	SecurityStatus  float32                            `json:"security_status,omitempty"`  /* security_status number */
+	SecurityClass   string                             `json:"security_class,omitempty"`   /* security_class string */
+	ConstellationId int32                              `json:"constellation_id,omitempty"` /* The constellation this solar system is in */
+	Planets         []GetUniverseSystemsSystemIdPlanet `json:"planets,omitempty"`          /* planets array */
+	Stargates       []int32                            `json:"stargates,omitempty"`        /* stargates array */
+	Stations        []int32                            `json:"stations,omitempty"`         /* stations array */
 }

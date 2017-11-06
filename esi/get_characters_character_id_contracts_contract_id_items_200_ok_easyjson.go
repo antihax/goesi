@@ -103,18 +103,18 @@ func easyjsonA0e9375dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "is_included":
-			out.IsIncluded = bool(in.Bool())
-		case "is_singleton":
-			out.IsSingleton = bool(in.Bool())
-		case "quantity":
-			out.Quantity = int32(in.Int32())
-		case "raw_quantity":
-			out.RawQuantity = int32(in.Int32())
 		case "record_id":
 			out.RecordId = int64(in.Int64())
 		case "type_id":
 			out.TypeId = int32(in.Int32())
+		case "quantity":
+			out.Quantity = int32(in.Int32())
+		case "raw_quantity":
+			out.RawQuantity = int32(in.Int32())
+		case "is_singleton":
+			out.IsSingleton = bool(in.Bool())
+		case "is_included":
+			out.IsIncluded = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,21 +129,21 @@ func easyjsonA0e9375dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.IsIncluded {
+	if in.RecordId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"is_included\":")
-		out.Bool(bool(in.IsIncluded))
+		out.RawString("\"record_id\":")
+		out.Int64(int64(in.RecordId))
 	}
-	if in.IsSingleton {
+	if in.TypeId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"is_singleton\":")
-		out.Bool(bool(in.IsSingleton))
+		out.RawString("\"type_id\":")
+		out.Int32(int32(in.TypeId))
 	}
 	if in.Quantity != 0 {
 		if !first {
@@ -161,21 +161,21 @@ func easyjsonA0e9375dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"raw_quantity\":")
 		out.Int32(int32(in.RawQuantity))
 	}
-	if in.RecordId != 0 {
+	if in.IsSingleton {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"record_id\":")
-		out.Int64(int64(in.RecordId))
+		out.RawString("\"is_singleton\":")
+		out.Bool(bool(in.IsSingleton))
 	}
-	if in.TypeId != 0 {
+	if in.IsIncluded {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"type_id\":")
-		out.Int32(int32(in.TypeId))
+		out.RawString("\"is_included\":")
+		out.Bool(bool(in.IsIncluded))
 	}
 	out.RawByte('}')
 }

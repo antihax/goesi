@@ -103,10 +103,14 @@ func easyjson800b931eDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "description":
-			out.Description = string(in.String())
 		case "fitting_id":
 			out.FittingId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		case "description":
+			out.Description = string(in.String())
+		case "ship_type_id":
+			out.ShipTypeId = int32(in.Int32())
 		case "items":
 			if in.IsNull() {
 				in.Skip()
@@ -130,10 +134,6 @@ func easyjson800b931eDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "name":
-			out.Name = string(in.String())
-		case "ship_type_id":
-			out.ShipTypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -148,6 +148,22 @@ func easyjson800b931eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.FittingId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"fitting_id\":")
+		out.Int32(int32(in.FittingId))
+	}
+	if in.Name != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"name\":")
+		out.String(string(in.Name))
+	}
 	if in.Description != "" {
 		if !first {
 			out.RawByte(',')
@@ -156,13 +172,13 @@ func easyjson800b931eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"description\":")
 		out.String(string(in.Description))
 	}
-	if in.FittingId != 0 {
+	if in.ShipTypeId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"fitting_id\":")
-		out.Int32(int32(in.FittingId))
+		out.RawString("\"ship_type_id\":")
+		out.Int32(int32(in.ShipTypeId))
 	}
 	if len(in.Items) != 0 {
 		if !first {
@@ -182,22 +198,6 @@ func easyjson800b931eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"name\":")
-		out.String(string(in.Name))
-	}
-	if in.ShipTypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"ship_type_id\":")
-		out.Int32(int32(in.ShipTypeId))
 	}
 	out.RawByte('}')
 }
@@ -244,12 +244,12 @@ func easyjson800b931eDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		case "flag":
 			out.Flag = int32(in.Int32())
 		case "quantity":
 			out.Quantity = int32(in.Int32())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -264,6 +264,14 @@ func easyjson800b931eEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.TypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"type_id\":")
+		out.Int32(int32(in.TypeId))
+	}
 	if in.Flag != 0 {
 		if !first {
 			out.RawByte(',')
@@ -279,14 +287,6 @@ func easyjson800b931eEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"quantity\":")
 		out.Int32(int32(in.Quantity))
-	}
-	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"type_id\":")
-		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

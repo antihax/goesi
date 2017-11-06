@@ -29,7 +29,7 @@ type GetFwLeaderboardsCharactersKillsList []GetFwLeaderboardsCharactersKills
 /* Top 100 rankings of pilots by number of kills from yesterday, last week and in total. */
 //easyjson:json
 type GetFwLeaderboardsCharactersKills struct {
-	ActiveTotal []GetFwLeaderboardsCharactersActiveTotal `json:"active_total,omitempty"` /* Top 100 ranking of pilots active in faction warfare by total kills. A pilot is considered \"active\" if they have participated in faction warfare in the past 14 days. */
-	LastWeek    []GetFwLeaderboardsCharactersLastWeek    `json:"last_week,omitempty"`    /* Top 100 ranking of pilots by kills in the past week */
 	Yesterday   []GetFwLeaderboardsCharactersYesterday   `json:"yesterday,omitempty"`    /* Top 100 ranking of pilots by kills in the past day */
+	LastWeek    []GetFwLeaderboardsCharactersLastWeek    `json:"last_week,omitempty"`    /* Top 100 ranking of pilots by kills in the past week */
+	ActiveTotal []GetFwLeaderboardsCharactersActiveTotal `json:"active_total,omitempty"` /* Top 100 ranking of pilots active in faction warfare by total kills. A pilot is considered \"active\" if they have participated in faction warfare in the past 14 days. */
 }

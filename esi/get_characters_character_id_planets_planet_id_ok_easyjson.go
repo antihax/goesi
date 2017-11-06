@@ -288,16 +288,16 @@ func easyjson2db8f1a3DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "content_type_id":
-			out.ContentTypeId = int32(in.Int32())
-		case "destination_pin_id":
-			out.DestinationPinId = int64(in.Int64())
-		case "quantity":
-			out.Quantity = float32(in.Float32())
 		case "route_id":
 			out.RouteId = int64(in.Int64())
 		case "source_pin_id":
 			out.SourcePinId = int64(in.Int64())
+		case "destination_pin_id":
+			out.DestinationPinId = int64(in.Int64())
+		case "content_type_id":
+			out.ContentTypeId = int32(in.Int32())
+		case "quantity":
+			out.Quantity = float32(in.Float32())
 		case "waypoints":
 			if in.IsNull() {
 				in.Skip()
@@ -335,30 +335,6 @@ func easyjson2db8f1a3EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.ContentTypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"content_type_id\":")
-		out.Int32(int32(in.ContentTypeId))
-	}
-	if in.DestinationPinId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"destination_pin_id\":")
-		out.Int64(int64(in.DestinationPinId))
-	}
-	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"quantity\":")
-		out.Float32(float32(in.Quantity))
-	}
 	if in.RouteId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -374,6 +350,30 @@ func easyjson2db8f1a3EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"source_pin_id\":")
 		out.Int64(int64(in.SourcePinId))
+	}
+	if in.DestinationPinId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"destination_pin_id\":")
+		out.Int64(int64(in.DestinationPinId))
+	}
+	if in.ContentTypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"content_type_id\":")
+		out.Int32(int32(in.ContentTypeId))
+	}
+	if in.Quantity != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"quantity\":")
+		out.Float32(float32(in.Quantity))
 	}
 	if len(in.Waypoints) != 0 {
 		if !first {
@@ -415,12 +415,12 @@ func easyjson2db8f1a3DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "source_pin_id":
+			out.SourcePinId = int64(in.Int64())
 		case "destination_pin_id":
 			out.DestinationPinId = int64(in.Int64())
 		case "link_level":
 			out.LinkLevel = int32(in.Int32())
-		case "source_pin_id":
-			out.SourcePinId = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -435,6 +435,14 @@ func easyjson2db8f1a3EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.SourcePinId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"source_pin_id\":")
+		out.Int64(int64(in.SourcePinId))
+	}
 	if in.DestinationPinId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -450,14 +458,6 @@ func easyjson2db8f1a3EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"link_level\":")
 		out.Int32(int32(in.LinkLevel))
-	}
-	if in.SourcePinId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"source_pin_id\":")
-		out.Int64(int64(in.SourcePinId))
 	}
 	out.RawByte('}')
 }

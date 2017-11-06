@@ -103,10 +103,10 @@ func easyjsonF2395783DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "recipient_id":
-			out.RecipientId = int32(in.Int32())
 		case "recipient_type":
 			out.RecipientType = string(in.String())
+		case "recipient_id":
+			out.RecipientId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -121,14 +121,6 @@ func easyjsonF2395783EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.RecipientId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"recipient_id\":")
-		out.Int32(int32(in.RecipientId))
-	}
 	if in.RecipientType != "" {
 		if !first {
 			out.RawByte(',')
@@ -136,6 +128,14 @@ func easyjsonF2395783EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"recipient_type\":")
 		out.String(string(in.RecipientType))
+	}
+	if in.RecipientId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"recipient_id\":")
+		out.Int32(int32(in.RecipientId))
 	}
 	out.RawByte('}')
 }

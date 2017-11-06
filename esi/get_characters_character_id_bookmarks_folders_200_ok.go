@@ -30,6 +30,6 @@ type GetCharactersCharacterIdBookmarksFolders200OkList []GetCharactersCharacterI
 //easyjson:json
 type GetCharactersCharacterIdBookmarksFolders200Ok struct {
 	FolderId int32  `json:"folder_id,omitempty"` /* folder_id integer */
-	Name     string `json:"name,omitempty"`      /* name string */
 	OwnerId  int32  `json:"owner_id,omitempty"`  /* owner_id integer */
+	Name     string `json:"name,omitempty"`      /* name string */
 }

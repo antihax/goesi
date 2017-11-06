@@ -111,7 +111,7 @@ func easyjson2298aef5DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.Delim('[')
 				if out.Skills == nil {
 					if !in.IsDelim(']') {
-						out.Skills = make([]GetCharactersCharacterIdSkillsSkill, 0, 4)
+						out.Skills = make([]GetCharactersCharacterIdSkillsSkill, 0, 2)
 					} else {
 						out.Skills = []GetCharactersCharacterIdSkillsSkill{}
 					}
@@ -214,12 +214,12 @@ func easyjson2298aef5DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "current_skill_level":
-			out.CurrentSkillLevel = int32(in.Int32())
 		case "skill_id":
 			out.SkillId = int32(in.Int32())
 		case "skillpoints_in_skill":
 			out.SkillpointsInSkill = int64(in.Int64())
+		case "current_skill_level":
+			out.CurrentSkillLevel = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -234,14 +234,6 @@ func easyjson2298aef5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.CurrentSkillLevel != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"current_skill_level\":")
-		out.Int32(int32(in.CurrentSkillLevel))
-	}
 	if in.SkillId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -257,6 +249,14 @@ func easyjson2298aef5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"skillpoints_in_skill\":")
 		out.Int64(int64(in.SkillpointsInSkill))
+	}
+	if in.CurrentSkillLevel != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"current_skill_level\":")
+		out.Int32(int32(in.CurrentSkillLevel))
 	}
 	out.RawByte('}')
 }

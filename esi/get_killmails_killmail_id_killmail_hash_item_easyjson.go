@@ -103,8 +103,6 @@ func easyjson8e5c6700DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
-		case "flag":
-			out.Flag = int32(in.Int32())
 		case "item_type_id":
 			out.ItemTypeId = int32(in.Int32())
 		case "quantity_destroyed":
@@ -113,6 +111,8 @@ func easyjson8e5c6700DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 			out.QuantityDropped = int64(in.Int64())
 		case "singleton":
 			out.Singleton = int32(in.Int32())
+		case "flag":
+			out.Flag = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -127,14 +127,6 @@ func easyjson8e5c6700EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Flag != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"flag\":")
-		out.Int32(int32(in.Flag))
-	}
 	if in.ItemTypeId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -166,6 +158,14 @@ func easyjson8e5c6700EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"singleton\":")
 		out.Int32(int32(in.Singleton))
+	}
+	if in.Flag != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"flag\":")
+		out.Int32(int32(in.Flag))
 	}
 	out.RawByte('}')
 }

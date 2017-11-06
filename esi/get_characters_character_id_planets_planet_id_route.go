@@ -29,10 +29,10 @@ type GetCharactersCharacterIdPlanetsPlanetIdRouteList []GetCharactersCharacterId
 /* route object */
 //easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdRoute struct {
-	ContentTypeId    int32   `json:"content_type_id,omitempty"`    /* content_type_id integer */
-	DestinationPinId int64   `json:"destination_pin_id,omitempty"` /* destination_pin_id integer */
-	Quantity         float32 `json:"quantity,omitempty"`           /* quantity number */
 	RouteId          int64   `json:"route_id,omitempty"`           /* route_id integer */
 	SourcePinId      int64   `json:"source_pin_id,omitempty"`      /* source_pin_id integer */
+	DestinationPinId int64   `json:"destination_pin_id,omitempty"` /* destination_pin_id integer */
+	ContentTypeId    int32   `json:"content_type_id,omitempty"`    /* content_type_id integer */
+	Quantity         float32 `json:"quantity,omitempty"`           /* quantity number */
 	Waypoints        []int64 `json:"waypoints,omitempty"`          /* list of pin ID waypoints */
 }

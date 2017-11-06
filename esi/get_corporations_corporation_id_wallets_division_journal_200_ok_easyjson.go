@@ -103,34 +103,34 @@ func easyjson4a0bdca4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "amount":
-			out.Amount = float32(in.Float32())
-		case "balance":
-			out.Balance = float32(in.Float32())
 		case "date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Date).UnmarshalJSON(data))
 			}
-		case "extra_info":
-			(out.ExtraInfo).UnmarshalEasyJSON(in)
-		case "first_party_id":
-			out.FirstPartyId = int32(in.Int32())
-		case "first_party_type":
-			out.FirstPartyType = string(in.String())
-		case "reason":
-			out.Reason = string(in.String())
 		case "ref_id":
 			out.RefId = int64(in.Int64())
 		case "ref_type":
 			out.RefType = string(in.String())
+		case "first_party_id":
+			out.FirstPartyId = int32(in.Int32())
+		case "first_party_type":
+			out.FirstPartyType = string(in.String())
 		case "second_party_id":
 			out.SecondPartyId = int32(in.Int32())
 		case "second_party_type":
 			out.SecondPartyType = string(in.String())
-		case "tax":
-			out.Tax = float32(in.Float32())
+		case "amount":
+			out.Amount = float32(in.Float32())
+		case "balance":
+			out.Balance = float32(in.Float32())
+		case "reason":
+			out.Reason = string(in.String())
 		case "tax_reciever_id":
 			out.TaxRecieverId = int32(in.Int32())
+		case "tax":
+			out.Tax = float32(in.Float32())
+		case "extra_info":
+			(out.ExtraInfo).UnmarshalEasyJSON(in)
 		default:
 			in.SkipRecursive()
 		}
@@ -145,22 +145,6 @@ func easyjson4a0bdca4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Amount != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"amount\":")
-		out.Float32(float32(in.Amount))
-	}
-	if in.Balance != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"balance\":")
-		out.Float32(float32(in.Balance))
-	}
 	if true {
 		if !first {
 			out.RawByte(',')
@@ -168,38 +152,6 @@ func easyjson4a0bdca4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"date\":")
 		out.Raw((in.Date).MarshalJSON())
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"extra_info\":")
-		(in.ExtraInfo).MarshalEasyJSON(out)
-	}
-	if in.FirstPartyId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"first_party_id\":")
-		out.Int32(int32(in.FirstPartyId))
-	}
-	if in.FirstPartyType != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"first_party_type\":")
-		out.String(string(in.FirstPartyType))
-	}
-	if in.Reason != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"reason\":")
-		out.String(string(in.Reason))
 	}
 	if in.RefId != 0 {
 		if !first {
@@ -217,6 +169,22 @@ func easyjson4a0bdca4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"ref_type\":")
 		out.String(string(in.RefType))
 	}
+	if in.FirstPartyId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"first_party_id\":")
+		out.Int32(int32(in.FirstPartyId))
+	}
+	if in.FirstPartyType != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"first_party_type\":")
+		out.String(string(in.FirstPartyType))
+	}
 	if in.SecondPartyId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -233,13 +201,29 @@ func easyjson4a0bdca4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"second_party_type\":")
 		out.String(string(in.SecondPartyType))
 	}
-	if in.Tax != 0 {
+	if in.Amount != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"tax\":")
-		out.Float32(float32(in.Tax))
+		out.RawString("\"amount\":")
+		out.Float32(float32(in.Amount))
+	}
+	if in.Balance != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"balance\":")
+		out.Float32(float32(in.Balance))
+	}
+	if in.Reason != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"reason\":")
+		out.String(string(in.Reason))
 	}
 	if in.TaxRecieverId != 0 {
 		if !first {
@@ -248,6 +232,22 @@ func easyjson4a0bdca4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"tax_reciever_id\":")
 		out.Int32(int32(in.TaxRecieverId))
+	}
+	if in.Tax != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"tax\":")
+		out.Float32(float32(in.Tax))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"extra_info\":")
+		(in.ExtraInfo).MarshalEasyJSON(out)
 	}
 	out.RawByte('}')
 }

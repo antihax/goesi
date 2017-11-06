@@ -103,8 +103,12 @@ func easyjson746f8c8DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *PostC
 			continue
 		}
 		switch key {
+		case "name":
+			out.Name = string(in.String())
 		case "description":
 			out.Description = string(in.String())
+		case "ship_type_id":
+			out.ShipTypeId = int32(in.Int32())
 		case "items":
 			if in.IsNull() {
 				in.Skip()
@@ -128,10 +132,6 @@ func easyjson746f8c8DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *PostC
 				}
 				in.Delim(']')
 			}
-		case "name":
-			out.Name = string(in.String())
-		case "ship_type_id":
-			out.ShipTypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -146,6 +146,14 @@ func easyjson746f8c8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Post
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Name != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"name\":")
+		out.String(string(in.Name))
+	}
 	if in.Description != "" {
 		if !first {
 			out.RawByte(',')
@@ -153,6 +161,14 @@ func easyjson746f8c8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Post
 		first = false
 		out.RawString("\"description\":")
 		out.String(string(in.Description))
+	}
+	if in.ShipTypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"ship_type_id\":")
+		out.Int32(int32(in.ShipTypeId))
 	}
 	if len(in.Items) != 0 {
 		if !first {
@@ -172,22 +188,6 @@ func easyjson746f8c8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Post
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"name\":")
-		out.String(string(in.Name))
-	}
-	if in.ShipTypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"ship_type_id\":")
-		out.Int32(int32(in.ShipTypeId))
 	}
 	out.RawByte('}')
 }
@@ -234,12 +234,12 @@ func easyjson746f8c8DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *PostC
 			continue
 		}
 		switch key {
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		case "flag":
 			out.Flag = int32(in.Int32())
 		case "quantity":
 			out.Quantity = int32(in.Int32())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -254,6 +254,14 @@ func easyjson746f8c8EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Post
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.TypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"type_id\":")
+		out.Int32(int32(in.TypeId))
+	}
 	if in.Flag != 0 {
 		if !first {
 			out.RawByte(',')
@@ -269,14 +277,6 @@ func easyjson746f8c8EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Post
 		first = false
 		out.RawString("\"quantity\":")
 		out.Int32(int32(in.Quantity))
-	}
-	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"type_id\":")
-		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

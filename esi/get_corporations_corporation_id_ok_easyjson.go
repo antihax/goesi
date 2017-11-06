@@ -103,30 +103,30 @@ func easyjsonDab14328DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "alliance_id":
-			out.AllianceId = int32(in.Int32())
-		case "ceo_id":
-			out.CeoId = int32(in.Int32())
-		case "corporation_description":
-			out.CorporationDescription = string(in.String())
 		case "corporation_name":
 			out.CorporationName = string(in.String())
+		case "ticker":
+			out.Ticker = string(in.String())
+		case "member_count":
+			out.MemberCount = int32(in.Int32())
+		case "ceo_id":
+			out.CeoId = int32(in.Int32())
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "corporation_description":
+			out.CorporationDescription = string(in.String())
+		case "tax_rate":
+			out.TaxRate = float32(in.Float32())
 		case "creation_date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.CreationDate).UnmarshalJSON(data))
 			}
 		case "creator_id":
 			out.CreatorId = int32(in.Int32())
-		case "faction":
-			out.Faction = string(in.String())
-		case "member_count":
-			out.MemberCount = int32(in.Int32())
-		case "tax_rate":
-			out.TaxRate = float32(in.Float32())
-		case "ticker":
-			out.Ticker = string(in.String())
 		case "url":
 			out.Url = string(in.String())
+		case "faction":
+			out.Faction = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -141,13 +141,29 @@ func easyjsonDab14328EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.AllianceId != 0 {
+	if in.CorporationName != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"alliance_id\":")
-		out.Int32(int32(in.AllianceId))
+		out.RawString("\"corporation_name\":")
+		out.String(string(in.CorporationName))
+	}
+	if in.Ticker != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"ticker\":")
+		out.String(string(in.Ticker))
+	}
+	if in.MemberCount != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"member_count\":")
+		out.Int32(int32(in.MemberCount))
 	}
 	if in.CeoId != 0 {
 		if !first {
@@ -157,6 +173,14 @@ func easyjsonDab14328EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"ceo_id\":")
 		out.Int32(int32(in.CeoId))
 	}
+	if in.AllianceId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"alliance_id\":")
+		out.Int32(int32(in.AllianceId))
+	}
 	if in.CorporationDescription != "" {
 		if !first {
 			out.RawByte(',')
@@ -165,13 +189,13 @@ func easyjsonDab14328EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"corporation_description\":")
 		out.String(string(in.CorporationDescription))
 	}
-	if in.CorporationName != "" {
+	if in.TaxRate != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"corporation_name\":")
-		out.String(string(in.CorporationName))
+		out.RawString("\"tax_rate\":")
+		out.Float32(float32(in.TaxRate))
 	}
 	if true {
 		if !first {
@@ -189,38 +213,6 @@ func easyjsonDab14328EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"creator_id\":")
 		out.Int32(int32(in.CreatorId))
 	}
-	if in.Faction != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"faction\":")
-		out.String(string(in.Faction))
-	}
-	if in.MemberCount != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"member_count\":")
-		out.Int32(int32(in.MemberCount))
-	}
-	if in.TaxRate != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"tax_rate\":")
-		out.Float32(float32(in.TaxRate))
-	}
-	if in.Ticker != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"ticker\":")
-		out.String(string(in.Ticker))
-	}
 	if in.Url != "" {
 		if !first {
 			out.RawByte(',')
@@ -228,6 +220,14 @@ func easyjsonDab14328EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"url\":")
 		out.String(string(in.Url))
+	}
+	if in.Faction != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"faction\":")
+		out.String(string(in.Faction))
 	}
 	out.RawByte('}')
 }

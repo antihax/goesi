@@ -29,8 +29,8 @@ type GetUniverseRaces200OkList []GetUniverseRaces200Ok
 /* 200 ok object */
 //easyjson:json
 type GetUniverseRaces200Ok struct {
-	AllianceId  int32  `json:"alliance_id,omitempty"` /* The alliance generally associated with this race */
-	Description string `json:"description,omitempty"` /* description string */
-	Name        string `json:"name,omitempty"`        /* name string */
 	RaceId      int32  `json:"race_id,omitempty"`     /* race_id integer */
+	Name        string `json:"name,omitempty"`        /* name string */
+	Description string `json:"description,omitempty"` /* description string */
+	AllianceId  int32  `json:"alliance_id,omitempty"` /* The alliance generally associated with this race */
 }

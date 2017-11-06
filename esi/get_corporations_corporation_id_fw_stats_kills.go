@@ -29,7 +29,7 @@ type GetCorporationsCorporationIdFwStatsKillsList []GetCorporationsCorporationId
 /* Summary of kills done by the given corporation against enemy factions */
 //easyjson:json
 type GetCorporationsCorporationIdFwStatsKills struct {
+	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's total number of kills by members of the given corporation against enemy factions */
 	LastWeek  int32 `json:"last_week,omitempty"` /* Last week's total number of kills by members of the given corporation against enemy factions */
 	Total     int32 `json:"total,omitempty"`     /* Total number of kills by members of the given corporation against enemy factions since the corporation enlisted */
-	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's total number of kills by members of the given corporation against enemy factions */
 }

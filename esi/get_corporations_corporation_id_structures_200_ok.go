@@ -29,16 +29,16 @@ type GetCorporationsCorporationIdStructures200OkList []GetCorporationsCorporatio
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdStructures200Ok struct {
-	CorporationId   int32                                              `json:"corporation_id,omitempty"`    /* ID of the corporation that owns the structure */
-	CurrentVul      []GetCorporationsCorporationIdStructuresCurrentVul `json:"current_vul,omitempty"`       /* This week's vulnerability windows, Monday is day 0 */
-	FuelExpires     string                                             `json:"fuel_expires,omitempty"`      /* Date on which the structure will run out of fuel */
-	NextVul         []GetCorporationsCorporationIdStructuresNextVul    `json:"next_vul,omitempty"`          /* Next week's vulnerability windows, Monday is day 0 */
-	ProfileId       int32                                              `json:"profile_id,omitempty"`        /* The id of the ACL profile for this citadel */
-	Services        []GetCorporationsCorporationIdStructuresService    `json:"services,omitempty"`          /* Contains a list of service upgrades, and their state */
-	StateTimerEnd   string                                             `json:"state_timer_end,omitempty"`   /* Date at which the structure will move to it's next state */
-	StateTimerStart string                                             `json:"state_timer_start,omitempty"` /* Date at which the structure entered it's current state */
 	StructureId     int64                                              `json:"structure_id,omitempty"`      /* The Item ID of the structure */
-	SystemId        int32                                              `json:"system_id,omitempty"`         /* The solar system the structure is in */
 	TypeId          int32                                              `json:"type_id,omitempty"`           /* The type id of the structure */
+	CorporationId   int32                                              `json:"corporation_id,omitempty"`    /* ID of the corporation that owns the structure */
+	SystemId        int32                                              `json:"system_id,omitempty"`         /* The solar system the structure is in */
+	ProfileId       int32                                              `json:"profile_id,omitempty"`        /* The id of the ACL profile for this citadel */
+	CurrentVul      []GetCorporationsCorporationIdStructuresCurrentVul `json:"current_vul,omitempty"`       /* This week's vulnerability windows, Monday is day 0 */
+	NextVul         []GetCorporationsCorporationIdStructuresNextVul    `json:"next_vul,omitempty"`          /* Next week's vulnerability windows, Monday is day 0 */
+	FuelExpires     string                                             `json:"fuel_expires,omitempty"`      /* Date on which the structure will run out of fuel */
+	Services        []GetCorporationsCorporationIdStructuresService    `json:"services,omitempty"`          /* Contains a list of service upgrades, and their state */
+	StateTimerStart string                                             `json:"state_timer_start,omitempty"` /* Date at which the structure entered it's current state */
+	StateTimerEnd   string                                             `json:"state_timer_end,omitempty"`   /* Date at which the structure will move to it's next state */
 	UnanchorsAt     string                                             `json:"unanchors_at,omitempty"`      /* Date at which the structure will unanchor */
 }

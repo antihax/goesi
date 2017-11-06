@@ -29,6 +29,6 @@ type GetWarsWarIdKillmails200OkList []GetWarsWarIdKillmails200Ok
 /* 200 ok object */
 //easyjson:json
 type GetWarsWarIdKillmails200Ok struct {
-	KillmailHash string `json:"killmail_hash,omitempty"` /* A hash of this killmail */
 	KillmailId   int32  `json:"killmail_id,omitempty"`   /* ID of this killmail */
+	KillmailHash string `json:"killmail_hash,omitempty"` /* A hash of this killmail */
 }

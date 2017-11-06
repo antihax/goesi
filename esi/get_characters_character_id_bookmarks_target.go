@@ -29,7 +29,7 @@ type GetCharactersCharacterIdBookmarksTargetList []GetCharactersCharacterIdBookm
 /* target object */
 //easyjson:json
 type GetCharactersCharacterIdBookmarksTarget struct {
-	Coordinates GetCharactersCharacterIdBookmarksCoordinates `json:"coordinates,omitempty"`
-	Item        GetCharactersCharacterIdBookmarksItem        `json:"item,omitempty"`
 	LocationId  int64                                        `json:"location_id,omitempty"` /* location_id integer */
+	Item        GetCharactersCharacterIdBookmarksItem        `json:"item,omitempty"`
+	Coordinates GetCharactersCharacterIdBookmarksCoordinates `json:"coordinates,omitempty"`
 }

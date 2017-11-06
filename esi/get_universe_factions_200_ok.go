@@ -29,14 +29,14 @@ type GetUniverseFactions200OkList []GetUniverseFactions200Ok
 /* 200 ok object */
 //easyjson:json
 type GetUniverseFactions200Ok struct {
-	CorporationId        int32   `json:"corporation_id,omitempty"`         /* corporation_id integer */
-	Description          string  `json:"description,omitempty"`            /* description string */
 	FactionId            int32   `json:"faction_id,omitempty"`             /* faction_id integer */
-	IsUnique             bool    `json:"is_unique,omitempty"`              /* is_unique boolean */
-	MilitiaCorporationId int32   `json:"militia_corporation_id,omitempty"` /* militia_corporation_id integer */
 	Name                 string  `json:"name,omitempty"`                   /* name string */
-	SizeFactor           float32 `json:"size_factor,omitempty"`            /* size_factor number */
+	Description          string  `json:"description,omitempty"`            /* description string */
 	SolarSystemId        int32   `json:"solar_system_id,omitempty"`        /* solar_system_id integer */
+	CorporationId        int32   `json:"corporation_id,omitempty"`         /* corporation_id integer */
+	MilitiaCorporationId int32   `json:"militia_corporation_id,omitempty"` /* militia_corporation_id integer */
+	SizeFactor           float32 `json:"size_factor,omitempty"`            /* size_factor number */
 	StationCount         int32   `json:"station_count,omitempty"`          /* station_count integer */
 	StationSystemCount   int32   `json:"station_system_count,omitempty"`   /* station_system_count integer */
+	IsUnique             bool    `json:"is_unique,omitempty"`              /* is_unique boolean */
 }

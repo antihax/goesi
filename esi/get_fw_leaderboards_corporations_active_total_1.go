@@ -29,6 +29,6 @@ type GetFwLeaderboardsCorporationsActiveTotal1List []GetFwLeaderboardsCorporatio
 /* active_total object */
 //easyjson:json
 type GetFwLeaderboardsCorporationsActiveTotal1 struct {
-	Amount        int32 `json:"amount,omitempty"`         /* Amount of victory points */
 	CorporationId int32 `json:"corporation_id,omitempty"` /* corporation_id integer */
+	Amount        int32 `json:"amount,omitempty"`         /* Amount of victory points */
 }

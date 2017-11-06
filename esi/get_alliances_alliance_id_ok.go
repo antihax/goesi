@@ -34,7 +34,7 @@ type GetAlliancesAllianceIdOkList []GetAlliancesAllianceIdOk
 //easyjson:json
 type GetAlliancesAllianceIdOk struct {
 	AllianceName string    `json:"alliance_name,omitempty"` /* the full name of the alliance */
-	DateFounded  time.Time `json:"date_founded,omitempty"`  /* date_founded string */
-	ExecutorCorp int32     `json:"executor_corp,omitempty"` /* the executor corporation ID, if this alliance is not closed */
 	Ticker       string    `json:"ticker,omitempty"`        /* the short name of the alliance */
+	ExecutorCorp int32     `json:"executor_corp,omitempty"` /* the executor corporation ID, if this alliance is not closed */
+	DateFounded  time.Time `json:"date_founded,omitempty"`  /* date_founded string */
 }

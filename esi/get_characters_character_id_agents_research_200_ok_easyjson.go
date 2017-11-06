@@ -105,16 +105,16 @@ func easyjsonEe2a966DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCh
 		switch key {
 		case "agent_id":
 			out.AgentId = int32(in.Int32())
-		case "points_per_day":
-			out.PointsPerDay = float32(in.Float32())
-		case "remainder_points":
-			out.RemainderPoints = float32(in.Float32())
 		case "skill_type_id":
 			out.SkillTypeId = int32(in.Int32())
 		case "started_at":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.StartedAt).UnmarshalJSON(data))
 			}
+		case "points_per_day":
+			out.PointsPerDay = float32(in.Float32())
+		case "remainder_points":
+			out.RemainderPoints = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -137,22 +137,6 @@ func easyjsonEe2a966EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 		out.RawString("\"agent_id\":")
 		out.Int32(int32(in.AgentId))
 	}
-	if in.PointsPerDay != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"points_per_day\":")
-		out.Float32(float32(in.PointsPerDay))
-	}
-	if in.RemainderPoints != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"remainder_points\":")
-		out.Float32(float32(in.RemainderPoints))
-	}
 	if in.SkillTypeId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -168,6 +152,22 @@ func easyjsonEe2a966EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 		first = false
 		out.RawString("\"started_at\":")
 		out.Raw((in.StartedAt).MarshalJSON())
+	}
+	if in.PointsPerDay != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"points_per_day\":")
+		out.Float32(float32(in.PointsPerDay))
+	}
+	if in.RemainderPoints != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"remainder_points\":")
+		out.Float32(float32(in.RemainderPoints))
 	}
 	out.RawByte('}')
 }

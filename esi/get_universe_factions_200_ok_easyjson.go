@@ -103,26 +103,26 @@ func easyjsonFdfc6a22DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "corporation_id":
-			out.CorporationId = int32(in.Int32())
-		case "description":
-			out.Description = string(in.String())
 		case "faction_id":
 			out.FactionId = int32(in.Int32())
-		case "is_unique":
-			out.IsUnique = bool(in.Bool())
-		case "militia_corporation_id":
-			out.MilitiaCorporationId = int32(in.Int32())
 		case "name":
 			out.Name = string(in.String())
-		case "size_factor":
-			out.SizeFactor = float32(in.Float32())
+		case "description":
+			out.Description = string(in.String())
 		case "solar_system_id":
 			out.SolarSystemId = int32(in.Int32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		case "militia_corporation_id":
+			out.MilitiaCorporationId = int32(in.Int32())
+		case "size_factor":
+			out.SizeFactor = float32(in.Float32())
 		case "station_count":
 			out.StationCount = int32(in.Int32())
 		case "station_system_count":
 			out.StationSystemCount = int32(in.Int32())
+		case "is_unique":
+			out.IsUnique = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -137,22 +137,6 @@ func easyjsonFdfc6a22EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"corporation_id\":")
-		out.Int32(int32(in.CorporationId))
-	}
-	if in.Description != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"description\":")
-		out.String(string(in.Description))
-	}
 	if in.FactionId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -160,22 +144,6 @@ func easyjsonFdfc6a22EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"faction_id\":")
 		out.Int32(int32(in.FactionId))
-	}
-	if in.IsUnique {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"is_unique\":")
-		out.Bool(bool(in.IsUnique))
-	}
-	if in.MilitiaCorporationId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"militia_corporation_id\":")
-		out.Int32(int32(in.MilitiaCorporationId))
 	}
 	if in.Name != "" {
 		if !first {
@@ -185,13 +153,13 @@ func easyjsonFdfc6a22EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
-	if in.SizeFactor != 0 {
+	if in.Description != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"size_factor\":")
-		out.Float32(float32(in.SizeFactor))
+		out.RawString("\"description\":")
+		out.String(string(in.Description))
 	}
 	if in.SolarSystemId != 0 {
 		if !first {
@@ -200,6 +168,30 @@ func easyjsonFdfc6a22EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
+	}
+	if in.CorporationId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"corporation_id\":")
+		out.Int32(int32(in.CorporationId))
+	}
+	if in.MilitiaCorporationId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"militia_corporation_id\":")
+		out.Int32(int32(in.MilitiaCorporationId))
+	}
+	if in.SizeFactor != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"size_factor\":")
+		out.Float32(float32(in.SizeFactor))
 	}
 	if in.StationCount != 0 {
 		if !first {
@@ -216,6 +208,14 @@ func easyjsonFdfc6a22EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"station_system_count\":")
 		out.Int32(int32(in.StationSystemCount))
+	}
+	if in.IsUnique {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"is_unique\":")
+		out.Bool(bool(in.IsUnique))
 	}
 	out.RawByte('}')
 }

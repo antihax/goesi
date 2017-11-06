@@ -103,32 +103,32 @@ func easyjson613793e0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "action":
-			out.Action = string(in.String())
-		case "character_id":
-			out.CharacterId = int32(in.Int32())
-		case "container_id":
-			out.ContainerId = int64(in.Int64())
-		case "container_type_id":
-			out.ContainerTypeId = int32(in.Int32())
-		case "location_flag":
-			out.LocationFlag = string(in.String())
-		case "location_id":
-			out.LocationId = int64(in.Int64())
 		case "logged_at":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.LoggedAt).UnmarshalJSON(data))
 			}
-		case "new_config_bitmask":
-			out.NewConfigBitmask = int32(in.Int32())
-		case "old_config_bitmask":
-			out.OldConfigBitmask = int32(in.Int32())
+		case "container_id":
+			out.ContainerId = int64(in.Int64())
+		case "container_type_id":
+			out.ContainerTypeId = int32(in.Int32())
+		case "character_id":
+			out.CharacterId = int32(in.Int32())
+		case "location_id":
+			out.LocationId = int64(in.Int64())
+		case "location_flag":
+			out.LocationFlag = string(in.String())
+		case "action":
+			out.Action = string(in.String())
 		case "password_type":
 			out.PasswordType = string(in.String())
-		case "quantity":
-			out.Quantity = int32(in.Int32())
 		case "type_id":
 			out.TypeId = int32(in.Int32())
+		case "quantity":
+			out.Quantity = int32(in.Int32())
+		case "old_config_bitmask":
+			out.OldConfigBitmask = int32(in.Int32())
+		case "new_config_bitmask":
+			out.NewConfigBitmask = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -143,21 +143,13 @@ func easyjson613793e0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Action != "" {
+	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"action\":")
-		out.String(string(in.Action))
-	}
-	if in.CharacterId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"character_id\":")
-		out.Int32(int32(in.CharacterId))
+		out.RawString("\"logged_at\":")
+		out.Raw((in.LoggedAt).MarshalJSON())
 	}
 	if in.ContainerId != 0 {
 		if !first {
@@ -175,13 +167,13 @@ func easyjson613793e0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"container_type_id\":")
 		out.Int32(int32(in.ContainerTypeId))
 	}
-	if in.LocationFlag != "" {
+	if in.CharacterId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"location_flag\":")
-		out.String(string(in.LocationFlag))
+		out.RawString("\"character_id\":")
+		out.Int32(int32(in.CharacterId))
 	}
 	if in.LocationId != 0 {
 		if !first {
@@ -191,29 +183,21 @@ func easyjson613793e0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"location_id\":")
 		out.Int64(int64(in.LocationId))
 	}
-	if true {
+	if in.LocationFlag != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"logged_at\":")
-		out.Raw((in.LoggedAt).MarshalJSON())
+		out.RawString("\"location_flag\":")
+		out.String(string(in.LocationFlag))
 	}
-	if in.NewConfigBitmask != 0 {
+	if in.Action != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"new_config_bitmask\":")
-		out.Int32(int32(in.NewConfigBitmask))
-	}
-	if in.OldConfigBitmask != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"old_config_bitmask\":")
-		out.Int32(int32(in.OldConfigBitmask))
+		out.RawString("\"action\":")
+		out.String(string(in.Action))
 	}
 	if in.PasswordType != "" {
 		if !first {
@@ -223,6 +207,14 @@ func easyjson613793e0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"password_type\":")
 		out.String(string(in.PasswordType))
 	}
+	if in.TypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"type_id\":")
+		out.Int32(int32(in.TypeId))
+	}
 	if in.Quantity != 0 {
 		if !first {
 			out.RawByte(',')
@@ -231,13 +223,21 @@ func easyjson613793e0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"quantity\":")
 		out.Int32(int32(in.Quantity))
 	}
-	if in.TypeId != 0 {
+	if in.OldConfigBitmask != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"type_id\":")
-		out.Int32(int32(in.TypeId))
+		out.RawString("\"old_config_bitmask\":")
+		out.Int32(int32(in.OldConfigBitmask))
+	}
+	if in.NewConfigBitmask != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"new_config_bitmask\":")
+		out.Int32(int32(in.NewConfigBitmask))
 	}
 	out.RawByte('}')
 }

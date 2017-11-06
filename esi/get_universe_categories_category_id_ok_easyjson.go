@@ -105,6 +105,10 @@ func easyjson885ff811DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 		switch key {
 		case "category_id":
 			out.CategoryId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		case "published":
+			out.Published = bool(in.Bool())
 		case "groups":
 			if in.IsNull() {
 				in.Skip()
@@ -128,10 +132,6 @@ func easyjson885ff811DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
-		case "name":
-			out.Name = string(in.String())
-		case "published":
-			out.Published = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -154,6 +154,22 @@ func easyjson885ff811EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"category_id\":")
 		out.Int32(int32(in.CategoryId))
 	}
+	if in.Name != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"name\":")
+		out.String(string(in.Name))
+	}
+	if in.Published {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"published\":")
+		out.Bool(bool(in.Published))
+	}
 	if len(in.Groups) != 0 {
 		if !first {
 			out.RawByte(',')
@@ -172,22 +188,6 @@ func easyjson885ff811EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"name\":")
-		out.String(string(in.Name))
-	}
-	if in.Published {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"published\":")
-		out.Bool(bool(in.Published))
 	}
 	out.RawByte('}')
 }

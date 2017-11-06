@@ -103,10 +103,16 @@ func easyjsonD53872d4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
-		case "flag":
-			out.Flag = int32(in.Int32())
 		case "item_type_id":
 			out.ItemTypeId = int32(in.Int32())
+		case "quantity_destroyed":
+			out.QuantityDestroyed = int64(in.Int64())
+		case "quantity_dropped":
+			out.QuantityDropped = int64(in.Int64())
+		case "singleton":
+			out.Singleton = int32(in.Int32())
+		case "flag":
+			out.Flag = int32(in.Int32())
 		case "items":
 			if in.IsNull() {
 				in.Skip()
@@ -130,12 +136,6 @@ func easyjsonD53872d4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 				}
 				in.Delim(']')
 			}
-		case "quantity_destroyed":
-			out.QuantityDestroyed = int64(in.Int64())
-		case "quantity_dropped":
-			out.QuantityDropped = int64(in.Int64())
-		case "singleton":
-			out.Singleton = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -150,14 +150,6 @@ func easyjsonD53872d4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Flag != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"flag\":")
-		out.Int32(int32(in.Flag))
-	}
 	if in.ItemTypeId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -165,25 +157,6 @@ func easyjsonD53872d4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"item_type_id\":")
 		out.Int32(int32(in.ItemTypeId))
-	}
-	if len(in.Items) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"items\":")
-		if in.Items == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
-		} else {
-			out.RawByte('[')
-			for v5, v6 := range in.Items {
-				if v5 > 0 {
-					out.RawByte(',')
-				}
-				(v6).MarshalEasyJSON(out)
-			}
-			out.RawByte(']')
-		}
 	}
 	if in.QuantityDestroyed != 0 {
 		if !first {
@@ -208,6 +181,33 @@ func easyjsonD53872d4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"singleton\":")
 		out.Int32(int32(in.Singleton))
+	}
+	if in.Flag != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"flag\":")
+		out.Int32(int32(in.Flag))
+	}
+	if len(in.Items) != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"items\":")
+		if in.Items == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+			out.RawString("null")
+		} else {
+			out.RawByte('[')
+			for v5, v6 := range in.Items {
+				if v5 > 0 {
+					out.RawByte(',')
+				}
+				(v6).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
 	}
 	out.RawByte('}')
 }

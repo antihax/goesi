@@ -103,22 +103,22 @@ func easyjson974093c8DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
+		case "name":
+			out.Name = string(in.String())
+		case "solar_system_id":
+			out.SolarSystemId = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		case "age":
 			out.Age = int64(in.Int64())
 		case "luminosity":
 			out.Luminosity = float32(in.Float32())
-		case "name":
-			out.Name = string(in.String())
 		case "radius":
 			out.Radius = int64(in.Int64())
-		case "solar_system_id":
-			out.SolarSystemId = int32(in.Int32())
 		case "spectral_class":
 			out.SpectralClass = string(in.String())
 		case "temperature":
 			out.Temperature = int32(in.Int32())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -133,6 +133,30 @@ func easyjson974093c8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Name != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"name\":")
+		out.String(string(in.Name))
+	}
+	if in.SolarSystemId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"solar_system_id\":")
+		out.Int32(int32(in.SolarSystemId))
+	}
+	if in.TypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"type_id\":")
+		out.Int32(int32(in.TypeId))
+	}
 	if in.Age != 0 {
 		if !first {
 			out.RawByte(',')
@@ -149,14 +173,6 @@ func easyjson974093c8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"luminosity\":")
 		out.Float32(float32(in.Luminosity))
 	}
-	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"name\":")
-		out.String(string(in.Name))
-	}
 	if in.Radius != 0 {
 		if !first {
 			out.RawByte(',')
@@ -164,14 +180,6 @@ func easyjson974093c8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"radius\":")
 		out.Int64(int64(in.Radius))
-	}
-	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"solar_system_id\":")
-		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.SpectralClass != "" {
 		if !first {
@@ -188,14 +196,6 @@ func easyjson974093c8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"temperature\":")
 		out.Int32(int32(in.Temperature))
-	}
-	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"type_id\":")
-		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

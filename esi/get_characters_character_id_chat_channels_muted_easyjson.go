@@ -107,12 +107,12 @@ func easyjson3458d403DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.AccessorId = int32(in.Int32())
 		case "accessor_type":
 			out.AccessorType = string(in.String())
+		case "reason":
+			out.Reason = string(in.String())
 		case "end_at":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.EndAt).UnmarshalJSON(data))
 			}
-		case "reason":
-			out.Reason = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -143,14 +143,6 @@ func easyjson3458d403EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"accessor_type\":")
 		out.String(string(in.AccessorType))
 	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"end_at\":")
-		out.Raw((in.EndAt).MarshalJSON())
-	}
 	if in.Reason != "" {
 		if !first {
 			out.RawByte(',')
@@ -158,6 +150,14 @@ func easyjson3458d403EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"reason\":")
 		out.String(string(in.Reason))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"end_at\":")
+		out.Raw((in.EndAt).MarshalJSON())
 	}
 	out.RawByte('}')
 }

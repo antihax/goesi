@@ -33,11 +33,11 @@ type GetCorporationsCorporationIdMembertracking200OkList []GetCorporationsCorpor
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdMembertracking200Ok struct {
-	BaseId      int32     `json:"base_id,omitempty"`      /* base_id integer */
 	CharacterId int32     `json:"character_id,omitempty"` /* character_id integer */
-	LocationId  int64     `json:"location_id,omitempty"`  /* location_id integer */
-	LogoffDate  time.Time `json:"logoff_date,omitempty"`  /* logoff_date string */
-	LogonDate   time.Time `json:"logon_date,omitempty"`   /* logon_date string */
-	ShipTypeId  int32     `json:"ship_type_id,omitempty"` /* ship_type_id integer */
 	StartDate   time.Time `json:"start_date,omitempty"`   /* start_date string */
+	BaseId      int32     `json:"base_id,omitempty"`      /* base_id integer */
+	LogonDate   time.Time `json:"logon_date,omitempty"`   /* logon_date string */
+	LogoffDate  time.Time `json:"logoff_date,omitempty"`  /* logoff_date string */
+	LocationId  int64     `json:"location_id,omitempty"`  /* location_id integer */
+	ShipTypeId  int32     `json:"ship_type_id,omitempty"` /* ship_type_id integer */
 }

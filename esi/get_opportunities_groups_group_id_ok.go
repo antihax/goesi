@@ -29,10 +29,10 @@ type GetOpportunitiesGroupsGroupIdOkList []GetOpportunitiesGroupsGroupIdOk
 /* 200 ok object */
 //easyjson:json
 type GetOpportunitiesGroupsGroupIdOk struct {
-	ConnectedGroups []int32 `json:"connected_groups,omitempty"` /* The groups that are connected to this group on the opportunities map */
-	Description     string  `json:"description,omitempty"`      /* description string */
 	GroupId         int32   `json:"group_id,omitempty"`         /* group_id integer */
 	Name            string  `json:"name,omitempty"`             /* name string */
+	Description     string  `json:"description,omitempty"`      /* description string */
 	Notification    string  `json:"notification,omitempty"`     /* notification string */
 	RequiredTasks   []int32 `json:"required_tasks,omitempty"`   /* Tasks need to complete for this group */
+	ConnectedGroups []int32 `json:"connected_groups,omitempty"` /* The groups that are connected to this group on the opportunities map */
 }

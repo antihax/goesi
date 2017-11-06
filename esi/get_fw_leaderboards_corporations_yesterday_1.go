@@ -29,6 +29,6 @@ type GetFwLeaderboardsCorporationsYesterday1List []GetFwLeaderboardsCorporations
 /* yesterday object */
 //easyjson:json
 type GetFwLeaderboardsCorporationsYesterday1 struct {
-	Amount        int32 `json:"amount,omitempty"`         /* Amount of victory points */
 	CorporationId int32 `json:"corporation_id,omitempty"` /* corporation_id integer */
+	Amount        int32 `json:"amount,omitempty"`         /* Amount of victory points */
 }

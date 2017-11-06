@@ -103,20 +103,20 @@ func easyjson1febafc2DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "character_id":
-			out.CharacterId = int32(in.Int32())
-		case "issued_at":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.IssuedAt).UnmarshalJSON(data))
-			}
-		case "issuer_id":
-			out.IssuerId = int32(in.Int32())
 		case "medal_id":
 			out.MedalId = int32(in.Int32())
+		case "character_id":
+			out.CharacterId = int32(in.Int32())
 		case "reason":
 			out.Reason = string(in.String())
 		case "status":
 			out.Status = string(in.String())
+		case "issuer_id":
+			out.IssuerId = int32(in.Int32())
+		case "issued_at":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.IssuedAt).UnmarshalJSON(data))
+			}
 		default:
 			in.SkipRecursive()
 		}
@@ -131,30 +131,6 @@ func easyjson1febafc2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.CharacterId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"character_id\":")
-		out.Int32(int32(in.CharacterId))
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"issued_at\":")
-		out.Raw((in.IssuedAt).MarshalJSON())
-	}
-	if in.IssuerId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"issuer_id\":")
-		out.Int32(int32(in.IssuerId))
-	}
 	if in.MedalId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -162,6 +138,14 @@ func easyjson1febafc2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"medal_id\":")
 		out.Int32(int32(in.MedalId))
+	}
+	if in.CharacterId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"character_id\":")
+		out.Int32(int32(in.CharacterId))
 	}
 	if in.Reason != "" {
 		if !first {
@@ -178,6 +162,22 @@ func easyjson1febafc2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"status\":")
 		out.String(string(in.Status))
+	}
+	if in.IssuerId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"issuer_id\":")
+		out.Int32(int32(in.IssuerId))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"issued_at\":")
+		out.Raw((in.IssuedAt).MarshalJSON())
 	}
 	out.RawByte('}')
 }

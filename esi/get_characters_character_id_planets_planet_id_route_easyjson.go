@@ -103,16 +103,16 @@ func easyjson5a671d6eDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "content_type_id":
-			out.ContentTypeId = int32(in.Int32())
-		case "destination_pin_id":
-			out.DestinationPinId = int64(in.Int64())
-		case "quantity":
-			out.Quantity = float32(in.Float32())
 		case "route_id":
 			out.RouteId = int64(in.Int64())
 		case "source_pin_id":
 			out.SourcePinId = int64(in.Int64())
+		case "destination_pin_id":
+			out.DestinationPinId = int64(in.Int64())
+		case "content_type_id":
+			out.ContentTypeId = int32(in.Int32())
+		case "quantity":
+			out.Quantity = float32(in.Float32())
 		case "waypoints":
 			if in.IsNull() {
 				in.Skip()
@@ -150,30 +150,6 @@ func easyjson5a671d6eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.ContentTypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"content_type_id\":")
-		out.Int32(int32(in.ContentTypeId))
-	}
-	if in.DestinationPinId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"destination_pin_id\":")
-		out.Int64(int64(in.DestinationPinId))
-	}
-	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"quantity\":")
-		out.Float32(float32(in.Quantity))
-	}
 	if in.RouteId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -189,6 +165,30 @@ func easyjson5a671d6eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"source_pin_id\":")
 		out.Int64(int64(in.SourcePinId))
+	}
+	if in.DestinationPinId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"destination_pin_id\":")
+		out.Int64(int64(in.DestinationPinId))
+	}
+	if in.ContentTypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"content_type_id\":")
+		out.Int32(int32(in.ContentTypeId))
+	}
+	if in.Quantity != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"quantity\":")
+		out.Float32(float32(in.Quantity))
 	}
 	if len(in.Waypoints) != 0 {
 		if !first {

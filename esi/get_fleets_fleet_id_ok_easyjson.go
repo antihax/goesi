@@ -103,14 +103,14 @@ func easyjson19c0c1b4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
+		case "motd":
+			out.Motd = string(in.String())
 		case "is_free_move":
 			out.IsFreeMove = bool(in.Bool())
 		case "is_registered":
 			out.IsRegistered = bool(in.Bool())
 		case "is_voice_enabled":
 			out.IsVoiceEnabled = bool(in.Bool())
-		case "motd":
-			out.Motd = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -125,6 +125,14 @@ func easyjson19c0c1b4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Motd != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"motd\":")
+		out.String(string(in.Motd))
+	}
 	if in.IsFreeMove {
 		if !first {
 			out.RawByte(',')
@@ -148,14 +156,6 @@ func easyjson19c0c1b4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"is_voice_enabled\":")
 		out.Bool(bool(in.IsVoiceEnabled))
-	}
-	if in.Motd != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"motd\":")
-		out.String(string(in.Motd))
 	}
 	out.RawByte('}')
 }

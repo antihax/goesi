@@ -103,10 +103,6 @@ func easyjson7d2da406DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "cycle_time":
-			out.CycleTime = int32(in.Int32())
-		case "head_radius":
-			out.HeadRadius = float32(in.Float32())
 		case "heads":
 			if in.IsNull() {
 				in.Skip()
@@ -132,6 +128,10 @@ func easyjson7d2da406DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			}
 		case "product_type_id":
 			out.ProductTypeId = int32(in.Int32())
+		case "cycle_time":
+			out.CycleTime = int32(in.Int32())
+		case "head_radius":
+			out.HeadRadius = float32(in.Float32())
 		case "qty_per_cycle":
 			out.QtyPerCycle = int32(in.Int32())
 		default:
@@ -148,22 +148,6 @@ func easyjson7d2da406EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.CycleTime != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"cycle_time\":")
-		out.Int32(int32(in.CycleTime))
-	}
-	if in.HeadRadius != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"head_radius\":")
-		out.Float32(float32(in.HeadRadius))
-	}
 	if len(in.Heads) != 0 {
 		if !first {
 			out.RawByte(',')
@@ -190,6 +174,22 @@ func easyjson7d2da406EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"product_type_id\":")
 		out.Int32(int32(in.ProductTypeId))
+	}
+	if in.CycleTime != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"cycle_time\":")
+		out.Int32(int32(in.CycleTime))
+	}
+	if in.HeadRadius != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"head_radius\":")
+		out.Float32(float32(in.HeadRadius))
 	}
 	if in.QtyPerCycle != 0 {
 		if !first {

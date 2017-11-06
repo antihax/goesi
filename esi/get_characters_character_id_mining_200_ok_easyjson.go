@@ -105,12 +105,12 @@ func easyjson766136d2DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		switch key {
 		case "date":
 			out.Date = string(in.String())
-		case "quantity":
-			out.Quantity = int64(in.Int64())
 		case "solar_system_id":
 			out.SolarSystemId = int32(in.Int32())
 		case "type_id":
 			out.TypeId = int32(in.Int32())
+		case "quantity":
+			out.Quantity = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -133,14 +133,6 @@ func easyjson766136d2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"date\":")
 		out.String(string(in.Date))
 	}
-	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"quantity\":")
-		out.Int64(int64(in.Quantity))
-	}
 	if in.SolarSystemId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -156,6 +148,14 @@ func easyjson766136d2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
+	}
+	if in.Quantity != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"quantity\":")
+		out.Int64(int64(in.Quantity))
 	}
 	out.RawByte('}')
 }

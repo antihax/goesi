@@ -103,22 +103,22 @@ func easyjson5f788c63DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "solar_system_id":
+			out.SolarSystemId = int32(in.Int32())
+		case "planet_id":
+			out.PlanetId = int32(in.Int32())
+		case "owner_id":
+			out.OwnerId = int32(in.Int32())
+		case "upgrade_level":
+			out.UpgradeLevel = int32(in.Int32())
+		case "num_pins":
+			out.NumPins = int32(in.Int32())
 		case "last_update":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.LastUpdate).UnmarshalJSON(data))
 			}
-		case "num_pins":
-			out.NumPins = int32(in.Int32())
-		case "owner_id":
-			out.OwnerId = int32(in.Int32())
-		case "planet_id":
-			out.PlanetId = int32(in.Int32())
 		case "planet_type":
 			out.PlanetType = string(in.String())
-		case "solar_system_id":
-			out.SolarSystemId = int32(in.Int32())
-		case "upgrade_level":
-			out.UpgradeLevel = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -133,29 +133,13 @@ func easyjson5f788c63EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if true {
+	if in.SolarSystemId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"last_update\":")
-		out.Raw((in.LastUpdate).MarshalJSON())
-	}
-	if in.NumPins != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"num_pins\":")
-		out.Int32(int32(in.NumPins))
-	}
-	if in.OwnerId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"owner_id\":")
-		out.Int32(int32(in.OwnerId))
+		out.RawString("\"solar_system_id\":")
+		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.PlanetId != 0 {
 		if !first {
@@ -165,21 +149,13 @@ func easyjson5f788c63EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"planet_id\":")
 		out.Int32(int32(in.PlanetId))
 	}
-	if in.PlanetType != "" {
+	if in.OwnerId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"planet_type\":")
-		out.String(string(in.PlanetType))
-	}
-	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"solar_system_id\":")
-		out.Int32(int32(in.SolarSystemId))
+		out.RawString("\"owner_id\":")
+		out.Int32(int32(in.OwnerId))
 	}
 	if in.UpgradeLevel != 0 {
 		if !first {
@@ -188,6 +164,30 @@ func easyjson5f788c63EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"upgrade_level\":")
 		out.Int32(int32(in.UpgradeLevel))
+	}
+	if in.NumPins != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"num_pins\":")
+		out.Int32(int32(in.NumPins))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"last_update\":")
+		out.Raw((in.LastUpdate).MarshalJSON())
+	}
+	if in.PlanetType != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"planet_type\":")
+		out.String(string(in.PlanetType))
 	}
 	out.RawByte('}')
 }

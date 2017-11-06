@@ -33,8 +33,8 @@ type GetCharactersCharacterIdCorporationhistory200OkList []GetCharactersCharacte
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdCorporationhistory200Ok struct {
+	StartDate     time.Time `json:"start_date,omitempty"`     /* start_date string */
 	CorporationId int32     `json:"corporation_id,omitempty"` /* corporation_id integer */
 	IsDeleted     bool      `json:"is_deleted,omitempty"`     /* True if the corporation has been deleted */
 	RecordId      int32     `json:"record_id,omitempty"`      /* An incrementing ID that can be used to canonically establish order of records in cases where dates may be ambiguous */
-	StartDate     time.Time `json:"start_date,omitempty"`     /* start_date string */
 }

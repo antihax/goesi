@@ -103,6 +103,12 @@ func easyjsonC59437f0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
+		case "region_id":
+			out.RegionId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		case "description":
+			out.Description = string(in.String())
 		case "constellations":
 			if in.IsNull() {
 				in.Skip()
@@ -126,12 +132,6 @@ func easyjsonC59437f0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
-		case "description":
-			out.Description = string(in.String())
-		case "name":
-			out.Name = string(in.String())
-		case "region_id":
-			out.RegionId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -146,6 +146,30 @@ func easyjsonC59437f0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.RegionId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"region_id\":")
+		out.Int32(int32(in.RegionId))
+	}
+	if in.Name != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"name\":")
+		out.String(string(in.Name))
+	}
+	if in.Description != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"description\":")
+		out.String(string(in.Description))
+	}
 	if len(in.Constellations) != 0 {
 		if !first {
 			out.RawByte(',')
@@ -164,30 +188,6 @@ func easyjsonC59437f0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.Description != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"description\":")
-		out.String(string(in.Description))
-	}
-	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"name\":")
-		out.String(string(in.Name))
-	}
-	if in.RegionId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"region_id\":")
-		out.Int32(int32(in.RegionId))
 	}
 	out.RawByte('}')
 }

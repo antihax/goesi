@@ -103,13 +103,13 @@ func easyjsonF9b71b08DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "jump_fatigue_expire_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.JumpFatigueExpireDate).UnmarshalJSON(data))
-			}
 		case "last_jump_date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.LastJumpDate).UnmarshalJSON(data))
+			}
+		case "jump_fatigue_expire_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.JumpFatigueExpireDate).UnmarshalJSON(data))
 			}
 		case "last_update_date":
 			if data := in.Raw(); in.Ok() {
@@ -134,16 +134,16 @@ func easyjsonF9b71b08EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"jump_fatigue_expire_date\":")
-		out.Raw((in.JumpFatigueExpireDate).MarshalJSON())
+		out.RawString("\"last_jump_date\":")
+		out.Raw((in.LastJumpDate).MarshalJSON())
 	}
 	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"last_jump_date\":")
-		out.Raw((in.LastJumpDate).MarshalJSON())
+		out.RawString("\"jump_fatigue_expire_date\":")
+		out.Raw((in.JumpFatigueExpireDate).MarshalJSON())
 	}
 	if true {
 		if !first {

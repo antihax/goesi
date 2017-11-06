@@ -29,9 +29,9 @@ type GetFwStats200OkList []GetFwStats200Ok
 /* 200 ok object */
 //easyjson:json
 type GetFwStats200Ok struct {
-	FactionId         int32                   `json:"faction_id,omitempty"` /* faction_id integer */
-	Kills             GetFwStatsKills         `json:"kills,omitempty"`
+	FactionId         int32                   `json:"faction_id,omitempty"`         /* faction_id integer */
 	Pilots            int32                   `json:"pilots,omitempty"`             /* How many pilots fight for the given faction */
 	SystemsControlled int32                   `json:"systems_controlled,omitempty"` /* The number of solar systems controlled by the given faction */
+	Kills             GetFwStatsKills         `json:"kills,omitempty"`
 	VictoryPoints     GetFwStatsVictoryPoints `json:"victory_points,omitempty"`
 }

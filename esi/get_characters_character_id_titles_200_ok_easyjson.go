@@ -103,10 +103,10 @@ func easyjson24d902b9DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "name":
-			out.Name = string(in.String())
 		case "title_id":
 			out.TitleId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -121,14 +121,6 @@ func easyjson24d902b9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"name\":")
-		out.String(string(in.Name))
-	}
 	if in.TitleId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -136,6 +128,14 @@ func easyjson24d902b9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"title_id\":")
 		out.Int32(int32(in.TitleId))
+	}
+	if in.Name != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"name\":")
+		out.String(string(in.Name))
 	}
 	out.RawByte('}')
 }

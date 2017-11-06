@@ -105,16 +105,16 @@ func easyjson9e1840f9DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetI
 		switch key {
 		case "facility_id":
 			out.FacilityId = int64(in.Int64())
-		case "owner_id":
-			out.OwnerId = int32(in.Int32())
-		case "region_id":
-			out.RegionId = int32(in.Int32())
-		case "solar_system_id":
-			out.SolarSystemId = int32(in.Int32())
 		case "tax":
 			out.Tax = float32(in.Float32())
+		case "owner_id":
+			out.OwnerId = int32(in.Int32())
 		case "type_id":
 			out.TypeId = int32(in.Int32())
+		case "solar_system_id":
+			out.SolarSystemId = int32(in.Int32())
+		case "region_id":
+			out.RegionId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -137,6 +137,14 @@ func easyjson9e1840f9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"facility_id\":")
 		out.Int64(int64(in.FacilityId))
 	}
+	if in.Tax != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"tax\":")
+		out.Float32(float32(in.Tax))
+	}
 	if in.OwnerId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -145,13 +153,13 @@ func easyjson9e1840f9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"owner_id\":")
 		out.Int32(int32(in.OwnerId))
 	}
-	if in.RegionId != 0 {
+	if in.TypeId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"region_id\":")
-		out.Int32(int32(in.RegionId))
+		out.RawString("\"type_id\":")
+		out.Int32(int32(in.TypeId))
 	}
 	if in.SolarSystemId != 0 {
 		if !first {
@@ -161,21 +169,13 @@ func easyjson9e1840f9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
-	if in.Tax != 0 {
+	if in.RegionId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"tax\":")
-		out.Float32(float32(in.Tax))
-	}
-	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"type_id\":")
-		out.Int32(int32(in.TypeId))
+		out.RawString("\"region_id\":")
+		out.Int32(int32(in.RegionId))
 	}
 	out.RawByte('}')
 }

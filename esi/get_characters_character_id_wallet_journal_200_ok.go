@@ -33,17 +33,17 @@ type GetCharactersCharacterIdWalletJournal200OkList []GetCharactersCharacterIdWa
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdWalletJournal200Ok struct {
-	Amount          float32                                        `json:"amount,omitempty"`  /* Transaction amount. Positive when value transferred to the first party. Negative otherwise */
-	Balance         float32                                        `json:"balance,omitempty"` /* Wallet balance after transaction occurred */
-	Date            time.Time                                      `json:"date,omitempty"`    /* Date and time of transaction */
-	ExtraInfo       GetCharactersCharacterIdWalletJournalExtraInfo `json:"extra_info,omitempty"`
-	FirstPartyId    int32                                          `json:"first_party_id,omitempty"`    /* first_party_id integer */
-	FirstPartyType  string                                         `json:"first_party_type,omitempty"`  /* first_party_type string */
-	Reason          string                                         `json:"reason,omitempty"`            /* reason string */
+	Date            time.Time                                      `json:"date,omitempty"`              /* Date and time of transaction */
 	RefId           int64                                          `json:"ref_id,omitempty"`            /* Unique journal reference ID */
 	RefType         string                                         `json:"ref_type,omitempty"`          /* Transaction type, different type of transaction will populate different fields in `extra_info` */
+	FirstPartyId    int32                                          `json:"first_party_id,omitempty"`    /* first_party_id integer */
+	FirstPartyType  string                                         `json:"first_party_type,omitempty"`  /* first_party_type string */
 	SecondPartyId   int32                                          `json:"second_party_id,omitempty"`   /* second_party_id integer */
 	SecondPartyType string                                         `json:"second_party_type,omitempty"` /* second_party_type string */
-	Tax             float32                                        `json:"tax,omitempty"`               /* Tax amount received for tax related transactions */
+	Amount          float32                                        `json:"amount,omitempty"`            /* Transaction amount. Positive when value transferred to the first party. Negative otherwise */
+	Balance         float32                                        `json:"balance,omitempty"`           /* Wallet balance after transaction occurred */
+	Reason          string                                         `json:"reason,omitempty"`            /* reason string */
 	TaxRecieverId   int32                                          `json:"tax_reciever_id,omitempty"`   /* the corporation ID receiving any tax paid */
+	Tax             float32                                        `json:"tax,omitempty"`               /* Tax amount received for tax related transactions */
+	ExtraInfo       GetCharactersCharacterIdWalletJournalExtraInfo `json:"extra_info,omitempty"`
 }

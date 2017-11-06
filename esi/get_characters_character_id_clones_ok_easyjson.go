@@ -103,6 +103,10 @@ func easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "last_jump_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.LastJumpDate).UnmarshalJSON(data))
+			}
 		case "home_location":
 			(out.HomeLocation).UnmarshalEasyJSON(in)
 		case "jump_clones":
@@ -128,10 +132,6 @@ func easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "last_jump_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.LastJumpDate).UnmarshalJSON(data))
-			}
 		default:
 			in.SkipRecursive()
 		}
@@ -146,6 +146,14 @@ func easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"last_jump_date\":")
+		out.Raw((in.LastJumpDate).MarshalJSON())
+	}
 	if true {
 		if !first {
 			out.RawByte(',')
@@ -172,14 +180,6 @@ func easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"last_jump_date\":")
-		out.Raw((in.LastJumpDate).MarshalJSON())
 	}
 	out.RawByte('}')
 }

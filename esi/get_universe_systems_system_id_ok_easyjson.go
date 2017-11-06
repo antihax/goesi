@@ -103,10 +103,20 @@ func easyjsonB8c84fd0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "constellation_id":
-			out.ConstellationId = int32(in.Int32())
+		case "star_id":
+			out.StarId = int32(in.Int32())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
 		case "name":
 			out.Name = string(in.String())
+		case "position":
+			easyjsonB8c84fd0DecodeGithubComAntihaxGoesiEsi2(in, &out.Position)
+		case "security_status":
+			out.SecurityStatus = float32(in.Float32())
+		case "security_class":
+			out.SecurityClass = string(in.String())
+		case "constellation_id":
+			out.ConstellationId = int32(in.Int32())
 		case "planets":
 			if in.IsNull() {
 				in.Skip()
@@ -130,14 +140,6 @@ func easyjsonB8c84fd0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
-		case "position":
-			easyjsonB8c84fd0DecodeGithubComAntihaxGoesiEsi2(in, &out.Position)
-		case "security_class":
-			out.SecurityClass = string(in.String())
-		case "security_status":
-			out.SecurityStatus = float32(in.Float32())
-		case "star_id":
-			out.StarId = int32(in.Int32())
 		case "stargates":
 			if in.IsNull() {
 				in.Skip()
@@ -184,8 +186,6 @@ func easyjsonB8c84fd0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
-		case "system_id":
-			out.SystemId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -200,13 +200,21 @@ func easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.ConstellationId != 0 {
+	if in.StarId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"constellation_id\":")
-		out.Int32(int32(in.ConstellationId))
+		out.RawString("\"star_id\":")
+		out.Int32(int32(in.StarId))
+	}
+	if in.SystemId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"system_id\":")
+		out.Int32(int32(in.SystemId))
 	}
 	if in.Name != "" {
 		if !first {
@@ -215,6 +223,38 @@ func easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"name\":")
 		out.String(string(in.Name))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"position\":")
+		easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi2(out, in.Position)
+	}
+	if in.SecurityStatus != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"security_status\":")
+		out.Float32(float32(in.SecurityStatus))
+	}
+	if in.SecurityClass != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"security_class\":")
+		out.String(string(in.SecurityClass))
+	}
+	if in.ConstellationId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"constellation_id\":")
+		out.Int32(int32(in.ConstellationId))
 	}
 	if len(in.Planets) != 0 {
 		if !first {
@@ -234,38 +274,6 @@ func easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"position\":")
-		easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi2(out, in.Position)
-	}
-	if in.SecurityClass != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"security_class\":")
-		out.String(string(in.SecurityClass))
-	}
-	if in.SecurityStatus != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"security_status\":")
-		out.Float32(float32(in.SecurityStatus))
-	}
-	if in.StarId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"star_id\":")
-		out.Int32(int32(in.StarId))
 	}
 	if len(in.Stargates) != 0 {
 		if !first {
@@ -304,14 +312,6 @@ func easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.SystemId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"system_id\":")
-		out.Int32(int32(in.SystemId))
 	}
 	out.RawByte('}')
 }

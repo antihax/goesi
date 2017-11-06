@@ -103,22 +103,22 @@ func easyjson6cda8914DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "is_read":
-			out.IsRead = bool(in.Bool())
 		case "notification_id":
 			out.NotificationId = int64(in.Int64())
+		case "type":
+			out.Type_ = string(in.String())
 		case "sender_id":
 			out.SenderId = int32(in.Int32())
 		case "sender_type":
 			out.SenderType = string(in.String())
-		case "text":
-			out.Text = string(in.String())
 		case "timestamp":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Timestamp).UnmarshalJSON(data))
 			}
-		case "type":
-			out.Type_ = string(in.String())
+		case "is_read":
+			out.IsRead = bool(in.Bool())
+		case "text":
+			out.Text = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -133,14 +133,6 @@ func easyjson6cda8914EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.IsRead {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"is_read\":")
-		out.Bool(bool(in.IsRead))
-	}
 	if in.NotificationId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -148,6 +140,14 @@ func easyjson6cda8914EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"notification_id\":")
 		out.Int64(int64(in.NotificationId))
+	}
+	if in.Type_ != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"type\":")
+		out.String(string(in.Type_))
 	}
 	if in.SenderId != 0 {
 		if !first {
@@ -165,14 +165,6 @@ func easyjson6cda8914EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"sender_type\":")
 		out.String(string(in.SenderType))
 	}
-	if in.Text != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"text\":")
-		out.String(string(in.Text))
-	}
 	if true {
 		if !first {
 			out.RawByte(',')
@@ -181,13 +173,21 @@ func easyjson6cda8914EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"timestamp\":")
 		out.Raw((in.Timestamp).MarshalJSON())
 	}
-	if in.Type_ != "" {
+	if in.IsRead {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"type\":")
-		out.String(string(in.Type_))
+		out.RawString("\"is_read\":")
+		out.Bool(bool(in.IsRead))
+	}
+	if in.Text != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"text\":")
+		out.String(string(in.Text))
 	}
 	out.RawByte('}')
 }

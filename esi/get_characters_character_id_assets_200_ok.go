@@ -29,11 +29,11 @@ type GetCharactersCharacterIdAssets200OkList []GetCharactersCharacterIdAssets200
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdAssets200Ok struct {
-	IsSingleton  bool   `json:"is_singleton,omitempty"`  /* is_singleton boolean */
-	ItemId       int64  `json:"item_id,omitempty"`       /* item_id integer */
-	LocationFlag string `json:"location_flag,omitempty"` /* location_flag string */
+	TypeId       int32  `json:"type_id,omitempty"`       /* type_id integer */
+	Quantity     int32  `json:"quantity,omitempty"`      /* quantity integer */
 	LocationId   int64  `json:"location_id,omitempty"`   /* location_id integer */
 	LocationType string `json:"location_type,omitempty"` /* location_type string */
-	Quantity     int32  `json:"quantity,omitempty"`      /* quantity integer */
-	TypeId       int32  `json:"type_id,omitempty"`       /* type_id integer */
+	ItemId       int64  `json:"item_id,omitempty"`       /* item_id integer */
+	LocationFlag string `json:"location_flag,omitempty"` /* location_flag string */
+	IsSingleton  bool   `json:"is_singleton,omitempty"`  /* is_singleton boolean */
 }

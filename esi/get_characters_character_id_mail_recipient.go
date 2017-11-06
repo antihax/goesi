@@ -29,6 +29,6 @@ type GetCharactersCharacterIdMailRecipientList []GetCharactersCharacterIdMailRec
 /* recipient object */
 //easyjson:json
 type GetCharactersCharacterIdMailRecipient struct {
-	RecipientId   int32  `json:"recipient_id,omitempty"`   /* recipient_id integer */
 	RecipientType string `json:"recipient_type,omitempty"` /* recipient_type string */
+	RecipientId   int32  `json:"recipient_id,omitempty"`   /* recipient_id integer */
 }

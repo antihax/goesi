@@ -33,12 +33,12 @@ type GetCharactersCharacterIdAttributesOkList []GetCharactersCharacterIdAttribut
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdAttributesOk struct {
-	AccruedRemapCooldownDate time.Time `json:"accrued_remap_cooldown_date,omitempty"` /* Neural remapping cooldown after a character uses remap accrued over time */
-	BonusRemaps              int32     `json:"bonus_remaps,omitempty"`                /* Number of available bonus character neural remaps */
 	Charisma                 int32     `json:"charisma,omitempty"`                    /* charisma integer */
 	Intelligence             int32     `json:"intelligence,omitempty"`                /* intelligence integer */
-	LastRemapDate            time.Time `json:"last_remap_date,omitempty"`             /* Datetime of last neural remap, including usage of bonus remaps */
 	Memory                   int32     `json:"memory,omitempty"`                      /* memory integer */
 	Perception               int32     `json:"perception,omitempty"`                  /* perception integer */
 	Willpower                int32     `json:"willpower,omitempty"`                   /* willpower integer */
+	BonusRemaps              int32     `json:"bonus_remaps,omitempty"`                /* Number of available bonus character neural remaps */
+	LastRemapDate            time.Time `json:"last_remap_date,omitempty"`             /* Datetime of last neural remap, including usage of bonus remaps */
+	AccruedRemapCooldownDate time.Time `json:"accrued_remap_cooldown_date,omitempty"` /* Neural remapping cooldown after a character uses remap accrued over time */
 }

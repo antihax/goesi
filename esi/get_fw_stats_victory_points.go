@@ -29,7 +29,7 @@ type GetFwStatsVictoryPointsList []GetFwStatsVictoryPoints
 /* Summary of victory points gained for the given faction */
 //easyjson:json
 type GetFwStatsVictoryPoints struct {
+	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's victory points gained */
 	LastWeek  int32 `json:"last_week,omitempty"` /* Last week's victory points gained */
 	Total     int32 `json:"total,omitempty"`     /* Total victory points gained since faction warfare began */
-	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's victory points gained */
 }

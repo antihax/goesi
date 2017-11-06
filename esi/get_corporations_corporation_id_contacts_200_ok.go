@@ -29,9 +29,9 @@ type GetCorporationsCorporationIdContacts200OkList []GetCorporationsCorporationI
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdContacts200Ok struct {
-	ContactId   int32   `json:"contact_id,omitempty"`   /* contact_id integer */
+	Standing    float32 `json:"standing,omitempty"`     /* Standing of the contact */
 	ContactType string  `json:"contact_type,omitempty"` /* contact_type string */
+	ContactId   int32   `json:"contact_id,omitempty"`   /* contact_id integer */
 	IsWatched   bool    `json:"is_watched,omitempty"`   /* Whether this contact is being watched */
 	LabelId     int64   `json:"label_id,omitempty"`     /* Custom label of the contact */
-	Standing    float32 `json:"standing,omitempty"`     /* Standing of the contact */
 }

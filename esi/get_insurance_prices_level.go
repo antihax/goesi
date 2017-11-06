@@ -30,6 +30,6 @@ type GetInsurancePricesLevelList []GetInsurancePricesLevel
 //easyjson:json
 type GetInsurancePricesLevel struct {
 	Cost   float32 `json:"cost,omitempty"`   /* cost number */
-	Name   string  `json:"name,omitempty"`   /* Localized insurance level */
 	Payout float32 `json:"payout,omitempty"` /* payout number */
+	Name   string  `json:"name,omitempty"`   /* Localized insurance level */
 }

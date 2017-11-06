@@ -103,6 +103,10 @@ func easyjson6213c735DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "location_id":
+			out.LocationId = int64(in.Int64())
+		case "location_type":
+			out.LocationType = string(in.String())
 		case "implants":
 			if in.IsNull() {
 				in.Skip()
@@ -126,10 +130,6 @@ func easyjson6213c735DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "location_id":
-			out.LocationId = int64(in.Int64())
-		case "location_type":
-			out.LocationType = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -144,6 +144,22 @@ func easyjson6213c735EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.LocationId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"location_id\":")
+		out.Int64(int64(in.LocationId))
+	}
+	if in.LocationType != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"location_type\":")
+		out.String(string(in.LocationType))
+	}
 	if len(in.Implants) != 0 {
 		if !first {
 			out.RawByte(',')
@@ -162,22 +178,6 @@ func easyjson6213c735EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.LocationId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"location_id\":")
-		out.Int64(int64(in.LocationId))
-	}
-	if in.LocationType != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"location_type\":")
-		out.String(string(in.LocationType))
 	}
 	out.RawByte('}')
 }

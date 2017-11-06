@@ -103,10 +103,10 @@ func easyjson51f4e40eDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
-		case "amount":
-			out.Amount = int32(in.Int32())
 		case "faction_id":
 			out.FactionId = int32(in.Int32())
+		case "amount":
+			out.Amount = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -121,14 +121,6 @@ func easyjson51f4e40eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Amount != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"amount\":")
-		out.Int32(int32(in.Amount))
-	}
 	if in.FactionId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -136,6 +128,14 @@ func easyjson51f4e40eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"faction_id\":")
 		out.Int32(int32(in.FactionId))
+	}
+	if in.Amount != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"amount\":")
+		out.Int32(int32(in.Amount))
 	}
 	out.RawByte('}')
 }

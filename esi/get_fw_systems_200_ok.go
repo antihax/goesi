@@ -29,10 +29,10 @@ type GetFwSystems200OkList []GetFwSystems200Ok
 /* 200 ok object */
 //easyjson:json
 type GetFwSystems200Ok struct {
-	Contested              bool  `json:"contested,omitempty"`                /* contested boolean */
-	OccupierFactionId      int32 `json:"occupier_faction_id,omitempty"`      /* occupier_faction_id integer */
-	OwnerFactionId         int32 `json:"owner_faction_id,omitempty"`         /* owner_faction_id integer */
 	SolarSystemId          int32 `json:"solar_system_id,omitempty"`          /* solar_system_id integer */
+	OwnerFactionId         int32 `json:"owner_faction_id,omitempty"`         /* owner_faction_id integer */
+	OccupierFactionId      int32 `json:"occupier_faction_id,omitempty"`      /* occupier_faction_id integer */
 	VictoryPoints          int32 `json:"victory_points,omitempty"`           /* victory_points integer */
 	VictoryPointsThreshold int32 `json:"victory_points_threshold,omitempty"` /* victory_points_threshold integer */
+	Contested              bool  `json:"contested,omitempty"`                /* contested boolean */
 }

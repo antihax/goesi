@@ -103,18 +103,18 @@ func easyjson5e837994DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "created_at":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.CreatedAt).UnmarshalJSON(data))
-			}
-		case "creator_id":
-			out.CreatorId = int32(in.Int32())
-		case "description":
-			out.Description = string(in.String())
 		case "medal_id":
 			out.MedalId = int32(in.Int32())
 		case "title":
 			out.Title = string(in.String())
+		case "description":
+			out.Description = string(in.String())
+		case "creator_id":
+			out.CreatorId = int32(in.Int32())
+		case "created_at":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.CreatedAt).UnmarshalJSON(data))
+			}
 		default:
 			in.SkipRecursive()
 		}
@@ -129,30 +129,6 @@ func easyjson5e837994EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"created_at\":")
-		out.Raw((in.CreatedAt).MarshalJSON())
-	}
-	if in.CreatorId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"creator_id\":")
-		out.Int32(int32(in.CreatorId))
-	}
-	if in.Description != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"description\":")
-		out.String(string(in.Description))
-	}
 	if in.MedalId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -168,6 +144,30 @@ func easyjson5e837994EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"title\":")
 		out.String(string(in.Title))
+	}
+	if in.Description != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"description\":")
+		out.String(string(in.Description))
+	}
+	if in.CreatorId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"creator_id\":")
+		out.Int32(int32(in.CreatorId))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"created_at\":")
+		out.Raw((in.CreatedAt).MarshalJSON())
 	}
 	out.RawByte('}')
 }

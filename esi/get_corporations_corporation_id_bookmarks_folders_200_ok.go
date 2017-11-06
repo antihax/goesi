@@ -29,7 +29,7 @@ type GetCorporationsCorporationIdBookmarksFolders200OkList []GetCorporationsCorp
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdBookmarksFolders200Ok struct {
-	CreatorId int32  `json:"creator_id,omitempty"` /* creator_id integer */
 	FolderId  int32  `json:"folder_id,omitempty"`  /* folder_id integer */
 	Name      string `json:"name,omitempty"`       /* name string */
+	CreatorId int32  `json:"creator_id,omitempty"` /* creator_id integer */
 }

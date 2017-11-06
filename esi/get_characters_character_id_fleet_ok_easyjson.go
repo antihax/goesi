@@ -105,12 +105,12 @@ func easyjson8646ff09DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		switch key {
 		case "fleet_id":
 			out.FleetId = int64(in.Int64())
-		case "role":
-			out.Role = string(in.String())
-		case "squad_id":
-			out.SquadId = int64(in.Int64())
 		case "wing_id":
 			out.WingId = int64(in.Int64())
+		case "squad_id":
+			out.SquadId = int64(in.Int64())
+		case "role":
+			out.Role = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -133,13 +133,13 @@ func easyjson8646ff09EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"fleet_id\":")
 		out.Int64(int64(in.FleetId))
 	}
-	if in.Role != "" {
+	if in.WingId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"role\":")
-		out.String(string(in.Role))
+		out.RawString("\"wing_id\":")
+		out.Int64(int64(in.WingId))
 	}
 	if in.SquadId != 0 {
 		if !first {
@@ -149,13 +149,13 @@ func easyjson8646ff09EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"squad_id\":")
 		out.Int64(int64(in.SquadId))
 	}
-	if in.WingId != 0 {
+	if in.Role != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"wing_id\":")
-		out.Int64(int64(in.WingId))
+		out.RawString("\"role\":")
+		out.String(string(in.Role))
 	}
 	out.RawByte('}')
 }

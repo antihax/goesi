@@ -103,6 +103,14 @@ func easyjsonB5ebbfcbDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
+		case "killmail_id":
+			out.KillmailId = int32(in.Int32())
+		case "killmail_time":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.KillmailTime).UnmarshalJSON(data))
+			}
+		case "victim":
+			easyjsonB5ebbfcbDecodeGithubComAntihaxGoesiEsi2(in, &out.Victim)
 		case "attackers":
 			if in.IsNull() {
 				in.Skip()
@@ -126,18 +134,10 @@ func easyjsonB5ebbfcbDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 				}
 				in.Delim(']')
 			}
-		case "killmail_id":
-			out.KillmailId = int32(in.Int32())
-		case "killmail_time":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.KillmailTime).UnmarshalJSON(data))
-			}
-		case "moon_id":
-			out.MoonId = int32(in.Int32())
 		case "solar_system_id":
 			out.SolarSystemId = int32(in.Int32())
-		case "victim":
-			easyjsonB5ebbfcbDecodeGithubComAntihaxGoesiEsi2(in, &out.Victim)
+		case "moon_id":
+			out.MoonId = int32(in.Int32())
 		case "war_id":
 			out.WarId = int32(in.Int32())
 		default:
@@ -154,6 +154,30 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.KillmailId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"killmail_id\":")
+		out.Int32(int32(in.KillmailId))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"killmail_time\":")
+		out.Raw((in.KillmailTime).MarshalJSON())
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"victim\":")
+		easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi2(out, in.Victim)
+	}
 	if len(in.Attackers) != 0 {
 		if !first {
 			out.RawByte(',')
@@ -173,30 +197,6 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
-	if in.KillmailId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"killmail_id\":")
-		out.Int32(int32(in.KillmailId))
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"killmail_time\":")
-		out.Raw((in.KillmailTime).MarshalJSON())
-	}
-	if in.MoonId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"moon_id\":")
-		out.Int32(int32(in.MoonId))
-	}
 	if in.SolarSystemId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -205,13 +205,13 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
-	if true {
+	if in.MoonId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"victim\":")
-		easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi2(out, in.Victim)
+		out.RawString("\"moon_id\":")
+		out.Int32(int32(in.MoonId))
 	}
 	if in.WarId != 0 {
 		if !first {
@@ -266,16 +266,18 @@ func easyjsonB5ebbfcbDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
-		case "alliance_id":
-			out.AllianceId = int32(in.Int32())
 		case "character_id":
 			out.CharacterId = int32(in.Int32())
 		case "corporation_id":
 			out.CorporationId = int32(in.Int32())
-		case "damage_taken":
-			out.DamageTaken = int32(in.Int32())
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
 		case "faction_id":
 			out.FactionId = int32(in.Int32())
+		case "damage_taken":
+			out.DamageTaken = int32(in.Int32())
+		case "ship_type_id":
+			out.ShipTypeId = int32(in.Int32())
 		case "items":
 			if in.IsNull() {
 				in.Skip()
@@ -301,8 +303,6 @@ func easyjsonB5ebbfcbDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetK
 			}
 		case "position":
 			easyjsonB5ebbfcbDecodeGithubComAntihaxGoesiEsi4(in, &out.Position)
-		case "ship_type_id":
-			out.ShipTypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -317,14 +317,6 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"alliance_id\":")
-		out.Int32(int32(in.AllianceId))
-	}
 	if in.CharacterId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -341,13 +333,13 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
 	}
-	if in.DamageTaken != 0 {
+	if in.AllianceId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"damage_taken\":")
-		out.Int32(int32(in.DamageTaken))
+		out.RawString("\"alliance_id\":")
+		out.Int32(int32(in.AllianceId))
 	}
 	if in.FactionId != 0 {
 		if !first {
@@ -356,6 +348,22 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"faction_id\":")
 		out.Int32(int32(in.FactionId))
+	}
+	if in.DamageTaken != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"damage_taken\":")
+		out.Int32(int32(in.DamageTaken))
+	}
+	if in.ShipTypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"ship_type_id\":")
+		out.Int32(int32(in.ShipTypeId))
 	}
 	if len(in.Items) != 0 {
 		if !first {
@@ -383,14 +391,6 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"position\":")
 		easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi4(out, in.Position)
-	}
-	if in.ShipTypeId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"ship_type_id\":")
-		out.Int32(int32(in.ShipTypeId))
 	}
 	out.RawByte('}')
 }
@@ -478,10 +478,16 @@ func easyjsonB5ebbfcbDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
-		case "flag":
-			out.Flag = int32(in.Int32())
 		case "item_type_id":
 			out.ItemTypeId = int32(in.Int32())
+		case "quantity_destroyed":
+			out.QuantityDestroyed = int64(in.Int64())
+		case "quantity_dropped":
+			out.QuantityDropped = int64(in.Int64())
+		case "singleton":
+			out.Singleton = int32(in.Int32())
+		case "flag":
+			out.Flag = int32(in.Int32())
 		case "items":
 			if in.IsNull() {
 				in.Skip()
@@ -505,12 +511,6 @@ func easyjsonB5ebbfcbDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetK
 				}
 				in.Delim(']')
 			}
-		case "quantity_destroyed":
-			out.QuantityDestroyed = int64(in.Int64())
-		case "quantity_dropped":
-			out.QuantityDropped = int64(in.Int64())
-		case "singleton":
-			out.Singleton = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -525,14 +525,6 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Flag != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"flag\":")
-		out.Int32(int32(in.Flag))
-	}
 	if in.ItemTypeId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -540,25 +532,6 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"item_type_id\":")
 		out.Int32(int32(in.ItemTypeId))
-	}
-	if len(in.Items) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"items\":")
-		if in.Items == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
-		} else {
-			out.RawByte('[')
-			for v11, v12 := range in.Items {
-				if v11 > 0 {
-					out.RawByte(',')
-				}
-				easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi5(out, v12)
-			}
-			out.RawByte(']')
-		}
 	}
 	if in.QuantityDestroyed != 0 {
 		if !first {
@@ -583,6 +556,33 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"singleton\":")
 		out.Int32(int32(in.Singleton))
+	}
+	if in.Flag != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"flag\":")
+		out.Int32(int32(in.Flag))
+	}
+	if len(in.Items) != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"items\":")
+		if in.Items == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+			out.RawString("null")
+		} else {
+			out.RawByte('[')
+			for v11, v12 := range in.Items {
+				if v11 > 0 {
+					out.RawByte(',')
+				}
+				easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi5(out, v12)
+			}
+			out.RawByte(']')
+		}
 	}
 	out.RawByte('}')
 }
@@ -605,8 +605,6 @@ func easyjsonB5ebbfcbDecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
-		case "flag":
-			out.Flag = int32(in.Int32())
 		case "item_type_id":
 			out.ItemTypeId = int32(in.Int32())
 		case "quantity_destroyed":
@@ -615,6 +613,8 @@ func easyjsonB5ebbfcbDecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *GetK
 			out.QuantityDropped = int64(in.Int64())
 		case "singleton":
 			out.Singleton = int32(in.Int32())
+		case "flag":
+			out.Flag = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -629,14 +629,6 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Flag != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"flag\":")
-		out.Int32(int32(in.Flag))
-	}
 	if in.ItemTypeId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -668,6 +660,14 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"singleton\":")
 		out.Int32(int32(in.Singleton))
+	}
+	if in.Flag != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"flag\":")
+		out.Int32(int32(in.Flag))
 	}
 	out.RawByte('}')
 }

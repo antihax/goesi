@@ -29,7 +29,7 @@ type GetCharactersCharacterIdFwStatsKillsList []GetCharactersCharacterIdFwStatsK
 /* Summary of kills done by the given character against enemy factions */
 //easyjson:json
 type GetCharactersCharacterIdFwStatsKills struct {
+	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's total number of kills by a given character against enemy factions */
 	LastWeek  int32 `json:"last_week,omitempty"` /* Last week's total number of kills by a given character against enemy factions */
 	Total     int32 `json:"total,omitempty"`     /* Total number of kills by a given character against enemy factions since the character enlisted */
-	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's total number of kills by a given character against enemy factions */
 }

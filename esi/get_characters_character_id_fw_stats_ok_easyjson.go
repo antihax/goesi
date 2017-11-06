@@ -103,14 +103,14 @@ func easyjson2d62e304DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "current_rank":
-			out.CurrentRank = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
 		case "enlisted_on":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.EnlistedOn).UnmarshalJSON(data))
 			}
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
+		case "current_rank":
+			out.CurrentRank = int32(in.Int32())
 		case "highest_rank":
 			out.HighestRank = int32(in.Int32())
 		case "kills":
@@ -131,13 +131,13 @@ func easyjson2d62e304EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.CurrentRank != 0 {
+	if in.FactionId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"current_rank\":")
-		out.Int32(int32(in.CurrentRank))
+		out.RawString("\"faction_id\":")
+		out.Int32(int32(in.FactionId))
 	}
 	if true {
 		if !first {
@@ -147,13 +147,13 @@ func easyjson2d62e304EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"enlisted_on\":")
 		out.Raw((in.EnlistedOn).MarshalJSON())
 	}
-	if in.FactionId != 0 {
+	if in.CurrentRank != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"faction_id\":")
-		out.Int32(int32(in.FactionId))
+		out.RawString("\"current_rank\":")
+		out.Int32(int32(in.CurrentRank))
 	}
 	if in.HighestRank != 0 {
 		if !first {

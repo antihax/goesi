@@ -103,27 +103,27 @@ func easyjson7a6ec264DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "starbase_id":
+			out.StarbaseId = int64(in.Int64())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
 		case "moon_id":
 			out.MoonId = int32(in.Int32())
-		case "onlined_since":
+		case "state":
+			out.State = string(in.String())
+		case "unanchor_at":
 			if data := in.Raw(); in.Ok() {
-				in.AddError((out.OnlinedSince).UnmarshalJSON(data))
+				in.AddError((out.UnanchorAt).UnmarshalJSON(data))
 			}
 		case "reinforced_until":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.ReinforcedUntil).UnmarshalJSON(data))
 			}
-		case "starbase_id":
-			out.StarbaseId = int64(in.Int64())
-		case "state":
-			out.State = string(in.String())
-		case "system_id":
-			out.SystemId = int32(in.Int32())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "unanchor_at":
+		case "onlined_since":
 			if data := in.Raw(); in.Ok() {
-				in.AddError((out.UnanchorAt).UnmarshalJSON(data))
+				in.AddError((out.OnlinedSince).UnmarshalJSON(data))
 			}
 		default:
 			in.SkipRecursive()
@@ -139,30 +139,6 @@ func easyjson7a6ec264EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.MoonId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"moon_id\":")
-		out.Int32(int32(in.MoonId))
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"onlined_since\":")
-		out.Raw((in.OnlinedSince).MarshalJSON())
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"reinforced_until\":")
-		out.Raw((in.ReinforcedUntil).MarshalJSON())
-	}
 	if in.StarbaseId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -170,22 +146,6 @@ func easyjson7a6ec264EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"starbase_id\":")
 		out.Int64(int64(in.StarbaseId))
-	}
-	if in.State != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"state\":")
-		out.String(string(in.State))
-	}
-	if in.SystemId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"system_id\":")
-		out.Int32(int32(in.SystemId))
 	}
 	if in.TypeId != 0 {
 		if !first {
@@ -195,6 +155,30 @@ func easyjson7a6ec264EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
+	if in.SystemId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"system_id\":")
+		out.Int32(int32(in.SystemId))
+	}
+	if in.MoonId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"moon_id\":")
+		out.Int32(int32(in.MoonId))
+	}
+	if in.State != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"state\":")
+		out.String(string(in.State))
+	}
 	if true {
 		if !first {
 			out.RawByte(',')
@@ -202,6 +186,22 @@ func easyjson7a6ec264EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"unanchor_at\":")
 		out.Raw((in.UnanchorAt).MarshalJSON())
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"reinforced_until\":")
+		out.Raw((in.ReinforcedUntil).MarshalJSON())
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"onlined_since\":")
+		out.Raw((in.OnlinedSince).MarshalJSON())
 	}
 	out.RawByte('}')
 }

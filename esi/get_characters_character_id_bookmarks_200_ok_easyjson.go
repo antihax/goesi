@@ -105,20 +105,20 @@ func easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		switch key {
 		case "bookmark_id":
 			out.BookmarkId = int64(in.Int64())
+		case "creator_id":
+			out.CreatorId = int32(in.Int32())
+		case "owner_id":
+			out.OwnerId = int32(in.Int32())
+		case "folder_id":
+			out.FolderId = int32(in.Int32())
 		case "create_date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.CreateDate).UnmarshalJSON(data))
 			}
-		case "creator_id":
-			out.CreatorId = int32(in.Int32())
-		case "folder_id":
-			out.FolderId = int32(in.Int32())
 		case "memo":
 			out.Memo = string(in.String())
 		case "note":
 			out.Note = string(in.String())
-		case "owner_id":
-			out.OwnerId = int32(in.Int32())
 		case "target":
 			easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi2(in, &out.Target)
 		default:
@@ -143,14 +143,6 @@ func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"bookmark_id\":")
 		out.Int64(int64(in.BookmarkId))
 	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"create_date\":")
-		out.Raw((in.CreateDate).MarshalJSON())
-	}
 	if in.CreatorId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -159,6 +151,14 @@ func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"creator_id\":")
 		out.Int32(int32(in.CreatorId))
 	}
+	if in.OwnerId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"owner_id\":")
+		out.Int32(int32(in.OwnerId))
+	}
 	if in.FolderId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -166,6 +166,14 @@ func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"folder_id\":")
 		out.Int32(int32(in.FolderId))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"create_date\":")
+		out.Raw((in.CreateDate).MarshalJSON())
 	}
 	if in.Memo != "" {
 		if !first {
@@ -182,14 +190,6 @@ func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"note\":")
 		out.String(string(in.Note))
-	}
-	if in.OwnerId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"owner_id\":")
-		out.Int32(int32(in.OwnerId))
 	}
 	if true {
 		if !first {
@@ -244,12 +244,12 @@ func easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "coordinates":
-			easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi3(in, &out.Coordinates)
-		case "item":
-			easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi4(in, &out.Item)
 		case "location_id":
 			out.LocationId = int64(in.Int64())
+		case "item":
+			easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi3(in, &out.Item)
+		case "coordinates":
+			easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi4(in, &out.Coordinates)
 		default:
 			in.SkipRecursive()
 		}
@@ -264,22 +264,6 @@ func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"coordinates\":")
-		easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi3(out, in.Coordinates)
-	}
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"item\":")
-		easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi4(out, in.Item)
-	}
 	if in.LocationId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -288,64 +272,25 @@ func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		out.RawString("\"location_id\":")
 		out.Int64(int64(in.LocationId))
 	}
-	out.RawByte('}')
-}
-func easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCharactersCharacterIdBookmarksItem) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "item_id":
-			out.ItemId = int64(in.Int64())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCharactersCharacterIdBookmarksItem) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.ItemId != 0 {
+	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"item_id\":")
-		out.Int64(int64(in.ItemId))
+		out.RawString("\"item\":")
+		easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi3(out, in.Item)
 	}
-	if in.TypeId != 0 {
+	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"type_id\":")
-		out.Int32(int32(in.TypeId))
+		out.RawString("\"coordinates\":")
+		easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi4(out, in.Coordinates)
 	}
 	out.RawByte('}')
 }
-func easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdBookmarksCoordinates) {
+func easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCharactersCharacterIdBookmarksCoordinates) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -380,7 +325,7 @@ func easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdBookmarksCoordinates) {
+func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCharactersCharacterIdBookmarksCoordinates) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -407,6 +352,61 @@ func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"z\":")
 		out.Float64(float64(in.Z))
+	}
+	out.RawByte('}')
+}
+func easyjsonF26fb59dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdBookmarksItem) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "item_id":
+			out.ItemId = int64(in.Int64())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdBookmarksItem) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.ItemId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"item_id\":")
+		out.Int64(int64(in.ItemId))
+	}
+	if in.TypeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"type_id\":")
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

@@ -29,6 +29,6 @@ type PutFleetsFleetIdNewSettingsList []PutFleetsFleetIdNewSettings
 /* new_settings object */
 //easyjson:json
 type PutFleetsFleetIdNewSettings struct {
-	IsFreeMove bool   `json:"is_free_move,omitempty"` /* Should free-move be enabled in the fleet */
 	Motd       string `json:"motd,omitempty"`         /* New fleet MOTD in CCP flavoured HTML */
+	IsFreeMove bool   `json:"is_free_move,omitempty"` /* Should free-move be enabled in the fleet */
 }

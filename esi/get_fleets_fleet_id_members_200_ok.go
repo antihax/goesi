@@ -34,13 +34,13 @@ type GetFleetsFleetIdMembers200OkList []GetFleetsFleetIdMembers200Ok
 //easyjson:json
 type GetFleetsFleetIdMembers200Ok struct {
 	CharacterId    int32     `json:"character_id,omitempty"`     /* character_id integer */
-	JoinTime       time.Time `json:"join_time,omitempty"`        /* join_time string */
+	ShipTypeId     int32     `json:"ship_type_id,omitempty"`     /* ship_type_id integer */
+	WingId         int64     `json:"wing_id,omitempty"`          /* ID of the wing the member is in. If not applicable, will be set to -1 */
+	SquadId        int64     `json:"squad_id,omitempty"`         /* ID of the squad the member is in. If not applicable, will be set to -1 */
 	Role           string    `json:"role,omitempty"`             /* Member’s role in fleet */
 	RoleName       string    `json:"role_name,omitempty"`        /* Localized role names */
-	ShipTypeId     int32     `json:"ship_type_id,omitempty"`     /* ship_type_id integer */
-	SolarSystemId  int32     `json:"solar_system_id,omitempty"`  /* Solar system the member is located in */
-	SquadId        int64     `json:"squad_id,omitempty"`         /* ID of the squad the member is in. If not applicable, will be set to -1 */
-	StationId      int64     `json:"station_id,omitempty"`       /* Station in which the member is docked in, if applicable */
+	JoinTime       time.Time `json:"join_time,omitempty"`        /* join_time string */
 	TakesFleetWarp bool      `json:"takes_fleet_warp,omitempty"` /* Whether the member take fleet warps */
-	WingId         int64     `json:"wing_id,omitempty"`          /* ID of the wing the member is in. If not applicable, will be set to -1 */
+	SolarSystemId  int32     `json:"solar_system_id,omitempty"`  /* Solar system the member is located in */
+	StationId      int64     `json:"station_id,omitempty"`       /* Station in which the member is docked in, if applicable */
 }

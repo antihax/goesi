@@ -103,14 +103,14 @@ func easyjsonC809f51dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "color":
-			out.Color = int32(in.Int32())
-		case "graphic":
-			out.Graphic = string(in.String())
-		case "layer":
-			out.Layer = int32(in.Int32())
 		case "part":
 			out.Part = int32(in.Int32())
+		case "layer":
+			out.Layer = int32(in.Int32())
+		case "graphic":
+			out.Graphic = string(in.String())
+		case "color":
+			out.Color = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -125,21 +125,13 @@ func easyjsonC809f51dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Color != 0 {
+	if in.Part != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"color\":")
-		out.Int32(int32(in.Color))
-	}
-	if in.Graphic != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"graphic\":")
-		out.String(string(in.Graphic))
+		out.RawString("\"part\":")
+		out.Int32(int32(in.Part))
 	}
 	if in.Layer != 0 {
 		if !first {
@@ -149,13 +141,21 @@ func easyjsonC809f51dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"layer\":")
 		out.Int32(int32(in.Layer))
 	}
-	if in.Part != 0 {
+	if in.Graphic != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"part\":")
-		out.Int32(int32(in.Part))
+		out.RawString("\"graphic\":")
+		out.String(string(in.Graphic))
+	}
+	if in.Color != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"color\":")
+		out.Int32(int32(in.Color))
 	}
 	out.RawByte('}')
 }

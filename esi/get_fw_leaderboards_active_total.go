@@ -29,6 +29,6 @@ type GetFwLeaderboardsActiveTotalList []GetFwLeaderboardsActiveTotal
 /* active_total object */
 //easyjson:json
 type GetFwLeaderboardsActiveTotal struct {
-	Amount    int32 `json:"amount,omitempty"`     /* Amount of kills */
 	FactionId int32 `json:"faction_id,omitempty"` /* faction_id integer */
+	Amount    int32 `json:"amount,omitempty"`     /* Amount of kills */
 }

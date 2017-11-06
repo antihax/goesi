@@ -103,32 +103,32 @@ func easyjson9d70c3a8DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "office_id":
+			out.OfficeId = int64(in.Int64())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
+		case "reinforce_exit_start":
+			out.ReinforceExitStart = int32(in.Int32())
+		case "reinforce_exit_end":
+			out.ReinforceExitEnd = int32(in.Int32())
+		case "corporation_tax_rate":
+			out.CorporationTaxRate = float32(in.Float32())
+		case "allow_alliance_access":
+			out.AllowAllianceAccess = bool(in.Bool())
 		case "alliance_tax_rate":
 			out.AllianceTaxRate = float32(in.Float32())
 		case "allow_access_with_standings":
 			out.AllowAccessWithStandings = bool(in.Bool())
-		case "allow_alliance_access":
-			out.AllowAllianceAccess = bool(in.Bool())
-		case "bad_standing_tax_rate":
-			out.BadStandingTaxRate = float32(in.Float32())
-		case "corporation_tax_rate":
-			out.CorporationTaxRate = float32(in.Float32())
+		case "standing_level":
+			out.StandingLevel = string(in.String())
 		case "excellent_standing_tax_rate":
 			out.ExcellentStandingTaxRate = float32(in.Float32())
 		case "good_standing_tax_rate":
 			out.GoodStandingTaxRate = float32(in.Float32())
 		case "neutral_standing_tax_rate":
 			out.NeutralStandingTaxRate = float32(in.Float32())
-		case "office_id":
-			out.OfficeId = int64(in.Int64())
-		case "reinforce_exit_end":
-			out.ReinforceExitEnd = int32(in.Int32())
-		case "reinforce_exit_start":
-			out.ReinforceExitStart = int32(in.Int32())
-		case "standing_level":
-			out.StandingLevel = string(in.String())
-		case "system_id":
-			out.SystemId = int32(in.Int32())
+		case "bad_standing_tax_rate":
+			out.BadStandingTaxRate = float32(in.Float32())
 		case "terrible_standing_tax_rate":
 			out.TerribleStandingTaxRate = float32(in.Float32())
 		default:
@@ -145,6 +145,54 @@ func easyjson9d70c3a8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.OfficeId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"office_id\":")
+		out.Int64(int64(in.OfficeId))
+	}
+	if in.SystemId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"system_id\":")
+		out.Int32(int32(in.SystemId))
+	}
+	if in.ReinforceExitStart != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"reinforce_exit_start\":")
+		out.Int32(int32(in.ReinforceExitStart))
+	}
+	if in.ReinforceExitEnd != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"reinforce_exit_end\":")
+		out.Int32(int32(in.ReinforceExitEnd))
+	}
+	if in.CorporationTaxRate != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"corporation_tax_rate\":")
+		out.Float32(float32(in.CorporationTaxRate))
+	}
+	if in.AllowAllianceAccess {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"allow_alliance_access\":")
+		out.Bool(bool(in.AllowAllianceAccess))
+	}
 	if in.AllianceTaxRate != 0 {
 		if !first {
 			out.RawByte(',')
@@ -161,29 +209,13 @@ func easyjson9d70c3a8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"allow_access_with_standings\":")
 		out.Bool(bool(in.AllowAccessWithStandings))
 	}
-	if in.AllowAllianceAccess {
+	if in.StandingLevel != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"allow_alliance_access\":")
-		out.Bool(bool(in.AllowAllianceAccess))
-	}
-	if in.BadStandingTaxRate != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"bad_standing_tax_rate\":")
-		out.Float32(float32(in.BadStandingTaxRate))
-	}
-	if in.CorporationTaxRate != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"corporation_tax_rate\":")
-		out.Float32(float32(in.CorporationTaxRate))
+		out.RawString("\"standing_level\":")
+		out.String(string(in.StandingLevel))
 	}
 	if in.ExcellentStandingTaxRate != 0 {
 		if !first {
@@ -209,45 +241,13 @@ func easyjson9d70c3a8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"neutral_standing_tax_rate\":")
 		out.Float32(float32(in.NeutralStandingTaxRate))
 	}
-	if in.OfficeId != 0 {
+	if in.BadStandingTaxRate != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"office_id\":")
-		out.Int64(int64(in.OfficeId))
-	}
-	if in.ReinforceExitEnd != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"reinforce_exit_end\":")
-		out.Int32(int32(in.ReinforceExitEnd))
-	}
-	if in.ReinforceExitStart != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"reinforce_exit_start\":")
-		out.Int32(int32(in.ReinforceExitStart))
-	}
-	if in.StandingLevel != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"standing_level\":")
-		out.String(string(in.StandingLevel))
-	}
-	if in.SystemId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"system_id\":")
-		out.Int32(int32(in.SystemId))
+		out.RawString("\"bad_standing_tax_rate\":")
+		out.Float32(float32(in.BadStandingTaxRate))
 	}
 	if in.TerribleStandingTaxRate != 0 {
 		if !first {

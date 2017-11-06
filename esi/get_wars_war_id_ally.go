@@ -29,6 +29,6 @@ type GetWarsWarIdAllyList []GetWarsWarIdAlly
 /* ally object */
 //easyjson:json
 type GetWarsWarIdAlly struct {
-	AllianceId    int32 `json:"alliance_id,omitempty"`    /* Alliance ID if and only if this ally is an alliance */
 	CorporationId int32 `json:"corporation_id,omitempty"` /* Corporation ID if and only if this ally is a corporation */
+	AllianceId    int32 `json:"alliance_id,omitempty"`    /* Alliance ID if and only if this ally is an alliance */
 }

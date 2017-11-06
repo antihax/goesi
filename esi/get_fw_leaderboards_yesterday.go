@@ -29,6 +29,6 @@ type GetFwLeaderboardsYesterdayList []GetFwLeaderboardsYesterday
 /* yesterday object */
 //easyjson:json
 type GetFwLeaderboardsYesterday struct {
-	Amount    int32 `json:"amount,omitempty"`     /* Amount of kills */
 	FactionId int32 `json:"faction_id,omitempty"` /* faction_id integer */
+	Amount    int32 `json:"amount,omitempty"`     /* Amount of kills */
 }

@@ -29,12 +29,12 @@ type GetUniverseStarsStarIdOkList []GetUniverseStarsStarIdOk
 /* 200 ok object */
 //easyjson:json
 type GetUniverseStarsStarIdOk struct {
+	Name          string  `json:"name,omitempty"`            /* name string */
+	SolarSystemId int32   `json:"solar_system_id,omitempty"` /* solar_system_id integer */
+	TypeId        int32   `json:"type_id,omitempty"`         /* type_id integer */
 	Age           int64   `json:"age,omitempty"`             /* Age of star in years */
 	Luminosity    float32 `json:"luminosity,omitempty"`      /* luminosity number */
-	Name          string  `json:"name,omitempty"`            /* name string */
 	Radius        int64   `json:"radius,omitempty"`          /* radius integer */
-	SolarSystemId int32   `json:"solar_system_id,omitempty"` /* solar_system_id integer */
 	SpectralClass string  `json:"spectral_class,omitempty"`  /* spectral_class string */
 	Temperature   int32   `json:"temperature,omitempty"`     /* temperature integer */
-	TypeId        int32   `json:"type_id,omitempty"`         /* type_id integer */
 }

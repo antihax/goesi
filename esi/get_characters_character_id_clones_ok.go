@@ -33,7 +33,7 @@ type GetCharactersCharacterIdClonesOkList []GetCharactersCharacterIdClonesOk
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdClonesOk struct {
-	HomeLocation GetCharactersCharacterIdClonesHomeLocation `json:"home_location,omitempty"`
-	JumpClones   []GetCharactersCharacterIdClonesJumpClone  `json:"jump_clones,omitempty"`    /* jump_clones array */
 	LastJumpDate time.Time                                  `json:"last_jump_date,omitempty"` /* last_jump_date string */
+	HomeLocation GetCharactersCharacterIdClonesHomeLocation `json:"home_location,omitempty"`
+	JumpClones   []GetCharactersCharacterIdClonesJumpClone  `json:"jump_clones,omitempty"` /* jump_clones array */
 }

@@ -105,26 +105,26 @@ func easyjson50807c65DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 		switch key {
 		case "character_id":
 			out.CharacterId = int32(in.Int32())
-		case "join_time":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.JoinTime).UnmarshalJSON(data))
-			}
+		case "ship_type_id":
+			out.ShipTypeId = int32(in.Int32())
+		case "wing_id":
+			out.WingId = int64(in.Int64())
+		case "squad_id":
+			out.SquadId = int64(in.Int64())
 		case "role":
 			out.Role = string(in.String())
 		case "role_name":
 			out.RoleName = string(in.String())
-		case "ship_type_id":
-			out.ShipTypeId = int32(in.Int32())
-		case "solar_system_id":
-			out.SolarSystemId = int32(in.Int32())
-		case "squad_id":
-			out.SquadId = int64(in.Int64())
-		case "station_id":
-			out.StationId = int64(in.Int64())
+		case "join_time":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.JoinTime).UnmarshalJSON(data))
+			}
 		case "takes_fleet_warp":
 			out.TakesFleetWarp = bool(in.Bool())
-		case "wing_id":
-			out.WingId = int64(in.Int64())
+		case "solar_system_id":
+			out.SolarSystemId = int32(in.Int32())
+		case "station_id":
+			out.StationId = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -147,13 +147,29 @@ func easyjson50807c65EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"character_id\":")
 		out.Int32(int32(in.CharacterId))
 	}
-	if true {
+	if in.ShipTypeId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"join_time\":")
-		out.Raw((in.JoinTime).MarshalJSON())
+		out.RawString("\"ship_type_id\":")
+		out.Int32(int32(in.ShipTypeId))
+	}
+	if in.WingId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"wing_id\":")
+		out.Int64(int64(in.WingId))
+	}
+	if in.SquadId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"squad_id\":")
+		out.Int64(int64(in.SquadId))
 	}
 	if in.Role != "" {
 		if !first {
@@ -171,37 +187,13 @@ func easyjson50807c65EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"role_name\":")
 		out.String(string(in.RoleName))
 	}
-	if in.ShipTypeId != 0 {
+	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"ship_type_id\":")
-		out.Int32(int32(in.ShipTypeId))
-	}
-	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"solar_system_id\":")
-		out.Int32(int32(in.SolarSystemId))
-	}
-	if in.SquadId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"squad_id\":")
-		out.Int64(int64(in.SquadId))
-	}
-	if in.StationId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"station_id\":")
-		out.Int64(int64(in.StationId))
+		out.RawString("\"join_time\":")
+		out.Raw((in.JoinTime).MarshalJSON())
 	}
 	if in.TakesFleetWarp {
 		if !first {
@@ -211,13 +203,21 @@ func easyjson50807c65EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"takes_fleet_warp\":")
 		out.Bool(bool(in.TakesFleetWarp))
 	}
-	if in.WingId != 0 {
+	if in.SolarSystemId != 0 {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"wing_id\":")
-		out.Int64(int64(in.WingId))
+		out.RawString("\"solar_system_id\":")
+		out.Int32(int32(in.SolarSystemId))
+	}
+	if in.StationId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"station_id\":")
+		out.Int64(int64(in.StationId))
 	}
 	out.RawByte('}')
 }

@@ -29,8 +29,8 @@ type GetCharactersCharacterIdMedalsGraphicList []GetCharactersCharacterIdMedalsG
 /* graphic object */
 //easyjson:json
 type GetCharactersCharacterIdMedalsGraphic struct {
-	Color   int32  `json:"color,omitempty"`   /* color integer */
-	Graphic string `json:"graphic,omitempty"` /* graphic string */
-	Layer   int32  `json:"layer,omitempty"`   /* layer integer */
 	Part    int32  `json:"part,omitempty"`    /* part integer */
+	Layer   int32  `json:"layer,omitempty"`   /* layer integer */
+	Graphic string `json:"graphic,omitempty"` /* graphic string */
+	Color   int32  `json:"color,omitempty"`   /* color integer */
 }

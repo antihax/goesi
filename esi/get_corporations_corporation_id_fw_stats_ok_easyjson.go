@@ -103,16 +103,16 @@ func easyjson455ec14aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
 		case "enlisted_on":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.EnlistedOn).UnmarshalJSON(data))
 			}
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
-		case "kills":
-			(out.Kills).UnmarshalEasyJSON(in)
 		case "pilots":
 			out.Pilots = int32(in.Int32())
+		case "kills":
+			(out.Kills).UnmarshalEasyJSON(in)
 		case "victory_points":
 			easyjson455ec14aDecodeGithubComAntihaxGoesiEsi2(in, &out.VictoryPoints)
 		default:
@@ -129,14 +129,6 @@ func easyjson455ec14aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"enlisted_on\":")
-		out.Raw((in.EnlistedOn).MarshalJSON())
-	}
 	if in.FactionId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -150,8 +142,8 @@ func easyjson455ec14aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"kills\":")
-		(in.Kills).MarshalEasyJSON(out)
+		out.RawString("\"enlisted_on\":")
+		out.Raw((in.EnlistedOn).MarshalJSON())
 	}
 	if in.Pilots != 0 {
 		if !first {
@@ -160,6 +152,14 @@ func easyjson455ec14aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"pilots\":")
 		out.Int32(int32(in.Pilots))
+	}
+	if true {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"kills\":")
+		(in.Kills).MarshalEasyJSON(out)
 	}
 	if true {
 		if !first {
@@ -214,12 +214,12 @@ func easyjson455ec14aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "yesterday":
+			out.Yesterday = int32(in.Int32())
 		case "last_week":
 			out.LastWeek = int32(in.Int32())
 		case "total":
 			out.Total = int32(in.Int32())
-		case "yesterday":
-			out.Yesterday = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -234,6 +234,14 @@ func easyjson455ec14aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Yesterday != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"yesterday\":")
+		out.Int32(int32(in.Yesterday))
+	}
 	if in.LastWeek != 0 {
 		if !first {
 			out.RawByte(',')
@@ -249,14 +257,6 @@ func easyjson455ec14aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"total\":")
 		out.Int32(int32(in.Total))
-	}
-	if in.Yesterday != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"yesterday\":")
-		out.Int32(int32(in.Yesterday))
 	}
 	out.RawByte('}')
 }

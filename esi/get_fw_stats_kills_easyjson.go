@@ -103,12 +103,12 @@ func easyjson5bbe7ca8DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
+		case "yesterday":
+			out.Yesterday = int32(in.Int32())
 		case "last_week":
 			out.LastWeek = int32(in.Int32())
 		case "total":
 			out.Total = int32(in.Int32())
-		case "yesterday":
-			out.Yesterday = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -123,6 +123,14 @@ func easyjson5bbe7ca8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Yesterday != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"yesterday\":")
+		out.Int32(int32(in.Yesterday))
+	}
 	if in.LastWeek != 0 {
 		if !first {
 			out.RawByte(',')
@@ -138,14 +146,6 @@ func easyjson5bbe7ca8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"total\":")
 		out.Int32(int32(in.Total))
-	}
-	if in.Yesterday != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"yesterday\":")
-		out.Int32(int32(in.Yesterday))
 	}
 	out.RawByte('}')
 }

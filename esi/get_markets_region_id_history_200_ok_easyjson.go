@@ -103,18 +103,18 @@ func easyjson35051ea6DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetM
 			continue
 		}
 		switch key {
-		case "average":
-			out.Average = float32(in.Float32())
 		case "date":
 			out.Date = string(in.String())
-		case "highest":
-			out.Highest = float32(in.Float32())
-		case "lowest":
-			out.Lowest = float32(in.Float32())
 		case "order_count":
 			out.OrderCount = int64(in.Int64())
 		case "volume":
 			out.Volume = int64(in.Int64())
+		case "highest":
+			out.Highest = float32(in.Float32())
+		case "average":
+			out.Average = float32(in.Float32())
+		case "lowest":
+			out.Lowest = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,14 +129,6 @@ func easyjson35051ea6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Average != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"average\":")
-		out.Float32(float32(in.Average))
-	}
 	if in.Date != "" {
 		if !first {
 			out.RawByte(',')
@@ -144,22 +136,6 @@ func easyjson35051ea6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"date\":")
 		out.String(string(in.Date))
-	}
-	if in.Highest != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"highest\":")
-		out.Float32(float32(in.Highest))
-	}
-	if in.Lowest != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"lowest\":")
-		out.Float32(float32(in.Lowest))
 	}
 	if in.OrderCount != 0 {
 		if !first {
@@ -176,6 +152,30 @@ func easyjson35051ea6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"volume\":")
 		out.Int64(int64(in.Volume))
+	}
+	if in.Highest != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"highest\":")
+		out.Float32(float32(in.Highest))
+	}
+	if in.Average != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"average\":")
+		out.Float32(float32(in.Average))
+	}
+	if in.Lowest != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"lowest\":")
+		out.Float32(float32(in.Lowest))
 	}
 	out.RawByte('}')
 }

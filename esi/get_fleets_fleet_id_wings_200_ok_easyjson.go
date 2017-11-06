@@ -103,10 +103,10 @@ func easyjson9d322f56DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
-		case "id":
-			out.Id = int64(in.Int64())
 		case "name":
 			out.Name = string(in.String())
+		case "id":
+			out.Id = int64(in.Int64())
 		case "squads":
 			if in.IsNull() {
 				in.Skip()
@@ -144,14 +144,6 @@ func easyjson9d322f56EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Id != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"id\":")
-		out.Int64(int64(in.Id))
-	}
 	if in.Name != "" {
 		if !first {
 			out.RawByte(',')
@@ -159,6 +151,14 @@ func easyjson9d322f56EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"name\":")
 		out.String(string(in.Name))
+	}
+	if in.Id != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"id\":")
+		out.Int64(int64(in.Id))
 	}
 	if len(in.Squads) != 0 {
 		if !first {

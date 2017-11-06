@@ -103,18 +103,18 @@ func easyjsonE2ab6326DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "message":
-			out.Message = string(in.String())
 		case "notification_id":
 			out.NotificationId = int32(in.Int32())
 		case "send_date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.SendDate).UnmarshalJSON(data))
 			}
-		case "sender_character_id":
-			out.SenderCharacterId = int32(in.Int32())
 		case "standing_level":
 			out.StandingLevel = float32(in.Float32())
+		case "message":
+			out.Message = string(in.String())
+		case "sender_character_id":
+			out.SenderCharacterId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,14 +129,6 @@ func easyjsonE2ab6326EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Message != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"message\":")
-		out.String(string(in.Message))
-	}
 	if in.NotificationId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -153,14 +145,6 @@ func easyjsonE2ab6326EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"send_date\":")
 		out.Raw((in.SendDate).MarshalJSON())
 	}
-	if in.SenderCharacterId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"sender_character_id\":")
-		out.Int32(int32(in.SenderCharacterId))
-	}
 	if in.StandingLevel != 0 {
 		if !first {
 			out.RawByte(',')
@@ -168,6 +152,22 @@ func easyjsonE2ab6326EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"standing_level\":")
 		out.Float32(float32(in.StandingLevel))
+	}
+	if in.Message != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"message\":")
+		out.String(string(in.Message))
+	}
+	if in.SenderCharacterId != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"sender_character_id\":")
+		out.Int32(int32(in.SenderCharacterId))
 	}
 	out.RawByte('}')
 }

@@ -34,12 +34,12 @@ type GetCorporationsCorporationIdBookmarks200OkList []GetCorporationsCorporation
 //easyjson:json
 type GetCorporationsCorporationIdBookmarks200Ok struct {
 	BookmarkId  int32                                            `json:"bookmark_id,omitempty"` /* bookmark_id integer */
-	Coordinates GetCorporationsCorporationIdBookmarksCoordinates `json:"coordinates,omitempty"`
-	Created     time.Time                                        `json:"created,omitempty"`    /* created string */
-	CreatorId   int32                                            `json:"creator_id,omitempty"` /* creator_id integer */
-	FolderId    int32                                            `json:"folder_id,omitempty"`  /* folder_id integer */
-	Item        GetCorporationsCorporationIdBookmarksItem        `json:"item,omitempty"`
+	CreatorId   int32                                            `json:"creator_id,omitempty"`  /* creator_id integer */
+	FolderId    int32                                            `json:"folder_id,omitempty"`   /* folder_id integer */
+	Created     time.Time                                        `json:"created,omitempty"`     /* created string */
 	Label       string                                           `json:"label,omitempty"`       /* label string */
-	LocationId  int32                                            `json:"location_id,omitempty"` /* location_id integer */
 	Notes       string                                           `json:"notes,omitempty"`       /* notes string */
+	LocationId  int32                                            `json:"location_id,omitempty"` /* location_id integer */
+	Item        GetCorporationsCorporationIdBookmarksItem        `json:"item,omitempty"`
+	Coordinates GetCorporationsCorporationIdBookmarksCoordinates `json:"coordinates,omitempty"`
 }

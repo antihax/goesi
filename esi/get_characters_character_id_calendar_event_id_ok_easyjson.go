@@ -103,28 +103,28 @@ func easyjson78a31a36DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.Date).UnmarshalJSON(data))
-			}
-		case "duration":
-			out.Duration = int32(in.Int32())
 		case "event_id":
 			out.EventId = int32(in.Int32())
-		case "importance":
-			out.Importance = int32(in.Int32())
 		case "owner_id":
 			out.OwnerId = int32(in.Int32())
 		case "owner_name":
 			out.OwnerName = string(in.String())
-		case "owner_type":
-			out.OwnerType = string(in.String())
+		case "date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.Date).UnmarshalJSON(data))
+			}
+		case "title":
+			out.Title = string(in.String())
+		case "duration":
+			out.Duration = int32(in.Int32())
+		case "importance":
+			out.Importance = int32(in.Int32())
 		case "response":
 			out.Response = string(in.String())
 		case "text":
 			out.Text = string(in.String())
-		case "title":
-			out.Title = string(in.String())
+		case "owner_type":
+			out.OwnerType = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -139,22 +139,6 @@ func easyjson78a31a36EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if true {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"date\":")
-		out.Raw((in.Date).MarshalJSON())
-	}
-	if in.Duration != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"duration\":")
-		out.Int32(int32(in.Duration))
-	}
 	if in.EventId != 0 {
 		if !first {
 			out.RawByte(',')
@@ -162,14 +146,6 @@ func easyjson78a31a36EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"event_id\":")
 		out.Int32(int32(in.EventId))
-	}
-	if in.Importance != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"importance\":")
-		out.Int32(int32(in.Importance))
 	}
 	if in.OwnerId != 0 {
 		if !first {
@@ -187,13 +163,37 @@ func easyjson78a31a36EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"owner_name\":")
 		out.String(string(in.OwnerName))
 	}
-	if in.OwnerType != "" {
+	if true {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"owner_type\":")
-		out.String(string(in.OwnerType))
+		out.RawString("\"date\":")
+		out.Raw((in.Date).MarshalJSON())
+	}
+	if in.Title != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"title\":")
+		out.String(string(in.Title))
+	}
+	if in.Duration != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"duration\":")
+		out.Int32(int32(in.Duration))
+	}
+	if in.Importance != 0 {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"importance\":")
+		out.Int32(int32(in.Importance))
 	}
 	if in.Response != "" {
 		if !first {
@@ -211,13 +211,13 @@ func easyjson78a31a36EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.RawString("\"text\":")
 		out.String(string(in.Text))
 	}
-	if in.Title != "" {
+	if in.OwnerType != "" {
 		if !first {
 			out.RawByte(',')
 		}
 		first = false
-		out.RawString("\"title\":")
-		out.String(string(in.Title))
+		out.RawString("\"owner_type\":")
+		out.String(string(in.OwnerType))
 	}
 	out.RawByte('}')
 }

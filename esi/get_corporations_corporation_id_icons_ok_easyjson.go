@@ -103,12 +103,12 @@ func easyjson2a84e085DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "px64x64":
+			out.Px64x64 = string(in.String())
 		case "px128x128":
 			out.Px128x128 = string(in.String())
 		case "px256x256":
 			out.Px256x256 = string(in.String())
-		case "px64x64":
-			out.Px64x64 = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -123,6 +123,14 @@ func easyjson2a84e085EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Px64x64 != "" {
+		if !first {
+			out.RawByte(',')
+		}
+		first = false
+		out.RawString("\"px64x64\":")
+		out.String(string(in.Px64x64))
+	}
 	if in.Px128x128 != "" {
 		if !first {
 			out.RawByte(',')
@@ -138,14 +146,6 @@ func easyjson2a84e085EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"px256x256\":")
 		out.String(string(in.Px256x256))
-	}
-	if in.Px64x64 != "" {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"px64x64\":")
-		out.String(string(in.Px64x64))
 	}
 	out.RawByte('}')
 }

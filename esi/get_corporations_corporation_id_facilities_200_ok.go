@@ -30,6 +30,6 @@ type GetCorporationsCorporationIdFacilities200OkList []GetCorporationsCorporatio
 //easyjson:json
 type GetCorporationsCorporationIdFacilities200Ok struct {
 	FacilityId int64 `json:"facility_id,omitempty"` /* facility_id integer */
-	SystemId   int32 `json:"system_id,omitempty"`   /* system_id integer */
 	TypeId     int32 `json:"type_id,omitempty"`     /* type_id integer */
+	SystemId   int32 `json:"system_id,omitempty"`   /* system_id integer */
 }

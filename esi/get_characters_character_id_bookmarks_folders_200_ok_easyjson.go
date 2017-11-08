@@ -105,8 +105,6 @@ func easyjson74168e7fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		switch key {
 		case "folder_id":
 			out.FolderId = int32(in.Int32())
-		case "owner_id":
-			out.OwnerId = int32(in.Int32())
 		case "name":
 			out.Name = string(in.String())
 		default:
@@ -130,14 +128,6 @@ func easyjson74168e7fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString("\"folder_id\":")
 		out.Int32(int32(in.FolderId))
-	}
-	if in.OwnerId != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"owner_id\":")
-		out.Int32(int32(in.OwnerId))
 	}
 	if in.Name != "" {
 		if !first {

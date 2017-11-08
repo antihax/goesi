@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**GetUniverseCategoriesCategoryId**](UniverseApi.md#GetUniverseCategoriesCategoryId) | **Get** /v1/universe/categories/{category_id}/ | Get item category information
 [**GetUniverseConstellations**](UniverseApi.md#GetUniverseConstellations) | **Get** /v1/universe/constellations/ | Get constellations
 [**GetUniverseConstellationsConstellationId**](UniverseApi.md#GetUniverseConstellationsConstellationId) | **Get** /v1/universe/constellations/{constellation_id}/ | Get constellation information
-[**GetUniverseFactions**](UniverseApi.md#GetUniverseFactions) | **Get** /v1/universe/factions/ | Get factions
+[**GetUniverseFactions**](UniverseApi.md#GetUniverseFactions) | **Get** /v2/universe/factions/ | Get factions
 [**GetUniverseGraphics**](UniverseApi.md#GetUniverseGraphics) | **Get** /v1/universe/graphics/ | Get graphics
 [**GetUniverseGraphicsGraphicId**](UniverseApi.md#GetUniverseGraphicsGraphicId) | **Get** /v1/universe/graphics/{graphic_id}/ | Get graphic information
 [**GetUniverseGroups**](UniverseApi.md#GetUniverseGroups) | **Get** /v1/universe/groups/ | Get item groups

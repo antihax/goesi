@@ -17,8 +17,8 @@ Class | Method | HTTP request | Description
 *AssetsApi* | [**PostCharactersCharacterIdAssetsNames**](docs/AssetsApi.md#postcharacterscharacteridassetsnames) | **Post** /v1/characters/{character_id}/assets/names/ | Get character asset names
 *AssetsApi* | [**PostCorporationsCorporationIdAssetsLocations**](docs/AssetsApi.md#postcorporationscorporationidassetslocations) | **Post** /v1/corporations/{corporation_id}/assets/locations/ | Get corporation asset locations
 *AssetsApi* | [**PostCorporationsCorporationIdAssetsNames**](docs/AssetsApi.md#postcorporationscorporationidassetsnames) | **Post** /v1/corporations/{corporation_id}/assets/names/ | Get coporation asset names
-*BookmarksApi* | [**GetCharactersCharacterIdBookmarks**](docs/BookmarksApi.md#getcharacterscharacteridbookmarks) | **Get** /v1/characters/{character_id}/bookmarks/ | List bookmarks
-*BookmarksApi* | [**GetCharactersCharacterIdBookmarksFolders**](docs/BookmarksApi.md#getcharacterscharacteridbookmarksfolders) | **Get** /v1/characters/{character_id}/bookmarks/folders/ | List bookmark folders
+*BookmarksApi* | [**GetCharactersCharacterIdBookmarks**](docs/BookmarksApi.md#getcharacterscharacteridbookmarks) | **Get** /v2/characters/{character_id}/bookmarks/ | List bookmarks
+*BookmarksApi* | [**GetCharactersCharacterIdBookmarksFolders**](docs/BookmarksApi.md#getcharacterscharacteridbookmarksfolders) | **Get** /v2/characters/{character_id}/bookmarks/folders/ | List bookmark folders
 *BookmarksApi* | [**GetCorporationsCorporationIdBookmarks**](docs/BookmarksApi.md#getcorporationscorporationidbookmarks) | **Get** /v1/corporations/{corporation_id}/bookmarks/ | List corporation bookmarks
 *BookmarksApi* | [**GetCorporationsCorporationIdBookmarksFolders**](docs/BookmarksApi.md#getcorporationscorporationidbookmarksfolders) | **Get** /v1/corporations/{corporation_id}/bookmarks/folders/ | List corporation bookmark folders
 *CalendarApi* | [**GetCharactersCharacterIdCalendar**](docs/CalendarApi.md#getcharacterscharacteridcalendar) | **Get** /v1/characters/{character_id}/calendar/ | List calendar event summaries
@@ -169,7 +169,7 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseCategoriesCategoryId**](docs/UniverseApi.md#getuniversecategoriescategoryid) | **Get** /v1/universe/categories/{category_id}/ | Get item category information
 *UniverseApi* | [**GetUniverseConstellations**](docs/UniverseApi.md#getuniverseconstellations) | **Get** /v1/universe/constellations/ | Get constellations
 *UniverseApi* | [**GetUniverseConstellationsConstellationId**](docs/UniverseApi.md#getuniverseconstellationsconstellationid) | **Get** /v1/universe/constellations/{constellation_id}/ | Get constellation information
-*UniverseApi* | [**GetUniverseFactions**](docs/UniverseApi.md#getuniversefactions) | **Get** /v1/universe/factions/ | Get factions
+*UniverseApi* | [**GetUniverseFactions**](docs/UniverseApi.md#getuniversefactions) | **Get** /v2/universe/factions/ | Get factions
 *UniverseApi* | [**GetUniverseGraphics**](docs/UniverseApi.md#getuniversegraphics) | **Get** /v1/universe/graphics/ | Get graphics
 *UniverseApi* | [**GetUniverseGraphicsGraphicId**](docs/UniverseApi.md#getuniversegraphicsgraphicid) | **Get** /v1/universe/graphics/{graphic_id}/ | Get graphic information
 *UniverseApi* | [**GetUniverseGroups**](docs/UniverseApi.md#getuniversegroups) | **Get** /v1/universe/groups/ | Get item groups
@@ -228,7 +228,6 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdBookmarksCoordinates](docs/GetCharactersCharacterIdBookmarksCoordinates.md)
  - [GetCharactersCharacterIdBookmarksFolders200Ok](docs/GetCharactersCharacterIdBookmarksFolders200Ok.md)
  - [GetCharactersCharacterIdBookmarksItem](docs/GetCharactersCharacterIdBookmarksItem.md)
- - [GetCharactersCharacterIdBookmarksTarget](docs/GetCharactersCharacterIdBookmarksTarget.md)
  - [GetCharactersCharacterIdCalendar200Ok](docs/GetCharactersCharacterIdCalendar200Ok.md)
  - [GetCharactersCharacterIdCalendarEventIdAttendees200Ok](docs/GetCharactersCharacterIdCalendarEventIdAttendees200Ok.md)
  - [GetCharactersCharacterIdCalendarEventIdOk](docs/GetCharactersCharacterIdCalendarEventIdOk.md)

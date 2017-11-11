@@ -40,8 +40,8 @@ func (c contextKey) String() string {
 
 // ContextOAuth2 is the context for GoESI authentication. Pass a tokenSource with this key to a context for an ESI API Call
 var (
-	ContextOAuth2    = contextKey("token")
-	ContextBasicAuth = contextKey("basic")
+	ContextOAuth2    = esi.ContextOAuth2
+	ContextBasicAuth = esi.ContextBasicAuth
 )
 
 // APIClient manages communication with the EVE Swagger Interface API

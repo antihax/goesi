@@ -1,4 +1,4 @@
-# Go API client for esi
+# GoESI "Go Easy" API client for esi
 
 An OpenAPI for EVE Online ESI API
 

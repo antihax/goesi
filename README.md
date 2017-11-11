@@ -1,4 +1,4 @@
-# Go API client for esi
+# GoESI "Go Easy" API client for esi
 
 An OpenAPI for EVE Online ESI API
 
@@ -19,14 +19,14 @@ This module offers:
 
 ## New Client
 ```
-  client, err := goesi.NewAPIClient(*http.Client, userAgent string)
+  client, err := goesi.NewAPIClient(&http.Client, "MyApp (someone@somewhere.com dude on slack)")
 ```
 One client should be created that will serve as an agent for all requests. This allows http2 multiplexing and keep-alive be used to optimize connections.
 It is also good manners to provide a user-agent describing the point of use of the API, allowing CCP to contact you in case of emergencies.
 
 Example
 ```
-  client, err := goesi.NewAPIClient(nil, "my esi client http://mysite.com contact <SomeDude> ingame")
+  client, err := goesi.NewAPIClient(context.Background(), "my esi client http://mysite.com contact <SomeDude> ingame")
   result, response, err := client.V#.Endpoint.Operation(requestContext, requiredParam, map[string]interface{} { 
                                                                         "optionalParam1": "stringParam",
                                                                         "optionalParam2": 1234.56
@@ -159,7 +159,7 @@ pseudocode example:
 ## Passing Tokens
 OAuth2 tokens are passed to endpoings via contexts. Example:
 ```
-	ctx := context.WithValue(context.TODO(), goesi.ContextOAuth2, ESIPublicToken)
+	ctx := context.WithValue(context.Background(), goesi.ContextOAuth2, ESIPublicToken)
 	struc, response, err := client.V1.UniverseApi.GetUniverseStructuresStructureId(ctx, structureID, nil)
 ```
 

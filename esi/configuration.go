@@ -22,8 +22,18 @@
 
 package esi
 
-const ContextOAuth2 int = 0
-const ContextBasicAuth int = 1
+// Handle our context keys.
+type contextKey string
+
+func (c contextKey) String() string {
+	return "auth " + string(c)
+}
+
+// ContextOAuth2 is the context for GoESI authentication. Pass a tokenSource with this key to a context for an ESI API Call
+var (
+	ContextOAuth2    = contextKey("token")
+	ContextBasicAuth = contextKey("basic")
+)
 
 type BasicAuth struct {
 	UserName string `json:"userName,omitempty"`

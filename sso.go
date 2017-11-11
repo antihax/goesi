@@ -25,11 +25,6 @@ type SSOAuthenticator struct {
 	scopeLock   sync.Mutex
 }
 
-// Redirect type to hide oauth2 API
-type CRESTToken oauth2.Token
-
-type CRESTTokenSource oauth2.TokenSource
-
 // NewSSOAuthenticator create a new EVE SSO Authenticator.
 // Requires your application clientID, clientSecret, and redirectURL.
 // RedirectURL must match exactly to what you registered with CCP.
@@ -87,17 +82,17 @@ func (c *SSOAuthenticator) AuthorizeURL(state string, onlineAccess bool, scopes 
 // TokenExchange exchanges the code returned to the redirectURL with
 // the CREST server to an access token. A caching client must be passed.
 // This client MUST cache per CCP guidelines or face banning.
-func (c *SSOAuthenticator) TokenExchange(code string) (*CRESTToken, error) {
+func (c *SSOAuthenticator) TokenExchange(code string) (*oauth2.Token, error) {
 	tok, err := c.oauthConfig.Exchange(createContext(c.httpClient), code)
 	if err != nil {
 		return nil, err
 	}
-	return (*CRESTToken)(tok), nil
+	return tok, nil
 }
 
 // TokenSource creates a refreshable token that can be passed to ESI functions
-func (c *SSOAuthenticator) TokenSource(token *CRESTToken) (CRESTTokenSource, error) {
-	return (CRESTTokenSource)(c.oauthConfig.TokenSource(createContext(c.httpClient), (*oauth2.Token)(token))), nil
+func (c *SSOAuthenticator) TokenSource(token *oauth2.Token) (oauth2.TokenSource, error) {
+	return c.oauthConfig.TokenSource(createContext(c.httpClient), token), nil
 }
 
 type VerifyResponse struct {
@@ -191,10 +186,8 @@ func (c *SSOAuthenticator) executeRequest(req *http.Request) (*http.Response, er
 	if res.StatusCode == http.StatusOK ||
 		res.StatusCode == http.StatusCreated {
 		return res, nil
-	} else {
-		return res, errors.New(res.Status)
 	}
-
+	return res, errors.New(res.Status)
 }
 
 // Add custom clients to the context.
@@ -205,7 +198,7 @@ func createContext(httpClient *http.Client) context.Context {
 }
 
 // TokenToJSON helper function to convert a token to a storable format.
-func TokenToJSON(token *CRESTToken) (string, error) {
+func TokenToJSON(token *oauth2.Token) (string, error) {
 	if d, err := json.Marshal(token); err != nil {
 		return "", err
 	} else {
@@ -214,8 +207,8 @@ func TokenToJSON(token *CRESTToken) (string, error) {
 }
 
 // TokenFromJSON helper function to convert stored JSON to a token.
-func TokenFromJSON(jsonStr string) (*CRESTToken, error) {
-	var token CRESTToken
+func TokenFromJSON(jsonStr string) (*oauth2.Token, error) {
+	var token oauth2.Token
 	if err := json.Unmarshal([]byte(jsonStr), &token); err != nil {
 		return nil, err
 	}

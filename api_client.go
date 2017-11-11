@@ -31,7 +31,18 @@ import (
 	"github.com/antihax/goesi/eveapi"
 )
 
-const ContextOAuth2 int = 0
+// Handle our context keys.
+type contextKey string
+
+func (c contextKey) String() string {
+	return "auth " + string(c)
+}
+
+// ContextOAuth2 is the context for GoESI authentication. Pass a tokenSource with this key to a context for an ESI API Call
+var (
+	ContextOAuth2    = contextKey("token")
+	ContextBasicAuth = contextKey("basic")
+)
 
 // APIClient manages communication with the EVE Swagger Interface API
 // In most cases there should be only one, shared, APIClient.

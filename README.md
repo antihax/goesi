@@ -19,7 +19,7 @@ This module offers:
 
 ## New Client
 ```
-  client, err := goesi.NewAPIClient(&http.Client, "MyApp (someone@somewhere.com dude on slack)")
+  client := goesi.NewAPIClient(&http.Client, "MyApp (someone@somewhere.com dude on slack)")
 ```
 One client should be created that will serve as an agent for all requests. This allows http2 multiplexing and keep-alive be used to optimize connections.
 It is also good manners to provide a user-agent describing the point of use of the API, allowing CCP to contact you in case of emergencies.

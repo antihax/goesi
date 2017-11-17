@@ -26,7 +26,7 @@ It is also good manners to provide a user-agent describing the point of use of t
 
 Example
 ```
-  client, err := goesi.NewAPIClient(context.Background(), "my esi client http://mysite.com contact <SomeDude> ingame")
+  client := goesi.NewAPIClient(context.Background(), "my esi client http://mysite.com contact <SomeDude> ingame")
   result, response, err := client.V#.Endpoint.Operation(requestContext, requiredParam, map[string]interface{} { 
                                                                         "optionalParam1": "stringParam",
                                                                         "optionalParam2": 1234.56
@@ -79,7 +79,7 @@ pseudocode example:
   func main() {
     var err error
     ctx := appContext.AppContext{}
-    ctx.ESI, err = goesi.NewAPIClient(httpClient, "My App, contact someone@nowhere")
+    ctx.ESI = goesi.NewAPIClient(httpClient, "My App, contact someone@nowhere")
     ctx.SSOAuthenticator = goesi.NewSSOAuthenticator(httpClient, clientID, secretKey, scopes)
   }
 

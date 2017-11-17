@@ -34,7 +34,7 @@ Example
 ```
 
 ## Etiquette 
-* Create a discriptive user agent so CCP can contact you (preferably on devfleet slack).
+* Create a descriptive user agent so CCP can contact you (preferably on devfleet slack).
 * Obey Cache Timers.
 * Obey error rate limits: https://developers.eveonline.com/blog/article/error-limiting-imminent
 

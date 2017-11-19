@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Date** | [**time.Time**](time.Time.md) | Date and time of transaction | [default to null]
 **RefId** | **int64** | Unique journal reference ID | [default to null]
-**RefType** | **string** | Transaction type, different type of transaction will populate different fields in &#x60;extra_info&#x60; | [default to null]
+**RefType** | **string** | Transaction type, different type of transaction will populate different fields in &#x60;extra_info&#x60; Note: If you have an existing XML API application that is using ref_types, you will need to know which string ESI ref_type maps to which integer. You can use the following gist to see string-&gt;int mappings: https://gist.github.com/ccp-zoetrope/c03db66d90c2148724c06171bc52e0ec | [default to null]
 **FirstPartyId** | **int32** | first_party_id integer | [optional] [default to null]
 **FirstPartyType** | **string** | first_party_type string | [optional] [default to null]
 **SecondPartyId** | **int32** | second_party_id integer | [optional] [default to null]

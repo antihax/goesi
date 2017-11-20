@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetIndustryFacilities**
-> []GetIndustryFacilities200Ok GetIndustryFacilities(optional)
+> []GetIndustryFacilities200Ok GetIndustryFacilities(ctx, optional)
 List industry facilities
 
 Return a list of industry facilities  ---  This route is cached for up to 3600 seconds
@@ -300,7 +300,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetIndustrySystems**
-> []GetIndustrySystems200Ok GetIndustrySystems(optional)
+> []GetIndustrySystems200Ok GetIndustrySystems(ctx, optional)
 List solar system cost indices
 
 Return cost indices for solar systems  ---  This route is cached for up to 3600 seconds

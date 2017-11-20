@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMarketsGroups**
-> []int32 GetMarketsGroups(optional)
+> []int32 GetMarketsGroups(ctx, optional)
 Get item groups
 
 Get a list of item groups  ---  This route expires daily at 11:05
@@ -134,7 +134,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMarketsGroupsMarketGroupId**
-> GetMarketsGroupsMarketGroupIdOk GetMarketsGroupsMarketGroupId(marketGroupId, optional)
+> GetMarketsGroupsMarketGroupIdOk GetMarketsGroupsMarketGroupId(ctx, marketGroupId, optional)
 Get item group information
 
 Get information on an item group  ---  This route expires daily at 11:05
@@ -174,7 +174,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMarketsPrices**
-> []GetMarketsPrices200Ok GetMarketsPrices(optional)
+> []GetMarketsPrices200Ok GetMarketsPrices(ctx, optional)
 List market prices
 
 Return a list of prices  ---  This route is cached for up to 3600 seconds
@@ -211,7 +211,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMarketsRegionIdHistory**
-> []GetMarketsRegionIdHistory200Ok GetMarketsRegionIdHistory(regionId, typeId, optional)
+> []GetMarketsRegionIdHistory200Ok GetMarketsRegionIdHistory(ctx, regionId, typeId, optional)
 List historical market statistics in a region
 
 Return a list of historical market statistics for the specified type in a region  ---  This route is cached for up to 3600 seconds
@@ -252,7 +252,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMarketsRegionIdOrders**
-> []GetMarketsRegionIdOrders200Ok GetMarketsRegionIdOrders(orderType, regionId, optional)
+> []GetMarketsRegionIdOrders200Ok GetMarketsRegionIdOrders(ctx, orderType, regionId, optional)
 List orders in a region
 
 Return a list of orders in a region  ---  This route is cached for up to 300 seconds
@@ -295,7 +295,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMarketsRegionIdTypes**
-> []int32 GetMarketsRegionIdTypes(regionId, optional)
+> []int32 GetMarketsRegionIdTypes(ctx, regionId, optional)
 List type IDs relevant to a market
 
 Return a list of type IDs that have active orders in the region, for efficient market indexing.  ---  This route is cached for up to 600 seconds

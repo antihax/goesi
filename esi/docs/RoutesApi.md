@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **GetRouteOriginDestination**
-> []int32 GetRouteOriginDestination(destination, origin, optional)
+> []int32 GetRouteOriginDestination(ctx, destination, origin, optional)
 Get route
 
 Get the systems between origin and destination  ---  This route is cached for up to 86400 seconds

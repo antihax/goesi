@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **GetAlliances**
-> []int32 GetAlliances(optional)
+> []int32 GetAlliances(ctx, optional)
 List all alliances
 
 List all active player alliances  ---  This route is cached for up to 3600 seconds
@@ -49,7 +49,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAlliancesAllianceId**
-> GetAlliancesAllianceIdOk GetAlliancesAllianceId(allianceId, optional)
+> GetAlliancesAllianceIdOk GetAlliancesAllianceId(ctx, allianceId, optional)
 Get alliance information
 
 Public information about an alliance  ---  This route is cached for up to 3600 seconds
@@ -88,7 +88,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAlliancesAllianceIdCorporations**
-> []int32 GetAlliancesAllianceIdCorporations(allianceId, optional)
+> []int32 GetAlliancesAllianceIdCorporations(ctx, allianceId, optional)
 List alliance's corporations
 
 List all current member corporations of an alliance  ---  This route is cached for up to 3600 seconds
@@ -127,7 +127,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAlliancesAllianceIdIcons**
-> GetAlliancesAllianceIdIconsOk GetAlliancesAllianceIdIcons(allianceId, optional)
+> GetAlliancesAllianceIdIconsOk GetAlliancesAllianceIdIcons(ctx, allianceId, optional)
 Get alliance icon
 
 Get the icon urls for a alliance  ---  This route is cached for up to 3600 seconds
@@ -166,7 +166,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAlliancesNames**
-> []GetAlliancesNames200Ok GetAlliancesNames(allianceIds, optional)
+> []GetAlliancesNames200Ok GetAlliancesNames(ctx, allianceIds, optional)
 Get alliance names
 
 Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds

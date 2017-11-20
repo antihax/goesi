@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 
 # **GetCorporationsCorporationId**
-> GetCorporationsCorporationIdOk GetCorporationsCorporationId(corporationId, optional)
+> GetCorporationsCorporationIdOk GetCorporationsCorporationId(ctx, corporationId, optional)
 Get corporation information
 
 Public information about a corporation  ---  This route is cached for up to 3600 seconds
@@ -70,7 +70,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCorporationsCorporationIdAlliancehistory**
-> []GetCorporationsCorporationIdAlliancehistory200Ok GetCorporationsCorporationIdAlliancehistory(corporationId, optional)
+> []GetCorporationsCorporationIdAlliancehistory200Ok GetCorporationsCorporationIdAlliancehistory(ctx, corporationId, optional)
 Get alliance history
 
 Get a list of all the alliances a corporation has been a member of  ---  This route is cached for up to 3600 seconds
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCorporationsCorporationIdIcons**
-> GetCorporationsCorporationIdIconsOk GetCorporationsCorporationIdIcons(corporationId, optional)
+> GetCorporationsCorporationIdIconsOk GetCorporationsCorporationIdIcons(ctx, corporationId, optional)
 Get corporation icon
 
 Get the icon urls for a corporation  ---  This route is cached for up to 3600 seconds
@@ -883,7 +883,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCorporationsNames**
-> []GetCorporationsNames200Ok GetCorporationsNames(corporationIds, optional)
+> []GetCorporationsNames200Ok GetCorporationsNames(ctx, corporationIds, optional)
 Get corporation names
 
 Resolve a set of corporation IDs to corporation names  ---  This route is cached for up to 3600 seconds
@@ -922,7 +922,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCorporationsNpccorps**
-> []int32 GetCorporationsNpccorps(optional)
+> []int32 GetCorporationsNpccorps(ctx, optional)
 Get npc corporations
 
 Get a list of npc corporations  ---  This route expires daily at 11:05

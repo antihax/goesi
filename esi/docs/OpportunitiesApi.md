@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetOpportunitiesGroups**
-> []int32 GetOpportunitiesGroups(optional)
+> []int32 GetOpportunitiesGroups(ctx, optional)
 Get opportunities groups
 
 Return a list of opportunities groups  ---  This route expires daily at 11:05
@@ -89,7 +89,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetOpportunitiesGroupsGroupId**
-> GetOpportunitiesGroupsGroupIdOk GetOpportunitiesGroupsGroupId(groupId, optional)
+> GetOpportunitiesGroupsGroupIdOk GetOpportunitiesGroupsGroupId(ctx, groupId, optional)
 Get opportunities group
 
 Return information of an opportunities group  ---  This route expires daily at 11:05
@@ -129,7 +129,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetOpportunitiesTasks**
-> []int32 GetOpportunitiesTasks(optional)
+> []int32 GetOpportunitiesTasks(ctx, optional)
 Get opportunities tasks
 
 Return a list of opportunities tasks  ---  This route expires daily at 11:05
@@ -166,7 +166,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetOpportunitiesTasksTaskId**
-> GetOpportunitiesTasksTaskIdOk GetOpportunitiesTasksTaskId(taskId, optional)
+> GetOpportunitiesTasksTaskIdOk GetOpportunitiesTasksTaskId(ctx, taskId, optional)
 Get opportunities task
 
 Return information of an opportunities task  ---  This route expires daily at 11:05

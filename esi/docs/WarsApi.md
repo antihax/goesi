@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **GetWars**
-> []int32 GetWars(optional)
+> []int32 GetWars(ctx, optional)
 List wars
 
 Return a list of wars  ---  This route is cached for up to 3600 seconds
@@ -48,7 +48,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetWarsWarId**
-> GetWarsWarIdOk GetWarsWarId(warId, optional)
+> GetWarsWarIdOk GetWarsWarId(ctx, warId, optional)
 Get war information
 
 Return details about a war  ---  This route is cached for up to 3600 seconds
@@ -87,7 +87,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetWarsWarIdKillmails**
-> []GetWarsWarIdKillmails200Ok GetWarsWarIdKillmails(warId, optional)
+> []GetWarsWarIdKillmails200Ok GetWarsWarIdKillmails(ctx, warId, optional)
 List kills for a war
 
 Return a list of kills related to a war  ---  This route is cached for up to 3600 seconds

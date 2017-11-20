@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **GetDogmaAttributes**
-> []int32 GetDogmaAttributes(optional)
+> []int32 GetDogmaAttributes(ctx, optional)
 Get attributes
 
 Get a list of dogma attribute ids  ---  This route expires daily at 11:05
@@ -48,7 +48,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetDogmaAttributesAttributeId**
-> GetDogmaAttributesAttributeIdOk GetDogmaAttributesAttributeId(attributeId, optional)
+> GetDogmaAttributesAttributeIdOk GetDogmaAttributesAttributeId(ctx, attributeId, optional)
 Get attribute information
 
 Get information on a dogma attribute  ---  This route expires daily at 11:05
@@ -87,7 +87,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetDogmaEffects**
-> []int32 GetDogmaEffects(optional)
+> []int32 GetDogmaEffects(ctx, optional)
 Get effects
 
 Get a list of dogma effect ids  ---  This route expires daily at 11:05
@@ -124,7 +124,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetDogmaEffectsEffectId**
-> GetDogmaEffectsEffectIdOk GetDogmaEffectsEffectId(effectId, optional)
+> GetDogmaEffectsEffectIdOk GetDogmaEffectsEffectId(ctx, effectId, optional)
 Get effect information
 
 Get information on a dogma effect  ---  This route expires daily at 11:05

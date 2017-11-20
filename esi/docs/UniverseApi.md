@@ -34,7 +34,7 @@ Method | HTTP request | Description
 
 
 # **GetUniverseBloodlines**
-> []GetUniverseBloodlines200Ok GetUniverseBloodlines(optional)
+> []GetUniverseBloodlines200Ok GetUniverseBloodlines(ctx, optional)
 Get bloodlines
 
 Get a list of bloodlines  ---  This route expires daily at 11:05
@@ -72,7 +72,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseCategories**
-> []int32 GetUniverseCategories(optional)
+> []int32 GetUniverseCategories(ctx, optional)
 Get item categories
 
 Get a list of item categories  ---  This route expires daily at 11:05
@@ -109,7 +109,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseCategoriesCategoryId**
-> GetUniverseCategoriesCategoryIdOk GetUniverseCategoriesCategoryId(categoryId, optional)
+> GetUniverseCategoriesCategoryIdOk GetUniverseCategoriesCategoryId(ctx, categoryId, optional)
 Get item category information
 
 Get information of an item category  ---  This route expires daily at 11:05
@@ -149,7 +149,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseConstellations**
-> []int32 GetUniverseConstellations(optional)
+> []int32 GetUniverseConstellations(ctx, optional)
 Get constellations
 
 Get a list of constellations  ---  This route expires daily at 11:05
@@ -186,7 +186,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseConstellationsConstellationId**
-> GetUniverseConstellationsConstellationIdOk GetUniverseConstellationsConstellationId(constellationId, optional)
+> GetUniverseConstellationsConstellationIdOk GetUniverseConstellationsConstellationId(ctx, constellationId, optional)
 Get constellation information
 
 Get information on a constellation  ---  This route expires daily at 11:05
@@ -226,7 +226,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseFactions**
-> []GetUniverseFactions200Ok GetUniverseFactions(optional)
+> []GetUniverseFactions200Ok GetUniverseFactions(ctx, optional)
 Get factions
 
 Get a list of factions  ---  This route expires daily at 11:05
@@ -264,7 +264,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseGraphics**
-> []int32 GetUniverseGraphics(optional)
+> []int32 GetUniverseGraphics(ctx, optional)
 Get graphics
 
 Get a list of graphics  ---  This route expires daily at 11:05
@@ -301,7 +301,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseGraphicsGraphicId**
-> GetUniverseGraphicsGraphicIdOk GetUniverseGraphicsGraphicId(graphicId, optional)
+> GetUniverseGraphicsGraphicIdOk GetUniverseGraphicsGraphicId(ctx, graphicId, optional)
 Get graphic information
 
 Get information on a graphic  ---  This route expires daily at 11:05
@@ -340,7 +340,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseGroups**
-> []int32 GetUniverseGroups(optional)
+> []int32 GetUniverseGroups(ctx, optional)
 Get item groups
 
 Get a list of item groups  ---  This route expires daily at 11:05
@@ -378,7 +378,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseGroupsGroupId**
-> GetUniverseGroupsGroupIdOk GetUniverseGroupsGroupId(groupId, optional)
+> GetUniverseGroupsGroupIdOk GetUniverseGroupsGroupId(ctx, groupId, optional)
 Get item group information
 
 Get information on an item group  ---  This route expires daily at 11:05
@@ -418,7 +418,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseMoonsMoonId**
-> GetUniverseMoonsMoonIdOk GetUniverseMoonsMoonId(moonId, optional)
+> GetUniverseMoonsMoonIdOk GetUniverseMoonsMoonId(ctx, moonId, optional)
 Get moon information
 
 Get information on a moon  ---  This route expires daily at 11:05
@@ -457,7 +457,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniversePlanetsPlanetId**
-> GetUniversePlanetsPlanetIdOk GetUniversePlanetsPlanetId(planetId, optional)
+> GetUniversePlanetsPlanetIdOk GetUniversePlanetsPlanetId(ctx, planetId, optional)
 Get planet information
 
 Get information on a planet  ---  This route expires daily at 11:05
@@ -496,7 +496,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseRaces**
-> []GetUniverseRaces200Ok GetUniverseRaces(optional)
+> []GetUniverseRaces200Ok GetUniverseRaces(ctx, optional)
 Get character races
 
 Get a list of character races  ---  This route expires daily at 11:05
@@ -534,7 +534,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseRegions**
-> []int32 GetUniverseRegions(optional)
+> []int32 GetUniverseRegions(ctx, optional)
 Get regions
 
 Get a list of regions  ---  This route expires daily at 11:05
@@ -571,7 +571,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseRegionsRegionId**
-> GetUniverseRegionsRegionIdOk GetUniverseRegionsRegionId(regionId, optional)
+> GetUniverseRegionsRegionIdOk GetUniverseRegionsRegionId(ctx, regionId, optional)
 Get region information
 
 Get information on a region  ---  This route expires daily at 11:05
@@ -611,7 +611,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseStargatesStargateId**
-> GetUniverseStargatesStargateIdOk GetUniverseStargatesStargateId(stargateId, optional)
+> GetUniverseStargatesStargateIdOk GetUniverseStargatesStargateId(ctx, stargateId, optional)
 Get stargate information
 
 Get information on a stargate  ---  This route expires daily at 11:05
@@ -650,7 +650,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseStarsStarId**
-> GetUniverseStarsStarIdOk GetUniverseStarsStarId(starId, optional)
+> GetUniverseStarsStarIdOk GetUniverseStarsStarId(ctx, starId, optional)
 Get star information
 
 Get information on a star  ---  This route expires daily at 11:05
@@ -689,7 +689,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseStationsStationId**
-> GetUniverseStationsStationIdOk GetUniverseStationsStationId(stationId, optional)
+> GetUniverseStationsStationIdOk GetUniverseStationsStationId(ctx, stationId, optional)
 Get station information
 
 Get information on a station  ---  This route is cached for up to 300 seconds
@@ -728,7 +728,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseStructures**
-> []int64 GetUniverseStructures(optional)
+> []int64 GetUniverseStructures(ctx, optional)
 List all public structures
 
 List all public structures  ---  This route is cached for up to 3600 seconds
@@ -805,7 +805,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseSystemJumps**
-> []GetUniverseSystemJumps200Ok GetUniverseSystemJumps(optional)
+> []GetUniverseSystemJumps200Ok GetUniverseSystemJumps(ctx, optional)
 Get system jumps
 
 Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed  ---  This route is cached for up to 3600 seconds
@@ -842,7 +842,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseSystemKills**
-> []GetUniverseSystemKills200Ok GetUniverseSystemKills(optional)
+> []GetUniverseSystemKills200Ok GetUniverseSystemKills(ctx, optional)
 Get system kills
 
 Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  ---  This route is cached for up to 3600 seconds
@@ -879,7 +879,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseSystems**
-> []int32 GetUniverseSystems(optional)
+> []int32 GetUniverseSystems(ctx, optional)
 Get solar systems
 
 Get a list of solar systems  ---  This route expires daily at 11:05
@@ -916,7 +916,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseSystemsSystemId**
-> GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(systemId, optional)
+> GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(ctx, systemId, optional)
 Get solar system information
 
 Get information on a solar system  ---  This route expires daily at 11:05
@@ -956,7 +956,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseTypes**
-> []int32 GetUniverseTypes(optional)
+> []int32 GetUniverseTypes(ctx, optional)
 Get types
 
 Get a list of type ids  ---  This route expires daily at 11:05
@@ -994,7 +994,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseTypesTypeId**
-> GetUniverseTypesTypeIdOk GetUniverseTypesTypeId(typeId, optional)
+> GetUniverseTypesTypeIdOk GetUniverseTypesTypeId(ctx, typeId, optional)
 Get type information
 
 Get information on a type  ---  This route expires daily at 11:05
@@ -1034,7 +1034,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PostUniverseNames**
-> []PostUniverseNames200Ok PostUniverseNames(ids, optional)
+> []PostUniverseNames200Ok PostUniverseNames(ctx, ids, optional)
 Get names and categories for a set of ID's
 
 Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types.  --- 

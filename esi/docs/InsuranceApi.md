@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **GetInsurancePrices**
-> []GetInsurancePrices200Ok GetInsurancePrices(optional)
+> []GetInsurancePrices200Ok GetInsurancePrices(ctx, optional)
 List insurance levels
 
 Return available insurance levels for all ship types  ---  This route is cached for up to 3600 seconds

@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetLoyaltyStoresCorporationIdOffers**
-> []GetLoyaltyStoresCorporationIdOffers200Ok GetLoyaltyStoresCorporationIdOffers(corporationId, optional)
+> []GetLoyaltyStoresCorporationIdOffers200Ok GetLoyaltyStoresCorporationIdOffers(ctx, corporationId, optional)
 List loyalty store offers
 
 Return a list of offers from a specific corporation's loyalty store  ---  This route expires daily at 11:05

@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **GetCharactersCharacterId**
-> GetCharactersCharacterIdOk GetCharactersCharacterId(characterId, optional)
+> GetCharactersCharacterIdOk GetCharactersCharacterId(ctx, characterId, optional)
 Get character's public information
 
 Public information about a character  ---  This route is cached for up to 3600 seconds
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCharactersCharacterIdCorporationhistory**
-> []GetCharactersCharacterIdCorporationhistory200Ok GetCharactersCharacterIdCorporationhistory(characterId, optional)
+> []GetCharactersCharacterIdCorporationhistory200Ok GetCharactersCharacterIdCorporationhistory(ctx, characterId, optional)
 Get corporation history
 
 Get a list of all the corporations a character has been a member of  ---  This route is cached for up to 3600 seconds
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCharactersCharacterIdPortrait**
-> GetCharactersCharacterIdPortraitOk GetCharactersCharacterIdPortrait(characterId, optional)
+> GetCharactersCharacterIdPortraitOk GetCharactersCharacterIdPortrait(ctx, characterId, optional)
 Get character portraits
 
 Get portrait urls for a character  ---  This route is cached for up to 3600 seconds
@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCharactersNames**
-> []GetCharactersNames200Ok GetCharactersNames(characterIds, optional)
+> []GetCharactersNames200Ok GetCharactersNames(ctx, characterIds, optional)
 Get character names
 
 Resolve a set of character IDs to character names  ---  This route is cached for up to 3600 seconds
@@ -580,7 +580,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PostCharactersAffiliation**
-> []PostCharactersAffiliation200Ok PostCharactersAffiliation(characters, optional)
+> []PostCharactersAffiliation200Ok PostCharactersAffiliation(ctx, characters, optional)
 Character affiliation
 
 Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds

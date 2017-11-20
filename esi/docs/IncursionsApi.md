@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **GetIncursions**
-> []GetIncursions200Ok GetIncursions(optional)
+> []GetIncursions200Ok GetIncursions(ctx, optional)
 List incursions
 
 Return a list of current incursions  ---  This route is cached for up to 300 seconds

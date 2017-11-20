@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetKillmailsKillmailIdKillmailHash**
-> GetKillmailsKillmailIdKillmailHashOk GetKillmailsKillmailIdKillmailHash(killmailHash, killmailId, optional)
+> GetKillmailsKillmailIdKillmailHashOk GetKillmailsKillmailIdKillmailHash(ctx, killmailHash, killmailId, optional)
 Get a single killmail
 
 Return a single killmail from its ID and hash  ---  This route is cached for up to 3600 seconds

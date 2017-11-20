@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **GetSovereigntyCampaigns**
-> []GetSovereigntyCampaigns200Ok GetSovereigntyCampaigns(optional)
+> []GetSovereigntyCampaigns200Ok GetSovereigntyCampaigns(ctx, optional)
 List sovereignty campaigns
 
 Shows sovereignty data for campaigns.  ---  This route is cached for up to 5 seconds
@@ -47,7 +47,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetSovereigntyMap**
-> []GetSovereigntyMap200Ok GetSovereigntyMap(optional)
+> []GetSovereigntyMap200Ok GetSovereigntyMap(ctx, optional)
 List sovereignty of systems
 
 Shows sovereignty information for solar systems  ---  This route is cached for up to 3600 seconds
@@ -84,7 +84,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetSovereigntyStructures**
-> []GetSovereigntyStructures200Ok GetSovereigntyStructures(optional)
+> []GetSovereigntyStructures200Ok GetSovereigntyStructures(ctx, optional)
 List sovereignty structures
 
 Shows sovereignty data for structures.  ---  This route is cached for up to 120 seconds

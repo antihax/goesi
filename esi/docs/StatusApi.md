@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **GetStatus**
-> GetStatusOk GetStatus(optional)
+> GetStatusOk GetStatus(ctx, optional)
 Retrieve the uptime and player counts
 
 EVE Server status  ---  This route is cached for up to 30 seconds

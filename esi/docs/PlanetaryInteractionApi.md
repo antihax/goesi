@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUniverseSchematicsSchematicId**
-> GetUniverseSchematicsSchematicIdOk GetUniverseSchematicsSchematicId(schematicId, optional)
+> GetUniverseSchematicsSchematicIdOk GetUniverseSchematicsSchematicId(ctx, schematicId, optional)
 Get schematic information
 
 Get information on a planetary factory schematic  ---  This route is cached for up to 3600 seconds

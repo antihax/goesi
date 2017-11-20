@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetSearch**
-> GetSearchOk GetSearch(categories, search, optional)
+> GetSearchOk GetSearch(ctx, categories, search, optional)
 Search on a string
 
 Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds

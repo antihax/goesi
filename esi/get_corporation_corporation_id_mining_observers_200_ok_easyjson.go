@@ -124,27 +124,33 @@ func easyjson285795f9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.LastUpdated != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"last_updated\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"last_updated\":")
 		out.String(string(in.LastUpdated))
 	}
 	if in.ObserverId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"observer_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"observer_id\":")
 		out.Int64(int64(in.ObserverId))
 	}
 	if in.ObserverType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"observer_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"observer_type\":")
 		out.String(string(in.ObserverType))
 	}
 	out.RawByte('}')

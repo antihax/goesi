@@ -134,67 +134,83 @@ func easyjson974093c8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
 	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if in.Age != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"age\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"age\":")
 		out.Int64(int64(in.Age))
 	}
 	if in.Luminosity != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"luminosity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"luminosity\":")
 		out.Float32(float32(in.Luminosity))
 	}
 	if in.Radius != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"radius\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"radius\":")
 		out.Int64(int64(in.Radius))
 	}
 	if in.SpectralClass != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"spectral_class\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"spectral_class\":")
 		out.String(string(in.SpectralClass))
 	}
 	if in.Temperature != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"temperature\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"temperature\":")
 		out.Int32(int32(in.Temperature))
 	}
 	out.RawByte('}')

@@ -126,35 +126,43 @@ func easyjson19c0c1b4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Motd != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"motd\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"motd\":")
 		out.String(string(in.Motd))
 	}
 	if in.IsFreeMove {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_free_move\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_free_move\":")
 		out.Bool(bool(in.IsFreeMove))
 	}
 	if in.IsRegistered {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_registered\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_registered\":")
 		out.Bool(bool(in.IsRegistered))
 	}
 	if in.IsVoiceEnabled {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_voice_enabled\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_voice_enabled\":")
 		out.Bool(bool(in.IsVoiceEnabled))
 	}
 	out.RawByte('}')

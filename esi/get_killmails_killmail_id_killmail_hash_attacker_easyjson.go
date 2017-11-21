@@ -136,75 +136,93 @@ func easyjson3080782cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.CharacterId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"character_id\":")
 		out.Int32(int32(in.CharacterId))
 	}
 	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
 	}
 	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"alliance_id\":")
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.FactionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"faction_id\":")
 		out.Int32(int32(in.FactionId))
 	}
 	if in.SecurityStatus != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"security_status\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"security_status\":")
 		out.Float32(float32(in.SecurityStatus))
 	}
 	if in.FinalBlow {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"final_blow\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"final_blow\":")
 		out.Bool(bool(in.FinalBlow))
 	}
 	if in.DamageDone != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"damage_done\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"damage_done\":")
 		out.Int32(int32(in.DamageDone))
 	}
 	if in.ShipTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"ship_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"ship_type_id\":")
 		out.Int32(int32(in.ShipTypeId))
 	}
 	if in.WeaponTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"weapon_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"weapon_type_id\":")
 		out.Int32(int32(in.WeaponTypeId))
 	}
 	out.RawByte('}')

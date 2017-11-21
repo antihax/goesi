@@ -130,43 +130,53 @@ func easyjsonE2ab6326EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.NotificationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"notification_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"notification_id\":")
 		out.Int32(int32(in.NotificationId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"send_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"send_date\":")
 		out.Raw((in.SendDate).MarshalJSON())
 	}
 	if in.StandingLevel != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"standing_level\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"standing_level\":")
 		out.Float32(float32(in.StandingLevel))
 	}
 	if in.Message != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"message\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"message\":")
 		out.String(string(in.Message))
 	}
 	if in.SenderCharacterId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"sender_character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"sender_character_id\":")
 		out.Int32(int32(in.SenderCharacterId))
 	}
 	out.RawByte('}')

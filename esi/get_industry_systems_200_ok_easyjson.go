@@ -143,22 +143,24 @@ func easyjsonDb6fb9f8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
 	if len(in.CostIndices) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"cost_indices\":")
-		if in.CostIndices == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"cost_indices\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.CostIndices {
 				if v5 > 0 {
@@ -233,19 +235,23 @@ func easyjsonDb6fb9f8EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Activity != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"activity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"activity\":")
 		out.String(string(in.Activity))
 	}
 	if in.CostIndex != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"cost_index\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"cost_index\":")
 		out.Float32(float32(in.CostIndex))
 	}
 	out.RawByte('}')

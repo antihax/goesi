@@ -134,59 +134,73 @@ func easyjson5f788c63EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.PlanetId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"planet_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"planet_id\":")
 		out.Int32(int32(in.PlanetId))
 	}
 	if in.OwnerId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"owner_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"owner_id\":")
 		out.Int32(int32(in.OwnerId))
 	}
 	if in.UpgradeLevel != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"upgrade_level\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"upgrade_level\":")
 		out.Int32(int32(in.UpgradeLevel))
 	}
 	if in.NumPins != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"num_pins\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"num_pins\":")
 		out.Int32(int32(in.NumPins))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"last_update\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"last_update\":")
 		out.Raw((in.LastUpdate).MarshalJSON())
 	}
 	if in.PlanetType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"planet_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"planet_type\":")
 		out.String(string(in.PlanetType))
 	}
 	out.RawByte('}')

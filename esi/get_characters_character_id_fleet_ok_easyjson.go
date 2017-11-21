@@ -126,35 +126,43 @@ func easyjson8646ff09EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.FleetId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"fleet_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"fleet_id\":")
 		out.Int64(int64(in.FleetId))
 	}
 	if in.WingId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"wing_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"wing_id\":")
 		out.Int64(int64(in.WingId))
 	}
 	if in.SquadId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"squad_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"squad_id\":")
 		out.Int64(int64(in.SquadId))
 	}
 	if in.Role != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"role\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"role\":")
 		out.String(string(in.Role))
 	}
 	out.RawByte('}')

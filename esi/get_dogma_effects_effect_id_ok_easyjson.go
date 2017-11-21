@@ -181,174 +181,214 @@ func easyjson41562567EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.EffectId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"effect_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"effect_id\":")
 		out.Int32(int32(in.EffectId))
 	}
 	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
 	if in.DisplayName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"display_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"display_name\":")
 		out.String(string(in.DisplayName))
 	}
 	if in.Description != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"description\":")
 		out.String(string(in.Description))
 	}
 	if in.IconId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"icon_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"icon_id\":")
 		out.Int32(int32(in.IconId))
 	}
 	if in.EffectCategory != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"effect_category\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"effect_category\":")
 		out.Int32(int32(in.EffectCategory))
 	}
 	if in.PreExpression != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"pre_expression\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"pre_expression\":")
 		out.Int32(int32(in.PreExpression))
 	}
 	if in.PostExpression != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"post_expression\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"post_expression\":")
 		out.Int32(int32(in.PostExpression))
 	}
 	if in.IsOffensive {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_offensive\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_offensive\":")
 		out.Bool(bool(in.IsOffensive))
 	}
 	if in.IsAssistance {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_assistance\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_assistance\":")
 		out.Bool(bool(in.IsAssistance))
 	}
 	if in.DisallowAutoRepeat {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"disallow_auto_repeat\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"disallow_auto_repeat\":")
 		out.Bool(bool(in.DisallowAutoRepeat))
 	}
 	if in.Published {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"published\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"published\":")
 		out.Bool(bool(in.Published))
 	}
 	if in.IsWarpSafe {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_warp_safe\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_warp_safe\":")
 		out.Bool(bool(in.IsWarpSafe))
 	}
 	if in.RangeChance {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"range_chance\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"range_chance\":")
 		out.Bool(bool(in.RangeChance))
 	}
 	if in.ElectronicChance {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"electronic_chance\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"electronic_chance\":")
 		out.Bool(bool(in.ElectronicChance))
 	}
 	if in.DurationAttributeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"duration_attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"duration_attribute_id\":")
 		out.Int32(int32(in.DurationAttributeId))
 	}
 	if in.TrackingSpeedAttributeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"tracking_speed_attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"tracking_speed_attribute_id\":")
 		out.Int32(int32(in.TrackingSpeedAttributeId))
 	}
 	if in.DischargeAttributeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"discharge_attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"discharge_attribute_id\":")
 		out.Int32(int32(in.DischargeAttributeId))
 	}
 	if in.RangeAttributeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"range_attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"range_attribute_id\":")
 		out.Int32(int32(in.RangeAttributeId))
 	}
 	if in.FalloffAttributeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"falloff_attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"falloff_attribute_id\":")
 		out.Int32(int32(in.FalloffAttributeId))
 	}
 	if len(in.Modifiers) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"modifiers\":")
-		if in.Modifiers == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"modifiers\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Modifiers {
 				if v5 > 0 {
@@ -431,51 +471,63 @@ func easyjson41562567EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Func_ != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"func\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"func\":")
 		out.String(string(in.Func_))
 	}
 	if in.Domain != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"domain\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"domain\":")
 		out.String(string(in.Domain))
 	}
 	if in.ModifiedAttributeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"modified_attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"modified_attribute_id\":")
 		out.Int32(int32(in.ModifiedAttributeId))
 	}
 	if in.ModifyingAttributeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"modifying_attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"modifying_attribute_id\":")
 		out.Int32(int32(in.ModifyingAttributeId))
 	}
 	if in.EffectId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"effect_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"effect_id\":")
 		out.Int32(int32(in.EffectId))
 	}
 	if in.Operator != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"operator\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"operator\":")
 		out.Int32(int32(in.Operator))
 	}
 	out.RawByte('}')

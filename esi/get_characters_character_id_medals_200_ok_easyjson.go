@@ -159,78 +159,94 @@ func easyjson303db286EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.MedalId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"medal_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"medal_id\":")
 		out.Int32(int32(in.MedalId))
 	}
 	if in.Title != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"title\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"title\":")
 		out.String(string(in.Title))
 	}
 	if in.Description != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"description\":")
 		out.String(string(in.Description))
 	}
 	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
 	}
 	if in.IssuerId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"issuer_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"issuer_id\":")
 		out.Int32(int32(in.IssuerId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"date\":")
 		out.Raw((in.Date).MarshalJSON())
 	}
 	if in.Reason != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"reason\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"reason\":")
 		out.String(string(in.Reason))
 	}
 	if in.Status != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"status\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"status\":")
 		out.String(string(in.Status))
 	}
 	if len(in.Graphics) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"graphics\":")
-		if in.Graphics == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"graphics\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Graphics {
 				if v5 > 0 {
@@ -309,35 +325,43 @@ func easyjson303db286EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Part != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"part\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"part\":")
 		out.Int32(int32(in.Part))
 	}
 	if in.Layer != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"layer\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"layer\":")
 		out.Int32(int32(in.Layer))
 	}
 	if in.Graphic != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"graphic\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"graphic\":")
 		out.String(string(in.Graphic))
 	}
 	if in.Color != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"color\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"color\":")
 		out.Int32(int32(in.Color))
 	}
 	out.RawByte('}')

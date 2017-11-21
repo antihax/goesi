@@ -122,19 +122,23 @@ func easyjsonEdc01662EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Put
 	first := true
 	_ = first
 	if in.Day != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"day\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"day\":")
 		out.Int32(int32(in.Day))
 	}
 	if in.Hour != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"hour\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"hour\":")
 		out.Int32(int32(in.Hour))
 	}
 	out.RawByte('}')

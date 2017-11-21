@@ -155,38 +155,44 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.KillmailId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"killmail_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"killmail_id\":")
 		out.Int32(int32(in.KillmailId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"killmail_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"killmail_time\":")
 		out.Raw((in.KillmailTime).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"victim\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"victim\":")
 		easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi2(out, in.Victim)
 	}
 	if len(in.Attackers) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"attackers\":")
-		if in.Attackers == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"attackers\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Attackers {
 				if v5 > 0 {
@@ -198,27 +204,33 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.MoonId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"moon_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"moon_id\":")
 		out.Int32(int32(in.MoonId))
 	}
 	if in.WarId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"war_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"war_id\":")
 		out.Int32(int32(in.WarId))
 	}
 	out.RawByte('}')
@@ -318,62 +330,74 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.CharacterId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"character_id\":")
 		out.Int32(int32(in.CharacterId))
 	}
 	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
 	}
 	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"alliance_id\":")
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.FactionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"faction_id\":")
 		out.Int32(int32(in.FactionId))
 	}
 	if in.DamageTaken != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"damage_taken\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"damage_taken\":")
 		out.Int32(int32(in.DamageTaken))
 	}
 	if in.ShipTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"ship_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"ship_type_id\":")
 		out.Int32(int32(in.ShipTypeId))
 	}
 	if len(in.Items) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"items\":")
-		if in.Items == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"items\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v8, v9 := range in.Items {
 				if v8 > 0 {
@@ -385,11 +409,13 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		}
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"position\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"position\":")
 		easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi4(out, in.Position)
 	}
 	out.RawByte('}')
@@ -434,27 +460,33 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.X != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"x\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"x\":")
 		out.Float32(float32(in.X))
 	}
 	if in.Y != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"y\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"y\":")
 		out.Float32(float32(in.Y))
 	}
 	if in.Z != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"z\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"z\":")
 		out.Float32(float32(in.Z))
 	}
 	out.RawByte('}')
@@ -526,54 +558,64 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.ItemTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"item_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"item_type_id\":")
 		out.Int32(int32(in.ItemTypeId))
 	}
 	if in.QuantityDestroyed != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity_destroyed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity_destroyed\":")
 		out.Int64(int64(in.QuantityDestroyed))
 	}
 	if in.QuantityDropped != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity_dropped\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity_dropped\":")
 		out.Int64(int64(in.QuantityDropped))
 	}
 	if in.Singleton != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"singleton\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"singleton\":")
 		out.Int32(int32(in.Singleton))
 	}
 	if in.Flag != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"flag\":")
 		out.Int32(int32(in.Flag))
 	}
 	if len(in.Items) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"items\":")
-		if in.Items == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"items\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v11, v12 := range in.Items {
 				if v11 > 0 {
@@ -630,43 +672,53 @@ func easyjsonB5ebbfcbEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.ItemTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"item_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"item_type_id\":")
 		out.Int32(int32(in.ItemTypeId))
 	}
 	if in.QuantityDestroyed != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity_destroyed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity_destroyed\":")
 		out.Int64(int64(in.QuantityDestroyed))
 	}
 	if in.QuantityDropped != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity_dropped\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity_dropped\":")
 		out.Int64(int64(in.QuantityDropped))
 	}
 	if in.Singleton != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"singleton\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"singleton\":")
 		out.Int32(int32(in.Singleton))
 	}
 	if in.Flag != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"flag\":")
 		out.Int32(int32(in.Flag))
 	}
 	out.RawByte('}')

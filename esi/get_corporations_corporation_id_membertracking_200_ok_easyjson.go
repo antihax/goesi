@@ -138,59 +138,73 @@ func easyjson9caa59d7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.CharacterId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"character_id\":")
 		out.Int32(int32(in.CharacterId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"start_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"start_date\":")
 		out.Raw((in.StartDate).MarshalJSON())
 	}
 	if in.BaseId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"base_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"base_id\":")
 		out.Int32(int32(in.BaseId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"logon_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"logon_date\":")
 		out.Raw((in.LogonDate).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"logoff_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"logoff_date\":")
 		out.Raw((in.LogoffDate).MarshalJSON())
 	}
 	if in.LocationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"location_id\":")
 		out.Int64(int64(in.LocationId))
 	}
 	if in.ShipTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"ship_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"ship_type_id\":")
 		out.Int32(int32(in.ShipTypeId))
 	}
 	out.RawByte('}')

@@ -149,30 +149,34 @@ func easyjsonF642f465EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	first := true
 	_ = first
 	if in.Subject != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"subject\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"subject\":")
 		out.String(string(in.Subject))
 	}
 	if in.Body != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"body\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"body\":")
 		out.String(string(in.Body))
 	}
 	if len(in.Recipients) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"recipients\":")
-		if in.Recipients == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"recipients\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Recipients {
 				if v5 > 0 {
@@ -184,19 +188,23 @@ func easyjsonF642f465EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 		}
 	}
 	if in.ToMailingListId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"to_mailing_list_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"to_mailing_list_id\":")
 		out.Int32(int32(in.ToMailingListId))
 	}
 	if in.ToCorpOrAllianceId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"to_corp_or_alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"to_corp_or_alliance_id\":")
 		out.Int32(int32(in.ToCorpOrAllianceId))
 	}
 	out.RawByte('}')

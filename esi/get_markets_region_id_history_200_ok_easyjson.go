@@ -130,51 +130,63 @@ func easyjson35051ea6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Date != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"date\":")
 		out.String(string(in.Date))
 	}
 	if in.OrderCount != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"order_count\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"order_count\":")
 		out.Int64(int64(in.OrderCount))
 	}
 	if in.Volume != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"volume\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"volume\":")
 		out.Int64(int64(in.Volume))
 	}
 	if in.Highest != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"highest\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"highest\":")
 		out.Float32(float32(in.Highest))
 	}
 	if in.Average != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"average\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"average\":")
 		out.Float32(float32(in.Average))
 	}
 	if in.Lowest != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"lowest\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"lowest\":")
 		out.Float32(float32(in.Lowest))
 	}
 	out.RawByte('}')

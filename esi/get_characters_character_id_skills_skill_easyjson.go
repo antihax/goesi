@@ -124,27 +124,33 @@ func easyjson3cad633cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SkillId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"skill_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"skill_id\":")
 		out.Int32(int32(in.SkillId))
 	}
 	if in.SkillpointsInSkill != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"skillpoints_in_skill\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"skillpoints_in_skill\":")
 		out.Int64(int64(in.SkillpointsInSkill))
 	}
 	if in.CurrentSkillLevel != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"current_skill_level\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"current_skill_level\":")
 		out.Int32(int32(in.CurrentSkillLevel))
 	}
 	out.RawByte('}')

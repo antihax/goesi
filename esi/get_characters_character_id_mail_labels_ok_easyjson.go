@@ -143,22 +143,24 @@ func easyjsonF98d9126EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.TotalUnreadCount != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"total_unread_count\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"total_unread_count\":")
 		out.Int32(int32(in.TotalUnreadCount))
 	}
 	if len(in.Labels) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"labels\":")
-		if in.Labels == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"labels\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Labels {
 				if v5 > 0 {
@@ -237,35 +239,43 @@ func easyjsonF98d9126EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.UnreadCount != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"unread_count\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"unread_count\":")
 		out.Int32(int32(in.UnreadCount))
 	}
 	if in.LabelId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"label_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"label_id\":")
 		out.Int32(int32(in.LabelId))
 	}
 	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
 	if in.Color != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"color\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"color\":")
 		out.String(string(in.Color))
 	}
 	out.RawByte('}')

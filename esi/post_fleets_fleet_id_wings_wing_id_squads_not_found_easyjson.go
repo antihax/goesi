@@ -120,11 +120,13 @@ func easyjson10365261EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	first := true
 	_ = first
 	if in.Error_ != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"error\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"error\":")
 		out.String(string(in.Error_))
 	}
 	out.RawByte('}')

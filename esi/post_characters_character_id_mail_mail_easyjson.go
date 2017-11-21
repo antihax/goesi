@@ -147,14 +147,14 @@ func easyjson71405a3bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	first := true
 	_ = first
 	if len(in.Recipients) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"recipients\":")
-		if in.Recipients == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"recipients\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Recipients {
 				if v5 > 0 {
@@ -166,27 +166,33 @@ func easyjson71405a3bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 		}
 	}
 	if in.Subject != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"subject\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"subject\":")
 		out.String(string(in.Subject))
 	}
 	if in.Body != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"body\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"body\":")
 		out.String(string(in.Body))
 	}
 	if in.ApprovedCost != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"approved_cost\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"approved_cost\":")
 		out.Int64(int64(in.ApprovedCost))
 	}
 	out.RawByte('}')

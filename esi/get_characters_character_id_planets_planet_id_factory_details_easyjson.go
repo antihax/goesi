@@ -120,11 +120,13 @@ func easyjsonC64e521cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SchematicId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"schematic_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"schematic_id\":")
 		out.Int32(int32(in.SchematicId))
 	}
 	out.RawByte('}')

@@ -138,75 +138,93 @@ func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.BookmarkId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"bookmark_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"bookmark_id\":")
 		out.Int32(int32(in.BookmarkId))
 	}
 	if in.FolderId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"folder_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"folder_id\":")
 		out.Int32(int32(in.FolderId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"created\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"created\":")
 		out.Raw((in.Created).MarshalJSON())
 	}
 	if in.Label != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"label\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"label\":")
 		out.String(string(in.Label))
 	}
 	if in.Notes != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"notes\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"notes\":")
 		out.String(string(in.Notes))
 	}
 	if in.LocationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"location_id\":")
 		out.Int32(int32(in.LocationId))
 	}
 	if in.CreatorId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"creator_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"creator_id\":")
 		out.Int32(int32(in.CreatorId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"item\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"item\":")
 		easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi2(out, in.Item)
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"coordinates\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"coordinates\":")
 		easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi3(out, in.Coordinates)
 	}
 	out.RawByte('}')
@@ -275,27 +293,33 @@ func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.X != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"x\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"x\":")
 		out.Float64(float64(in.X))
 	}
 	if in.Y != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"y\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"y\":")
 		out.Float64(float64(in.Y))
 	}
 	if in.Z != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"z\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"z\":")
 		out.Float64(float64(in.Z))
 	}
 	out.RawByte('}')
@@ -338,19 +362,23 @@ func easyjsonF26fb59dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.ItemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"item_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"item_id\":")
 		out.Int64(int64(in.ItemId))
 	}
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')

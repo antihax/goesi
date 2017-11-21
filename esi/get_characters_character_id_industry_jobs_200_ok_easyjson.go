@@ -170,179 +170,223 @@ func easyjson5182cc53EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.JobId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"job_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"job_id\":")
 		out.Int32(int32(in.JobId))
 	}
 	if in.InstallerId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"installer_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"installer_id\":")
 		out.Int32(int32(in.InstallerId))
 	}
 	if in.FacilityId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"facility_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"facility_id\":")
 		out.Int64(int64(in.FacilityId))
 	}
 	if in.StationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"station_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"station_id\":")
 		out.Int64(int64(in.StationId))
 	}
 	if in.ActivityId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"activity_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"activity_id\":")
 		out.Int32(int32(in.ActivityId))
 	}
 	if in.BlueprintId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"blueprint_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"blueprint_id\":")
 		out.Int64(int64(in.BlueprintId))
 	}
 	if in.BlueprintTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"blueprint_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"blueprint_type_id\":")
 		out.Int32(int32(in.BlueprintTypeId))
 	}
 	if in.BlueprintLocationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"blueprint_location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"blueprint_location_id\":")
 		out.Int64(int64(in.BlueprintLocationId))
 	}
 	if in.OutputLocationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"output_location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"output_location_id\":")
 		out.Int64(int64(in.OutputLocationId))
 	}
 	if in.Runs != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"runs\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"runs\":")
 		out.Int32(int32(in.Runs))
 	}
 	if in.Cost != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"cost\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"cost\":")
 		out.Float32(float32(in.Cost))
 	}
 	if in.LicensedRuns != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"licensed_runs\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"licensed_runs\":")
 		out.Int32(int32(in.LicensedRuns))
 	}
 	if in.Probability != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"probability\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"probability\":")
 		out.Float32(float32(in.Probability))
 	}
 	if in.ProductTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"product_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"product_type_id\":")
 		out.Int32(int32(in.ProductTypeId))
 	}
 	if in.Status != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"status\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"status\":")
 		out.String(string(in.Status))
 	}
 	if in.Duration != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"duration\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"duration\":")
 		out.Int32(int32(in.Duration))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"start_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"start_date\":")
 		out.Raw((in.StartDate).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"end_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"end_date\":")
 		out.Raw((in.EndDate).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"pause_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"pause_date\":")
 		out.Raw((in.PauseDate).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"completed_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"completed_date\":")
 		out.Raw((in.CompletedDate).MarshalJSON())
 	}
 	if in.CompletedCharacterId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"completed_character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"completed_character_id\":")
 		out.Int32(int32(in.CompletedCharacterId))
 	}
 	if in.SuccessfulRuns != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"successful_runs\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"successful_runs\":")
 		out.Int32(int32(in.SuccessfulRuns))
 	}
 	out.RawByte('}')

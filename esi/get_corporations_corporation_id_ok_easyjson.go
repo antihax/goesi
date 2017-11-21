@@ -142,91 +142,113 @@ func easyjsonDab14328EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.CorporationName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_name\":")
 		out.String(string(in.CorporationName))
 	}
 	if in.Ticker != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"ticker\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"ticker\":")
 		out.String(string(in.Ticker))
 	}
 	if in.MemberCount != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"member_count\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"member_count\":")
 		out.Int32(int32(in.MemberCount))
 	}
 	if in.CeoId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"ceo_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"ceo_id\":")
 		out.Int32(int32(in.CeoId))
 	}
 	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"alliance_id\":")
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.CorporationDescription != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_description\":")
 		out.String(string(in.CorporationDescription))
 	}
 	if in.TaxRate != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"tax_rate\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"tax_rate\":")
 		out.Float32(float32(in.TaxRate))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"creation_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"creation_date\":")
 		out.Raw((in.CreationDate).MarshalJSON())
 	}
 	if in.CreatorId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"creator_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"creator_id\":")
 		out.Int32(int32(in.CreatorId))
 	}
 	if in.Url != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"url\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"url\":")
 		out.String(string(in.Url))
 	}
 	if in.Faction != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"faction\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"faction\":")
 		out.String(string(in.Faction))
 	}
 	out.RawByte('}')

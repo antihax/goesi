@@ -134,59 +134,73 @@ func easyjson6cda8914EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.NotificationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"notification_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"notification_id\":")
 		out.Int64(int64(in.NotificationId))
 	}
 	if in.Type_ != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type\":")
 		out.String(string(in.Type_))
 	}
 	if in.SenderId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"sender_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"sender_id\":")
 		out.Int32(int32(in.SenderId))
 	}
 	if in.SenderType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"sender_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"sender_type\":")
 		out.String(string(in.SenderType))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"timestamp\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"timestamp\":")
 		out.Raw((in.Timestamp).MarshalJSON())
 	}
 	if in.IsRead {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_read\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_read\":")
 		out.Bool(bool(in.IsRead))
 	}
 	if in.Text != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"text\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"text\":")
 		out.String(string(in.Text))
 	}
 	out.RawByte('}')

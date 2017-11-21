@@ -128,35 +128,43 @@ func easyjsonC17a1f4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetS
 	first := true
 	_ = first
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"start_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"start_time\":")
 		out.Raw((in.StartTime).MarshalJSON())
 	}
 	if in.Players != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"players\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"players\":")
 		out.Int32(int32(in.Players))
 	}
 	if in.ServerVersion != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"server_version\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"server_version\":")
 		out.String(string(in.ServerVersion))
 	}
 	if in.Vip {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"vip\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"vip\":")
 		out.Bool(bool(in.Vip))
 	}
 	out.RawByte('}')

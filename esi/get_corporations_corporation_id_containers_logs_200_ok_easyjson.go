@@ -144,99 +144,123 @@ func easyjson613793e0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"logged_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"logged_at\":")
 		out.Raw((in.LoggedAt).MarshalJSON())
 	}
 	if in.ContainerId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"container_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"container_id\":")
 		out.Int64(int64(in.ContainerId))
 	}
 	if in.ContainerTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"container_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"container_type_id\":")
 		out.Int32(int32(in.ContainerTypeId))
 	}
 	if in.CharacterId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"character_id\":")
 		out.Int32(int32(in.CharacterId))
 	}
 	if in.LocationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"location_id\":")
 		out.Int64(int64(in.LocationId))
 	}
 	if in.LocationFlag != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"location_flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"location_flag\":")
 		out.String(string(in.LocationFlag))
 	}
 	if in.Action != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"action\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"action\":")
 		out.String(string(in.Action))
 	}
 	if in.PasswordType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"password_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"password_type\":")
 		out.String(string(in.PasswordType))
 	}
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity\":")
 		out.Int32(int32(in.Quantity))
 	}
 	if in.OldConfigBitmask != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"old_config_bitmask\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"old_config_bitmask\":")
 		out.Int32(int32(in.OldConfigBitmask))
 	}
 	if in.NewConfigBitmask != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"new_config_bitmask\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"new_config_bitmask\":")
 		out.Int32(int32(in.NewConfigBitmask))
 	}
 	out.RawByte('}')

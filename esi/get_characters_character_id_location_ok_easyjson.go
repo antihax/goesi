@@ -124,27 +124,33 @@ func easyjsonD8fab60cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.StationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"station_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"station_id\":")
 		out.Int32(int32(in.StationId))
 	}
 	if in.StructureId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"structure_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"structure_id\":")
 		out.Int64(int64(in.StructureId))
 	}
 	out.RawByte('}')

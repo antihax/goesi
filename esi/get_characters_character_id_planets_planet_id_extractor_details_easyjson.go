@@ -149,14 +149,14 @@ func easyjson7d2da406EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if len(in.Heads) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"heads\":")
-		if in.Heads == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"heads\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Heads {
 				if v5 > 0 {
@@ -168,35 +168,43 @@ func easyjson7d2da406EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if in.ProductTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"product_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"product_type_id\":")
 		out.Int32(int32(in.ProductTypeId))
 	}
 	if in.CycleTime != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"cycle_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"cycle_time\":")
 		out.Int32(int32(in.CycleTime))
 	}
 	if in.HeadRadius != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"head_radius\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"head_radius\":")
 		out.Float32(float32(in.HeadRadius))
 	}
 	if in.QtyPerCycle != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"qty_per_cycle\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"qty_per_cycle\":")
 		out.Int32(int32(in.QtyPerCycle))
 	}
 	out.RawByte('}')

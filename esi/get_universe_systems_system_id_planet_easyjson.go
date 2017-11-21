@@ -143,22 +143,24 @@ func easyjsonCb1e1ff4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.PlanetId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"planet_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"planet_id\":")
 		out.Int32(int32(in.PlanetId))
 	}
 	if len(in.Moons) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"moons\":")
-		if in.Moons == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"moons\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Moons {
 				if v5 > 0 {

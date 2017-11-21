@@ -161,86 +161,104 @@ func easyjson645b03b8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.CampaignId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"campaign_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"campaign_id\":")
 		out.Int32(int32(in.CampaignId))
 	}
 	if in.StructureId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"structure_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"structure_id\":")
 		out.Int64(int64(in.StructureId))
 	}
 	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.ConstellationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"constellation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"constellation_id\":")
 		out.Int32(int32(in.ConstellationId))
 	}
 	if in.EventType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"event_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"event_type\":")
 		out.String(string(in.EventType))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"start_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"start_time\":")
 		out.Raw((in.StartTime).MarshalJSON())
 	}
 	if in.DefenderId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"defender_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"defender_id\":")
 		out.Int32(int32(in.DefenderId))
 	}
 	if in.DefenderScore != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"defender_score\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"defender_score\":")
 		out.Float32(float32(in.DefenderScore))
 	}
 	if in.AttackersScore != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"attackers_score\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"attackers_score\":")
 		out.Float32(float32(in.AttackersScore))
 	}
 	if len(in.Participants) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"participants\":")
-		if in.Participants == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"participants\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Participants {
 				if v5 > 0 {

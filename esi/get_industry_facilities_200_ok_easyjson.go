@@ -130,51 +130,63 @@ func easyjson9e1840f9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.FacilityId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"facility_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"facility_id\":")
 		out.Int64(int64(in.FacilityId))
 	}
 	if in.Tax != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"tax\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"tax\":")
 		out.Float32(float32(in.Tax))
 	}
 	if in.OwnerId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"owner_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"owner_id\":")
 		out.Int32(int32(in.OwnerId))
 	}
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.RegionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"region_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"region_id\":")
 		out.Int32(int32(in.RegionId))
 	}
 	out.RawByte('}')

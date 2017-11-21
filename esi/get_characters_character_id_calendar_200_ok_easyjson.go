@@ -130,43 +130,53 @@ func easyjson57681818EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.EventId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"event_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"event_id\":")
 		out.Int32(int32(in.EventId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"event_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"event_date\":")
 		out.Raw((in.EventDate).MarshalJSON())
 	}
 	if in.Title != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"title\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"title\":")
 		out.String(string(in.Title))
 	}
 	if in.Importance != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"importance\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"importance\":")
 		out.Int32(int32(in.Importance))
 	}
 	if in.EventResponse != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"event_response\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"event_response\":")
 		out.String(string(in.EventResponse))
 	}
 	out.RawByte('}')

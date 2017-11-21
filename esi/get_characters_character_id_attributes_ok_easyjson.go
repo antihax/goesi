@@ -138,67 +138,83 @@ func easyjson8920fc7eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Charisma != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"charisma\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"charisma\":")
 		out.Int32(int32(in.Charisma))
 	}
 	if in.Intelligence != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"intelligence\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"intelligence\":")
 		out.Int32(int32(in.Intelligence))
 	}
 	if in.Memory != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"memory\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"memory\":")
 		out.Int32(int32(in.Memory))
 	}
 	if in.Perception != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"perception\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"perception\":")
 		out.Int32(int32(in.Perception))
 	}
 	if in.Willpower != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"willpower\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"willpower\":")
 		out.Int32(int32(in.Willpower))
 	}
 	if in.BonusRemaps != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"bonus_remaps\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"bonus_remaps\":")
 		out.Int32(int32(in.BonusRemaps))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"last_remap_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"last_remap_date\":")
 		out.Raw((in.LastRemapDate).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"accrued_remap_cooldown_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"accrued_remap_cooldown_date\":")
 		out.Raw((in.AccruedRemapCooldownDate).MarshalJSON())
 	}
 	out.RawByte('}')

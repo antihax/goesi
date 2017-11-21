@@ -130,27 +130,33 @@ func easyjsonF9b71b08EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"last_jump_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"last_jump_date\":")
 		out.Raw((in.LastJumpDate).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"jump_fatigue_expire_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"jump_fatigue_expire_date\":")
 		out.Raw((in.JumpFatigueExpireDate).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"last_update_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"last_update_date\":")
 		out.Raw((in.LastUpdateDate).MarshalJSON())
 	}
 	out.RawByte('}')

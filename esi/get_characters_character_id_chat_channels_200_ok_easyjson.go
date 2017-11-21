@@ -222,62 +222,74 @@ func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.ChannelId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"channel_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"channel_id\":")
 		out.Int32(int32(in.ChannelId))
 	}
 	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
 	if in.OwnerId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"owner_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"owner_id\":")
 		out.Int32(int32(in.OwnerId))
 	}
 	if in.ComparisonKey != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"comparison_key\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"comparison_key\":")
 		out.String(string(in.ComparisonKey))
 	}
 	if in.HasPassword {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"has_password\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"has_password\":")
 		out.Bool(bool(in.HasPassword))
 	}
 	if in.Motd != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"motd\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"motd\":")
 		out.String(string(in.Motd))
 	}
 	if len(in.Allowed) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"allowed\":")
-		if in.Allowed == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"allowed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v8, v9 := range in.Allowed {
 				if v8 > 0 {
@@ -289,14 +301,14 @@ func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.Operators) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"operators\":")
-		if in.Operators == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"operators\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v10, v11 := range in.Operators {
 				if v10 > 0 {
@@ -308,14 +320,14 @@ func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.Blocked) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"blocked\":")
-		if in.Blocked == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"blocked\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v12, v13 := range in.Blocked {
 				if v12 > 0 {
@@ -327,14 +339,14 @@ func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.Muted) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"muted\":")
-		if in.Muted == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"muted\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v14, v15 := range in.Muted {
 				if v14 > 0 {
@@ -415,35 +427,43 @@ func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.AccessorId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"accessor_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"accessor_id\":")
 		out.Int32(int32(in.AccessorId))
 	}
 	if in.AccessorType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"accessor_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"accessor_type\":")
 		out.String(string(in.AccessorType))
 	}
 	if in.Reason != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"reason\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"reason\":")
 		out.String(string(in.Reason))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"end_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"end_at\":")
 		out.Raw((in.EndAt).MarshalJSON())
 	}
 	out.RawByte('}')
@@ -486,19 +506,23 @@ func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.AccessorId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"accessor_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"accessor_id\":")
 		out.Int32(int32(in.AccessorId))
 	}
 	if in.AccessorType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"accessor_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"accessor_type\":")
 		out.String(string(in.AccessorType))
 	}
 	out.RawByte('}')
@@ -541,19 +565,23 @@ func easyjson15e3e24fEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.AccessorId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"accessor_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"accessor_id\":")
 		out.Int32(int32(in.AccessorId))
 	}
 	if in.AccessorType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"accessor_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"accessor_type\":")
 		out.String(string(in.AccessorType))
 	}
 	out.RawByte('}')

@@ -143,14 +143,14 @@ func easyjson2298aef5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if len(in.Skills) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"skills\":")
-		if in.Skills == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"skills\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Skills {
 				if v5 > 0 {
@@ -162,11 +162,13 @@ func easyjson2298aef5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if in.TotalSp != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"total_sp\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"total_sp\":")
 		out.Int64(int64(in.TotalSp))
 	}
 	out.RawByte('}')
@@ -235,27 +237,33 @@ func easyjson2298aef5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SkillId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"skill_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"skill_id\":")
 		out.Int32(int32(in.SkillId))
 	}
 	if in.SkillpointsInSkill != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"skillpoints_in_skill\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"skillpoints_in_skill\":")
 		out.Int64(int64(in.SkillpointsInSkill))
 	}
 	if in.CurrentSkillLevel != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"current_skill_level\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"current_skill_level\":")
 		out.Int32(int32(in.CurrentSkillLevel))
 	}
 	out.RawByte('}')

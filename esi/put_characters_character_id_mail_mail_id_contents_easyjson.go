@@ -143,22 +143,24 @@ func easyjsonA501c44dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Put
 	first := true
 	_ = first
 	if in.Read {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"read\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"read\":")
 		out.Bool(bool(in.Read))
 	}
 	if len(in.Labels) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"labels\":")
-		if in.Labels == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"labels\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Labels {
 				if v5 > 0 {

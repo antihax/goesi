@@ -130,51 +130,63 @@ func easyjson5c9803ceEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Func_ != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"func\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"func\":")
 		out.String(string(in.Func_))
 	}
 	if in.Domain != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"domain\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"domain\":")
 		out.String(string(in.Domain))
 	}
 	if in.ModifiedAttributeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"modified_attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"modified_attribute_id\":")
 		out.Int32(int32(in.ModifiedAttributeId))
 	}
 	if in.ModifyingAttributeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"modifying_attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"modifying_attribute_id\":")
 		out.Int32(int32(in.ModifyingAttributeId))
 	}
 	if in.EffectId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"effect_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"effect_id\":")
 		out.Int32(int32(in.EffectId))
 	}
 	if in.Operator != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"operator\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"operator\":")
 		out.Int32(int32(in.Operator))
 	}
 	out.RawByte('}')

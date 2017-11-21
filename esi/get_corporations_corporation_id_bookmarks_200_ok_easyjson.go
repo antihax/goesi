@@ -138,75 +138,93 @@ func easyjsonD2aca637EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.BookmarkId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"bookmark_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"bookmark_id\":")
 		out.Int32(int32(in.BookmarkId))
 	}
 	if in.CreatorId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"creator_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"creator_id\":")
 		out.Int32(int32(in.CreatorId))
 	}
 	if in.FolderId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"folder_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"folder_id\":")
 		out.Int32(int32(in.FolderId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"created\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"created\":")
 		out.Raw((in.Created).MarshalJSON())
 	}
 	if in.Label != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"label\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"label\":")
 		out.String(string(in.Label))
 	}
 	if in.Notes != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"notes\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"notes\":")
 		out.String(string(in.Notes))
 	}
 	if in.LocationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"location_id\":")
 		out.Int32(int32(in.LocationId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"item\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"item\":")
 		easyjsonD2aca637EncodeGithubComAntihaxGoesiEsi2(out, in.Item)
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"coordinates\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"coordinates\":")
 		(in.Coordinates).MarshalEasyJSON(out)
 	}
 	out.RawByte('}')
@@ -273,19 +291,23 @@ func easyjsonD2aca637EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.ItemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"item_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"item_id\":")
 		out.Int64(int64(in.ItemId))
 	}
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')

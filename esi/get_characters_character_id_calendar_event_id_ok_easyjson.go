@@ -140,83 +140,103 @@ func easyjson78a31a36EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.EventId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"event_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"event_id\":")
 		out.Int32(int32(in.EventId))
 	}
 	if in.OwnerId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"owner_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"owner_id\":")
 		out.Int32(int32(in.OwnerId))
 	}
 	if in.OwnerName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"owner_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"owner_name\":")
 		out.String(string(in.OwnerName))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"date\":")
 		out.Raw((in.Date).MarshalJSON())
 	}
 	if in.Title != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"title\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"title\":")
 		out.String(string(in.Title))
 	}
 	if in.Duration != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"duration\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"duration\":")
 		out.Int32(int32(in.Duration))
 	}
 	if in.Importance != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"importance\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"importance\":")
 		out.Int32(int32(in.Importance))
 	}
 	if in.Response != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"response\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"response\":")
 		out.String(string(in.Response))
 	}
 	if in.Text != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"text\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"text\":")
 		out.String(string(in.Text))
 	}
 	if in.OwnerType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"owner_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"owner_type\":")
 		out.String(string(in.OwnerType))
 	}
 	out.RawByte('}')

@@ -122,19 +122,23 @@ func easyjson7d8677f5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in For
 	first := true
 	_ = first
 	if in.Error_ != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"error\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"error\":")
 		out.String(string(in.Error_))
 	}
 	if in.SsoStatus != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"sso_status\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"sso_status\":")
 		out.Int32(int32(in.SsoStatus))
 	}
 	out.RawByte('}')

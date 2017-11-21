@@ -120,11 +120,13 @@ func easyjsonEdf473b9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	first := true
 	_ = first
 	if in.WingId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"wing_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"wing_id\":")
 		out.Int64(int64(in.WingId))
 	}
 	out.RawByte('}')

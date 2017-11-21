@@ -128,35 +128,43 @@ func easyjsonC9e5b238EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"start_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"start_date\":")
 		out.Raw((in.StartDate).MarshalJSON())
 	}
 	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
 	}
 	if in.IsDeleted {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_deleted\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_deleted\":")
 		out.Bool(bool(in.IsDeleted))
 	}
 	if in.RecordId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"record_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"record_id\":")
 		out.Int32(int32(in.RecordId))
 	}
 	out.RawByte('}')

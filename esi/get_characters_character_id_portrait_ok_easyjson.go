@@ -126,35 +126,43 @@ func easyjsonFa80e40cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Px64x64 != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"px64x64\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"px64x64\":")
 		out.String(string(in.Px64x64))
 	}
 	if in.Px128x128 != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"px128x128\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"px128x128\":")
 		out.String(string(in.Px128x128))
 	}
 	if in.Px256x256 != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"px256x256\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"px256x256\":")
 		out.String(string(in.Px256x256))
 	}
 	if in.Px512x512 != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"px512x512\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"px512x512\":")
 		out.String(string(in.Px512x512))
 	}
 	out.RawByte('}')

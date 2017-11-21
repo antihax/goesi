@@ -122,19 +122,23 @@ func easyjson87807fe2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SchematicName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"schematic_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"schematic_name\":")
 		out.String(string(in.SchematicName))
 	}
 	if in.CycleTime != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"cycle_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"cycle_time\":")
 		out.Int32(int32(in.CycleTime))
 	}
 	out.RawByte('}')

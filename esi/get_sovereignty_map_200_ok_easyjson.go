@@ -126,35 +126,43 @@ func easyjson6c60416dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"system_id\":")
 		out.Int32(int32(in.SystemId))
 	}
 	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"alliance_id\":")
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
 	}
 	if in.FactionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"faction_id\":")
 		out.Int32(int32(in.FactionId))
 	}
 	out.RawByte('}')

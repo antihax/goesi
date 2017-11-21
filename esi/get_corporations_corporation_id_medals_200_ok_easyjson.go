@@ -130,43 +130,53 @@ func easyjson5e837994EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.MedalId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"medal_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"medal_id\":")
 		out.Int32(int32(in.MedalId))
 	}
 	if in.Title != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"title\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"title\":")
 		out.String(string(in.Title))
 	}
 	if in.Description != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"description\":")
 		out.String(string(in.Description))
 	}
 	if in.CreatorId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"creator_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"creator_id\":")
 		out.Int32(int32(in.CreatorId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"created_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"created_at\":")
 		out.Raw((in.CreatedAt).MarshalJSON())
 	}
 	out.RawByte('}')

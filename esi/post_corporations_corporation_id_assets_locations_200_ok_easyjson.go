@@ -126,35 +126,43 @@ func easyjson37f3301eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	first := true
 	_ = first
 	if in.ItemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"item_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"item_id\":")
 		out.Int64(int64(in.ItemId))
 	}
 	if in.X != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"x\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"x\":")
 		out.Float64(float64(in.X))
 	}
 	if in.Y != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"y\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"y\":")
 		out.Float64(float64(in.Y))
 	}
 	if in.Z != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"z\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"z\":")
 		out.Float64(float64(in.Z))
 	}
 	out.RawByte('}')

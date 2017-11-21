@@ -122,19 +122,23 @@ func easyjsonF9365fb2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.EffectId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"effect_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"effect_id\":")
 		out.Int32(int32(in.EffectId))
 	}
 	if in.IsDefault {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_default\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_default\":")
 		out.Bool(bool(in.IsDefault))
 	}
 	out.RawByte('}')

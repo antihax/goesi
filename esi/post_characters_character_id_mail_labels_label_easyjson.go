@@ -122,19 +122,23 @@ func easyjsonE446b04EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Post
 	first := true
 	_ = first
 	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
 	if in.Color != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"color\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"color\":")
 		out.String(string(in.Color))
 	}
 	out.RawByte('}')

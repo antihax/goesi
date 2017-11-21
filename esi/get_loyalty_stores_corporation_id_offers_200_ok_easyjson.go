@@ -151,54 +151,64 @@ func easyjson53553d35EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.OfferId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"offer_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"offer_id\":")
 		out.Int32(int32(in.OfferId))
 	}
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity\":")
 		out.Int32(int32(in.Quantity))
 	}
 	if in.LpCost != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"lp_cost\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"lp_cost\":")
 		out.Int32(int32(in.LpCost))
 	}
 	if in.IskCost != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"isk_cost\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"isk_cost\":")
 		out.Float32(float32(in.IskCost))
 	}
 	if len(in.RequiredItems) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"required_items\":")
-		if in.RequiredItems == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"required_items\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.RequiredItems {
 				if v5 > 0 {
@@ -273,19 +283,23 @@ func easyjson53553d35EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity\":")
 		out.Int32(int32(in.Quantity))
 	}
 	out.RawByte('}')

@@ -155,70 +155,84 @@ func easyjson8404fadcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Type_ != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type\":")
 		out.String(string(in.Type_))
 	}
 	if in.State != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"state\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"state\":")
 		out.String(string(in.State))
 	}
 	if in.Influence != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"influence\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"influence\":")
 		out.Float32(float32(in.Influence))
 	}
 	if in.HasBoss {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"has_boss\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"has_boss\":")
 		out.Bool(bool(in.HasBoss))
 	}
 	if in.FactionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"faction_id\":")
 		out.Int32(int32(in.FactionId))
 	}
 	if in.ConstellationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"constellation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"constellation_id\":")
 		out.Int32(int32(in.ConstellationId))
 	}
 	if in.StagingSolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"staging_solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"staging_solar_system_id\":")
 		out.Int32(int32(in.StagingSolarSystemId))
 	}
 	if len(in.InfestedSolarSystems) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"infested_solar_systems\":")
-		if in.InfestedSolarSystems == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"infested_solar_systems\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.InfestedSolarSystems {
 				if v5 > 0 {

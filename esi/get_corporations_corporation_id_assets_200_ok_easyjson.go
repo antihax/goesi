@@ -132,59 +132,73 @@ func easyjsonAc6a9211EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity\":")
 		out.Int32(int32(in.Quantity))
 	}
 	if in.LocationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"location_id\":")
 		out.Int64(int64(in.LocationId))
 	}
 	if in.LocationType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"location_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"location_type\":")
 		out.String(string(in.LocationType))
 	}
 	if in.ItemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"item_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"item_id\":")
 		out.Int64(int64(in.ItemId))
 	}
 	if in.LocationFlag != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"location_flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"location_flag\":")
 		out.String(string(in.LocationFlag))
 	}
 	if in.IsSingleton {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_singleton\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_singleton\":")
 		out.Bool(bool(in.IsSingleton))
 	}
 	out.RawByte('}')

@@ -124,27 +124,33 @@ func easyjsonFd4b5f6dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Cost != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"cost\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"cost\":")
 		out.Float32(float32(in.Cost))
 	}
 	if in.Payout != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"payout\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"payout\":")
 		out.Float32(float32(in.Payout))
 	}
 	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
 	out.RawByte('}')

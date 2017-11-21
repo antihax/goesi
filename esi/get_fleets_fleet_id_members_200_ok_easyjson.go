@@ -140,83 +140,103 @@ func easyjson50807c65EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.CharacterId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"character_id\":")
 		out.Int32(int32(in.CharacterId))
 	}
 	if in.ShipTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"ship_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"ship_type_id\":")
 		out.Int32(int32(in.ShipTypeId))
 	}
 	if in.WingId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"wing_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"wing_id\":")
 		out.Int64(int64(in.WingId))
 	}
 	if in.SquadId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"squad_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"squad_id\":")
 		out.Int64(int64(in.SquadId))
 	}
 	if in.Role != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"role\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"role\":")
 		out.String(string(in.Role))
 	}
 	if in.RoleName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"role_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"role_name\":")
 		out.String(string(in.RoleName))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"join_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"join_time\":")
 		out.Raw((in.JoinTime).MarshalJSON())
 	}
 	if in.TakesFleetWarp {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"takes_fleet_warp\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"takes_fleet_warp\":")
 		out.Bool(bool(in.TakesFleetWarp))
 	}
 	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.StationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"station_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"station_id\":")
 		out.Int64(int64(in.StationId))
 	}
 	out.RawByte('}')

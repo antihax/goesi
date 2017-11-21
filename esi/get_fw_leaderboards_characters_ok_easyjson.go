@@ -122,19 +122,23 @@ func easyjson8cdad7c3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"kills\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"kills\":")
 		(in.Kills).MarshalEasyJSON(out)
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"victory_points\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"victory_points\":")
 		(in.VictoryPoints).MarshalEasyJSON(out)
 	}
 	out.RawByte('}')

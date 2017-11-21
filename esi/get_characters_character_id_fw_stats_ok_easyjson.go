@@ -132,51 +132,63 @@ func easyjson2d62e304EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.FactionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"faction_id\":")
 		out.Int32(int32(in.FactionId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"enlisted_on\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"enlisted_on\":")
 		out.Raw((in.EnlistedOn).MarshalJSON())
 	}
 	if in.CurrentRank != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"current_rank\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"current_rank\":")
 		out.Int32(int32(in.CurrentRank))
 	}
 	if in.HighestRank != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"highest_rank\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"highest_rank\":")
 		out.Int32(int32(in.HighestRank))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"kills\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"kills\":")
 		(in.Kills).MarshalEasyJSON(out)
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"victory_points\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"victory_points\":")
 		(in.VictoryPoints).MarshalEasyJSON(out)
 	}
 	out.RawByte('}')

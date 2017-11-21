@@ -128,43 +128,53 @@ func easyjson988b1010EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.FactionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"faction_id\":")
 		out.Int32(int32(in.FactionId))
 	}
 	if in.Pilots != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"pilots\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"pilots\":")
 		out.Int32(int32(in.Pilots))
 	}
 	if in.SystemsControlled != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"systems_controlled\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"systems_controlled\":")
 		out.Int32(int32(in.SystemsControlled))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"kills\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"kills\":")
 		easyjson988b1010EncodeGithubComAntihaxGoesiEsi2(out, in.Kills)
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"victory_points\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"victory_points\":")
 		easyjson988b1010EncodeGithubComAntihaxGoesiEsi3(out, in.VictoryPoints)
 	}
 	out.RawByte('}')
@@ -233,27 +243,33 @@ func easyjson988b1010EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Yesterday != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"yesterday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"yesterday\":")
 		out.Int32(int32(in.Yesterday))
 	}
 	if in.LastWeek != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"last_week\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"last_week\":")
 		out.Int32(int32(in.LastWeek))
 	}
 	if in.Total != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"total\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"total\":")
 		out.Int32(int32(in.Total))
 	}
 	out.RawByte('}')
@@ -298,27 +314,33 @@ func easyjson988b1010EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Yesterday != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"yesterday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"yesterday\":")
 		out.Int32(int32(in.Yesterday))
 	}
 	if in.LastWeek != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"last_week\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"last_week\":")
 		out.Int32(int32(in.LastWeek))
 	}
 	if in.Total != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"total\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"total\":")
 		out.Int32(int32(in.Total))
 	}
 	out.RawByte('}')

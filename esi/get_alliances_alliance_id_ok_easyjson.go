@@ -128,35 +128,43 @@ func easyjson67f82948EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.AllianceName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"alliance_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"alliance_name\":")
 		out.String(string(in.AllianceName))
 	}
 	if in.Ticker != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"ticker\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"ticker\":")
 		out.String(string(in.Ticker))
 	}
 	if in.ExecutorCorp != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"executor_corp\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"executor_corp\":")
 		out.Int32(int32(in.ExecutorCorp))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"date_founded\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"date_founded\":")
 		out.Raw((in.DateFounded).MarshalJSON())
 	}
 	out.RawByte('}')

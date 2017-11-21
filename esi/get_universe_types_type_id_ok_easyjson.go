@@ -192,126 +192,154 @@ func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
 	if in.Description != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"description\":")
 		out.String(string(in.Description))
 	}
 	if in.Published {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"published\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"published\":")
 		out.Bool(bool(in.Published))
 	}
 	if in.GroupId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"group_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"group_id\":")
 		out.Int32(int32(in.GroupId))
 	}
 	if in.MarketGroupId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"market_group_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"market_group_id\":")
 		out.Int32(int32(in.MarketGroupId))
 	}
 	if in.Radius != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"radius\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"radius\":")
 		out.Float32(float32(in.Radius))
 	}
 	if in.Volume != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"volume\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"volume\":")
 		out.Float32(float32(in.Volume))
 	}
 	if in.PackagedVolume != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"packaged_volume\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"packaged_volume\":")
 		out.Float32(float32(in.PackagedVolume))
 	}
 	if in.IconId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"icon_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"icon_id\":")
 		out.Int32(int32(in.IconId))
 	}
 	if in.Capacity != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"capacity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"capacity\":")
 		out.Float32(float32(in.Capacity))
 	}
 	if in.PortionSize != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"portion_size\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"portion_size\":")
 		out.Int32(int32(in.PortionSize))
 	}
 	if in.Mass != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"mass\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"mass\":")
 		out.Float32(float32(in.Mass))
 	}
 	if in.GraphicId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"graphic_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"graphic_id\":")
 		out.Int32(int32(in.GraphicId))
 	}
 	if len(in.DogmaAttributes) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"dogma_attributes\":")
-		if in.DogmaAttributes == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"dogma_attributes\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v6, v7 := range in.DogmaAttributes {
 				if v6 > 0 {
@@ -323,14 +351,14 @@ func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.DogmaEffects) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"dogma_effects\":")
-		if in.DogmaEffects == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"dogma_effects\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v8, v9 := range in.DogmaEffects {
 				if v8 > 0 {
@@ -405,19 +433,23 @@ func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.EffectId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"effect_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"effect_id\":")
 		out.Int32(int32(in.EffectId))
 	}
 	if in.IsDefault {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_default\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_default\":")
 		out.Bool(bool(in.IsDefault))
 	}
 	out.RawByte('}')
@@ -460,19 +492,23 @@ func easyjson15ff5640EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.AttributeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"attribute_id\":")
 		out.Int32(int32(in.AttributeId))
 	}
 	if in.Value != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"value\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"value\":")
 		out.Float32(float32(in.Value))
 	}
 	out.RawByte('}')

@@ -201,70 +201,84 @@ func easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.StarId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"star_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"star_id\":")
 		out.Int32(int32(in.StarId))
 	}
 	if in.SystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"system_id\":")
 		out.Int32(int32(in.SystemId))
 	}
 	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"position\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"position\":")
 		easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi2(out, in.Position)
 	}
 	if in.SecurityStatus != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"security_status\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"security_status\":")
 		out.Float32(float32(in.SecurityStatus))
 	}
 	if in.SecurityClass != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"security_class\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"security_class\":")
 		out.String(string(in.SecurityClass))
 	}
 	if in.ConstellationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"constellation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"constellation_id\":")
 		out.Int32(int32(in.ConstellationId))
 	}
 	if len(in.Planets) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"planets\":")
-		if in.Planets == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"planets\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v7, v8 := range in.Planets {
 				if v7 > 0 {
@@ -276,14 +290,14 @@ func easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.Stargates) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"stargates\":")
-		if in.Stargates == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"stargates\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v9, v10 := range in.Stargates {
 				if v9 > 0 {
@@ -295,14 +309,14 @@ func easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.Stations) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"stations\":")
-		if in.Stations == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"stations\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v11, v12 := range in.Stations {
 				if v11 > 0 {
@@ -379,27 +393,33 @@ func easyjsonB8c84fd0EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.X != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"x\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"x\":")
 		out.Float32(float32(in.X))
 	}
 	if in.Y != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"y\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"y\":")
 		out.Float32(float32(in.Y))
 	}
 	if in.Z != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"z\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"z\":")
 		out.Float32(float32(in.Z))
 	}
 	out.RawByte('}')

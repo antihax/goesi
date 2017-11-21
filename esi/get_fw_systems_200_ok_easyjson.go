@@ -130,51 +130,63 @@ func easyjson156ccbf9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.OwnerFactionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"owner_faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"owner_faction_id\":")
 		out.Int32(int32(in.OwnerFactionId))
 	}
 	if in.OccupierFactionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"occupier_faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"occupier_faction_id\":")
 		out.Int32(int32(in.OccupierFactionId))
 	}
 	if in.VictoryPoints != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"victory_points\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"victory_points\":")
 		out.Int32(int32(in.VictoryPoints))
 	}
 	if in.VictoryPointsThreshold != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"victory_points_threshold\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"victory_points_threshold\":")
 		out.Int32(int32(in.VictoryPointsThreshold))
 	}
 	if in.Contested {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"contested\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"contested\":")
 		out.Bool(bool(in.Contested))
 	}
 	out.RawByte('}')

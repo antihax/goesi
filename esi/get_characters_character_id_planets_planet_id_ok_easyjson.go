@@ -187,14 +187,14 @@ func easyjson2db8f1a3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if len(in.Links) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"links\":")
-		if in.Links == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"links\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v7, v8 := range in.Links {
 				if v7 > 0 {
@@ -206,14 +206,14 @@ func easyjson2db8f1a3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.Pins) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"pins\":")
-		if in.Pins == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"pins\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v9, v10 := range in.Pins {
 				if v9 > 0 {
@@ -225,14 +225,14 @@ func easyjson2db8f1a3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.Routes) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"routes\":")
-		if in.Routes == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"routes\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v11, v12 := range in.Routes {
 				if v11 > 0 {
@@ -336,54 +336,64 @@ func easyjson2db8f1a3EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.RouteId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"route_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"route_id\":")
 		out.Int64(int64(in.RouteId))
 	}
 	if in.SourcePinId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"source_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"source_pin_id\":")
 		out.Int64(int64(in.SourcePinId))
 	}
 	if in.DestinationPinId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"destination_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"destination_pin_id\":")
 		out.Int64(int64(in.DestinationPinId))
 	}
 	if in.ContentTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"content_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"content_type_id\":")
 		out.Int32(int32(in.ContentTypeId))
 	}
 	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity\":")
 		out.Float32(float32(in.Quantity))
 	}
 	if len(in.Waypoints) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"waypoints\":")
-		if in.Waypoints == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"waypoints\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v14, v15 := range in.Waypoints {
 				if v14 > 0 {
@@ -436,27 +446,33 @@ func easyjson2db8f1a3EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SourcePinId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"source_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"source_pin_id\":")
 		out.Int64(int64(in.SourcePinId))
 	}
 	if in.DestinationPinId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"destination_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"destination_pin_id\":")
 		out.Int64(int64(in.DestinationPinId))
 	}
 	if in.LinkLevel != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"link_level\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"link_level\":")
 		out.Int32(int32(in.LinkLevel))
 	}
 	out.RawByte('}')

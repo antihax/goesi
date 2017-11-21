@@ -122,19 +122,23 @@ func easyjson6c932674EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Division != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"division\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"division\":")
 		out.Int32(int32(in.Division))
 	}
 	if in.Balance != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"balance\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"balance\":")
 		out.Float32(float32(in.Balance))
 	}
 	out.RawByte('}')

@@ -122,19 +122,23 @@ func easyjson65861768EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"kills\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"kills\":")
 		(in.Kills).MarshalEasyJSON(out)
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"victory_points\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"victory_points\":")
 		easyjson65861768EncodeGithubComAntihaxGoesiEsi2(out, in.VictoryPoints)
 	}
 	out.RawByte('}')
@@ -266,14 +270,14 @@ func easyjson65861768EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if len(in.Yesterday) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"yesterday\":")
-		if in.Yesterday == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"yesterday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v7, v8 := range in.Yesterday {
 				if v7 > 0 {
@@ -285,14 +289,14 @@ func easyjson65861768EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.LastWeek) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"last_week\":")
-		if in.LastWeek == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"last_week\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v9, v10 := range in.LastWeek {
 				if v9 > 0 {
@@ -304,14 +308,14 @@ func easyjson65861768EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.ActiveTotal) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"active_total\":")
-		if in.ActiveTotal == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"active_total\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v11, v12 := range in.ActiveTotal {
 				if v11 > 0 {
@@ -362,19 +366,23 @@ func easyjson65861768EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
 	}
 	if in.Amount != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"amount\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"amount\":")
 		out.Int32(int32(in.Amount))
 	}
 	out.RawByte('}')

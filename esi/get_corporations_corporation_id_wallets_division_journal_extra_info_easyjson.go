@@ -142,99 +142,123 @@ func easyjson64c411a2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.LocationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"location_id\":")
 		out.Int64(int64(in.LocationId))
 	}
 	if in.TransactionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"transaction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"transaction_id\":")
 		out.Int64(int64(in.TransactionId))
 	}
 	if in.NpcName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"npc_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"npc_name\":")
 		out.String(string(in.NpcName))
 	}
 	if in.NpcId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"npc_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"npc_id\":")
 		out.Int32(int32(in.NpcId))
 	}
 	if in.DestroyedShipTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"destroyed_ship_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"destroyed_ship_type_id\":")
 		out.Int32(int32(in.DestroyedShipTypeId))
 	}
 	if in.CharacterId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"character_id\":")
 		out.Int32(int32(in.CharacterId))
 	}
 	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
 	}
 	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"alliance_id\":")
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.JobId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"job_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"job_id\":")
 		out.Int32(int32(in.JobId))
 	}
 	if in.ContractId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"contract_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"contract_id\":")
 		out.Int32(int32(in.ContractId))
 	}
 	if in.SystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"system_id\":")
 		out.Int32(int32(in.SystemId))
 	}
 	if in.PlanetId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"planet_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"planet_id\":")
 		out.Int32(int32(in.PlanetId))
 	}
 	out.RawByte('}')

@@ -124,27 +124,33 @@ func easyjson9f4cf6dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in PutF
 	first := true
 	_ = first
 	if in.Role != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"role\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"role\":")
 		out.String(string(in.Role))
 	}
 	if in.WingId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"wing_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"wing_id\":")
 		out.Int64(int64(in.WingId))
 	}
 	if in.SquadId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"squad_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"squad_id\":")
 		out.Int64(int64(in.SquadId))
 	}
 	out.RawByte('}')

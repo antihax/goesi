@@ -134,67 +134,83 @@ func easyjsonD86c7128EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.GraphicId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"graphic_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"graphic_id\":")
 		out.Int32(int32(in.GraphicId))
 	}
 	if in.GraphicFile != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"graphic_file\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"graphic_file\":")
 		out.String(string(in.GraphicFile))
 	}
 	if in.SofRaceName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"sof_race_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"sof_race_name\":")
 		out.String(string(in.SofRaceName))
 	}
 	if in.SofFationName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"sof_fation_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"sof_fation_name\":")
 		out.String(string(in.SofFationName))
 	}
 	if in.SofDna != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"sof_dna\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"sof_dna\":")
 		out.String(string(in.SofDna))
 	}
 	if in.SofHullName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"sof_hull_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"sof_hull_name\":")
 		out.String(string(in.SofHullName))
 	}
 	if in.CollisionFile != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"collision_file\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"collision_file\":")
 		out.String(string(in.CollisionFile))
 	}
 	if in.IconFolder != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"icon_folder\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"icon_folder\":")
 		out.String(string(in.IconFolder))
 	}
 	out.RawByte('}')

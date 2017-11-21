@@ -122,19 +122,23 @@ func easyjsonE266b51dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.LabelId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"label_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"label_id\":")
 		out.Int64(int64(in.LabelId))
 	}
 	if in.LabelName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"label_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"label_name\":")
 		out.String(string(in.LabelName))
 	}
 	out.RawByte('}')

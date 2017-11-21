@@ -140,67 +140,83 @@ func easyjson7a6ec264EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.StarbaseId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"starbase_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"starbase_id\":")
 		out.Int64(int64(in.StarbaseId))
 	}
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if in.SystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"system_id\":")
 		out.Int32(int32(in.SystemId))
 	}
 	if in.MoonId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"moon_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"moon_id\":")
 		out.Int32(int32(in.MoonId))
 	}
 	if in.State != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"state\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"state\":")
 		out.String(string(in.State))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"unanchor_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"unanchor_at\":")
 		out.Raw((in.UnanchorAt).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"reinforced_until\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"reinforced_until\":")
 		out.Raw((in.ReinforcedUntil).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"onlined_since\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"onlined_since\":")
 		out.Raw((in.OnlinedSince).MarshalJSON())
 	}
 	out.RawByte('}')

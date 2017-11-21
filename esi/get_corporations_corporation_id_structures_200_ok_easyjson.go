@@ -205,54 +205,64 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.StructureId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"structure_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"structure_id\":")
 		out.Int64(int64(in.StructureId))
 	}
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
 	}
 	if in.SystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"system_id\":")
 		out.Int32(int32(in.SystemId))
 	}
 	if in.ProfileId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"profile_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"profile_id\":")
 		out.Int32(int32(in.ProfileId))
 	}
 	if len(in.CurrentVul) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"current_vul\":")
-		if in.CurrentVul == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"current_vul\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v7, v8 := range in.CurrentVul {
 				if v7 > 0 {
@@ -264,14 +274,14 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.NextVul) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"next_vul\":")
-		if in.NextVul == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"next_vul\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v9, v10 := range in.NextVul {
 				if v9 > 0 {
@@ -283,22 +293,24 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if in.FuelExpires != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"fuel_expires\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"fuel_expires\":")
 		out.String(string(in.FuelExpires))
 	}
 	if len(in.Services) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"services\":")
-		if in.Services == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"services\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v11, v12 := range in.Services {
 				if v11 > 0 {
@@ -310,27 +322,33 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if in.StateTimerStart != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"state_timer_start\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"state_timer_start\":")
 		out.String(string(in.StateTimerStart))
 	}
 	if in.StateTimerEnd != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"state_timer_end\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"state_timer_end\":")
 		out.String(string(in.StateTimerEnd))
 	}
 	if in.UnanchorsAt != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"unanchors_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"unanchors_at\":")
 		out.String(string(in.UnanchorsAt))
 	}
 	out.RawByte('}')
@@ -397,19 +415,23 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
 	if in.State != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"state\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"state\":")
 		out.String(string(in.State))
 	}
 	out.RawByte('}')
@@ -452,19 +474,23 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Day != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"day\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"day\":")
 		out.Int32(int32(in.Day))
 	}
 	if in.Hour != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"hour\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"hour\":")
 		out.Int32(int32(in.Hour))
 	}
 	out.RawByte('}')

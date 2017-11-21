@@ -126,35 +126,43 @@ func easyjson8d6c8028EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"system_id\":")
 		out.Int32(int32(in.SystemId))
 	}
 	if in.ShipKills != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"ship_kills\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"ship_kills\":")
 		out.Int32(int32(in.ShipKills))
 	}
 	if in.NpcKills != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"npc_kills\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"npc_kills\":")
 		out.Int32(int32(in.NpcKills))
 	}
 	if in.PodKills != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"pod_kills\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"pod_kills\":")
 		out.Int32(int32(in.PodKills))
 	}
 	out.RawByte('}')

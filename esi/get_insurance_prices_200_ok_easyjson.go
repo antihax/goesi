@@ -143,22 +143,24 @@ func easyjsonA53f7cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetIn
 	first := true
 	_ = first
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if len(in.Levels) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"levels\":")
-		if in.Levels == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"levels\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Levels {
 				if v5 > 0 {
@@ -235,27 +237,33 @@ func easyjsonA53f7cEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetIn
 	first := true
 	_ = first
 	if in.Cost != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"cost\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"cost\":")
 		out.Float32(float32(in.Cost))
 	}
 	if in.Payout != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"payout\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"payout\":")
 		out.Float32(float32(in.Payout))
 	}
 	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
 	out.RawByte('}')

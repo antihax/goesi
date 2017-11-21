@@ -128,35 +128,43 @@ func easyjson429021f6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.AccessorId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"accessor_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"accessor_id\":")
 		out.Int32(int32(in.AccessorId))
 	}
 	if in.AccessorType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"accessor_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"accessor_type\":")
 		out.String(string(in.AccessorType))
 	}
 	if in.Reason != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"reason\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"reason\":")
 		out.String(string(in.Reason))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"end_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"end_at\":")
 		out.Raw((in.EndAt).MarshalJSON())
 	}
 	out.RawByte('}')

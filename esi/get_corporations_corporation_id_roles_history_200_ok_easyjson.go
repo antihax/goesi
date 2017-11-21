@@ -174,46 +174,54 @@ func easyjsonEbe19d94EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.CharacterId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"character_id\":")
 		out.Int32(int32(in.CharacterId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"changed_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"changed_at\":")
 		out.Raw((in.ChangedAt).MarshalJSON())
 	}
 	if in.IssuerId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"issuer_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"issuer_id\":")
 		out.Int32(int32(in.IssuerId))
 	}
 	if in.RoleType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"role_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"role_type\":")
 		out.String(string(in.RoleType))
 	}
 	if len(in.OldRoles) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"old_roles\":")
-		if in.OldRoles == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"old_roles\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v6, v7 := range in.OldRoles {
 				if v6 > 0 {
@@ -225,14 +233,14 @@ func easyjsonEbe19d94EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 	}
 	if len(in.NewRoles) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"new_roles\":")
-		if in.NewRoles == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"new_roles\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v8, v9 := range in.NewRoles {
 				if v8 > 0 {

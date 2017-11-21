@@ -130,43 +130,53 @@ func easyjson455ec14aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.FactionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"faction_id\":")
 		out.Int32(int32(in.FactionId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"enlisted_on\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"enlisted_on\":")
 		out.Raw((in.EnlistedOn).MarshalJSON())
 	}
 	if in.Pilots != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"pilots\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"pilots\":")
 		out.Int32(int32(in.Pilots))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"kills\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"kills\":")
 		(in.Kills).MarshalEasyJSON(out)
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"victory_points\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"victory_points\":")
 		easyjson455ec14aEncodeGithubComAntihaxGoesiEsi2(out, in.VictoryPoints)
 	}
 	out.RawByte('}')
@@ -235,27 +245,33 @@ func easyjson455ec14aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Yesterday != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"yesterday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"yesterday\":")
 		out.Int32(int32(in.Yesterday))
 	}
 	if in.LastWeek != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"last_week\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"last_week\":")
 		out.Int32(int32(in.LastWeek))
 	}
 	if in.Total != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"total\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"total\":")
 		out.Int32(int32(in.Total))
 	}
 	out.RawByte('}')

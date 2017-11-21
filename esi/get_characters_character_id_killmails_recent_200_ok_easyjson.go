@@ -122,19 +122,23 @@ func easyjson81fd3f84EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.KillmailId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"killmail_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"killmail_id\":")
 		out.Int32(int32(in.KillmailId))
 	}
 	if in.KillmailHash != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"killmail_hash\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"killmail_hash\":")
 		out.String(string(in.KillmailHash))
 	}
 	out.RawByte('}')

@@ -130,51 +130,63 @@ func easyjsonA0e9375dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.RecordId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"record_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"record_id\":")
 		out.Int64(int64(in.RecordId))
 	}
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if in.Quantity != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity\":")
 		out.Int32(int32(in.Quantity))
 	}
 	if in.RawQuantity != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"raw_quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"raw_quantity\":")
 		out.Int32(int32(in.RawQuantity))
 	}
 	if in.IsSingleton {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_singleton\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_singleton\":")
 		out.Bool(bool(in.IsSingleton))
 	}
 	if in.IsIncluded {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_included\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_included\":")
 		out.Bool(bool(in.IsIncluded))
 	}
 	out.RawByte('}')

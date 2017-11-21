@@ -124,27 +124,33 @@ func easyjson3aa1a036EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.ShareholderId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"shareholder_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"shareholder_id\":")
 		out.Int32(int32(in.ShareholderId))
 	}
 	if in.ShareholderType != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"shareholder_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"shareholder_type\":")
 		out.String(string(in.ShareholderType))
 	}
 	if in.ShareCount != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"share_count\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"share_count\":")
 		out.Int64(int64(in.ShareCount))
 	}
 	out.RawByte('}')

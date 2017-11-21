@@ -136,59 +136,73 @@ func easyjson95a81519EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"alliance_id\":")
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.SolarSystemId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"solar_system_id\":")
 		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.StructureId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"structure_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"structure_id\":")
 		out.Int64(int64(in.StructureId))
 	}
 	if in.StructureTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"structure_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"structure_type_id\":")
 		out.Int32(int32(in.StructureTypeId))
 	}
 	if in.VulnerabilityOccupancyLevel != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"vulnerability_occupancy_level\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"vulnerability_occupancy_level\":")
 		out.Float32(float32(in.VulnerabilityOccupancyLevel))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"vulnerable_start_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"vulnerable_start_time\":")
 		out.Raw((in.VulnerableStartTime).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"vulnerable_end_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"vulnerable_end_time\":")
 		out.Raw((in.VulnerableEndTime).MarshalJSON())
 	}
 	out.RawByte('}')

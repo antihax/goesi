@@ -132,51 +132,63 @@ func easyjson1febafc2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.MedalId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"medal_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"medal_id\":")
 		out.Int32(int32(in.MedalId))
 	}
 	if in.CharacterId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"character_id\":")
 		out.Int32(int32(in.CharacterId))
 	}
 	if in.Reason != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"reason\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"reason\":")
 		out.String(string(in.Reason))
 	}
 	if in.Status != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"status\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"status\":")
 		out.String(string(in.Status))
 	}
 	if in.IssuerId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"issuer_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"issuer_id\":")
 		out.Int32(int32(in.IssuerId))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"issued_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"issued_at\":")
 		out.Raw((in.IssuedAt).MarshalJSON())
 	}
 	out.RawByte('}')

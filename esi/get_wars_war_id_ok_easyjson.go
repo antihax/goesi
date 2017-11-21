@@ -167,86 +167,104 @@ func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Id != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"id\":")
 		out.Int32(int32(in.Id))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"declared\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"declared\":")
 		out.Raw((in.Declared).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"started\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"started\":")
 		out.Raw((in.Started).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"retracted\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"retracted\":")
 		out.Raw((in.Retracted).MarshalJSON())
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"finished\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"finished\":")
 		out.Raw((in.Finished).MarshalJSON())
 	}
 	if in.Mutual {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"mutual\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"mutual\":")
 		out.Bool(bool(in.Mutual))
 	}
 	if in.OpenForAllies {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"open_for_allies\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"open_for_allies\":")
 		out.Bool(bool(in.OpenForAllies))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"aggressor\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"aggressor\":")
 		(in.Aggressor).MarshalEasyJSON(out)
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"defender\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"defender\":")
 		easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi2(out, in.Defender)
 	}
 	if len(in.Allies) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"allies\":")
-		if in.Allies == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"allies\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Allies {
 				if v5 > 0 {
@@ -321,19 +339,23 @@ func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
 	}
 	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"alliance_id\":")
 		out.Int32(int32(in.AllianceId))
 	}
 	out.RawByte('}')
@@ -380,35 +402,43 @@ func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.CorporationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"corporation_id\":")
 		out.Int32(int32(in.CorporationId))
 	}
 	if in.AllianceId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"alliance_id\":")
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.ShipsKilled != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"ships_killed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"ships_killed\":")
 		out.Int32(int32(in.ShipsKilled))
 	}
 	if in.IskDestroyed != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"isk_destroyed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"isk_destroyed\":")
 		out.Float32(float32(in.IskDestroyed))
 	}
 	out.RawByte('}')

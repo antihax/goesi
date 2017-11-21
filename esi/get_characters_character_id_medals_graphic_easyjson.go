@@ -126,35 +126,43 @@ func easyjsonC809f51dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.Part != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"part\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"part\":")
 		out.Int32(int32(in.Part))
 	}
 	if in.Layer != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"layer\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"layer\":")
 		out.Int32(int32(in.Layer))
 	}
 	if in.Graphic != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"graphic\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"graphic\":")
 		out.String(string(in.Graphic))
 	}
 	if in.Color != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"color\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"color\":")
 		out.Int32(int32(in.Color))
 	}
 	out.RawByte('}')

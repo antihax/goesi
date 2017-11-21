@@ -151,54 +151,64 @@ func easyjsonD53872d4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.ItemTypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"item_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"item_type_id\":")
 		out.Int32(int32(in.ItemTypeId))
 	}
 	if in.QuantityDestroyed != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity_destroyed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity_destroyed\":")
 		out.Int64(int64(in.QuantityDestroyed))
 	}
 	if in.QuantityDropped != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"quantity_dropped\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"quantity_dropped\":")
 		out.Int64(int64(in.QuantityDropped))
 	}
 	if in.Singleton != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"singleton\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"singleton\":")
 		out.Int32(int32(in.Singleton))
 	}
 	if in.Flag != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"flag\":")
 		out.Int32(int32(in.Flag))
 	}
 	if len(in.Items) != 0 {
-		if !first {
-			out.RawByte(',')
-		}
-		first = false
-		out.RawString("\"items\":")
-		if in.Items == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		const prefix string = ",\"items\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
 			for v5, v6 := range in.Items {
 				if v5 > 0 {

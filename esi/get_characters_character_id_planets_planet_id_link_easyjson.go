@@ -124,27 +124,33 @@ func easyjson9cd7a0b1EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.SourcePinId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"source_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"source_pin_id\":")
 		out.Int64(int64(in.SourcePinId))
 	}
 	if in.DestinationPinId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"destination_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"destination_pin_id\":")
 		out.Int64(int64(in.DestinationPinId))
 	}
 	if in.LinkLevel != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"link_level\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"link_level\":")
 		out.Int32(int32(in.LinkLevel))
 	}
 	out.RawByte('}')

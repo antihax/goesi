@@ -152,131 +152,163 @@ func easyjson416deacbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.OrderId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"order_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"order_id\":")
 		out.Int64(int64(in.OrderId))
 	}
 	if in.TypeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"type_id\":")
 		out.Int32(int32(in.TypeId))
 	}
 	if in.RegionId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"region_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"region_id\":")
 		out.Int32(int32(in.RegionId))
 	}
 	if in.LocationId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"location_id\":")
 		out.Int64(int64(in.LocationId))
 	}
 	if in.Range_ != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"range\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"range\":")
 		out.String(string(in.Range_))
 	}
 	if in.IsBuyOrder {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_buy_order\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_buy_order\":")
 		out.Bool(bool(in.IsBuyOrder))
 	}
 	if in.Price != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"price\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"price\":")
 		out.Float32(float32(in.Price))
 	}
 	if in.VolumeTotal != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"volume_total\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"volume_total\":")
 		out.Int32(int32(in.VolumeTotal))
 	}
 	if in.VolumeRemain != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"volume_remain\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"volume_remain\":")
 		out.Int32(int32(in.VolumeRemain))
 	}
 	if true {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"issued\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"issued\":")
 		out.Raw((in.Issued).MarshalJSON())
 	}
 	if in.State != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"state\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"state\":")
 		out.String(string(in.State))
 	}
 	if in.MinVolume != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"min_volume\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"min_volume\":")
 		out.Int32(int32(in.MinVolume))
 	}
 	if in.AccountId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"account_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"account_id\":")
 		out.Int32(int32(in.AccountId))
 	}
 	if in.Duration != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"duration\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"duration\":")
 		out.Int32(int32(in.Duration))
 	}
 	if in.IsCorp {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"is_corp\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"is_corp\":")
 		out.Bool(bool(in.IsCorp))
 	}
 	if in.Escrow != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"escrow\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"escrow\":")
 		out.Float32(float32(in.Escrow))
 	}
 	out.RawByte('}')

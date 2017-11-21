@@ -138,83 +138,103 @@ func easyjson3dc99e5fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if in.AttributeId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"attribute_id\":")
 		out.Int32(int32(in.AttributeId))
 	}
 	if in.Name != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"name\":")
 		out.String(string(in.Name))
 	}
 	if in.Description != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"description\":")
 		out.String(string(in.Description))
 	}
 	if in.IconId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"icon_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"icon_id\":")
 		out.Int32(int32(in.IconId))
 	}
 	if in.DefaultValue != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"default_value\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"default_value\":")
 		out.Float32(float32(in.DefaultValue))
 	}
 	if in.Published {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"published\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"published\":")
 		out.Bool(bool(in.Published))
 	}
 	if in.DisplayName != "" {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"display_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"display_name\":")
 		out.String(string(in.DisplayName))
 	}
 	if in.UnitId != 0 {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"unit_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"unit_id\":")
 		out.Int32(int32(in.UnitId))
 	}
 	if in.Stackable {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"stackable\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"stackable\":")
 		out.Bool(bool(in.Stackable))
 	}
 	if in.HighIsGood {
-		if !first {
-			out.RawByte(',')
+		const prefix string = ",\"high_is_good\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
-		first = false
-		out.RawString("\"high_is_good\":")
 		out.Bool(bool(in.HighIsGood))
 	}
 	out.RawByte('}')

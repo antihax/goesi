@@ -150,7 +150,7 @@ func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx contex
 }
 
 /* KillmailsApiService Get corporation kills and losses
-Get a list of corporation&#39;s recent kills and losses  ---  This route is cached for up to 3600 seconds
+Get a list of corporation&#39;s recent kills and losses  ---  This route is cached for up to 300 seconds
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID

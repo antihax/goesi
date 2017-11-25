@@ -66,6 +66,7 @@ func NewAPIClient(httpClient *http.Client, userAgent string) *APIClient {
 	return c
 }
 
+// ChangeBasePath allows alternate ESI paths to be used for testing
 func (c *APIClient) ChangeBasePath(path string) {
 	c.ESI.ChangeBasePath(path)
 }
@@ -105,8 +106,9 @@ func CacheExpires(r *http.Response) time.Time {
 		lifetime, err := time.ParseDuration(maxAge + "s")
 		if err != nil {
 			expires = now
+		} else {
+			expires = now.Add(lifetime)
 		}
-		expires = now.Add(lifetime)
 	} else {
 		expiresHeader := r.Header.Get("Expires")
 		if expiresHeader != "" {

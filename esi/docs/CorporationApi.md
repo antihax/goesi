@@ -114,7 +114,7 @@ No authorization required
 > []GetCorporationsCorporationIdBlueprints200Ok GetCorporationsCorporationIdBlueprints(ctx, corporationId, optional)
 Get corporation blueprints
 
-Returns a list of blueprints the corporation owns  ---  This route is cached for up to 3600 seconds
+Returns a list of blueprints the corporation owns  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdContainersLogs200Ok GetCorporationsCorporationIdContainersLogs(ctx, corporationId, optional)
 Get all corporation ALSC logs
 
-Returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation  ---  This route is cached for up to 600 seconds
+Returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation  ---  This route is cached for up to 600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 > GetCorporationsCorporationIdDivisionsOk GetCorporationsCorporationIdDivisions(ctx, corporationId, optional)
 Get corporation divisions
 
-Return corporation hangar and wallet division names, only show if a division is not using the default name  ---  This route is cached for up to 3600 seconds
+Return corporation hangar and wallet division names, only show if a division is not using the default name  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdFacilities200Ok GetCorporationsCorporationIdFacilities(ctx, corporationId, optional)
 Get corporation facilities
 
-Return a corporation's facilities  ---  This route is cached for up to 3600 seconds
+Return a corporation's facilities  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Factory_Manager
 
 ### Required Parameters
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdMedalsIssued200Ok GetCorporationsCorporationIdMedalsIssued(ctx, corporationId, optional)
 Get corporation issued medals
 
-Returns medals issued by a corporation  ---  This route is cached for up to 3600 seconds
+Returns medals issued by a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 > int32 GetCorporationsCorporationIdMembersLimit(ctx, corporationId, optional)
 Get corporation member limit
 
-Return a corporation's member limit, not including CEO himself  ---  This route is cached for up to 3600 seconds
+Return a corporation's member limit, not including CEO himself  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdMembersTitles200Ok GetCorporationsCorporationIdMembersTitles(ctx, corporationId, optional)
 Get corporation's members' titles
 
-Returns a corporation's members' titles  ---  This route is cached for up to 3600 seconds
+Returns a corporation's members' titles  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdMembertracking200Ok GetCorporationsCorporationIdMembertracking(ctx, corporationId, optional)
 Track corporation members
 
-Returns additional information about a corporation's members which helps tracking their activities  ---  This route is cached for up to 3600 seconds
+Returns additional information about a corporation's members which helps tracking their activities  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -557,7 +557,7 @@ Name | Type | Description  | Notes
 > []int32 GetCorporationsCorporationIdOutposts(ctx, corporationId, optional)
 Get corporation outposts
 
-Get a list of corporation outpost IDs Note: This endpoint will be removed once outposts are migrated to Citadels as talked about in this blog: https://community.eveonline.com/news/dev-blogs/the-next-steps-in-structure-transition/  ---  This route is cached for up to 3600 seconds
+Get a list of corporation outpost IDs Note: This endpoint will be removed once outposts are migrated to Citadels as talked about in this blog: https://community.eveonline.com/news/dev-blogs/the-next-steps-in-structure-transition/  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 > GetCorporationsCorporationIdOutpostsOutpostIdOk GetCorporationsCorporationIdOutpostsOutpostId(ctx, corporationId, outpostId, optional)
 Get corporation outpost details
 
-Get details about a given outpost. Note: This endpoint will be removed once outposts are migrated to Citadels as talked about in this blog: https://community.eveonline.com/news/dev-blogs/the-next-steps-in-structure-transition/  ---  This route is cached for up to 3600 seconds
+Get details about a given outpost. Note: This endpoint will be removed once outposts are migrated to Citadels as talked about in this blog: https://community.eveonline.com/news/dev-blogs/the-next-steps-in-structure-transition/  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -680,7 +680,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdRolesHistory200Ok GetCorporationsCorporationIdRolesHistory(ctx, corporationId, optional)
 Get corporation member roles history
 
-Return how roles have changed for a coporation's members, up to a month  ---  This route is cached for up to 3600 seconds
+Return how roles have changed for a coporation's members, up to a month  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -803,7 +803,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdStarbases200Ok GetCorporationsCorporationIdStarbases(ctx, corporationId, optional)
 Get corporation starbases (POSes)
 
-Returns list of corporation starbases (POSes)  ---  This route is cached for up to 3600 seconds
+Returns list of corporation starbases (POSes)  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -844,7 +844,7 @@ Name | Type | Description  | Notes
 > GetCorporationsCorporationIdStarbasesStarbaseIdOk GetCorporationsCorporationIdStarbasesStarbaseId(ctx, corporationId, starbaseId, systemId, optional)
 Get starbase (POS) detail
 
-Returns various settings and fuels of a starbase (POS)  ---  This route is cached for up to 3600 seconds
+Returns various settings and fuels of a starbase (POS)  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -889,7 +889,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdStructures200Ok GetCorporationsCorporationIdStructures(ctx, corporationId, optional)
 Get corporation structures
 
-Get a list of corporation structures  ---  This route is cached for up to 3600 seconds
+Get a list of corporation structures  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): StationManager
 
 ### Required Parameters
 
@@ -931,7 +931,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdTitles200Ok GetCorporationsCorporationIdTitles(ctx, corporationId, optional)
 Get corporation titles
 
-Returns a corporation's titles  ---  This route is cached for up to 3600 seconds
+Returns a corporation's titles  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 

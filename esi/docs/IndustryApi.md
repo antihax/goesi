@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 > []GetCorporationCorporationIdMiningExtractions200Ok GetCorporationCorporationIdMiningExtractions(ctx, corporationId, optional)
 Moon extraction timers
 
-Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.  ---  This route is cached for up to 1800 seconds
+Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.  ---  This route is cached for up to 1800 seconds  --- Requires one of the following EVE corporation role(s): Structure_manager
 
 ### Required Parameters
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 > []GetCorporationCorporationIdMiningObservers200Ok GetCorporationCorporationIdMiningObservers(ctx, corporationId, optional)
 Corporation mining observers
 
-Paginated list of all entities capable of observing and recording mining for a corporation  ---  This route is cached for up to 3600 seconds
+Paginated list of all entities capable of observing and recording mining for a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant
 
 ### Required Parameters
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 > []GetCorporationCorporationIdMiningObserversObserverId200Ok GetCorporationCorporationIdMiningObserversObserverId(ctx, corporationId, observerId, optional)
 Observed corporation mining
 
-Paginated record of all mining seen by an observer  ---  This route is cached for up to 3600 seconds
+Paginated record of all mining seen by an observer  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant
 
 ### Required Parameters
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdIndustryJobs200Ok GetCorporationsCorporationIdIndustryJobs(ctx, corporationId, optional)
 List corporation industry jobs
 
-List industry jobs run by a corporation  ---  This route is cached for up to 300 seconds
+List industry jobs run by a corporation  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): FactoryManager
 
 ### Required Parameters
 

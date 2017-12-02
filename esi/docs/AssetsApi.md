@@ -4,7 +4,7 @@ All URIs are relative to *https://esi.tech.ccp.is*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCharactersCharacterIdAssets**](AssetsApi.md#GetCharactersCharacterIdAssets) | **Get** /v1/characters/{character_id}/assets/ | Get character assets
+[**GetCharactersCharacterIdAssets**](AssetsApi.md#GetCharactersCharacterIdAssets) | **Get** /v2/characters/{character_id}/assets/ | Get character assets
 [**GetCorporationsCorporationIdAssets**](AssetsApi.md#GetCorporationsCorporationIdAssets) | **Get** /v1/corporations/{corporation_id}/assets/ | Get corporation assets
 [**PostCharactersCharacterIdAssetsLocations**](AssetsApi.md#PostCharactersCharacterIdAssetsLocations) | **Post** /v1/characters/{character_id}/assets/locations/ | Get character asset locations
 [**PostCharactersCharacterIdAssetsNames**](AssetsApi.md#PostCharactersCharacterIdAssetsNames) | **Post** /v1/characters/{character_id}/assets/names/ | Get character asset names
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdAssets200Ok GetCorporationsCorporationIdAssets(ctx, corporationId, optional)
 Get corporation assets
 
-Return a list of the corporation assets  ---  This route is cached for up to 3600 seconds
+Return a list of the corporation assets  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 > []PostCorporationsCorporationIdAssetsLocations200Ok PostCorporationsCorporationIdAssetsLocations(ctx, corporationId, itemIds, optional)
 Get corporation asset locations
 
-Return locations for a set of item ids, which you can get from corporation assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)  --- 
+Return locations for a set of item ids, which you can get from corporation assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)  ---  Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 > []PostCorporationsCorporationIdAssetsNames200Ok PostCorporationsCorporationIdAssetsNames(ctx, corporationId, itemIds, optional)
 Get coporation asset names
 
-Return names for a set of item ids, which you can get from corporation assets endpoint. Only valid for items that can customize names, like containers or ships.  --- 
+Return names for a set of item ids, which you can get from corporation assets endpoint. Only valid for items that can customize names, like containers or ships.  ---  Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 

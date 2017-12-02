@@ -160,7 +160,9 @@ func easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.Delim(']')
 			}
 		case "fuel_expires":
-			out.FuelExpires = string(in.String())
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.FuelExpires).UnmarshalJSON(data))
+			}
 		case "services":
 			if in.IsNull() {
 				in.Skip()
@@ -185,11 +187,17 @@ func easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.Delim(']')
 			}
 		case "state_timer_start":
-			out.StateTimerStart = string(in.String())
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.StateTimerStart).UnmarshalJSON(data))
+			}
 		case "state_timer_end":
-			out.StateTimerEnd = string(in.String())
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.StateTimerEnd).UnmarshalJSON(data))
+			}
 		case "unanchors_at":
-			out.UnanchorsAt = string(in.String())
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.UnanchorsAt).UnmarshalJSON(data))
+			}
 		default:
 			in.SkipRecursive()
 		}
@@ -292,7 +300,7 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
-	if in.FuelExpires != "" {
+	if true {
 		const prefix string = ",\"fuel_expires\":"
 		if first {
 			first = false
@@ -300,7 +308,7 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.FuelExpires))
+		out.Raw((in.FuelExpires).MarshalJSON())
 	}
 	if len(in.Services) != 0 {
 		const prefix string = ",\"services\":"
@@ -321,7 +329,7 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
-	if in.StateTimerStart != "" {
+	if true {
 		const prefix string = ",\"state_timer_start\":"
 		if first {
 			first = false
@@ -329,9 +337,9 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.StateTimerStart))
+		out.Raw((in.StateTimerStart).MarshalJSON())
 	}
-	if in.StateTimerEnd != "" {
+	if true {
 		const prefix string = ",\"state_timer_end\":"
 		if first {
 			first = false
@@ -339,9 +347,9 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.StateTimerEnd))
+		out.Raw((in.StateTimerEnd).MarshalJSON())
 	}
-	if in.UnanchorsAt != "" {
+	if true {
 		const prefix string = ",\"unanchors_at\":"
 		if first {
 			first = false
@@ -349,7 +357,7 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.UnanchorsAt))
+		out.Raw((in.UnanchorsAt).MarshalJSON())
 	}
 	out.RawByte('}')
 }

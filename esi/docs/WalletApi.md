@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdWallets200Ok GetCorporationsCorporationIdWallets(ctx, corporationId, optional)
 Returns a corporation's wallet balance
 
-Get a corporation's wallets  ---  This route is cached for up to 300 seconds
+Get a corporation's wallets  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
 
 ### Required Parameters
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdWalletsDivisionJournal200Ok GetCorporationsCorporationIdWalletsDivisionJournal(ctx, corporationId, division, optional)
 Get corporation wallet journal
 
-Retrieve corporation wallet journal  ---  This route is cached for up to 3600 seconds
+Retrieve corporation wallet journal  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
 
 ### Required Parameters
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdWalletsDivisionTransactions200Ok GetCorporationsCorporationIdWalletsDivisionTransactions(ctx, corporationId, division, optional)
 Get corporation wallet transactions
 
-Get wallet transactions of a corporation  ---  This route is cached for up to 3600 seconds
+Get wallet transactions of a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
 
 ### Required Parameters
 

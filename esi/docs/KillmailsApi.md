@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdKillmailsRecent200Ok GetCorporationsCorporationIdKillmailsRecent(ctx, corporationId, optional)
 Get corporation kills and losses
 
-Get a list of corporation's recent kills and losses  ---  This route is cached for up to 300 seconds
+Get a list of corporation's recent kills and losses  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 

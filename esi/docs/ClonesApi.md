@@ -12,7 +12,7 @@ Method | HTTP request | Description
 > GetCharactersCharacterIdClonesOk GetCharactersCharacterIdClones(ctx, characterId, optional)
 Get clones
 
-A list of the character's clones  ---  This route is cached for up to 120 seconds
+A list of the character's clones  ---  This route is cached for up to 120 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/clones/)
 
 ### Required Parameters
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **GetCharactersCharacterIdWallet**
-> float32 GetCharactersCharacterIdWallet(ctx, characterId, optional)
+> float64 GetCharactersCharacterIdWallet(ctx, characterId, optional)
 Get a character's wallet balance
 
 Returns a character's wallet balance  ---  This route is cached for up to 120 seconds
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**float32**
+**float64**
 
 ### Authorization
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdWalletJournal200Ok GetCharactersCharacterIdWalletJournal(ctx, characterId, optional)
 Get character wallet journal
 
-Retrieve character wallet journal  ---  This route is cached for up to 3600 seconds
+Retrieve character wallet journal  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/wallet/journal/)
 
 ### Required Parameters
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdWalletsDivisionJournal200Ok GetCorporationsCorporationIdWalletsDivisionJournal(ctx, corporationId, division, optional)
 Get corporation wallet journal
 
-Retrieve corporation wallet journal  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+Retrieve corporation wallet journal  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/wallets/{division}/journal/)
 
 ### Required Parameters
 

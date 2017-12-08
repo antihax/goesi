@@ -110,11 +110,11 @@ func easyjson35051ea6DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetM
 		case "volume":
 			out.Volume = int64(in.Int64())
 		case "highest":
-			out.Highest = float32(in.Float32())
+			out.Highest = float64(in.Float64())
 		case "average":
-			out.Average = float32(in.Float32())
+			out.Average = float64(in.Float64())
 		case "lowest":
-			out.Lowest = float32(in.Float32())
+			out.Lowest = float64(in.Float64())
 		default:
 			in.SkipRecursive()
 		}
@@ -167,7 +167,7 @@ func easyjson35051ea6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Highest))
+		out.Float64(float64(in.Highest))
 	}
 	if in.Average != 0 {
 		const prefix string = ",\"average\":"
@@ -177,7 +177,7 @@ func easyjson35051ea6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Average))
+		out.Float64(float64(in.Average))
 	}
 	if in.Lowest != 0 {
 		const prefix string = ",\"lowest\":"
@@ -187,7 +187,7 @@ func easyjson35051ea6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Lowest))
+		out.Float64(float64(in.Lowest))
 	}
 	out.RawByte('}')
 }

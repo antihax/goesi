@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Date** | [**time.Time**](time.Time.md) | Date and time of transaction | [default to null]
 **TypeId** | **int32** | type_id integer | [default to null]
 **LocationId** | **int64** | location_id integer | [default to null]
-**UnitPrice** | **float32** | Amount paid per unit | [default to null]
+**UnitPrice** | **float64** | Amount paid per unit | [default to null]
 **Quantity** | **int32** | quantity integer | [default to null]
 **ClientId** | **int32** | client_id integer | [default to null]
 **IsBuy** | **bool** | is_buy boolean | [default to null]

@@ -43,7 +43,7 @@ var (
 type ClonesApiService service
 
 /* ClonesApiService Get clones
-A list of the character&#39;s clones  ---  This route is cached for up to 120 seconds
+A list of the character&#39;s clones  ---  This route is cached for up to 120 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/clones/)
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID

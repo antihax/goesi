@@ -27,7 +27,7 @@ func easyjson6c932674DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCo
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetCorporationsCorporationIdWallets200OkList, 0, 8)
+				*out = make(GetCorporationsCorporationIdWallets200OkList, 0, 4)
 			} else {
 				*out = GetCorporationsCorporationIdWallets200OkList{}
 			}
@@ -106,7 +106,7 @@ func easyjson6c932674DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "division":
 			out.Division = int32(in.Int32())
 		case "balance":
-			out.Balance = float32(in.Float32())
+			out.Balance = float64(in.Float64())
 		default:
 			in.SkipRecursive()
 		}
@@ -139,7 +139,7 @@ func easyjson6c932674EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Balance))
+		out.Float64(float64(in.Balance))
 	}
 	out.RawByte('}')
 }

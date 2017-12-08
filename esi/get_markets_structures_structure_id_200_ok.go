@@ -39,7 +39,7 @@ type GetMarketsStructuresStructureId200Ok struct {
 	VolumeTotal  int32     `json:"volume_total,omitempty"`  /* volume_total integer */
 	VolumeRemain int32     `json:"volume_remain,omitempty"` /* volume_remain integer */
 	MinVolume    int32     `json:"min_volume,omitempty"`    /* min_volume integer */
-	Price        float32   `json:"price,omitempty"`         /* price number */
+	Price        float64   `json:"price,omitempty"`         /* price number */
 	IsBuyOrder   bool      `json:"is_buy_order,omitempty"`  /* is_buy_order boolean */
 	Duration     int32     `json:"duration,omitempty"`      /* duration integer */
 	Issued       time.Time `json:"issued,omitempty"`        /* issued string */

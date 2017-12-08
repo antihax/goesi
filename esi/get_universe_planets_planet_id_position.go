@@ -29,7 +29,7 @@ type GetUniversePlanetsPlanetIdPositionList []GetUniversePlanetsPlanetIdPosition
 /* position object */
 //easyjson:json
 type GetUniversePlanetsPlanetIdPosition struct {
-	X float32 `json:"x,omitempty"` /* x number */
-	Y float32 `json:"y,omitempty"` /* y number */
-	Z float32 `json:"z,omitempty"` /* z number */
+	X float64 `json:"x,omitempty"` /* x number */
+	Y float64 `json:"y,omitempty"` /* y number */
+	Z float64 `json:"z,omitempty"` /* z number */
 }

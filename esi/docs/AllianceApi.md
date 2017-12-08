@@ -52,7 +52,7 @@ No authorization required
 > GetAlliancesAllianceIdOk GetAlliancesAllianceId(ctx, allianceId, optional)
 Get alliance information
 
-Public information about an alliance  ---  This route is cached for up to 3600 seconds
+Public information about an alliance  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/alliances/{alliance_id}/)
 
 ### Required Parameters
 
@@ -169,7 +169,7 @@ No authorization required
 > []GetAlliancesNames200Ok GetAlliancesNames(ctx, allianceIds, optional)
 Get alliance names
 
-Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds
+Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/alliances/names/)
 
 ### Required Parameters
 

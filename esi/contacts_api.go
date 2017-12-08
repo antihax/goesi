@@ -43,7 +43,7 @@ var (
 type ContactsApiService service
 
 /* ContactsApiService Delete contacts
-Bulk delete contacts  ---
+Bulk delete contacts  ---  [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#DELETE-/characters/{character_id}/contacts/)
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID

@@ -43,7 +43,7 @@ var (
 type CorporationApiService service
 
 /* CorporationApiService Get corporation information
-Public information about a corporation  ---  This route is cached for up to 3600 seconds
+Public information about a corporation  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/)
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID
@@ -896,7 +896,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 }
 
 /* CorporationApiService Get corporation members
-Read the current list of members if the calling character is a member.  ---  This route is cached for up to 3600 seconds
+Read the current list of members if the calling character is a member.  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/members/)
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID
@@ -2274,7 +2274,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 }
 
 /* CorporationApiService Get corporation names
-Resolve a set of corporation IDs to corporation names  ---  This route is cached for up to 3600 seconds
+Resolve a set of corporation IDs to corporation names  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/names/)
 
 * @param ctx context.Context Authentication Context
 @param corporationIds A comma separated list of corporation IDs

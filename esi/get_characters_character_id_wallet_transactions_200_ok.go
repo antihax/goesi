@@ -37,7 +37,7 @@ type GetCharactersCharacterIdWalletTransactions200Ok struct {
 	Date          time.Time `json:"date,omitempty"`           /* Date and time of transaction */
 	TypeId        int32     `json:"type_id,omitempty"`        /* type_id integer */
 	LocationId    int64     `json:"location_id,omitempty"`    /* location_id integer */
-	UnitPrice     float32   `json:"unit_price,omitempty"`     /* Amount paid per unit */
+	UnitPrice     float64   `json:"unit_price,omitempty"`     /* Amount paid per unit */
 	Quantity      int32     `json:"quantity,omitempty"`       /* quantity integer */
 	ClientId      int32     `json:"client_id,omitempty"`      /* client_id integer */
 	IsBuy         bool      `json:"is_buy,omitempty"`         /* is_buy boolean */

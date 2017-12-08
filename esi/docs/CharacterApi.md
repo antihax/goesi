@@ -424,7 +424,7 @@ No authorization required
 > []string GetCharactersCharacterIdRoles(ctx, characterId, optional)
 Get character corporation roles
 
-Returns a character's corporation roles  ---  This route is cached for up to 3600 seconds
+Returns a character's corporation roles  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/roles/)
 
 ### Required Parameters
 
@@ -622,7 +622,7 @@ No authorization required
 > PostCharactersCharacterIdCspaCreated PostCharactersCharacterIdCspa(ctx, characterId, characters, optional)
 Calculate a CSPA charge cost
 
-Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  --- 
+Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  ---  [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#POST-/characters/{character_id}/cspa/)
 
 ### Required Parameters
 

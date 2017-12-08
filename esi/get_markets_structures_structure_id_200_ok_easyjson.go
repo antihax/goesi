@@ -116,7 +116,7 @@ func easyjson9551bd61DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetM
 		case "min_volume":
 			out.MinVolume = int32(in.Int32())
 		case "price":
-			out.Price = float32(in.Float32())
+			out.Price = float64(in.Float64())
 		case "is_buy_order":
 			out.IsBuyOrder = bool(in.Bool())
 		case "duration":
@@ -209,7 +209,7 @@ func easyjson9551bd61EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Price))
+		out.Float64(float64(in.Price))
 	}
 	if in.IsBuyOrder {
 		const prefix string = ",\"is_buy_order\":"

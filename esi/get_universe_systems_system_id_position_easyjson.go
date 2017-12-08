@@ -27,7 +27,7 @@ func easyjson3c5fedd3DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetUn
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetUniverseSystemsSystemIdPositionList, 0, 5)
+				*out = make(GetUniverseSystemsSystemIdPositionList, 0, 2)
 			} else {
 				*out = GetUniverseSystemsSystemIdPositionList{}
 			}
@@ -104,11 +104,11 @@ func easyjson3c5fedd3DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 		}
 		switch key {
 		case "x":
-			out.X = float32(in.Float32())
+			out.X = float64(in.Float64())
 		case "y":
-			out.Y = float32(in.Float32())
+			out.Y = float64(in.Float64())
 		case "z":
-			out.Z = float32(in.Float32())
+			out.Z = float64(in.Float64())
 		default:
 			in.SkipRecursive()
 		}
@@ -131,7 +131,7 @@ func easyjson3c5fedd3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.X))
+		out.Float64(float64(in.X))
 	}
 	if in.Y != 0 {
 		const prefix string = ",\"y\":"
@@ -141,7 +141,7 @@ func easyjson3c5fedd3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Y))
+		out.Float64(float64(in.Y))
 	}
 	if in.Z != 0 {
 		const prefix string = ",\"z\":"
@@ -151,7 +151,7 @@ func easyjson3c5fedd3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Z))
+		out.Float64(float64(in.Z))
 	}
 	out.RawByte('}')
 }

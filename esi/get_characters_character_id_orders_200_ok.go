@@ -39,7 +39,7 @@ type GetCharactersCharacterIdOrders200Ok struct {
 	LocationId   int64     `json:"location_id,omitempty"`   /* ID of the location where order was placed */
 	Range_       string    `json:"range,omitempty"`         /* Valid order range, numbers are ranges in jumps */
 	IsBuyOrder   bool      `json:"is_buy_order,omitempty"`  /* True for a bid (buy) order. False for an offer (sell) order */
-	Price        float32   `json:"price,omitempty"`         /* Cost per unit for this order */
+	Price        float64   `json:"price,omitempty"`         /* Cost per unit for this order */
 	VolumeTotal  int32     `json:"volume_total,omitempty"`  /* Quantity of items required or offered at time order was placed */
 	VolumeRemain int32     `json:"volume_remain,omitempty"` /* Quantity of items still required or offered */
 	Issued       time.Time `json:"issued,omitempty"`        /* Date and time when this order was issued */

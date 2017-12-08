@@ -969,7 +969,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 }
 
 /* CharacterApiService Get character corporation roles
-Returns a character&#39;s corporation roles  ---  This route is cached for up to 3600 seconds
+Returns a character&#39;s corporation roles  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/roles/)
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -1432,7 +1432,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 }
 
 /* CharacterApiService Calculate a CSPA charge cost
-Takes a source character ID in the url and a set of target character ID&#39;s in the body, returns a CSPA charge cost  ---
+Takes a source character ID in the url and a set of target character ID&#39;s in the body, returns a CSPA charge cost  ---  [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#POST-/characters/{character_id}/cspa/)
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **LocationId** | **int64** | ID of the location where order was placed | [default to null]
 **Range_** | **string** | Valid order range, numbers are ranges in jumps | [default to null]
 **IsBuyOrder** | **bool** | True for a bid (buy) order. False for an offer (sell) order | [default to null]
-**Price** | **float32** | Cost per unit for this order | [default to null]
+**Price** | **float64** | Cost per unit for this order | [default to null]
 **VolumeTotal** | **int32** | Quantity of items required or offered at time order was placed | [default to null]
 **VolumeRemain** | **int32** | Quantity of items still required or offered | [default to null]
 **Issued** | [**time.Time**](time.Time.md) | Date and time when this order was issued | [default to null]

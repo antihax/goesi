@@ -230,7 +230,7 @@ func (a *SkillsApiService) GetCharactersCharacterIdSkillqueue(ctx context.Contex
 }
 
 /* SkillsApiService Get character skills
-List all trained skills for the given character  ---  This route is cached for up to 120 seconds
+List all trained skills for the given character  ---  This route is cached for up to 120 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/skills/)
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID

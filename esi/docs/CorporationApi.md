@@ -36,7 +36,7 @@ Method | HTTP request | Description
 > GetCorporationsCorporationIdOk GetCorporationsCorporationId(ctx, corporationId, optional)
 Get corporation information
 
-Public information about a corporation  ---  This route is cached for up to 3600 seconds
+Public information about a corporation  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/)
 
 ### Required Parameters
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdMembers200Ok GetCorporationsCorporationIdMembers(ctx, corporationId, optional)
 Get corporation members
 
-Read the current list of members if the calling character is a member.  ---  This route is cached for up to 3600 seconds
+Read the current list of members if the calling character is a member.  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/members/)
 
 ### Required Parameters
 
@@ -971,7 +971,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsNames200Ok GetCorporationsNames(ctx, corporationIds, optional)
 Get corporation names
 
-Resolve a set of corporation IDs to corporation names  ---  This route is cached for up to 3600 seconds
+Resolve a set of corporation IDs to corporation names  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/names/)
 
 ### Required Parameters
 

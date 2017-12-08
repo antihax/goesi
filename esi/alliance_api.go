@@ -128,7 +128,7 @@ func (a *AllianceApiService) GetAlliances(ctx context.Context, localVarOptionals
 }
 
 /* AllianceApiService Get alliance information
-Public information about an alliance  ---  This route is cached for up to 3600 seconds
+Public information about an alliance  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/alliances/{alliance_id}/)
 
 * @param ctx context.Context Authentication Context
 @param allianceId An EVE alliance ID
@@ -389,7 +389,7 @@ func (a *AllianceApiService) GetAlliancesAllianceIdIcons(ctx context.Context, al
 }
 
 /* AllianceApiService Get alliance names
-Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds
+Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/alliances/names/)
 
 * @param ctx context.Context Authentication Context
 @param allianceIds A comma separated list of alliance IDs

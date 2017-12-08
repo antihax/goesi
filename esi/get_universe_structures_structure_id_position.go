@@ -29,7 +29,7 @@ type GetUniverseStructuresStructureIdPositionList []GetUniverseStructuresStructu
 /* Coordinates of the structure in Cartesian space relative to the Sun, in metres.  */
 //easyjson:json
 type GetUniverseStructuresStructureIdPosition struct {
-	X float32 `json:"x,omitempty"` /* x number */
-	Y float32 `json:"y,omitempty"` /* y number */
-	Z float32 `json:"z,omitempty"` /* z number */
+	X float64 `json:"x,omitempty"` /* x number */
+	Y float64 `json:"y,omitempty"` /* y number */
+	Z float64 `json:"z,omitempty"` /* z number */
 }

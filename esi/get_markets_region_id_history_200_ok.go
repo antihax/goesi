@@ -32,7 +32,7 @@ type GetMarketsRegionIdHistory200Ok struct {
 	Date       string  `json:"date,omitempty"`        /* The date of this historical statistic entry */
 	OrderCount int64   `json:"order_count,omitempty"` /* Total number of orders happened that day */
 	Volume     int64   `json:"volume,omitempty"`      /* Total */
-	Highest    float32 `json:"highest,omitempty"`     /* highest number */
-	Average    float32 `json:"average,omitempty"`     /* average number */
-	Lowest     float32 `json:"lowest,omitempty"`      /* lowest number */
+	Highest    float64 `json:"highest,omitempty"`     /* highest number */
+	Average    float64 `json:"average,omitempty"`     /* average number */
+	Lowest     float64 `json:"lowest,omitempty"`      /* lowest number */
 }

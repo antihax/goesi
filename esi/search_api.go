@@ -42,7 +42,7 @@ var (
 type SearchApiService service
 
 /* SearchApiService Search on a string
-Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds
+Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/search/)
 
 * @param ctx context.Context Authentication Context
 @param categories Type of entities to search for
@@ -163,7 +163,7 @@ func (a *SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, c
 }
 
 /* SearchApiService Search on a string
-Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds
+Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/search/)
 
 * @param ctx context.Context Authentication Context
 @param categories Type of entities to search for

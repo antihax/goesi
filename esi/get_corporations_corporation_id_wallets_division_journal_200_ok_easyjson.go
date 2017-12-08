@@ -120,15 +120,15 @@ func easyjson4a0bdca4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "second_party_type":
 			out.SecondPartyType = string(in.String())
 		case "amount":
-			out.Amount = float32(in.Float32())
+			out.Amount = float64(in.Float64())
 		case "balance":
-			out.Balance = float32(in.Float32())
+			out.Balance = float64(in.Float64())
 		case "reason":
 			out.Reason = string(in.String())
 		case "tax_reciever_id":
 			out.TaxRecieverId = int32(in.Int32())
 		case "tax":
-			out.Tax = float32(in.Float32())
+			out.Tax = float64(in.Float64())
 		case "extra_info":
 			(out.ExtraInfo).UnmarshalEasyJSON(in)
 		default:
@@ -223,7 +223,7 @@ func easyjson4a0bdca4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Amount))
+		out.Float64(float64(in.Amount))
 	}
 	if in.Balance != 0 {
 		const prefix string = ",\"balance\":"
@@ -233,7 +233,7 @@ func easyjson4a0bdca4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Balance))
+		out.Float64(float64(in.Balance))
 	}
 	if in.Reason != "" {
 		const prefix string = ",\"reason\":"
@@ -263,7 +263,7 @@ func easyjson4a0bdca4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Tax))
+		out.Float64(float64(in.Tax))
 	}
 	if true {
 		const prefix string = ",\"extra_info\":"

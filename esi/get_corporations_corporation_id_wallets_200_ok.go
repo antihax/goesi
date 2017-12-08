@@ -30,5 +30,5 @@ type GetCorporationsCorporationIdWallets200OkList []GetCorporationsCorporationId
 //easyjson:json
 type GetCorporationsCorporationIdWallets200Ok struct {
 	Division int32   `json:"division,omitempty"` /* division integer */
-	Balance  float32 `json:"balance,omitempty"`  /* balance number */
+	Balance  float64 `json:"balance,omitempty"`  /* balance number */
 }

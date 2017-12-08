@@ -114,7 +114,7 @@ func easyjsonD831633DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCh
 		case "location_id":
 			out.LocationId = int64(in.Int64())
 		case "unit_price":
-			out.UnitPrice = float32(in.Float32())
+			out.UnitPrice = float64(in.Float64())
 		case "quantity":
 			out.Quantity = int32(in.Int32())
 		case "client_id":
@@ -187,7 +187,7 @@ func easyjsonD831633EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.UnitPrice))
+		out.Float64(float64(in.UnitPrice))
 	}
 	if in.Quantity != 0 {
 		const prefix string = ",\"quantity\":"

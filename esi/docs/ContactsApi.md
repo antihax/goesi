@@ -17,7 +17,7 @@ Method | HTTP request | Description
 > DeleteCharactersCharacterIdContacts(ctx, characterId, contactIds, optional)
 Delete contacts
 
-Bulk delete contacts  --- 
+Bulk delete contacts  ---  [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#DELETE-/characters/{character_id}/contacts/)
 
 ### Required Parameters
 

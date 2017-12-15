@@ -114,7 +114,7 @@ func easyjson455ec14aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "kills":
 			(out.Kills).UnmarshalEasyJSON(in)
 		case "victory_points":
-			easyjson455ec14aDecodeGithubComAntihaxGoesiEsi2(in, &out.VictoryPoints)
+			(out.VictoryPoints).UnmarshalEasyJSON(in)
 		default:
 			in.SkipRecursive()
 		}
@@ -177,7 +177,7 @@ func easyjson455ec14aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson455ec14aEncodeGithubComAntihaxGoesiEsi2(out, in.VictoryPoints)
+		(in.VictoryPoints).MarshalEasyJSON(out)
 	}
 	out.RawByte('}')
 }
@@ -204,75 +204,4 @@ func (v *GetCorporationsCorporationIdFwStatsOk) UnmarshalJSON(data []byte) error
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCorporationsCorporationIdFwStatsOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson455ec14aDecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson455ec14aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdFwStatsVictoryPoints) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "yesterday":
-			out.Yesterday = int32(in.Int32())
-		case "last_week":
-			out.LastWeek = int32(in.Int32())
-		case "total":
-			out.Total = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson455ec14aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdFwStatsVictoryPoints) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Yesterday != 0 {
-		const prefix string = ",\"yesterday\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Yesterday))
-	}
-	if in.LastWeek != 0 {
-		const prefix string = ",\"last_week\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.LastWeek))
-	}
-	if in.Total != 0 {
-		const prefix string = ",\"total\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Total))
-	}
-	out.RawByte('}')
 }

@@ -126,9 +126,9 @@ func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetW
 		case "open_for_allies":
 			out.OpenForAllies = bool(in.Bool())
 		case "aggressor":
-			(out.Aggressor).UnmarshalEasyJSON(in)
+			easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi2(in, &out.Aggressor)
 		case "defender":
-			easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi2(in, &out.Defender)
+			easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi3(in, &out.Defender)
 		case "allies":
 			if in.IsNull() {
 				in.Skip()
@@ -146,7 +146,7 @@ func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetW
 				}
 				for !in.IsDelim(']') {
 					var v4 GetWarsWarIdAlly
-					easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi3(in, &v4)
+					easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi4(in, &v4)
 					out.Allies = append(out.Allies, v4)
 					in.WantComma()
 				}
@@ -244,7 +244,7 @@ func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Aggressor).MarshalEasyJSON(out)
+		easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi2(out, in.Aggressor)
 	}
 	if true {
 		const prefix string = ",\"defender\":"
@@ -254,7 +254,7 @@ func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi2(out, in.Defender)
+		easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi3(out, in.Defender)
 	}
 	if len(in.Allies) != 0 {
 		const prefix string = ",\"allies\":"
@@ -270,7 +270,7 @@ func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi3(out, v6)
+				easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi4(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -301,7 +301,7 @@ func (v *GetWarsWarIdOk) UnmarshalJSON(data []byte) error {
 func (v *GetWarsWarIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetWarsWarIdAlly) {
+func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetWarsWarIdAlly) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -334,7 +334,7 @@ func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetW
 		in.Consumed()
 	}
 }
-func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetWarsWarIdAlly) {
+func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetWarsWarIdAlly) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -360,7 +360,7 @@ func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	}
 	out.RawByte('}')
 }
-func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetWarsWarIdDefender) {
+func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetWarsWarIdDefender) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -397,7 +397,90 @@ func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetW
 		in.Consumed()
 	}
 }
-func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetWarsWarIdDefender) {
+func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetWarsWarIdDefender) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.CorporationId != 0 {
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CorporationId))
+	}
+	if in.AllianceId != 0 {
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.ShipsKilled != 0 {
+		const prefix string = ",\"ships_killed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ShipsKilled))
+	}
+	if in.IskDestroyed != 0 {
+		const prefix string = ",\"isk_destroyed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.IskDestroyed))
+	}
+	out.RawByte('}')
+}
+func easyjson45a5fe98DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetWarsWarIdAggressor) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "ships_killed":
+			out.ShipsKilled = int32(in.Int32())
+		case "isk_destroyed":
+			out.IskDestroyed = float32(in.Float32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson45a5fe98EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetWarsWarIdAggressor) {
 	out.RawByte('{')
 	first := true
 	_ = first

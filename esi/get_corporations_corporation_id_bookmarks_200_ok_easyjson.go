@@ -122,7 +122,7 @@ func easyjsonD2aca637DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "item":
 			easyjsonD2aca637DecodeGithubComAntihaxGoesiEsi2(in, &out.Item)
 		case "coordinates":
-			(out.Coordinates).UnmarshalEasyJSON(in)
+			easyjsonD2aca637DecodeGithubComAntihaxGoesiEsi3(in, &out.Coordinates)
 		default:
 			in.SkipRecursive()
 		}
@@ -225,7 +225,7 @@ func easyjsonD2aca637EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Coordinates).MarshalEasyJSON(out)
+		easyjsonD2aca637EncodeGithubComAntihaxGoesiEsi3(out, in.Coordinates)
 	}
 	out.RawByte('}')
 }
@@ -252,6 +252,77 @@ func (v *GetCorporationsCorporationIdBookmarks200Ok) UnmarshalJSON(data []byte) 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCorporationsCorporationIdBookmarks200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonD2aca637DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjsonD2aca637DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCorporationsCorporationIdBookmarksCoordinates) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "x":
+			out.X = float64(in.Float64())
+		case "y":
+			out.Y = float64(in.Float64())
+		case "z":
+			out.Z = float64(in.Float64())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonD2aca637EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCorporationsCorporationIdBookmarksCoordinates) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.X != 0 {
+		const prefix string = ",\"x\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.X))
+	}
+	if in.Y != 0 {
+		const prefix string = ",\"y\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.Y))
+	}
+	if in.Z != 0 {
+		const prefix string = ",\"z\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.Z))
+	}
+	out.RawByte('}')
 }
 func easyjsonD2aca637DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdBookmarksItem) {
 	isTopLevel := in.IsStart()

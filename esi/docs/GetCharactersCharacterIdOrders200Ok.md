@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **AccountId** | **int32** | Wallet division for the buyer or seller of this order. Always 1000 for characters. Currently 1000 through 1006 for corporations | [default to null]
 **Duration** | **int32** | Numer of days for which order is valid (starting from the issued date). An order expires at time issued + duration | [default to null]
 **IsCorp** | **bool** | is_corp boolean | [default to null]
-**Escrow** | **float32** | For buy orders, the amount of ISK in escrow | [default to null]
+**Escrow** | **float64** | For buy orders, the amount of ISK in escrow | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -47,5 +47,5 @@ type GetCorporationsCorporationIdOrders200Ok struct {
 	MinVolume      int32     `json:"min_volume,omitempty"`      /* For bids (buy orders), the minimum quantity that will be accepted in a matching offer (sell order) */
 	WalletDivision int32     `json:"wallet_division,omitempty"` /* Wallet division of which this order used */
 	Duration       int32     `json:"duration,omitempty"`        /* Numer of days for which order is valid (starting from the issued date). An order expires at time issued + duration */
-	Escrow         float32   `json:"escrow,omitempty"`          /* For buy orders, the amount of ISK in escrow */
+	Escrow         float64   `json:"escrow,omitempty"`          /* For buy orders, the amount of ISK in escrow */
 }

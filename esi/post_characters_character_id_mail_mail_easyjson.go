@@ -120,7 +120,7 @@ func easyjson71405a3bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v4 PostCharactersCharacterIdMailRecipient
-					(v4).UnmarshalEasyJSON(in)
+					easyjson71405a3bDecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Recipients = append(out.Recipients, v4)
 					in.WantComma()
 				}
@@ -160,7 +160,7 @@ func easyjson71405a3bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjson71405a3bEncodeGithubComAntihaxGoesiEsi2(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -220,4 +220,63 @@ func (v *PostCharactersCharacterIdMailMail) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *PostCharactersCharacterIdMailMail) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson71405a3bDecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson71405a3bDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *PostCharactersCharacterIdMailRecipient) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "recipient_type":
+			out.RecipientType = string(in.String())
+		case "recipient_id":
+			out.RecipientId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson71405a3bEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in PostCharactersCharacterIdMailRecipient) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.RecipientType != "" {
+		const prefix string = ",\"recipient_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.RecipientType))
+	}
+	if in.RecipientId != 0 {
+		const prefix string = ",\"recipient_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.RecipientId))
+	}
+	out.RawByte('}')
 }

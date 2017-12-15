@@ -43,7 +43,7 @@ type GetCorporationsCorporationIdIndustryJobs200Ok struct {
 	BlueprintLocationId  int64     `json:"blueprint_location_id,omitempty"`  /* Location ID of the location from which the blueprint was installed. Normally a station ID, but can also be an asset (e.g. container) or corporation facility */
 	OutputLocationId     int64     `json:"output_location_id,omitempty"`     /* Location ID of the location to which the output of the job will be delivered. Normally a station ID, but can also be a corporation facility */
 	Runs                 int32     `json:"runs,omitempty"`                   /* Number of runs for a manufacturing job, or number of copies to make for a blueprint copy */
-	Cost                 float32   `json:"cost,omitempty"`                   /* The sume of job installation fee and industry facility tax */
+	Cost                 float64   `json:"cost,omitempty"`                   /* The sume of job installation fee and industry facility tax */
 	LicensedRuns         int32     `json:"licensed_runs,omitempty"`          /* Number of runs blueprint is licensed for */
 	Probability          float32   `json:"probability,omitempty"`            /* Chance of success for invention */
 	ProductTypeId        int32     `json:"product_type_id,omitempty"`        /* Type ID of product (manufactured, copied or invented) */

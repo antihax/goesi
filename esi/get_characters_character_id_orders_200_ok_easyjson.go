@@ -136,7 +136,7 @@ func easyjson416deacbDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "is_corp":
 			out.IsCorp = bool(in.Bool())
 		case "escrow":
-			out.Escrow = float32(in.Float32())
+			out.Escrow = float64(in.Float64())
 		default:
 			in.SkipRecursive()
 		}
@@ -309,7 +309,7 @@ func easyjson416deacbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Escrow))
+		out.Float64(float64(in.Escrow))
 	}
 	out.RawByte('}')
 }

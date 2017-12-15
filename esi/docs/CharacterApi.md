@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**GetCharactersCharacterIdPortrait**](CharacterApi.md#GetCharactersCharacterIdPortrait) | **Get** /v2/characters/{character_id}/portrait/ | Get character portraits
 [**GetCharactersCharacterIdRoles**](CharacterApi.md#GetCharactersCharacterIdRoles) | **Get** /v1/characters/{character_id}/roles/ | Get character corporation roles
 [**GetCharactersCharacterIdStandings**](CharacterApi.md#GetCharactersCharacterIdStandings) | **Get** /v1/characters/{character_id}/standings/ | Get standings
+[**GetCharactersCharacterIdStats**](CharacterApi.md#GetCharactersCharacterIdStats) | **Get** /v1/characters/{character_id}/stats/ | Yearly aggregate stats
 [**GetCharactersCharacterIdTitles**](CharacterApi.md#GetCharactersCharacterIdTitles) | **Get** /v1/characters/{character_id}/titles/ | Get character corporation titles
 [**GetCharactersNames**](CharacterApi.md#GetCharactersNames) | **Get** /v1/characters/names/ | Get character names
 [**PostCharactersAffiliation**](CharacterApi.md#PostCharactersAffiliation) | **Post** /v1/characters/affiliation/ | Character affiliation
@@ -488,6 +489,46 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]GetCharactersCharacterIdStandings200Ok**](get_characters_character_id_standings_200_ok.md)
+
+### Authorization
+
+[evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCharactersCharacterIdStats**
+> []GetCharactersCharacterIdStats200Ok GetCharactersCharacterIdStats(ctx, characterId, optional)
+Yearly aggregate stats
+
+Returns aggregate yearly stats for a character  ---  This route is cached for up to 86400 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/stats/)
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+  **characterId** | **int32**| An EVE character ID | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **characterId** | **int32**| An EVE character ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **token** | **string**| Access token to use if unable to set a header | 
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**[]GetCharactersCharacterIdStats200Ok**](get_characters_character_id_stats_200_ok.md)
 
 ### Authorization
 

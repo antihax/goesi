@@ -146,13 +146,13 @@ func easyjson36782af9DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.AddError((out.DateCompleted).UnmarshalJSON(data))
 			}
 		case "price":
-			out.Price = float32(in.Float32())
+			out.Price = float64(in.Float64())
 		case "reward":
-			out.Reward = float32(in.Float32())
+			out.Reward = float64(in.Float64())
 		case "collateral":
-			out.Collateral = float32(in.Float32())
+			out.Collateral = float64(in.Float64())
 		case "buyout":
-			out.Buyout = float32(in.Float32())
+			out.Buyout = float64(in.Float64())
 		case "volume":
 			out.Volume = float32(in.Float32())
 		default:
@@ -347,7 +347,7 @@ func easyjson36782af9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Price))
+		out.Float64(float64(in.Price))
 	}
 	if in.Reward != 0 {
 		const prefix string = ",\"reward\":"
@@ -357,7 +357,7 @@ func easyjson36782af9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Reward))
+		out.Float64(float64(in.Reward))
 	}
 	if in.Collateral != 0 {
 		const prefix string = ",\"collateral\":"
@@ -367,7 +367,7 @@ func easyjson36782af9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Collateral))
+		out.Float64(float64(in.Collateral))
 	}
 	if in.Buyout != 0 {
 		const prefix string = ",\"buyout\":"
@@ -377,7 +377,7 @@ func easyjson36782af9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Buyout))
+		out.Float64(float64(in.Buyout))
 	}
 	if in.Volume != 0 {
 		const prefix string = ",\"volume\":"

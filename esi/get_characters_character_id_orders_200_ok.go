@@ -48,5 +48,5 @@ type GetCharactersCharacterIdOrders200Ok struct {
 	AccountId    int32     `json:"account_id,omitempty"`    /* Wallet division for the buyer or seller of this order. Always 1000 for characters. Currently 1000 through 1006 for corporations */
 	Duration     int32     `json:"duration,omitempty"`      /* Numer of days for which order is valid (starting from the issued date). An order expires at time issued + duration */
 	IsCorp       bool      `json:"is_corp,omitempty"`       /* is_corp boolean */
-	Escrow       float32   `json:"escrow,omitempty"`        /* For buy orders, the amount of ISK in escrow */
+	Escrow       float64   `json:"escrow,omitempty"`        /* For buy orders, the amount of ISK in escrow */
 }

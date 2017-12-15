@@ -122,7 +122,7 @@ func easyjsonDb6fb9f8DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetI
 				}
 				for !in.IsDelim(']') {
 					var v4 GetIndustrySystemsCostIndice
-					easyjsonDb6fb9f8DecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.CostIndices = append(out.CostIndices, v4)
 					in.WantComma()
 				}
@@ -166,7 +166,7 @@ func easyjsonDb6fb9f8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonDb6fb9f8EncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -196,63 +196,4 @@ func (v *GetIndustrySystems200Ok) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetIndustrySystems200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonDb6fb9f8DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjsonDb6fb9f8DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetIndustrySystemsCostIndice) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "activity":
-			out.Activity = string(in.String())
-		case "cost_index":
-			out.CostIndex = float32(in.Float32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonDb6fb9f8EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetIndustrySystemsCostIndice) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Activity != "" {
-		const prefix string = ",\"activity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Activity))
-	}
-	if in.CostIndex != 0 {
-		const prefix string = ",\"cost_index\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.CostIndex))
-	}
-	out.RawByte('}')
 }

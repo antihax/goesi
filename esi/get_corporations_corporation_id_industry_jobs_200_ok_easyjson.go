@@ -124,7 +124,7 @@ func easyjson7154b1a9DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "runs":
 			out.Runs = int32(in.Int32())
 		case "cost":
-			out.Cost = float32(in.Float32())
+			out.Cost = float64(in.Float64())
 		case "licensed_runs":
 			out.LicensedRuns = int32(in.Int32())
 		case "probability":
@@ -277,7 +277,7 @@ func easyjson7154b1a9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Cost))
+		out.Float64(float64(in.Cost))
 	}
 	if in.LicensedRuns != 0 {
 		const prefix string = ",\"licensed_runs\":"

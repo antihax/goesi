@@ -130,7 +130,7 @@ func easyjson53553d35DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetL
 				}
 				for !in.IsDelim(']') {
 					var v4 GetLoyaltyStoresCorporationIdOffersRequiredItem
-					easyjson53553d35DecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.RequiredItems = append(out.RequiredItems, v4)
 					in.WantComma()
 				}
@@ -214,7 +214,7 @@ func easyjson53553d35EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson53553d35EncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -244,63 +244,4 @@ func (v *GetLoyaltyStoresCorporationIdOffers200Ok) UnmarshalJSON(data []byte) er
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetLoyaltyStoresCorporationIdOffers200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson53553d35DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson53553d35DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetLoyaltyStoresCorporationIdOffersRequiredItem) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "quantity":
-			out.Quantity = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson53553d35EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetLoyaltyStoresCorporationIdOffersRequiredItem) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
-	if in.Quantity != 0 {
-		const prefix string = ",\"quantity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Quantity))
-	}
-	out.RawByte('}')
 }

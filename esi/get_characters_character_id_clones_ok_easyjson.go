@@ -108,7 +108,7 @@ func easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.AddError((out.LastJumpDate).UnmarshalJSON(data))
 			}
 		case "home_location":
-			(out.HomeLocation).UnmarshalEasyJSON(in)
+			easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi2(in, &out.HomeLocation)
 		case "jump_clones":
 			if in.IsNull() {
 				in.Skip()
@@ -126,7 +126,7 @@ func easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCharactersCharacterIdClonesJumpClone
-					(v4).UnmarshalEasyJSON(in)
+					easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi3(in, &v4)
 					out.JumpClones = append(out.JumpClones, v4)
 					in.WantComma()
 				}
@@ -164,7 +164,7 @@ func easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.HomeLocation).MarshalEasyJSON(out)
+		easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi2(out, in.HomeLocation)
 	}
 	if len(in.JumpClones) != 0 {
 		const prefix string = ",\"jump_clones\":"
@@ -180,7 +180,7 @@ func easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi3(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -210,4 +210,164 @@ func (v *GetCharactersCharacterIdClonesOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCharactersCharacterIdClonesOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdClonesJumpClone) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "location_id":
+			out.LocationId = int64(in.Int64())
+		case "location_type":
+			out.LocationType = string(in.String())
+		case "implants":
+			if in.IsNull() {
+				in.Skip()
+				out.Implants = nil
+			} else {
+				in.Delim('[')
+				if out.Implants == nil {
+					if !in.IsDelim(']') {
+						out.Implants = make([]int32, 0, 16)
+					} else {
+						out.Implants = []int32{}
+					}
+				} else {
+					out.Implants = (out.Implants)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v7 int32
+					v7 = int32(in.Int32())
+					out.Implants = append(out.Implants, v7)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdClonesJumpClone) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.LocationId != 0 {
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.LocationId))
+	}
+	if in.LocationType != "" {
+		const prefix string = ",\"location_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.LocationType))
+	}
+	if len(in.Implants) != 0 {
+		const prefix string = ",\"implants\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v8, v9 := range in.Implants {
+				if v8 > 0 {
+					out.RawByte(',')
+				}
+				out.Int32(int32(v9))
+			}
+			out.RawByte(']')
+		}
+	}
+	out.RawByte('}')
+}
+func easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdClonesHomeLocation) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "location_id":
+			out.LocationId = int64(in.Int64())
+		case "location_type":
+			out.LocationType = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdClonesHomeLocation) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.LocationId != 0 {
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.LocationId))
+	}
+	if in.LocationType != "" {
+		const prefix string = ",\"location_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.LocationType))
+	}
+	out.RawByte('}')
 }

@@ -50,9 +50,9 @@ type GetCharactersCharacterIdContracts200Ok struct {
 	DateAccepted        time.Time `json:"date_accepted,omitempty"`         /* Date of confirmation of contract */
 	DaysToComplete      int32     `json:"days_to_complete,omitempty"`      /* Number of days to perform the contract */
 	DateCompleted       time.Time `json:"date_completed,omitempty"`        /* Date of completed of contract */
-	Price               float32   `json:"price,omitempty"`                 /* Price of contract (for ItemsExchange and Auctions) */
-	Reward              float32   `json:"reward,omitempty"`                /* Remuneration for contract (for Couriers only) */
-	Collateral          float32   `json:"collateral,omitempty"`            /* Collateral price (for Couriers only) */
-	Buyout              float32   `json:"buyout,omitempty"`                /* Buyout price (for Auctions only) */
+	Price               float64   `json:"price,omitempty"`                 /* Price of contract (for ItemsExchange and Auctions) */
+	Reward              float64   `json:"reward,omitempty"`                /* Remuneration for contract (for Couriers only) */
+	Collateral          float64   `json:"collateral,omitempty"`            /* Collateral price (for Couriers only) */
+	Buyout              float64   `json:"buyout,omitempty"`                /* Buyout price (for Auctions only) */
 	Volume              float32   `json:"volume,omitempty"`                /* Volume of items in the contract */
 }

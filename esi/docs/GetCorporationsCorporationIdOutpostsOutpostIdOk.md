@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **ReprocessingEfficiency** | **float32** | reprocessing_efficiency number | [default to null]
 **ReprocessingStationTake** | **float32** | reprocessing_station_take number | [default to null]
 **StandingOwnerId** | **int32** | The owner ID that sets the ability for someone to dock based on standings. | [default to null]
-**Coordinates** | [**GetCorporationsCorporationIdOutpostsOutpostIdCoordinates**](get_corporations_corporation_id_outposts_outpost_id_coordinates.md) |  | [optional] [default to null]
+**Coordinates** | [**GetCorporationsCorporationIdOutpostsOutpostIdCoordinates**](get_corporations_corporation_id_outposts_outpost_id_coordinates.md) |  | [default to null]
 **Services** | [**[]GetCorporationsCorporationIdOutpostsOutpostIdService**](get_corporations_corporation_id_outposts_outpost_id_service.md) | A list of services the given outpost provides | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Owner** | **int32** | ID of the corporation that controls this station | [optional] [default to null]
 **TypeId** | **int32** | type_id integer | [default to null]
 **RaceId** | **int32** | race_id integer | [optional] [default to null]
-**Position** | [**GetUniverseStationsStationIdPosition**](get_universe_stations_station_id_position.md) |  | [optional] [default to null]
+**Position** | [**GetUniverseStationsStationIdPosition**](get_universe_stations_station_id_position.md) |  | [default to null]
 **SystemId** | **int32** | The solar system this station is in | [default to null]
 **ReprocessingEfficiency** | **float32** | reprocessing_efficiency number | [default to null]
 **ReprocessingStationsTake** | **float32** | reprocessing_stations_take number | [default to null]

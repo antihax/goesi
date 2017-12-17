@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **KillmailId** | **int32** | ID of the killmail | [default to null]
 **KillmailTime** | [**time.Time**](time.Time.md) | Time that the victim was killed and the killmail generated  | [default to null]
-**Victim** | [**GetKillmailsKillmailIdKillmailHashVictim**](get_killmails_killmail_id_killmail_hash_victim.md) |  | [optional] [default to null]
+**Victim** | [**GetKillmailsKillmailIdKillmailHashVictim**](get_killmails_killmail_id_killmail_hash_victim.md) |  | [default to null]
 **Attackers** | [**[]GetKillmailsKillmailIdKillmailHashAttacker**](get_killmails_killmail_id_killmail_hash_attacker.md) | attackers array | [default to null]
 **SolarSystemId** | **int32** | Solar system that the kill took place in  | [default to null]
 **MoonId** | **int32** | Moon if the kill took place at one | [optional] [default to null]

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCharactersCharacterIdAttributes**](SkillsApi.md#GetCharactersCharacterIdAttributes) | **Get** /v1/characters/{character_id}/attributes/ | Get character attributes
 [**GetCharactersCharacterIdSkillqueue**](SkillsApi.md#GetCharactersCharacterIdSkillqueue) | **Get** /v2/characters/{character_id}/skillqueue/ | Get character&#39;s skill queue
-[**GetCharactersCharacterIdSkills**](SkillsApi.md#GetCharactersCharacterIdSkills) | **Get** /v3/characters/{character_id}/skills/ | Get character skills
+[**GetCharactersCharacterIdSkills**](SkillsApi.md#GetCharactersCharacterIdSkills) | **Get** /v4/characters/{character_id}/skills/ | Get character skills
 
 
 # **GetCharactersCharacterIdAttributes**
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 > GetCharactersCharacterIdSkillsOk GetCharactersCharacterIdSkills(ctx, characterId, optional)
 Get character skills
 
-List all trained skills for the given character  ---  This route is cached for up to 120 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/skills/)
+List all trained skills for the given character  ---  This route is cached for up to 120 seconds
 
 ### Required Parameters
 

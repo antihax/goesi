@@ -4,7 +4,7 @@ All URIs are relative to *https://esi.tech.ccp.is*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCorporationsCorporationId**](CorporationApi.md#GetCorporationsCorporationId) | **Get** /v3/corporations/{corporation_id}/ | Get corporation information
+[**GetCorporationsCorporationId**](CorporationApi.md#GetCorporationsCorporationId) | **Get** /v4/corporations/{corporation_id}/ | Get corporation information
 [**GetCorporationsCorporationIdAlliancehistory**](CorporationApi.md#GetCorporationsCorporationIdAlliancehistory) | **Get** /v2/corporations/{corporation_id}/alliancehistory/ | Get alliance history
 [**GetCorporationsCorporationIdBlueprints**](CorporationApi.md#GetCorporationsCorporationIdBlueprints) | **Get** /v1/corporations/{corporation_id}/blueprints/ | Get corporation blueprints
 [**GetCorporationsCorporationIdContainersLogs**](CorporationApi.md#GetCorporationsCorporationIdContainersLogs) | **Get** /v1/corporations/{corporation_id}/containers/logs/ | Get all corporation ALSC logs
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**GetCorporationsCorporationIdIcons**](CorporationApi.md#GetCorporationsCorporationIdIcons) | **Get** /v1/corporations/{corporation_id}/icons/ | Get corporation icon
 [**GetCorporationsCorporationIdMedals**](CorporationApi.md#GetCorporationsCorporationIdMedals) | **Get** /v1/corporations/{corporation_id}/medals/ | Get corporation medals
 [**GetCorporationsCorporationIdMedalsIssued**](CorporationApi.md#GetCorporationsCorporationIdMedalsIssued) | **Get** /v1/corporations/{corporation_id}/medals/issued/ | Get corporation issued medals
-[**GetCorporationsCorporationIdMembers**](CorporationApi.md#GetCorporationsCorporationIdMembers) | **Get** /v2/corporations/{corporation_id}/members/ | Get corporation members
+[**GetCorporationsCorporationIdMembers**](CorporationApi.md#GetCorporationsCorporationIdMembers) | **Get** /v3/corporations/{corporation_id}/members/ | Get corporation members
 [**GetCorporationsCorporationIdMembersLimit**](CorporationApi.md#GetCorporationsCorporationIdMembersLimit) | **Get** /v1/corporations/{corporation_id}/members/limit/ | Get corporation member limit
 [**GetCorporationsCorporationIdMembersTitles**](CorporationApi.md#GetCorporationsCorporationIdMembersTitles) | **Get** /v1/corporations/{corporation_id}/members/titles/ | Get corporation&#39;s members&#39; titles
 [**GetCorporationsCorporationIdMembertracking**](CorporationApi.md#GetCorporationsCorporationIdMembertracking) | **Get** /v1/corporations/{corporation_id}/membertracking/ | Track corporation members
@@ -27,7 +27,7 @@ Method | HTTP request | Description
 [**GetCorporationsCorporationIdStarbasesStarbaseId**](CorporationApi.md#GetCorporationsCorporationIdStarbasesStarbaseId) | **Get** /v1/corporations/{corporation_id}/starbases/{starbase_id}/ | Get starbase (POS) detail
 [**GetCorporationsCorporationIdStructures**](CorporationApi.md#GetCorporationsCorporationIdStructures) | **Get** /v1/corporations/{corporation_id}/structures/ | Get corporation structures
 [**GetCorporationsCorporationIdTitles**](CorporationApi.md#GetCorporationsCorporationIdTitles) | **Get** /v1/corporations/{corporation_id}/titles/ | Get corporation titles
-[**GetCorporationsNames**](CorporationApi.md#GetCorporationsNames) | **Get** /v1/corporations/names/ | Get corporation names
+[**GetCorporationsNames**](CorporationApi.md#GetCorporationsNames) | **Get** /v2/corporations/names/ | Get corporation names
 [**GetCorporationsNpccorps**](CorporationApi.md#GetCorporationsNpccorps) | **Get** /v1/corporations/npccorps/ | Get npc corporations
 [**PutCorporationsCorporationIdStructuresStructureId**](CorporationApi.md#PutCorporationsCorporationIdStructuresStructureId) | **Put** /v1/corporations/{corporation_id}/structures/{structure_id}/ | Update structure vulnerability schedule
 
@@ -36,7 +36,7 @@ Method | HTTP request | Description
 > GetCorporationsCorporationIdOk GetCorporationsCorporationId(ctx, corporationId, optional)
 Get corporation information
 
-Public information about a corporation  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/)
+Public information about a corporation  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -394,10 +394,10 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCorporationsCorporationIdMembers**
-> []GetCorporationsCorporationIdMembers200Ok GetCorporationsCorporationIdMembers(ctx, corporationId, optional)
+> []int32 GetCorporationsCorporationIdMembers(ctx, corporationId, optional)
 Get corporation members
 
-Read the current list of members if the calling character is a member.  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/members/)
+Return the current member list of a corporation, the token's character need to be a member of the corporation.  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]GetCorporationsCorporationIdMembers200Ok**](get_corporations_corporation_id_members_200_ok.md)
+**[]int32**
 
 ### Authorization
 
@@ -971,14 +971,14 @@ Name | Type | Description  | Notes
 > []GetCorporationsNames200Ok GetCorporationsNames(ctx, corporationIds, optional)
 Get corporation names
 
-Resolve a set of corporation IDs to corporation names  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/names/)
+Resolve a set of corporation IDs to corporation names  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
-  **corporationIds** | [**[]int64**](int64.md)| A comma separated list of corporation IDs | 
+  **corporationIds** | [**[]int32**](int32.md)| A comma separated list of corporation IDs | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -986,7 +986,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **corporationIds** | [**[]int64**](int64.md)| A comma separated list of corporation IDs | 
+ **corporationIds** | [**[]int32**](int32.md)| A comma separated list of corporation IDs | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

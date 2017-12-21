@@ -241,25 +241,25 @@ func easyjsonA22f0592DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetS
 				}
 				in.Delim(']')
 			}
-		case "inventorytype":
+		case "inventory_type":
 			if in.IsNull() {
 				in.Skip()
-				out.Inventorytype = nil
+				out.InventoryType = nil
 			} else {
 				in.Delim('[')
-				if out.Inventorytype == nil {
+				if out.InventoryType == nil {
 					if !in.IsDelim(']') {
-						out.Inventorytype = make([]int32, 0, 16)
+						out.InventoryType = make([]int32, 0, 16)
 					} else {
-						out.Inventorytype = []int32{}
+						out.InventoryType = []int32{}
 					}
 				} else {
-					out.Inventorytype = (out.Inventorytype)[:0]
+					out.InventoryType = (out.InventoryType)[:0]
 				}
 				for !in.IsDelim(']') {
 					var v10 int32
 					v10 = int32(in.Int32())
-					out.Inventorytype = append(out.Inventorytype, v10)
+					out.InventoryType = append(out.InventoryType, v10)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -287,25 +287,25 @@ func easyjsonA22f0592DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetS
 				}
 				in.Delim(']')
 			}
-		case "solarsystem":
+		case "solar_system":
 			if in.IsNull() {
 				in.Skip()
-				out.Solarsystem = nil
+				out.SolarSystem = nil
 			} else {
 				in.Delim('[')
-				if out.Solarsystem == nil {
+				if out.SolarSystem == nil {
 					if !in.IsDelim(']') {
-						out.Solarsystem = make([]int32, 0, 16)
+						out.SolarSystem = make([]int32, 0, 16)
 					} else {
-						out.Solarsystem = []int32{}
+						out.SolarSystem = []int32{}
 					}
 				} else {
-					out.Solarsystem = (out.Solarsystem)[:0]
+					out.SolarSystem = (out.SolarSystem)[:0]
 				}
 				for !in.IsDelim(']') {
 					var v12 int32
 					v12 = int32(in.Int32())
-					out.Solarsystem = append(out.Solarsystem, v12)
+					out.SolarSystem = append(out.SolarSystem, v12)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -329,29 +329,6 @@ func easyjsonA22f0592DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetS
 					var v13 int32
 					v13 = int32(in.Int32())
 					out.Station = append(out.Station, v13)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
-		case "wormhole":
-			if in.IsNull() {
-				in.Skip()
-				out.Wormhole = nil
-			} else {
-				in.Delim('[')
-				if out.Wormhole == nil {
-					if !in.IsDelim(']') {
-						out.Wormhole = make([]int32, 0, 16)
-					} else {
-						out.Wormhole = []int32{}
-					}
-				} else {
-					out.Wormhole = (out.Wormhole)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v14 int32
-					v14 = int32(in.Int32())
-					out.Wormhole = append(out.Wormhole, v14)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -380,11 +357,11 @@ func easyjsonA22f0592EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v15, v16 := range in.Agent {
-				if v15 > 0 {
+			for v14, v15 := range in.Agent {
+				if v14 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v16))
+				out.Int32(int32(v15))
 			}
 			out.RawByte(']')
 		}
@@ -399,11 +376,11 @@ func easyjsonA22f0592EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v17, v18 := range in.Alliance {
-				if v17 > 0 {
+			for v16, v17 := range in.Alliance {
+				if v16 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v18))
+				out.Int32(int32(v17))
 			}
 			out.RawByte(']')
 		}
@@ -418,11 +395,11 @@ func easyjsonA22f0592EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v19, v20 := range in.Character {
-				if v19 > 0 {
+			for v18, v19 := range in.Character {
+				if v18 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v20))
+				out.Int32(int32(v19))
 			}
 			out.RawByte(']')
 		}
@@ -437,11 +414,11 @@ func easyjsonA22f0592EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v21, v22 := range in.Constellation {
-				if v21 > 0 {
+			for v20, v21 := range in.Constellation {
+				if v20 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v22))
+				out.Int32(int32(v21))
 			}
 			out.RawByte(']')
 		}
@@ -456,11 +433,11 @@ func easyjsonA22f0592EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v23, v24 := range in.Corporation {
-				if v23 > 0 {
+			for v22, v23 := range in.Corporation {
+				if v22 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v24))
+				out.Int32(int32(v23))
 			}
 			out.RawByte(']')
 		}
@@ -475,17 +452,17 @@ func easyjsonA22f0592EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v25, v26 := range in.Faction {
-				if v25 > 0 {
+			for v24, v25 := range in.Faction {
+				if v24 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v26))
+				out.Int32(int32(v25))
 			}
 			out.RawByte(']')
 		}
 	}
-	if len(in.Inventorytype) != 0 {
-		const prefix string = ",\"inventorytype\":"
+	if len(in.InventoryType) != 0 {
+		const prefix string = ",\"inventory_type\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
@@ -494,11 +471,11 @@ func easyjsonA22f0592EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v27, v28 := range in.Inventorytype {
-				if v27 > 0 {
+			for v26, v27 := range in.InventoryType {
+				if v26 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v28))
+				out.Int32(int32(v27))
 			}
 			out.RawByte(']')
 		}
@@ -513,17 +490,17 @@ func easyjsonA22f0592EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v29, v30 := range in.Region {
-				if v29 > 0 {
+			for v28, v29 := range in.Region {
+				if v28 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v30))
+				out.Int32(int32(v29))
 			}
 			out.RawByte(']')
 		}
 	}
-	if len(in.Solarsystem) != 0 {
-		const prefix string = ",\"solarsystem\":"
+	if len(in.SolarSystem) != 0 {
+		const prefix string = ",\"solar_system\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
@@ -532,11 +509,11 @@ func easyjsonA22f0592EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v31, v32 := range in.Solarsystem {
-				if v31 > 0 {
+			for v30, v31 := range in.SolarSystem {
+				if v30 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v32))
+				out.Int32(int32(v31))
 			}
 			out.RawByte(']')
 		}
@@ -551,30 +528,11 @@ func easyjsonA22f0592EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v33, v34 := range in.Station {
-				if v33 > 0 {
+			for v32, v33 := range in.Station {
+				if v32 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v34))
-			}
-			out.RawByte(']')
-		}
-	}
-	if len(in.Wormhole) != 0 {
-		const prefix string = ",\"wormhole\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v35, v36 := range in.Wormhole {
-				if v35 > 0 {
-					out.RawByte(',')
-				}
-				out.Int32(int32(v36))
+				out.Int32(int32(v33))
 			}
 			out.RawByte(']')
 		}

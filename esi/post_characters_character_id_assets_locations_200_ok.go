@@ -29,8 +29,6 @@ type PostCharactersCharacterIdAssetsLocations200OkList []PostCharactersCharacter
 /* 200 ok object */
 //easyjson:json
 type PostCharactersCharacterIdAssetsLocations200Ok struct {
-	ItemId int64   `json:"item_id,omitempty"` /* item_id integer */
-	X      float64 `json:"x,omitempty"`       /* x number */
-	Y      float64 `json:"y,omitempty"`       /* y number */
-	Z      float64 `json:"z,omitempty"`       /* z number */
+	ItemId   int64                                            `json:"item_id,omitempty"` /* item_id integer */
+	Position PostCharactersCharacterIdAssetsLocationsPosition `json:"position,omitempty"`
 }

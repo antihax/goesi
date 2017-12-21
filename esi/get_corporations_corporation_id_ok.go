@@ -33,15 +33,17 @@ type GetCorporationsCorporationIdOkList []GetCorporationsCorporationIdOk
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdOk struct {
-	CorporationName        string    `json:"corporation_name,omitempty"`        /* the full name of the corporation */
-	Ticker                 string    `json:"ticker,omitempty"`                  /* the short name of the corporation */
-	MemberCount            int32     `json:"member_count,omitempty"`            /* member_count integer */
-	CeoId                  int32     `json:"ceo_id,omitempty"`                  /* ceo_id integer */
-	AllianceId             int32     `json:"alliance_id,omitempty"`             /* id of alliance that corporation is a member of, if any */
-	CorporationDescription string    `json:"corporation_description,omitempty"` /* corporation_description string */
-	TaxRate                float32   `json:"tax_rate,omitempty"`                /* tax_rate number */
-	CreationDate           time.Time `json:"creation_date,omitempty"`           /* creation_date string */
-	CreatorId              int32     `json:"creator_id,omitempty"`              /* creator_id integer */
-	Url                    string    `json:"url,omitempty"`                     /* url string */
-	Faction                string    `json:"faction,omitempty"`                 /* faction string */
+	Name          string    `json:"name,omitempty"`            /* the full name of the corporation */
+	Ticker        string    `json:"ticker,omitempty"`          /* the short name of the corporation */
+	MemberCount   int32     `json:"member_count,omitempty"`    /* member_count integer */
+	CeoId         int32     `json:"ceo_id,omitempty"`          /* ceo_id integer */
+	AllianceId    int32     `json:"alliance_id,omitempty"`     /* ID of the alliance that corporation is a member of, if any */
+	Description   string    `json:"description,omitempty"`     /* description string */
+	TaxRate       float32   `json:"tax_rate,omitempty"`        /* tax_rate number */
+	DateFounded   time.Time `json:"date_founded,omitempty"`    /* date_founded string */
+	CreatorId     int32     `json:"creator_id,omitempty"`      /* creator_id integer */
+	Url           string    `json:"url,omitempty"`             /* url string */
+	FactionId     int32     `json:"faction_id,omitempty"`      /* faction_id integer */
+	HomeStationId int32     `json:"home_station_id,omitempty"` /* home_station_id integer */
+	Shares        int64     `json:"shares,omitempty"`          /* shares integer */
 }

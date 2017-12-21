@@ -26,8 +26,8 @@ package esi
 //easyjson:json
 type GetAlliancesAllianceIdNotFoundList []GetAlliancesAllianceIdNotFound
 
-/* Alliance not found */
+/* Not found */
 //easyjson:json
 type GetAlliancesAllianceIdNotFound struct {
-	Error_ string `json:"error,omitempty"` /* error message */
+	Error_ string `json:"error,omitempty"` /* Not found message */
 }

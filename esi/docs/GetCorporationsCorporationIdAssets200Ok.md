@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TypeId** | **int32** | type_id integer | [default to null]
-**Quantity** | **int32** | quantity integer | [optional] [default to null]
+**Quantity** | **int32** | quantity integer | [default to null]
 **LocationId** | **int64** | location_id integer | [default to null]
 **LocationType** | **string** | location_type string | [default to null]
 **ItemId** | **int64** | item_id integer | [default to null]

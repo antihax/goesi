@@ -44,7 +44,7 @@ var (
 type ContactsApiService service
 
 /* ContactsApiService Delete contacts
-Bulk delete contacts  ---  [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#DELETE-/characters/{character_id}/contacts/)
+Bulk delete contacts  ---
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -64,13 +64,19 @@ func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/characters/{character_id}/contacts/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/contacts/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if len(contactIds) < 1 {
+		return nil, reportError("contactIds must have at least 1 elements")
+	}
+	if len(contactIds) > 100 {
+		return nil, reportError("contactIds must have less than 100 elements")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return nil, err
 	}
@@ -84,6 +90,7 @@ func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Con
 		return nil, err
 	}
 
+	localVarQueryParams.Add("contact_ids", parameterToString(contactIds, "csv"))
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
 	}
@@ -116,8 +123,6 @@ func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Con
 	if localVarTempParam, localVarOk := localVarOptionals["xUserAgent"].(string); localVarOk {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
 	}
-	// body params
-	localVarPostBody = &contactIds
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Amount** | **float64** | Transaction amount. Positive when value transferred to the first party. Negative otherwise | [optional] [default to null]
 **Balance** | **float64** | Wallet balance after transaction occurred | [optional] [default to null]
 **Reason** | **string** | reason string | [optional] [default to null]
-**TaxRecieverId** | **int32** | the corporation ID receiving any tax paid | [optional] [default to null]
+**TaxReceiverId** | **int32** | the corporation ID receiving any tax paid | [optional] [default to null]
 **Tax** | **float64** | Tax amount received for tax related transactions | [optional] [default to null]
 **ExtraInfo** | [**GetCharactersCharacterIdWalletJournalExtraInfo**](get_characters_character_id_wallet_journal_extra_info.md) |  | [optional] [default to null]
 

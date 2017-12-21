@@ -22,12 +22,13 @@
 
 package esi
 
-/* A list of GetCorporationsCorporationIdMembers200Ok. */
+/* A list of PostUniverseIdsAlliance. */
 //easyjson:json
-type GetCorporationsCorporationIdMembers200OkList []GetCorporationsCorporationIdMembers200Ok
+type PostUniverseIdsAllianceList []PostUniverseIdsAlliance
 
-/* 200 ok object */
+/* alliance object */
 //easyjson:json
-type GetCorporationsCorporationIdMembers200Ok struct {
-	CharacterId int32 `json:"character_id,omitempty"` /* character_id integer */
+type PostUniverseIdsAlliance struct {
+	Id   int32  `json:"id,omitempty"`   /* id integer */
+	Name string `json:"name,omitempty"` /* name string */
 }

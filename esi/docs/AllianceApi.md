@@ -5,10 +5,10 @@ All URIs are relative to *https://esi.tech.ccp.is*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetAlliances**](AllianceApi.md#GetAlliances) | **Get** /v1/alliances/ | List all alliances
-[**GetAlliancesAllianceId**](AllianceApi.md#GetAlliancesAllianceId) | **Get** /v2/alliances/{alliance_id}/ | Get alliance information
+[**GetAlliancesAllianceId**](AllianceApi.md#GetAlliancesAllianceId) | **Get** /v3/alliances/{alliance_id}/ | Get alliance information
 [**GetAlliancesAllianceIdCorporations**](AllianceApi.md#GetAlliancesAllianceIdCorporations) | **Get** /v1/alliances/{alliance_id}/corporations/ | List alliance&#39;s corporations
 [**GetAlliancesAllianceIdIcons**](AllianceApi.md#GetAlliancesAllianceIdIcons) | **Get** /v1/alliances/{alliance_id}/icons/ | Get alliance icon
-[**GetAlliancesNames**](AllianceApi.md#GetAlliancesNames) | **Get** /v1/alliances/names/ | Get alliance names
+[**GetAlliancesNames**](AllianceApi.md#GetAlliancesNames) | **Get** /v2/alliances/names/ | Get alliance names
 
 
 # **GetAlliances**
@@ -52,7 +52,7 @@ No authorization required
 > GetAlliancesAllianceIdOk GetAlliancesAllianceId(ctx, allianceId, optional)
 Get alliance information
 
-Public information about an alliance  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/alliances/{alliance_id}/)
+Public information about an alliance  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -169,14 +169,14 @@ No authorization required
 > []GetAlliancesNames200Ok GetAlliancesNames(ctx, allianceIds, optional)
 Get alliance names
 
-Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/alliances/names/)
+Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
-  **allianceIds** | [**[]int64**](int64.md)| A comma separated list of alliance IDs | 
+  **allianceIds** | [**[]int32**](int32.md)| A comma separated list of alliance IDs | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -184,7 +184,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allianceIds** | [**[]int64**](int64.md)| A comma separated list of alliance IDs | 
+ **allianceIds** | [**[]int32**](int32.md)| A comma separated list of alliance IDs | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

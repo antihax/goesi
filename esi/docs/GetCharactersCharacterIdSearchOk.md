@@ -9,12 +9,11 @@ Name | Type | Description | Notes
 **Constellation** | **[]int32** | constellation array | [optional] [default to null]
 **Corporation** | **[]int32** | corporation array | [optional] [default to null]
 **Faction** | **[]int32** | faction array | [optional] [default to null]
-**Inventorytype** | **[]int32** | inventorytype array | [optional] [default to null]
+**InventoryType** | **[]int32** | inventory_type array | [optional] [default to null]
 **Region** | **[]int32** | region array | [optional] [default to null]
-**Solarsystem** | **[]int32** | solarsystem array | [optional] [default to null]
+**SolarSystem** | **[]int32** | solar_system array | [optional] [default to null]
 **Station** | **[]int32** | station array | [optional] [default to null]
 **Structure** | **[]int64** | structure array | [optional] [default to null]
-**Wormhole** | **[]int32** | wormhole array | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

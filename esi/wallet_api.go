@@ -139,7 +139,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWallet(ctx context.Context, c
 }
 
 /* WalletApiService Get character wallet journal
-Retrieve character wallet journal  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/wallet/journal/)
+Retrieve character wallet journal  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -160,7 +160,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletJournal(ctx context.Con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/characters/{character_id}/wallet/journal/"
+	localVarPath := a.client.basePath + "/v3/characters/{character_id}/wallet/journal/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -438,7 +438,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWallets(ctx context.Conte
 }
 
 /* WalletApiService Get corporation wallet journal
-Retrieve corporation wallet journal  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/wallets/{division}/journal/)
+Retrieve corporation wallet journal  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID
@@ -460,7 +460,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionJournal(ct
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/wallets/{division}/journal/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/wallets/{division}/journal/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"division"+"}", fmt.Sprintf("%v", division), -1)
 

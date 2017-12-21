@@ -107,8 +107,10 @@ func easyjson3cad633cDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.SkillId = int32(in.Int32())
 		case "skillpoints_in_skill":
 			out.SkillpointsInSkill = int64(in.Int64())
-		case "current_skill_level":
-			out.CurrentSkillLevel = int32(in.Int32())
+		case "trained_skill_level":
+			out.TrainedSkillLevel = int32(in.Int32())
+		case "active_skill_level":
+			out.ActiveSkillLevel = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -143,15 +145,25 @@ func easyjson3cad633cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.SkillpointsInSkill))
 	}
-	if in.CurrentSkillLevel != 0 {
-		const prefix string = ",\"current_skill_level\":"
+	if in.TrainedSkillLevel != 0 {
+		const prefix string = ",\"trained_skill_level\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.CurrentSkillLevel))
+		out.Int32(int32(in.TrainedSkillLevel))
+	}
+	if in.ActiveSkillLevel != 0 {
+		const prefix string = ",\"active_skill_level\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ActiveSkillLevel))
 	}
 	out.RawByte('}')
 }

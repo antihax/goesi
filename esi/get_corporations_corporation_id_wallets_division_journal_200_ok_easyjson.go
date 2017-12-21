@@ -125,8 +125,8 @@ func easyjson4a0bdca4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.Balance = float64(in.Float64())
 		case "reason":
 			out.Reason = string(in.String())
-		case "tax_reciever_id":
-			out.TaxRecieverId = int32(in.Int32())
+		case "tax_receiver_id":
+			out.TaxReceiverId = int32(in.Int32())
 		case "tax":
 			out.Tax = float64(in.Float64())
 		case "extra_info":
@@ -245,15 +245,15 @@ func easyjson4a0bdca4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Reason))
 	}
-	if in.TaxRecieverId != 0 {
-		const prefix string = ",\"tax_reciever_id\":"
+	if in.TaxReceiverId != 0 {
+		const prefix string = ",\"tax_receiver_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.TaxRecieverId))
+		out.Int32(int32(in.TaxReceiverId))
 	}
 	if in.Tax != 0 {
 		const prefix string = ",\"tax\":"

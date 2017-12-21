@@ -5,7 +5,7 @@ All URIs are relative to *https://esi.tech.ccp.is*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCharactersCharacterIdLocation**](LocationApi.md#GetCharactersCharacterIdLocation) | **Get** /v1/characters/{character_id}/location/ | Get character location
-[**GetCharactersCharacterIdOnline**](LocationApi.md#GetCharactersCharacterIdOnline) | **Get** /v1/characters/{character_id}/online/ | Get character online
+[**GetCharactersCharacterIdOnline**](LocationApi.md#GetCharactersCharacterIdOnline) | **Get** /v2/characters/{character_id}/online/ | Get character online
 [**GetCharactersCharacterIdShip**](LocationApi.md#GetCharactersCharacterIdShip) | **Get** /v1/characters/{character_id}/ship/ | Get current ship
 
 
@@ -50,10 +50,10 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCharactersCharacterIdOnline**
-> bool GetCharactersCharacterIdOnline(ctx, characterId, optional)
+> GetCharactersCharacterIdOnlineOk GetCharactersCharacterIdOnline(ctx, characterId, optional)
 Get character online
 
-Checks if the character is currently online  ---  This route is cached for up to 60 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/online/)
+Checks if the character is currently online  ---  This route is cached for up to 60 seconds
 
 ### Required Parameters
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool**
+[**GetCharactersCharacterIdOnlineOk**](get_characters_character_id_online_ok.md)
 
 ### Authorization
 

@@ -43,7 +43,7 @@ var (
 type AssetsApiService service
 
 /* AssetsApiService Get character assets
-Return a list of the characters assets  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/assets/)
+Return a list of the characters assets  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -64,7 +64,7 @@ func (a *AssetsApiService) GetCharactersCharacterIdAssets(ctx context.Context, c
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/characters/{character_id}/assets/"
+	localVarPath := a.client.basePath + "/v3/characters/{character_id}/assets/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -145,7 +145,7 @@ func (a *AssetsApiService) GetCharactersCharacterIdAssets(ctx context.Context, c
 }
 
 /* AssetsApiService Get corporation assets
-Return a list of the corporation assets  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/assets/)
+Return a list of the corporation assets  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID
@@ -166,7 +166,7 @@ func (a *AssetsApiService) GetCorporationsCorporationIdAssets(ctx context.Contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/assets/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/assets/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -247,7 +247,7 @@ func (a *AssetsApiService) GetCorporationsCorporationIdAssets(ctx context.Contex
 }
 
 /* AssetsApiService Get character asset locations
-Return locations for a set of item ids, which you can get from character assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)  ---  [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#POST-/characters/{character_id}/assets/locations/)
+Return locations for a set of item ids, which you can get from character assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)  ---
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -268,7 +268,7 @@ func (a *AssetsApiService) PostCharactersCharacterIdAssetsLocations(ctx context.
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/characters/{character_id}/assets/locations/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/assets/locations/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -443,7 +443,7 @@ func (a *AssetsApiService) PostCharactersCharacterIdAssetsNames(ctx context.Cont
 }
 
 /* AssetsApiService Get corporation asset locations
-Return locations for a set of item ids, which you can get from corporation assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)  ---  Requires one of the following EVE corporation role(s): Director  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#POST-/corporations/{corporation_id}/assets/locations/)
+Return locations for a set of item ids, which you can get from corporation assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)  ---  Requires one of the following EVE corporation role(s): Director
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID
@@ -464,7 +464,7 @@ func (a *AssetsApiService) PostCorporationsCorporationIdAssetsLocations(ctx cont
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/assets/locations/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/assets/locations/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)

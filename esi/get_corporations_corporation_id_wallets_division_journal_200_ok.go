@@ -43,7 +43,7 @@ type GetCorporationsCorporationIdWalletsDivisionJournal200Ok struct {
 	Amount          float64                                                     `json:"amount,omitempty"`            /* Transaction amount. Positive when value transferred to the first party. Negative otherwise */
 	Balance         float64                                                     `json:"balance,omitempty"`           /* Wallet balance after transaction occurred */
 	Reason          string                                                      `json:"reason,omitempty"`            /* reason string */
-	TaxRecieverId   int32                                                       `json:"tax_reciever_id,omitempty"`   /* the corporation ID receiving any tax paid */
+	TaxReceiverId   int32                                                       `json:"tax_receiver_id,omitempty"`   /* the corporation ID receiving any tax paid */
 	Tax             float64                                                     `json:"tax,omitempty"`               /* Tax amount received for tax related transactions */
 	ExtraInfo       GetCorporationsCorporationIdWalletsDivisionJournalExtraInfo `json:"extra_info,omitempty"`
 }

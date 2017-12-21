@@ -18,7 +18,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson126c5239DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCorporationsCorporationIdMembers200OkList) {
+func easyjsonF480dafDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *PostUniverseIdsAgentList) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		in.Skip()
@@ -27,15 +27,15 @@ func easyjson126c5239DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCo
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetCorporationsCorporationIdMembers200OkList, 0, 16)
+				*out = make(PostUniverseIdsAgentList, 0, 2)
 			} else {
-				*out = GetCorporationsCorporationIdMembers200OkList{}
+				*out = PostUniverseIdsAgentList{}
 			}
 		} else {
 			*out = (*out)[:0]
 		}
 		for !in.IsDelim(']') {
-			var v1 GetCorporationsCorporationIdMembers200Ok
+			var v1 PostUniverseIdsAgent
 			(v1).UnmarshalEasyJSON(in)
 			*out = append(*out, v1)
 			in.WantComma()
@@ -46,7 +46,7 @@ func easyjson126c5239DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCo
 		in.Consumed()
 	}
 }
-func easyjson126c5239EncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in GetCorporationsCorporationIdMembers200OkList) {
+func easyjsonF480dafEncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in PostUniverseIdsAgentList) {
 	if in == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 		out.RawString("null")
 	} else {
@@ -62,29 +62,29 @@ func easyjson126c5239EncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in GetC
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v GetCorporationsCorporationIdMembers200OkList) MarshalJSON() ([]byte, error) {
+func (v PostUniverseIdsAgentList) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson126c5239EncodeGithubComAntihaxGoesiEsi(&w, v)
+	easyjsonF480dafEncodeGithubComAntihaxGoesiEsi(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v GetCorporationsCorporationIdMembers200OkList) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson126c5239EncodeGithubComAntihaxGoesiEsi(w, v)
+func (v PostUniverseIdsAgentList) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjsonF480dafEncodeGithubComAntihaxGoesiEsi(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *GetCorporationsCorporationIdMembers200OkList) UnmarshalJSON(data []byte) error {
+func (v *PostUniverseIdsAgentList) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson126c5239DecodeGithubComAntihaxGoesiEsi(&r, v)
+	easyjsonF480dafDecodeGithubComAntihaxGoesiEsi(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *GetCorporationsCorporationIdMembers200OkList) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson126c5239DecodeGithubComAntihaxGoesiEsi(l, v)
+func (v *PostUniverseIdsAgentList) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjsonF480dafDecodeGithubComAntihaxGoesiEsi(l, v)
 }
-func easyjson126c5239DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCorporationsCorporationIdMembers200Ok) {
+func easyjsonF480dafDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *PostUniverseIdsAgent) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -103,8 +103,10 @@ func easyjson126c5239DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "character_id":
-			out.CharacterId = int32(in.Int32())
+		case "id":
+			out.Id = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -115,43 +117,53 @@ func easyjson126c5239DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson126c5239EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetCorporationsCorporationIdMembers200Ok) {
+func easyjsonF480dafEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in PostUniverseIdsAgent) {
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.CharacterId != 0 {
-		const prefix string = ",\"character_id\":"
+	if in.Id != 0 {
+		const prefix string = ",\"id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.CharacterId))
+		out.Int32(int32(in.Id))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
 	}
 	out.RawByte('}')
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v GetCorporationsCorporationIdMembers200Ok) MarshalJSON() ([]byte, error) {
+func (v PostUniverseIdsAgent) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson126c5239EncodeGithubComAntihaxGoesiEsi1(&w, v)
+	easyjsonF480dafEncodeGithubComAntihaxGoesiEsi1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v GetCorporationsCorporationIdMembers200Ok) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson126c5239EncodeGithubComAntihaxGoesiEsi1(w, v)
+func (v PostUniverseIdsAgent) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjsonF480dafEncodeGithubComAntihaxGoesiEsi1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *GetCorporationsCorporationIdMembers200Ok) UnmarshalJSON(data []byte) error {
+func (v *PostUniverseIdsAgent) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson126c5239DecodeGithubComAntihaxGoesiEsi1(&r, v)
+	easyjsonF480dafDecodeGithubComAntihaxGoesiEsi1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *GetCorporationsCorporationIdMembers200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson126c5239DecodeGithubComAntihaxGoesiEsi1(l, v)
+func (v *PostUniverseIdsAgent) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjsonF480dafDecodeGithubComAntihaxGoesiEsi1(l, v)
 }

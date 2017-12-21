@@ -44,7 +44,7 @@ var (
 type ClonesApiService service
 
 /* ClonesApiService Get clones
-A list of the character&#39;s clones  ---  This route is cached for up to 120 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/clones/)
+A list of the character&#39;s clones  ---  This route is cached for up to 120 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -64,7 +64,7 @@ func (a *ClonesApiService) GetCharactersCharacterIdClones(ctx context.Context, c
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/characters/{character_id}/clones/"
+	localVarPath := a.client.basePath + "/v3/characters/{character_id}/clones/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)

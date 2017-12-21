@@ -22,12 +22,13 @@
 
 package esi
 
-/* A list of PostCharactersCharacterIdCspaCreated. */
+/* A list of PostUniverseIdsAgent. */
 //easyjson:json
-type PostCharactersCharacterIdCspaCreatedList []PostCharactersCharacterIdCspaCreated
+type PostUniverseIdsAgentList []PostUniverseIdsAgent
 
-/* 201 created object */
+/* agent object */
 //easyjson:json
-type PostCharactersCharacterIdCspaCreated struct {
-	Cost int64 `json:"cost,omitempty"` /* cost integer */
+type PostUniverseIdsAgent struct {
+	Id   int32  `json:"id,omitempty"`   /* id integer */
+	Name string `json:"name,omitempty"` /* name string */
 }

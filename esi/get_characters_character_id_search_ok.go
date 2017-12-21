@@ -29,16 +29,15 @@ type GetCharactersCharacterIdSearchOkList []GetCharactersCharacterIdSearchOk
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdSearchOk struct {
-	Agent         []int32 `json:"agent,omitempty"`         /* agent array */
-	Alliance      []int32 `json:"alliance,omitempty"`      /* alliance array */
-	Character     []int32 `json:"character,omitempty"`     /* character array */
-	Constellation []int32 `json:"constellation,omitempty"` /* constellation array */
-	Corporation   []int32 `json:"corporation,omitempty"`   /* corporation array */
-	Faction       []int32 `json:"faction,omitempty"`       /* faction array */
-	Inventorytype []int32 `json:"inventorytype,omitempty"` /* inventorytype array */
-	Region        []int32 `json:"region,omitempty"`        /* region array */
-	Solarsystem   []int32 `json:"solarsystem,omitempty"`   /* solarsystem array */
-	Station       []int32 `json:"station,omitempty"`       /* station array */
-	Structure     []int64 `json:"structure,omitempty"`     /* structure array */
-	Wormhole      []int32 `json:"wormhole,omitempty"`      /* wormhole array */
+	Agent         []int32 `json:"agent,omitempty"`          /* agent array */
+	Alliance      []int32 `json:"alliance,omitempty"`       /* alliance array */
+	Character     []int32 `json:"character,omitempty"`      /* character array */
+	Constellation []int32 `json:"constellation,omitempty"`  /* constellation array */
+	Corporation   []int32 `json:"corporation,omitempty"`    /* corporation array */
+	Faction       []int32 `json:"faction,omitempty"`        /* faction array */
+	InventoryType []int32 `json:"inventory_type,omitempty"` /* inventory_type array */
+	Region        []int32 `json:"region,omitempty"`         /* region array */
+	SolarSystem   []int32 `json:"solar_system,omitempty"`   /* solar_system array */
+	Station       []int32 `json:"station,omitempty"`        /* station array */
+	Structure     []int64 `json:"structure,omitempty"`      /* structure array */
 }

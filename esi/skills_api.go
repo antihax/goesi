@@ -233,7 +233,7 @@ func (a *SkillsApiService) GetCharactersCharacterIdSkillqueue(ctx context.Contex
 }
 
 /* SkillsApiService Get character skills
-List all trained skills for the given character  ---  This route is cached for up to 120 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/skills/)
+List all trained skills for the given character  ---  This route is cached for up to 120 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -253,7 +253,7 @@ func (a *SkillsApiService) GetCharactersCharacterIdSkills(ctx context.Context, c
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v3/characters/{character_id}/skills/"
+	localVarPath := a.client.basePath + "/v4/characters/{character_id}/skills/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)

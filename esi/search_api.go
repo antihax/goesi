@@ -43,7 +43,7 @@ var (
 type SearchApiService service
 
 /* SearchApiService Search on a string
-Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/search/)
+Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param categories Type of entities to search for
@@ -67,7 +67,7 @@ func (a *SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, c
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/characters/{character_id}/search/"
+	localVarPath := a.client.basePath + "/v3/characters/{character_id}/search/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -77,8 +77,8 @@ func (a *SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, c
 	if len(categories) < 1 {
 		return successPayload, nil, reportError("categories must have at least 1 elements")
 	}
-	if len(categories) > 12 {
-		return successPayload, nil, reportError("categories must have less than 12 elements")
+	if len(categories) > 11 {
+		return successPayload, nil, reportError("categories must have less than 11 elements")
 	}
 	if strlen(search) < 3 {
 		return successPayload, nil, reportError("search must have at least 3 elements")
@@ -165,7 +165,7 @@ func (a *SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, c
 }
 
 /* SearchApiService Search on a string
-Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/search/)
+Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param categories Type of entities to search for
@@ -187,7 +187,7 @@ func (a *SearchApiService) GetSearch(ctx context.Context, categories []string, s
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/search/"
+	localVarPath := a.client.basePath + "/v2/search/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

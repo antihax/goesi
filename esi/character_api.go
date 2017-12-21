@@ -980,7 +980,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 }
 
 /* CharacterApiService Get character corporation roles
-Returns a character&#39;s corporation roles  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/roles/)
+Returns a character&#39;s corporation roles  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -989,18 +989,18 @@ Returns a character&#39;s corporation roles  ---  This route is cached for up to
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
-@return []string*/
-func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) ([]string, *http.Response, error) {
+@return GetCharactersCharacterIdRolesOk*/
+func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdRolesOk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     []string
+		successPayload     GetCharactersCharacterIdRolesOk
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/characters/{character_id}/roles/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/roles/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1067,7 +1067,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -1543,7 +1543,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 }
 
 /* CharacterApiService Calculate a CSPA charge cost
-Takes a source character ID in the url and a set of target character ID&#39;s in the body, returns a CSPA charge cost  ---  [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#POST-/characters/{character_id}/cspa/)
+Takes a source character ID in the url and a set of target character ID&#39;s in the body, returns a CSPA charge cost  ---
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -1553,18 +1553,18 @@ Takes a source character ID in the url and a set of target character ID&#39;s in
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
-@return PostCharactersCharacterIdCspaCreated*/
-func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context, characterId int32, characters PostCharactersCharacterIdCspaCharacters, localVarOptionals map[string]interface{}) (PostCharactersCharacterIdCspaCreated, *http.Response, error) {
+@return float32*/
+func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context, characterId int32, characters []int32, localVarOptionals map[string]interface{}) (float32, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     PostCharactersCharacterIdCspaCreated
+		successPayload     float32
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v3/characters/{character_id}/cspa/"
+	localVarPath := a.client.basePath + "/v4/characters/{character_id}/cspa/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1633,7 +1633,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

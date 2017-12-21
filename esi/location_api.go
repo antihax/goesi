@@ -30,7 +30,6 @@ import (
 
 	"golang.org/x/net/context"
 
-	"encoding/json"
 	"fmt"
 
 	"github.com/mailru/easyjson"
@@ -139,7 +138,7 @@ func (a *LocationApiService) GetCharactersCharacterIdLocation(ctx context.Contex
 }
 
 /* LocationApiService Get character online
-Checks if the character is currently online  ---  This route is cached for up to 60 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/online/)
+Checks if the character is currently online  ---  This route is cached for up to 60 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -148,18 +147,18 @@ Checks if the character is currently online  ---  This route is cached for up to
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
-@return bool*/
-func (a *LocationApiService) GetCharactersCharacterIdOnline(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (bool, *http.Response, error) {
+@return GetCharactersCharacterIdOnlineOk*/
+func (a *LocationApiService) GetCharactersCharacterIdOnline(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (GetCharactersCharacterIdOnlineOk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     bool
+		successPayload     GetCharactersCharacterIdOnlineOk
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/characters/{character_id}/online/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/online/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -226,7 +225,7 @@ func (a *LocationApiService) GetCharactersCharacterIdOnline(ctx context.Context,
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 

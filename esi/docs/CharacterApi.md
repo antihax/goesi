@@ -14,13 +14,13 @@ Method | HTTP request | Description
 [**GetCharactersCharacterIdNotifications**](CharacterApi.md#GetCharactersCharacterIdNotifications) | **Get** /v1/characters/{character_id}/notifications/ | Get character notifications
 [**GetCharactersCharacterIdNotificationsContacts**](CharacterApi.md#GetCharactersCharacterIdNotificationsContacts) | **Get** /v1/characters/{character_id}/notifications/contacts/ | Get new contact notifications
 [**GetCharactersCharacterIdPortrait**](CharacterApi.md#GetCharactersCharacterIdPortrait) | **Get** /v2/characters/{character_id}/portrait/ | Get character portraits
-[**GetCharactersCharacterIdRoles**](CharacterApi.md#GetCharactersCharacterIdRoles) | **Get** /v1/characters/{character_id}/roles/ | Get character corporation roles
+[**GetCharactersCharacterIdRoles**](CharacterApi.md#GetCharactersCharacterIdRoles) | **Get** /v2/characters/{character_id}/roles/ | Get character corporation roles
 [**GetCharactersCharacterIdStandings**](CharacterApi.md#GetCharactersCharacterIdStandings) | **Get** /v1/characters/{character_id}/standings/ | Get standings
 [**GetCharactersCharacterIdStats**](CharacterApi.md#GetCharactersCharacterIdStats) | **Get** /v1/characters/{character_id}/stats/ | Yearly aggregate stats
 [**GetCharactersCharacterIdTitles**](CharacterApi.md#GetCharactersCharacterIdTitles) | **Get** /v1/characters/{character_id}/titles/ | Get character corporation titles
 [**GetCharactersNames**](CharacterApi.md#GetCharactersNames) | **Get** /v1/characters/names/ | Get character names
 [**PostCharactersAffiliation**](CharacterApi.md#PostCharactersAffiliation) | **Post** /v1/characters/affiliation/ | Character affiliation
-[**PostCharactersCharacterIdCspa**](CharacterApi.md#PostCharactersCharacterIdCspa) | **Post** /v3/characters/{character_id}/cspa/ | Calculate a CSPA charge cost
+[**PostCharactersCharacterIdCspa**](CharacterApi.md#PostCharactersCharacterIdCspa) | **Post** /v4/characters/{character_id}/cspa/ | Calculate a CSPA charge cost
 
 
 # **GetCharactersCharacterId**
@@ -422,10 +422,10 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCharactersCharacterIdRoles**
-> []string GetCharactersCharacterIdRoles(ctx, characterId, optional)
+> GetCharactersCharacterIdRolesOk GetCharactersCharacterIdRoles(ctx, characterId, optional)
 Get character corporation roles
 
-Returns a character's corporation roles  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/roles/)
+Returns a character's corporation roles  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[]string**
+[**GetCharactersCharacterIdRolesOk**](get_characters_character_id_roles_ok.md)
 
 ### Authorization
 
@@ -660,10 +660,10 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PostCharactersCharacterIdCspa**
-> PostCharactersCharacterIdCspaCreated PostCharactersCharacterIdCspa(ctx, characterId, characters, optional)
+> float32 PostCharactersCharacterIdCspa(ctx, characterId, characters, optional)
 Calculate a CSPA charge cost
 
-Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  ---  [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#POST-/characters/{character_id}/cspa/)
+Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  --- 
 
 ### Required Parameters
 
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
   **characterId** | **int32**| An EVE character ID | 
-  **characters** | [**PostCharactersCharacterIdCspaCharacters**](PostCharactersCharacterIdCspaCharacters.md)| The target characters to calculate the charge for | 
+  **characters** | **[]int32**| The target characters to calculate the charge for | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -680,7 +680,7 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
- **characters** | [**PostCharactersCharacterIdCspaCharacters**](PostCharactersCharacterIdCspaCharacters.md)| The target characters to calculate the charge for | 
+ **characters** | **[]int32**| The target characters to calculate the charge for | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -688,7 +688,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostCharactersCharacterIdCspaCreated**](post_characters_character_id_cspa_created.md)
+**float32**
 
 ### Authorization
 

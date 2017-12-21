@@ -30,6 +30,7 @@ Method | HTTP request | Description
 [**GetUniverseSystemsSystemId**](UniverseApi.md#GetUniverseSystemsSystemId) | **Get** /v3/universe/systems/{system_id}/ | Get solar system information
 [**GetUniverseTypes**](UniverseApi.md#GetUniverseTypes) | **Get** /v1/universe/types/ | Get types
 [**GetUniverseTypesTypeId**](UniverseApi.md#GetUniverseTypesTypeId) | **Get** /v3/universe/types/{type_id}/ | Get type information
+[**PostUniverseIds**](UniverseApi.md#PostUniverseIds) | **Post** /v1/universe/ids/ | Bulk names to IDs
 [**PostUniverseNames**](UniverseApi.md#PostUniverseNames) | **Post** /v2/universe/names/ | Get names and categories for a set of ID&#39;s
 
 
@@ -1021,6 +1022,46 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetUniverseTypesTypeIdOk**](get_universe_types_type_id_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **PostUniverseIds**
+> PostUniverseIdsOk PostUniverseIds(ctx, names, optional)
+Bulk names to IDs
+
+Resolve a set of names to IDs in the following categories: agents, alliances, characters, constellations, corporations factions, inventory_types, regions, stations, and systems. Only exact matches will be returned. All names searched for are cached for 12 hours.  --- 
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+  **names** | **[]string**| The names to resolve | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **names** | **[]string**| The names to resolve | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **language** | **string**| Language to use in the response | [default to en-us]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**PostUniverseIdsOk**](post_universe_ids_ok.md)
 
 ### Authorization
 

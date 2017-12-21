@@ -33,8 +33,11 @@ type GetAlliancesAllianceIdOkList []GetAlliancesAllianceIdOk
 /* 200 ok object */
 //easyjson:json
 type GetAlliancesAllianceIdOk struct {
-	AllianceName string    `json:"alliance_name,omitempty"` /* the full name of the alliance */
-	Ticker       string    `json:"ticker,omitempty"`        /* the short name of the alliance */
-	ExecutorCorp int32     `json:"executor_corp,omitempty"` /* the executor corporation ID, if this alliance is not closed */
-	DateFounded  time.Time `json:"date_founded,omitempty"`  /* date_founded string */
+	Name                  string    `json:"name,omitempty"`                    /* the full name of the alliance */
+	CreatorId             int32     `json:"creator_id,omitempty"`              /* ID of the character that created the alliance */
+	CreatorCorporationId  int32     `json:"creator_corporation_id,omitempty"`  /* ID of the corporation that created the alliance */
+	Ticker                string    `json:"ticker,omitempty"`                  /* the short name of the alliance */
+	ExecutorCorporationId int32     `json:"executor_corporation_id,omitempty"` /* the executor corporation ID, if this alliance is not closed */
+	DateFounded           time.Time `json:"date_founded,omitempty"`            /* date_founded string */
+	FactionId             int32     `json:"faction_id,omitempty"`              /* Faction ID this alliance is fighting for, if this alliance is enlisted in factional warfare */
 }

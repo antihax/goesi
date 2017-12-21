@@ -103,6 +103,10 @@ func easyjson6213c735DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "jump_clone_id":
+			out.JumpCloneId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
 		case "location_id":
 			out.LocationId = int64(in.Int64())
 		case "location_type":
@@ -144,6 +148,26 @@ func easyjson6213c735EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.JumpCloneId != 0 {
+		const prefix string = ",\"jump_clone_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.JumpCloneId))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
 	if in.LocationId != 0 {
 		const prefix string = ",\"location_id\":"
 		if first {

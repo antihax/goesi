@@ -22,12 +22,13 @@
 
 package esi
 
-/* A list of PostCharactersCharacterIdCspaCharacters. */
+/* A list of PostUniverseIdsInventoryType. */
 //easyjson:json
-type PostCharactersCharacterIdCspaCharactersList []PostCharactersCharacterIdCspaCharacters
+type PostUniverseIdsInventoryTypeList []PostUniverseIdsInventoryType
 
-/* characters object */
+/* inventory_type object */
 //easyjson:json
-type PostCharactersCharacterIdCspaCharacters struct {
-	Characters []int32 `json:"characters,omitempty"` /* characters array */
+type PostUniverseIdsInventoryType struct {
+	Id   int32  `json:"id,omitempty"`   /* id integer */
+	Name string `json:"name,omitempty"` /* name string */
 }

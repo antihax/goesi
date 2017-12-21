@@ -130,7 +130,7 @@ func (a *AllianceApiService) GetAlliances(ctx context.Context, localVarOptionals
 }
 
 /* AllianceApiService Get alliance information
-Public information about an alliance  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/alliances/{alliance_id}/)
+Public information about an alliance  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param allianceId An EVE alliance ID
@@ -149,7 +149,7 @@ func (a *AllianceApiService) GetAlliancesAllianceId(ctx context.Context, allianc
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/alliances/{alliance_id}/"
+	localVarPath := a.client.basePath + "/v3/alliances/{alliance_id}/"
 	localVarPath = strings.Replace(localVarPath, "{"+"alliance_id"+"}", fmt.Sprintf("%v", allianceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -394,7 +394,7 @@ func (a *AllianceApiService) GetAlliancesAllianceIdIcons(ctx context.Context, al
 }
 
 /* AllianceApiService Get alliance names
-Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/alliances/names/)
+Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param allianceIds A comma separated list of alliance IDs
@@ -403,7 +403,7 @@ Resolve a set of alliance IDs to alliance names  ---  This route is cached for u
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return []GetAlliancesNames200Ok*/
-func (a *AllianceApiService) GetAlliancesNames(ctx context.Context, allianceIds []int64, localVarOptionals map[string]interface{}) ([]GetAlliancesNames200Ok, *http.Response, error) {
+func (a *AllianceApiService) GetAlliancesNames(ctx context.Context, allianceIds []int32, localVarOptionals map[string]interface{}) ([]GetAlliancesNames200Ok, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -413,7 +413,7 @@ func (a *AllianceApiService) GetAlliancesNames(ctx context.Context, allianceIds 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/alliances/names/"
+	localVarPath := a.client.basePath + "/v2/alliances/names/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

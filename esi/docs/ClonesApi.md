@@ -4,7 +4,7 @@ All URIs are relative to *https://esi.tech.ccp.is*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCharactersCharacterIdClones**](ClonesApi.md#GetCharactersCharacterIdClones) | **Get** /v2/characters/{character_id}/clones/ | Get clones
+[**GetCharactersCharacterIdClones**](ClonesApi.md#GetCharactersCharacterIdClones) | **Get** /v3/characters/{character_id}/clones/ | Get clones
 [**GetCharactersCharacterIdImplants**](ClonesApi.md#GetCharactersCharacterIdImplants) | **Get** /v1/characters/{character_id}/implants/ | Get active implants
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 > GetCharactersCharacterIdClonesOk GetCharactersCharacterIdClones(ctx, characterId, optional)
 Get clones
 
-A list of the character's clones  ---  This route is cached for up to 120 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/clones/)
+A list of the character's clones  ---  This route is cached for up to 120 seconds
 
 ### Required Parameters
 

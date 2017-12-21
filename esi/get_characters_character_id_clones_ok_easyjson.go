@@ -103,12 +103,16 @@ func easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "last_jump_date":
+		case "last_clone_jump_date":
 			if data := in.Raw(); in.Ok() {
-				in.AddError((out.LastJumpDate).UnmarshalJSON(data))
+				in.AddError((out.LastCloneJumpDate).UnmarshalJSON(data))
 			}
 		case "home_location":
 			easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi2(in, &out.HomeLocation)
+		case "last_station_change_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.LastStationChangeDate).UnmarshalJSON(data))
+			}
 		case "jump_clones":
 			if in.IsNull() {
 				in.Skip()
@@ -147,14 +151,14 @@ func easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if true {
-		const prefix string = ",\"last_jump_date\":"
+		const prefix string = ",\"last_clone_jump_date\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.LastJumpDate).MarshalJSON())
+		out.Raw((in.LastCloneJumpDate).MarshalJSON())
 	}
 	if true {
 		const prefix string = ",\"home_location\":"
@@ -165,6 +169,16 @@ func easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi2(out, in.HomeLocation)
+	}
+	if true {
+		const prefix string = ",\"last_station_change_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.LastStationChangeDate).MarshalJSON())
 	}
 	if len(in.JumpClones) != 0 {
 		const prefix string = ",\"jump_clones\":"
@@ -230,6 +244,10 @@ func easyjsonEb3c4d4dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "jump_clone_id":
+			out.JumpCloneId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
 		case "location_id":
 			out.LocationId = int64(in.Int64())
 		case "location_type":
@@ -271,6 +289,26 @@ func easyjsonEb3c4d4dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.JumpCloneId != 0 {
+		const prefix string = ",\"jump_clone_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.JumpCloneId))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
 	if in.LocationId != 0 {
 		const prefix string = ",\"location_id\":"
 		if first {

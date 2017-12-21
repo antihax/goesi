@@ -44,7 +44,7 @@ var (
 type CorporationApiService service
 
 /* CorporationApiService Get corporation information
-Public information about a corporation  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/)
+Public information about a corporation  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID
@@ -63,7 +63,7 @@ func (a *CorporationApiService) GetCorporationsCorporationId(ctx context.Context
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v3/corporations/{corporation_id}/"
+	localVarPath := a.client.basePath + "/v4/corporations/{corporation_id}/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -906,7 +906,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 }
 
 /* CorporationApiService Get corporation members
-Read the current list of members if the calling character is a member.  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/members/)
+Return the current member list of a corporation, the token&#39;s character need to be a member of the corporation.  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID
@@ -915,18 +915,18 @@ Read the current list of members if the calling character is a member.  ---  Thi
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
-@return []GetCorporationsCorporationIdMembers200Ok*/
-func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.Context, corporationId int32, localVarOptionals map[string]interface{}) ([]GetCorporationsCorporationIdMembers200Ok, *http.Response, error) {
+@return []int32*/
+func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.Context, corporationId int32, localVarOptionals map[string]interface{}) ([]int32, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     GetCorporationsCorporationIdMembers200OkList
+		successPayload     []int32
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/members/"
+	localVarPath := a.client.basePath + "/v3/corporations/{corporation_id}/members/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -993,7 +993,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-	if err = easyjson.UnmarshalFromReader(localVarHttpResponse.Body, &successPayload); err != nil {
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
@@ -2298,7 +2298,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 }
 
 /* CorporationApiService Get corporation names
-Resolve a set of corporation IDs to corporation names  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/names/)
+Resolve a set of corporation IDs to corporation names  ---  This route is cached for up to 3600 seconds
 
 * @param ctx context.Context Authentication Context
 @param corporationIds A comma separated list of corporation IDs
@@ -2307,7 +2307,7 @@ Resolve a set of corporation IDs to corporation names  ---  This route is cached
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return []GetCorporationsNames200Ok*/
-func (a *CorporationApiService) GetCorporationsNames(ctx context.Context, corporationIds []int64, localVarOptionals map[string]interface{}) ([]GetCorporationsNames200Ok, *http.Response, error) {
+func (a *CorporationApiService) GetCorporationsNames(ctx context.Context, corporationIds []int32, localVarOptionals map[string]interface{}) ([]GetCorporationsNames200Ok, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -2317,7 +2317,7 @@ func (a *CorporationApiService) GetCorporationsNames(ctx context.Context, corpor
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/names/"
+	localVarPath := a.client.basePath + "/v2/corporations/names/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

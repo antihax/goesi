@@ -1170,7 +1170,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 }
 
 /* CharacterApiService Yearly aggregate stats
-Returns aggregate yearly stats for a character  ---  This route is cached for up to 86400 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/stats/)
+Returns aggregate yearly stats for a character  ---  This route is cached for up to 86400 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -1190,7 +1190,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/characters/{character_id}/stats/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/stats/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)

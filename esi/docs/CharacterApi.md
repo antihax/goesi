@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**GetCharactersCharacterIdPortrait**](CharacterApi.md#GetCharactersCharacterIdPortrait) | **Get** /v2/characters/{character_id}/portrait/ | Get character portraits
 [**GetCharactersCharacterIdRoles**](CharacterApi.md#GetCharactersCharacterIdRoles) | **Get** /v2/characters/{character_id}/roles/ | Get character corporation roles
 [**GetCharactersCharacterIdStandings**](CharacterApi.md#GetCharactersCharacterIdStandings) | **Get** /v1/characters/{character_id}/standings/ | Get standings
-[**GetCharactersCharacterIdStats**](CharacterApi.md#GetCharactersCharacterIdStats) | **Get** /v1/characters/{character_id}/stats/ | Yearly aggregate stats
+[**GetCharactersCharacterIdStats**](CharacterApi.md#GetCharactersCharacterIdStats) | **Get** /v2/characters/{character_id}/stats/ | Yearly aggregate stats
 [**GetCharactersCharacterIdTitles**](CharacterApi.md#GetCharactersCharacterIdTitles) | **Get** /v1/characters/{character_id}/titles/ | Get character corporation titles
 [**GetCharactersNames**](CharacterApi.md#GetCharactersNames) | **Get** /v1/characters/names/ | Get character names
 [**PostCharactersAffiliation**](CharacterApi.md#PostCharactersAffiliation) | **Post** /v1/characters/affiliation/ | Character affiliation
@@ -505,7 +505,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdStats200Ok GetCharactersCharacterIdStats(ctx, characterId, optional)
 Yearly aggregate stats
 
-Returns aggregate yearly stats for a character  ---  This route is cached for up to 86400 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/stats/)
+Returns aggregate yearly stats for a character  ---  This route is cached for up to 86400 seconds
 
 ### Required Parameters
 

@@ -70,6 +70,9 @@ func (a *SkillsApiService) GetCharactersCharacterIdAttributes(ctx context.Contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -165,6 +168,9 @@ func (a *SkillsApiService) GetCharactersCharacterIdSkillqueue(ctx context.Contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -260,6 +266,9 @@ func (a *SkillsApiService) GetCharactersCharacterIdSkills(ctx context.Context, c
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}

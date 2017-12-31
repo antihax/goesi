@@ -71,6 +71,9 @@ func (a *WalletApiService) GetCharactersCharacterIdWallet(ctx context.Context, c
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -167,6 +170,9 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletJournal(ctx context.Con
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -269,6 +275,9 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletTransactions(ctx contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -370,6 +379,9 @@ func (a *WalletApiService) GetCorporationsCorporationIdWallets(ctx context.Conte
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -468,6 +480,9 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionJournal(ct
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if division < 1 {
 		return successPayload, nil, reportError("division must be greater than 1")
 	}
@@ -578,6 +593,9 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionTransactio
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if division < 1 {
 		return successPayload, nil, reportError("division must be greater than 1")
 	}

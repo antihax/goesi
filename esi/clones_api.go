@@ -71,6 +71,9 @@ func (a *ClonesApiService) GetCharactersCharacterIdClones(ctx context.Context, c
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -166,6 +169,9 @@ func (a *ClonesApiService) GetCharactersCharacterIdImplants(ctx context.Context,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}

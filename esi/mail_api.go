@@ -72,6 +72,9 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return nil, err
 	}
@@ -165,6 +168,9 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Conte
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return nil, err
 	}
@@ -259,6 +265,9 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -363,6 +372,9 @@ func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -458,6 +470,9 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -555,6 +570,9 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -651,6 +669,9 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -749,6 +770,9 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -850,6 +874,9 @@ func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return nil, err
 	}

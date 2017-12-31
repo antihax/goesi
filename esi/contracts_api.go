@@ -70,6 +70,9 @@ func (a *ContractsApiService) GetCharactersCharacterIdContracts(ctx context.Cont
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -167,6 +170,9 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdBids(ct
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -264,6 +270,9 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdItems(c
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -359,6 +368,9 @@ func (a *ContractsApiService) GetCorporationsCorporationIdContracts(ctx context.
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -457,6 +469,9 @@ func (a *ContractsApiService) GetCorporationsCorporationIdContractsContractIdBid
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -560,6 +575,9 @@ func (a *ContractsApiService) GetCorporationsCorporationIdContractsContractIdIte
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}

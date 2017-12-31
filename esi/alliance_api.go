@@ -156,6 +156,9 @@ func (a *AllianceApiService) GetAlliancesAllianceId(ctx context.Context, allianc
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if allianceId < 1 {
+		return successPayload, nil, reportError("allianceId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -244,6 +247,9 @@ func (a *AllianceApiService) GetAlliancesAllianceIdCorporations(ctx context.Cont
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if allianceId < 1 {
+		return successPayload, nil, reportError("allianceId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -332,6 +338,9 @@ func (a *AllianceApiService) GetAlliancesAllianceIdIcons(ctx context.Context, al
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if allianceId < 1 {
+		return successPayload, nil, reportError("allianceId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}

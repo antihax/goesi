@@ -70,6 +70,9 @@ func (a *CorporationApiService) GetCorporationsCorporationId(ctx context.Context
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -158,6 +161,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(ctx 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -248,6 +254,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -350,6 +359,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -451,6 +463,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -546,6 +561,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdFacilities(ctx conte
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -640,6 +658,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(ctx context.Co
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -730,6 +751,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedals(ctx context.C
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -832,6 +856,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -933,6 +960,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -1028,6 +1058,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx con
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -1123,6 +1156,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersTitles(ctx co
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -1218,6 +1254,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembertracking(ctx c
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -1314,6 +1353,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutposts(ctx context
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -1417,6 +1459,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutpostsOutpostId(ct
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -1512,6 +1557,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -1608,6 +1656,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRolesHistory(ctx con
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -1710,6 +1761,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdShareholders(ctx con
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -1812,6 +1866,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStandings(ctx contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -1914,6 +1971,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbases(ctx contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -2019,6 +2079,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -2123,6 +2186,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -2230,6 +2296,9 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -2507,6 +2576,9 @@ func (a *CorporationApiService) PutCorporationsCorporationIdStructuresStructureI
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return nil, err
 	}

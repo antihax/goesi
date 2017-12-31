@@ -70,6 +70,9 @@ func (a *LoyaltyApiService) GetCharactersCharacterIdLoyaltyPoints(ctx context.Co
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -164,6 +167,9 @@ func (a *LoyaltyApiService) GetLoyaltyStoresCorporationIdOffers(ctx context.Cont
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}

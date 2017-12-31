@@ -71,6 +71,9 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -173,6 +176,9 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -274,6 +280,9 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -370,6 +379,9 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -474,6 +486,9 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -577,6 +592,9 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}

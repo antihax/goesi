@@ -80,6 +80,9 @@ func (a *SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, c
 	if len(categories) > 11 {
 		return successPayload, nil, reportError("categories must have less than 11 elements")
 	}
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if strlen(search) < 3 {
 		return successPayload, nil, reportError("search must have at least 3 elements")
 	}

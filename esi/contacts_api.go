@@ -71,6 +71,9 @@ func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Con
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return nil, reportError("characterId must be greater than 1")
+	}
 	if len(contactIds) < 1 {
 		return nil, reportError("contactIds must have at least 1 elements")
 	}
@@ -171,6 +174,9 @@ func (a *ContactsApiService) GetAlliancesAllianceIdContacts(ctx context.Context,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if allianceId < 1 {
+		return successPayload, nil, reportError("allianceId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -273,6 +279,9 @@ func (a *ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -374,6 +383,9 @@ func (a *ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -470,6 +482,9 @@ func (a *ContactsApiService) GetCorporationsCorporationIdContacts(ctx context.Co
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if corporationId < 1 {
+		return successPayload, nil, reportError("corporationId must be greater than 1")
+	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
@@ -575,6 +590,9 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return successPayload, nil, reportError("characterId must be greater than 1")
+	}
 	if standing < -10 {
 		return successPayload, nil, reportError("standing must be greater than -10")
 	}
@@ -694,6 +712,9 @@ func (a *ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Contex
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if characterId < 1 {
+		return nil, reportError("characterId must be greater than 1")
+	}
 	if standing < -10 {
 		return nil, reportError("standing must be greater than -10")
 	}

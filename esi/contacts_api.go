@@ -77,8 +77,8 @@ func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Con
 	if len(contactIds) < 1 {
 		return nil, reportError("contactIds must have at least 1 elements")
 	}
-	if len(contactIds) > 100 {
-		return nil, reportError("contactIds must have less than 100 elements")
+	if len(contactIds) > 20 {
+		return nil, reportError("contactIds must have less than 20 elements")
 	}
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return nil, err

@@ -112,7 +112,7 @@ func easyjson53553d35DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetL
 		case "lp_cost":
 			out.LpCost = int32(in.Int32())
 		case "isk_cost":
-			out.IskCost = float32(in.Float32())
+			out.IskCost = int64(in.Int64())
 		case "required_items":
 			if in.IsNull() {
 				in.Skip()
@@ -198,7 +198,7 @@ func easyjson53553d35EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.IskCost))
+		out.Int64(int64(in.IskCost))
 	}
 	if len(in.RequiredItems) != 0 {
 		const prefix string = ",\"required_items\":"

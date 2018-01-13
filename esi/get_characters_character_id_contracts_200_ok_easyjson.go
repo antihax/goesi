@@ -154,7 +154,7 @@ func easyjson755fff33DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "buyout":
 			out.Buyout = float64(in.Float64())
 		case "volume":
-			out.Volume = float32(in.Float32())
+			out.Volume = float64(in.Float64())
 		default:
 			in.SkipRecursive()
 		}
@@ -387,7 +387,7 @@ func easyjson755fff33EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Volume))
+		out.Float64(float64(in.Volume))
 	}
 	out.RawByte('}')
 }

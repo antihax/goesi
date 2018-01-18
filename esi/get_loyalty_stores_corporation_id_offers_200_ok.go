@@ -34,5 +34,6 @@ type GetLoyaltyStoresCorporationIdOffers200Ok struct {
 	Quantity      int32                                             `json:"quantity,omitempty"`       /* quantity integer */
 	LpCost        int32                                             `json:"lp_cost,omitempty"`        /* lp_cost integer */
 	IskCost       int64                                             `json:"isk_cost,omitempty"`       /* isk_cost integer */
+	AkCost        int32                                             `json:"ak_cost,omitempty"`        /* Analysis kredit cost */
 	RequiredItems []GetLoyaltyStoresCorporationIdOffersRequiredItem `json:"required_items,omitempty"` /* required_items array */
 }

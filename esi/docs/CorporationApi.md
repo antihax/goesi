@@ -865,7 +865,6 @@ Name | Type | Description  | Notes
  **starbaseId** | **int64**| An EVE starbase (POS) ID | 
  **systemId** | **int32**| The solar system this starbase (POS) is located in, | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

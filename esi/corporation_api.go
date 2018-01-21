@@ -2056,7 +2056,6 @@ Returns various settings and fuels of a starbase (POS)  ---  This route is cache
 @param systemId The solar system this starbase (POS) is located in,
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
-    @param "page" (int32) Which page of results to return
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
@@ -2085,9 +2084,6 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 	if err := typeCheckParameter(localVarOptionals["datasource"], "string", "datasource"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["page"], "int32", "page"); err != nil {
-		return successPayload, nil, err
-	}
 	if err := typeCheckParameter(localVarOptionals["token"], "string", "token"); err != nil {
 		return successPayload, nil, err
 	}
@@ -2100,9 +2096,6 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 
 	if localVarTempParam, localVarOk := localVarOptionals["datasource"].(string); localVarOk {
 		localVarQueryParams.Add("datasource", parameterToString(localVarTempParam, ""))
-	}
-	if localVarTempParam, localVarOk := localVarOptionals["page"].(int32); localVarOk {
-		localVarQueryParams.Add("page", parameterToString(localVarTempParam, ""))
 	}
 	localVarQueryParams.Add("system_id", parameterToString(systemId, ""))
 	if localVarTempParam, localVarOk := localVarOptionals["token"].(string); localVarOk {

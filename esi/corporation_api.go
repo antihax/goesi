@@ -1732,8 +1732,8 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRolesHistory(ctx con
 	return successPayload, localVarHttpResponse, err
 }
 
-/* CorporationApiService Get corporation members
-Return the current member list of a corporation, the token&#39;s character need to be a member of the corporation.  ---  This route is cached for up to 3600 seconds
+/* CorporationApiService Get corporation shareholders
+Return the current shareholders of a corporation.  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID

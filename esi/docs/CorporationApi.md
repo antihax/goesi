@@ -21,7 +21,7 @@ Method | HTTP request | Description
 [**GetCorporationsCorporationIdOutpostsOutpostId**](CorporationApi.md#GetCorporationsCorporationIdOutpostsOutpostId) | **Get** /v1/corporations/{corporation_id}/outposts/{outpost_id}/ | Get corporation outpost details
 [**GetCorporationsCorporationIdRoles**](CorporationApi.md#GetCorporationsCorporationIdRoles) | **Get** /v1/corporations/{corporation_id}/roles/ | Get corporation member roles
 [**GetCorporationsCorporationIdRolesHistory**](CorporationApi.md#GetCorporationsCorporationIdRolesHistory) | **Get** /v1/corporations/{corporation_id}/roles/history/ | Get corporation member roles history
-[**GetCorporationsCorporationIdShareholders**](CorporationApi.md#GetCorporationsCorporationIdShareholders) | **Get** /v1/corporations/{corporation_id}/shareholders/ | Get corporation members
+[**GetCorporationsCorporationIdShareholders**](CorporationApi.md#GetCorporationsCorporationIdShareholders) | **Get** /v1/corporations/{corporation_id}/shareholders/ | Get corporation shareholders
 [**GetCorporationsCorporationIdStandings**](CorporationApi.md#GetCorporationsCorporationIdStandings) | **Get** /v1/corporations/{corporation_id}/standings/ | Get corporation standings
 [**GetCorporationsCorporationIdStarbases**](CorporationApi.md#GetCorporationsCorporationIdStarbases) | **Get** /v1/corporations/{corporation_id}/starbases/ | Get corporation starbases (POSes)
 [**GetCorporationsCorporationIdStarbasesStarbaseId**](CorporationApi.md#GetCorporationsCorporationIdStarbasesStarbaseId) | **Get** /v1/corporations/{corporation_id}/starbases/{starbase_id}/ | Get starbase (POS) detail
@@ -719,9 +719,9 @@ Name | Type | Description  | Notes
 
 # **GetCorporationsCorporationIdShareholders**
 > []GetCorporationsCorporationIdShareholders200Ok GetCorporationsCorporationIdShareholders(ctx, corporationId, optional)
-Get corporation members
+Get corporation shareholders
 
-Return the current member list of a corporation, the token's character need to be a member of the corporation.  ---  This route is cached for up to 3600 seconds
+Return the current shareholders of a corporation.  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 

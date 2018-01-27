@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **Issued** | [**time.Time**](time.Time.md) | Date and time when this order was issued | [default to null]
 **State** | **string** | Current order state | [default to null]
 **MinVolume** | **int32** | For bids (buy orders), the minimum quantity that will be accepted in a matching offer (sell order) | [default to null]
-**WalletDivision** | **int32** | Wallet division of which this order used | [default to null]
-**Duration** | **int32** | Numer of days for which order is valid (starting from the issued date). An order expires at time issued + duration | [default to null]
+**WalletDivision** | **int32** | The corporation wallet division used for this order. | [default to null]
+**Duration** | **int32** | Number of days the order is valid for (starting from the issued date). An order expires at time issued + duration | [default to null]
 **Escrow** | **float64** | For buy orders, the amount of ISK in escrow | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

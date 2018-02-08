@@ -1,6 +1,7 @@
 # GoESI "Go Easy" API client for esi
 
 An OpenAPI for EVE Online ESI API
+
 [![Sourcegraph](https://sourcegraph.com/github.com/antihax/goesi/-/badge.svg)](https://sourcegraph.com/github.com/antihax/goesi?badge)
 
 

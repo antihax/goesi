@@ -169,6 +169,7 @@ Class | Method | HTTP request | Description
 *SovereigntyApi* | [**GetSovereigntyMap**](docs/SovereigntyApi.md#getsovereigntymap) | **Get** /v1/sovereignty/map/ | List sovereignty of systems
 *SovereigntyApi* | [**GetSovereigntyStructures**](docs/SovereigntyApi.md#getsovereigntystructures) | **Get** /v1/sovereignty/structures/ | List sovereignty structures
 *StatusApi* | [**GetStatus**](docs/StatusApi.md#getstatus) | **Get** /v1/status/ | Retrieve the uptime and player counts
+*UniverseApi* | [**GetUniverseAncestries**](docs/UniverseApi.md#getuniverseancestries) | **Get** /v1/universe/ancestries/ | Get ancestries
 *UniverseApi* | [**GetUniverseBloodlines**](docs/UniverseApi.md#getuniversebloodlines) | **Get** /v1/universe/bloodlines/ | Get bloodlines
 *UniverseApi* | [**GetUniverseCategories**](docs/UniverseApi.md#getuniversecategories) | **Get** /v1/universe/categories/ | Get item categories
 *UniverseApi* | [**GetUniverseCategoriesCategoryId**](docs/UniverseApi.md#getuniversecategoriescategoryid) | **Get** /v1/universe/categories/{category_id}/ | Get item category information
@@ -451,6 +452,7 @@ Class | Method | HTTP request | Description
  - [GetSovereigntyMap200Ok](docs/GetSovereigntyMap200Ok.md)
  - [GetSovereigntyStructures200Ok](docs/GetSovereigntyStructures200Ok.md)
  - [GetStatusOk](docs/GetStatusOk.md)
+ - [GetUniverseAncestries200Ok](docs/GetUniverseAncestries200Ok.md)
  - [GetUniverseBloodlines200Ok](docs/GetUniverseBloodlines200Ok.md)
  - [GetUniverseCategoriesCategoryIdNotFound](docs/GetUniverseCategoriesCategoryIdNotFound.md)
  - [GetUniverseCategoriesCategoryIdOk](docs/GetUniverseCategoriesCategoryIdOk.md)

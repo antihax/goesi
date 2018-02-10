@@ -38,11 +38,11 @@ type GetCorporationsCorporationIdStructures200Ok struct {
 	CorporationId   int32                                              `json:"corporation_id,omitempty"`    /* ID of the corporation that owns the structure */
 	SystemId        int32                                              `json:"system_id,omitempty"`         /* The solar system the structure is in */
 	ProfileId       int32                                              `json:"profile_id,omitempty"`        /* The id of the ACL profile for this citadel */
-	CurrentVul      []GetCorporationsCorporationIdStructuresCurrentVul `json:"current_vul,omitempty"`       /* This week's vulnerability windows, Monday is day 0 */
-	NextVul         []GetCorporationsCorporationIdStructuresNextVul    `json:"next_vul,omitempty"`          /* Next week's vulnerability windows, Monday is day 0 */
 	FuelExpires     time.Time                                          `json:"fuel_expires,omitempty"`      /* Date on which the structure will run out of fuel */
 	Services        []GetCorporationsCorporationIdStructuresService    `json:"services,omitempty"`          /* Contains a list of service upgrades, and their state */
 	StateTimerStart time.Time                                          `json:"state_timer_start,omitempty"` /* Date at which the structure entered it's current state */
 	StateTimerEnd   time.Time                                          `json:"state_timer_end,omitempty"`   /* Date at which the structure will move to it's next state */
 	UnanchorsAt     time.Time                                          `json:"unanchors_at,omitempty"`      /* Date at which the structure will unanchor */
+	CurrentVul      []GetCorporationsCorporationIdStructuresCurrentVul `json:"current_vul,omitempty"`       /* This week's vulnerability windows, Monday is day 0 */
+	NextVul         []GetCorporationsCorporationIdStructuresNextVul    `json:"next_vul,omitempty"`          /* Next week's vulnerability windows, Monday is day 0 */
 }

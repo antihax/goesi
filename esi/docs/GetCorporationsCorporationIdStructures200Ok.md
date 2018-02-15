@@ -13,8 +13,12 @@ Name | Type | Description | Notes
 **StateTimerStart** | [**time.Time**](time.Time.md) | Date at which the structure entered it&#39;s current state | [optional] [default to null]
 **StateTimerEnd** | [**time.Time**](time.Time.md) | Date at which the structure will move to it&#39;s next state | [optional] [default to null]
 **UnanchorsAt** | [**time.Time**](time.Time.md) | Date at which the structure will unanchor | [optional] [default to null]
-**CurrentVul** | [**[]GetCorporationsCorporationIdStructuresCurrentVul**](get_corporations_corporation_id_structures_current_vul.md) | This week&#39;s vulnerability windows, Monday is day 0 | [default to null]
-**NextVul** | [**[]GetCorporationsCorporationIdStructuresNextVul**](get_corporations_corporation_id_structures_next_vul.md) | Next week&#39;s vulnerability windows, Monday is day 0 | [default to null]
+**State** | **string** | state string | [default to null]
+**ReinforceWeekday** | **int32** | The day of the week when the structure exits its final reinforcement period and becomes vulnerable to attack against its hull. Monday is 0 and Sunday is 6. | [default to null]
+**ReinforceHour** | **int32** | The hour of day that determines the four hour window when the structure will randomly exit its reinforcement periods and become vulnerable to attack against its armor and/or hull. The structure will become vulnerable at a random time that is +/- 2 hours centered on the value of this property. | [default to null]
+**NextReinforceWeekday** | **int32** | The requested change to reinforce_weekday that will take effect at the time shown by next_reinforce_apply. | [optional] [default to null]
+**NextReinforceHour** | **int32** | The requested change to reinforce_hour that will take effect at the time shown by next_reinforce_apply. | [optional] [default to null]
+**NextReinforceApply** | [**time.Time**](time.Time.md) | The date and time when the structure&#39;s newly requested reinforcement times (e.g. next_reinforce_hour and next_reinforce_day) will take effect. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

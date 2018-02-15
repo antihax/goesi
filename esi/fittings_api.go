@@ -241,14 +241,14 @@ Save a new fitting for a character  ---
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
+@param fitting Details about the new fitting
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
-    @param "fitting" (PostCharactersCharacterIdFittingsFitting) Details about the new fitting
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return PostCharactersCharacterIdFittingsCreated*/
-func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (PostCharactersCharacterIdFittingsCreated, *http.Response, error) {
+func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Context, characterId int32, fitting PostCharactersCharacterIdFittingsFitting, localVarOptionals map[string]interface{}) (PostCharactersCharacterIdFittingsCreated, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -314,9 +314,7 @@ func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Conte
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
 	}
 	// body params
-	if localVarTempParam, localVarOk := localVarOptionals["fitting"].(PostCharactersCharacterIdFittingsFitting); localVarOk {
-		localVarPostBody = &localVarTempParam
-	}
+	localVarPostBody = &fitting
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

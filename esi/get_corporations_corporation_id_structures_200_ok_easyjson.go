@@ -152,51 +152,19 @@ func easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.UnanchorsAt).UnmarshalJSON(data))
 			}
-		case "current_vul":
-			if in.IsNull() {
-				in.Skip()
-				out.CurrentVul = nil
-			} else {
-				in.Delim('[')
-				if out.CurrentVul == nil {
-					if !in.IsDelim(']') {
-						out.CurrentVul = make([]GetCorporationsCorporationIdStructuresCurrentVul, 0, 8)
-					} else {
-						out.CurrentVul = []GetCorporationsCorporationIdStructuresCurrentVul{}
-					}
-				} else {
-					out.CurrentVul = (out.CurrentVul)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v5 GetCorporationsCorporationIdStructuresCurrentVul
-					easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi3(in, &v5)
-					out.CurrentVul = append(out.CurrentVul, v5)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
-		case "next_vul":
-			if in.IsNull() {
-				in.Skip()
-				out.NextVul = nil
-			} else {
-				in.Delim('[')
-				if out.NextVul == nil {
-					if !in.IsDelim(']') {
-						out.NextVul = make([]GetCorporationsCorporationIdStructuresNextVul, 0, 8)
-					} else {
-						out.NextVul = []GetCorporationsCorporationIdStructuresNextVul{}
-					}
-				} else {
-					out.NextVul = (out.NextVul)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v6 GetCorporationsCorporationIdStructuresNextVul
-					easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi4(in, &v6)
-					out.NextVul = append(out.NextVul, v6)
-					in.WantComma()
-				}
-				in.Delim(']')
+		case "state":
+			out.State = string(in.String())
+		case "reinforce_weekday":
+			out.ReinforceWeekday = int32(in.Int32())
+		case "reinforce_hour":
+			out.ReinforceHour = int32(in.Int32())
+		case "next_reinforce_weekday":
+			out.NextReinforceWeekday = int32(in.Int32())
+		case "next_reinforce_hour":
+			out.NextReinforceHour = int32(in.Int32())
+		case "next_reinforce_apply":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.NextReinforceApply).UnmarshalJSON(data))
 			}
 		default:
 			in.SkipRecursive()
@@ -282,11 +250,11 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v7, v8 := range in.Services {
-				if v7 > 0 {
+			for v5, v6 := range in.Services {
+				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi2(out, v8)
+				easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi2(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -321,43 +289,65 @@ func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Raw((in.UnanchorsAt).MarshalJSON())
 	}
-	if len(in.CurrentVul) != 0 {
-		const prefix string = ",\"current_vul\":"
+	if in.State != "" {
+		const prefix string = ",\"state\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		{
-			out.RawByte('[')
-			for v9, v10 := range in.CurrentVul {
-				if v9 > 0 {
-					out.RawByte(',')
-				}
-				easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi3(out, v10)
-			}
-			out.RawByte(']')
-		}
+		out.String(string(in.State))
 	}
-	if len(in.NextVul) != 0 {
-		const prefix string = ",\"next_vul\":"
+	if in.ReinforceWeekday != 0 {
+		const prefix string = ",\"reinforce_weekday\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		{
-			out.RawByte('[')
-			for v11, v12 := range in.NextVul {
-				if v11 > 0 {
-					out.RawByte(',')
-				}
-				easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi4(out, v12)
-			}
-			out.RawByte(']')
+		out.Int32(int32(in.ReinforceWeekday))
+	}
+	if in.ReinforceHour != 0 {
+		const prefix string = ",\"reinforce_hour\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
 		}
+		out.Int32(int32(in.ReinforceHour))
+	}
+	if in.NextReinforceWeekday != 0 {
+		const prefix string = ",\"next_reinforce_weekday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.NextReinforceWeekday))
+	}
+	if in.NextReinforceHour != 0 {
+		const prefix string = ",\"next_reinforce_hour\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.NextReinforceHour))
+	}
+	if true {
+		const prefix string = ",\"next_reinforce_apply\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.NextReinforceApply).MarshalJSON())
 	}
 	out.RawByte('}')
 }
@@ -384,124 +374,6 @@ func (v *GetCorporationsCorporationIdStructures200Ok) UnmarshalJSON(data []byte)
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCorporationsCorporationIdStructures200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCorporationsCorporationIdStructuresNextVul) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "day":
-			out.Day = int32(in.Int32())
-		case "hour":
-			out.Hour = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCorporationsCorporationIdStructuresNextVul) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Day != 0 {
-		const prefix string = ",\"day\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Day))
-	}
-	if in.Hour != 0 {
-		const prefix string = ",\"hour\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Hour))
-	}
-	out.RawByte('}')
-}
-func easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCorporationsCorporationIdStructuresCurrentVul) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "day":
-			out.Day = int32(in.Int32())
-		case "hour":
-			out.Hour = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonF6d56f96EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCorporationsCorporationIdStructuresCurrentVul) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Day != 0 {
-		const prefix string = ",\"day\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Day))
-	}
-	if in.Hour != 0 {
-		const prefix string = ",\"hour\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Hour))
-	}
-	out.RawByte('}')
 }
 func easyjsonF6d56f96DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdStructuresService) {
 	isTopLevel := in.IsStart()

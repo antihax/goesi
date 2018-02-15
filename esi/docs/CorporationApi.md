@@ -25,11 +25,10 @@ Method | HTTP request | Description
 [**GetCorporationsCorporationIdStandings**](CorporationApi.md#GetCorporationsCorporationIdStandings) | **Get** /v1/corporations/{corporation_id}/standings/ | Get corporation standings
 [**GetCorporationsCorporationIdStarbases**](CorporationApi.md#GetCorporationsCorporationIdStarbases) | **Get** /v1/corporations/{corporation_id}/starbases/ | Get corporation starbases (POSes)
 [**GetCorporationsCorporationIdStarbasesStarbaseId**](CorporationApi.md#GetCorporationsCorporationIdStarbasesStarbaseId) | **Get** /v1/corporations/{corporation_id}/starbases/{starbase_id}/ | Get starbase (POS) detail
-[**GetCorporationsCorporationIdStructures**](CorporationApi.md#GetCorporationsCorporationIdStructures) | **Get** /v1/corporations/{corporation_id}/structures/ | Get corporation structures
+[**GetCorporationsCorporationIdStructures**](CorporationApi.md#GetCorporationsCorporationIdStructures) | **Get** /v2/corporations/{corporation_id}/structures/ | Get corporation structures
 [**GetCorporationsCorporationIdTitles**](CorporationApi.md#GetCorporationsCorporationIdTitles) | **Get** /v1/corporations/{corporation_id}/titles/ | Get corporation titles
 [**GetCorporationsNames**](CorporationApi.md#GetCorporationsNames) | **Get** /v2/corporations/names/ | Get corporation names
 [**GetCorporationsNpccorps**](CorporationApi.md#GetCorporationsNpccorps) | **Get** /v1/corporations/npccorps/ | Get npc corporations
-[**PutCorporationsCorporationIdStructuresStructureId**](CorporationApi.md#PutCorporationsCorporationIdStructuresStructureId) | **Put** /v1/corporations/{corporation_id}/structures/{structure_id}/ | Update structure vulnerability schedule
 
 
 # **GetCorporationsCorporationId**
@@ -888,7 +887,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdStructures200Ok GetCorporationsCorporationIdStructures(ctx, corporationId, optional)
 Get corporation structures
 
-Get a list of corporation structures  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): StationManager  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/structures/)
+Get a list of corporation structures. This route's version includes the changes to structures detailed in this blog: https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): StationManager
 
 ### Required Parameters
 
@@ -1034,50 +1033,6 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **PutCorporationsCorporationIdStructuresStructureId**
-> PutCorporationsCorporationIdStructuresStructureId(ctx, corporationId, newSchedule, structureId, optional)
-Update structure vulnerability schedule
-
-Update the vulnerability window schedule of a corporation structure  --- 
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
-  **corporationId** | **int32**| An EVE corporation ID | 
-  **newSchedule** | [**[]PutCorporationsCorporationIdStructuresStructureIdNewSchedule**](put_corporations_corporation_id_structures_structure_id_new_schedule.md)| New vulnerability window schedule for the structure | 
-  **structureId** | **int64**| A structure ID | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **corporationId** | **int32**| An EVE corporation ID | 
- **newSchedule** | [**[]PutCorporationsCorporationIdStructuresStructureIdNewSchedule**](put_corporations_corporation_id_structures_structure_id_new_schedule.md)| New vulnerability window schedule for the structure | 
- **structureId** | **int64**| A structure ID | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **token** | **string**| Access token to use if unable to set a header | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[evesso](../README.md#evesso)
 
 ### HTTP request headers
 

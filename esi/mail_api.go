@@ -746,14 +746,14 @@ Create a mail label  ---
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
+@param label Label to create
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "datasource" (string) The server name you would like data from
-    @param "label" (PostCharactersCharacterIdMailLabelsLabel) Label to create
     @param "token" (string) Access token to use if unable to set a header
     @param "userAgent" (string) Client identifier, takes precedence over headers
     @param "xUserAgent" (string) Client identifier, takes precedence over User-Agent
 @return int64*/
-func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context, characterId int32, localVarOptionals map[string]interface{}) (int64, *http.Response, error) {
+func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context, characterId int32, label PostCharactersCharacterIdMailLabelsLabel, localVarOptionals map[string]interface{}) (int64, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -819,9 +819,7 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarTempParam, "")
 	}
 	// body params
-	if localVarTempParam, localVarOk := localVarOptionals["label"].(PostCharactersCharacterIdMailLabelsLabel); localVarOk {
-		localVarPostBody = &localVarTempParam
-	}
+	localVarPostBody = &label
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

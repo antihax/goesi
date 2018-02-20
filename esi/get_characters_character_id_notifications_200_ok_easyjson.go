@@ -105,8 +105,6 @@ func easyjson6cda8914DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		switch key {
 		case "notification_id":
 			out.NotificationId = int64(in.Int64())
-		case "type":
-			out.Type_ = string(in.String())
 		case "sender_id":
 			out.SenderId = int32(in.Int32())
 		case "sender_type":
@@ -119,6 +117,8 @@ func easyjson6cda8914DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.IsRead = bool(in.Bool())
 		case "text":
 			out.Text = string(in.String())
+		case "type":
+			out.Type_ = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -142,16 +142,6 @@ func easyjson6cda8914EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.NotificationId))
-	}
-	if in.Type_ != "" {
-		const prefix string = ",\"type\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Type_))
 	}
 	if in.SenderId != 0 {
 		const prefix string = ",\"sender_id\":"
@@ -202,6 +192,16 @@ func easyjson6cda8914EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Text))
+	}
+	if in.Type_ != "" {
+		const prefix string = ",\"type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Type_))
 	}
 	out.RawByte('}')
 }

@@ -113,10 +113,10 @@ func easyjsonAc6a9211DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.LocationType = string(in.String())
 		case "item_id":
 			out.ItemId = int64(in.Int64())
-		case "location_flag":
-			out.LocationFlag = string(in.String())
 		case "is_singleton":
 			out.IsSingleton = bool(in.Bool())
+		case "location_flag":
+			out.LocationFlag = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -181,16 +181,6 @@ func easyjsonAc6a9211EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.ItemId))
 	}
-	if in.LocationFlag != "" {
-		const prefix string = ",\"location_flag\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.LocationFlag))
-	}
 	if in.IsSingleton {
 		const prefix string = ",\"is_singleton\":"
 		if first {
@@ -200,6 +190,16 @@ func easyjsonAc6a9211EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Bool(bool(in.IsSingleton))
+	}
+	if in.LocationFlag != "" {
+		const prefix string = ",\"location_flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.LocationFlag))
 	}
 	out.RawByte('}')
 }

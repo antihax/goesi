@@ -109,8 +109,6 @@ func easyjson287c4880DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.TypeId = int32(in.Int32())
 		case "location_id":
 			out.LocationId = int64(in.Int64())
-		case "location_flag":
-			out.LocationFlag = string(in.String())
 		case "quantity":
 			out.Quantity = int32(in.Int32())
 		case "time_efficiency":
@@ -119,6 +117,8 @@ func easyjson287c4880DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.MaterialEfficiency = int32(in.Int32())
 		case "runs":
 			out.Runs = int32(in.Int32())
+		case "location_flag":
+			out.LocationFlag = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -163,16 +163,6 @@ func easyjson287c4880EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.LocationId))
 	}
-	if in.LocationFlag != "" {
-		const prefix string = ",\"location_flag\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.LocationFlag))
-	}
 	if in.Quantity != 0 {
 		const prefix string = ",\"quantity\":"
 		if first {
@@ -212,6 +202,16 @@ func easyjson287c4880EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Runs))
+	}
+	if in.LocationFlag != "" {
+		const prefix string = ",\"location_flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.LocationFlag))
 	}
 	out.RawByte('}')
 }

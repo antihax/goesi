@@ -38,11 +38,11 @@ type GetCorporationsCorporationIdContainersLogs200Ok struct {
 	ContainerTypeId  int32     `json:"container_type_id,omitempty"`  /* Type ID of the container */
 	CharacterId      int32     `json:"character_id,omitempty"`       /* ID of the character who performed the action. */
 	LocationId       int64     `json:"location_id,omitempty"`        /* location_id integer */
-	LocationFlag     string    `json:"location_flag,omitempty"`      /* location_flag string */
 	Action           string    `json:"action,omitempty"`             /* action string */
 	PasswordType     string    `json:"password_type,omitempty"`      /* Type of password set if action is of type SetPassword or EnterPassword */
 	TypeId           int32     `json:"type_id,omitempty"`            /* Type ID of the item being acted upon */
 	Quantity         int32     `json:"quantity,omitempty"`           /* Quantity of the item being acted upon */
 	OldConfigBitmask int32     `json:"old_config_bitmask,omitempty"` /* old_config_bitmask integer */
 	NewConfigBitmask int32     `json:"new_config_bitmask,omitempty"` /* new_config_bitmask integer */
+	LocationFlag     string    `json:"location_flag,omitempty"`      /* location_flag string */
 }

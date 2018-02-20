@@ -115,8 +115,6 @@ func easyjson613793e0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.CharacterId = int32(in.Int32())
 		case "location_id":
 			out.LocationId = int64(in.Int64())
-		case "location_flag":
-			out.LocationFlag = string(in.String())
 		case "action":
 			out.Action = string(in.String())
 		case "password_type":
@@ -129,6 +127,8 @@ func easyjson613793e0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.OldConfigBitmask = int32(in.Int32())
 		case "new_config_bitmask":
 			out.NewConfigBitmask = int32(in.Int32())
+		case "location_flag":
+			out.LocationFlag = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -193,16 +193,6 @@ func easyjson613793e0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.LocationId))
 	}
-	if in.LocationFlag != "" {
-		const prefix string = ",\"location_flag\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.LocationFlag))
-	}
 	if in.Action != "" {
 		const prefix string = ",\"action\":"
 		if first {
@@ -262,6 +252,16 @@ func easyjson613793e0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.NewConfigBitmask))
+	}
+	if in.LocationFlag != "" {
+		const prefix string = ",\"location_flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.LocationFlag))
 	}
 	out.RawByte('}')
 }

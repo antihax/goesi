@@ -138,9 +138,9 @@ Class | Method | HTTP request | Description
 *MailApi* | [**PostCharactersCharacterIdMail**](docs/MailApi.md#postcharacterscharacteridmail) | **Post** /v1/characters/{character_id}/mail/ | Send a new mail
 *MailApi* | [**PostCharactersCharacterIdMailLabels**](docs/MailApi.md#postcharacterscharacteridmaillabels) | **Post** /v2/characters/{character_id}/mail/labels/ | Create a mail label
 *MailApi* | [**PutCharactersCharacterIdMailMailId**](docs/MailApi.md#putcharacterscharacteridmailmailid) | **Put** /v1/characters/{character_id}/mail/{mail_id}/ | Update metadata about a mail
-*MarketApi* | [**GetCharactersCharacterIdOrders**](docs/MarketApi.md#getcharacterscharacteridorders) | **Get** /v1/characters/{character_id}/orders/ | List open orders from a character
+*MarketApi* | [**GetCharactersCharacterIdOrders**](docs/MarketApi.md#getcharacterscharacteridorders) | **Get** /v2/characters/{character_id}/orders/ | List open orders from a character
 *MarketApi* | [**GetCharactersCharacterIdOrdersHistory**](docs/MarketApi.md#getcharacterscharacteridordershistory) | **Get** /v1/characters/{character_id}/orders/history/ | List historical orders by a character
-*MarketApi* | [**GetCorporationsCorporationIdOrders**](docs/MarketApi.md#getcorporationscorporationidorders) | **Get** /v1/corporations/{corporation_id}/orders/ | List open orders from a corporation
+*MarketApi* | [**GetCorporationsCorporationIdOrders**](docs/MarketApi.md#getcorporationscorporationidorders) | **Get** /v2/corporations/{corporation_id}/orders/ | List open orders from a corporation
 *MarketApi* | [**GetCorporationsCorporationIdOrdersHistory**](docs/MarketApi.md#getcorporationscorporationidordershistory) | **Get** /v1/corporations/{corporation_id}/orders/history/ | List historical orders from a corporation
 *MarketApi* | [**GetMarketsGroups**](docs/MarketApi.md#getmarketsgroups) | **Get** /v1/markets/groups/ | Get item groups
 *MarketApi* | [**GetMarketsGroupsMarketGroupId**](docs/MarketApi.md#getmarketsgroupsmarketgroupid) | **Get** /v1/markets/groups/{market_group_id}/ | Get item group information

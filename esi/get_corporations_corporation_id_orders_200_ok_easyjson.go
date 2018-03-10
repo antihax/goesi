@@ -113,8 +113,6 @@ func easyjson979d6e15DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.LocationId = int64(in.Int64())
 		case "range":
 			out.Range_ = string(in.String())
-		case "is_buy_order":
-			out.IsBuyOrder = bool(in.Bool())
 		case "price":
 			out.Price = float64(in.Float64())
 		case "volume_total":
@@ -125,16 +123,16 @@ func easyjson979d6e15DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Issued).UnmarshalJSON(data))
 			}
-		case "state":
-			out.State = string(in.String())
+		case "is_buy_order":
+			out.IsBuyOrder = bool(in.Bool())
 		case "min_volume":
 			out.MinVolume = int32(in.Int32())
-		case "wallet_division":
-			out.WalletDivision = int32(in.Int32())
-		case "duration":
-			out.Duration = int32(in.Int32())
 		case "escrow":
 			out.Escrow = float64(in.Float64())
+		case "duration":
+			out.Duration = int32(in.Int32())
+		case "wallet_division":
+			out.WalletDivision = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -199,16 +197,6 @@ func easyjson979d6e15EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Range_))
 	}
-	if in.IsBuyOrder {
-		const prefix string = ",\"is_buy_order\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.IsBuyOrder))
-	}
 	if in.Price != 0 {
 		const prefix string = ",\"price\":"
 		if first {
@@ -249,15 +237,15 @@ func easyjson979d6e15EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Raw((in.Issued).MarshalJSON())
 	}
-	if in.State != "" {
-		const prefix string = ",\"state\":"
+	if in.IsBuyOrder {
+		const prefix string = ",\"is_buy_order\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.State))
+		out.Bool(bool(in.IsBuyOrder))
 	}
 	if in.MinVolume != 0 {
 		const prefix string = ",\"min_volume\":"
@@ -269,15 +257,15 @@ func easyjson979d6e15EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.MinVolume))
 	}
-	if in.WalletDivision != 0 {
-		const prefix string = ",\"wallet_division\":"
+	if in.Escrow != 0 {
+		const prefix string = ",\"escrow\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.WalletDivision))
+		out.Float64(float64(in.Escrow))
 	}
 	if in.Duration != 0 {
 		const prefix string = ",\"duration\":"
@@ -289,15 +277,15 @@ func easyjson979d6e15EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.Duration))
 	}
-	if in.Escrow != 0 {
-		const prefix string = ",\"escrow\":"
+	if in.WalletDivision != 0 {
+		const prefix string = ",\"wallet_division\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float64(float64(in.Escrow))
+		out.Int32(int32(in.WalletDivision))
 	}
 	out.RawByte('}')
 }

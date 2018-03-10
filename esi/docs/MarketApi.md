@@ -4,9 +4,9 @@ All URIs are relative to *https://esi.tech.ccp.is*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCharactersCharacterIdOrders**](MarketApi.md#GetCharactersCharacterIdOrders) | **Get** /v1/characters/{character_id}/orders/ | List open orders from a character
+[**GetCharactersCharacterIdOrders**](MarketApi.md#GetCharactersCharacterIdOrders) | **Get** /v2/characters/{character_id}/orders/ | List open orders from a character
 [**GetCharactersCharacterIdOrdersHistory**](MarketApi.md#GetCharactersCharacterIdOrdersHistory) | **Get** /v1/characters/{character_id}/orders/history/ | List historical orders by a character
-[**GetCorporationsCorporationIdOrders**](MarketApi.md#GetCorporationsCorporationIdOrders) | **Get** /v1/corporations/{corporation_id}/orders/ | List open orders from a corporation
+[**GetCorporationsCorporationIdOrders**](MarketApi.md#GetCorporationsCorporationIdOrders) | **Get** /v2/corporations/{corporation_id}/orders/ | List open orders from a corporation
 [**GetCorporationsCorporationIdOrdersHistory**](MarketApi.md#GetCorporationsCorporationIdOrdersHistory) | **Get** /v1/corporations/{corporation_id}/orders/history/ | List historical orders from a corporation
 [**GetMarketsGroups**](MarketApi.md#GetMarketsGroups) | **Get** /v1/markets/groups/ | Get item groups
 [**GetMarketsGroupsMarketGroupId**](MarketApi.md#GetMarketsGroupsMarketGroupId) | **Get** /v1/markets/groups/{market_group_id}/ | Get item group information
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdOrders200Ok GetCharactersCharacterIdOrders(ctx, characterId, optional)
 List open orders from a character
 
-List market orders placed by a character  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/orders/)
+List open market orders placed by a character  ---  This route is cached for up to 1200 seconds
 
 ### Required Parameters
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdOrders200Ok GetCorporationsCorporationIdOrders(ctx, corporationId, optional)
 List open orders from a corporation
 
-List open market orders placed on behalf of a corporation  ---  This route is cached for up to 1200 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/orders/)
+List open market orders placed on behalf of a corporation  ---  This route is cached for up to 1200 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader
 
 ### Required Parameters
 

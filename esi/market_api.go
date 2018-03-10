@@ -44,7 +44,7 @@ var (
 type MarketApiService service
 
 /* MarketApiService List open orders from a character
-List market orders placed by a character  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/orders/)
+List open market orders placed by a character  ---  This route is cached for up to 1200 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -64,7 +64,7 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/characters/{character_id}/orders/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/orders/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -247,7 +247,7 @@ func (a *MarketApiService) GetCharactersCharacterIdOrdersHistory(ctx context.Con
 }
 
 /* MarketApiService List open orders from a corporation
-List open market orders placed on behalf of a corporation  ---  This route is cached for up to 1200 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/orders/)
+List open market orders placed on behalf of a corporation  ---  This route is cached for up to 1200 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID
@@ -268,7 +268,7 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/orders/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/orders/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)

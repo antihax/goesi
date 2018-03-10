@@ -38,14 +38,13 @@ type GetCorporationsCorporationIdOrders200Ok struct {
 	RegionId       int32     `json:"region_id,omitempty"`       /* ID of the region where order was placed */
 	LocationId     int64     `json:"location_id,omitempty"`     /* ID of the location where order was placed */
 	Range_         string    `json:"range,omitempty"`           /* Valid order range, numbers are ranges in jumps */
-	IsBuyOrder     bool      `json:"is_buy_order,omitempty"`    /* True for a bid (buy) order. False for an offer (sell) order */
 	Price          float64   `json:"price,omitempty"`           /* Cost per unit for this order */
 	VolumeTotal    int32     `json:"volume_total,omitempty"`    /* Quantity of items required or offered at time order was placed */
 	VolumeRemain   int32     `json:"volume_remain,omitempty"`   /* Quantity of items still required or offered */
 	Issued         time.Time `json:"issued,omitempty"`          /* Date and time when this order was issued */
-	State          string    `json:"state,omitempty"`           /* Current order state */
-	MinVolume      int32     `json:"min_volume,omitempty"`      /* For bids (buy orders), the minimum quantity that will be accepted in a matching offer (sell order) */
-	WalletDivision int32     `json:"wallet_division,omitempty"` /* The corporation wallet division used for this order. */
-	Duration       int32     `json:"duration,omitempty"`        /* Number of days the order is valid for (starting from the issued date). An order expires at time issued + duration */
+	IsBuyOrder     bool      `json:"is_buy_order,omitempty"`    /* True if the order is a bid (buy) order */
+	MinVolume      int32     `json:"min_volume,omitempty"`      /* For buy orders, the minimum quantity that will be accepted in a matching sell order */
 	Escrow         float64   `json:"escrow,omitempty"`          /* For buy orders, the amount of ISK in escrow */
+	Duration       int32     `json:"duration,omitempty"`        /* Number of days for which order is valid (starting from the issued date). An order expires at time issued + duration */
+	WalletDivision int32     `json:"wallet_division,omitempty"` /* The corporation wallet division used for this order. */
 }

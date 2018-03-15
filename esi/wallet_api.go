@@ -142,7 +142,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWallet(ctx context.Context, c
 }
 
 /* WalletApiService Get character wallet journal
-Retrieve character wallet journal  ---  This route is cached for up to 3600 seconds
+Retrieve character wallet journal  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/wallet/journal/)
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -450,7 +450,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWallets(ctx context.Conte
 }
 
 /* WalletApiService Get corporation wallet journal
-Retrieve corporation wallet journal  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+Retrieve corporation wallet journal  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/wallets/{division}/journal/)
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID

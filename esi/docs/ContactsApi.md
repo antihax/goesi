@@ -1,6 +1,6 @@
 # \ContactsApi
 
-All URIs are relative to *https://esi.evetech.net*
+All URIs are relative to *https://esi.tech.ccp.is*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

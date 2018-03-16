@@ -1,6 +1,6 @@
 # \CorporationApi
 
-All URIs are relative to *https://esi.evetech.net*
+All URIs are relative to *https://esi.tech.ccp.is*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -113,7 +113,7 @@ No authorization required
 > []GetCorporationsCorporationIdBlueprints200Ok GetCorporationsCorporationIdBlueprints(ctx, corporationId, optional)
 Get corporation blueprints
 
-Returns a list of blueprints the corporation owns  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/blueprints/)
+Returns a list of blueprints the corporation owns  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/blueprints/)
 
 ### Required Parameters
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdContainersLogs200Ok GetCorporationsCorporationIdContainersLogs(ctx, corporationId, optional)
 Get all corporation ALSC logs
 
-Returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation  ---  This route is cached for up to 600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/containers/logs/)
+Returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation  ---  This route is cached for up to 600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/containers/logs/)
 
 ### Required Parameters
 

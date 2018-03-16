@@ -105,7 +105,7 @@ func NewAPIClient(httpClient *http.Client, userAgent string) *APIClient {
 
 	c := &APIClient{}
 	c.client = httpClient
-	c.basePath = "https://esi.evetech.net"
+	c.basePath = "https://esi.tech.ccp.is"
 	c.userAgent = userAgent
 	c.common.client = c
 

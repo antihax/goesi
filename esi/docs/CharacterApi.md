@@ -1,6 +1,6 @@
 # \CharacterApi
 
-All URIs are relative to *https://esi.evetech.net*
+All URIs are relative to *https://esi.tech.ccp.is*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdNotifications200Ok GetCharactersCharacterIdNotifications(ctx, characterId, optional)
 Get character notifications
 
-Return character notifications  ---  This route is cached for up to 600 seconds  --- [This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/notifications/)
+Return character notifications  ---  This route is cached for up to 600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/notifications/)
 
 ### Required Parameters
 

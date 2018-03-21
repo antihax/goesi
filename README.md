@@ -5,7 +5,6 @@ An OpenAPI for EVE Online ESI API
 [![Sourcegraph](https://sourcegraph.com/github.com/antihax/goesi/-/badge.svg)](https://sourcegraph.com/github.com/antihax/goesi?badge)
 
 
-
 ## Overview
 A module to allow access to CCP's EVE Online ESI API.
 This module offers:
@@ -14,7 +13,6 @@ This module offers:
 * Handle many tokens, with different scopes.
 * 100% ESI API coverage.
 * context.Context passthrough (for httptrace, logging, etc).
-* Some CREST and XMLAPI coverage (feel free to submit PR requests for other endpoints).
 
 ## Installation
 ```

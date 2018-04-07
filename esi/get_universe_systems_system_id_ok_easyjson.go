@@ -125,7 +125,7 @@ func easyjsonB8c84fd0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				in.Delim('[')
 				if out.Planets == nil {
 					if !in.IsDelim(']') {
-						out.Planets = make([]GetUniverseSystemsSystemIdPlanet, 0, 2)
+						out.Planets = make([]GetUniverseSystemsSystemIdPlanet, 0, 1)
 					} else {
 						out.Planets = []GetUniverseSystemsSystemIdPlanet{}
 					}

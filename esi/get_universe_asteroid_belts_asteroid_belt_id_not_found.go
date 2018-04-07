@@ -22,14 +22,12 @@
 
 package esi
 
-/* A list of GetUniverseSystemsSystemIdPlanet. */
+/* A list of GetUniverseAsteroidBeltsAsteroidBeltIdNotFound. */
 //easyjson:json
-type GetUniverseSystemsSystemIdPlanetList []GetUniverseSystemsSystemIdPlanet
+type GetUniverseAsteroidBeltsAsteroidBeltIdNotFoundList []GetUniverseAsteroidBeltsAsteroidBeltIdNotFound
 
-/* planet object */
+/* Not found */
 //easyjson:json
-type GetUniverseSystemsSystemIdPlanet struct {
-	PlanetId      int32   `json:"planet_id,omitempty"`      /* planet_id integer */
-	Moons         []int32 `json:"moons,omitempty"`          /* moons array */
-	AsteroidBelts []int32 `json:"asteroid_belts,omitempty"` /* asteroid_belts array */
+type GetUniverseAsteroidBeltsAsteroidBeltIdNotFound struct {
+	Error_ string `json:"error,omitempty"` /* Not found message */
 }

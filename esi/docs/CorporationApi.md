@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCorporationsCorporationId**](CorporationApi.md#GetCorporationsCorporationId) | **Get** /v4/corporations/{corporation_id}/ | Get corporation information
 [**GetCorporationsCorporationIdAlliancehistory**](CorporationApi.md#GetCorporationsCorporationIdAlliancehistory) | **Get** /v2/corporations/{corporation_id}/alliancehistory/ | Get alliance history
-[**GetCorporationsCorporationIdBlueprints**](CorporationApi.md#GetCorporationsCorporationIdBlueprints) | **Get** /v1/corporations/{corporation_id}/blueprints/ | Get corporation blueprints
-[**GetCorporationsCorporationIdContainersLogs**](CorporationApi.md#GetCorporationsCorporationIdContainersLogs) | **Get** /v1/corporations/{corporation_id}/containers/logs/ | Get all corporation ALSC logs
+[**GetCorporationsCorporationIdBlueprints**](CorporationApi.md#GetCorporationsCorporationIdBlueprints) | **Get** /v2/corporations/{corporation_id}/blueprints/ | Get corporation blueprints
+[**GetCorporationsCorporationIdContainersLogs**](CorporationApi.md#GetCorporationsCorporationIdContainersLogs) | **Get** /v2/corporations/{corporation_id}/containers/logs/ | Get all corporation ALSC logs
 [**GetCorporationsCorporationIdDivisions**](CorporationApi.md#GetCorporationsCorporationIdDivisions) | **Get** /v1/corporations/{corporation_id}/divisions/ | Get corporation divisions
 [**GetCorporationsCorporationIdFacilities**](CorporationApi.md#GetCorporationsCorporationIdFacilities) | **Get** /v1/corporations/{corporation_id}/facilities/ | Get corporation facilities
 [**GetCorporationsCorporationIdIcons**](CorporationApi.md#GetCorporationsCorporationIdIcons) | **Get** /v1/corporations/{corporation_id}/icons/ | Get corporation icon
@@ -113,7 +113,7 @@ No authorization required
 > []GetCorporationsCorporationIdBlueprints200Ok GetCorporationsCorporationIdBlueprints(ctx, corporationId, optional)
 Get corporation blueprints
 
-Returns a list of blueprints the corporation owns  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/blueprints/)
+Returns a list of blueprints the corporation owns  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdContainersLogs200Ok GetCorporationsCorporationIdContainersLogs(ctx, corporationId, optional)
 Get all corporation ALSC logs
 
-Returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation  ---  This route is cached for up to 600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/containers/logs/)
+Returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation  ---  This route is cached for up to 600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 

@@ -5,6 +5,7 @@ All URIs are relative to *https://esi.tech.ccp.is*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetUniverseAncestries**](UniverseApi.md#GetUniverseAncestries) | **Get** /v1/universe/ancestries/ | Get ancestries
+[**GetUniverseAsteroidBeltsAsteroidBeltId**](UniverseApi.md#GetUniverseAsteroidBeltsAsteroidBeltId) | **Get** /v1/universe/asteroid_belts/{asteroid_belt_id}/ | Get asteroid belt information
 [**GetUniverseBloodlines**](UniverseApi.md#GetUniverseBloodlines) | **Get** /v1/universe/bloodlines/ | Get bloodlines
 [**GetUniverseCategories**](UniverseApi.md#GetUniverseCategories) | **Get** /v1/universe/categories/ | Get item categories
 [**GetUniverseCategoriesCategoryId**](UniverseApi.md#GetUniverseCategoriesCategoryId) | **Get** /v1/universe/categories/{category_id}/ | Get item category information
@@ -61,6 +62,45 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]GetUniverseAncestries200Ok**](get_universe_ancestries_200_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniverseAsteroidBeltsAsteroidBeltId**
+> GetUniverseAsteroidBeltsAsteroidBeltIdOk GetUniverseAsteroidBeltsAsteroidBeltId(ctx, asteroidBeltId, optional)
+Get asteroid belt information
+
+Get information on an asteroid belt  ---  This route expires daily at 11:05
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+  **asteroidBeltId** | **int32**| asteroid_belt_id integer | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asteroidBeltId** | **int32**| asteroid_belt_id integer | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+
+### Return type
+
+[**GetUniverseAsteroidBeltsAsteroidBeltIdOk**](get_universe_asteroid_belts_asteroid_belt_id_ok.md)
 
 ### Authorization
 

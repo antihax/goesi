@@ -109,6 +109,8 @@ func easyjson8fa263f5DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetM
 			out.TypeId = int32(in.Int32())
 		case "location_id":
 			out.LocationId = int64(in.Int64())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
 		case "volume_total":
 			out.VolumeTotal = int32(in.Int32())
 		case "volume_remain":
@@ -170,6 +172,16 @@ func easyjson8fa263f5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.LocationId))
+	}
+	if in.SystemId != 0 {
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SystemId))
 	}
 	if in.VolumeTotal != 0 {
 		const prefix string = ",\"volume_total\":"

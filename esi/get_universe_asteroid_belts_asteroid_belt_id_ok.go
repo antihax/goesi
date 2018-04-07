@@ -22,14 +22,14 @@
 
 package esi
 
-/* A list of GetUniverseSystemsSystemIdPlanet. */
+/* A list of GetUniverseAsteroidBeltsAsteroidBeltIdOk. */
 //easyjson:json
-type GetUniverseSystemsSystemIdPlanetList []GetUniverseSystemsSystemIdPlanet
+type GetUniverseAsteroidBeltsAsteroidBeltIdOkList []GetUniverseAsteroidBeltsAsteroidBeltIdOk
 
-/* planet object */
+/* 200 ok object */
 //easyjson:json
-type GetUniverseSystemsSystemIdPlanet struct {
-	PlanetId      int32   `json:"planet_id,omitempty"`      /* planet_id integer */
-	Moons         []int32 `json:"moons,omitempty"`          /* moons array */
-	AsteroidBelts []int32 `json:"asteroid_belts,omitempty"` /* asteroid_belts array */
+type GetUniverseAsteroidBeltsAsteroidBeltIdOk struct {
+	Name     string                                         `json:"name,omitempty"` /* name string */
+	Position GetUniverseAsteroidBeltsAsteroidBeltIdPosition `json:"position,omitempty"`
+	SystemId int32                                          `json:"system_id,omitempty"` /* The solar system this asteroid belt is in */
 }

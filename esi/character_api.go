@@ -722,7 +722,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 }
 
 /* CharacterApiService Get character notifications
-Return character notifications  ---  This route is cached for up to 600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/notifications/)
+Return character notifications  ---  This route is cached for up to 600 seconds
 
 * @param ctx context.Context Authentication Context
 @param characterId An EVE character ID
@@ -742,7 +742,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/characters/{character_id}/notifications/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/notifications/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)

@@ -27,7 +27,7 @@ func easyjsonCb1e1ff4DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetUn
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetUniverseSystemsSystemIdPlanetList, 0, 2)
+				*out = make(GetUniverseSystemsSystemIdPlanetList, 0, 1)
 			} else {
 				*out = GetUniverseSystemsSystemIdPlanetList{}
 			}
@@ -128,6 +128,29 @@ func easyjsonCb1e1ff4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
+		case "asteroid_belts":
+			if in.IsNull() {
+				in.Skip()
+				out.AsteroidBelts = nil
+			} else {
+				in.Delim('[')
+				if out.AsteroidBelts == nil {
+					if !in.IsDelim(']') {
+						out.AsteroidBelts = make([]int32, 0, 16)
+					} else {
+						out.AsteroidBelts = []int32{}
+					}
+				} else {
+					out.AsteroidBelts = (out.AsteroidBelts)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v5 int32
+					v5 = int32(in.Int32())
+					out.AsteroidBelts = append(out.AsteroidBelts, v5)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
 		default:
 			in.SkipRecursive()
 		}
@@ -162,11 +185,30 @@ func easyjsonCb1e1ff4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v5, v6 := range in.Moons {
-				if v5 > 0 {
+			for v6, v7 := range in.Moons {
+				if v6 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v6))
+				out.Int32(int32(v7))
+			}
+			out.RawByte(']')
+		}
+	}
+	if len(in.AsteroidBelts) != 0 {
+		const prefix string = ",\"asteroid_belts\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v8, v9 := range in.AsteroidBelts {
+				if v8 > 0 {
+					out.RawByte(',')
+				}
+				out.Int32(int32(v9))
 			}
 			out.RawByte(']')
 		}

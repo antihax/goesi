@@ -225,7 +225,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(ctx 
 }
 
 /* CorporationApiService Get corporation blueprints
-Returns a list of blueprints the corporation owns  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/blueprints/)
+Returns a list of blueprints the corporation owns  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID
@@ -246,7 +246,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/blueprints/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/blueprints/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -330,7 +330,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 }
 
 /* CorporationApiService Get all corporation ALSC logs
-Returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation  ---  This route is cached for up to 600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/containers/logs/)
+Returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation  ---  This route is cached for up to 600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 * @param ctx context.Context Authentication Context
 @param corporationId An EVE corporation ID
@@ -351,7 +351,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/containers/logs/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/containers/logs/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)

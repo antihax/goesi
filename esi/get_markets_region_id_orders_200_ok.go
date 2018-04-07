@@ -36,6 +36,7 @@ type GetMarketsRegionIdOrders200Ok struct {
 	OrderId      int64     `json:"order_id,omitempty"`      /* order_id integer */
 	TypeId       int32     `json:"type_id,omitempty"`       /* type_id integer */
 	LocationId   int64     `json:"location_id,omitempty"`   /* location_id integer */
+	SystemId     int32     `json:"system_id,omitempty"`     /* The solar system this order was placed */
 	VolumeTotal  int32     `json:"volume_total,omitempty"`  /* volume_total integer */
 	VolumeRemain int32     `json:"volume_remain,omitempty"` /* volume_remain integer */
 	MinVolume    int32     `json:"min_volume,omitempty"`    /* min_volume integer */

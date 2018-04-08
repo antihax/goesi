@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **OrderId** | **int64** | order_id integer | [default to null]
 **TypeId** | **int32** | type_id integer | [default to null]
 **LocationId** | **int64** | location_id integer | [default to null]
+**SystemId** | **int32** | The solar system this order was placed | [default to null]
 **VolumeTotal** | **int32** | volume_total integer | [default to null]
 **VolumeRemain** | **int32** | volume_remain integer | [default to null]
 **MinVolume** | **int32** | min_volume integer | [default to null]

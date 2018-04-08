@@ -29,9 +29,9 @@ It is also good manners to provide a user-agent describing the point of use of t
 Example
 ```
   client := goesi.NewAPIClient(context.Background(), "my esi client http://mysite.com contact <SomeDude> ingame")
-  result, response, err := client.V#.Endpoint.Operation(requestContext, requiredParam, map[string]interface{} { 
-                                                                        "optionalParam1": "stringParam",
-                                                                        "optionalParam2": 1234.56
+  result, response, err := client.V#.Endpoint.Operation(requestContext, requiredParam, &esi.OperationOpts{ 
+                                                                        Optional1: optional.NewString("someValue"),
+                                                                        Optional2: optional.NewFloat64(1234.56),
                                                                     })
 ```
 

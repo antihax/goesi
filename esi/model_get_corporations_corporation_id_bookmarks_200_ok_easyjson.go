@@ -120,9 +120,9 @@ func easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "location_id":
 			out.LocationId = int32(in.Int32())
 		case "item":
-			easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi2(in, &out.Item)
+			(out.Item).UnmarshalEasyJSON(in)
 		case "coordinates":
-			easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi3(in, &out.Coordinates)
+			easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi2(in, &out.Coordinates)
 		default:
 			in.SkipRecursive()
 		}
@@ -215,7 +215,7 @@ func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi2(out, in.Item)
+		(in.Item).MarshalEasyJSON(out)
 	}
 	if true {
 		const prefix string = ",\"coordinates\":"
@@ -225,7 +225,7 @@ func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi3(out, in.Coordinates)
+		easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi2(out, in.Coordinates)
 	}
 	out.RawByte('}')
 }
@@ -253,7 +253,7 @@ func (v *GetCorporationsCorporationIdBookmarks200Ok) UnmarshalJSON(data []byte) 
 func (v *GetCorporationsCorporationIdBookmarks200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCorporationsCorporationIdBookmarksCoordinates) {
+func easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdBookmarksCoordinates) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -288,7 +288,7 @@ func easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCorporationsCorporationIdBookmarksCoordinates) {
+func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdBookmarksCoordinates) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -321,65 +321,6 @@ func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Float64(float64(in.Z))
-	}
-	out.RawByte('}')
-}
-func easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdBookmarksItem) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "item_id":
-			out.ItemId = int64(in.Int64())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdBookmarksItem) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.ItemId != 0 {
-		const prefix string = ",\"item_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.ItemId))
-	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

@@ -5201,128 +5201,6 @@ paths:
       - "dev"
       - "legacy"
       - "v1"
-  /v1/corporations/{corporation_id}/shareholders/:
-    get:
-      tags:
-      - "Corporation"
-      summary: "Get corporation shareholders"
-      description: "Return the current shareholders of a corporation.\n\n---\n\nThis\
-        \ route is cached for up to 3600 seconds\n\n---\nRequires one of the following\
-        \ EVE corporation role(s): Director"
-      operationId: "get_corporations_corporation_id_shareholders"
-      parameters:
-      - name: "corporation_id"
-        in: "path"
-        description: "An EVE corporation ID"
-        required: true
-        type: "integer"
-        minimum: 1
-        format: "int32"
-        x-exportParamName: "CorporationId"
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      - name: "page"
-        in: "query"
-        description: "Which page of results to return"
-        required: false
-        type: "integer"
-        default: 1
-        format: "int32"
-        x-exportParamName: "Page"
-        x-optionalDataType: "Int32"
-      - name: "token"
-        in: "query"
-        description: "Access token to use if unable to set a header"
-        required: false
-        type: "string"
-        x-exportParamName: "Token"
-        x-optionalDataType: "String"
-      - name: "user_agent"
-        in: "query"
-        description: "Client identifier, takes precedence over headers"
-        required: false
-        type: "string"
-        x-exportParamName: "UserAgent"
-        x-optionalDataType: "String"
-      - name: "X-User-Agent"
-        in: "header"
-        description: "Client identifier, takes precedence over User-Agent"
-        required: false
-        type: "string"
-        x-exportParamName: "XUserAgent"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "List of shareholders"
-          schema:
-            type: "array"
-            description: "List of shareholders"
-            title: "get_corporations_corporation_id_shareholders_ok"
-            items:
-              $ref: "#/definitions/get_corporations_corporation_id_shareholders_200_ok"
-            maxItems: 1000
-          examples:
-            application/json:
-            - shareholder_id: 98000001
-              shareholder_type: "corporation"
-              share_count: 580
-            - shareholder_id: 2112000003
-              shareholder_type: "character"
-              share_count: 20
-            - shareholder_id: 2112000004
-              shareholder_type: "character"
-              share_count: 300
-            - shareholder_id: 2112000001
-              shareholder_type: "character"
-              share_count: 100
-          headers:
-            X-Pages:
-              type: "integer"
-              format: "int32"
-              description: "Maximum page number"
-              default: 1
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        403:
-          description: "Forbidden"
-          schema:
-            $ref: "#/definitions/forbidden"
-          examples:
-            application/json:
-              error: "Forbidden message"
-        500:
-          description: "Internal server error"
-          schema:
-            $ref: "#/definitions/internal_server_error"
-          examples:
-            application/json:
-              error: "Internal server error message"
-      security:
-      - evesso:
-        - "esi-wallet.read_corporation_wallets.v1"
-      x-required-roles:
-      - "Director"
-      x-cached-seconds: 3600
-      x-alternate-versions:
-      - "dev"
-      - "legacy"
-      - "v1"
   /v4/corporations/{corporation_id}/:
     get:
       tags:
@@ -7840,6 +7718,128 @@ paths:
       security:
       - evesso:
         - "esi-corporations.read_outposts.v1"
+      x-required-roles:
+      - "Director"
+      x-cached-seconds: 3600
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
+  /v1/corporations/{corporation_id}/shareholders/:
+    get:
+      tags:
+      - "Corporation"
+      summary: "Get corporation shareholders"
+      description: "Return the current shareholders of a corporation.\n\n---\n\nThis\
+        \ route is cached for up to 3600 seconds\n\n---\nRequires one of the following\
+        \ EVE corporation role(s): Director"
+      operationId: "get_corporations_corporation_id_shareholders"
+      parameters:
+      - name: "corporation_id"
+        in: "path"
+        description: "An EVE corporation ID"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "CorporationId"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "page"
+        in: "query"
+        description: "Which page of results to return"
+        required: false
+        type: "integer"
+        default: 1
+        format: "int32"
+        x-exportParamName: "Page"
+        x-optionalDataType: "Int32"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "List of shareholders"
+          schema:
+            type: "array"
+            description: "List of shareholders"
+            title: "get_corporations_corporation_id_shareholders_ok"
+            items:
+              $ref: "#/definitions/get_corporations_corporation_id_shareholders_200_ok"
+            maxItems: 1000
+          examples:
+            application/json:
+            - shareholder_id: 98000001
+              shareholder_type: "corporation"
+              share_count: 580
+            - shareholder_id: 2112000003
+              shareholder_type: "character"
+              share_count: 20
+            - shareholder_id: 2112000004
+              shareholder_type: "character"
+              share_count: 300
+            - shareholder_id: 2112000001
+              shareholder_type: "character"
+              share_count: 100
+          headers:
+            X-Pages:
+              type: "integer"
+              format: "int32"
+              description: "Maximum page number"
+              default: 1
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+      security:
+      - evesso:
+        - "esi-wallet.read_corporation_wallets.v1"
       x-required-roles:
       - "Director"
       x-cached-seconds: 3600
@@ -16223,6 +16223,120 @@ paths:
       - "dev"
       - "legacy"
       - "v1"
+  /v1/universe/ids/:
+    post:
+      tags:
+      - "Universe"
+      summary: "Bulk names to IDs"
+      description: "Resolve a set of names to IDs in the following categories: agents,\
+        \ alliances, characters, constellations, corporations factions, inventory_types,\
+        \ regions, stations, and systems. Only exact matches will be returned. All\
+        \ names searched for are cached for 12 hours.\n\n---\n"
+      operationId: "post_universe_ids"
+      parameters:
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "language"
+        in: "query"
+        description: "Language to use in the response"
+        required: false
+        type: "string"
+        default: "en-us"
+        enum:
+        - "de"
+        - "en-us"
+        - "fr"
+        - "ja"
+        - "ru"
+        - "zh"
+        x-exportParamName: "Language"
+        x-optionalDataType: "String"
+      - in: "body"
+        name: "names"
+        description: "The names to resolve"
+        required: true
+        schema:
+          title: "post_universe_ids_names"
+          type: "array"
+          description: "names array"
+          items:
+            type: "string"
+            description: "name string"
+            title: "post_universe_ids_name"
+            minLength: 1
+            maxLength: 100
+          example: "[\"CCP Zoetrope\"]"
+          minItems: 1
+          maxItems: 1000
+        x-exportParamName: "Names"
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "List of id/name associations for a set of names divided by\
+            \ category. Any name passed in that did not have a match will be ommitted."
+          schema:
+            $ref: "#/definitions/post_universe_ids_ok"
+          examples:
+            application/json:
+              characters:
+              - id: 95465499
+                name: "CCP Bartender"
+              - id: 2112625428
+                name: "CCP Zoetrope"
+              systems:
+              - id: 30000142
+                name: "Jita"
+          headers:
+            Content-Language:
+              type: "string"
+              description: "The language used in the response"
+              enum:
+              - "de"
+              - "en-us"
+              - "fr"
+              - "ja"
+              - "ru"
+              - "zh"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Search backend is unreachable, try again later."
+          schema:
+            $ref: "#/definitions/post_universe_ids_service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
   /v1/universe/planets/{planet_id}/:
     get:
       tags:
@@ -18802,120 +18916,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-      x-alternate-versions:
-      - "dev"
-      - "legacy"
-      - "v1"
-  /v1/universe/ids/:
-    post:
-      tags:
-      - "Universe"
-      summary: "Bulk names to IDs"
-      description: "Resolve a set of names to IDs in the following categories: agents,\
-        \ alliances, characters, constellations, corporations factions, inventory_types,\
-        \ regions, stations, and systems. Only exact matches will be returned. All\
-        \ names searched for are cached for 12 hours.\n\n---\n"
-      operationId: "post_universe_ids"
-      parameters:
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      - name: "language"
-        in: "query"
-        description: "Language to use in the response"
-        required: false
-        type: "string"
-        default: "en-us"
-        enum:
-        - "de"
-        - "en-us"
-        - "fr"
-        - "ja"
-        - "ru"
-        - "zh"
-        x-exportParamName: "Language"
-        x-optionalDataType: "String"
-      - in: "body"
-        name: "names"
-        description: "The names to resolve"
-        required: true
-        schema:
-          title: "post_universe_ids_names"
-          type: "array"
-          description: "names array"
-          items:
-            type: "string"
-            description: "name string"
-            title: "post_universe_ids_name"
-            minLength: 1
-            maxLength: 100
-          example: "[\"CCP Zoetrope\"]"
-          minItems: 1
-          maxItems: 1000
-        x-exportParamName: "Names"
-      - name: "user_agent"
-        in: "query"
-        description: "Client identifier, takes precedence over headers"
-        required: false
-        type: "string"
-        x-exportParamName: "UserAgent"
-        x-optionalDataType: "String"
-      - name: "X-User-Agent"
-        in: "header"
-        description: "Client identifier, takes precedence over User-Agent"
-        required: false
-        type: "string"
-        x-exportParamName: "XUserAgent"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "List of id/name associations for a set of names divided by\
-            \ category. Any name passed in that did not have a match will be ommitted."
-          schema:
-            $ref: "#/definitions/post_universe_ids_ok"
-          examples:
-            application/json:
-              characters:
-              - id: 95465499
-                name: "CCP Bartender"
-              - id: 2112625428
-                name: "CCP Zoetrope"
-              systems:
-              - id: 30000142
-                name: "Jita"
-          headers:
-            Content-Language:
-              type: "string"
-              description: "The language used in the response"
-              enum:
-              - "de"
-              - "en-us"
-              - "fr"
-              - "ja"
-              - "ru"
-              - "zh"
-        500:
-          description: "Internal server error"
-          schema:
-            $ref: "#/definitions/internal_server_error"
-          examples:
-            application/json:
-              error: "Internal server error message"
-        503:
-          description: "Search backend is unreachable, try again later."
-          schema:
-            $ref: "#/definitions/post_universe_ids_service_unavailable"
-          examples:
-            application/json:
-              error: "Service unavailable message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -24445,30 +24445,6 @@ definitions:
         description: "The amount bid, in ISK"
         title: "get_corporations_corporation_id_contracts_contract_id_bids_amount"
     description: "200 ok object"
-  get_corporations_corporation_id_shareholders_200_ok:
-    required:
-    - "share_count"
-    - "shareholder_id"
-    - "shareholder_type"
-    properties:
-      shareholder_id:
-        type: "integer"
-        format: "int32"
-        description: "shareholder_id integer"
-        title: "get_corporations_corporation_id_shareholders_shareholder_id"
-      shareholder_type:
-        type: "string"
-        description: "shareholder_type string"
-        title: "get_corporations_corporation_id_shareholders_shareholder_type"
-        enum:
-        - "character"
-        - "corporation"
-      share_count:
-        type: "integer"
-        format: "int64"
-        description: "share_count integer"
-        title: "get_corporations_corporation_id_shareholders_share_count"
-    description: "200 ok object"
   get_corporations_corporation_id_ok:
     required:
     - "ceo_id"
@@ -26827,6 +26803,30 @@ definitions:
         items:
           $ref: "#/definitions/get_corporations_corporation_id_outposts_outpost_id_service"
         maxItems: 27
+    description: "200 ok object"
+  get_corporations_corporation_id_shareholders_200_ok:
+    required:
+    - "share_count"
+    - "shareholder_id"
+    - "shareholder_type"
+    properties:
+      shareholder_id:
+        type: "integer"
+        format: "int32"
+        description: "shareholder_id integer"
+        title: "get_corporations_corporation_id_shareholders_shareholder_id"
+      shareholder_type:
+        type: "string"
+        description: "shareholder_type string"
+        title: "get_corporations_corporation_id_shareholders_shareholder_type"
+        enum:
+        - "character"
+        - "corporation"
+      share_count:
+        type: "integer"
+        format: "int64"
+        description: "share_count integer"
+        title: "get_corporations_corporation_id_shareholders_share_count"
     description: "200 ok object"
   get_dogma_attributes_attribute_id_ok:
     required:
@@ -31416,6 +31416,206 @@ definitions:
         description: "If the server is in VIP mode"
         title: "get_status_vip"
     description: "200 ok object"
+  post_universe_ids_agent:
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        description: "id integer"
+        title: "post_universe_ids_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "post_universe_ids_name"
+    description: "agent object"
+  post_universe_ids_alliance:
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        description: "id integer"
+        title: "post_universe_ids_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "post_universe_ids_name"
+    description: "alliance object"
+  post_universe_ids_character:
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        description: "id integer"
+        title: "post_universe_ids_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "post_universe_ids_name"
+    description: "character object"
+  post_universe_ids_constellation:
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        description: "id integer"
+        title: "post_universe_ids_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "post_universe_ids_name"
+    description: "constellation object"
+  post_universe_ids_corporation:
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        description: "id integer"
+        title: "post_universe_ids_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "post_universe_ids_name"
+    description: "corporation object"
+  post_universe_ids_faction:
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        description: "id integer"
+        title: "post_universe_ids_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "post_universe_ids_name"
+    description: "faction object"
+  post_universe_ids_inventory_type:
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        description: "id integer"
+        title: "post_universe_ids_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "post_universe_ids_name"
+    description: "inventory_type object"
+  post_universe_ids_region:
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        description: "id integer"
+        title: "post_universe_ids_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "post_universe_ids_name"
+    description: "region object"
+  post_universe_ids_system:
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        description: "id integer"
+        title: "post_universe_ids_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "post_universe_ids_name"
+    description: "system object"
+  post_universe_ids_station:
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        description: "id integer"
+        title: "post_universe_ids_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "post_universe_ids_name"
+    description: "station object"
+  post_universe_ids_ok:
+    properties:
+      agents:
+        type: "array"
+        description: "agents array"
+        title: "post_universe_ids_agents"
+        items:
+          $ref: "#/definitions/post_universe_ids_agent"
+        maxItems: 1000
+      alliances:
+        type: "array"
+        description: "alliances array"
+        title: "post_universe_ids_alliances"
+        items:
+          $ref: "#/definitions/post_universe_ids_alliance"
+        maxItems: 1000
+      characters:
+        type: "array"
+        description: "characters array"
+        title: "post_universe_ids_characters"
+        items:
+          $ref: "#/definitions/post_universe_ids_character"
+        maxItems: 1000
+      constellations:
+        type: "array"
+        description: "constellations array"
+        title: "post_universe_ids_constellations"
+        items:
+          $ref: "#/definitions/post_universe_ids_constellation"
+        maxItems: 1000
+      corporations:
+        type: "array"
+        description: "corporations array"
+        title: "post_universe_ids_corporations"
+        items:
+          $ref: "#/definitions/post_universe_ids_corporation"
+        maxItems: 1000
+      factions:
+        type: "array"
+        description: "factions array"
+        title: "post_universe_ids_factions"
+        items:
+          $ref: "#/definitions/post_universe_ids_faction"
+        maxItems: 1000
+      inventory_types:
+        type: "array"
+        description: "inventory_types array"
+        title: "post_universe_ids_inventory_types"
+        items:
+          $ref: "#/definitions/post_universe_ids_inventory_type"
+        maxItems: 1000
+      regions:
+        type: "array"
+        description: "regions array"
+        title: "post_universe_ids_regions"
+        items:
+          $ref: "#/definitions/post_universe_ids_region"
+        maxItems: 1000
+      systems:
+        type: "array"
+        description: "systems array"
+        title: "post_universe_ids_systems"
+        items:
+          $ref: "#/definitions/post_universe_ids_system"
+        maxItems: 1000
+      stations:
+        type: "array"
+        description: "stations array"
+        title: "post_universe_ids_stations"
+        items:
+          $ref: "#/definitions/post_universe_ids_station"
+        maxItems: 1000
+    description: "200 ok object"
+  post_universe_ids_service_unavailable:
+    properties:
+      error:
+        type: "string"
+        description: "Service unavailable message"
+        title: "post_universe_ids_503_service_unavailable"
+    description: "Service unavailable"
   get_universe_planets_planet_id_position:
     required:
     - "x"
@@ -32726,206 +32926,6 @@ definitions:
         description: "Not found message"
         title: "get_universe_asteroid_belts_asteroid_belt_id_404_not_found"
     description: "Not found"
-  post_universe_ids_agent:
-    properties:
-      id:
-        type: "integer"
-        format: "int32"
-        description: "id integer"
-        title: "post_universe_ids_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "post_universe_ids_name"
-    description: "agent object"
-  post_universe_ids_alliance:
-    properties:
-      id:
-        type: "integer"
-        format: "int32"
-        description: "id integer"
-        title: "post_universe_ids_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "post_universe_ids_name"
-    description: "alliance object"
-  post_universe_ids_character:
-    properties:
-      id:
-        type: "integer"
-        format: "int32"
-        description: "id integer"
-        title: "post_universe_ids_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "post_universe_ids_name"
-    description: "character object"
-  post_universe_ids_constellation:
-    properties:
-      id:
-        type: "integer"
-        format: "int32"
-        description: "id integer"
-        title: "post_universe_ids_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "post_universe_ids_name"
-    description: "constellation object"
-  post_universe_ids_corporation:
-    properties:
-      id:
-        type: "integer"
-        format: "int32"
-        description: "id integer"
-        title: "post_universe_ids_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "post_universe_ids_name"
-    description: "corporation object"
-  post_universe_ids_faction:
-    properties:
-      id:
-        type: "integer"
-        format: "int32"
-        description: "id integer"
-        title: "post_universe_ids_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "post_universe_ids_name"
-    description: "faction object"
-  post_universe_ids_inventory_type:
-    properties:
-      id:
-        type: "integer"
-        format: "int32"
-        description: "id integer"
-        title: "post_universe_ids_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "post_universe_ids_name"
-    description: "inventory_type object"
-  post_universe_ids_region:
-    properties:
-      id:
-        type: "integer"
-        format: "int32"
-        description: "id integer"
-        title: "post_universe_ids_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "post_universe_ids_name"
-    description: "region object"
-  post_universe_ids_system:
-    properties:
-      id:
-        type: "integer"
-        format: "int32"
-        description: "id integer"
-        title: "post_universe_ids_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "post_universe_ids_name"
-    description: "system object"
-  post_universe_ids_station:
-    properties:
-      id:
-        type: "integer"
-        format: "int32"
-        description: "id integer"
-        title: "post_universe_ids_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "post_universe_ids_name"
-    description: "station object"
-  post_universe_ids_ok:
-    properties:
-      agents:
-        type: "array"
-        description: "agents array"
-        title: "post_universe_ids_agents"
-        items:
-          $ref: "#/definitions/post_universe_ids_agent"
-        maxItems: 1000
-      alliances:
-        type: "array"
-        description: "alliances array"
-        title: "post_universe_ids_alliances"
-        items:
-          $ref: "#/definitions/post_universe_ids_alliance"
-        maxItems: 1000
-      characters:
-        type: "array"
-        description: "characters array"
-        title: "post_universe_ids_characters"
-        items:
-          $ref: "#/definitions/post_universe_ids_character"
-        maxItems: 1000
-      constellations:
-        type: "array"
-        description: "constellations array"
-        title: "post_universe_ids_constellations"
-        items:
-          $ref: "#/definitions/post_universe_ids_constellation"
-        maxItems: 1000
-      corporations:
-        type: "array"
-        description: "corporations array"
-        title: "post_universe_ids_corporations"
-        items:
-          $ref: "#/definitions/post_universe_ids_corporation"
-        maxItems: 1000
-      factions:
-        type: "array"
-        description: "factions array"
-        title: "post_universe_ids_factions"
-        items:
-          $ref: "#/definitions/post_universe_ids_faction"
-        maxItems: 1000
-      inventory_types:
-        type: "array"
-        description: "inventory_types array"
-        title: "post_universe_ids_inventory_types"
-        items:
-          $ref: "#/definitions/post_universe_ids_inventory_type"
-        maxItems: 1000
-      regions:
-        type: "array"
-        description: "regions array"
-        title: "post_universe_ids_regions"
-        items:
-          $ref: "#/definitions/post_universe_ids_region"
-        maxItems: 1000
-      systems:
-        type: "array"
-        description: "systems array"
-        title: "post_universe_ids_systems"
-        items:
-          $ref: "#/definitions/post_universe_ids_system"
-        maxItems: 1000
-      stations:
-        type: "array"
-        description: "stations array"
-        title: "post_universe_ids_stations"
-        items:
-          $ref: "#/definitions/post_universe_ids_station"
-        maxItems: 1000
-    description: "200 ok object"
-  post_universe_ids_service_unavailable:
-    properties:
-      error:
-        type: "string"
-        description: "Service unavailable message"
-        title: "post_universe_ids_503_service_unavailable"
-    description: "Service unavailable"
   post_ui_openwindow_newmail_new_mail:
     type: "object"
     required:
@@ -33817,6 +33817,32 @@ parameters:
     type: "string"
     x-exportParamName: "XUserAgent"
     x-optionalDataType: "String"
+  language:
+    name: "language"
+    in: "query"
+    description: "Language to use in the response"
+    required: false
+    type: "string"
+    default: "en-us"
+    enum:
+    - "de"
+    - "en-us"
+    - "fr"
+    - "ja"
+    - "ru"
+    - "zh"
+    x-exportParamName: "Language"
+    x-optionalDataType: "String"
+  page:
+    name: "page"
+    in: "query"
+    description: "Which page of results to return"
+    required: false
+    type: "integer"
+    default: 1
+    format: "int32"
+    x-exportParamName: "Page"
+    x-optionalDataType: "Int32"
   token:
     name: "token"
     in: "query"
@@ -33834,16 +33860,6 @@ parameters:
     minimum: 1
     format: "int32"
     x-exportParamName: "CharacterId"
-  page:
-    name: "page"
-    in: "query"
-    description: "Which page of results to return"
-    required: false
-    type: "integer"
-    default: 1
-    format: "int32"
-    x-exportParamName: "Page"
-    x-optionalDataType: "Int32"
   corporation_id:
     name: "corporation_id"
     in: "path"
@@ -33853,22 +33869,6 @@ parameters:
     minimum: 1
     format: "int32"
     x-exportParamName: "CorporationId"
-  language:
-    name: "language"
-    in: "query"
-    description: "Language to use in the response"
-    required: false
-    type: "string"
-    default: "en-us"
-    enum:
-    - "de"
-    - "en-us"
-    - "fr"
-    - "ja"
-    - "ru"
-    - "zh"
-    x-exportParamName: "Language"
-    x-optionalDataType: "String"
   alliance_id:
     name: "alliance_id"
     in: "path"

@@ -18,7 +18,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjsonBdf5c01dDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *PostCharactersCharacterIdMailBadRequestList) {
+func easyjson15444218DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *UnauthorizedList) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		in.Skip()
@@ -27,15 +27,15 @@ func easyjsonBdf5c01dDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *PostC
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(PostCharactersCharacterIdMailBadRequestList, 0, 4)
+				*out = make(UnauthorizedList, 0, 4)
 			} else {
-				*out = PostCharactersCharacterIdMailBadRequestList{}
+				*out = UnauthorizedList{}
 			}
 		} else {
 			*out = (*out)[:0]
 		}
 		for !in.IsDelim(']') {
-			var v1 PostCharactersCharacterIdMailBadRequest
+			var v1 Unauthorized
 			(v1).UnmarshalEasyJSON(in)
 			*out = append(*out, v1)
 			in.WantComma()
@@ -46,7 +46,7 @@ func easyjsonBdf5c01dDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *PostC
 		in.Consumed()
 	}
 }
-func easyjsonBdf5c01dEncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in PostCharactersCharacterIdMailBadRequestList) {
+func easyjson15444218EncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in UnauthorizedList) {
 	if in == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 		out.RawString("null")
 	} else {
@@ -62,29 +62,29 @@ func easyjsonBdf5c01dEncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in Post
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v PostCharactersCharacterIdMailBadRequestList) MarshalJSON() ([]byte, error) {
+func (v UnauthorizedList) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonBdf5c01dEncodeGithubComAntihaxGoesiEsi(&w, v)
+	easyjson15444218EncodeGithubComAntihaxGoesiEsi(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v PostCharactersCharacterIdMailBadRequestList) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonBdf5c01dEncodeGithubComAntihaxGoesiEsi(w, v)
+func (v UnauthorizedList) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson15444218EncodeGithubComAntihaxGoesiEsi(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *PostCharactersCharacterIdMailBadRequestList) UnmarshalJSON(data []byte) error {
+func (v *UnauthorizedList) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonBdf5c01dDecodeGithubComAntihaxGoesiEsi(&r, v)
+	easyjson15444218DecodeGithubComAntihaxGoesiEsi(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *PostCharactersCharacterIdMailBadRequestList) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonBdf5c01dDecodeGithubComAntihaxGoesiEsi(l, v)
+func (v *UnauthorizedList) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson15444218DecodeGithubComAntihaxGoesiEsi(l, v)
 }
-func easyjsonBdf5c01dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *PostCharactersCharacterIdMailBadRequest) {
+func easyjson15444218DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Unauthorized) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -115,7 +115,7 @@ func easyjsonBdf5c01dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 		in.Consumed()
 	}
 }
-func easyjsonBdf5c01dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in PostCharactersCharacterIdMailBadRequest) {
+func easyjson15444218EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Unauthorized) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -133,25 +133,25 @@ func easyjsonBdf5c01dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v PostCharactersCharacterIdMailBadRequest) MarshalJSON() ([]byte, error) {
+func (v Unauthorized) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonBdf5c01dEncodeGithubComAntihaxGoesiEsi1(&w, v)
+	easyjson15444218EncodeGithubComAntihaxGoesiEsi1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v PostCharactersCharacterIdMailBadRequest) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonBdf5c01dEncodeGithubComAntihaxGoesiEsi1(w, v)
+func (v Unauthorized) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson15444218EncodeGithubComAntihaxGoesiEsi1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *PostCharactersCharacterIdMailBadRequest) UnmarshalJSON(data []byte) error {
+func (v *Unauthorized) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonBdf5c01dDecodeGithubComAntihaxGoesiEsi1(&r, v)
+	easyjson15444218DecodeGithubComAntihaxGoesiEsi1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *PostCharactersCharacterIdMailBadRequest) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonBdf5c01dDecodeGithubComAntihaxGoesiEsi1(l, v)
+func (v *Unauthorized) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson15444218DecodeGithubComAntihaxGoesiEsi1(l, v)
 }

@@ -18,7 +18,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson327f0702DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *PutFleetsFleetIdBadRequestList) {
+func easyjsonB340f1afDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *BadRequestList) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		in.Skip()
@@ -27,15 +27,15 @@ func easyjson327f0702DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *PutFl
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(PutFleetsFleetIdBadRequestList, 0, 4)
+				*out = make(BadRequestList, 0, 4)
 			} else {
-				*out = PutFleetsFleetIdBadRequestList{}
+				*out = BadRequestList{}
 			}
 		} else {
 			*out = (*out)[:0]
 		}
 		for !in.IsDelim(']') {
-			var v1 PutFleetsFleetIdBadRequest
+			var v1 BadRequest
 			(v1).UnmarshalEasyJSON(in)
 			*out = append(*out, v1)
 			in.WantComma()
@@ -46,7 +46,7 @@ func easyjson327f0702DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *PutFl
 		in.Consumed()
 	}
 }
-func easyjson327f0702EncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in PutFleetsFleetIdBadRequestList) {
+func easyjsonB340f1afEncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in BadRequestList) {
 	if in == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 		out.RawString("null")
 	} else {
@@ -62,29 +62,29 @@ func easyjson327f0702EncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in PutF
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v PutFleetsFleetIdBadRequestList) MarshalJSON() ([]byte, error) {
+func (v BadRequestList) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson327f0702EncodeGithubComAntihaxGoesiEsi(&w, v)
+	easyjsonB340f1afEncodeGithubComAntihaxGoesiEsi(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v PutFleetsFleetIdBadRequestList) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson327f0702EncodeGithubComAntihaxGoesiEsi(w, v)
+func (v BadRequestList) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjsonB340f1afEncodeGithubComAntihaxGoesiEsi(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *PutFleetsFleetIdBadRequestList) UnmarshalJSON(data []byte) error {
+func (v *BadRequestList) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson327f0702DecodeGithubComAntihaxGoesiEsi(&r, v)
+	easyjsonB340f1afDecodeGithubComAntihaxGoesiEsi(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *PutFleetsFleetIdBadRequestList) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson327f0702DecodeGithubComAntihaxGoesiEsi(l, v)
+func (v *BadRequestList) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjsonB340f1afDecodeGithubComAntihaxGoesiEsi(l, v)
 }
-func easyjson327f0702DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *PutFleetsFleetIdBadRequest) {
+func easyjsonB340f1afDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *BadRequest) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -115,7 +115,7 @@ func easyjson327f0702DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *PutF
 		in.Consumed()
 	}
 }
-func easyjson327f0702EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in PutFleetsFleetIdBadRequest) {
+func easyjsonB340f1afEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in BadRequest) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -133,25 +133,25 @@ func easyjson327f0702EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Put
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v PutFleetsFleetIdBadRequest) MarshalJSON() ([]byte, error) {
+func (v BadRequest) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson327f0702EncodeGithubComAntihaxGoesiEsi1(&w, v)
+	easyjsonB340f1afEncodeGithubComAntihaxGoesiEsi1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v PutFleetsFleetIdBadRequest) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson327f0702EncodeGithubComAntihaxGoesiEsi1(w, v)
+func (v BadRequest) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjsonB340f1afEncodeGithubComAntihaxGoesiEsi1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *PutFleetsFleetIdBadRequest) UnmarshalJSON(data []byte) error {
+func (v *BadRequest) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson327f0702DecodeGithubComAntihaxGoesiEsi1(&r, v)
+	easyjsonB340f1afDecodeGithubComAntihaxGoesiEsi1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *PutFleetsFleetIdBadRequest) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson327f0702DecodeGithubComAntihaxGoesiEsi1(l, v)
+func (v *BadRequest) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjsonB340f1afDecodeGithubComAntihaxGoesiEsi1(l, v)
 }

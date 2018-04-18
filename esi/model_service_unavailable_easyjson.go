@@ -18,7 +18,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson853d2224DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *PostUniverseIdsServiceUnavailableList) {
+func easyjson5322fa8aDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *ServiceUnavailableList) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		in.Skip()
@@ -27,15 +27,15 @@ func easyjson853d2224DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *PostU
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(PostUniverseIdsServiceUnavailableList, 0, 4)
+				*out = make(ServiceUnavailableList, 0, 4)
 			} else {
-				*out = PostUniverseIdsServiceUnavailableList{}
+				*out = ServiceUnavailableList{}
 			}
 		} else {
 			*out = (*out)[:0]
 		}
 		for !in.IsDelim(']') {
-			var v1 PostUniverseIdsServiceUnavailable
+			var v1 ServiceUnavailable
 			(v1).UnmarshalEasyJSON(in)
 			*out = append(*out, v1)
 			in.WantComma()
@@ -46,7 +46,7 @@ func easyjson853d2224DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *PostU
 		in.Consumed()
 	}
 }
-func easyjson853d2224EncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in PostUniverseIdsServiceUnavailableList) {
+func easyjson5322fa8aEncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in ServiceUnavailableList) {
 	if in == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 		out.RawString("null")
 	} else {
@@ -62,29 +62,29 @@ func easyjson853d2224EncodeGithubComAntihaxGoesiEsi(out *jwriter.Writer, in Post
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v PostUniverseIdsServiceUnavailableList) MarshalJSON() ([]byte, error) {
+func (v ServiceUnavailableList) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson853d2224EncodeGithubComAntihaxGoesiEsi(&w, v)
+	easyjson5322fa8aEncodeGithubComAntihaxGoesiEsi(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v PostUniverseIdsServiceUnavailableList) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson853d2224EncodeGithubComAntihaxGoesiEsi(w, v)
+func (v ServiceUnavailableList) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson5322fa8aEncodeGithubComAntihaxGoesiEsi(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *PostUniverseIdsServiceUnavailableList) UnmarshalJSON(data []byte) error {
+func (v *ServiceUnavailableList) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson853d2224DecodeGithubComAntihaxGoesiEsi(&r, v)
+	easyjson5322fa8aDecodeGithubComAntihaxGoesiEsi(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *PostUniverseIdsServiceUnavailableList) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson853d2224DecodeGithubComAntihaxGoesiEsi(l, v)
+func (v *ServiceUnavailableList) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson5322fa8aDecodeGithubComAntihaxGoesiEsi(l, v)
 }
-func easyjson853d2224DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *PostUniverseIdsServiceUnavailable) {
+func easyjson5322fa8aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *ServiceUnavailable) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -115,7 +115,7 @@ func easyjson853d2224DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 		in.Consumed()
 	}
 }
-func easyjson853d2224EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in PostUniverseIdsServiceUnavailable) {
+func easyjson5322fa8aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in ServiceUnavailable) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -133,25 +133,25 @@ func easyjson853d2224EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v PostUniverseIdsServiceUnavailable) MarshalJSON() ([]byte, error) {
+func (v ServiceUnavailable) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson853d2224EncodeGithubComAntihaxGoesiEsi1(&w, v)
+	easyjson5322fa8aEncodeGithubComAntihaxGoesiEsi1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v PostUniverseIdsServiceUnavailable) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson853d2224EncodeGithubComAntihaxGoesiEsi1(w, v)
+func (v ServiceUnavailable) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson5322fa8aEncodeGithubComAntihaxGoesiEsi1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *PostUniverseIdsServiceUnavailable) UnmarshalJSON(data []byte) error {
+func (v *ServiceUnavailable) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson853d2224DecodeGithubComAntihaxGoesiEsi1(&r, v)
+	easyjson5322fa8aDecodeGithubComAntihaxGoesiEsi1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *PostUniverseIdsServiceUnavailable) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson853d2224DecodeGithubComAntihaxGoesiEsi1(l, v)
+func (v *ServiceUnavailable) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson5322fa8aDecodeGithubComAntihaxGoesiEsi1(l, v)
 }

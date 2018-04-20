@@ -15647,9 +15647,9 @@ paths:
         description: "List only mail with an ID lower than the given ID, if present"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-exportParamName: "LastMailId"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "token"
         in: "query"
         description: "Access token to use if unable to set a header"
@@ -15812,7 +15812,7 @@ paths:
           description: "Mail created"
           schema:
             type: "integer"
-            format: "int32"
+            format: "int64"
             description: "Mail ID"
             title: "post_characters_character_id_mail_created"
           examples:
@@ -16384,7 +16384,7 @@ paths:
         description: "An EVE mail ID"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-exportParamName: "MailId"
       - name: "token"
         in: "query"
@@ -16527,7 +16527,7 @@ paths:
         description: "An EVE mail ID"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-exportParamName: "MailId"
       - name: "token"
         in: "query"
@@ -16633,7 +16633,7 @@ paths:
         description: "An EVE mail ID"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-exportParamName: "MailId"
       - name: "token"
         in: "query"

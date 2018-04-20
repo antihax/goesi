@@ -130,11 +130,6 @@ func (a *SovereigntyApiService) GetSovereigntyCampaigns(ctx context.Context, loc
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetSovereigntyCampaigns200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -146,11 +141,6 @@ func (a *SovereigntyApiService) GetSovereigntyCampaigns(ctx context.Context, loc
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -162,11 +152,6 @@ func (a *SovereigntyApiService) GetSovereigntyCampaigns(ctx context.Context, loc
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -178,11 +163,6 @@ func (a *SovereigntyApiService) GetSovereigntyCampaigns(ctx context.Context, loc
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -194,11 +174,6 @@ func (a *SovereigntyApiService) GetSovereigntyCampaigns(ctx context.Context, loc
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -306,11 +281,6 @@ func (a *SovereigntyApiService) GetSovereigntyMap(ctx context.Context, localVarO
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetSovereigntyMap200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -322,11 +292,6 @@ func (a *SovereigntyApiService) GetSovereigntyMap(ctx context.Context, localVarO
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -338,11 +303,6 @@ func (a *SovereigntyApiService) GetSovereigntyMap(ctx context.Context, localVarO
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -354,11 +314,6 @@ func (a *SovereigntyApiService) GetSovereigntyMap(ctx context.Context, localVarO
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -370,11 +325,6 @@ func (a *SovereigntyApiService) GetSovereigntyMap(ctx context.Context, localVarO
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -482,11 +432,6 @@ func (a *SovereigntyApiService) GetSovereigntyStructures(ctx context.Context, lo
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetSovereigntyStructures200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -498,11 +443,6 @@ func (a *SovereigntyApiService) GetSovereigntyStructures(ctx context.Context, lo
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -514,11 +454,6 @@ func (a *SovereigntyApiService) GetSovereigntyStructures(ctx context.Context, lo
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -530,11 +465,6 @@ func (a *SovereigntyApiService) GetSovereigntyStructures(ctx context.Context, lo
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -546,11 +476,6 @@ func (a *SovereigntyApiService) GetSovereigntyStructures(ctx context.Context, lo
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {

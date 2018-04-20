@@ -142,11 +142,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetCharactersCharacterIdOrders200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -158,11 +153,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -174,11 +164,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -190,11 +175,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -206,11 +186,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -222,11 +197,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -238,11 +208,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -365,11 +330,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrdersHistory(ctx context.Con
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetCharactersCharacterIdOrdersHistory200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -381,11 +341,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrdersHistory(ctx context.Con
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -397,11 +352,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrdersHistory(ctx context.Con
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -413,11 +363,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrdersHistory(ctx context.Con
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -429,11 +374,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrdersHistory(ctx context.Con
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -445,11 +385,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrdersHistory(ctx context.Con
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -461,11 +396,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrdersHistory(ctx context.Con
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -588,11 +518,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetCorporationsCorporationIdOrders200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -604,11 +529,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -620,11 +540,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -636,11 +551,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -652,11 +562,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -668,11 +573,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -684,11 +584,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -811,11 +706,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrdersHistory(ctx context
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetCorporationsCorporationIdOrdersHistory200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -827,11 +717,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrdersHistory(ctx context
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -843,11 +728,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrdersHistory(ctx context
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -859,11 +739,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrdersHistory(ctx context
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -875,11 +750,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrdersHistory(ctx context
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -891,11 +761,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrdersHistory(ctx context
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -907,11 +772,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrdersHistory(ctx context
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1019,11 +879,6 @@ func (a *MarketApiService) GetMarketsGroups(ctx context.Context, localVarOptiona
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []int32
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1035,11 +890,6 @@ func (a *MarketApiService) GetMarketsGroups(ctx context.Context, localVarOptiona
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1051,11 +901,6 @@ func (a *MarketApiService) GetMarketsGroups(ctx context.Context, localVarOptiona
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1067,11 +912,6 @@ func (a *MarketApiService) GetMarketsGroups(ctx context.Context, localVarOptiona
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1083,11 +923,6 @@ func (a *MarketApiService) GetMarketsGroups(ctx context.Context, localVarOptiona
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1202,11 +1037,6 @@ func (a *MarketApiService) GetMarketsGroupsMarketGroupId(ctx context.Context, ma
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v GetMarketsGroupsMarketGroupIdOk
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1218,11 +1048,6 @@ func (a *MarketApiService) GetMarketsGroupsMarketGroupId(ctx context.Context, ma
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1234,11 +1059,6 @@ func (a *MarketApiService) GetMarketsGroupsMarketGroupId(ctx context.Context, ma
 		}
 
 		if localVarHttpResponse.StatusCode == 404 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v GetMarketsGroupsMarketGroupIdNotFound
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1250,11 +1070,6 @@ func (a *MarketApiService) GetMarketsGroupsMarketGroupId(ctx context.Context, ma
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1266,11 +1081,6 @@ func (a *MarketApiService) GetMarketsGroupsMarketGroupId(ctx context.Context, ma
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1282,11 +1092,6 @@ func (a *MarketApiService) GetMarketsGroupsMarketGroupId(ctx context.Context, ma
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1394,11 +1199,6 @@ func (a *MarketApiService) GetMarketsPrices(ctx context.Context, localVarOptiona
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetMarketsPrices200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1410,11 +1210,6 @@ func (a *MarketApiService) GetMarketsPrices(ctx context.Context, localVarOptiona
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1426,11 +1221,6 @@ func (a *MarketApiService) GetMarketsPrices(ctx context.Context, localVarOptiona
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1442,11 +1232,6 @@ func (a *MarketApiService) GetMarketsPrices(ctx context.Context, localVarOptiona
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1458,11 +1243,6 @@ func (a *MarketApiService) GetMarketsPrices(ctx context.Context, localVarOptiona
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1574,11 +1354,6 @@ func (a *MarketApiService) GetMarketsRegionIdHistory(ctx context.Context, region
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetMarketsRegionIdHistory200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1590,11 +1365,6 @@ func (a *MarketApiService) GetMarketsRegionIdHistory(ctx context.Context, region
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1605,12 +1375,18 @@ func (a *MarketApiService) GetMarketsRegionIdHistory(ctx context.Context, region
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 
-		if localVarHttpResponse.StatusCode == 422 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+		if localVarHttpResponse.StatusCode == 404 {
+			var v GetMarketsRegionIdHistoryNotFound
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
 			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
 
+		if localVarHttpResponse.StatusCode == 422 {
 			var v GetMarketsRegionIdHistoryUnprocessableEntity
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1622,11 +1398,6 @@ func (a *MarketApiService) GetMarketsRegionIdHistory(ctx context.Context, region
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1638,11 +1409,6 @@ func (a *MarketApiService) GetMarketsRegionIdHistory(ctx context.Context, region
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1654,11 +1420,6 @@ func (a *MarketApiService) GetMarketsRegionIdHistory(ctx context.Context, region
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1780,11 +1541,6 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(ctx context.Context, orderTy
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetMarketsRegionIdOrders200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1796,11 +1552,6 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(ctx context.Context, orderTy
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1812,11 +1563,6 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(ctx context.Context, orderTy
 		}
 
 		if localVarHttpResponse.StatusCode == 422 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v GetMarketsRegionIdOrdersUnprocessableEntity
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1828,11 +1574,6 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(ctx context.Context, orderTy
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1844,11 +1585,6 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(ctx context.Context, orderTy
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1860,11 +1596,6 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(ctx context.Context, orderTy
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1979,11 +1710,6 @@ func (a *MarketApiService) GetMarketsRegionIdTypes(ctx context.Context, regionId
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []int32
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1995,11 +1721,6 @@ func (a *MarketApiService) GetMarketsRegionIdTypes(ctx context.Context, regionId
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2011,11 +1732,6 @@ func (a *MarketApiService) GetMarketsRegionIdTypes(ctx context.Context, regionId
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2027,11 +1743,6 @@ func (a *MarketApiService) GetMarketsRegionIdTypes(ctx context.Context, regionId
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2043,11 +1754,6 @@ func (a *MarketApiService) GetMarketsRegionIdTypes(ctx context.Context, regionId
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2167,11 +1873,6 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetMarketsStructuresStructureId200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2183,11 +1884,6 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2199,11 +1895,6 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2215,11 +1906,6 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2231,11 +1917,6 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2247,11 +1928,6 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2263,11 +1939,6 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {

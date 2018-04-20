@@ -132,11 +132,6 @@ func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, a
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -148,11 +143,6 @@ func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, a
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -164,11 +154,6 @@ func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, a
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -180,11 +165,6 @@ func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, a
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -196,11 +176,6 @@ func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, a
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -212,11 +187,6 @@ func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, a
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -322,11 +292,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -338,11 +303,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -354,11 +314,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -370,11 +325,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -386,11 +336,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -402,11 +347,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, 
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -512,11 +452,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -528,11 +463,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -544,11 +474,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -560,11 +485,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -576,11 +496,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -592,11 +507,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -702,11 +612,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Cont
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -718,11 +623,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Cont
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -734,11 +634,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Cont
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -750,11 +645,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Cont
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -766,11 +656,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Cont
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -782,11 +667,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Cont
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -893,11 +773,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, n
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -909,11 +784,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, n
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -925,11 +795,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, n
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -941,11 +806,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, n
 		}
 
 		if localVarHttpResponse.StatusCode == 422 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v PostUiOpenwindowNewmailUnprocessableEntity
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -957,11 +817,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, n
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -973,11 +828,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, n
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -989,11 +839,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, n
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {

@@ -135,11 +135,6 @@ func (a *FittingsApiService) DeleteCharactersCharacterIdFittingsFittingId(ctx co
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -151,11 +146,6 @@ func (a *FittingsApiService) DeleteCharactersCharacterIdFittingsFittingId(ctx co
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -167,11 +157,6 @@ func (a *FittingsApiService) DeleteCharactersCharacterIdFittingsFittingId(ctx co
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -183,11 +168,6 @@ func (a *FittingsApiService) DeleteCharactersCharacterIdFittingsFittingId(ctx co
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -199,11 +179,6 @@ func (a *FittingsApiService) DeleteCharactersCharacterIdFittingsFittingId(ctx co
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -215,11 +190,6 @@ func (a *FittingsApiService) DeleteCharactersCharacterIdFittingsFittingId(ctx co
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -337,11 +307,6 @@ func (a *FittingsApiService) GetCharactersCharacterIdFittings(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []GetCharactersCharacterIdFittings200Ok
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -353,11 +318,6 @@ func (a *FittingsApiService) GetCharactersCharacterIdFittings(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -369,11 +329,6 @@ func (a *FittingsApiService) GetCharactersCharacterIdFittings(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -385,11 +340,6 @@ func (a *FittingsApiService) GetCharactersCharacterIdFittings(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -401,11 +351,6 @@ func (a *FittingsApiService) GetCharactersCharacterIdFittings(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -417,11 +362,6 @@ func (a *FittingsApiService) GetCharactersCharacterIdFittings(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -433,11 +373,6 @@ func (a *FittingsApiService) GetCharactersCharacterIdFittings(ctx context.Contex
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -558,11 +493,6 @@ func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Conte
 		}
 
 		if localVarHttpResponse.StatusCode == 201 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v PostCharactersCharacterIdFittingsCreated
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -574,11 +504,6 @@ func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Conte
 		}
 
 		if localVarHttpResponse.StatusCode == 400 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadRequest
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -590,11 +515,6 @@ func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Conte
 		}
 
 		if localVarHttpResponse.StatusCode == 401 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Unauthorized
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -606,11 +526,6 @@ func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Conte
 		}
 
 		if localVarHttpResponse.StatusCode == 403 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Forbidden
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -622,11 +537,6 @@ func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Conte
 		}
 
 		if localVarHttpResponse.StatusCode == 500 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -638,11 +548,6 @@ func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Conte
 		}
 
 		if localVarHttpResponse.StatusCode == 502 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v BadGateway
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -654,11 +559,6 @@ func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Conte
 		}
 
 		if localVarHttpResponse.StatusCode == 503 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ServiceUnavailable
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {

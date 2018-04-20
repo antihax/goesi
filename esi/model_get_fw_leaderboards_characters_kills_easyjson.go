@@ -120,7 +120,7 @@ func easyjsonFa740090DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				}
 				for !in.IsDelim(']') {
 					var v4 GetFwLeaderboardsCharactersYesterday
-					(v4).UnmarshalEasyJSON(in)
+					easyjsonFa740090DecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Yesterday = append(out.Yesterday, v4)
 					in.WantComma()
 				}
@@ -143,7 +143,7 @@ func easyjsonFa740090DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				}
 				for !in.IsDelim(']') {
 					var v5 GetFwLeaderboardsCharactersLastWeek
-					easyjsonFa740090DecodeGithubComAntihaxGoesiEsi2(in, &v5)
+					(v5).UnmarshalEasyJSON(in)
 					out.LastWeek = append(out.LastWeek, v5)
 					in.WantComma()
 				}
@@ -166,7 +166,7 @@ func easyjsonFa740090DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				}
 				for !in.IsDelim(']') {
 					var v6 GetFwLeaderboardsCharactersActiveTotal
-					(v6).UnmarshalEasyJSON(in)
+					easyjsonFa740090DecodeGithubComAntihaxGoesiEsi3(in, &v6)
 					out.ActiveTotal = append(out.ActiveTotal, v6)
 					in.WantComma()
 				}
@@ -200,7 +200,7 @@ func easyjsonFa740090EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v7 > 0 {
 					out.RawByte(',')
 				}
-				(v8).MarshalEasyJSON(out)
+				easyjsonFa740090EncodeGithubComAntihaxGoesiEsi2(out, v8)
 			}
 			out.RawByte(']')
 		}
@@ -219,7 +219,7 @@ func easyjsonFa740090EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v9 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonFa740090EncodeGithubComAntihaxGoesiEsi2(out, v10)
+				(v10).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -238,7 +238,7 @@ func easyjsonFa740090EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v11 > 0 {
 					out.RawByte(',')
 				}
-				(v12).MarshalEasyJSON(out)
+				easyjsonFa740090EncodeGithubComAntihaxGoesiEsi3(out, v12)
 			}
 			out.RawByte(']')
 		}
@@ -269,7 +269,7 @@ func (v *GetFwLeaderboardsCharactersKills) UnmarshalJSON(data []byte) error {
 func (v *GetFwLeaderboardsCharactersKills) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonFa740090DecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjsonFa740090DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFwLeaderboardsCharactersLastWeek) {
+func easyjsonFa740090DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetFwLeaderboardsCharactersActiveTotal) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -302,7 +302,66 @@ func easyjsonFa740090DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetF
 		in.Consumed()
 	}
 }
-func easyjsonFa740090EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFwLeaderboardsCharactersLastWeek) {
+func easyjsonFa740090EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetFwLeaderboardsCharactersActiveTotal) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.CharacterId != 0 {
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CharacterId))
+	}
+	if in.Amount != 0 {
+		const prefix string = ",\"amount\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Amount))
+	}
+	out.RawByte('}')
+}
+func easyjsonFa740090DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFwLeaderboardsCharactersYesterday) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "character_id":
+			out.CharacterId = int32(in.Int32())
+		case "amount":
+			out.Amount = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonFa740090EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFwLeaderboardsCharactersYesterday) {
 	out.RawByte('{')
 	first := true
 	_ = first

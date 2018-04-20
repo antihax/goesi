@@ -120,7 +120,7 @@ func easyjsonA3c42e6bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "standing_owner_id":
 			out.StandingOwnerId = int32(in.Int32())
 		case "coordinates":
-			easyjsonA3c42e6bDecodeGithubComAntihaxGoesiEsi2(in, &out.Coordinates)
+			(out.Coordinates).UnmarshalEasyJSON(in)
 		case "services":
 			if in.IsNull() {
 				in.Skip()
@@ -138,7 +138,7 @@ func easyjsonA3c42e6bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCorporationsCorporationIdOutpostsOutpostIdService
-					easyjsonA3c42e6bDecodeGithubComAntihaxGoesiEsi3(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Services = append(out.Services, v4)
 					in.WantComma()
 				}
@@ -246,7 +246,7 @@ func easyjsonA3c42e6bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjsonA3c42e6bEncodeGithubComAntihaxGoesiEsi2(out, in.Coordinates)
+		(in.Coordinates).MarshalEasyJSON(out)
 	}
 	if len(in.Services) != 0 {
 		const prefix string = ",\"services\":"
@@ -262,7 +262,7 @@ func easyjsonA3c42e6bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonA3c42e6bEncodeGithubComAntihaxGoesiEsi3(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -292,158 +292,4 @@ func (v *GetCorporationsCorporationIdOutpostsOutpostIdOk) UnmarshalJSON(data []b
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCorporationsCorporationIdOutpostsOutpostIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonA3c42e6bDecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjsonA3c42e6bDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCorporationsCorporationIdOutpostsOutpostIdService) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "service_name":
-			out.ServiceName = string(in.String())
-		case "minimum_standing":
-			out.MinimumStanding = float64(in.Float64())
-		case "surcharge_per_bad_standing":
-			out.SurchargePerBadStanding = float64(in.Float64())
-		case "discount_per_good_standing":
-			out.DiscountPerGoodStanding = float64(in.Float64())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonA3c42e6bEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCorporationsCorporationIdOutpostsOutpostIdService) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.ServiceName != "" {
-		const prefix string = ",\"service_name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.ServiceName))
-	}
-	if in.MinimumStanding != 0 {
-		const prefix string = ",\"minimum_standing\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.MinimumStanding))
-	}
-	if in.SurchargePerBadStanding != 0 {
-		const prefix string = ",\"surcharge_per_bad_standing\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.SurchargePerBadStanding))
-	}
-	if in.DiscountPerGoodStanding != 0 {
-		const prefix string = ",\"discount_per_good_standing\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.DiscountPerGoodStanding))
-	}
-	out.RawByte('}')
-}
-func easyjsonA3c42e6bDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdOutpostsOutpostIdCoordinates) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "x":
-			out.X = float64(in.Float64())
-		case "y":
-			out.Y = float64(in.Float64())
-		case "z":
-			out.Z = float64(in.Float64())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonA3c42e6bEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdOutpostsOutpostIdCoordinates) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.X != 0 {
-		const prefix string = ",\"x\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.X))
-	}
-	if in.Y != 0 {
-		const prefix string = ",\"y\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Y))
-	}
-	if in.Z != 0 {
-		const prefix string = ",\"z\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Z))
-	}
-	out.RawByte('}')
 }

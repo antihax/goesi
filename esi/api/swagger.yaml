@@ -16916,6 +16916,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        404:
+          description: "Not found"
+          schema:
+            $ref: "#/definitions/get_markets_region_id_orders_not_found"
+          examples:
+            application/json:
+              error: "Not found message"
         422:
           description: "Not found"
           schema:
@@ -35091,6 +35098,13 @@ definitions:
         - "30"
         - "40"
     description: "200 ok object"
+  get_markets_region_id_orders_not_found:
+    properties:
+      error:
+        type: "string"
+        description: "Not found message"
+        title: "get_markets_region_id_orders_404_not_found"
+    description: "Not found"
   get_markets_region_id_orders_unprocessable_entity:
     properties:
       error:

@@ -1562,6 +1562,17 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(ctx context.Context, orderTy
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 
+		if localVarHttpResponse.StatusCode == 404 {
+			var v GetMarketsRegionIdOrdersNotFound
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
 		if localVarHttpResponse.StatusCode == 422 {
 			var v GetMarketsRegionIdOrdersUnprocessableEntity
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))

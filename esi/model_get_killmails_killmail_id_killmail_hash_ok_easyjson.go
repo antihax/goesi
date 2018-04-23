@@ -457,7 +457,7 @@ func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetK
 				in.Delim(']')
 			}
 		case "position":
-			easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi4(in, &out.Position)
+			(out.Position).UnmarshalEasyJSON(in)
 		default:
 			in.SkipRecursive()
 		}
@@ -559,78 +559,7 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi4(out, in.Position)
-	}
-	out.RawByte('}')
-}
-func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashPosition) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "x":
-			out.X = float64(in.Float64())
-		case "y":
-			out.Y = float64(in.Float64())
-		case "z":
-			out.Z = float64(in.Float64())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashPosition) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.X != 0 {
-		const prefix string = ",\"x\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.X))
-	}
-	if in.Y != 0 {
-		const prefix string = ",\"y\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Y))
-	}
-	if in.Z != 0 {
-		const prefix string = ",\"z\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Z))
+		(in.Position).MarshalEasyJSON(out)
 	}
 	out.RawByte('}')
 }

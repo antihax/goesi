@@ -110,7 +110,7 @@ func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 		case "name":
 			out.Name = string(in.String())
 		case "position":
-			(out.Position).UnmarshalEasyJSON(in)
+			easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi2(in, &out.Position)
 		case "security_status":
 			out.SecurityStatus = float32(in.Float32())
 		case "security_class":
@@ -134,7 +134,7 @@ func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				for !in.IsDelim(']') {
 					var v4 GetUniverseSystemsSystemIdPlanet
-					(v4).UnmarshalEasyJSON(in)
+					easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi3(in, &v4)
 					out.Planets = append(out.Planets, v4)
 					in.WantComma()
 				}
@@ -238,7 +238,7 @@ func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Position).MarshalEasyJSON(out)
+		easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi2(out, in.Position)
 	}
 	if in.SecurityStatus != 0 {
 		const prefix string = ",\"security_status\":"
@@ -284,7 +284,7 @@ func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v7 > 0 {
 					out.RawByte(',')
 				}
-				(v8).MarshalEasyJSON(out)
+				easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi3(out, v8)
 			}
 			out.RawByte(']')
 		}
@@ -352,4 +352,206 @@ func (v *GetUniverseSystemsSystemIdOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetUniverseSystemsSystemIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetUniverseSystemsSystemIdPlanet) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "planet_id":
+			out.PlanetId = int32(in.Int32())
+		case "moons":
+			if in.IsNull() {
+				in.Skip()
+				out.Moons = nil
+			} else {
+				in.Delim('[')
+				if out.Moons == nil {
+					if !in.IsDelim(']') {
+						out.Moons = make([]int32, 0, 16)
+					} else {
+						out.Moons = []int32{}
+					}
+				} else {
+					out.Moons = (out.Moons)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v13 int32
+					v13 = int32(in.Int32())
+					out.Moons = append(out.Moons, v13)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "asteroid_belts":
+			if in.IsNull() {
+				in.Skip()
+				out.AsteroidBelts = nil
+			} else {
+				in.Delim('[')
+				if out.AsteroidBelts == nil {
+					if !in.IsDelim(']') {
+						out.AsteroidBelts = make([]int32, 0, 16)
+					} else {
+						out.AsteroidBelts = []int32{}
+					}
+				} else {
+					out.AsteroidBelts = (out.AsteroidBelts)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v14 int32
+					v14 = int32(in.Int32())
+					out.AsteroidBelts = append(out.AsteroidBelts, v14)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetUniverseSystemsSystemIdPlanet) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.PlanetId != 0 {
+		const prefix string = ",\"planet_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.PlanetId))
+	}
+	if len(in.Moons) != 0 {
+		const prefix string = ",\"moons\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v15, v16 := range in.Moons {
+				if v15 > 0 {
+					out.RawByte(',')
+				}
+				out.Int32(int32(v16))
+			}
+			out.RawByte(']')
+		}
+	}
+	if len(in.AsteroidBelts) != 0 {
+		const prefix string = ",\"asteroid_belts\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v17, v18 := range in.AsteroidBelts {
+				if v17 > 0 {
+					out.RawByte(',')
+				}
+				out.Int32(int32(v18))
+			}
+			out.RawByte(']')
+		}
+	}
+	out.RawByte('}')
+}
+func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetUniverseSystemsSystemIdPosition) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "x":
+			out.X = float64(in.Float64())
+		case "y":
+			out.Y = float64(in.Float64())
+		case "z":
+			out.Z = float64(in.Float64())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetUniverseSystemsSystemIdPosition) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.X != 0 {
+		const prefix string = ",\"x\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.X))
+	}
+	if in.Y != 0 {
+		const prefix string = ",\"y\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.Y))
+	}
+	if in.Z != 0 {
+		const prefix string = ",\"z\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.Z))
+	}
+	out.RawByte('}')
 }

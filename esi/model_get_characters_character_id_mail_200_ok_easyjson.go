@@ -104,7 +104,7 @@ func easyjson69f56f1fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		}
 		switch key {
 		case "mail_id":
-			out.MailId = int64(in.Int64())
+			out.MailId = int32(in.Int32())
 		case "subject":
 			out.Subject = string(in.String())
 		case "from":
@@ -121,16 +121,16 @@ func easyjson69f56f1fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.Delim('[')
 				if out.Labels == nil {
 					if !in.IsDelim(']') {
-						out.Labels = make([]int64, 0, 8)
+						out.Labels = make([]int32, 0, 16)
 					} else {
-						out.Labels = []int64{}
+						out.Labels = []int32{}
 					}
 				} else {
 					out.Labels = (out.Labels)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v4 int64
-					v4 = int64(in.Int64())
+					var v4 int32
+					v4 = int32(in.Int32())
 					out.Labels = append(out.Labels, v4)
 					in.WantComma()
 				}
@@ -183,7 +183,7 @@ func easyjson69f56f1fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int64(int64(in.MailId))
+		out.Int32(int32(in.MailId))
 	}
 	if in.Subject != "" {
 		const prefix string = ",\"subject\":"
@@ -229,7 +229,7 @@ func easyjson69f56f1fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v6 > 0 {
 					out.RawByte(',')
 				}
-				out.Int64(int64(v7))
+				out.Int32(int32(v7))
 			}
 			out.RawByte(']')
 		}

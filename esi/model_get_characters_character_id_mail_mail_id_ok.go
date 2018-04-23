@@ -38,6 +38,6 @@ type GetCharactersCharacterIdMailMailIdOk struct {
 	Timestamp  time.Time                                     `json:"timestamp,omitempty"`  /* When the mail was sent */
 	Recipients []GetCharactersCharacterIdMailMailIdRecipient `json:"recipients,omitempty"` /* Recipients of the mail */
 	Body       string                                        `json:"body,omitempty"`       /* Mail's body */
-	Labels     []int64                                       `json:"labels,omitempty"`     /* Labels attached to the mail */
+	Labels     []int32                                       `json:"labels,omitempty"`     /* Labels attached to the mail */
 	Read       bool                                          `json:"read,omitempty"`       /* Whether the mail is flagged as read */
 }

@@ -239,7 +239,7 @@ type DeleteCharactersCharacterIdMailMailIdOpts struct {
 	XUserAgent optional.String
 }
 
-func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Context, characterId int32, mailId int64, localVarOptionals *DeleteCharactersCharacterIdMailMailIdOpts) (*http.Response, error) {
+func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Context, characterId int32, mailId int32, localVarOptionals *DeleteCharactersCharacterIdMailMailIdOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -389,8 +389,8 @@ Return the 50 most recent mail headers belonging to the character that match the
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdMailOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
-     * @param "Labels" (optional.Interface of []int64) -  Fetch only mails that match one or more of the given labels
-     * @param "LastMailId" (optional.Int64) -  List only mail with an ID lower than the given ID, if present
+     * @param "Labels" (optional.Interface of []int32) -  Fetch only mails that match one or more of the given labels
+     * @param "LastMailId" (optional.Int32) -  List only mail with an ID lower than the given ID, if present
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -401,7 +401,7 @@ Return the 50 most recent mail headers belonging to the character that match the
 type GetCharactersCharacterIdMailOpts struct {
 	Datasource optional.String
 	Labels     optional.Interface
-	LastMailId optional.Int64
+	LastMailId optional.Int32
 	Token      optional.String
 	UserAgent  optional.String
 	XUserAgent optional.String
@@ -963,7 +963,7 @@ type GetCharactersCharacterIdMailMailIdOpts struct {
 	XUserAgent optional.String
 }
 
-func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context, characterId int32, mailId int64, localVarOptionals *GetCharactersCharacterIdMailMailIdOpts) (GetCharactersCharacterIdMailMailIdOk, *http.Response, error) {
+func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context, characterId int32, mailId int32, localVarOptionals *GetCharactersCharacterIdMailMailIdOpts) (GetCharactersCharacterIdMailMailIdOk, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -1149,7 +1149,7 @@ Create and send a new mail  ---
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
-@return int64
+@return int32
 */
 
 type PostCharactersCharacterIdMailOpts struct {
@@ -1159,13 +1159,13 @@ type PostCharactersCharacterIdMailOpts struct {
 	XUserAgent optional.String
 }
 
-func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, characterId int32, mail PostCharactersCharacterIdMailMail, localVarOptionals *PostCharactersCharacterIdMailOpts) (int64, *http.Response, error) {
+func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, characterId int32, mail PostCharactersCharacterIdMailMail, localVarOptionals *PostCharactersCharacterIdMailOpts) (int32, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue int64
+		localVarReturnValue int32
 	)
 
 	// create path and map variables
@@ -1241,7 +1241,7 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 		}
 
 		if localVarHttpResponse.StatusCode == 201 {
-			var v int64
+			var v int32
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1346,7 +1346,7 @@ Create a mail label  ---
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
-@return int64
+@return int32
 */
 
 type PostCharactersCharacterIdMailLabelsOpts struct {
@@ -1356,13 +1356,13 @@ type PostCharactersCharacterIdMailLabelsOpts struct {
 	XUserAgent optional.String
 }
 
-func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context, characterId int32, label PostCharactersCharacterIdMailLabelsLabel, localVarOptionals *PostCharactersCharacterIdMailLabelsOpts) (int64, *http.Response, error) {
+func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context, characterId int32, label PostCharactersCharacterIdMailLabelsLabel, localVarOptionals *PostCharactersCharacterIdMailLabelsOpts) (int32, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue int64
+		localVarReturnValue int32
 	)
 
 	// create path and map variables
@@ -1438,7 +1438,7 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 		}
 
 		if localVarHttpResponse.StatusCode == 201 {
-			var v int64
+			var v int32
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1543,7 +1543,7 @@ type PutCharactersCharacterIdMailMailIdOpts struct {
 	XUserAgent optional.String
 }
 
-func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context, characterId int32, contents PutCharactersCharacterIdMailMailIdContents, mailId int64, localVarOptionals *PutCharactersCharacterIdMailMailIdOpts) (*http.Response, error) {
+func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context, characterId int32, contents PutCharactersCharacterIdMailMailIdContents, mailId int32, localVarOptionals *PutCharactersCharacterIdMailMailIdOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}

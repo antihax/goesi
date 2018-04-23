@@ -132,7 +132,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -140,7 +140,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -320,7 +320,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -328,7 +328,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -508,7 +508,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -516,7 +516,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -696,7 +696,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -704,7 +704,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -886,7 +886,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -894,7 +894,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -1079,7 +1079,7 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -1087,7 +1087,7 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -1252,7 +1252,7 @@ func (a *IndustryApiService) GetIndustryFacilities(ctx context.Context, localVar
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -1260,7 +1260,7 @@ func (a *IndustryApiService) GetIndustryFacilities(ctx context.Context, localVar
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -1403,7 +1403,7 @@ func (a *IndustryApiService) GetIndustrySystems(ctx context.Context, localVarOpt
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -1411,7 +1411,7 @@ func (a *IndustryApiService) GetIndustrySystems(ctx context.Context, localVarOpt
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,

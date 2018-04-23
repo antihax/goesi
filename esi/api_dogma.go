@@ -117,7 +117,7 @@ func (a *DogmaApiService) GetDogmaAttributes(ctx context.Context, localVarOption
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -125,7 +125,7 @@ func (a *DogmaApiService) GetDogmaAttributes(ctx context.Context, localVarOption
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -270,7 +270,7 @@ func (a *DogmaApiService) GetDogmaAttributesAttributeId(ctx context.Context, att
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -278,7 +278,7 @@ func (a *DogmaApiService) GetDogmaAttributesAttributeId(ctx context.Context, att
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -432,7 +432,7 @@ func (a *DogmaApiService) GetDogmaEffects(ctx context.Context, localVarOptionals
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -440,7 +440,7 @@ func (a *DogmaApiService) GetDogmaEffects(ctx context.Context, localVarOptionals
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -585,7 +585,7 @@ func (a *DogmaApiService) GetDogmaEffectsEffectId(ctx context.Context, effectId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -593,7 +593,7 @@ func (a *DogmaApiService) GetDogmaEffectsEffectId(ctx context.Context, effectId 
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,

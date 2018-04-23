@@ -132,7 +132,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContracts(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -140,7 +140,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContracts(ctx context.Cont
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -317,7 +317,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdBids(ct
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -325,7 +325,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdBids(ct
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -513,7 +513,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdItems(c
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -521,7 +521,7 @@ func (a *ContractsApiService) GetCharactersCharacterIdContractsContractIdItems(c
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -712,7 +712,7 @@ func (a *ContractsApiService) GetCorporationsCorporationIdContracts(ctx context.
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -720,7 +720,7 @@ func (a *ContractsApiService) GetCorporationsCorporationIdContracts(ctx context.
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -902,7 +902,7 @@ func (a *ContractsApiService) GetCorporationsCorporationIdContractsContractIdBid
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -910,7 +910,7 @@ func (a *ContractsApiService) GetCorporationsCorporationIdContractsContractIdBid
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -1098,7 +1098,7 @@ func (a *ContractsApiService) GetCorporationsCorporationIdContractsContractIdIte
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -1106,7 +1106,7 @@ func (a *ContractsApiService) GetCorporationsCorporationIdContractsContractIdIte
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,

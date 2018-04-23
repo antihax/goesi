@@ -122,7 +122,7 @@ func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, char
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -130,7 +130,7 @@ func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, char
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -294,7 +294,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -302,7 +302,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -482,7 +482,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -490,7 +490,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -665,7 +665,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdChatChannels(ctx context.C
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -673,7 +673,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdChatChannels(ctx context.C
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -843,7 +843,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(ctx con
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -851,7 +851,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(ctx con
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -1004,7 +1004,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -1012,7 +1012,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -1187,7 +1187,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -1195,7 +1195,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -1370,7 +1370,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -1378,7 +1378,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -1553,7 +1553,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -1561,7 +1561,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -1731,7 +1731,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -1739,7 +1739,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -1903,7 +1903,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -1911,7 +1911,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -2086,7 +2086,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -2094,7 +2094,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -2269,7 +2269,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -2277,7 +2277,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -2452,7 +2452,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -2460,7 +2460,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -2633,7 +2633,7 @@ func (a *CharacterApiService) GetCharactersNames(ctx context.Context, characterI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -2641,7 +2641,7 @@ func (a *CharacterApiService) GetCharactersNames(ctx context.Context, characterI
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -2787,7 +2787,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -2795,7 +2795,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
@@ -2962,7 +2962,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	if localVarHttpResponse.StatusCode < 300 {
+	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
 		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err == nil {
@@ -2970,7 +2970,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 		}
 	}
 
-	if localVarHttpResponse.StatusCode >= 300 {
+	if localVarHttpResponse.StatusCode >= 400 {
 		newErr := GenericSwaggerError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,

@@ -124,7 +124,7 @@ func easyjson8515d584DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				}
 				for !in.IsDelim(']') {
 					var v4 GetFleetsFleetIdWingsSquad
-					easyjson8515d584DecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Squads = append(out.Squads, v4)
 					in.WantComma()
 				}
@@ -178,7 +178,7 @@ func easyjson8515d584EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson8515d584EncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -208,63 +208,4 @@ func (v *GetFleetsFleetIdWings200Ok) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetFleetsFleetIdWings200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson8515d584DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson8515d584DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFleetsFleetIdWingsSquad) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "name":
-			out.Name = string(in.String())
-		case "id":
-			out.Id = int64(in.Int64())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson8515d584EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFleetsFleetIdWingsSquad) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
-	if in.Id != 0 {
-		const prefix string = ",\"id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.Id))
-	}
-	out.RawByte('}')
 }

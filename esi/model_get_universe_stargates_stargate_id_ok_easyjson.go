@@ -110,11 +110,11 @@ func easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 		case "type_id":
 			out.TypeId = int32(in.Int32())
 		case "position":
-			easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi2(in, &out.Position)
+			(out.Position).UnmarshalEasyJSON(in)
 		case "system_id":
 			out.SystemId = int32(in.Int32())
 		case "destination":
-			easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi3(in, &out.Destination)
+			(out.Destination).UnmarshalEasyJSON(in)
 		default:
 			in.SkipRecursive()
 		}
@@ -167,7 +167,7 @@ func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi2(out, in.Position)
+		(in.Position).MarshalEasyJSON(out)
 	}
 	if in.SystemId != 0 {
 		const prefix string = ",\"system_id\":"
@@ -187,7 +187,7 @@ func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi3(out, in.Destination)
+		(in.Destination).MarshalEasyJSON(out)
 	}
 	out.RawByte('}')
 }
@@ -214,134 +214,4 @@ func (v *GetUniverseStargatesStargateIdOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetUniverseStargatesStargateIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetUniverseStargatesStargateIdDestination) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "system_id":
-			out.SystemId = int32(in.Int32())
-		case "stargate_id":
-			out.StargateId = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetUniverseStargatesStargateIdDestination) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.SystemId != 0 {
-		const prefix string = ",\"system_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.SystemId))
-	}
-	if in.StargateId != 0 {
-		const prefix string = ",\"stargate_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.StargateId))
-	}
-	out.RawByte('}')
-}
-func easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetUniverseStargatesStargateIdPosition) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "x":
-			out.X = float64(in.Float64())
-		case "y":
-			out.Y = float64(in.Float64())
-		case "z":
-			out.Z = float64(in.Float64())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetUniverseStargatesStargateIdPosition) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.X != 0 {
-		const prefix string = ",\"x\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.X))
-	}
-	if in.Y != 0 {
-		const prefix string = ",\"y\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Y))
-	}
-	if in.Z != 0 {
-		const prefix string = ",\"z\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Z))
-	}
-	out.RawByte('}')
 }

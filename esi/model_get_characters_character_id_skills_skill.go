@@ -29,8 +29,8 @@ type GetCharactersCharacterIdSkillsSkillList []GetCharactersCharacterIdSkillsSki
 /* skill object */
 //easyjson:json
 type GetCharactersCharacterIdSkillsSkill struct {
+	ActiveSkillLevel   int32 `json:"active_skill_level,omitempty"`   /* active_skill_level integer */
 	SkillId            int32 `json:"skill_id,omitempty"`             /* skill_id integer */
 	SkillpointsInSkill int64 `json:"skillpoints_in_skill,omitempty"` /* skillpoints_in_skill integer */
 	TrainedSkillLevel  int32 `json:"trained_skill_level,omitempty"`  /* trained_skill_level integer */
-	ActiveSkillLevel   int32 `json:"active_skill_level,omitempty"`   /* active_skill_level integer */
 }

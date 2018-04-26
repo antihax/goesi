@@ -29,6 +29,6 @@ type GetIndustrySystems200OkList []GetIndustrySystems200Ok
 /* 200 ok object */
 //easyjson:json
 type GetIndustrySystems200Ok struct {
-	SolarSystemId int32                          `json:"solar_system_id,omitempty"` /* solar_system_id integer */
 	CostIndices   []GetIndustrySystemsCostIndice `json:"cost_indices,omitempty"`    /* cost_indices array */
+	SolarSystemId int32                          `json:"solar_system_id,omitempty"` /* solar_system_id integer */
 }

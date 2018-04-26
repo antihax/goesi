@@ -61,9 +61,11 @@ Class | Method | HTTP request | Description
 *ClonesApi* | [**GetCharactersCharacterIdImplants**](docs/ClonesApi.md#getcharacterscharacteridimplants) | **Get** /v1/characters/{character_id}/implants/ | Get active implants
 *ContactsApi* | [**DeleteCharactersCharacterIdContacts**](docs/ContactsApi.md#deletecharacterscharacteridcontacts) | **Delete** /v2/characters/{character_id}/contacts/ | Delete contacts
 *ContactsApi* | [**GetAlliancesAllianceIdContacts**](docs/ContactsApi.md#getalliancesallianceidcontacts) | **Get** /v1/alliances/{alliance_id}/contacts/ | Get alliance contacts
+*ContactsApi* | [**GetAlliancesAllianceIdContactsLabels**](docs/ContactsApi.md#getalliancesallianceidcontactslabels) | **Get** /v1/alliances/{alliance_id}/contacts/labels/ | Get alliance contact labels
 *ContactsApi* | [**GetCharactersCharacterIdContacts**](docs/ContactsApi.md#getcharacterscharacteridcontacts) | **Get** /v1/characters/{character_id}/contacts/ | Get contacts
 *ContactsApi* | [**GetCharactersCharacterIdContactsLabels**](docs/ContactsApi.md#getcharacterscharacteridcontactslabels) | **Get** /v1/characters/{character_id}/contacts/labels/ | Get contact labels
 *ContactsApi* | [**GetCorporationsCorporationIdContacts**](docs/ContactsApi.md#getcorporationscorporationidcontacts) | **Get** /v1/corporations/{corporation_id}/contacts/ | Get corporation contacts
+*ContactsApi* | [**GetCorporationsCorporationIdContactsLabels**](docs/ContactsApi.md#getcorporationscorporationidcontactslabels) | **Get** /v1/corporations/{corporation_id}/contacts/labels/ | Get corporation contact labels
 *ContactsApi* | [**PostCharactersCharacterIdContacts**](docs/ContactsApi.md#postcharacterscharacteridcontacts) | **Post** /v1/characters/{character_id}/contacts/ | Add contacts
 *ContactsApi* | [**PutCharactersCharacterIdContacts**](docs/ContactsApi.md#putcharacterscharacteridcontacts) | **Put** /v1/characters/{character_id}/contacts/ | Edit contacts
 *ContractsApi* | [**GetCharactersCharacterIdContracts**](docs/ContractsApi.md#getcharacterscharacteridcontracts) | **Get** /v1/characters/{character_id}/contracts/ | Get contracts
@@ -219,10 +221,10 @@ Class | Method | HTTP request | Description
 *UserInterfaceApi* | [**PostUiOpenwindowMarketdetails**](docs/UserInterfaceApi.md#postuiopenwindowmarketdetails) | **Post** /v1/ui/openwindow/marketdetails/ | Open Market Details
 *UserInterfaceApi* | [**PostUiOpenwindowNewmail**](docs/UserInterfaceApi.md#postuiopenwindownewmail) | **Post** /v1/ui/openwindow/newmail/ | Open New Mail Window
 *WalletApi* | [**GetCharactersCharacterIdWallet**](docs/WalletApi.md#getcharacterscharacteridwallet) | **Get** /v1/characters/{character_id}/wallet/ | Get a character&#39;s wallet balance
-*WalletApi* | [**GetCharactersCharacterIdWalletJournal**](docs/WalletApi.md#getcharacterscharacteridwalletjournal) | **Get** /v3/characters/{character_id}/wallet/journal/ | Get character wallet journal
+*WalletApi* | [**GetCharactersCharacterIdWalletJournal**](docs/WalletApi.md#getcharacterscharacteridwalletjournal) | **Get** /v4/characters/{character_id}/wallet/journal/ | Get character wallet journal
 *WalletApi* | [**GetCharactersCharacterIdWalletTransactions**](docs/WalletApi.md#getcharacterscharacteridwallettransactions) | **Get** /v1/characters/{character_id}/wallet/transactions/ | Get wallet transactions
 *WalletApi* | [**GetCorporationsCorporationIdWallets**](docs/WalletApi.md#getcorporationscorporationidwallets) | **Get** /v1/corporations/{corporation_id}/wallets/ | Returns a corporation&#39;s wallet balance
-*WalletApi* | [**GetCorporationsCorporationIdWalletsDivisionJournal**](docs/WalletApi.md#getcorporationscorporationidwalletsdivisionjournal) | **Get** /v2/corporations/{corporation_id}/wallets/{division}/journal/ | Get corporation wallet journal
+*WalletApi* | [**GetCorporationsCorporationIdWalletsDivisionJournal**](docs/WalletApi.md#getcorporationscorporationidwalletsdivisionjournal) | **Get** /v3/corporations/{corporation_id}/wallets/{division}/journal/ | Get corporation wallet journal
 *WalletApi* | [**GetCorporationsCorporationIdWalletsDivisionTransactions**](docs/WalletApi.md#getcorporationscorporationidwalletsdivisiontransactions) | **Get** /v1/corporations/{corporation_id}/wallets/{division}/transactions/ | Get corporation wallet transactions
 *WarsApi* | [**GetWars**](docs/WarsApi.md#getwars) | **Get** /v1/wars/ | List wars
 *WarsApi* | [**GetWarsWarId**](docs/WarsApi.md#getwarswarid) | **Get** /v1/wars/{war_id}/ | Get war information
@@ -239,6 +241,7 @@ Class | Method | HTTP request | Description
  - [DeleteFleetsFleetIdWingsWingIdNotFound](docs/DeleteFleetsFleetIdWingsWingIdNotFound.md)
  - [Forbidden](docs/Forbidden.md)
  - [GetAlliancesAllianceIdContacts200Ok](docs/GetAlliancesAllianceIdContacts200Ok.md)
+ - [GetAlliancesAllianceIdContactsLabels200Ok](docs/GetAlliancesAllianceIdContactsLabels200Ok.md)
  - [GetAlliancesAllianceIdIconsNotFound](docs/GetAlliancesAllianceIdIconsNotFound.md)
  - [GetAlliancesAllianceIdIconsOk](docs/GetAlliancesAllianceIdIconsOk.md)
  - [GetAlliancesAllianceIdNotFound](docs/GetAlliancesAllianceIdNotFound.md)
@@ -338,7 +341,6 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdStatsTravel](docs/GetCharactersCharacterIdStatsTravel.md)
  - [GetCharactersCharacterIdTitles200Ok](docs/GetCharactersCharacterIdTitles200Ok.md)
  - [GetCharactersCharacterIdWalletJournal200Ok](docs/GetCharactersCharacterIdWalletJournal200Ok.md)
- - [GetCharactersCharacterIdWalletJournalExtraInfo](docs/GetCharactersCharacterIdWalletJournalExtraInfo.md)
  - [GetCharactersCharacterIdWalletTransactions200Ok](docs/GetCharactersCharacterIdWalletTransactions200Ok.md)
  - [GetCharactersNames200Ok](docs/GetCharactersNames200Ok.md)
  - [GetCorporationCorporationIdMiningExtractions200Ok](docs/GetCorporationCorporationIdMiningExtractions200Ok.md)
@@ -352,6 +354,7 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdBookmarksFolders200Ok](docs/GetCorporationsCorporationIdBookmarksFolders200Ok.md)
  - [GetCorporationsCorporationIdBookmarksItem](docs/GetCorporationsCorporationIdBookmarksItem.md)
  - [GetCorporationsCorporationIdContacts200Ok](docs/GetCorporationsCorporationIdContacts200Ok.md)
+ - [GetCorporationsCorporationIdContactsLabels200Ok](docs/GetCorporationsCorporationIdContactsLabels200Ok.md)
  - [GetCorporationsCorporationIdContainersLogs200Ok](docs/GetCorporationsCorporationIdContainersLogs200Ok.md)
  - [GetCorporationsCorporationIdContracts200Ok](docs/GetCorporationsCorporationIdContracts200Ok.md)
  - [GetCorporationsCorporationIdContractsContractIdBids200Ok](docs/GetCorporationsCorporationIdContractsContractIdBids200Ok.md)
@@ -394,7 +397,6 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdTitles200Ok](docs/GetCorporationsCorporationIdTitles200Ok.md)
  - [GetCorporationsCorporationIdWallets200Ok](docs/GetCorporationsCorporationIdWallets200Ok.md)
  - [GetCorporationsCorporationIdWalletsDivisionJournal200Ok](docs/GetCorporationsCorporationIdWalletsDivisionJournal200Ok.md)
- - [GetCorporationsCorporationIdWalletsDivisionJournalExtraInfo](docs/GetCorporationsCorporationIdWalletsDivisionJournalExtraInfo.md)
  - [GetCorporationsCorporationIdWalletsDivisionTransactions200Ok](docs/GetCorporationsCorporationIdWalletsDivisionTransactions200Ok.md)
  - [GetCorporationsNames200Ok](docs/GetCorporationsNames200Ok.md)
  - [GetDogmaAttributesAttributeIdNotFound](docs/GetDogmaAttributesAttributeIdNotFound.md)
@@ -461,6 +463,7 @@ Class | Method | HTTP request | Description
  - [GetMarketsGroupsMarketGroupIdOk](docs/GetMarketsGroupsMarketGroupIdOk.md)
  - [GetMarketsPrices200Ok](docs/GetMarketsPrices200Ok.md)
  - [GetMarketsRegionIdHistory200Ok](docs/GetMarketsRegionIdHistory200Ok.md)
+ - [GetMarketsRegionIdHistory520Response](docs/GetMarketsRegionIdHistory520Response.md)
  - [GetMarketsRegionIdHistoryNotFound](docs/GetMarketsRegionIdHistoryNotFound.md)
  - [GetMarketsRegionIdHistoryUnprocessableEntity](docs/GetMarketsRegionIdHistoryUnprocessableEntity.md)
  - [GetMarketsRegionIdOrders200Ok](docs/GetMarketsRegionIdOrders200Ok.md)
@@ -536,7 +539,6 @@ Class | Method | HTTP request | Description
  - [PostCharactersCharacterIdAssetsLocations200Ok](docs/PostCharactersCharacterIdAssetsLocations200Ok.md)
  - [PostCharactersCharacterIdAssetsLocationsPosition](docs/PostCharactersCharacterIdAssetsLocationsPosition.md)
  - [PostCharactersCharacterIdAssetsNames200Ok](docs/PostCharactersCharacterIdAssetsNames200Ok.md)
- - [PostCharactersCharacterIdContacts520Response](docs/PostCharactersCharacterIdContacts520Response.md)
  - [PostCharactersCharacterIdFittingsCreated](docs/PostCharactersCharacterIdFittingsCreated.md)
  - [PostCharactersCharacterIdFittingsFitting](docs/PostCharactersCharacterIdFittingsFitting.md)
  - [PostCharactersCharacterIdFittingsItem](docs/PostCharactersCharacterIdFittingsItem.md)

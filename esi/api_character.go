@@ -48,6 +48,7 @@ Public information about a character  ---  This route is cached for up to 3600 s
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -55,9 +56,10 @@ Public information about a character  ---  This route is cached for up to 3600 s
 */
 
 type GetCharactersCharacterIdOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdOpts) (GetCharactersCharacterIdOk, *http.Response, error) {
@@ -87,7 +89,7 @@ func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, char
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -102,6 +104,9 @@ func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, char
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -215,6 +220,7 @@ Return a list of agents research information for a character. The formula for fi
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdAgentsResearchOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -223,10 +229,11 @@ Return a list of agents research information for a character. The formula for fi
 */
 
 type GetCharactersCharacterIdAgentsResearchOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdAgentsResearchOpts) ([]GetCharactersCharacterIdAgentsResearch200Ok, *http.Response, error) {
@@ -259,7 +266,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -274,6 +281,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -398,6 +408,7 @@ Return a list of blueprints the character owns  ---  This route is cached for up
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdBlueprintsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -407,11 +418,12 @@ Return a list of blueprints the character owns  ---  This route is cached for up
 */
 
 type GetCharactersCharacterIdBlueprintsOpts struct {
-	Datasource optional.String
-	Page       optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdBlueprintsOpts) ([]GetCharactersCharacterIdBlueprints200Ok, *http.Response, error) {
@@ -447,7 +459,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -462,6 +474,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -586,6 +601,7 @@ Return chat channels that a character is the owner or operator of  ---  This rou
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdChatChannelsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -594,10 +610,11 @@ Return chat channels that a character is the owner or operator of  ---  This rou
 */
 
 type GetCharactersCharacterIdChatChannelsOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdChatChannels(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdChatChannelsOpts) ([]GetCharactersCharacterIdChatChannels200Ok, *http.Response, error) {
@@ -630,7 +647,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdChatChannels(ctx context.C
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -645,6 +662,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdChatChannels(ctx context.C
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -769,6 +789,7 @@ Get a list of all the corporations a character has been a member of  ---  This r
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdCorporationhistoryOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -776,9 +797,10 @@ Get a list of all the corporations a character has been a member of  ---  This r
 */
 
 type GetCharactersCharacterIdCorporationhistoryOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdCorporationhistoryOpts) ([]GetCharactersCharacterIdCorporationhistory200Ok, *http.Response, error) {
@@ -808,7 +830,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(ctx con
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -823,6 +845,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(ctx con
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -925,6 +950,7 @@ Return a character&#39;s jump activation and fatigue information  ---  This rout
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdFatigueOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -933,10 +959,11 @@ Return a character&#39;s jump activation and fatigue information  ---  This rout
 */
 
 type GetCharactersCharacterIdFatigueOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdFatigueOpts) (GetCharactersCharacterIdFatigueOk, *http.Response, error) {
@@ -969,7 +996,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -984,6 +1011,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1108,6 +1138,7 @@ Return a list of medals the character has  ---  This route is cached for up to 3
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdMedalsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -1116,10 +1147,11 @@ Return a list of medals the character has  ---  This route is cached for up to 3
 */
 
 type GetCharactersCharacterIdMedalsOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdMedalsOpts) ([]GetCharactersCharacterIdMedals200Ok, *http.Response, error) {
@@ -1152,7 +1184,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1167,6 +1199,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1291,6 +1326,7 @@ Return character notifications  ---  This route is cached for up to 600 seconds
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdNotificationsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -1299,10 +1335,11 @@ Return character notifications  ---  This route is cached for up to 600 seconds
 */
 
 type GetCharactersCharacterIdNotificationsOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdNotificationsOpts) ([]GetCharactersCharacterIdNotifications200Ok, *http.Response, error) {
@@ -1335,7 +1372,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1350,6 +1387,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1474,6 +1514,7 @@ Return notifications about having been added to someone&#39;s contact list  --- 
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdNotificationsContactsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -1482,10 +1523,11 @@ Return notifications about having been added to someone&#39;s contact list  --- 
 */
 
 type GetCharactersCharacterIdNotificationsContactsOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdNotificationsContactsOpts) ([]GetCharactersCharacterIdNotificationsContacts200Ok, *http.Response, error) {
@@ -1518,7 +1560,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1533,6 +1575,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1657,6 +1702,7 @@ Get portrait urls for a character  ---  This route is cached for up to 3600 seco
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdPortraitOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -1664,9 +1710,10 @@ Get portrait urls for a character  ---  This route is cached for up to 3600 seco
 */
 
 type GetCharactersCharacterIdPortraitOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdPortraitOpts) (GetCharactersCharacterIdPortraitOk, *http.Response, error) {
@@ -1696,7 +1743,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1711,6 +1758,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1824,6 +1874,7 @@ Returns a character&#39;s corporation roles  ---  This route is cached for up to
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdRolesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -1832,10 +1883,11 @@ Returns a character&#39;s corporation roles  ---  This route is cached for up to
 */
 
 type GetCharactersCharacterIdRolesOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdRolesOpts) (GetCharactersCharacterIdRolesOk, *http.Response, error) {
@@ -1868,7 +1920,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1883,6 +1935,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2007,6 +2062,7 @@ Return character standings from agents, NPC corporations, and factions  ---  Thi
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdStandingsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -2015,10 +2071,11 @@ Return character standings from agents, NPC corporations, and factions  ---  Thi
 */
 
 type GetCharactersCharacterIdStandingsOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdStandingsOpts) ([]GetCharactersCharacterIdStandings200Ok, *http.Response, error) {
@@ -2051,7 +2108,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2066,6 +2123,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2190,6 +2250,7 @@ Returns aggregate yearly stats for a character  ---  This route is cached for up
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdStatsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -2198,10 +2259,11 @@ Returns aggregate yearly stats for a character  ---  This route is cached for up
 */
 
 type GetCharactersCharacterIdStatsOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdStatsOpts) ([]GetCharactersCharacterIdStats200Ok, *http.Response, error) {
@@ -2234,7 +2296,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2249,6 +2311,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2373,6 +2438,7 @@ Returns a character&#39;s titles  ---  This route is cached for up to 3600 secon
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdTitlesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -2381,10 +2447,11 @@ Returns a character&#39;s titles  ---  This route is cached for up to 3600 secon
 */
 
 type GetCharactersCharacterIdTitlesOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdTitlesOpts) ([]GetCharactersCharacterIdTitles200Ok, *http.Response, error) {
@@ -2417,7 +2484,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2432,6 +2499,9 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2556,6 +2626,7 @@ Resolve a set of character IDs to character names  ---  This route is cached for
  * @param characterIds A comma separated list of character IDs
  * @param optional nil or *GetCharactersNamesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -2563,9 +2634,10 @@ Resolve a set of character IDs to character names  ---  This route is cached for
 */
 
 type GetCharactersNamesOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) GetCharactersNames(ctx context.Context, characterIds []int64, localVarOptionals *GetCharactersNamesOpts) ([]GetCharactersNames200Ok, *http.Response, error) {
@@ -2598,7 +2670,7 @@ func (a *CharacterApiService) GetCharactersNames(ctx context.Context, characterI
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2613,6 +2685,9 @@ func (a *CharacterApiService) GetCharactersNames(ctx context.Context, characterI
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2715,6 +2790,7 @@ Bulk lookup of character IDs to corporation, alliance and faction  ---  This rou
  * @param characters The character IDs to fetch affiliations for. All characters must exist, or none will be returned.
  * @param optional nil or *PostCharactersAffiliationOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -2722,9 +2798,10 @@ Bulk lookup of character IDs to corporation, alliance and faction  ---  This rou
 */
 
 type PostCharactersAffiliationOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, characters []int32, localVarOptionals *PostCharactersAffiliationOpts) ([]PostCharactersAffiliation200Ok, *http.Response, error) {
@@ -2750,7 +2827,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2765,6 +2842,9 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2925,7 +3005,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)

@@ -29,6 +29,6 @@ type GetCorporationsCorporationIdKillmailsRecent200OkList []GetCorporationsCorpo
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdKillmailsRecent200Ok struct {
-	KillmailId   int32  `json:"killmail_id,omitempty"`   /* ID of this killmail */
 	KillmailHash string `json:"killmail_hash,omitempty"` /* A hash of this killmail */
+	KillmailId   int32  `json:"killmail_id,omitempty"`   /* ID of this killmail */
 }

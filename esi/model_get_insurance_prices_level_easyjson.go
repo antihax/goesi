@@ -105,10 +105,10 @@ func easyjson3770691bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetI
 		switch key {
 		case "cost":
 			out.Cost = float32(in.Float32())
-		case "payout":
-			out.Payout = float32(in.Float32())
 		case "name":
 			out.Name = string(in.String())
+		case "payout":
+			out.Payout = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -133,16 +133,6 @@ func easyjson3770691bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Float32(float32(in.Cost))
 	}
-	if in.Payout != 0 {
-		const prefix string = ",\"payout\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Payout))
-	}
 	if in.Name != "" {
 		const prefix string = ",\"name\":"
 		if first {
@@ -152,6 +142,16 @@ func easyjson3770691bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Name))
+	}
+	if in.Payout != 0 {
+		const prefix string = ",\"payout\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Payout))
 	}
 	out.RawByte('}')
 }

@@ -29,10 +29,10 @@ type GetMarketsRegionIdHistory200OkList []GetMarketsRegionIdHistory200Ok
 /* 200 ok object */
 //easyjson:json
 type GetMarketsRegionIdHistory200Ok struct {
+	Average    float64 `json:"average,omitempty"`     /* average number */
 	Date       string  `json:"date,omitempty"`        /* The date of this historical statistic entry */
+	Highest    float64 `json:"highest,omitempty"`     /* highest number */
+	Lowest     float64 `json:"lowest,omitempty"`      /* lowest number */
 	OrderCount int64   `json:"order_count,omitempty"` /* Total number of orders happened that day */
 	Volume     int64   `json:"volume,omitempty"`      /* Total */
-	Highest    float64 `json:"highest,omitempty"`     /* highest number */
-	Average    float64 `json:"average,omitempty"`     /* average number */
-	Lowest     float64 `json:"lowest,omitempty"`      /* lowest number */
 }

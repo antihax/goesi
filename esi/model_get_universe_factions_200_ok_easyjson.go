@@ -103,26 +103,26 @@ func easyjsonDac4178DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetUn
 			continue
 		}
 		switch key {
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		case "description":
-			out.Description = string(in.String())
-		case "solar_system_id":
-			out.SolarSystemId = int32(in.Int32())
 		case "corporation_id":
 			out.CorporationId = int32(in.Int32())
+		case "description":
+			out.Description = string(in.String())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
+		case "is_unique":
+			out.IsUnique = bool(in.Bool())
 		case "militia_corporation_id":
 			out.MilitiaCorporationId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
 		case "size_factor":
 			out.SizeFactor = float32(in.Float32())
+		case "solar_system_id":
+			out.SolarSystemId = int32(in.Int32())
 		case "station_count":
 			out.StationCount = int32(in.Int32())
 		case "station_system_count":
 			out.StationSystemCount = int32(in.Int32())
-		case "is_unique":
-			out.IsUnique = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -137,25 +137,15 @@ func easyjsonDac4178EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetU
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.FactionId != 0 {
-		const prefix string = ",\"faction_id\":"
+	if in.CorporationId != 0 {
+		const prefix string = ",\"corporation_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.FactionId))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
+		out.Int32(int32(in.CorporationId))
 	}
 	if in.Description != "" {
 		const prefix string = ",\"description\":"
@@ -167,25 +157,25 @@ func easyjsonDac4178EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetU
 		}
 		out.String(string(in.Description))
 	}
-	if in.SolarSystemId != 0 {
-		const prefix string = ",\"solar_system_id\":"
+	if in.FactionId != 0 {
+		const prefix string = ",\"faction_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.SolarSystemId))
+		out.Int32(int32(in.FactionId))
 	}
-	if in.CorporationId != 0 {
-		const prefix string = ",\"corporation_id\":"
+	if in.IsUnique {
+		const prefix string = ",\"is_unique\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.CorporationId))
+		out.Bool(bool(in.IsUnique))
 	}
 	if in.MilitiaCorporationId != 0 {
 		const prefix string = ",\"militia_corporation_id\":"
@@ -197,6 +187,16 @@ func easyjsonDac4178EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetU
 		}
 		out.Int32(int32(in.MilitiaCorporationId))
 	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
 	if in.SizeFactor != 0 {
 		const prefix string = ",\"size_factor\":"
 		if first {
@@ -206,6 +206,16 @@ func easyjsonDac4178EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetU
 			out.RawString(prefix)
 		}
 		out.Float32(float32(in.SizeFactor))
+	}
+	if in.SolarSystemId != 0 {
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.StationCount != 0 {
 		const prefix string = ",\"station_count\":"
@@ -226,16 +236,6 @@ func easyjsonDac4178EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetU
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.StationSystemCount))
-	}
-	if in.IsUnique {
-		const prefix string = ",\"is_unique\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.IsUnique))
 	}
 	out.RawByte('}')
 }

@@ -33,12 +33,12 @@ type GetCharactersCharacterIdSkillqueue200OkList []GetCharactersCharacterIdSkill
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdSkillqueue200Ok struct {
-	SkillId         int32     `json:"skill_id,omitempty"`          /* skill_id integer */
 	FinishDate      time.Time `json:"finish_date,omitempty"`       /* finish_date string */
-	StartDate       time.Time `json:"start_date,omitempty"`        /* start_date string */
 	FinishedLevel   int32     `json:"finished_level,omitempty"`    /* finished_level integer */
-	QueuePosition   int32     `json:"queue_position,omitempty"`    /* queue_position integer */
-	TrainingStartSp int32     `json:"training_start_sp,omitempty"` /* training_start_sp integer */
 	LevelEndSp      int32     `json:"level_end_sp,omitempty"`      /* level_end_sp integer */
 	LevelStartSp    int32     `json:"level_start_sp,omitempty"`    /* Amount of SP that was in the skill when it started training it's current level. Used to calculate % of current level complete. */
+	QueuePosition   int32     `json:"queue_position,omitempty"`    /* queue_position integer */
+	SkillId         int32     `json:"skill_id,omitempty"`          /* skill_id integer */
+	StartDate       time.Time `json:"start_date,omitempty"`        /* start_date string */
+	TrainingStartSp int32     `json:"training_start_sp,omitempty"` /* training_start_sp integer */
 }

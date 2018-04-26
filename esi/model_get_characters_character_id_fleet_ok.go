@@ -30,7 +30,7 @@ type GetCharactersCharacterIdFleetOkList []GetCharactersCharacterIdFleetOk
 //easyjson:json
 type GetCharactersCharacterIdFleetOk struct {
 	FleetId int64  `json:"fleet_id,omitempty"` /* The character's current fleet ID */
-	WingId  int64  `json:"wing_id,omitempty"`  /* ID of the wing the member is in. If not applicable, will be set to -1 */
-	SquadId int64  `json:"squad_id,omitempty"` /* ID of the squad the member is in. If not applicable, will be set to -1 */
 	Role    string `json:"role,omitempty"`     /* Member’s role in fleet */
+	SquadId int64  `json:"squad_id,omitempty"` /* ID of the squad the member is in. If not applicable, will be set to -1 */
+	WingId  int64  `json:"wing_id,omitempty"`  /* ID of the wing the member is in. If not applicable, will be set to -1 */
 }

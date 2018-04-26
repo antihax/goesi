@@ -29,7 +29,7 @@ type GetFwStatsKillsList []GetFwStatsKills
 /* Summary of kills against an enemy faction for the given faction */
 //easyjson:json
 type GetFwStatsKills struct {
-	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's total number of kills against enemy factions */
 	LastWeek  int32 `json:"last_week,omitempty"` /* Last week's total number of kills against enemy factions */
 	Total     int32 `json:"total,omitempty"`     /* Total number of kills against enemy factions since faction warfare began */
+	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's total number of kills against enemy factions */
 }

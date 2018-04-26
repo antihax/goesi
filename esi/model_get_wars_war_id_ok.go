@@ -33,14 +33,14 @@ type GetWarsWarIdOkList []GetWarsWarIdOk
 /* 200 ok object */
 //easyjson:json
 type GetWarsWarIdOk struct {
-	Id            int32                 `json:"id,omitempty"`              /* ID of the specified war */
-	Declared      time.Time             `json:"declared,omitempty"`        /* Time that the war was declared */
-	Started       time.Time             `json:"started,omitempty"`         /* Time when the war started and both sides could shoot each other */
-	Retracted     time.Time             `json:"retracted,omitempty"`       /* Time the war was retracted but both sides could still shoot each other */
+	Aggressor     GetWarsWarIdAggressor `json:"aggressor,omitempty"`
+	Allies        []GetWarsWarIdAlly    `json:"allies,omitempty"`   /* allied corporations or alliances, each object contains either corporation_id or alliance_id */
+	Declared      time.Time             `json:"declared,omitempty"` /* Time that the war was declared */
+	Defender      GetWarsWarIdDefender  `json:"defender,omitempty"`
 	Finished      time.Time             `json:"finished,omitempty"`        /* Time the war ended and shooting was no longer allowed */
+	Id            int32                 `json:"id,omitempty"`              /* ID of the specified war */
 	Mutual        bool                  `json:"mutual,omitempty"`          /* Was the war declared mutual by both parties */
 	OpenForAllies bool                  `json:"open_for_allies,omitempty"` /* Is the war currently open for allies or not */
-	Aggressor     GetWarsWarIdAggressor `json:"aggressor,omitempty"`
-	Defender      GetWarsWarIdDefender  `json:"defender,omitempty"`
-	Allies        []GetWarsWarIdAlly    `json:"allies,omitempty"` /* allied corporations or alliances, each object contains either corporation_id or alliance_id */
+	Retracted     time.Time             `json:"retracted,omitempty"`       /* Time the war was retracted but both sides could still shoot each other */
+	Started       time.Time             `json:"started,omitempty"`         /* Time when the war started and both sides could shoot each other */
 }

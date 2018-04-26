@@ -103,12 +103,12 @@ func easyjson68d0aa8cDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "share_count":
+			out.ShareCount = int64(in.Int64())
 		case "shareholder_id":
 			out.ShareholderId = int32(in.Int32())
 		case "shareholder_type":
 			out.ShareholderType = string(in.String())
-		case "share_count":
-			out.ShareCount = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -123,6 +123,16 @@ func easyjson68d0aa8cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.ShareCount != 0 {
+		const prefix string = ",\"share_count\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ShareCount))
+	}
 	if in.ShareholderId != 0 {
 		const prefix string = ",\"shareholder_id\":"
 		if first {
@@ -142,16 +152,6 @@ func easyjson68d0aa8cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.ShareholderType))
-	}
-	if in.ShareCount != 0 {
-		const prefix string = ",\"share_count\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.ShareCount))
 	}
 	out.RawByte('}')
 }

@@ -29,6 +29,6 @@ type GetLoyaltyStoresCorporationIdOffersRequiredItemList []GetLoyaltyStoresCorpo
 /* required_item object */
 //easyjson:json
 type GetLoyaltyStoresCorporationIdOffersRequiredItem struct {
-	TypeId   int32 `json:"type_id,omitempty"`  /* type_id integer */
 	Quantity int32 `json:"quantity,omitempty"` /* quantity integer */
+	TypeId   int32 `json:"type_id,omitempty"`  /* type_id integer */
 }

@@ -103,20 +103,20 @@ func easyjson359a4af9DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "quantity":
-			out.Quantity = int32(in.Int32())
-		case "location_id":
-			out.LocationId = int64(in.Int64())
-		case "location_type":
-			out.LocationType = string(in.String())
+		case "is_singleton":
+			out.IsSingleton = bool(in.Bool())
 		case "item_id":
 			out.ItemId = int64(in.Int64())
 		case "location_flag":
 			out.LocationFlag = string(in.String())
-		case "is_singleton":
-			out.IsSingleton = bool(in.Bool())
+		case "location_id":
+			out.LocationId = int64(in.Int64())
+		case "location_type":
+			out.LocationType = string(in.String())
+		case "quantity":
+			out.Quantity = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -131,45 +131,15 @@ func easyjson359a4af9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
+	if in.IsSingleton {
+		const prefix string = ",\"is_singleton\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.TypeId))
-	}
-	if in.Quantity != 0 {
-		const prefix string = ",\"quantity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Quantity))
-	}
-	if in.LocationId != 0 {
-		const prefix string = ",\"location_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.LocationId))
-	}
-	if in.LocationType != "" {
-		const prefix string = ",\"location_type\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.LocationType))
+		out.Bool(bool(in.IsSingleton))
 	}
 	if in.ItemId != 0 {
 		const prefix string = ",\"item_id\":"
@@ -191,15 +161,45 @@ func easyjson359a4af9EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.LocationFlag))
 	}
-	if in.IsSingleton {
-		const prefix string = ",\"is_singleton\":"
+	if in.LocationId != 0 {
+		const prefix string = ",\"location_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Bool(bool(in.IsSingleton))
+		out.Int64(int64(in.LocationId))
+	}
+	if in.LocationType != "" {
+		const prefix string = ",\"location_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.LocationType))
+	}
+	if in.Quantity != 0 {
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Quantity))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

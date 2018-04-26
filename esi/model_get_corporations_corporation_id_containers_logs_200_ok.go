@@ -33,16 +33,16 @@ type GetCorporationsCorporationIdContainersLogs200OkList []GetCorporationsCorpor
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdContainersLogs200Ok struct {
-	LoggedAt         time.Time `json:"logged_at,omitempty"`          /* Timestamp when this log was created */
+	Action           string    `json:"action,omitempty"`             /* action string */
+	CharacterId      int32     `json:"character_id,omitempty"`       /* ID of the character who performed the action. */
 	ContainerId      int64     `json:"container_id,omitempty"`       /* ID of the container */
 	ContainerTypeId  int32     `json:"container_type_id,omitempty"`  /* Type ID of the container */
-	CharacterId      int32     `json:"character_id,omitempty"`       /* ID of the character who performed the action. */
-	LocationId       int64     `json:"location_id,omitempty"`        /* location_id integer */
-	Action           string    `json:"action,omitempty"`             /* action string */
-	PasswordType     string    `json:"password_type,omitempty"`      /* Type of password set if action is of type SetPassword or EnterPassword */
-	TypeId           int32     `json:"type_id,omitempty"`            /* Type ID of the item being acted upon */
-	Quantity         int32     `json:"quantity,omitempty"`           /* Quantity of the item being acted upon */
-	OldConfigBitmask int32     `json:"old_config_bitmask,omitempty"` /* old_config_bitmask integer */
-	NewConfigBitmask int32     `json:"new_config_bitmask,omitempty"` /* new_config_bitmask integer */
 	LocationFlag     string    `json:"location_flag,omitempty"`      /* location_flag string */
+	LocationId       int64     `json:"location_id,omitempty"`        /* location_id integer */
+	LoggedAt         time.Time `json:"logged_at,omitempty"`          /* Timestamp when this log was created */
+	NewConfigBitmask int32     `json:"new_config_bitmask,omitempty"` /* new_config_bitmask integer */
+	OldConfigBitmask int32     `json:"old_config_bitmask,omitempty"` /* old_config_bitmask integer */
+	PasswordType     string    `json:"password_type,omitempty"`      /* Type of password set if action is of type SetPassword or EnterPassword */
+	Quantity         int32     `json:"quantity,omitempty"`           /* Quantity of the item being acted upon */
+	TypeId           int32     `json:"type_id,omitempty"`            /* Type ID of the item being acted upon */
 }

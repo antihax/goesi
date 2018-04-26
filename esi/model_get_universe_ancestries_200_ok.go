@@ -29,10 +29,10 @@ type GetUniverseAncestries200OkList []GetUniverseAncestries200Ok
 /* 200 ok object */
 //easyjson:json
 type GetUniverseAncestries200Ok struct {
-	Id               int32  `json:"id,omitempty"`                /* id integer */
-	Name             string `json:"name,omitempty"`              /* name string */
 	BloodlineId      int32  `json:"bloodline_id,omitempty"`      /* The bloodline associated with this ancestry */
 	Description      string `json:"description,omitempty"`       /* description string */
-	ShortDescription string `json:"short_description,omitempty"` /* short_description string */
 	IconId           int32  `json:"icon_id,omitempty"`           /* icon_id integer */
+	Id               int32  `json:"id,omitempty"`                /* id integer */
+	Name             string `json:"name,omitempty"`              /* name string */
+	ShortDescription string `json:"short_description,omitempty"` /* short_description string */
 }

@@ -103,14 +103,14 @@ func easyjson49880f36DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "system_id":
-			out.SystemId = int32(in.Int32())
-		case "ship_kills":
-			out.ShipKills = int32(in.Int32())
 		case "npc_kills":
 			out.NpcKills = int32(in.Int32())
 		case "pod_kills":
 			out.PodKills = int32(in.Int32())
+		case "ship_kills":
+			out.ShipKills = int32(in.Int32())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -125,26 +125,6 @@ func easyjson49880f36EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.SystemId != 0 {
-		const prefix string = ",\"system_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.SystemId))
-	}
-	if in.ShipKills != 0 {
-		const prefix string = ",\"ship_kills\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ShipKills))
-	}
 	if in.NpcKills != 0 {
 		const prefix string = ",\"npc_kills\":"
 		if first {
@@ -164,6 +144,26 @@ func easyjson49880f36EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.PodKills))
+	}
+	if in.ShipKills != 0 {
+		const prefix string = ",\"ship_kills\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ShipKills))
+	}
+	if in.SystemId != 0 {
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SystemId))
 	}
 	out.RawByte('}')
 }

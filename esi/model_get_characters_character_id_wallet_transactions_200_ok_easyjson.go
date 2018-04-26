@@ -103,28 +103,28 @@ func easyjsonD4ffa85dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "transaction_id":
-			out.TransactionId = int64(in.Int64())
+		case "client_id":
+			out.ClientId = int32(in.Int32())
 		case "date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Date).UnmarshalJSON(data))
 			}
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "location_id":
-			out.LocationId = int64(in.Int64())
-		case "unit_price":
-			out.UnitPrice = float64(in.Float64())
-		case "quantity":
-			out.Quantity = int32(in.Int32())
-		case "client_id":
-			out.ClientId = int32(in.Int32())
 		case "is_buy":
 			out.IsBuy = bool(in.Bool())
 		case "is_personal":
 			out.IsPersonal = bool(in.Bool())
 		case "journal_ref_id":
 			out.JournalRefId = int64(in.Int64())
+		case "location_id":
+			out.LocationId = int64(in.Int64())
+		case "quantity":
+			out.Quantity = int32(in.Int32())
+		case "transaction_id":
+			out.TransactionId = int64(in.Int64())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		case "unit_price":
+			out.UnitPrice = float64(in.Float64())
 		default:
 			in.SkipRecursive()
 		}
@@ -139,15 +139,15 @@ func easyjsonD4ffa85dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.TransactionId != 0 {
-		const prefix string = ",\"transaction_id\":"
+	if in.ClientId != 0 {
+		const prefix string = ",\"client_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int64(int64(in.TransactionId))
+		out.Int32(int32(in.ClientId))
 	}
 	if true {
 		const prefix string = ",\"date\":"
@@ -158,56 +158,6 @@ func easyjsonD4ffa85dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Raw((in.Date).MarshalJSON())
-	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
-	if in.LocationId != 0 {
-		const prefix string = ",\"location_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.LocationId))
-	}
-	if in.UnitPrice != 0 {
-		const prefix string = ",\"unit_price\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.UnitPrice))
-	}
-	if in.Quantity != 0 {
-		const prefix string = ",\"quantity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Quantity))
-	}
-	if in.ClientId != 0 {
-		const prefix string = ",\"client_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ClientId))
 	}
 	if in.IsBuy {
 		const prefix string = ",\"is_buy\":"
@@ -238,6 +188,56 @@ func easyjsonD4ffa85dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.JournalRefId))
+	}
+	if in.LocationId != 0 {
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.LocationId))
+	}
+	if in.Quantity != 0 {
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Quantity))
+	}
+	if in.TransactionId != 0 {
+		const prefix string = ",\"transaction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.TransactionId))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
+	}
+	if in.UnitPrice != 0 {
+		const prefix string = ",\"unit_price\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.UnitPrice))
 	}
 	out.RawByte('}')
 }

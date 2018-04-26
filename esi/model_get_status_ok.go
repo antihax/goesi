@@ -33,8 +33,8 @@ type GetStatusOkList []GetStatusOk
 /* 200 ok object */
 //easyjson:json
 type GetStatusOk struct {
-	StartTime     time.Time `json:"start_time,omitempty"`     /* Server start timestamp */
 	Players       int32     `json:"players,omitempty"`        /* Current online player count */
 	ServerVersion string    `json:"server_version,omitempty"` /* Running version as string */
+	StartTime     time.Time `json:"start_time,omitempty"`     /* Server start timestamp */
 	Vip           bool      `json:"vip,omitempty"`            /* If the server is in VIP mode */
 }

@@ -30,7 +30,7 @@ type GetUniverseCategoriesCategoryIdOkList []GetUniverseCategoriesCategoryIdOk
 //easyjson:json
 type GetUniverseCategoriesCategoryIdOk struct {
 	CategoryId int32   `json:"category_id,omitempty"` /* category_id integer */
+	Groups     []int32 `json:"groups,omitempty"`      /* groups array */
 	Name       string  `json:"name,omitempty"`        /* name string */
 	Published  bool    `json:"published,omitempty"`   /* published boolean */
-	Groups     []int32 `json:"groups,omitempty"`      /* groups array */
 }

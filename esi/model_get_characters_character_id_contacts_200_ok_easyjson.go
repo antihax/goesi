@@ -103,18 +103,18 @@ func easyjsonCb381401DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "standing":
-			out.Standing = float32(in.Float32())
-		case "contact_type":
-			out.ContactType = string(in.String())
 		case "contact_id":
 			out.ContactId = int32(in.Int32())
-		case "is_watched":
-			out.IsWatched = bool(in.Bool())
+		case "contact_type":
+			out.ContactType = string(in.String())
 		case "is_blocked":
 			out.IsBlocked = bool(in.Bool())
+		case "is_watched":
+			out.IsWatched = bool(in.Bool())
 		case "label_id":
 			out.LabelId = int64(in.Int64())
+		case "standing":
+			out.Standing = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,15 +129,15 @@ func easyjsonCb381401EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Standing != 0 {
-		const prefix string = ",\"standing\":"
+	if in.ContactId != 0 {
+		const prefix string = ",\"contact_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Standing))
+		out.Int32(int32(in.ContactId))
 	}
 	if in.ContactType != "" {
 		const prefix string = ",\"contact_type\":"
@@ -149,15 +149,15 @@ func easyjsonCb381401EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.ContactType))
 	}
-	if in.ContactId != 0 {
-		const prefix string = ",\"contact_id\":"
+	if in.IsBlocked {
+		const prefix string = ",\"is_blocked\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.ContactId))
+		out.Bool(bool(in.IsBlocked))
 	}
 	if in.IsWatched {
 		const prefix string = ",\"is_watched\":"
@@ -169,16 +169,6 @@ func easyjsonCb381401EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Bool(bool(in.IsWatched))
 	}
-	if in.IsBlocked {
-		const prefix string = ",\"is_blocked\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.IsBlocked))
-	}
 	if in.LabelId != 0 {
 		const prefix string = ",\"label_id\":"
 		if first {
@@ -188,6 +178,16 @@ func easyjsonCb381401EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.LabelId))
+	}
+	if in.Standing != 0 {
+		const prefix string = ",\"standing\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Standing))
 	}
 	out.RawByte('}')
 }

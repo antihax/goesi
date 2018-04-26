@@ -103,10 +103,10 @@ func easyjson8515d584DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
-		case "name":
-			out.Name = string(in.String())
 		case "id":
 			out.Id = int64(in.Int64())
+		case "name":
+			out.Name = string(in.String())
 		case "squads":
 			if in.IsNull() {
 				in.Skip()
@@ -144,16 +144,6 @@ func easyjson8515d584EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
 	if in.Id != 0 {
 		const prefix string = ",\"id\":"
 		if first {
@@ -163,6 +153,16 @@ func easyjson8515d584EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.Id))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
 	}
 	if len(in.Squads) != 0 {
 		const prefix string = ",\"squads\":"
@@ -228,10 +228,10 @@ func easyjson8515d584DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
-		case "name":
-			out.Name = string(in.String())
 		case "id":
 			out.Id = int64(in.Int64())
+		case "name":
+			out.Name = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -246,16 +246,6 @@ func easyjson8515d584EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
 	if in.Id != 0 {
 		const prefix string = ",\"id\":"
 		if first {
@@ -265,6 +255,16 @@ func easyjson8515d584EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.Id))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
 	}
 	out.RawByte('}')
 }

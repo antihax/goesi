@@ -30,14 +30,14 @@ type GetUniverseBloodlines200OkList []GetUniverseBloodlines200Ok
 //easyjson:json
 type GetUniverseBloodlines200Ok struct {
 	BloodlineId   int32  `json:"bloodline_id,omitempty"`   /* bloodline_id integer */
-	Name          string `json:"name,omitempty"`           /* name string */
+	Charisma      int32  `json:"charisma,omitempty"`       /* charisma integer */
+	CorporationId int32  `json:"corporation_id,omitempty"` /* corporation_id integer */
 	Description   string `json:"description,omitempty"`    /* description string */
+	Intelligence  int32  `json:"intelligence,omitempty"`   /* intelligence integer */
+	Memory        int32  `json:"memory,omitempty"`         /* memory integer */
+	Name          string `json:"name,omitempty"`           /* name string */
+	Perception    int32  `json:"perception,omitempty"`     /* perception integer */
 	RaceId        int32  `json:"race_id,omitempty"`        /* race_id integer */
 	ShipTypeId    int32  `json:"ship_type_id,omitempty"`   /* ship_type_id integer */
-	CorporationId int32  `json:"corporation_id,omitempty"` /* corporation_id integer */
-	Perception    int32  `json:"perception,omitempty"`     /* perception integer */
 	Willpower     int32  `json:"willpower,omitempty"`      /* willpower integer */
-	Charisma      int32  `json:"charisma,omitempty"`       /* charisma integer */
-	Memory        int32  `json:"memory,omitempty"`         /* memory integer */
-	Intelligence  int32  `json:"intelligence,omitempty"`   /* intelligence integer */
 }

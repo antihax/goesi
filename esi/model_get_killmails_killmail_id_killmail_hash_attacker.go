@@ -29,13 +29,13 @@ type GetKillmailsKillmailIdKillmailHashAttackerList []GetKillmailsKillmailIdKill
 /* attacker object */
 //easyjson:json
 type GetKillmailsKillmailIdKillmailHashAttacker struct {
+	AllianceId     int32   `json:"alliance_id,omitempty"`     /* alliance_id integer */
 	CharacterId    int32   `json:"character_id,omitempty"`    /* character_id integer */
 	CorporationId  int32   `json:"corporation_id,omitempty"`  /* corporation_id integer */
-	AllianceId     int32   `json:"alliance_id,omitempty"`     /* alliance_id integer */
-	FactionId      int32   `json:"faction_id,omitempty"`      /* faction_id integer */
-	SecurityStatus float32 `json:"security_status,omitempty"` /* Security status for the attacker  */
-	FinalBlow      bool    `json:"final_blow,omitempty"`      /* Was the attacker the one to achieve the final blow  */
 	DamageDone     int32   `json:"damage_done,omitempty"`     /* damage_done integer */
+	FactionId      int32   `json:"faction_id,omitempty"`      /* faction_id integer */
+	FinalBlow      bool    `json:"final_blow,omitempty"`      /* Was the attacker the one to achieve the final blow  */
+	SecurityStatus float32 `json:"security_status,omitempty"` /* Security status for the attacker  */
 	ShipTypeId     int32   `json:"ship_type_id,omitempty"`    /* What ship was the attacker flying  */
 	WeaponTypeId   int32   `json:"weapon_type_id,omitempty"`  /* What weapon was used by the attacker for the kill  */
 }

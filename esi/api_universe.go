@@ -47,6 +47,7 @@ Get all character ancestries  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseAncestriesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -55,10 +56,11 @@ Get all character ancestries  ---  This route expires daily at 11:05
 */
 
 type GetUniverseAncestriesOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseAncestries(ctx context.Context, localVarOptionals *GetUniverseAncestriesOpts) ([]GetUniverseAncestries200Ok, *http.Response, error) {
@@ -87,7 +89,7 @@ func (a *UniverseApiService) GetUniverseAncestries(ctx context.Context, localVar
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -102,6 +104,9 @@ func (a *UniverseApiService) GetUniverseAncestries(ctx context.Context, localVar
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -204,6 +209,7 @@ Get information on an asteroid belt  ---  This route expires daily at 11:05
  * @param asteroidBeltId asteroid_belt_id integer
  * @param optional nil or *GetUniverseAsteroidBeltsAsteroidBeltIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -211,9 +217,10 @@ Get information on an asteroid belt  ---  This route expires daily at 11:05
 */
 
 type GetUniverseAsteroidBeltsAsteroidBeltIdOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseAsteroidBeltsAsteroidBeltId(ctx context.Context, asteroidBeltId int32, localVarOptionals *GetUniverseAsteroidBeltsAsteroidBeltIdOpts) (GetUniverseAsteroidBeltsAsteroidBeltIdOk, *http.Response, error) {
@@ -240,7 +247,7 @@ func (a *UniverseApiService) GetUniverseAsteroidBeltsAsteroidBeltId(ctx context.
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -255,6 +262,9 @@ func (a *UniverseApiService) GetUniverseAsteroidBeltsAsteroidBeltId(ctx context.
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -367,6 +377,7 @@ Get a list of bloodlines  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseBloodlinesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -375,10 +386,11 @@ Get a list of bloodlines  ---  This route expires daily at 11:05
 */
 
 type GetUniverseBloodlinesOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseBloodlines(ctx context.Context, localVarOptionals *GetUniverseBloodlinesOpts) ([]GetUniverseBloodlines200Ok, *http.Response, error) {
@@ -407,7 +419,7 @@ func (a *UniverseApiService) GetUniverseBloodlines(ctx context.Context, localVar
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -422,6 +434,9 @@ func (a *UniverseApiService) GetUniverseBloodlines(ctx context.Context, localVar
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -523,6 +538,7 @@ Get a list of item categories  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseCategoriesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -530,9 +546,10 @@ Get a list of item categories  ---  This route expires daily at 11:05
 */
 
 type GetUniverseCategoriesOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseCategories(ctx context.Context, localVarOptionals *GetUniverseCategoriesOpts) ([]int32, *http.Response, error) {
@@ -558,7 +575,7 @@ func (a *UniverseApiService) GetUniverseCategories(ctx context.Context, localVar
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -573,6 +590,9 @@ func (a *UniverseApiService) GetUniverseCategories(ctx context.Context, localVar
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -675,6 +695,7 @@ Get information of an item category  ---  This route expires daily at 11:05
  * @param categoryId An Eve item category ID
  * @param optional nil or *GetUniverseCategoriesCategoryIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -683,10 +704,11 @@ Get information of an item category  ---  This route expires daily at 11:05
 */
 
 type GetUniverseCategoriesCategoryIdOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseCategoriesCategoryId(ctx context.Context, categoryId int32, localVarOptionals *GetUniverseCategoriesCategoryIdOpts) (GetUniverseCategoriesCategoryIdOk, *http.Response, error) {
@@ -716,7 +738,7 @@ func (a *UniverseApiService) GetUniverseCategoriesCategoryId(ctx context.Context
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -731,6 +753,9 @@ func (a *UniverseApiService) GetUniverseCategoriesCategoryId(ctx context.Context
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -843,6 +868,7 @@ Get a list of constellations  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseConstellationsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -850,9 +876,10 @@ Get a list of constellations  ---  This route expires daily at 11:05
 */
 
 type GetUniverseConstellationsOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseConstellations(ctx context.Context, localVarOptionals *GetUniverseConstellationsOpts) ([]int32, *http.Response, error) {
@@ -878,7 +905,7 @@ func (a *UniverseApiService) GetUniverseConstellations(ctx context.Context, loca
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -893,6 +920,9 @@ func (a *UniverseApiService) GetUniverseConstellations(ctx context.Context, loca
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -995,6 +1025,7 @@ Get information on a constellation  ---  This route expires daily at 11:05
  * @param constellationId constellation_id integer
  * @param optional nil or *GetUniverseConstellationsConstellationIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -1003,10 +1034,11 @@ Get information on a constellation  ---  This route expires daily at 11:05
 */
 
 type GetUniverseConstellationsConstellationIdOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseConstellationsConstellationId(ctx context.Context, constellationId int32, localVarOptionals *GetUniverseConstellationsConstellationIdOpts) (GetUniverseConstellationsConstellationIdOk, *http.Response, error) {
@@ -1036,7 +1068,7 @@ func (a *UniverseApiService) GetUniverseConstellationsConstellationId(ctx contex
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1051,6 +1083,9 @@ func (a *UniverseApiService) GetUniverseConstellationsConstellationId(ctx contex
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1163,6 +1198,7 @@ Get a list of factions  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseFactionsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -1171,10 +1207,11 @@ Get a list of factions  ---  This route expires daily at 11:05
 */
 
 type GetUniverseFactionsOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseFactions(ctx context.Context, localVarOptionals *GetUniverseFactionsOpts) ([]GetUniverseFactions200Ok, *http.Response, error) {
@@ -1203,7 +1240,7 @@ func (a *UniverseApiService) GetUniverseFactions(ctx context.Context, localVarOp
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1218,6 +1255,9 @@ func (a *UniverseApiService) GetUniverseFactions(ctx context.Context, localVarOp
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1319,6 +1359,7 @@ Get a list of graphics  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseGraphicsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -1326,9 +1367,10 @@ Get a list of graphics  ---  This route expires daily at 11:05
 */
 
 type GetUniverseGraphicsOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseGraphics(ctx context.Context, localVarOptionals *GetUniverseGraphicsOpts) ([]int32, *http.Response, error) {
@@ -1354,7 +1396,7 @@ func (a *UniverseApiService) GetUniverseGraphics(ctx context.Context, localVarOp
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1369,6 +1411,9 @@ func (a *UniverseApiService) GetUniverseGraphics(ctx context.Context, localVarOp
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1471,6 +1516,7 @@ Get information on a graphic  ---  This route expires daily at 11:05
  * @param graphicId graphic_id integer
  * @param optional nil or *GetUniverseGraphicsGraphicIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -1478,9 +1524,10 @@ Get information on a graphic  ---  This route expires daily at 11:05
 */
 
 type GetUniverseGraphicsGraphicIdOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseGraphicsGraphicId(ctx context.Context, graphicId int32, localVarOptionals *GetUniverseGraphicsGraphicIdOpts) (GetUniverseGraphicsGraphicIdOk, *http.Response, error) {
@@ -1507,7 +1554,7 @@ func (a *UniverseApiService) GetUniverseGraphicsGraphicId(ctx context.Context, g
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1522,6 +1569,9 @@ func (a *UniverseApiService) GetUniverseGraphicsGraphicId(ctx context.Context, g
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1634,6 +1684,7 @@ Get a list of item groups  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseGroupsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -1642,10 +1693,11 @@ Get a list of item groups  ---  This route expires daily at 11:05
 */
 
 type GetUniverseGroupsOpts struct {
-	Datasource optional.String
-	Page       optional.Int32
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseGroups(ctx context.Context, localVarOptionals *GetUniverseGroupsOpts) ([]int32, *http.Response, error) {
@@ -1674,7 +1726,7 @@ func (a *UniverseApiService) GetUniverseGroups(ctx context.Context, localVarOpti
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1689,6 +1741,9 @@ func (a *UniverseApiService) GetUniverseGroups(ctx context.Context, localVarOpti
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1791,6 +1846,7 @@ Get information on an item group  ---  This route expires daily at 11:05
  * @param groupId An Eve item group ID
  * @param optional nil or *GetUniverseGroupsGroupIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -1799,10 +1855,11 @@ Get information on an item group  ---  This route expires daily at 11:05
 */
 
 type GetUniverseGroupsGroupIdOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseGroupsGroupId(ctx context.Context, groupId int32, localVarOptionals *GetUniverseGroupsGroupIdOpts) (GetUniverseGroupsGroupIdOk, *http.Response, error) {
@@ -1832,7 +1889,7 @@ func (a *UniverseApiService) GetUniverseGroupsGroupId(ctx context.Context, group
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1847,6 +1904,9 @@ func (a *UniverseApiService) GetUniverseGroupsGroupId(ctx context.Context, group
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1960,6 +2020,7 @@ Get information on a moon  ---  This route expires daily at 11:05
  * @param moonId moon_id integer
  * @param optional nil or *GetUniverseMoonsMoonIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -1967,9 +2028,10 @@ Get information on a moon  ---  This route expires daily at 11:05
 */
 
 type GetUniverseMoonsMoonIdOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseMoonsMoonId(ctx context.Context, moonId int32, localVarOptionals *GetUniverseMoonsMoonIdOpts) (GetUniverseMoonsMoonIdOk, *http.Response, error) {
@@ -1996,7 +2058,7 @@ func (a *UniverseApiService) GetUniverseMoonsMoonId(ctx context.Context, moonId 
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2011,6 +2073,9 @@ func (a *UniverseApiService) GetUniverseMoonsMoonId(ctx context.Context, moonId 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2124,6 +2189,7 @@ Get information on a planet  ---  This route expires daily at 11:05
  * @param planetId planet_id integer
  * @param optional nil or *GetUniversePlanetsPlanetIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -2131,9 +2197,10 @@ Get information on a planet  ---  This route expires daily at 11:05
 */
 
 type GetUniversePlanetsPlanetIdOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniversePlanetsPlanetId(ctx context.Context, planetId int32, localVarOptionals *GetUniversePlanetsPlanetIdOpts) (GetUniversePlanetsPlanetIdOk, *http.Response, error) {
@@ -2160,7 +2227,7 @@ func (a *UniverseApiService) GetUniversePlanetsPlanetId(ctx context.Context, pla
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2175,6 +2242,9 @@ func (a *UniverseApiService) GetUniversePlanetsPlanetId(ctx context.Context, pla
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2287,6 +2357,7 @@ Get a list of character races  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseRacesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -2295,10 +2366,11 @@ Get a list of character races  ---  This route expires daily at 11:05
 */
 
 type GetUniverseRacesOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseRaces(ctx context.Context, localVarOptionals *GetUniverseRacesOpts) ([]GetUniverseRaces200Ok, *http.Response, error) {
@@ -2327,7 +2399,7 @@ func (a *UniverseApiService) GetUniverseRaces(ctx context.Context, localVarOptio
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2342,6 +2414,9 @@ func (a *UniverseApiService) GetUniverseRaces(ctx context.Context, localVarOptio
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2443,6 +2518,7 @@ Get a list of regions  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseRegionsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -2450,9 +2526,10 @@ Get a list of regions  ---  This route expires daily at 11:05
 */
 
 type GetUniverseRegionsOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseRegions(ctx context.Context, localVarOptionals *GetUniverseRegionsOpts) ([]int32, *http.Response, error) {
@@ -2478,7 +2555,7 @@ func (a *UniverseApiService) GetUniverseRegions(ctx context.Context, localVarOpt
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2493,6 +2570,9 @@ func (a *UniverseApiService) GetUniverseRegions(ctx context.Context, localVarOpt
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2595,6 +2675,7 @@ Get information on a region  ---  This route expires daily at 11:05
  * @param regionId region_id integer
  * @param optional nil or *GetUniverseRegionsRegionIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -2603,10 +2684,11 @@ Get information on a region  ---  This route expires daily at 11:05
 */
 
 type GetUniverseRegionsRegionIdOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseRegionsRegionId(ctx context.Context, regionId int32, localVarOptionals *GetUniverseRegionsRegionIdOpts) (GetUniverseRegionsRegionIdOk, *http.Response, error) {
@@ -2636,7 +2718,7 @@ func (a *UniverseApiService) GetUniverseRegionsRegionId(ctx context.Context, reg
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2651,6 +2733,9 @@ func (a *UniverseApiService) GetUniverseRegionsRegionId(ctx context.Context, reg
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2764,6 +2849,7 @@ Get information on a stargate  ---  This route expires daily at 11:05
  * @param stargateId stargate_id integer
  * @param optional nil or *GetUniverseStargatesStargateIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -2771,9 +2857,10 @@ Get information on a stargate  ---  This route expires daily at 11:05
 */
 
 type GetUniverseStargatesStargateIdOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseStargatesStargateId(ctx context.Context, stargateId int32, localVarOptionals *GetUniverseStargatesStargateIdOpts) (GetUniverseStargatesStargateIdOk, *http.Response, error) {
@@ -2800,7 +2887,7 @@ func (a *UniverseApiService) GetUniverseStargatesStargateId(ctx context.Context,
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2815,6 +2902,9 @@ func (a *UniverseApiService) GetUniverseStargatesStargateId(ctx context.Context,
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -2928,6 +3018,7 @@ Get information on a star  ---  This route expires daily at 11:05
  * @param starId star_id integer
  * @param optional nil or *GetUniverseStarsStarIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -2935,9 +3026,10 @@ Get information on a star  ---  This route expires daily at 11:05
 */
 
 type GetUniverseStarsStarIdOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseStarsStarId(ctx context.Context, starId int32, localVarOptionals *GetUniverseStarsStarIdOpts) (GetUniverseStarsStarIdOk, *http.Response, error) {
@@ -2964,7 +3056,7 @@ func (a *UniverseApiService) GetUniverseStarsStarId(ctx context.Context, starId 
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2979,6 +3071,9 @@ func (a *UniverseApiService) GetUniverseStarsStarId(ctx context.Context, starId 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -3081,6 +3176,7 @@ Get information on a station  ---  This route is cached for up to 300 seconds
  * @param stationId station_id integer
  * @param optional nil or *GetUniverseStationsStationIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -3088,9 +3184,10 @@ Get information on a station  ---  This route is cached for up to 300 seconds
 */
 
 type GetUniverseStationsStationIdOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseStationsStationId(ctx context.Context, stationId int32, localVarOptionals *GetUniverseStationsStationIdOpts) (GetUniverseStationsStationIdOk, *http.Response, error) {
@@ -3117,7 +3214,7 @@ func (a *UniverseApiService) GetUniverseStationsStationId(ctx context.Context, s
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3132,6 +3229,9 @@ func (a *UniverseApiService) GetUniverseStationsStationId(ctx context.Context, s
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -3244,6 +3344,7 @@ List all public structures  ---  This route is cached for up to 3600 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseStructuresOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -3251,9 +3352,10 @@ List all public structures  ---  This route is cached for up to 3600 seconds
 */
 
 type GetUniverseStructuresOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseStructures(ctx context.Context, localVarOptionals *GetUniverseStructuresOpts) ([]int64, *http.Response, error) {
@@ -3279,7 +3381,7 @@ func (a *UniverseApiService) GetUniverseStructures(ctx context.Context, localVar
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3294,6 +3396,9 @@ func (a *UniverseApiService) GetUniverseStructures(ctx context.Context, localVar
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -3396,6 +3501,7 @@ Returns information on requested structure, if you are on the ACL. Otherwise, re
  * @param structureId An Eve structure ID
  * @param optional nil or *GetUniverseStructuresStructureIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -3404,10 +3510,11 @@ Returns information on requested structure, if you are on the ACL. Otherwise, re
 */
 
 type GetUniverseStructuresStructureIdOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseStructuresStructureId(ctx context.Context, structureId int64, localVarOptionals *GetUniverseStructuresStructureIdOpts) (GetUniverseStructuresStructureIdOk, *http.Response, error) {
@@ -3437,7 +3544,7 @@ func (a *UniverseApiService) GetUniverseStructuresStructureId(ctx context.Contex
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3452,6 +3559,9 @@ func (a *UniverseApiService) GetUniverseStructuresStructureId(ctx context.Contex
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -3586,6 +3696,7 @@ Get the number of jumps in solar systems within the last hour ending at the time
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseSystemJumpsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -3593,9 +3704,10 @@ Get the number of jumps in solar systems within the last hour ending at the time
 */
 
 type GetUniverseSystemJumpsOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseSystemJumps(ctx context.Context, localVarOptionals *GetUniverseSystemJumpsOpts) ([]GetUniverseSystemJumps200Ok, *http.Response, error) {
@@ -3621,7 +3733,7 @@ func (a *UniverseApiService) GetUniverseSystemJumps(ctx context.Context, localVa
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3636,6 +3748,9 @@ func (a *UniverseApiService) GetUniverseSystemJumps(ctx context.Context, localVa
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -3737,6 +3852,7 @@ Get the number of ship, pod and NPC kills per solar system within the last hour 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseSystemKillsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -3744,9 +3860,10 @@ Get the number of ship, pod and NPC kills per solar system within the last hour 
 */
 
 type GetUniverseSystemKillsOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseSystemKills(ctx context.Context, localVarOptionals *GetUniverseSystemKillsOpts) ([]GetUniverseSystemKills200Ok, *http.Response, error) {
@@ -3772,7 +3889,7 @@ func (a *UniverseApiService) GetUniverseSystemKills(ctx context.Context, localVa
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3787,6 +3904,9 @@ func (a *UniverseApiService) GetUniverseSystemKills(ctx context.Context, localVa
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -3888,6 +4008,7 @@ Get a list of solar systems  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseSystemsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -3895,9 +4016,10 @@ Get a list of solar systems  ---  This route expires daily at 11:05
 */
 
 type GetUniverseSystemsOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseSystems(ctx context.Context, localVarOptionals *GetUniverseSystemsOpts) ([]int32, *http.Response, error) {
@@ -3923,7 +4045,7 @@ func (a *UniverseApiService) GetUniverseSystems(ctx context.Context, localVarOpt
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3938,6 +4060,9 @@ func (a *UniverseApiService) GetUniverseSystems(ctx context.Context, localVarOpt
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -4040,6 +4165,7 @@ Get information on a solar system  ---  This route expires daily at 11:05
  * @param systemId system_id integer
  * @param optional nil or *GetUniverseSystemsSystemIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -4048,10 +4174,11 @@ Get information on a solar system  ---  This route expires daily at 11:05
 */
 
 type GetUniverseSystemsSystemIdOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseSystemsSystemId(ctx context.Context, systemId int32, localVarOptionals *GetUniverseSystemsSystemIdOpts) (GetUniverseSystemsSystemIdOk, *http.Response, error) {
@@ -4081,7 +4208,7 @@ func (a *UniverseApiService) GetUniverseSystemsSystemId(ctx context.Context, sys
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -4096,6 +4223,9 @@ func (a *UniverseApiService) GetUniverseSystemsSystemId(ctx context.Context, sys
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -4208,6 +4338,7 @@ Get a list of type ids  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseTypesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -4216,10 +4347,11 @@ Get a list of type ids  ---  This route expires daily at 11:05
 */
 
 type GetUniverseTypesOpts struct {
-	Datasource optional.String
-	Page       optional.Int32
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseTypes(ctx context.Context, localVarOptionals *GetUniverseTypesOpts) ([]int32, *http.Response, error) {
@@ -4248,7 +4380,7 @@ func (a *UniverseApiService) GetUniverseTypes(ctx context.Context, localVarOptio
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -4263,6 +4395,9 @@ func (a *UniverseApiService) GetUniverseTypes(ctx context.Context, localVarOptio
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -4365,6 +4500,7 @@ Get information on a type  ---  This route expires daily at 11:05
  * @param typeId An Eve item type ID
  * @param optional nil or *GetUniverseTypesTypeIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -4373,10 +4509,11 @@ Get information on a type  ---  This route expires daily at 11:05
 */
 
 type GetUniverseTypesTypeIdOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *UniverseApiService) GetUniverseTypesTypeId(ctx context.Context, typeId int32, localVarOptionals *GetUniverseTypesTypeIdOpts) (GetUniverseTypesTypeIdOk, *http.Response, error) {
@@ -4406,7 +4543,7 @@ func (a *UniverseApiService) GetUniverseTypesTypeId(ctx context.Context, typeId 
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -4421,6 +4558,9 @@ func (a *UniverseApiService) GetUniverseTypesTypeId(ctx context.Context, typeId 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -4574,7 +4714,7 @@ func (a *UniverseApiService) PostUniverseIds(ctx context.Context, names []string
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -4728,7 +4868,7 @@ func (a *UniverseApiService) PostUniverseNames(ctx context.Context, ids []int32,
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)

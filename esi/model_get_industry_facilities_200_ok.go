@@ -30,9 +30,9 @@ type GetIndustryFacilities200OkList []GetIndustryFacilities200Ok
 //easyjson:json
 type GetIndustryFacilities200Ok struct {
 	FacilityId    int64   `json:"facility_id,omitempty"`     /* ID of the facility */
-	Tax           float32 `json:"tax,omitempty"`             /* Tax imposed by the facility */
 	OwnerId       int32   `json:"owner_id,omitempty"`        /* Owner of the facility */
-	TypeId        int32   `json:"type_id,omitempty"`         /* Type ID of the facility */
-	SolarSystemId int32   `json:"solar_system_id,omitempty"` /* Solar system ID where the facility is */
 	RegionId      int32   `json:"region_id,omitempty"`       /* Region ID where the facility is */
+	SolarSystemId int32   `json:"solar_system_id,omitempty"` /* Solar system ID where the facility is */
+	Tax           float32 `json:"tax,omitempty"`             /* Tax imposed by the facility */
+	TypeId        int32   `json:"type_id,omitempty"`         /* Type ID of the facility */
 }

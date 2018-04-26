@@ -29,8 +29,8 @@ type PostCharactersAffiliation200OkList []PostCharactersAffiliation200Ok
 /* 200 ok object */
 //easyjson:json
 type PostCharactersAffiliation200Ok struct {
+	AllianceId    int32 `json:"alliance_id,omitempty"`    /* The character's alliance ID, if their corporation is in an alliance */
 	CharacterId   int32 `json:"character_id,omitempty"`   /* The character's ID */
 	CorporationId int32 `json:"corporation_id,omitempty"` /* The character's corporation ID */
-	AllianceId    int32 `json:"alliance_id,omitempty"`    /* The character's alliance ID, if their corporation is in an alliance */
 	FactionId     int32 `json:"faction_id,omitempty"`     /* The character's faction ID, if their corporation is in a faction */
 }

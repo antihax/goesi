@@ -103,8 +103,6 @@ func easyjson93c87c1aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "online":
-			out.Online = bool(in.Bool())
 		case "last_login":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.LastLogin).UnmarshalJSON(data))
@@ -115,6 +113,8 @@ func easyjson93c87c1aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			}
 		case "logins":
 			out.Logins = int32(in.Int32())
+		case "online":
+			out.Online = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,16 +129,6 @@ func easyjson93c87c1aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Online {
-		const prefix string = ",\"online\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.Online))
-	}
 	if true {
 		const prefix string = ",\"last_login\":"
 		if first {
@@ -168,6 +158,16 @@ func easyjson93c87c1aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Logins))
+	}
+	if in.Online {
+		const prefix string = ",\"online\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.Online))
 	}
 	out.RawByte('}')
 }

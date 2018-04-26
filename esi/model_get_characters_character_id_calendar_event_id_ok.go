@@ -33,14 +33,14 @@ type GetCharactersCharacterIdCalendarEventIdOkList []GetCharactersCharacterIdCal
 /* Full details of a specific event */
 //easyjson:json
 type GetCharactersCharacterIdCalendarEventIdOk struct {
+	Date       time.Time `json:"date,omitempty"`       /* date string */
+	Duration   int32     `json:"duration,omitempty"`   /* Length in minutes */
 	EventId    int32     `json:"event_id,omitempty"`   /* event_id integer */
+	Importance int32     `json:"importance,omitempty"` /* importance integer */
 	OwnerId    int32     `json:"owner_id,omitempty"`   /* owner_id integer */
 	OwnerName  string    `json:"owner_name,omitempty"` /* owner_name string */
-	Date       time.Time `json:"date,omitempty"`       /* date string */
-	Title      string    `json:"title,omitempty"`      /* title string */
-	Duration   int32     `json:"duration,omitempty"`   /* Length in minutes */
-	Importance int32     `json:"importance,omitempty"` /* importance integer */
+	OwnerType  string    `json:"owner_type,omitempty"` /* owner_type string */
 	Response   string    `json:"response,omitempty"`   /* response string */
 	Text       string    `json:"text,omitempty"`       /* text string */
-	OwnerType  string    `json:"owner_type,omitempty"` /* owner_type string */
+	Title      string    `json:"title,omitempty"`      /* title string */
 }

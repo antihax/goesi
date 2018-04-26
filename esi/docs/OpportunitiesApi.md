@@ -32,6 +32,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -46,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -70,6 +71,7 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -83,7 +85,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -109,6 +111,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **int32**| ID of an opportunities group | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **language** | **string**| Language to use in the response | [default to en-us]
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -123,7 +126,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -147,6 +150,7 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -160,7 +164,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -186,6 +190,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taskId** | **int32**| ID of an opportunities task | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -199,7 +204,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

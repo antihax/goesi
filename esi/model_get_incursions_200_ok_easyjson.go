@@ -103,20 +103,12 @@ func easyjsonAb919c82DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetI
 			continue
 		}
 		switch key {
-		case "type":
-			out.Type_ = string(in.String())
-		case "state":
-			out.State = string(in.String())
-		case "influence":
-			out.Influence = float32(in.Float32())
-		case "has_boss":
-			out.HasBoss = bool(in.Bool())
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
 		case "constellation_id":
 			out.ConstellationId = int32(in.Int32())
-		case "staging_solar_system_id":
-			out.StagingSolarSystemId = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
+		case "has_boss":
+			out.HasBoss = bool(in.Bool())
 		case "infested_solar_systems":
 			if in.IsNull() {
 				in.Skip()
@@ -140,6 +132,14 @@ func easyjsonAb919c82DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetI
 				}
 				in.Delim(']')
 			}
+		case "influence":
+			out.Influence = float32(in.Float32())
+		case "staging_solar_system_id":
+			out.StagingSolarSystemId = int32(in.Int32())
+		case "state":
+			out.State = string(in.String())
+		case "type":
+			out.Type_ = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -154,45 +154,15 @@ func easyjsonAb919c82EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Type_ != "" {
-		const prefix string = ",\"type\":"
+	if in.ConstellationId != 0 {
+		const prefix string = ",\"constellation_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.Type_))
-	}
-	if in.State != "" {
-		const prefix string = ",\"state\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.State))
-	}
-	if in.Influence != 0 {
-		const prefix string = ",\"influence\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Influence))
-	}
-	if in.HasBoss {
-		const prefix string = ",\"has_boss\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.HasBoss))
+		out.Int32(int32(in.ConstellationId))
 	}
 	if in.FactionId != 0 {
 		const prefix string = ",\"faction_id\":"
@@ -204,25 +174,15 @@ func easyjsonAb919c82EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.FactionId))
 	}
-	if in.ConstellationId != 0 {
-		const prefix string = ",\"constellation_id\":"
+	if in.HasBoss {
+		const prefix string = ",\"has_boss\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.ConstellationId))
-	}
-	if in.StagingSolarSystemId != 0 {
-		const prefix string = ",\"staging_solar_system_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.StagingSolarSystemId))
+		out.Bool(bool(in.HasBoss))
 	}
 	if len(in.InfestedSolarSystems) != 0 {
 		const prefix string = ",\"infested_solar_systems\":"
@@ -242,6 +202,46 @@ func easyjsonAb919c82EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.Influence != 0 {
+		const prefix string = ",\"influence\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Influence))
+	}
+	if in.StagingSolarSystemId != 0 {
+		const prefix string = ",\"staging_solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.StagingSolarSystemId))
+	}
+	if in.State != "" {
+		const prefix string = ",\"state\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.State))
+	}
+	if in.Type_ != "" {
+		const prefix string = ",\"type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Type_))
 	}
 	out.RawByte('}')
 }

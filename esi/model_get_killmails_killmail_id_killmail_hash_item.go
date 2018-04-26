@@ -29,9 +29,9 @@ type GetKillmailsKillmailIdKillmailHashItemList []GetKillmailsKillmailIdKillmail
 /* item object */
 //easyjson:json
 type GetKillmailsKillmailIdKillmailHashItem struct {
+	Flag              int32 `json:"flag,omitempty"`               /* flag integer */
 	ItemTypeId        int32 `json:"item_type_id,omitempty"`       /* item_type_id integer */
 	QuantityDestroyed int64 `json:"quantity_destroyed,omitempty"` /* quantity_destroyed integer */
 	QuantityDropped   int64 `json:"quantity_dropped,omitempty"`   /* quantity_dropped integer */
 	Singleton         int32 `json:"singleton,omitempty"`          /* singleton integer */
-	Flag              int32 `json:"flag,omitempty"`               /* flag integer */
 }

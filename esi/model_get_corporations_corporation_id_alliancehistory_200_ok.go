@@ -33,8 +33,8 @@ type GetCorporationsCorporationIdAlliancehistory200OkList []GetCorporationsCorpo
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdAlliancehistory200Ok struct {
-	StartDate  time.Time `json:"start_date,omitempty"`  /* start_date string */
 	AllianceId int32     `json:"alliance_id,omitempty"` /* alliance_id integer */
 	IsDeleted  bool      `json:"is_deleted,omitempty"`  /* True if the alliance has been closed */
 	RecordId   int32     `json:"record_id,omitempty"`   /* An incrementing ID that can be used to canonically establish order of records in cases where dates may be ambiguous */
+	StartDate  time.Time `json:"start_date,omitempty"`  /* start_date string */
 }

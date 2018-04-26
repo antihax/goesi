@@ -33,13 +33,13 @@ type GetCorporationsCorporationIdWalletsDivisionTransactions200OkList []GetCorpo
 /* wallet transaction */
 //easyjson:json
 type GetCorporationsCorporationIdWalletsDivisionTransactions200Ok struct {
-	TransactionId int64     `json:"transaction_id,omitempty"` /* Unique transaction ID */
-	Date          time.Time `json:"date,omitempty"`           /* Date and time of transaction */
-	TypeId        int32     `json:"type_id,omitempty"`        /* type_id integer */
-	LocationId    int64     `json:"location_id,omitempty"`    /* location_id integer */
-	UnitPrice     float64   `json:"unit_price,omitempty"`     /* Amount paid per unit */
-	Quantity      int32     `json:"quantity,omitempty"`       /* quantity integer */
 	ClientId      int32     `json:"client_id,omitempty"`      /* client_id integer */
+	Date          time.Time `json:"date,omitempty"`           /* Date and time of transaction */
 	IsBuy         bool      `json:"is_buy,omitempty"`         /* is_buy boolean */
 	JournalRefId  int64     `json:"journal_ref_id,omitempty"` /* journal_ref_id integer */
+	LocationId    int64     `json:"location_id,omitempty"`    /* location_id integer */
+	Quantity      int32     `json:"quantity,omitempty"`       /* quantity integer */
+	TransactionId int64     `json:"transaction_id,omitempty"` /* Unique transaction ID */
+	TypeId        int32     `json:"type_id,omitempty"`        /* type_id integer */
+	UnitPrice     float64   `json:"unit_price,omitempty"`     /* Amount paid per unit */
 }

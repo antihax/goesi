@@ -103,18 +103,18 @@ func easyjsonB6f9bc1aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "medal_id":
-			out.MedalId = int32(in.Int32())
-		case "title":
-			out.Title = string(in.String())
-		case "description":
-			out.Description = string(in.String())
-		case "creator_id":
-			out.CreatorId = int32(in.Int32())
 		case "created_at":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.CreatedAt).UnmarshalJSON(data))
 			}
+		case "creator_id":
+			out.CreatorId = int32(in.Int32())
+		case "description":
+			out.Description = string(in.String())
+		case "medal_id":
+			out.MedalId = int32(in.Int32())
+		case "title":
+			out.Title = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,6 +129,36 @@ func easyjsonB6f9bc1aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if true {
+		const prefix string = ",\"created_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.CreatedAt).MarshalJSON())
+	}
+	if in.CreatorId != 0 {
+		const prefix string = ",\"creator_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CreatorId))
+	}
+	if in.Description != "" {
+		const prefix string = ",\"description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Description))
+	}
 	if in.MedalId != 0 {
 		const prefix string = ",\"medal_id\":"
 		if first {
@@ -148,36 +178,6 @@ func easyjsonB6f9bc1aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Title))
-	}
-	if in.Description != "" {
-		const prefix string = ",\"description\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Description))
-	}
-	if in.CreatorId != 0 {
-		const prefix string = ",\"creator_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.CreatorId))
-	}
-	if true {
-		const prefix string = ",\"created_at\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.CreatedAt).MarshalJSON())
 	}
 	out.RawByte('}')
 }

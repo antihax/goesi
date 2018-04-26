@@ -103,14 +103,14 @@ func easyjson9d3eb98fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetS
 			continue
 		}
 		switch key {
-		case "system_id":
-			out.SystemId = int32(in.Int32())
 		case "alliance_id":
 			out.AllianceId = int32(in.Int32())
 		case "corporation_id":
 			out.CorporationId = int32(in.Int32())
 		case "faction_id":
 			out.FactionId = int32(in.Int32())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -125,16 +125,6 @@ func easyjson9d3eb98fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.SystemId != 0 {
-		const prefix string = ",\"system_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.SystemId))
-	}
 	if in.AllianceId != 0 {
 		const prefix string = ",\"alliance_id\":"
 		if first {
@@ -164,6 +154,16 @@ func easyjson9d3eb98fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.FactionId))
+	}
+	if in.SystemId != 0 {
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SystemId))
 	}
 	out.RawByte('}')
 }

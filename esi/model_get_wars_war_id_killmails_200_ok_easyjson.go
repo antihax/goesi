@@ -103,10 +103,10 @@ func easyjson635b4880DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetW
 			continue
 		}
 		switch key {
-		case "killmail_id":
-			out.KillmailId = int32(in.Int32())
 		case "killmail_hash":
 			out.KillmailHash = string(in.String())
+		case "killmail_id":
+			out.KillmailId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -121,16 +121,6 @@ func easyjson635b4880EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.KillmailId != 0 {
-		const prefix string = ",\"killmail_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.KillmailId))
-	}
 	if in.KillmailHash != "" {
 		const prefix string = ",\"killmail_hash\":"
 		if first {
@@ -140,6 +130,16 @@ func easyjson635b4880EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.KillmailHash))
+	}
+	if in.KillmailId != 0 {
+		const prefix string = ",\"killmail_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.KillmailId))
 	}
 	out.RawByte('}')
 }

@@ -29,6 +29,6 @@ type GetInsurancePrices200OkList []GetInsurancePrices200Ok
 /* 200 ok object */
 //easyjson:json
 type GetInsurancePrices200Ok struct {
-	TypeId int32                     `json:"type_id,omitempty"` /* type_id integer */
 	Levels []GetInsurancePricesLevel `json:"levels,omitempty"`  /* A list of a available insurance levels for this ship type */
+	TypeId int32                     `json:"type_id,omitempty"` /* type_id integer */
 }

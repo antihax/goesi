@@ -90,7 +90,7 @@ func (a *FleetsApiService) DeleteFleetsFleetIdMembersMemberId(ctx context.Contex
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -263,7 +263,7 @@ func (a *FleetsApiService) DeleteFleetsFleetIdSquadsSquadId(ctx context.Context,
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -436,7 +436,7 @@ func (a *FleetsApiService) DeleteFleetsFleetIdWingsWingId(ctx context.Context, f
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -567,6 +567,7 @@ Return the fleet ID the character is in, if any.  ---  This route is cached for 
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdFleetOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -575,10 +576,11 @@ Return the fleet ID the character is in, if any.  ---  This route is cached for 
 */
 
 type GetCharactersCharacterIdFleetOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *FleetsApiService) GetCharactersCharacterIdFleet(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdFleetOpts) (GetCharactersCharacterIdFleetOk, *http.Response, error) {
@@ -611,7 +613,7 @@ func (a *FleetsApiService) GetCharactersCharacterIdFleet(ctx context.Context, ch
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -626,6 +628,9 @@ func (a *FleetsApiService) GetCharactersCharacterIdFleet(ctx context.Context, ch
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -761,6 +766,7 @@ Return details about a fleet  ---  This route is cached for up to 5 seconds
  * @param fleetId ID for a fleet
  * @param optional nil or *GetFleetsFleetIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -769,10 +775,11 @@ Return details about a fleet  ---  This route is cached for up to 5 seconds
 */
 
 type GetFleetsFleetIdOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *FleetsApiService) GetFleetsFleetId(ctx context.Context, fleetId int64, localVarOptionals *GetFleetsFleetIdOpts) (GetFleetsFleetIdOk, *http.Response, error) {
@@ -802,7 +809,7 @@ func (a *FleetsApiService) GetFleetsFleetId(ctx context.Context, fleetId int64, 
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -817,6 +824,9 @@ func (a *FleetsApiService) GetFleetsFleetId(ctx context.Context, fleetId int64, 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -952,6 +962,7 @@ Return information about fleet members  ---  This route is cached for up to 5 se
  * @param fleetId ID for a fleet
  * @param optional nil or *GetFleetsFleetIdMembersOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -961,11 +972,12 @@ Return information about fleet members  ---  This route is cached for up to 5 se
 */
 
 type GetFleetsFleetIdMembersOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *FleetsApiService) GetFleetsFleetIdMembers(ctx context.Context, fleetId int64, localVarOptionals *GetFleetsFleetIdMembersOpts) ([]GetFleetsFleetIdMembers200Ok, *http.Response, error) {
@@ -998,7 +1010,7 @@ func (a *FleetsApiService) GetFleetsFleetIdMembers(ctx context.Context, fleetId 
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1013,6 +1025,9 @@ func (a *FleetsApiService) GetFleetsFleetIdMembers(ctx context.Context, fleetId 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1148,6 +1163,7 @@ Return information about wings in a fleet  ---  This route is cached for up to 5
  * @param fleetId ID for a fleet
  * @param optional nil or *GetFleetsFleetIdWingsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -1157,11 +1173,12 @@ Return information about wings in a fleet  ---  This route is cached for up to 5
 */
 
 type GetFleetsFleetIdWingsOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *FleetsApiService) GetFleetsFleetIdWings(ctx context.Context, fleetId int64, localVarOptionals *GetFleetsFleetIdWingsOpts) ([]GetFleetsFleetIdWings200Ok, *http.Response, error) {
@@ -1194,7 +1211,7 @@ func (a *FleetsApiService) GetFleetsFleetIdWings(ctx context.Context, fleetId in
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1209,6 +1226,9 @@ func (a *FleetsApiService) GetFleetsFleetIdWings(ctx context.Context, fleetId in
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1385,7 +1405,7 @@ func (a *FleetsApiService) PostFleetsFleetIdMembers(ctx context.Context, fleetId
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1570,7 +1590,7 @@ func (a *FleetsApiService) PostFleetsFleetIdWings(ctx context.Context, fleetId i
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1763,7 +1783,7 @@ func (a *FleetsApiService) PostFleetsFleetIdWingsWingIdSquads(ctx context.Contex
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1954,7 +1974,7 @@ func (a *FleetsApiService) PutFleetsFleetId(ctx context.Context, fleetId int64, 
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2130,7 +2150,7 @@ func (a *FleetsApiService) PutFleetsFleetIdMembersMemberId(ctx context.Context, 
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2317,7 +2337,7 @@ func (a *FleetsApiService) PutFleetsFleetIdSquadsSquadId(ctx context.Context, fl
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2493,7 +2513,7 @@ func (a *FleetsApiService) PutFleetsFleetIdWingsWingId(ctx context.Context, flee
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)

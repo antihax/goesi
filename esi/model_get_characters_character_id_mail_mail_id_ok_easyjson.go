@@ -103,39 +103,10 @@ func easyjson3c1b7f3cDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "subject":
-			out.Subject = string(in.String())
-		case "from":
-			out.From = int32(in.Int32())
-		case "timestamp":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.Timestamp).UnmarshalJSON(data))
-			}
-		case "recipients":
-			if in.IsNull() {
-				in.Skip()
-				out.Recipients = nil
-			} else {
-				in.Delim('[')
-				if out.Recipients == nil {
-					if !in.IsDelim(']') {
-						out.Recipients = make([]GetCharactersCharacterIdMailMailIdRecipient, 0, 2)
-					} else {
-						out.Recipients = []GetCharactersCharacterIdMailMailIdRecipient{}
-					}
-				} else {
-					out.Recipients = (out.Recipients)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v4 GetCharactersCharacterIdMailMailIdRecipient
-					(v4).UnmarshalEasyJSON(in)
-					out.Recipients = append(out.Recipients, v4)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
 		case "body":
 			out.Body = string(in.String())
+		case "from":
+			out.From = int32(in.Int32())
 		case "labels":
 			if in.IsNull() {
 				in.Skip()
@@ -152,15 +123,44 @@ func easyjson3c1b7f3cDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 					out.Labels = (out.Labels)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v5 int32
-					v5 = int32(in.Int32())
-					out.Labels = append(out.Labels, v5)
+					var v4 int32
+					v4 = int32(in.Int32())
+					out.Labels = append(out.Labels, v4)
 					in.WantComma()
 				}
 				in.Delim(']')
 			}
 		case "read":
 			out.Read = bool(in.Bool())
+		case "recipients":
+			if in.IsNull() {
+				in.Skip()
+				out.Recipients = nil
+			} else {
+				in.Delim('[')
+				if out.Recipients == nil {
+					if !in.IsDelim(']') {
+						out.Recipients = make([]GetCharactersCharacterIdMailMailIdRecipient, 0, 2)
+					} else {
+						out.Recipients = []GetCharactersCharacterIdMailMailIdRecipient{}
+					}
+				} else {
+					out.Recipients = (out.Recipients)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v5 GetCharactersCharacterIdMailMailIdRecipient
+					(v5).UnmarshalEasyJSON(in)
+					out.Recipients = append(out.Recipients, v5)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "subject":
+			out.Subject = string(in.String())
+		case "timestamp":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.Timestamp).UnmarshalJSON(data))
+			}
 		default:
 			in.SkipRecursive()
 		}
@@ -175,15 +175,15 @@ func easyjson3c1b7f3cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Subject != "" {
-		const prefix string = ",\"subject\":"
+	if in.Body != "" {
+		const prefix string = ",\"body\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.Subject))
+		out.String(string(in.Body))
 	}
 	if in.From != 0 {
 		const prefix string = ",\"from\":"
@@ -195,45 +195,6 @@ func easyjson3c1b7f3cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.From))
 	}
-	if true {
-		const prefix string = ",\"timestamp\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.Timestamp).MarshalJSON())
-	}
-	if len(in.Recipients) != 0 {
-		const prefix string = ",\"recipients\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v6, v7 := range in.Recipients {
-				if v6 > 0 {
-					out.RawByte(',')
-				}
-				(v7).MarshalEasyJSON(out)
-			}
-			out.RawByte(']')
-		}
-	}
-	if in.Body != "" {
-		const prefix string = ",\"body\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Body))
-	}
 	if len(in.Labels) != 0 {
 		const prefix string = ",\"labels\":"
 		if first {
@@ -244,11 +205,11 @@ func easyjson3c1b7f3cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v8, v9 := range in.Labels {
-				if v8 > 0 {
+			for v6, v7 := range in.Labels {
+				if v6 > 0 {
 					out.RawByte(',')
 				}
-				out.Int32(int32(v9))
+				out.Int32(int32(v7))
 			}
 			out.RawByte(']')
 		}
@@ -262,6 +223,45 @@ func easyjson3c1b7f3cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Bool(bool(in.Read))
+	}
+	if len(in.Recipients) != 0 {
+		const prefix string = ",\"recipients\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v8, v9 := range in.Recipients {
+				if v8 > 0 {
+					out.RawByte(',')
+				}
+				(v9).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
+	}
+	if in.Subject != "" {
+		const prefix string = ",\"subject\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Subject))
+	}
+	if true {
+		const prefix string = ",\"timestamp\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.Timestamp).MarshalJSON())
 	}
 	out.RawByte('}')
 }

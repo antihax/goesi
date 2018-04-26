@@ -45,6 +45,7 @@ Return a list of current incursions  ---  This route is cached for up to 300 sec
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetIncursionsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -52,9 +53,10 @@ Return a list of current incursions  ---  This route is cached for up to 300 sec
 */
 
 type GetIncursionsOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *IncursionsApiService) GetIncursions(ctx context.Context, localVarOptionals *GetIncursionsOpts) ([]GetIncursions200Ok, *http.Response, error) {
@@ -80,7 +82,7 @@ func (a *IncursionsApiService) GetIncursions(ctx context.Context, localVarOption
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -95,6 +97,9 @@ func (a *IncursionsApiService) GetIncursions(ctx context.Context, localVarOption
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")

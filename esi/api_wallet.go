@@ -48,6 +48,7 @@ Returns a character&#39;s wallet balance  ---  This route is cached for up to 12
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdWalletOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -56,10 +57,11 @@ Returns a character&#39;s wallet balance  ---  This route is cached for up to 12
 */
 
 type GetCharactersCharacterIdWalletOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *WalletApiService) GetCharactersCharacterIdWallet(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdWalletOpts) (float64, *http.Response, error) {
@@ -92,7 +94,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWallet(ctx context.Context, c
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -107,6 +109,9 @@ func (a *WalletApiService) GetCharactersCharacterIdWallet(ctx context.Context, c
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -226,12 +231,13 @@ func (a *WalletApiService) GetCharactersCharacterIdWallet(ctx context.Context, c
 
 /*
 WalletApiService Get character wallet journal
-Retrieve character wallet journal  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/wallet/journal/)
+Retrieve the given character&#39;s wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdWalletJournalOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
-     * @param "FromId" (optional.Int64) -  Only show journal entries happened before the transaction referenced by this id
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
+     * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -240,11 +246,12 @@ Retrieve character wallet journal  ---  This route is cached for up to 3600 seco
 */
 
 type GetCharactersCharacterIdWalletJournalOpts struct {
-	Datasource optional.String
-	FromId     optional.Int64
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *WalletApiService) GetCharactersCharacterIdWalletJournal(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdWalletJournalOpts) ([]GetCharactersCharacterIdWalletJournal200Ok, *http.Response, error) {
@@ -257,7 +264,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletJournal(ctx context.Con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v3/characters/{character_id}/wallet/journal/"
+	localVarPath := a.client.basePath + "/v4/characters/{character_id}/wallet/journal/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -270,8 +277,8 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletJournal(ctx context.Con
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.FromId.IsSet() {
-		localVarQueryParams.Add("from_id", parameterToString(localVarOptionals.FromId.Value(), ""))
+	if localVarOptionals != nil && localVarOptionals.Page.IsSet() {
+		localVarQueryParams.Add("page", parameterToString(localVarOptionals.Page.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
@@ -280,7 +287,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletJournal(ctx context.Con
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -295,6 +302,9 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletJournal(ctx context.Con
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -420,6 +430,7 @@ Get wallet transactions of a character  ---  This route is cached for up to 3600
  * @param optional nil or *GetCharactersCharacterIdWalletTransactionsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "FromId" (optional.Int64) -  Only show transactions happened before the one referenced by this id
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -428,11 +439,12 @@ Get wallet transactions of a character  ---  This route is cached for up to 3600
 */
 
 type GetCharactersCharacterIdWalletTransactionsOpts struct {
-	Datasource optional.String
-	FromId     optional.Int64
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	FromId      optional.Int64
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *WalletApiService) GetCharactersCharacterIdWalletTransactions(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdWalletTransactionsOpts) ([]GetCharactersCharacterIdWalletTransactions200Ok, *http.Response, error) {
@@ -468,7 +480,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletTransactions(ctx contex
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -483,6 +495,9 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletTransactions(ctx contex
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -607,6 +622,7 @@ Get a corporation&#39;s wallets  ---  This route is cached for up to 300 seconds
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdWalletsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -615,10 +631,11 @@ Get a corporation&#39;s wallets  ---  This route is cached for up to 300 seconds
 */
 
 type GetCorporationsCorporationIdWalletsOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *WalletApiService) GetCorporationsCorporationIdWallets(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdWalletsOpts) ([]GetCorporationsCorporationIdWallets200Ok, *http.Response, error) {
@@ -651,7 +668,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWallets(ctx context.Conte
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -666,6 +683,9 @@ func (a *WalletApiService) GetCorporationsCorporationIdWallets(ctx context.Conte
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -785,13 +805,14 @@ func (a *WalletApiService) GetCorporationsCorporationIdWallets(ctx context.Conte
 
 /*
 WalletApiService Get corporation wallet journal
-Retrieve corporation wallet journal  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/wallets/{division}/journal/)
+Retrieve the given corporation&#39;s wallet journal for the given division going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param division Wallet key of the division to fetch journals from
  * @param optional nil or *GetCorporationsCorporationIdWalletsDivisionJournalOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
-     * @param "FromId" (optional.Int64) -  Only show journal entries happened before the transaction referenced by this id
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
+     * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -800,11 +821,12 @@ Retrieve corporation wallet journal  ---  This route is cached for up to 3600 se
 */
 
 type GetCorporationsCorporationIdWalletsDivisionJournalOpts struct {
-	Datasource optional.String
-	FromId     optional.Int64
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionJournal(ctx context.Context, corporationId int32, division int32, localVarOptionals *GetCorporationsCorporationIdWalletsDivisionJournalOpts) ([]GetCorporationsCorporationIdWalletsDivisionJournal200Ok, *http.Response, error) {
@@ -817,7 +839,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionJournal(ct
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/wallets/{division}/journal/"
+	localVarPath := a.client.basePath + "/v3/corporations/{corporation_id}/wallets/{division}/journal/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"division"+"}", fmt.Sprintf("%v", division), -1)
 
@@ -837,8 +859,8 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionJournal(ct
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.FromId.IsSet() {
-		localVarQueryParams.Add("from_id", parameterToString(localVarOptionals.FromId.Value(), ""))
+	if localVarOptionals != nil && localVarOptionals.Page.IsSet() {
+		localVarQueryParams.Add("page", parameterToString(localVarOptionals.Page.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
@@ -847,7 +869,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionJournal(ct
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -862,6 +884,9 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionJournal(ct
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -988,6 +1013,7 @@ Get wallet transactions of a corporation  ---  This route is cached for up to 36
  * @param optional nil or *GetCorporationsCorporationIdWalletsDivisionTransactionsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "FromId" (optional.Int64) -  Only show journal entries happened before the transaction referenced by this id
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -996,11 +1022,12 @@ Get wallet transactions of a corporation  ---  This route is cached for up to 36
 */
 
 type GetCorporationsCorporationIdWalletsDivisionTransactionsOpts struct {
-	Datasource optional.String
-	FromId     optional.Int64
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	FromId      optional.Int64
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionTransactions(ctx context.Context, corporationId int32, division int32, localVarOptionals *GetCorporationsCorporationIdWalletsDivisionTransactionsOpts) ([]GetCorporationsCorporationIdWalletsDivisionTransactions200Ok, *http.Response, error) {
@@ -1043,7 +1070,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionTransactio
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1058,6 +1085,9 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionTransactio
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")

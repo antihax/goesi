@@ -103,16 +103,16 @@ func easyjsonAd79ccc0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetD
 			continue
 		}
 		switch key {
-		case "func":
-			out.Func_ = string(in.String())
 		case "domain":
 			out.Domain = string(in.String())
+		case "effect_id":
+			out.EffectId = int32(in.Int32())
+		case "func":
+			out.Func_ = string(in.String())
 		case "modified_attribute_id":
 			out.ModifiedAttributeId = int32(in.Int32())
 		case "modifying_attribute_id":
 			out.ModifyingAttributeId = int32(in.Int32())
-		case "effect_id":
-			out.EffectId = int32(in.Int32())
 		case "operator":
 			out.Operator = int32(in.Int32())
 		default:
@@ -129,16 +129,6 @@ func easyjsonAd79ccc0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Func_ != "" {
-		const prefix string = ",\"func\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Func_))
-	}
 	if in.Domain != "" {
 		const prefix string = ",\"domain\":"
 		if first {
@@ -148,6 +138,26 @@ func easyjsonAd79ccc0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Domain))
+	}
+	if in.EffectId != 0 {
+		const prefix string = ",\"effect_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.EffectId))
+	}
+	if in.Func_ != "" {
+		const prefix string = ",\"func\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Func_))
 	}
 	if in.ModifiedAttributeId != 0 {
 		const prefix string = ",\"modified_attribute_id\":"
@@ -168,16 +178,6 @@ func easyjsonAd79ccc0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.ModifyingAttributeId))
-	}
-	if in.EffectId != 0 {
-		const prefix string = ",\"effect_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.EffectId))
 	}
 	if in.Operator != 0 {
 		const prefix string = ",\"operator\":"

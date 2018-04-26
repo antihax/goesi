@@ -29,14 +29,14 @@ type GetCharactersCharacterIdChatChannels200OkList []GetCharactersCharacterIdCha
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdChatChannels200Ok struct {
+	Allowed       []GetCharactersCharacterIdChatChannelsAllowed  `json:"allowed,omitempty"`        /* allowed array */
+	Blocked       []GetCharactersCharacterIdChatChannelsBlocked  `json:"blocked,omitempty"`        /* blocked array */
 	ChannelId     int32                                          `json:"channel_id,omitempty"`     /* Unique channel ID. Always negative for player-created channels. Permanent (CCP created) channels have a positive ID, but don't appear in the API */
-	Name          string                                         `json:"name,omitempty"`           /* Displayed name of channel */
-	OwnerId       int32                                          `json:"owner_id,omitempty"`       /* owner_id integer */
 	ComparisonKey string                                         `json:"comparison_key,omitempty"` /* Normalized, unique string used to compare channel names */
 	HasPassword   bool                                           `json:"has_password,omitempty"`   /* If this is a password protected channel */
 	Motd          string                                         `json:"motd,omitempty"`           /* Message of the day for this channel */
-	Allowed       []GetCharactersCharacterIdChatChannelsAllowed  `json:"allowed,omitempty"`        /* allowed array */
-	Operators     []GetCharactersCharacterIdChatChannelsOperator `json:"operators,omitempty"`      /* operators array */
-	Blocked       []GetCharactersCharacterIdChatChannelsBlocked  `json:"blocked,omitempty"`        /* blocked array */
 	Muted         []GetCharactersCharacterIdChatChannelsMuted    `json:"muted,omitempty"`          /* muted array */
+	Name          string                                         `json:"name,omitempty"`           /* Displayed name of channel */
+	Operators     []GetCharactersCharacterIdChatChannelsOperator `json:"operators,omitempty"`      /* operators array */
+	OwnerId       int32                                          `json:"owner_id,omitempty"`       /* owner_id integer */
 }

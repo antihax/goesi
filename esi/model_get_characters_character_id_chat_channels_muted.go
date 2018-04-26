@@ -35,6 +35,6 @@ type GetCharactersCharacterIdChatChannelsMutedList []GetCharactersCharacterIdCha
 type GetCharactersCharacterIdChatChannelsMuted struct {
 	AccessorId   int32     `json:"accessor_id,omitempty"`   /* ID of a muted channel member */
 	AccessorType string    `json:"accessor_type,omitempty"` /* accessor_type string */
-	Reason       string    `json:"reason,omitempty"`        /* Reason this accessor is muted */
 	EndAt        time.Time `json:"end_at,omitempty"`        /* Time at which this accessor will no longer be muted */
+	Reason       string    `json:"reason,omitempty"`        /* Reason this accessor is muted */
 }

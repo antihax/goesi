@@ -48,6 +48,7 @@ Return a list of tasks finished by a character  ---  This route is cached for up
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdOpportunitiesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -56,10 +57,11 @@ Return a list of tasks finished by a character  ---  This route is cached for up
 */
 
 type GetCharactersCharacterIdOpportunitiesOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *OpportunitiesApiService) GetCharactersCharacterIdOpportunities(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdOpportunitiesOpts) ([]GetCharactersCharacterIdOpportunities200Ok, *http.Response, error) {
@@ -92,7 +94,7 @@ func (a *OpportunitiesApiService) GetCharactersCharacterIdOpportunities(ctx cont
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -107,6 +109,9 @@ func (a *OpportunitiesApiService) GetCharactersCharacterIdOpportunities(ctx cont
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -230,6 +235,7 @@ Return a list of opportunities groups  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetOpportunitiesGroupsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -237,9 +243,10 @@ Return a list of opportunities groups  ---  This route expires daily at 11:05
 */
 
 type GetOpportunitiesGroupsOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *OpportunitiesApiService) GetOpportunitiesGroups(ctx context.Context, localVarOptionals *GetOpportunitiesGroupsOpts) ([]int32, *http.Response, error) {
@@ -265,7 +272,7 @@ func (a *OpportunitiesApiService) GetOpportunitiesGroups(ctx context.Context, lo
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -280,6 +287,9 @@ func (a *OpportunitiesApiService) GetOpportunitiesGroups(ctx context.Context, lo
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -382,6 +392,7 @@ Return information of an opportunities group  ---  This route expires daily at 1
  * @param groupId ID of an opportunities group
  * @param optional nil or *GetOpportunitiesGroupsGroupIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -390,10 +401,11 @@ Return information of an opportunities group  ---  This route expires daily at 1
 */
 
 type GetOpportunitiesGroupsGroupIdOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *OpportunitiesApiService) GetOpportunitiesGroupsGroupId(ctx context.Context, groupId int32, localVarOptionals *GetOpportunitiesGroupsGroupIdOpts) (GetOpportunitiesGroupsGroupIdOk, *http.Response, error) {
@@ -423,7 +435,7 @@ func (a *OpportunitiesApiService) GetOpportunitiesGroupsGroupId(ctx context.Cont
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -438,6 +450,9 @@ func (a *OpportunitiesApiService) GetOpportunitiesGroupsGroupId(ctx context.Cont
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -539,6 +554,7 @@ Return a list of opportunities tasks  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetOpportunitiesTasksOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -546,9 +562,10 @@ Return a list of opportunities tasks  ---  This route expires daily at 11:05
 */
 
 type GetOpportunitiesTasksOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *OpportunitiesApiService) GetOpportunitiesTasks(ctx context.Context, localVarOptionals *GetOpportunitiesTasksOpts) ([]int32, *http.Response, error) {
@@ -574,7 +591,7 @@ func (a *OpportunitiesApiService) GetOpportunitiesTasks(ctx context.Context, loc
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -589,6 +606,9 @@ func (a *OpportunitiesApiService) GetOpportunitiesTasks(ctx context.Context, loc
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -691,6 +711,7 @@ Return information of an opportunities task  ---  This route expires daily at 11
  * @param taskId ID of an opportunities task
  * @param optional nil or *GetOpportunitiesTasksTaskIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -698,9 +719,10 @@ Return information of an opportunities task  ---  This route expires daily at 11
 */
 
 type GetOpportunitiesTasksTaskIdOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *OpportunitiesApiService) GetOpportunitiesTasksTaskId(ctx context.Context, taskId int32, localVarOptionals *GetOpportunitiesTasksTaskIdOpts) (GetOpportunitiesTasksTaskIdOk, *http.Response, error) {
@@ -727,7 +749,7 @@ func (a *OpportunitiesApiService) GetOpportunitiesTasksTaskId(ctx context.Contex
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -742,6 +764,9 @@ func (a *OpportunitiesApiService) GetOpportunitiesTasksTaskId(ctx context.Contex
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")

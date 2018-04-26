@@ -48,6 +48,7 @@ Return a list of character&#39;s recent kills and losses  ---  This route is cac
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdKillmailsRecentOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "MaxCount" (optional.Int32) -  How many killmails to return at maximum
      * @param "MaxKillId" (optional.Int32) -  Only return killmails with ID smaller than this.
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
@@ -58,12 +59,13 @@ Return a list of character&#39;s recent kills and losses  ---  This route is cac
 */
 
 type GetCharactersCharacterIdKillmailsRecentOpts struct {
-	Datasource optional.String
-	MaxCount   optional.Int32
-	MaxKillId  optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	MaxCount    optional.Int32
+	MaxKillId   optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdKillmailsRecentOpts) ([]GetCharactersCharacterIdKillmailsRecent200Ok, *http.Response, error) {
@@ -102,7 +104,7 @@ func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx contex
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -117,6 +119,9 @@ func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx contex
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -241,6 +246,7 @@ Get a list of corporation&#39;s recent kills and losses  ---  This route is cach
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdKillmailsRecentOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "MaxKillId" (optional.Int32) -  Only return killmails with ID smaller than this
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -250,11 +256,12 @@ Get a list of corporation&#39;s recent kills and losses  ---  This route is cach
 */
 
 type GetCorporationsCorporationIdKillmailsRecentOpts struct {
-	Datasource optional.String
-	MaxKillId  optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	MaxKillId   optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *KillmailsApiService) GetCorporationsCorporationIdKillmailsRecent(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdKillmailsRecentOpts) ([]GetCorporationsCorporationIdKillmailsRecent200Ok, *http.Response, error) {
@@ -290,7 +297,7 @@ func (a *KillmailsApiService) GetCorporationsCorporationIdKillmailsRecent(ctx co
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -305,6 +312,9 @@ func (a *KillmailsApiService) GetCorporationsCorporationIdKillmailsRecent(ctx co
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -430,6 +440,7 @@ Return a single killmail from its ID and hash  ---  This route is cached for up 
  * @param killmailId The killmail ID to be queried
  * @param optional nil or *GetKillmailsKillmailIdKillmailHashOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -437,9 +448,10 @@ Return a single killmail from its ID and hash  ---  This route is cached for up 
 */
 
 type GetKillmailsKillmailIdKillmailHashOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *KillmailsApiService) GetKillmailsKillmailIdKillmailHash(ctx context.Context, killmailHash string, killmailId int32, localVarOptionals *GetKillmailsKillmailIdKillmailHashOpts) (GetKillmailsKillmailIdKillmailHashOk, *http.Response, error) {
@@ -467,7 +479,7 @@ func (a *KillmailsApiService) GetKillmailsKillmailIdKillmailHash(ctx context.Con
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -482,6 +494,9 @@ func (a *KillmailsApiService) GetKillmailsKillmailIdKillmailHash(ctx context.Con
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")

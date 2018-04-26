@@ -103,14 +103,6 @@ func easyjson35bb60e3DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "jump_clone_id":
-			out.JumpCloneId = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		case "location_id":
-			out.LocationId = int64(in.Int64())
-		case "location_type":
-			out.LocationType = string(in.String())
 		case "implants":
 			if in.IsNull() {
 				in.Skip()
@@ -134,6 +126,14 @@ func easyjson35bb60e3DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
+		case "jump_clone_id":
+			out.JumpCloneId = int32(in.Int32())
+		case "location_id":
+			out.LocationId = int64(in.Int64())
+		case "location_type":
+			out.LocationType = string(in.String())
+		case "name":
+			out.Name = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -148,6 +148,25 @@ func easyjson35bb60e3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if len(in.Implants) != 0 {
+		const prefix string = ",\"implants\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v5, v6 := range in.Implants {
+				if v5 > 0 {
+					out.RawByte(',')
+				}
+				out.Int32(int32(v6))
+			}
+			out.RawByte(']')
+		}
+	}
 	if in.JumpCloneId != 0 {
 		const prefix string = ",\"jump_clone_id\":"
 		if first {
@@ -157,16 +176,6 @@ func easyjson35bb60e3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.JumpCloneId))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
 	}
 	if in.LocationId != 0 {
 		const prefix string = ",\"location_id\":"
@@ -188,24 +197,15 @@ func easyjson35bb60e3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.LocationType))
 	}
-	if len(in.Implants) != 0 {
-		const prefix string = ",\"implants\":"
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		{
-			out.RawByte('[')
-			for v5, v6 := range in.Implants {
-				if v5 > 0 {
-					out.RawByte(',')
-				}
-				out.Int32(int32(v6))
-			}
-			out.RawByte(']')
-		}
+		out.String(string(in.Name))
 	}
 	out.RawByte('}')
 }

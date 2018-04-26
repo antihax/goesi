@@ -48,6 +48,7 @@ Return a list of the characters assets  ---  This route is cached for up to 3600
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdAssetsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -57,11 +58,12 @@ Return a list of the characters assets  ---  This route is cached for up to 3600
 */
 
 type GetCharactersCharacterIdAssetsOpts struct {
-	Datasource optional.String
-	Page       optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *AssetsApiService) GetCharactersCharacterIdAssets(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdAssetsOpts) ([]GetCharactersCharacterIdAssets200Ok, *http.Response, error) {
@@ -97,7 +99,7 @@ func (a *AssetsApiService) GetCharactersCharacterIdAssets(ctx context.Context, c
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -112,6 +114,9 @@ func (a *AssetsApiService) GetCharactersCharacterIdAssets(ctx context.Context, c
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -236,6 +241,7 @@ Return a list of the corporation assets  ---  This route is cached for up to 360
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdAssetsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -245,11 +251,12 @@ Return a list of the corporation assets  ---  This route is cached for up to 360
 */
 
 type GetCorporationsCorporationIdAssetsOpts struct {
-	Datasource optional.String
-	Page       optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *AssetsApiService) GetCorporationsCorporationIdAssets(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdAssetsOpts) ([]GetCorporationsCorporationIdAssets200Ok, *http.Response, error) {
@@ -285,7 +292,7 @@ func (a *AssetsApiService) GetCorporationsCorporationIdAssets(ctx context.Contex
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -300,6 +307,9 @@ func (a *AssetsApiService) GetCorporationsCorporationIdAssets(ctx context.Contex
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -469,7 +479,7 @@ func (a *AssetsApiService) PostCharactersCharacterIdAssetsLocations(ctx context.
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -655,7 +665,7 @@ func (a *AssetsApiService) PostCharactersCharacterIdAssetsNames(ctx context.Cont
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -841,7 +851,7 @@ func (a *AssetsApiService) PostCorporationsCorporationIdAssetsLocations(ctx cont
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1027,7 +1037,7 @@ func (a *AssetsApiService) PostCorporationsCorporationIdAssetsNames(ctx context.
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)

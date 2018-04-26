@@ -105,24 +105,24 @@ func easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		switch key {
 		case "bookmark_id":
 			out.BookmarkId = int32(in.Int32())
-		case "creator_id":
-			out.CreatorId = int32(in.Int32())
-		case "folder_id":
-			out.FolderId = int32(in.Int32())
+		case "coordinates":
+			easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi2(in, &out.Coordinates)
 		case "created":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Created).UnmarshalJSON(data))
 			}
-		case "label":
-			out.Label = string(in.String())
-		case "notes":
-			out.Notes = string(in.String())
-		case "location_id":
-			out.LocationId = int32(in.Int32())
+		case "creator_id":
+			out.CreatorId = int32(in.Int32())
+		case "folder_id":
+			out.FolderId = int32(in.Int32())
 		case "item":
 			(out.Item).UnmarshalEasyJSON(in)
-		case "coordinates":
-			easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi2(in, &out.Coordinates)
+		case "label":
+			out.Label = string(in.String())
+		case "location_id":
+			out.LocationId = int32(in.Int32())
+		case "notes":
+			out.Notes = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -147,6 +147,26 @@ func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.BookmarkId))
 	}
+	if true {
+		const prefix string = ",\"coordinates\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi2(out, in.Coordinates)
+	}
+	if true {
+		const prefix string = ",\"created\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.Created).MarshalJSON())
+	}
 	if in.CreatorId != 0 {
 		const prefix string = ",\"creator_id\":"
 		if first {
@@ -168,14 +188,14 @@ func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.Int32(int32(in.FolderId))
 	}
 	if true {
-		const prefix string = ",\"created\":"
+		const prefix string = ",\"item\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.Created).MarshalJSON())
+		(in.Item).MarshalEasyJSON(out)
 	}
 	if in.Label != "" {
 		const prefix string = ",\"label\":"
@@ -187,16 +207,6 @@ func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Label))
 	}
-	if in.Notes != "" {
-		const prefix string = ",\"notes\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Notes))
-	}
 	if in.LocationId != 0 {
 		const prefix string = ",\"location_id\":"
 		if first {
@@ -207,25 +217,15 @@ func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.LocationId))
 	}
-	if true {
-		const prefix string = ",\"item\":"
+	if in.Notes != "" {
+		const prefix string = ",\"notes\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Item).MarshalEasyJSON(out)
-	}
-	if true {
-		const prefix string = ",\"coordinates\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi2(out, in.Coordinates)
+		out.String(string(in.Notes))
 	}
 	out.RawByte('}')
 }

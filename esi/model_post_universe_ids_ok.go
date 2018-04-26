@@ -37,6 +37,6 @@ type PostUniverseIdsOk struct {
 	Factions       []PostUniverseIdsFaction       `json:"factions,omitempty"`        /* factions array */
 	InventoryTypes []PostUniverseIdsInventoryType `json:"inventory_types,omitempty"` /* inventory_types array */
 	Regions        []PostUniverseIdsRegion        `json:"regions,omitempty"`         /* regions array */
-	Systems        []PostUniverseIdsSystem        `json:"systems,omitempty"`         /* systems array */
 	Stations       []PostUniverseIdsStation       `json:"stations,omitempty"`        /* stations array */
+	Systems        []PostUniverseIdsSystem        `json:"systems,omitempty"`         /* systems array */
 }

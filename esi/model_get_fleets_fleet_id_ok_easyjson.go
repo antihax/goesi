@@ -103,14 +103,14 @@ func easyjsonDac132eeDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
-		case "motd":
-			out.Motd = string(in.String())
 		case "is_free_move":
 			out.IsFreeMove = bool(in.Bool())
 		case "is_registered":
 			out.IsRegistered = bool(in.Bool())
 		case "is_voice_enabled":
 			out.IsVoiceEnabled = bool(in.Bool())
+		case "motd":
+			out.Motd = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -125,16 +125,6 @@ func easyjsonDac132eeEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Motd != "" {
-		const prefix string = ",\"motd\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Motd))
-	}
 	if in.IsFreeMove {
 		const prefix string = ",\"is_free_move\":"
 		if first {
@@ -164,6 +154,16 @@ func easyjsonDac132eeEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Bool(bool(in.IsVoiceEnabled))
+	}
+	if in.Motd != "" {
+		const prefix string = ",\"motd\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Motd))
 	}
 	out.RawByte('}')
 }

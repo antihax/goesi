@@ -103,16 +103,8 @@ func easyjson13ace497DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "last_clone_jump_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.LastCloneJumpDate).UnmarshalJSON(data))
-			}
 		case "home_location":
 			(out.HomeLocation).UnmarshalEasyJSON(in)
-		case "last_station_change_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.LastStationChangeDate).UnmarshalJSON(data))
-			}
 		case "jump_clones":
 			if in.IsNull() {
 				in.Skip()
@@ -136,6 +128,14 @@ func easyjson13ace497DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
+		case "last_clone_jump_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.LastCloneJumpDate).UnmarshalJSON(data))
+			}
+		case "last_station_change_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.LastStationChangeDate).UnmarshalJSON(data))
+			}
 		default:
 			in.SkipRecursive()
 		}
@@ -151,16 +151,6 @@ func easyjson13ace497EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	first := true
 	_ = first
 	if true {
-		const prefix string = ",\"last_clone_jump_date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.LastCloneJumpDate).MarshalJSON())
-	}
-	if true {
 		const prefix string = ",\"home_location\":"
 		if first {
 			first = false
@@ -169,16 +159,6 @@ func easyjson13ace497EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		(in.HomeLocation).MarshalEasyJSON(out)
-	}
-	if true {
-		const prefix string = ",\"last_station_change_date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.LastStationChangeDate).MarshalJSON())
 	}
 	if len(in.JumpClones) != 0 {
 		const prefix string = ",\"jump_clones\":"
@@ -198,6 +178,26 @@ func easyjson13ace497EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if true {
+		const prefix string = ",\"last_clone_jump_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.LastCloneJumpDate).MarshalJSON())
+	}
+	if true {
+		const prefix string = ",\"last_station_change_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.LastStationChangeDate).MarshalJSON())
 	}
 	out.RawByte('}')
 }

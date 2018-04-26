@@ -29,9 +29,9 @@ type GetCorporationCorporationIdMiningObserversObserverId200OkList []GetCorporat
 /* 200 ok object */
 //easyjson:json
 type GetCorporationCorporationIdMiningObserversObserverId200Ok struct {
-	LastUpdated           string `json:"last_updated,omitempty"`            /* last_updated string */
 	CharacterId           int32  `json:"character_id,omitempty"`            /* The character that did the mining  */
+	LastUpdated           string `json:"last_updated,omitempty"`            /* last_updated string */
+	Quantity              int64  `json:"quantity,omitempty"`                /* quantity integer */
 	RecordedCorporationId int32  `json:"recorded_corporation_id,omitempty"` /* The corporation id of the character at the time data was recorded.  */
 	TypeId                int32  `json:"type_id,omitempty"`                 /* type_id integer */
-	Quantity              int64  `json:"quantity,omitempty"`                /* quantity integer */
 }

@@ -48,6 +48,7 @@ A list of the character&#39;s clones  ---  This route is cached for up to 120 se
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdClonesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -56,10 +57,11 @@ A list of the character&#39;s clones  ---  This route is cached for up to 120 se
 */
 
 type GetCharactersCharacterIdClonesOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *ClonesApiService) GetCharactersCharacterIdClones(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdClonesOpts) (GetCharactersCharacterIdClonesOk, *http.Response, error) {
@@ -92,7 +94,7 @@ func (a *ClonesApiService) GetCharactersCharacterIdClones(ctx context.Context, c
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -107,6 +109,9 @@ func (a *ClonesApiService) GetCharactersCharacterIdClones(ctx context.Context, c
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -231,6 +236,7 @@ Return implants on the active clone of a character  ---  This route is cached fo
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdImplantsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -239,10 +245,11 @@ Return implants on the active clone of a character  ---  This route is cached fo
 */
 
 type GetCharactersCharacterIdImplantsOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *ClonesApiService) GetCharactersCharacterIdImplants(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdImplantsOpts) ([]int32, *http.Response, error) {
@@ -275,7 +282,7 @@ func (a *ClonesApiService) GetCharactersCharacterIdImplants(ctx context.Context,
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -290,6 +297,9 @@ func (a *ClonesApiService) GetCharactersCharacterIdImplants(ctx context.Context,
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")

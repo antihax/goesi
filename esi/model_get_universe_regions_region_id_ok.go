@@ -29,8 +29,8 @@ type GetUniverseRegionsRegionIdOkList []GetUniverseRegionsRegionIdOk
 /* 200 ok object */
 //easyjson:json
 type GetUniverseRegionsRegionIdOk struct {
-	RegionId       int32   `json:"region_id,omitempty"`      /* region_id integer */
-	Name           string  `json:"name,omitempty"`           /* name string */
-	Description    string  `json:"description,omitempty"`    /* description string */
 	Constellations []int32 `json:"constellations,omitempty"` /* constellations array */
+	Description    string  `json:"description,omitempty"`    /* description string */
+	Name           string  `json:"name,omitempty"`           /* name string */
+	RegionId       int32   `json:"region_id,omitempty"`      /* region_id integer */
 }

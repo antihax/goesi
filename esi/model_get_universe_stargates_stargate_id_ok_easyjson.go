@@ -103,18 +103,18 @@ func easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "stargate_id":
-			out.StargateId = int32(in.Int32())
+		case "destination":
+			easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi2(in, &out.Destination)
 		case "name":
 			out.Name = string(in.String())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
 		case "position":
-			easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi2(in, &out.Position)
+			easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi3(in, &out.Position)
+		case "stargate_id":
+			out.StargateId = int32(in.Int32())
 		case "system_id":
 			out.SystemId = int32(in.Int32())
-		case "destination":
-			easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi3(in, &out.Destination)
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,15 +129,15 @@ func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.StargateId != 0 {
-		const prefix string = ",\"stargate_id\":"
+	if true {
+		const prefix string = ",\"destination\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.StargateId))
+		easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi2(out, in.Destination)
 	}
 	if in.Name != "" {
 		const prefix string = ",\"name\":"
@@ -149,16 +149,6 @@ func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Name))
 	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
 	if true {
 		const prefix string = ",\"position\":"
 		if first {
@@ -167,7 +157,17 @@ func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi2(out, in.Position)
+		easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi3(out, in.Position)
+	}
+	if in.StargateId != 0 {
+		const prefix string = ",\"stargate_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.StargateId))
 	}
 	if in.SystemId != 0 {
 		const prefix string = ",\"system_id\":"
@@ -179,15 +179,15 @@ func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.SystemId))
 	}
-	if true {
-		const prefix string = ",\"destination\":"
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi3(out, in.Destination)
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }
@@ -215,66 +215,7 @@ func (v *GetUniverseStargatesStargateIdOk) UnmarshalJSON(data []byte) error {
 func (v *GetUniverseStargatesStargateIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetUniverseStargatesStargateIdDestination) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "system_id":
-			out.SystemId = int32(in.Int32())
-		case "stargate_id":
-			out.StargateId = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetUniverseStargatesStargateIdDestination) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.SystemId != 0 {
-		const prefix string = ",\"system_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.SystemId))
-	}
-	if in.StargateId != 0 {
-		const prefix string = ",\"stargate_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.StargateId))
-	}
-	out.RawByte('}')
-}
-func easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetUniverseStargatesStargateIdPosition) {
+func easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetUniverseStargatesStargateIdPosition) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -309,7 +250,7 @@ func easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetU
 		in.Consumed()
 	}
 }
-func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetUniverseStargatesStargateIdPosition) {
+func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetUniverseStargatesStargateIdPosition) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -342,6 +283,65 @@ func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Float64(float64(in.Z))
+	}
+	out.RawByte('}')
+}
+func easyjson5e0a8a62DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetUniverseStargatesStargateIdDestination) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "stargate_id":
+			out.StargateId = int32(in.Int32())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetUniverseStargatesStargateIdDestination) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.StargateId != 0 {
+		const prefix string = ",\"stargate_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.StargateId))
+	}
+	if in.SystemId != 0 {
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SystemId))
 	}
 	out.RawByte('}')
 }

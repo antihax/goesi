@@ -29,12 +29,12 @@ type GetUniverseGraphicsGraphicIdOkList []GetUniverseGraphicsGraphicIdOk
 /* 200 ok object */
 //easyjson:json
 type GetUniverseGraphicsGraphicIdOk struct {
-	GraphicId     int32  `json:"graphic_id,omitempty"`      /* graphic_id integer */
-	GraphicFile   string `json:"graphic_file,omitempty"`    /* graphic_file string */
-	SofRaceName   string `json:"sof_race_name,omitempty"`   /* sof_race_name string */
-	SofFationName string `json:"sof_fation_name,omitempty"` /* sof_fation_name string */
-	SofDna        string `json:"sof_dna,omitempty"`         /* sof_dna string */
-	SofHullName   string `json:"sof_hull_name,omitempty"`   /* sof_hull_name string */
 	CollisionFile string `json:"collision_file,omitempty"`  /* collision_file string */
+	GraphicFile   string `json:"graphic_file,omitempty"`    /* graphic_file string */
+	GraphicId     int32  `json:"graphic_id,omitempty"`      /* graphic_id integer */
 	IconFolder    string `json:"icon_folder,omitempty"`     /* icon_folder string */
+	SofDna        string `json:"sof_dna,omitempty"`         /* sof_dna string */
+	SofFationName string `json:"sof_fation_name,omitempty"` /* sof_fation_name string */
+	SofHullName   string `json:"sof_hull_name,omitempty"`   /* sof_hull_name string */
+	SofRaceName   string `json:"sof_race_name,omitempty"`   /* sof_race_name string */
 }

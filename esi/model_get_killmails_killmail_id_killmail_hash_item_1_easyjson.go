@@ -103,16 +103,10 @@ func easyjson86fe613aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
-		case "item_type_id":
-			out.ItemTypeId = int32(in.Int32())
-		case "quantity_destroyed":
-			out.QuantityDestroyed = int64(in.Int64())
-		case "quantity_dropped":
-			out.QuantityDropped = int64(in.Int64())
-		case "singleton":
-			out.Singleton = int32(in.Int32())
 		case "flag":
 			out.Flag = int32(in.Int32())
+		case "item_type_id":
+			out.ItemTypeId = int32(in.Int32())
 		case "items":
 			if in.IsNull() {
 				in.Skip()
@@ -136,6 +130,12 @@ func easyjson86fe613aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 				}
 				in.Delim(']')
 			}
+		case "quantity_destroyed":
+			out.QuantityDestroyed = int64(in.Int64())
+		case "quantity_dropped":
+			out.QuantityDropped = int64(in.Int64())
+		case "singleton":
+			out.Singleton = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -150,6 +150,16 @@ func easyjson86fe613aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Flag != 0 {
+		const prefix string = ",\"flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Flag))
+	}
 	if in.ItemTypeId != 0 {
 		const prefix string = ",\"item_type_id\":"
 		if first {
@@ -159,6 +169,25 @@ func easyjson86fe613aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.ItemTypeId))
+	}
+	if len(in.Items) != 0 {
+		const prefix string = ",\"items\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v5, v6 := range in.Items {
+				if v5 > 0 {
+					out.RawByte(',')
+				}
+				easyjson86fe613aEncodeGithubComAntihaxGoesiEsi2(out, v6)
+			}
+			out.RawByte(']')
+		}
 	}
 	if in.QuantityDestroyed != 0 {
 		const prefix string = ",\"quantity_destroyed\":"
@@ -189,35 +218,6 @@ func easyjson86fe613aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Singleton))
-	}
-	if in.Flag != 0 {
-		const prefix string = ",\"flag\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Flag))
-	}
-	if len(in.Items) != 0 {
-		const prefix string = ",\"items\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v5, v6 := range in.Items {
-				if v5 > 0 {
-					out.RawByte(',')
-				}
-				easyjson86fe613aEncodeGithubComAntihaxGoesiEsi2(out, v6)
-			}
-			out.RawByte(']')
-		}
 	}
 	out.RawByte('}')
 }
@@ -264,6 +264,8 @@ func easyjson86fe613aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
+		case "flag":
+			out.Flag = int32(in.Int32())
 		case "item_type_id":
 			out.ItemTypeId = int32(in.Int32())
 		case "quantity_destroyed":
@@ -272,8 +274,6 @@ func easyjson86fe613aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetK
 			out.QuantityDropped = int64(in.Int64())
 		case "singleton":
 			out.Singleton = int32(in.Int32())
-		case "flag":
-			out.Flag = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -288,6 +288,16 @@ func easyjson86fe613aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Flag != 0 {
+		const prefix string = ",\"flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Flag))
+	}
 	if in.ItemTypeId != 0 {
 		const prefix string = ",\"item_type_id\":"
 		if first {
@@ -327,16 +337,6 @@ func easyjson86fe613aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Singleton))
-	}
-	if in.Flag != 0 {
-		const prefix string = ",\"flag\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Flag))
 	}
 	out.RawByte('}')
 }

@@ -103,28 +103,28 @@ func easyjson70b0868DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCh
 			continue
 		}
 		switch key {
-		case "event_id":
-			out.EventId = int32(in.Int32())
-		case "owner_id":
-			out.OwnerId = int32(in.Int32())
-		case "owner_name":
-			out.OwnerName = string(in.String())
 		case "date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Date).UnmarshalJSON(data))
 			}
-		case "title":
-			out.Title = string(in.String())
 		case "duration":
 			out.Duration = int32(in.Int32())
+		case "event_id":
+			out.EventId = int32(in.Int32())
 		case "importance":
 			out.Importance = int32(in.Int32())
+		case "owner_id":
+			out.OwnerId = int32(in.Int32())
+		case "owner_name":
+			out.OwnerName = string(in.String())
+		case "owner_type":
+			out.OwnerType = string(in.String())
 		case "response":
 			out.Response = string(in.String())
 		case "text":
 			out.Text = string(in.String())
-		case "owner_type":
-			out.OwnerType = string(in.String())
+		case "title":
+			out.Title = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -139,6 +139,26 @@ func easyjson70b0868EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 	out.RawByte('{')
 	first := true
 	_ = first
+	if true {
+		const prefix string = ",\"date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.Date).MarshalJSON())
+	}
+	if in.Duration != 0 {
+		const prefix string = ",\"duration\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Duration))
+	}
 	if in.EventId != 0 {
 		const prefix string = ",\"event_id\":"
 		if first {
@@ -148,6 +168,16 @@ func easyjson70b0868EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.EventId))
+	}
+	if in.Importance != 0 {
+		const prefix string = ",\"importance\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Importance))
 	}
 	if in.OwnerId != 0 {
 		const prefix string = ",\"owner_id\":"
@@ -169,45 +199,15 @@ func easyjson70b0868EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 		}
 		out.String(string(in.OwnerName))
 	}
-	if true {
-		const prefix string = ",\"date\":"
+	if in.OwnerType != "" {
+		const prefix string = ",\"owner_type\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.Date).MarshalJSON())
-	}
-	if in.Title != "" {
-		const prefix string = ",\"title\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Title))
-	}
-	if in.Duration != 0 {
-		const prefix string = ",\"duration\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Duration))
-	}
-	if in.Importance != 0 {
-		const prefix string = ",\"importance\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Importance))
+		out.String(string(in.OwnerType))
 	}
 	if in.Response != "" {
 		const prefix string = ",\"response\":"
@@ -229,15 +229,15 @@ func easyjson70b0868EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 		}
 		out.String(string(in.Text))
 	}
-	if in.OwnerType != "" {
-		const prefix string = ",\"owner_type\":"
+	if in.Title != "" {
+		const prefix string = ",\"title\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.OwnerType))
+		out.String(string(in.Title))
 	}
 	out.RawByte('}')
 }

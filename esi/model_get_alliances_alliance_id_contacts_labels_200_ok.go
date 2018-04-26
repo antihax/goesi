@@ -22,12 +22,13 @@
 
 package esi
 
-/* A list of PostCharactersCharacterIdContacts520Response. */
+/* A list of GetAlliancesAllianceIdContactsLabels200Ok. */
 //easyjson:json
-type PostCharactersCharacterIdContacts520ResponseList []PostCharactersCharacterIdContacts520Response
+type GetAlliancesAllianceIdContactsLabels200OkList []GetAlliancesAllianceIdContactsLabels200Ok
 
-/* 520 response */
+/* 200 ok object */
 //easyjson:json
-type PostCharactersCharacterIdContacts520Response struct {
-	Error_ string `json:"error,omitempty"` /* 520 response message */
+type GetAlliancesAllianceIdContactsLabels200Ok struct {
+	LabelId   int64  `json:"label_id,omitempty"`   /* label_id integer */
+	LabelName string `json:"label_name,omitempty"` /* label_name string */
 }

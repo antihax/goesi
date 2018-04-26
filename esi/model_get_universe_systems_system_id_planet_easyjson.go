@@ -103,31 +103,6 @@ func easyjsonFed59962DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "planet_id":
-			out.PlanetId = int32(in.Int32())
-		case "moons":
-			if in.IsNull() {
-				in.Skip()
-				out.Moons = nil
-			} else {
-				in.Delim('[')
-				if out.Moons == nil {
-					if !in.IsDelim(']') {
-						out.Moons = make([]int32, 0, 16)
-					} else {
-						out.Moons = []int32{}
-					}
-				} else {
-					out.Moons = (out.Moons)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v4 int32
-					v4 = int32(in.Int32())
-					out.Moons = append(out.Moons, v4)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
 		case "asteroid_belts":
 			if in.IsNull() {
 				in.Skip()
@@ -144,13 +119,38 @@ func easyjsonFed59962DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 					out.AsteroidBelts = (out.AsteroidBelts)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v5 int32
-					v5 = int32(in.Int32())
-					out.AsteroidBelts = append(out.AsteroidBelts, v5)
+					var v4 int32
+					v4 = int32(in.Int32())
+					out.AsteroidBelts = append(out.AsteroidBelts, v4)
 					in.WantComma()
 				}
 				in.Delim(']')
 			}
+		case "moons":
+			if in.IsNull() {
+				in.Skip()
+				out.Moons = nil
+			} else {
+				in.Delim('[')
+				if out.Moons == nil {
+					if !in.IsDelim(']') {
+						out.Moons = make([]int32, 0, 16)
+					} else {
+						out.Moons = []int32{}
+					}
+				} else {
+					out.Moons = (out.Moons)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v5 int32
+					v5 = int32(in.Int32())
+					out.Moons = append(out.Moons, v5)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "planet_id":
+			out.PlanetId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -165,15 +165,24 @@ func easyjsonFed59962EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.PlanetId != 0 {
-		const prefix string = ",\"planet_id\":"
+	if len(in.AsteroidBelts) != 0 {
+		const prefix string = ",\"asteroid_belts\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.PlanetId))
+		{
+			out.RawByte('[')
+			for v6, v7 := range in.AsteroidBelts {
+				if v6 > 0 {
+					out.RawByte(',')
+				}
+				out.Int32(int32(v7))
+			}
+			out.RawByte(']')
+		}
 	}
 	if len(in.Moons) != 0 {
 		const prefix string = ",\"moons\":"
@@ -185,26 +194,7 @@ func easyjsonFed59962EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v6, v7 := range in.Moons {
-				if v6 > 0 {
-					out.RawByte(',')
-				}
-				out.Int32(int32(v7))
-			}
-			out.RawByte(']')
-		}
-	}
-	if len(in.AsteroidBelts) != 0 {
-		const prefix string = ",\"asteroid_belts\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v8, v9 := range in.AsteroidBelts {
+			for v8, v9 := range in.Moons {
 				if v8 > 0 {
 					out.RawByte(',')
 				}
@@ -212,6 +202,16 @@ func easyjsonFed59962EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.PlanetId != 0 {
+		const prefix string = ",\"planet_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.PlanetId))
 	}
 	out.RawByte('}')
 }

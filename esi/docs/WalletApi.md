@@ -5,10 +5,10 @@ All URIs are relative to *https://esi.tech.ccp.is*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCharactersCharacterIdWallet**](WalletApi.md#GetCharactersCharacterIdWallet) | **Get** /v1/characters/{character_id}/wallet/ | Get a character&#39;s wallet balance
-[**GetCharactersCharacterIdWalletJournal**](WalletApi.md#GetCharactersCharacterIdWalletJournal) | **Get** /v3/characters/{character_id}/wallet/journal/ | Get character wallet journal
+[**GetCharactersCharacterIdWalletJournal**](WalletApi.md#GetCharactersCharacterIdWalletJournal) | **Get** /v4/characters/{character_id}/wallet/journal/ | Get character wallet journal
 [**GetCharactersCharacterIdWalletTransactions**](WalletApi.md#GetCharactersCharacterIdWalletTransactions) | **Get** /v1/characters/{character_id}/wallet/transactions/ | Get wallet transactions
 [**GetCorporationsCorporationIdWallets**](WalletApi.md#GetCorporationsCorporationIdWallets) | **Get** /v1/corporations/{corporation_id}/wallets/ | Returns a corporation&#39;s wallet balance
-[**GetCorporationsCorporationIdWalletsDivisionJournal**](WalletApi.md#GetCorporationsCorporationIdWalletsDivisionJournal) | **Get** /v2/corporations/{corporation_id}/wallets/{division}/journal/ | Get corporation wallet journal
+[**GetCorporationsCorporationIdWalletsDivisionJournal**](WalletApi.md#GetCorporationsCorporationIdWalletsDivisionJournal) | **Get** /v3/corporations/{corporation_id}/wallets/{division}/journal/ | Get corporation wallet journal
 [**GetCorporationsCorporationIdWalletsDivisionTransactions**](WalletApi.md#GetCorporationsCorporationIdWalletsDivisionTransactions) | **Get** /v1/corporations/{corporation_id}/wallets/{division}/transactions/ | Get corporation wallet transactions
 
 
@@ -33,6 +33,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -47,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -56,7 +57,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdWalletJournal200Ok GetCharactersCharacterIdWalletJournal(ctx, characterId, optional)
 Get character wallet journal
 
-Retrieve character wallet journal  ---  This route is cached for up to 3600 seconds  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/wallet/journal/)
+Retrieve the given character's wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -73,7 +74,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **fromId** | **int64**| Only show journal entries happened before the transaction referenced by this id | 
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
+ **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -88,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -115,6 +117,7 @@ Name | Type | Description  | Notes
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **fromId** | **int64**| Only show transactions happened before the one referenced by this id | 
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -129,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -155,6 +158,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -169,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -178,7 +182,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdWalletsDivisionJournal200Ok GetCorporationsCorporationIdWalletsDivisionJournal(ctx, corporationId, division, optional)
 Get corporation wallet journal
 
-Retrieve corporation wallet journal  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  --- [This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/wallets/{division}/journal/)
+Retrieve the given corporation's wallet journal for the given division going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
 
 ### Required Parameters
 
@@ -197,7 +201,8 @@ Name | Type | Description  | Notes
  **corporationId** | **int32**| An EVE corporation ID | 
  **division** | **int32**| Wallet key of the division to fetch journals from | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **fromId** | **int64**| Only show journal entries happened before the transaction referenced by this id | 
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
+ **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -212,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -241,6 +246,7 @@ Name | Type | Description  | Notes
  **division** | **int32**| Wallet key of the division to fetch journals from | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **fromId** | **int64**| Only show journal entries happened before the transaction referenced by this id | 
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -255,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -103,20 +103,20 @@ func easyjson5c3e6de0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "medal_id":
-			out.MedalId = int32(in.Int32())
 		case "character_id":
 			out.CharacterId = int32(in.Int32())
-		case "reason":
-			out.Reason = string(in.String())
-		case "status":
-			out.Status = string(in.String())
-		case "issuer_id":
-			out.IssuerId = int32(in.Int32())
 		case "issued_at":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.IssuedAt).UnmarshalJSON(data))
 			}
+		case "issuer_id":
+			out.IssuerId = int32(in.Int32())
+		case "medal_id":
+			out.MedalId = int32(in.Int32())
+		case "reason":
+			out.Reason = string(in.String())
+		case "status":
+			out.Status = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -131,16 +131,6 @@ func easyjson5c3e6de0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.MedalId != 0 {
-		const prefix string = ",\"medal_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.MedalId))
-	}
 	if in.CharacterId != 0 {
 		const prefix string = ",\"character_id\":"
 		if first {
@@ -150,6 +140,36 @@ func easyjson5c3e6de0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.CharacterId))
+	}
+	if true {
+		const prefix string = ",\"issued_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.IssuedAt).MarshalJSON())
+	}
+	if in.IssuerId != 0 {
+		const prefix string = ",\"issuer_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.IssuerId))
+	}
+	if in.MedalId != 0 {
+		const prefix string = ",\"medal_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.MedalId))
 	}
 	if in.Reason != "" {
 		const prefix string = ",\"reason\":"
@@ -170,26 +190,6 @@ func easyjson5c3e6de0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Status))
-	}
-	if in.IssuerId != 0 {
-		const prefix string = ",\"issuer_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.IssuerId))
-	}
-	if true {
-		const prefix string = ",\"issued_at\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.IssuedAt).MarshalJSON())
 	}
 	out.RawByte('}')
 }

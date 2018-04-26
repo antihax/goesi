@@ -52,6 +52,7 @@ Get the systems between origin and destination  ---  This route is cached for up
      * @param "Connections" (optional.Interface of [][]int32) -  connected solar system pairs
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Flag" (optional.String) -  route security preference
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -63,6 +64,7 @@ type GetRouteOriginDestinationOpts struct {
 	Connections optional.Interface
 	Datasource  optional.String
 	Flag        optional.String
+	IfNoneMatch optional.String
 	UserAgent   optional.String
 	XUserAgent  optional.String
 }
@@ -101,7 +103,7 @@ func (a *RoutesApiService) GetRouteOriginDestination(ctx context.Context, destin
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -116,6 +118,9 @@ func (a *RoutesApiService) GetRouteOriginDestination(ctx context.Context, destin
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")

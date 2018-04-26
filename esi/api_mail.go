@@ -93,7 +93,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx contex
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -269,7 +269,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Conte
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -389,6 +389,7 @@ Return the 50 most recent mail headers belonging to the character that match the
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdMailOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Labels" (optional.Interface of []int32) -  Fetch only mails that match one or more of the given labels
      * @param "LastMailId" (optional.Int32) -  List only mail with an ID lower than the given ID, if present
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
@@ -399,12 +400,13 @@ Return the 50 most recent mail headers belonging to the character that match the
 */
 
 type GetCharactersCharacterIdMailOpts struct {
-	Datasource optional.String
-	Labels     optional.Interface
-	LastMailId optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Labels      optional.Interface
+	LastMailId  optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdMailOpts) ([]GetCharactersCharacterIdMail200Ok, *http.Response, error) {
@@ -443,7 +445,7 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -458,6 +460,9 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -582,6 +587,7 @@ Return a list of the users mail labels, unread counts for each label and a total
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdMailLabelsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -590,10 +596,11 @@ Return a list of the users mail labels, unread counts for each label and a total
 */
 
 type GetCharactersCharacterIdMailLabelsOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdMailLabelsOpts) (GetCharactersCharacterIdMailLabelsOk, *http.Response, error) {
@@ -626,7 +633,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context,
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -641,6 +648,9 @@ func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context,
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -765,6 +775,7 @@ Return all mailing lists that the character is subscribed to  ---  This route is
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdMailListsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -773,10 +784,11 @@ Return all mailing lists that the character is subscribed to  ---  This route is
 */
 
 type GetCharactersCharacterIdMailListsOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdMailListsOpts) ([]GetCharactersCharacterIdMailLists200Ok, *http.Response, error) {
@@ -809,7 +821,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -824,6 +836,9 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -949,6 +964,7 @@ Return the contents of an EVE mail  ---  This route is cached for up to 30 secon
  * @param mailId An EVE mail ID
  * @param optional nil or *GetCharactersCharacterIdMailMailIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -957,10 +973,11 @@ Return the contents of an EVE mail  ---  This route is cached for up to 30 secon
 */
 
 type GetCharactersCharacterIdMailMailIdOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context, characterId int32, mailId int32, localVarOptionals *GetCharactersCharacterIdMailMailIdOpts) (GetCharactersCharacterIdMailMailIdOk, *http.Response, error) {
@@ -994,7 +1011,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1009,6 +1026,9 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -1189,7 +1209,7 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1386,7 +1406,7 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1573,7 +1593,7 @@ func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context,
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)

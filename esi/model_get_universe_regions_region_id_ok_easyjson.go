@@ -103,12 +103,6 @@ func easyjson147b9742DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "region_id":
-			out.RegionId = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		case "description":
-			out.Description = string(in.String())
 		case "constellations":
 			if in.IsNull() {
 				in.Skip()
@@ -132,6 +126,12 @@ func easyjson147b9742DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
+		case "description":
+			out.Description = string(in.String())
+		case "name":
+			out.Name = string(in.String())
+		case "region_id":
+			out.RegionId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -146,36 +146,6 @@ func easyjson147b9742EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.RegionId != 0 {
-		const prefix string = ",\"region_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.RegionId))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
-	if in.Description != "" {
-		const prefix string = ",\"description\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Description))
-	}
 	if len(in.Constellations) != 0 {
 		const prefix string = ",\"constellations\":"
 		if first {
@@ -194,6 +164,36 @@ func easyjson147b9742EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.Description != "" {
+		const prefix string = ",\"description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Description))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	if in.RegionId != 0 {
+		const prefix string = ",\"region_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.RegionId))
 	}
 	out.RawByte('}')
 }

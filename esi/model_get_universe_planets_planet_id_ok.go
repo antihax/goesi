@@ -29,9 +29,9 @@ type GetUniversePlanetsPlanetIdOkList []GetUniversePlanetsPlanetIdOk
 /* 200 ok object */
 //easyjson:json
 type GetUniversePlanetsPlanetIdOk struct {
-	PlanetId int32                              `json:"planet_id,omitempty"` /* planet_id integer */
 	Name     string                             `json:"name,omitempty"`      /* name string */
-	TypeId   int32                              `json:"type_id,omitempty"`   /* type_id integer */
+	PlanetId int32                              `json:"planet_id,omitempty"` /* planet_id integer */
 	Position GetUniversePlanetsPlanetIdPosition `json:"position,omitempty"`
 	SystemId int32                              `json:"system_id,omitempty"` /* The solar system this planet is in */
+	TypeId   int32                              `json:"type_id,omitempty"`   /* type_id integer */
 }

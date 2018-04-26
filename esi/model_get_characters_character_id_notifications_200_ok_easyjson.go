@@ -103,20 +103,20 @@ func easyjson697854beDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "is_read":
+			out.IsRead = bool(in.Bool())
 		case "notification_id":
 			out.NotificationId = int64(in.Int64())
 		case "sender_id":
 			out.SenderId = int32(in.Int32())
 		case "sender_type":
 			out.SenderType = string(in.String())
+		case "text":
+			out.Text = string(in.String())
 		case "timestamp":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Timestamp).UnmarshalJSON(data))
 			}
-		case "is_read":
-			out.IsRead = bool(in.Bool())
-		case "text":
-			out.Text = string(in.String())
 		case "type":
 			out.Type_ = string(in.String())
 		default:
@@ -133,6 +133,16 @@ func easyjson697854beEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.IsRead {
+		const prefix string = ",\"is_read\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.IsRead))
+	}
 	if in.NotificationId != 0 {
 		const prefix string = ",\"notification_id\":"
 		if first {
@@ -163,26 +173,6 @@ func easyjson697854beEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.SenderType))
 	}
-	if true {
-		const prefix string = ",\"timestamp\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.Timestamp).MarshalJSON())
-	}
-	if in.IsRead {
-		const prefix string = ",\"is_read\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.IsRead))
-	}
 	if in.Text != "" {
 		const prefix string = ",\"text\":"
 		if first {
@@ -192,6 +182,16 @@ func easyjson697854beEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Text))
+	}
+	if true {
+		const prefix string = ",\"timestamp\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.Timestamp).MarshalJSON())
 	}
 	if in.Type_ != "" {
 		const prefix string = ",\"type\":"

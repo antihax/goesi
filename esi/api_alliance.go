@@ -47,6 +47,7 @@ List all active player alliances  ---  This route is cached for up to 3600 secon
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetAlliancesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -54,9 +55,10 @@ List all active player alliances  ---  This route is cached for up to 3600 secon
 */
 
 type GetAlliancesOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *AllianceApiService) GetAlliances(ctx context.Context, localVarOptionals *GetAlliancesOpts) ([]int32, *http.Response, error) {
@@ -82,7 +84,7 @@ func (a *AllianceApiService) GetAlliances(ctx context.Context, localVarOptionals
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -97,6 +99,9 @@ func (a *AllianceApiService) GetAlliances(ctx context.Context, localVarOptionals
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -199,6 +204,7 @@ Public information about an alliance  ---  This route is cached for up to 3600 s
  * @param allianceId An EVE alliance ID
  * @param optional nil or *GetAlliancesAllianceIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -206,9 +212,10 @@ Public information about an alliance  ---  This route is cached for up to 3600 s
 */
 
 type GetAlliancesAllianceIdOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *AllianceApiService) GetAlliancesAllianceId(ctx context.Context, allianceId int32, localVarOptionals *GetAlliancesAllianceIdOpts) (GetAlliancesAllianceIdOk, *http.Response, error) {
@@ -238,7 +245,7 @@ func (a *AllianceApiService) GetAlliancesAllianceId(ctx context.Context, allianc
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -253,6 +260,9 @@ func (a *AllianceApiService) GetAlliancesAllianceId(ctx context.Context, allianc
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -366,6 +376,7 @@ List all current member corporations of an alliance  ---  This route is cached f
  * @param allianceId An EVE alliance ID
  * @param optional nil or *GetAlliancesAllianceIdCorporationsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -373,9 +384,10 @@ List all current member corporations of an alliance  ---  This route is cached f
 */
 
 type GetAlliancesAllianceIdCorporationsOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *AllianceApiService) GetAlliancesAllianceIdCorporations(ctx context.Context, allianceId int32, localVarOptionals *GetAlliancesAllianceIdCorporationsOpts) ([]int32, *http.Response, error) {
@@ -405,7 +417,7 @@ func (a *AllianceApiService) GetAlliancesAllianceIdCorporations(ctx context.Cont
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -420,6 +432,9 @@ func (a *AllianceApiService) GetAlliancesAllianceIdCorporations(ctx context.Cont
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -522,6 +537,7 @@ Get the icon urls for a alliance  ---  This route is cached for up to 3600 secon
  * @param allianceId An EVE alliance ID
  * @param optional nil or *GetAlliancesAllianceIdIconsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -529,9 +545,10 @@ Get the icon urls for a alliance  ---  This route is cached for up to 3600 secon
 */
 
 type GetAlliancesAllianceIdIconsOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *AllianceApiService) GetAlliancesAllianceIdIcons(ctx context.Context, allianceId int32, localVarOptionals *GetAlliancesAllianceIdIconsOpts) (GetAlliancesAllianceIdIconsOk, *http.Response, error) {
@@ -561,7 +578,7 @@ func (a *AllianceApiService) GetAlliancesAllianceIdIcons(ctx context.Context, al
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -576,6 +593,9 @@ func (a *AllianceApiService) GetAlliancesAllianceIdIcons(ctx context.Context, al
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -689,6 +709,7 @@ Resolve a set of alliance IDs to alliance names  ---  This route is cached for u
  * @param allianceIds A comma separated list of alliance IDs
  * @param optional nil or *GetAlliancesNamesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -696,9 +717,10 @@ Resolve a set of alliance IDs to alliance names  ---  This route is cached for u
 */
 
 type GetAlliancesNamesOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *AllianceApiService) GetAlliancesNames(ctx context.Context, allianceIds []int32, localVarOptionals *GetAlliancesNamesOpts) ([]GetAlliancesNames200Ok, *http.Response, error) {
@@ -731,7 +753,7 @@ func (a *AllianceApiService) GetAlliancesNames(ctx context.Context, allianceIds 
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -746,6 +768,9 @@ func (a *AllianceApiService) GetAlliancesNames(ctx context.Context, allianceIds 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")

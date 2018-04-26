@@ -103,14 +103,14 @@ func easyjsonB9cd43f2DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
+		case "current_rank":
+			out.CurrentRank = int32(in.Int32())
 		case "enlisted_on":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.EnlistedOn).UnmarshalJSON(data))
 			}
-		case "current_rank":
-			out.CurrentRank = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
 		case "highest_rank":
 			out.HighestRank = int32(in.Int32())
 		case "kills":
@@ -131,15 +131,15 @@ func easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.FactionId != 0 {
-		const prefix string = ",\"faction_id\":"
+	if in.CurrentRank != 0 {
+		const prefix string = ",\"current_rank\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.FactionId))
+		out.Int32(int32(in.CurrentRank))
 	}
 	if true {
 		const prefix string = ",\"enlisted_on\":"
@@ -151,15 +151,15 @@ func easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Raw((in.EnlistedOn).MarshalJSON())
 	}
-	if in.CurrentRank != 0 {
-		const prefix string = ",\"current_rank\":"
+	if in.FactionId != 0 {
+		const prefix string = ",\"faction_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.CurrentRank))
+		out.Int32(int32(in.FactionId))
 	}
 	if in.HighestRank != 0 {
 		const prefix string = ",\"highest_rank\":"
@@ -236,12 +236,12 @@ func easyjsonB9cd43f2DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "yesterday":
-			out.Yesterday = int32(in.Int32())
 		case "last_week":
 			out.LastWeek = int32(in.Int32())
 		case "total":
 			out.Total = int32(in.Int32())
+		case "yesterday":
+			out.Yesterday = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -256,16 +256,6 @@ func easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Yesterday != 0 {
-		const prefix string = ",\"yesterday\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Yesterday))
-	}
 	if in.LastWeek != 0 {
 		const prefix string = ",\"last_week\":"
 		if first {
@@ -285,6 +275,16 @@ func easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Total))
+	}
+	if in.Yesterday != 0 {
+		const prefix string = ",\"yesterday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Yesterday))
 	}
 	out.RawByte('}')
 }

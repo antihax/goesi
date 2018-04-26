@@ -29,8 +29,8 @@ type GetWarsWarIdDefenderList []GetWarsWarIdDefender
 /* The defending corporation or alliance that declared this war, only contains either corporation_id or alliance_id */
 //easyjson:json
 type GetWarsWarIdDefender struct {
-	CorporationId int32   `json:"corporation_id,omitempty"` /* Corporation ID if and only if the defender is a corporation */
 	AllianceId    int32   `json:"alliance_id,omitempty"`    /* Alliance ID if and only if the defender is an alliance */
-	ShipsKilled   int32   `json:"ships_killed,omitempty"`   /* The number of ships the defender has killed */
+	CorporationId int32   `json:"corporation_id,omitempty"` /* Corporation ID if and only if the defender is a corporation */
 	IskDestroyed  float32 `json:"isk_destroyed,omitempty"`  /* ISK value of ships the defender has killed */
+	ShipsKilled   int32   `json:"ships_killed,omitempty"`   /* The number of ships the defender has killed */
 }

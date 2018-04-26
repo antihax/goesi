@@ -29,7 +29,7 @@ type GetCharactersCharacterIdPlanetsPlanetIdLinkList []GetCharactersCharacterIdP
 /* link object */
 //easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdLink struct {
-	SourcePinId      int64 `json:"source_pin_id,omitempty"`      /* source_pin_id integer */
 	DestinationPinId int64 `json:"destination_pin_id,omitempty"` /* destination_pin_id integer */
 	LinkLevel        int32 `json:"link_level,omitempty"`         /* link_level integer */
+	SourcePinId      int64 `json:"source_pin_id,omitempty"`      /* source_pin_id integer */
 }

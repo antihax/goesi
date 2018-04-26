@@ -33,11 +33,11 @@ type GetKillmailsKillmailIdKillmailHashOkList []GetKillmailsKillmailIdKillmailHa
 /* 200 ok object */
 //easyjson:json
 type GetKillmailsKillmailIdKillmailHashOk struct {
-	KillmailId    int32                                        `json:"killmail_id,omitempty"`   /* ID of the killmail */
-	KillmailTime  time.Time                                    `json:"killmail_time,omitempty"` /* Time that the victim was killed and the killmail generated  */
-	Victim        GetKillmailsKillmailIdKillmailHashVictim     `json:"victim,omitempty"`
 	Attackers     []GetKillmailsKillmailIdKillmailHashAttacker `json:"attackers,omitempty"`       /* attackers array */
-	SolarSystemId int32                                        `json:"solar_system_id,omitempty"` /* Solar system that the kill took place in  */
+	KillmailId    int32                                        `json:"killmail_id,omitempty"`     /* ID of the killmail */
+	KillmailTime  time.Time                                    `json:"killmail_time,omitempty"`   /* Time that the victim was killed and the killmail generated  */
 	MoonId        int32                                        `json:"moon_id,omitempty"`         /* Moon if the kill took place at one */
-	WarId         int32                                        `json:"war_id,omitempty"`          /* War if the killmail is generated in relation to an official war  */
+	SolarSystemId int32                                        `json:"solar_system_id,omitempty"` /* Solar system that the kill took place in  */
+	Victim        GetKillmailsKillmailIdKillmailHashVictim     `json:"victim,omitempty"`
+	WarId         int32                                        `json:"war_id,omitempty"` /* War if the killmail is generated in relation to an official war  */
 }

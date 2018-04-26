@@ -33,11 +33,11 @@ type GetCharactersCharacterIdPlanets200OkList []GetCharactersCharacterIdPlanets2
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdPlanets200Ok struct {
-	SolarSystemId int32     `json:"solar_system_id,omitempty"` /* solar_system_id integer */
-	PlanetId      int32     `json:"planet_id,omitempty"`       /* planet_id integer */
-	OwnerId       int32     `json:"owner_id,omitempty"`        /* owner_id integer */
-	UpgradeLevel  int32     `json:"upgrade_level,omitempty"`   /* upgrade_level integer */
-	NumPins       int32     `json:"num_pins,omitempty"`        /* num_pins integer */
 	LastUpdate    time.Time `json:"last_update,omitempty"`     /* last_update string */
+	NumPins       int32     `json:"num_pins,omitempty"`        /* num_pins integer */
+	OwnerId       int32     `json:"owner_id,omitempty"`        /* owner_id integer */
+	PlanetId      int32     `json:"planet_id,omitempty"`       /* planet_id integer */
 	PlanetType    string    `json:"planet_type,omitempty"`     /* planet_type string */
+	SolarSystemId int32     `json:"solar_system_id,omitempty"` /* solar_system_id integer */
+	UpgradeLevel  int32     `json:"upgrade_level,omitempty"`   /* upgrade_level integer */
 }

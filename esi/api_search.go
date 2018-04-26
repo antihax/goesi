@@ -50,6 +50,7 @@ Search for entities that match a given sub-string.  ---  This route is cached fo
  * @param search The string to search on
  * @param optional nil or *GetCharactersCharacterIdSearchOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "Strict" (optional.Bool) -  Whether the search should be a strict match
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
@@ -60,12 +61,13 @@ Search for entities that match a given sub-string.  ---  This route is cached fo
 */
 
 type GetCharactersCharacterIdSearchOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	Strict     optional.Bool
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	Strict      optional.Bool
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, categories []string, characterId int32, search string, localVarOptionals *GetCharactersCharacterIdSearchOpts) (GetCharactersCharacterIdSearchOk, *http.Response, error) {
@@ -115,7 +117,7 @@ func (a *SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, c
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -130,6 +132,9 @@ func (a *SearchApiService) GetCharactersCharacterIdSearch(ctx context.Context, c
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -255,6 +260,7 @@ Search for entities that match a given sub-string.  ---  This route is cached fo
  * @param search The string to search on
  * @param optional nil or *GetSearchOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Language" (optional.String) -  Language to use in the response
      * @param "Strict" (optional.Bool) -  Whether the search should be a strict match
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -264,11 +270,12 @@ Search for entities that match a given sub-string.  ---  This route is cached fo
 */
 
 type GetSearchOpts struct {
-	Datasource optional.String
-	Language   optional.String
-	Strict     optional.Bool
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Language    optional.String
+	Strict      optional.Bool
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *SearchApiService) GetSearch(ctx context.Context, categories []string, search string, localVarOptionals *GetSearchOpts) (GetSearchOk, *http.Response, error) {
@@ -311,7 +318,7 @@ func (a *SearchApiService) GetSearch(ctx context.Context, categories []string, s
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -326,6 +333,9 @@ func (a *SearchApiService) GetSearch(ctx context.Context, categories []string, s
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")

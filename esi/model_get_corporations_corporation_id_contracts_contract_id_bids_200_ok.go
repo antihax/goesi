@@ -33,8 +33,8 @@ type GetCorporationsCorporationIdContractsContractIdBids200OkList []GetCorporati
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdContractsContractIdBids200Ok struct {
+	Amount   float32   `json:"amount,omitempty"`    /* The amount bid, in ISK */
 	BidId    int32     `json:"bid_id,omitempty"`    /* Unique ID for the bid */
 	BidderId int32     `json:"bidder_id,omitempty"` /* Character ID of the bidder */
 	DateBid  time.Time `json:"date_bid,omitempty"`  /* Datetime when the bid was placed */
-	Amount   float32   `json:"amount,omitempty"`    /* The amount bid, in ISK */
 }

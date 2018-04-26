@@ -29,9 +29,9 @@ type GetCharactersCharacterIdPlanetsPlanetIdExtractorDetailsList []GetCharacters
 /* extractor_details object */
 //easyjson:json
 type GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails struct {
-	Heads         []GetCharactersCharacterIdPlanetsPlanetIdHead `json:"heads,omitempty"`           /* heads array */
-	ProductTypeId int32                                         `json:"product_type_id,omitempty"` /* product_type_id integer */
 	CycleTime     int32                                         `json:"cycle_time,omitempty"`      /* in seconds */
 	HeadRadius    float32                                       `json:"head_radius,omitempty"`     /* head_radius number */
+	Heads         []GetCharactersCharacterIdPlanetsPlanetIdHead `json:"heads,omitempty"`           /* heads array */
+	ProductTypeId int32                                         `json:"product_type_id,omitempty"` /* product_type_id integer */
 	QtyPerCycle   int32                                         `json:"qty_per_cycle,omitempty"`   /* qty_per_cycle integer */
 }

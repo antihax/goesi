@@ -105,24 +105,24 @@ func easyjson6176f835DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetD
 		switch key {
 		case "attribute_id":
 			out.AttributeId = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		case "description":
-			out.Description = string(in.String())
-		case "icon_id":
-			out.IconId = int32(in.Int32())
 		case "default_value":
 			out.DefaultValue = float32(in.Float32())
-		case "published":
-			out.Published = bool(in.Bool())
+		case "description":
+			out.Description = string(in.String())
 		case "display_name":
 			out.DisplayName = string(in.String())
-		case "unit_id":
-			out.UnitId = int32(in.Int32())
-		case "stackable":
-			out.Stackable = bool(in.Bool())
 		case "high_is_good":
 			out.HighIsGood = bool(in.Bool())
+		case "icon_id":
+			out.IconId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		case "published":
+			out.Published = bool(in.Bool())
+		case "stackable":
+			out.Stackable = bool(in.Bool())
+		case "unit_id":
+			out.UnitId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -147,15 +147,15 @@ func easyjson6176f835EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.AttributeId))
 	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
+	if in.DefaultValue != 0 {
+		const prefix string = ",\"default_value\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.Name))
+		out.Float32(float32(in.DefaultValue))
 	}
 	if in.Description != "" {
 		const prefix string = ",\"description\":"
@@ -167,6 +167,26 @@ func easyjson6176f835EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Description))
 	}
+	if in.DisplayName != "" {
+		const prefix string = ",\"display_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.DisplayName))
+	}
+	if in.HighIsGood {
+		const prefix string = ",\"high_is_good\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.HighIsGood))
+	}
 	if in.IconId != 0 {
 		const prefix string = ",\"icon_id\":"
 		if first {
@@ -177,15 +197,15 @@ func easyjson6176f835EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.IconId))
 	}
-	if in.DefaultValue != 0 {
-		const prefix string = ",\"default_value\":"
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.DefaultValue))
+		out.String(string(in.Name))
 	}
 	if in.Published {
 		const prefix string = ",\"published\":"
@@ -197,26 +217,6 @@ func easyjson6176f835EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Bool(bool(in.Published))
 	}
-	if in.DisplayName != "" {
-		const prefix string = ",\"display_name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.DisplayName))
-	}
-	if in.UnitId != 0 {
-		const prefix string = ",\"unit_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.UnitId))
-	}
 	if in.Stackable {
 		const prefix string = ",\"stackable\":"
 		if first {
@@ -227,15 +227,15 @@ func easyjson6176f835EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Bool(bool(in.Stackable))
 	}
-	if in.HighIsGood {
-		const prefix string = ",\"high_is_good\":"
+	if in.UnitId != 0 {
+		const prefix string = ",\"unit_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Bool(bool(in.HighIsGood))
+		out.Int32(int32(in.UnitId))
 	}
 	out.RawByte('}')
 }

@@ -29,7 +29,7 @@ type GetCorporationsCorporationIdShareholders200OkList []GetCorporationsCorporat
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdShareholders200Ok struct {
+	ShareCount      int64  `json:"share_count,omitempty"`      /* share_count integer */
 	ShareholderId   int32  `json:"shareholder_id,omitempty"`   /* shareholder_id integer */
 	ShareholderType string `json:"shareholder_type,omitempty"` /* shareholder_type string */
-	ShareCount      int64  `json:"share_count,omitempty"`      /* share_count integer */
 }

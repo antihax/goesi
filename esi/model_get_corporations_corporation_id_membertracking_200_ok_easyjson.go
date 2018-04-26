@@ -103,26 +103,26 @@ func easyjsonE9f52ab5DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "character_id":
-			out.CharacterId = int32(in.Int32())
-		case "start_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.StartDate).UnmarshalJSON(data))
-			}
 		case "base_id":
 			out.BaseId = int32(in.Int32())
-		case "logon_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.LogonDate).UnmarshalJSON(data))
-			}
+		case "character_id":
+			out.CharacterId = int32(in.Int32())
+		case "location_id":
+			out.LocationId = int64(in.Int64())
 		case "logoff_date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.LogoffDate).UnmarshalJSON(data))
 			}
-		case "location_id":
-			out.LocationId = int64(in.Int64())
+		case "logon_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.LogonDate).UnmarshalJSON(data))
+			}
 		case "ship_type_id":
 			out.ShipTypeId = int32(in.Int32())
+		case "start_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.StartDate).UnmarshalJSON(data))
+			}
 		default:
 			in.SkipRecursive()
 		}
@@ -137,26 +137,6 @@ func easyjsonE9f52ab5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.CharacterId != 0 {
-		const prefix string = ",\"character_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.CharacterId))
-	}
-	if true {
-		const prefix string = ",\"start_date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.StartDate).MarshalJSON())
-	}
 	if in.BaseId != 0 {
 		const prefix string = ",\"base_id\":"
 		if first {
@@ -167,25 +147,15 @@ func easyjsonE9f52ab5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.BaseId))
 	}
-	if true {
-		const prefix string = ",\"logon_date\":"
+	if in.CharacterId != 0 {
+		const prefix string = ",\"character_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.LogonDate).MarshalJSON())
-	}
-	if true {
-		const prefix string = ",\"logoff_date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.LogoffDate).MarshalJSON())
+		out.Int32(int32(in.CharacterId))
 	}
 	if in.LocationId != 0 {
 		const prefix string = ",\"location_id\":"
@@ -197,6 +167,26 @@ func easyjsonE9f52ab5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.LocationId))
 	}
+	if true {
+		const prefix string = ",\"logoff_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.LogoffDate).MarshalJSON())
+	}
+	if true {
+		const prefix string = ",\"logon_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.LogonDate).MarshalJSON())
+	}
 	if in.ShipTypeId != 0 {
 		const prefix string = ",\"ship_type_id\":"
 		if first {
@@ -206,6 +196,16 @@ func easyjsonE9f52ab5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.ShipTypeId))
+	}
+	if true {
+		const prefix string = ",\"start_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.StartDate).MarshalJSON())
 	}
 	out.RawByte('}')
 }

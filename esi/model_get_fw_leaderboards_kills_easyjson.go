@@ -103,25 +103,25 @@ func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
-		case "yesterday":
+		case "active_total":
 			if in.IsNull() {
 				in.Skip()
-				out.Yesterday = nil
+				out.ActiveTotal = nil
 			} else {
 				in.Delim('[')
-				if out.Yesterday == nil {
+				if out.ActiveTotal == nil {
 					if !in.IsDelim(']') {
-						out.Yesterday = make([]GetFwLeaderboardsYesterday, 0, 8)
+						out.ActiveTotal = make([]GetFwLeaderboardsActiveTotal, 0, 8)
 					} else {
-						out.Yesterday = []GetFwLeaderboardsYesterday{}
+						out.ActiveTotal = []GetFwLeaderboardsActiveTotal{}
 					}
 				} else {
-					out.Yesterday = (out.Yesterday)[:0]
+					out.ActiveTotal = (out.ActiveTotal)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v4 GetFwLeaderboardsYesterday
+					var v4 GetFwLeaderboardsActiveTotal
 					easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi2(in, &v4)
-					out.Yesterday = append(out.Yesterday, v4)
+					out.ActiveTotal = append(out.ActiveTotal, v4)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -149,25 +149,25 @@ func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				}
 				in.Delim(']')
 			}
-		case "active_total":
+		case "yesterday":
 			if in.IsNull() {
 				in.Skip()
-				out.ActiveTotal = nil
+				out.Yesterday = nil
 			} else {
 				in.Delim('[')
-				if out.ActiveTotal == nil {
+				if out.Yesterday == nil {
 					if !in.IsDelim(']') {
-						out.ActiveTotal = make([]GetFwLeaderboardsActiveTotal, 0, 8)
+						out.Yesterday = make([]GetFwLeaderboardsYesterday, 0, 8)
 					} else {
-						out.ActiveTotal = []GetFwLeaderboardsActiveTotal{}
+						out.Yesterday = []GetFwLeaderboardsYesterday{}
 					}
 				} else {
-					out.ActiveTotal = (out.ActiveTotal)[:0]
+					out.Yesterday = (out.Yesterday)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v6 GetFwLeaderboardsActiveTotal
+					var v6 GetFwLeaderboardsYesterday
 					easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi4(in, &v6)
-					out.ActiveTotal = append(out.ActiveTotal, v6)
+					out.Yesterday = append(out.Yesterday, v6)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -186,8 +186,8 @@ func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if len(in.Yesterday) != 0 {
-		const prefix string = ",\"yesterday\":"
+	if len(in.ActiveTotal) != 0 {
+		const prefix string = ",\"active_total\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
@@ -196,7 +196,7 @@ func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v7, v8 := range in.Yesterday {
+			for v7, v8 := range in.ActiveTotal {
 				if v7 > 0 {
 					out.RawByte(',')
 				}
@@ -224,8 +224,8 @@ func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
-	if len(in.ActiveTotal) != 0 {
-		const prefix string = ",\"active_total\":"
+	if len(in.Yesterday) != 0 {
+		const prefix string = ",\"yesterday\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
@@ -234,7 +234,7 @@ func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v11, v12 := range in.ActiveTotal {
+			for v11, v12 := range in.Yesterday {
 				if v11 > 0 {
 					out.RawByte(',')
 				}
@@ -269,7 +269,7 @@ func (v *GetFwLeaderboardsKills) UnmarshalJSON(data []byte) error {
 func (v *GetFwLeaderboardsKills) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetFwLeaderboardsActiveTotal) {
+func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetFwLeaderboardsYesterday) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -288,10 +288,10 @@ func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
 		case "amount":
 			out.Amount = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -302,20 +302,10 @@ func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetF
 		in.Consumed()
 	}
 }
-func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetFwLeaderboardsActiveTotal) {
+func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetFwLeaderboardsYesterday) {
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.FactionId != 0 {
-		const prefix string = ",\"faction_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.FactionId))
-	}
 	if in.Amount != 0 {
 		const prefix string = ",\"amount\":"
 		if first {
@@ -325,6 +315,16 @@ func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Amount))
+	}
+	if in.FactionId != 0 {
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.FactionId))
 	}
 	out.RawByte('}')
 }
@@ -347,10 +347,10 @@ func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
 		case "amount":
 			out.Amount = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -365,16 +365,6 @@ func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.FactionId != 0 {
-		const prefix string = ",\"faction_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.FactionId))
-	}
 	if in.Amount != 0 {
 		const prefix string = ",\"amount\":"
 		if first {
@@ -385,9 +375,19 @@ func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.Amount))
 	}
+	if in.FactionId != 0 {
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.FactionId))
+	}
 	out.RawByte('}')
 }
-func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFwLeaderboardsYesterday) {
+func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFwLeaderboardsActiveTotal) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -406,10 +406,10 @@ func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
 		case "amount":
 			out.Amount = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -420,20 +420,10 @@ func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetF
 		in.Consumed()
 	}
 }
-func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFwLeaderboardsYesterday) {
+func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFwLeaderboardsActiveTotal) {
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.FactionId != 0 {
-		const prefix string = ",\"faction_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.FactionId))
-	}
 	if in.Amount != 0 {
 		const prefix string = ",\"amount\":"
 		if first {
@@ -443,6 +433,16 @@ func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Amount))
+	}
+	if in.FactionId != 0 {
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.FactionId))
 	}
 	out.RawByte('}')
 }

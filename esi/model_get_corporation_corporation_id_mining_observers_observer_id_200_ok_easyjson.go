@@ -103,16 +103,16 @@ func easyjson77cbcc92DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "last_updated":
-			out.LastUpdated = string(in.String())
 		case "character_id":
 			out.CharacterId = int32(in.Int32())
+		case "last_updated":
+			out.LastUpdated = string(in.String())
+		case "quantity":
+			out.Quantity = int64(in.Int64())
 		case "recorded_corporation_id":
 			out.RecordedCorporationId = int32(in.Int32())
 		case "type_id":
 			out.TypeId = int32(in.Int32())
-		case "quantity":
-			out.Quantity = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -127,6 +127,16 @@ func easyjson77cbcc92EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.CharacterId != 0 {
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CharacterId))
+	}
 	if in.LastUpdated != "" {
 		const prefix string = ",\"last_updated\":"
 		if first {
@@ -137,15 +147,15 @@ func easyjson77cbcc92EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.LastUpdated))
 	}
-	if in.CharacterId != 0 {
-		const prefix string = ",\"character_id\":"
+	if in.Quantity != 0 {
+		const prefix string = ",\"quantity\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.CharacterId))
+		out.Int64(int64(in.Quantity))
 	}
 	if in.RecordedCorporationId != 0 {
 		const prefix string = ",\"recorded_corporation_id\":"
@@ -166,16 +176,6 @@ func easyjson77cbcc92EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.TypeId))
-	}
-	if in.Quantity != 0 {
-		const prefix string = ",\"quantity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.Quantity))
 	}
 	out.RawByte('}')
 }

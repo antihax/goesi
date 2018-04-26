@@ -105,24 +105,24 @@ func easyjson727b91bfDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		switch key {
 		case "bookmark_id":
 			out.BookmarkId = int32(in.Int32())
-		case "folder_id":
-			out.FolderId = int32(in.Int32())
+		case "coordinates":
+			easyjson727b91bfDecodeGithubComAntihaxGoesiEsi2(in, &out.Coordinates)
 		case "created":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Created).UnmarshalJSON(data))
 			}
-		case "label":
-			out.Label = string(in.String())
-		case "notes":
-			out.Notes = string(in.String())
-		case "location_id":
-			out.LocationId = int32(in.Int32())
 		case "creator_id":
 			out.CreatorId = int32(in.Int32())
+		case "folder_id":
+			out.FolderId = int32(in.Int32())
 		case "item":
-			easyjson727b91bfDecodeGithubComAntihaxGoesiEsi2(in, &out.Item)
-		case "coordinates":
-			easyjson727b91bfDecodeGithubComAntihaxGoesiEsi3(in, &out.Coordinates)
+			easyjson727b91bfDecodeGithubComAntihaxGoesiEsi3(in, &out.Item)
+		case "label":
+			out.Label = string(in.String())
+		case "location_id":
+			out.LocationId = int32(in.Int32())
+		case "notes":
+			out.Notes = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -147,15 +147,15 @@ func easyjson727b91bfEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.BookmarkId))
 	}
-	if in.FolderId != 0 {
-		const prefix string = ",\"folder_id\":"
+	if true {
+		const prefix string = ",\"coordinates\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.FolderId))
+		easyjson727b91bfEncodeGithubComAntihaxGoesiEsi2(out, in.Coordinates)
 	}
 	if true {
 		const prefix string = ",\"created\":"
@@ -167,6 +167,36 @@ func easyjson727b91bfEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Raw((in.Created).MarshalJSON())
 	}
+	if in.CreatorId != 0 {
+		const prefix string = ",\"creator_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CreatorId))
+	}
+	if in.FolderId != 0 {
+		const prefix string = ",\"folder_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.FolderId))
+	}
+	if true {
+		const prefix string = ",\"item\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		easyjson727b91bfEncodeGithubComAntihaxGoesiEsi3(out, in.Item)
+	}
 	if in.Label != "" {
 		const prefix string = ",\"label\":"
 		if first {
@@ -176,16 +206,6 @@ func easyjson727b91bfEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Label))
-	}
-	if in.Notes != "" {
-		const prefix string = ",\"notes\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Notes))
 	}
 	if in.LocationId != 0 {
 		const prefix string = ",\"location_id\":"
@@ -197,35 +217,15 @@ func easyjson727b91bfEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.LocationId))
 	}
-	if in.CreatorId != 0 {
-		const prefix string = ",\"creator_id\":"
+	if in.Notes != "" {
+		const prefix string = ",\"notes\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.CreatorId))
-	}
-	if true {
-		const prefix string = ",\"item\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		easyjson727b91bfEncodeGithubComAntihaxGoesiEsi2(out, in.Item)
-	}
-	if true {
-		const prefix string = ",\"coordinates\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		easyjson727b91bfEncodeGithubComAntihaxGoesiEsi3(out, in.Coordinates)
+		out.String(string(in.Notes))
 	}
 	out.RawByte('}')
 }
@@ -253,7 +253,66 @@ func (v *GetCharactersCharacterIdBookmarks200Ok) UnmarshalJSON(data []byte) erro
 func (v *GetCharactersCharacterIdBookmarks200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson727b91bfDecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson727b91bfDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdBookmarksCoordinates) {
+func easyjson727b91bfDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdBookmarksItem) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "item_id":
+			out.ItemId = int64(in.Int64())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson727b91bfEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdBookmarksItem) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.ItemId != 0 {
+		const prefix string = ",\"item_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ItemId))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
+	}
+	out.RawByte('}')
+}
+func easyjson727b91bfDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdBookmarksCoordinates) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -288,7 +347,7 @@ func easyjson727b91bfDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson727b91bfEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdBookmarksCoordinates) {
+func easyjson727b91bfEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdBookmarksCoordinates) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -321,65 +380,6 @@ func easyjson727b91bfEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Float64(float64(in.Z))
-	}
-	out.RawByte('}')
-}
-func easyjson727b91bfDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdBookmarksItem) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "item_id":
-			out.ItemId = int64(in.Int64())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson727b91bfEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdBookmarksItem) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.ItemId != 0 {
-		const prefix string = ",\"item_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.ItemId))
-	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

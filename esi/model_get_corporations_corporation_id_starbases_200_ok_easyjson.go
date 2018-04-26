@@ -103,27 +103,27 @@ func easyjsonBeee0876DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "starbase_id":
-			out.StarbaseId = int64(in.Int64())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "system_id":
-			out.SystemId = int32(in.Int32())
 		case "moon_id":
 			out.MoonId = int32(in.Int32())
-		case "state":
-			out.State = string(in.String())
-		case "unanchor_at":
+		case "onlined_since":
 			if data := in.Raw(); in.Ok() {
-				in.AddError((out.UnanchorAt).UnmarshalJSON(data))
+				in.AddError((out.OnlinedSince).UnmarshalJSON(data))
 			}
 		case "reinforced_until":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.ReinforcedUntil).UnmarshalJSON(data))
 			}
-		case "onlined_since":
+		case "starbase_id":
+			out.StarbaseId = int64(in.Int64())
+		case "state":
+			out.State = string(in.String())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		case "unanchor_at":
 			if data := in.Raw(); in.Ok() {
-				in.AddError((out.OnlinedSince).UnmarshalJSON(data))
+				in.AddError((out.UnanchorAt).UnmarshalJSON(data))
 			}
 		default:
 			in.SkipRecursive()
@@ -139,36 +139,6 @@ func easyjsonBeee0876EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.StarbaseId != 0 {
-		const prefix string = ",\"starbase_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.StarbaseId))
-	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
-	if in.SystemId != 0 {
-		const prefix string = ",\"system_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.SystemId))
-	}
 	if in.MoonId != 0 {
 		const prefix string = ",\"moon_id\":"
 		if first {
@@ -179,25 +149,15 @@ func easyjsonBeee0876EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.MoonId))
 	}
-	if in.State != "" {
-		const prefix string = ",\"state\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.State))
-	}
 	if true {
-		const prefix string = ",\"unanchor_at\":"
+		const prefix string = ",\"onlined_since\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.UnanchorAt).MarshalJSON())
+		out.Raw((in.OnlinedSince).MarshalJSON())
 	}
 	if true {
 		const prefix string = ",\"reinforced_until\":"
@@ -209,15 +169,55 @@ func easyjsonBeee0876EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Raw((in.ReinforcedUntil).MarshalJSON())
 	}
-	if true {
-		const prefix string = ",\"onlined_since\":"
+	if in.StarbaseId != 0 {
+		const prefix string = ",\"starbase_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.OnlinedSince).MarshalJSON())
+		out.Int64(int64(in.StarbaseId))
+	}
+	if in.State != "" {
+		const prefix string = ",\"state\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.State))
+	}
+	if in.SystemId != 0 {
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SystemId))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
+	}
+	if true {
+		const prefix string = ",\"unanchor_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.UnanchorAt).MarshalJSON())
 	}
 	out.RawByte('}')
 }

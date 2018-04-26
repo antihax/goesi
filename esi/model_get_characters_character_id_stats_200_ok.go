@@ -29,7 +29,6 @@ type GetCharactersCharacterIdStats200OkList []GetCharactersCharacterIdStats200Ok
 /* Aggregate stats for a year */
 //easyjson:json
 type GetCharactersCharacterIdStats200Ok struct {
-	Year      int32                                  `json:"year,omitempty"` /* Gregorian year for this set of aggregates */
 	Character GetCharactersCharacterIdStatsCharacter `json:"character,omitempty"`
 	Combat    GetCharactersCharacterIdStatsCombat    `json:"combat,omitempty"`
 	Industry  GetCharactersCharacterIdStatsIndustry  `json:"industry,omitempty"`
@@ -42,4 +41,5 @@ type GetCharactersCharacterIdStats200Ok struct {
 	Pve       GetCharactersCharacterIdStatsPve       `json:"pve,omitempty"`
 	Social    GetCharactersCharacterIdStatsSocial    `json:"social,omitempty"`
 	Travel    GetCharactersCharacterIdStatsTravel    `json:"travel,omitempty"`
+	Year      int32                                  `json:"year,omitempty"` /* Gregorian year for this set of aggregates */
 }

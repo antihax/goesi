@@ -103,6 +103,8 @@ func easyjson3bbccc1aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
+		case "flag":
+			out.Flag = int32(in.Int32())
 		case "item_type_id":
 			out.ItemTypeId = int32(in.Int32())
 		case "quantity_destroyed":
@@ -111,8 +113,6 @@ func easyjson3bbccc1aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 			out.QuantityDropped = int64(in.Int64())
 		case "singleton":
 			out.Singleton = int32(in.Int32())
-		case "flag":
-			out.Flag = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -127,6 +127,16 @@ func easyjson3bbccc1aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Flag != 0 {
+		const prefix string = ",\"flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Flag))
+	}
 	if in.ItemTypeId != 0 {
 		const prefix string = ",\"item_type_id\":"
 		if first {
@@ -166,16 +176,6 @@ func easyjson3bbccc1aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Singleton))
-	}
-	if in.Flag != 0 {
-		const prefix string = ",\"flag\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Flag))
 	}
 	out.RawByte('}')
 }

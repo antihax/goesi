@@ -103,18 +103,18 @@ func easyjsonB63f3efcDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "message":
+			out.Message = string(in.String())
 		case "notification_id":
 			out.NotificationId = int32(in.Int32())
 		case "send_date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.SendDate).UnmarshalJSON(data))
 			}
-		case "standing_level":
-			out.StandingLevel = float32(in.Float32())
-		case "message":
-			out.Message = string(in.String())
 		case "sender_character_id":
 			out.SenderCharacterId = int32(in.Int32())
+		case "standing_level":
+			out.StandingLevel = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,6 +129,16 @@ func easyjsonB63f3efcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Message != "" {
+		const prefix string = ",\"message\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Message))
+	}
 	if in.NotificationId != 0 {
 		const prefix string = ",\"notification_id\":"
 		if first {
@@ -149,26 +159,6 @@ func easyjsonB63f3efcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Raw((in.SendDate).MarshalJSON())
 	}
-	if in.StandingLevel != 0 {
-		const prefix string = ",\"standing_level\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.StandingLevel))
-	}
-	if in.Message != "" {
-		const prefix string = ",\"message\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Message))
-	}
 	if in.SenderCharacterId != 0 {
 		const prefix string = ",\"sender_character_id\":"
 		if first {
@@ -178,6 +168,16 @@ func easyjsonB63f3efcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.SenderCharacterId))
+	}
+	if in.StandingLevel != 0 {
+		const prefix string = ",\"standing_level\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.StandingLevel))
 	}
 	out.RawByte('}')
 }

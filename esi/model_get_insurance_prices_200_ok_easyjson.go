@@ -103,8 +103,6 @@ func easyjson24365b2aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetI
 			continue
 		}
 		switch key {
-		case "type_id":
-			out.TypeId = int32(in.Int32())
 		case "levels":
 			if in.IsNull() {
 				in.Skip()
@@ -128,6 +126,8 @@ func easyjson24365b2aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetI
 				}
 				in.Delim(']')
 			}
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -142,16 +142,6 @@ func easyjson24365b2aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
 	if len(in.Levels) != 0 {
 		const prefix string = ",\"levels\":"
 		if first {
@@ -170,6 +160,16 @@ func easyjson24365b2aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

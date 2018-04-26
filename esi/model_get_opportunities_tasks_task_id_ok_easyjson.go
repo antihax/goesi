@@ -103,14 +103,14 @@ func easyjsonFede2f1cDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetO
 			continue
 		}
 		switch key {
-		case "task_id":
-			out.TaskId = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
 		case "description":
 			out.Description = string(in.String())
+		case "name":
+			out.Name = string(in.String())
 		case "notification":
 			out.Notification = string(in.String())
+		case "task_id":
+			out.TaskId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -125,15 +125,15 @@ func easyjsonFede2f1cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.TaskId != 0 {
-		const prefix string = ",\"task_id\":"
+	if in.Description != "" {
+		const prefix string = ",\"description\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.TaskId))
+		out.String(string(in.Description))
 	}
 	if in.Name != "" {
 		const prefix string = ",\"name\":"
@@ -145,16 +145,6 @@ func easyjsonFede2f1cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Name))
 	}
-	if in.Description != "" {
-		const prefix string = ",\"description\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Description))
-	}
 	if in.Notification != "" {
 		const prefix string = ",\"notification\":"
 		if first {
@@ -164,6 +154,16 @@ func easyjsonFede2f1cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Notification))
+	}
+	if in.TaskId != 0 {
+		const prefix string = ",\"task_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TaskId))
 	}
 	out.RawByte('}')
 }

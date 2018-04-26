@@ -52,6 +52,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -65,7 +66,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -91,6 +92,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -104,7 +106,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -130,6 +132,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -145,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -171,6 +174,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -186,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -212,6 +216,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -226,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -252,6 +257,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -266,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -292,6 +298,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -305,7 +312,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -331,6 +338,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -346,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -372,6 +380,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -387,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -413,6 +422,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -427,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -453,6 +463,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -467,7 +478,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -493,6 +504,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -507,7 +519,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -533,6 +545,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -547,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -573,6 +586,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -588,7 +602,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -616,6 +630,7 @@ Name | Type | Description  | Notes
  **corporationId** | **int32**| An EVE corporation ID | 
  **outpostId** | **int32**| A station (outpost) ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -630,7 +645,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -656,6 +671,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -670,7 +686,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -696,6 +712,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -711,7 +728,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -737,6 +754,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -752,7 +770,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -778,6 +796,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -793,7 +812,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -819,6 +838,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
@@ -834,7 +854,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -864,6 +884,7 @@ Name | Type | Description  | Notes
  **starbaseId** | **int64**| An EVE starbase (POS) ID | 
  **systemId** | **int32**| The solar system this starbase (POS) is located in, | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -878,7 +899,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -904,6 +925,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **language** | **string**| Language to use in the response | [default to en-us]
  **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
@@ -920,7 +942,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -946,6 +968,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -960,7 +983,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -986,6 +1009,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **corporationIds** | [**[]int32**](int32.md)| A comma separated list of corporation IDs | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -999,7 +1023,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1023,6 +1047,7 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
@@ -1036,7 +1061,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

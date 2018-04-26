@@ -33,8 +33,8 @@ type GetCharactersCharacterIdOnlineOkList []GetCharactersCharacterIdOnlineOk
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdOnlineOk struct {
-	Online     bool      `json:"online,omitempty"`      /* If the character is online */
 	LastLogin  time.Time `json:"last_login,omitempty"`  /* Timestamp of the last login */
 	LastLogout time.Time `json:"last_logout,omitempty"` /* Timestamp of the last logout */
 	Logins     int32     `json:"logins,omitempty"`      /* Total number of times the character has logged in */
+	Online     bool      `json:"online,omitempty"`      /* If the character is online */
 }

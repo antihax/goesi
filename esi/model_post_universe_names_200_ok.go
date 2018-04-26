@@ -29,7 +29,7 @@ type PostUniverseNames200OkList []PostUniverseNames200Ok
 /* 200 ok object */
 //easyjson:json
 type PostUniverseNames200Ok struct {
+	Category string `json:"category,omitempty"` /* category string */
 	Id       int32  `json:"id,omitempty"`       /* id integer */
 	Name     string `json:"name,omitempty"`     /* name string */
-	Category string `json:"category,omitempty"` /* category string */
 }

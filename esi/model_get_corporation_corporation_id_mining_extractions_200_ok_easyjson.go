@@ -103,22 +103,22 @@ func easyjsonD1506562DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "structure_id":
-			out.StructureId = int64(in.Int64())
-		case "moon_id":
-			out.MoonId = int32(in.Int32())
-		case "extraction_start_time":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.ExtractionStartTime).UnmarshalJSON(data))
-			}
 		case "chunk_arrival_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.ChunkArrivalTime).UnmarshalJSON(data))
 			}
+		case "extraction_start_time":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.ExtractionStartTime).UnmarshalJSON(data))
+			}
+		case "moon_id":
+			out.MoonId = int32(in.Int32())
 		case "natural_decay_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.NaturalDecayTime).UnmarshalJSON(data))
 			}
+		case "structure_id":
+			out.StructureId = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -133,15 +133,25 @@ func easyjsonD1506562EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.StructureId != 0 {
-		const prefix string = ",\"structure_id\":"
+	if true {
+		const prefix string = ",\"chunk_arrival_time\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int64(int64(in.StructureId))
+		out.Raw((in.ChunkArrivalTime).MarshalJSON())
+	}
+	if true {
+		const prefix string = ",\"extraction_start_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.ExtractionStartTime).MarshalJSON())
 	}
 	if in.MoonId != 0 {
 		const prefix string = ",\"moon_id\":"
@@ -154,26 +164,6 @@ func easyjsonD1506562EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.Int32(int32(in.MoonId))
 	}
 	if true {
-		const prefix string = ",\"extraction_start_time\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.ExtractionStartTime).MarshalJSON())
-	}
-	if true {
-		const prefix string = ",\"chunk_arrival_time\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.ChunkArrivalTime).MarshalJSON())
-	}
-	if true {
 		const prefix string = ",\"natural_decay_time\":"
 		if first {
 			first = false
@@ -182,6 +172,16 @@ func easyjsonD1506562EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Raw((in.NaturalDecayTime).MarshalJSON())
+	}
+	if in.StructureId != 0 {
+		const prefix string = ",\"structure_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.StructureId))
 	}
 	out.RawByte('}')
 }

@@ -103,18 +103,18 @@ func easyjsonB042087bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 			continue
 		}
 		switch key {
-		case "solar_system_id":
-			out.SolarSystemId = int32(in.Int32())
-		case "owner_faction_id":
-			out.OwnerFactionId = int32(in.Int32())
+		case "contested":
+			out.Contested = bool(in.Bool())
 		case "occupier_faction_id":
 			out.OccupierFactionId = int32(in.Int32())
+		case "owner_faction_id":
+			out.OwnerFactionId = int32(in.Int32())
+		case "solar_system_id":
+			out.SolarSystemId = int32(in.Int32())
 		case "victory_points":
 			out.VictoryPoints = int32(in.Int32())
 		case "victory_points_threshold":
 			out.VictoryPointsThreshold = int32(in.Int32())
-		case "contested":
-			out.Contested = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,15 +129,25 @@ func easyjsonB042087bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.SolarSystemId != 0 {
-		const prefix string = ",\"solar_system_id\":"
+	if in.Contested {
+		const prefix string = ",\"contested\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.SolarSystemId))
+		out.Bool(bool(in.Contested))
+	}
+	if in.OccupierFactionId != 0 {
+		const prefix string = ",\"occupier_faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.OccupierFactionId))
 	}
 	if in.OwnerFactionId != 0 {
 		const prefix string = ",\"owner_faction_id\":"
@@ -149,15 +159,15 @@ func easyjsonB042087bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.OwnerFactionId))
 	}
-	if in.OccupierFactionId != 0 {
-		const prefix string = ",\"occupier_faction_id\":"
+	if in.SolarSystemId != 0 {
+		const prefix string = ",\"solar_system_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.OccupierFactionId))
+		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.VictoryPoints != 0 {
 		const prefix string = ",\"victory_points\":"
@@ -178,16 +188,6 @@ func easyjsonB042087bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.VictoryPointsThreshold))
-	}
-	if in.Contested {
-		const prefix string = ",\"contested\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.Contested))
 	}
 	out.RawByte('}')
 }

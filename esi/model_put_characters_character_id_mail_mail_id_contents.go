@@ -29,6 +29,6 @@ type PutCharactersCharacterIdMailMailIdContentsList []PutCharactersCharacterIdMa
 /* contents object */
 //easyjson:json
 type PutCharactersCharacterIdMailMailIdContents struct {
-	Read   bool    `json:"read,omitempty"`   /* Whether the mail is flagged as read */
 	Labels []int32 `json:"labels,omitempty"` /* Labels to assign to the mail. Pre-existing labels are unassigned. */
+	Read   bool    `json:"read,omitempty"`   /* Whether the mail is flagged as read */
 }

@@ -103,8 +103,6 @@ func easyjson6b8ca5bfDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 			continue
 		}
 		switch key {
-		case "subject":
-			out.Subject = string(in.String())
 		case "body":
 			out.Body = string(in.String())
 		case "recipients":
@@ -130,10 +128,12 @@ func easyjson6b8ca5bfDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				in.Delim(']')
 			}
-		case "to_mailing_list_id":
-			out.ToMailingListId = int32(in.Int32())
+		case "subject":
+			out.Subject = string(in.String())
 		case "to_corp_or_alliance_id":
 			out.ToCorpOrAllianceId = int32(in.Int32())
+		case "to_mailing_list_id":
+			out.ToMailingListId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -148,16 +148,6 @@ func easyjson6b8ca5bfEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Subject != "" {
-		const prefix string = ",\"subject\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Subject))
-	}
 	if in.Body != "" {
 		const prefix string = ",\"body\":"
 		if first {
@@ -187,15 +177,15 @@ func easyjson6b8ca5bfEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 			out.RawByte(']')
 		}
 	}
-	if in.ToMailingListId != 0 {
-		const prefix string = ",\"to_mailing_list_id\":"
+	if in.Subject != "" {
+		const prefix string = ",\"subject\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.ToMailingListId))
+		out.String(string(in.Subject))
 	}
 	if in.ToCorpOrAllianceId != 0 {
 		const prefix string = ",\"to_corp_or_alliance_id\":"
@@ -206,6 +196,16 @@ func easyjson6b8ca5bfEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.ToCorpOrAllianceId))
+	}
+	if in.ToMailingListId != 0 {
+		const prefix string = ",\"to_mailing_list_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ToMailingListId))
 	}
 	out.RawByte('}')
 }

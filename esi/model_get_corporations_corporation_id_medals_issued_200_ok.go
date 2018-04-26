@@ -33,10 +33,10 @@ type GetCorporationsCorporationIdMedalsIssued200OkList []GetCorporationsCorporat
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdMedalsIssued200Ok struct {
-	MedalId     int32     `json:"medal_id,omitempty"`     /* medal_id integer */
 	CharacterId int32     `json:"character_id,omitempty"` /* ID of the character who was rewarded this medal */
+	IssuedAt    time.Time `json:"issued_at,omitempty"`    /* issued_at string */
+	IssuerId    int32     `json:"issuer_id,omitempty"`    /* ID of the character who issued the medal */
+	MedalId     int32     `json:"medal_id,omitempty"`     /* medal_id integer */
 	Reason      string    `json:"reason,omitempty"`       /* reason string */
 	Status      string    `json:"status,omitempty"`       /* status string */
-	IssuerId    int32     `json:"issuer_id,omitempty"`    /* ID of the character who issued the medal */
-	IssuedAt    time.Time `json:"issued_at,omitempty"`    /* issued_at string */
 }

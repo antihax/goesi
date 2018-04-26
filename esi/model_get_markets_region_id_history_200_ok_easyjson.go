@@ -103,18 +103,18 @@ func easyjson7c5b8388DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetM
 			continue
 		}
 		switch key {
+		case "average":
+			out.Average = float64(in.Float64())
 		case "date":
 			out.Date = string(in.String())
+		case "highest":
+			out.Highest = float64(in.Float64())
+		case "lowest":
+			out.Lowest = float64(in.Float64())
 		case "order_count":
 			out.OrderCount = int64(in.Int64())
 		case "volume":
 			out.Volume = int64(in.Int64())
-		case "highest":
-			out.Highest = float64(in.Float64())
-		case "average":
-			out.Average = float64(in.Float64())
-		case "lowest":
-			out.Lowest = float64(in.Float64())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,6 +129,16 @@ func easyjson7c5b8388EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Average != 0 {
+		const prefix string = ",\"average\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.Average))
+	}
 	if in.Date != "" {
 		const prefix string = ",\"date\":"
 		if first {
@@ -138,6 +148,26 @@ func easyjson7c5b8388EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Date))
+	}
+	if in.Highest != 0 {
+		const prefix string = ",\"highest\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.Highest))
+	}
+	if in.Lowest != 0 {
+		const prefix string = ",\"lowest\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.Lowest))
 	}
 	if in.OrderCount != 0 {
 		const prefix string = ",\"order_count\":"
@@ -158,36 +188,6 @@ func easyjson7c5b8388EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.Volume))
-	}
-	if in.Highest != 0 {
-		const prefix string = ",\"highest\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Highest))
-	}
-	if in.Average != 0 {
-		const prefix string = ",\"average\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Average))
-	}
-	if in.Lowest != 0 {
-		const prefix string = ",\"lowest\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Lowest))
 	}
 	out.RawByte('}')
 }

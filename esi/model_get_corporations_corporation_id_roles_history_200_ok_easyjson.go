@@ -103,39 +103,14 @@ func easyjson1c7af11eDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "character_id":
-			out.CharacterId = int32(in.Int32())
 		case "changed_at":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.ChangedAt).UnmarshalJSON(data))
 			}
+		case "character_id":
+			out.CharacterId = int32(in.Int32())
 		case "issuer_id":
 			out.IssuerId = int32(in.Int32())
-		case "role_type":
-			out.RoleType = string(in.String())
-		case "old_roles":
-			if in.IsNull() {
-				in.Skip()
-				out.OldRoles = nil
-			} else {
-				in.Delim('[')
-				if out.OldRoles == nil {
-					if !in.IsDelim(']') {
-						out.OldRoles = make([]string, 0, 4)
-					} else {
-						out.OldRoles = []string{}
-					}
-				} else {
-					out.OldRoles = (out.OldRoles)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v4 string
-					v4 = string(in.String())
-					out.OldRoles = append(out.OldRoles, v4)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
 		case "new_roles":
 			if in.IsNull() {
 				in.Skip()
@@ -152,13 +127,38 @@ func easyjson1c7af11eDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 					out.NewRoles = (out.NewRoles)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v5 string
-					v5 = string(in.String())
-					out.NewRoles = append(out.NewRoles, v5)
+					var v4 string
+					v4 = string(in.String())
+					out.NewRoles = append(out.NewRoles, v4)
 					in.WantComma()
 				}
 				in.Delim(']')
 			}
+		case "old_roles":
+			if in.IsNull() {
+				in.Skip()
+				out.OldRoles = nil
+			} else {
+				in.Delim('[')
+				if out.OldRoles == nil {
+					if !in.IsDelim(']') {
+						out.OldRoles = make([]string, 0, 4)
+					} else {
+						out.OldRoles = []string{}
+					}
+				} else {
+					out.OldRoles = (out.OldRoles)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v5 string
+					v5 = string(in.String())
+					out.OldRoles = append(out.OldRoles, v5)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "role_type":
+			out.RoleType = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -173,16 +173,6 @@ func easyjson1c7af11eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.CharacterId != 0 {
-		const prefix string = ",\"character_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.CharacterId))
-	}
 	if true {
 		const prefix string = ",\"changed_at\":"
 		if first {
@@ -192,6 +182,16 @@ func easyjson1c7af11eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Raw((in.ChangedAt).MarshalJSON())
+	}
+	if in.CharacterId != 0 {
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CharacterId))
 	}
 	if in.IssuerId != 0 {
 		const prefix string = ",\"issuer_id\":"
@@ -203,15 +203,24 @@ func easyjson1c7af11eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.IssuerId))
 	}
-	if in.RoleType != "" {
-		const prefix string = ",\"role_type\":"
+	if len(in.NewRoles) != 0 {
+		const prefix string = ",\"new_roles\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.RoleType))
+		{
+			out.RawByte('[')
+			for v6, v7 := range in.NewRoles {
+				if v6 > 0 {
+					out.RawByte(',')
+				}
+				out.String(string(v7))
+			}
+			out.RawByte(']')
+		}
 	}
 	if len(in.OldRoles) != 0 {
 		const prefix string = ",\"old_roles\":"
@@ -223,26 +232,7 @@ func easyjson1c7af11eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v6, v7 := range in.OldRoles {
-				if v6 > 0 {
-					out.RawByte(',')
-				}
-				out.String(string(v7))
-			}
-			out.RawByte(']')
-		}
-	}
-	if len(in.NewRoles) != 0 {
-		const prefix string = ",\"new_roles\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v8, v9 := range in.NewRoles {
+			for v8, v9 := range in.OldRoles {
 				if v8 > 0 {
 					out.RawByte(',')
 				}
@@ -250,6 +240,16 @@ func easyjson1c7af11eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.RoleType != "" {
+		const prefix string = ",\"role_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.RoleType))
 	}
 	out.RawByte('}')
 }

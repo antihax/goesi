@@ -33,6 +33,6 @@ type GetCharactersCharacterIdOpportunities200OkList []GetCharactersCharacterIdOp
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdOpportunities200Ok struct {
-	TaskId      int32     `json:"task_id,omitempty"`      /* task_id integer */
 	CompletedAt time.Time `json:"completed_at,omitempty"` /* completed_at string */
+	TaskId      int32     `json:"task_id,omitempty"`      /* task_id integer */
 }

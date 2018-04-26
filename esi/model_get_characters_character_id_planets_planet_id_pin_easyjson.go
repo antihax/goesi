@@ -103,20 +103,6 @@ func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "latitude":
-			out.Latitude = float32(in.Float32())
-		case "longitude":
-			out.Longitude = float32(in.Float32())
-		case "pin_id":
-			out.PinId = int64(in.Int64())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "schematic_id":
-			out.SchematicId = int32(in.Int32())
-		case "extractor_details":
-			(out.ExtractorDetails).UnmarshalEasyJSON(in)
-		case "factory_details":
-			(out.FactoryDetails).UnmarshalEasyJSON(in)
 		case "contents":
 			if in.IsNull() {
 				in.Skip()
@@ -140,18 +126,32 @@ func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "install_time":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.InstallTime).UnmarshalJSON(data))
-			}
 		case "expiry_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.ExpiryTime).UnmarshalJSON(data))
+			}
+		case "extractor_details":
+			(out.ExtractorDetails).UnmarshalEasyJSON(in)
+		case "factory_details":
+			(out.FactoryDetails).UnmarshalEasyJSON(in)
+		case "install_time":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.InstallTime).UnmarshalJSON(data))
 			}
 		case "last_cycle_start":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.LastCycleStart).UnmarshalJSON(data))
 			}
+		case "latitude":
+			out.Latitude = float32(in.Float32())
+		case "longitude":
+			out.Longitude = float32(in.Float32())
+		case "pin_id":
+			out.PinId = int64(in.Int64())
+		case "schematic_id":
+			out.SchematicId = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -166,6 +166,75 @@ func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if len(in.Contents) != 0 {
+		const prefix string = ",\"contents\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v5, v6 := range in.Contents {
+				if v5 > 0 {
+					out.RawByte(',')
+				}
+				(v6).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
+	}
+	if true {
+		const prefix string = ",\"expiry_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.ExpiryTime).MarshalJSON())
+	}
+	if true {
+		const prefix string = ",\"extractor_details\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		(in.ExtractorDetails).MarshalEasyJSON(out)
+	}
+	if true {
+		const prefix string = ",\"factory_details\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		(in.FactoryDetails).MarshalEasyJSON(out)
+	}
+	if true {
+		const prefix string = ",\"install_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.InstallTime).MarshalJSON())
+	}
+	if true {
+		const prefix string = ",\"last_cycle_start\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.LastCycleStart).MarshalJSON())
+	}
 	if in.Latitude != 0 {
 		const prefix string = ",\"latitude\":"
 		if first {
@@ -196,16 +265,6 @@ func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.PinId))
 	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
 	if in.SchematicId != 0 {
 		const prefix string = ",\"schematic_id\":"
 		if first {
@@ -216,74 +275,15 @@ func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.SchematicId))
 	}
-	if true {
-		const prefix string = ",\"extractor_details\":"
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		(in.ExtractorDetails).MarshalEasyJSON(out)
-	}
-	if true {
-		const prefix string = ",\"factory_details\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		(in.FactoryDetails).MarshalEasyJSON(out)
-	}
-	if len(in.Contents) != 0 {
-		const prefix string = ",\"contents\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v5, v6 := range in.Contents {
-				if v5 > 0 {
-					out.RawByte(',')
-				}
-				(v6).MarshalEasyJSON(out)
-			}
-			out.RawByte(']')
-		}
-	}
-	if true {
-		const prefix string = ",\"install_time\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.InstallTime).MarshalJSON())
-	}
-	if true {
-		const prefix string = ",\"expiry_time\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.ExpiryTime).MarshalJSON())
-	}
-	if true {
-		const prefix string = ",\"last_cycle_start\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.LastCycleStart).MarshalJSON())
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

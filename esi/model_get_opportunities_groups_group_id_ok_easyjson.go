@@ -103,12 +103,35 @@ func easyjson2bed092DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetOp
 			continue
 		}
 		switch key {
+		case "connected_groups":
+			if in.IsNull() {
+				in.Skip()
+				out.ConnectedGroups = nil
+			} else {
+				in.Delim('[')
+				if out.ConnectedGroups == nil {
+					if !in.IsDelim(']') {
+						out.ConnectedGroups = make([]int32, 0, 16)
+					} else {
+						out.ConnectedGroups = []int32{}
+					}
+				} else {
+					out.ConnectedGroups = (out.ConnectedGroups)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v4 int32
+					v4 = int32(in.Int32())
+					out.ConnectedGroups = append(out.ConnectedGroups, v4)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "description":
+			out.Description = string(in.String())
 		case "group_id":
 			out.GroupId = int32(in.Int32())
 		case "name":
 			out.Name = string(in.String())
-		case "description":
-			out.Description = string(in.String())
 		case "notification":
 			out.Notification = string(in.String())
 		case "required_tasks":
@@ -127,32 +150,9 @@ func easyjson2bed092DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetOp
 					out.RequiredTasks = (out.RequiredTasks)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v4 int32
-					v4 = int32(in.Int32())
-					out.RequiredTasks = append(out.RequiredTasks, v4)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
-		case "connected_groups":
-			if in.IsNull() {
-				in.Skip()
-				out.ConnectedGroups = nil
-			} else {
-				in.Delim('[')
-				if out.ConnectedGroups == nil {
-					if !in.IsDelim(']') {
-						out.ConnectedGroups = make([]int32, 0, 16)
-					} else {
-						out.ConnectedGroups = []int32{}
-					}
-				} else {
-					out.ConnectedGroups = (out.ConnectedGroups)[:0]
-				}
-				for !in.IsDelim(']') {
 					var v5 int32
 					v5 = int32(in.Int32())
-					out.ConnectedGroups = append(out.ConnectedGroups, v5)
+					out.RequiredTasks = append(out.RequiredTasks, v5)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -171,6 +171,35 @@ func easyjson2bed092EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetO
 	out.RawByte('{')
 	first := true
 	_ = first
+	if len(in.ConnectedGroups) != 0 {
+		const prefix string = ",\"connected_groups\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v6, v7 := range in.ConnectedGroups {
+				if v6 > 0 {
+					out.RawByte(',')
+				}
+				out.Int32(int32(v7))
+			}
+			out.RawByte(']')
+		}
+	}
+	if in.Description != "" {
+		const prefix string = ",\"description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Description))
+	}
 	if in.GroupId != 0 {
 		const prefix string = ",\"group_id\":"
 		if first {
@@ -190,16 +219,6 @@ func easyjson2bed092EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetO
 			out.RawString(prefix)
 		}
 		out.String(string(in.Name))
-	}
-	if in.Description != "" {
-		const prefix string = ",\"description\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Description))
 	}
 	if in.Notification != "" {
 		const prefix string = ",\"notification\":"
@@ -221,26 +240,7 @@ func easyjson2bed092EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetO
 		}
 		{
 			out.RawByte('[')
-			for v6, v7 := range in.RequiredTasks {
-				if v6 > 0 {
-					out.RawByte(',')
-				}
-				out.Int32(int32(v7))
-			}
-			out.RawByte(']')
-		}
-	}
-	if len(in.ConnectedGroups) != 0 {
-		const prefix string = ",\"connected_groups\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v8, v9 := range in.ConnectedGroups {
+			for v8, v9 := range in.RequiredTasks {
 				if v8 > 0 {
 					out.RawByte(',')
 				}

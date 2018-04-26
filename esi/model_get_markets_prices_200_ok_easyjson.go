@@ -103,12 +103,12 @@ func easyjsonC80ffb65DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetM
 			continue
 		}
 		switch key {
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "average_price":
-			out.AveragePrice = float64(in.Float64())
 		case "adjusted_price":
 			out.AdjustedPrice = float64(in.Float64())
+		case "average_price":
+			out.AveragePrice = float64(in.Float64())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -123,15 +123,15 @@ func easyjsonC80ffb65EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
+	if in.AdjustedPrice != 0 {
+		const prefix string = ",\"adjusted_price\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.TypeId))
+		out.Float64(float64(in.AdjustedPrice))
 	}
 	if in.AveragePrice != 0 {
 		const prefix string = ",\"average_price\":"
@@ -143,15 +143,15 @@ func easyjsonC80ffb65EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Float64(float64(in.AveragePrice))
 	}
-	if in.AdjustedPrice != 0 {
-		const prefix string = ",\"adjusted_price\":"
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float64(float64(in.AdjustedPrice))
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

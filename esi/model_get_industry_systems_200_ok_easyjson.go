@@ -103,8 +103,6 @@ func easyjsonA4a1cff6DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetI
 			continue
 		}
 		switch key {
-		case "solar_system_id":
-			out.SolarSystemId = int32(in.Int32())
 		case "cost_indices":
 			if in.IsNull() {
 				in.Skip()
@@ -128,6 +126,8 @@ func easyjsonA4a1cff6DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetI
 				}
 				in.Delim(']')
 			}
+		case "solar_system_id":
+			out.SolarSystemId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -142,16 +142,6 @@ func easyjsonA4a1cff6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.SolarSystemId != 0 {
-		const prefix string = ",\"solar_system_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.SolarSystemId))
-	}
 	if len(in.CostIndices) != 0 {
 		const prefix string = ",\"cost_indices\":"
 		if first {
@@ -170,6 +160,16 @@ func easyjsonA4a1cff6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.SolarSystemId != 0 {
+		const prefix string = ",\"solar_system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SolarSystemId))
 	}
 	out.RawByte('}')
 }

@@ -103,16 +103,16 @@ func easyjson9f888528DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
 		case "enlisted_on":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.EnlistedOn).UnmarshalJSON(data))
 			}
-		case "pilots":
-			out.Pilots = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
 		case "kills":
 			(out.Kills).UnmarshalEasyJSON(in)
+		case "pilots":
+			out.Pilots = int32(in.Int32())
 		case "victory_points":
 			easyjson9f888528DecodeGithubComAntihaxGoesiEsi2(in, &out.VictoryPoints)
 		default:
@@ -129,6 +129,16 @@ func easyjson9f888528EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if true {
+		const prefix string = ",\"enlisted_on\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.EnlistedOn).MarshalJSON())
+	}
 	if in.FactionId != 0 {
 		const prefix string = ",\"faction_id\":"
 		if first {
@@ -140,14 +150,14 @@ func easyjson9f888528EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.Int32(int32(in.FactionId))
 	}
 	if true {
-		const prefix string = ",\"enlisted_on\":"
+		const prefix string = ",\"kills\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.EnlistedOn).MarshalJSON())
+		(in.Kills).MarshalEasyJSON(out)
 	}
 	if in.Pilots != 0 {
 		const prefix string = ",\"pilots\":"
@@ -158,16 +168,6 @@ func easyjson9f888528EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Pilots))
-	}
-	if true {
-		const prefix string = ",\"kills\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		(in.Kills).MarshalEasyJSON(out)
 	}
 	if true {
 		const prefix string = ",\"victory_points\":"
@@ -224,12 +224,12 @@ func easyjson9f888528DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "yesterday":
-			out.Yesterday = int32(in.Int32())
 		case "last_week":
 			out.LastWeek = int32(in.Int32())
 		case "total":
 			out.Total = int32(in.Int32())
+		case "yesterday":
+			out.Yesterday = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -244,16 +244,6 @@ func easyjson9f888528EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Yesterday != 0 {
-		const prefix string = ",\"yesterday\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Yesterday))
-	}
 	if in.LastWeek != 0 {
 		const prefix string = ",\"last_week\":"
 		if first {
@@ -273,6 +263,16 @@ func easyjson9f888528EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Total))
+	}
+	if in.Yesterday != 0 {
+		const prefix string = ",\"yesterday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Yesterday))
 	}
 	out.RawByte('}')
 }

@@ -103,18 +103,18 @@ func easyjson9e70d5c7DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "record_id":
-			out.RecordId = int64(in.Int64())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
+		case "is_included":
+			out.IsIncluded = bool(in.Bool())
+		case "is_singleton":
+			out.IsSingleton = bool(in.Bool())
 		case "quantity":
 			out.Quantity = int32(in.Int32())
 		case "raw_quantity":
 			out.RawQuantity = int32(in.Int32())
-		case "is_singleton":
-			out.IsSingleton = bool(in.Bool())
-		case "is_included":
-			out.IsIncluded = bool(in.Bool())
+		case "record_id":
+			out.RecordId = int64(in.Int64())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,25 +129,25 @@ func easyjson9e70d5c7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.RecordId != 0 {
-		const prefix string = ",\"record_id\":"
+	if in.IsIncluded {
+		const prefix string = ",\"is_included\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int64(int64(in.RecordId))
+		out.Bool(bool(in.IsIncluded))
 	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
+	if in.IsSingleton {
+		const prefix string = ",\"is_singleton\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.TypeId))
+		out.Bool(bool(in.IsSingleton))
 	}
 	if in.Quantity != 0 {
 		const prefix string = ",\"quantity\":"
@@ -169,25 +169,25 @@ func easyjson9e70d5c7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.RawQuantity))
 	}
-	if in.IsSingleton {
-		const prefix string = ",\"is_singleton\":"
+	if in.RecordId != 0 {
+		const prefix string = ",\"record_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Bool(bool(in.IsSingleton))
+		out.Int64(int64(in.RecordId))
 	}
-	if in.IsIncluded {
-		const prefix string = ",\"is_included\":"
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Bool(bool(in.IsIncluded))
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

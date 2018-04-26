@@ -103,46 +103,32 @@ func easyjson315d323dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetD
 			continue
 		}
 		switch key {
-		case "effect_id":
-			out.EffectId = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		case "display_name":
-			out.DisplayName = string(in.String())
 		case "description":
 			out.Description = string(in.String())
-		case "icon_id":
-			out.IconId = int32(in.Int32())
-		case "effect_category":
-			out.EffectCategory = int32(in.Int32())
-		case "pre_expression":
-			out.PreExpression = int32(in.Int32())
-		case "post_expression":
-			out.PostExpression = int32(in.Int32())
-		case "is_offensive":
-			out.IsOffensive = bool(in.Bool())
-		case "is_assistance":
-			out.IsAssistance = bool(in.Bool())
 		case "disallow_auto_repeat":
 			out.DisallowAutoRepeat = bool(in.Bool())
-		case "published":
-			out.Published = bool(in.Bool())
-		case "is_warp_safe":
-			out.IsWarpSafe = bool(in.Bool())
-		case "range_chance":
-			out.RangeChance = bool(in.Bool())
-		case "electronic_chance":
-			out.ElectronicChance = bool(in.Bool())
-		case "duration_attribute_id":
-			out.DurationAttributeId = int32(in.Int32())
-		case "tracking_speed_attribute_id":
-			out.TrackingSpeedAttributeId = int32(in.Int32())
 		case "discharge_attribute_id":
 			out.DischargeAttributeId = int32(in.Int32())
-		case "range_attribute_id":
-			out.RangeAttributeId = int32(in.Int32())
+		case "display_name":
+			out.DisplayName = string(in.String())
+		case "duration_attribute_id":
+			out.DurationAttributeId = int32(in.Int32())
+		case "effect_category":
+			out.EffectCategory = int32(in.Int32())
+		case "effect_id":
+			out.EffectId = int32(in.Int32())
+		case "electronic_chance":
+			out.ElectronicChance = bool(in.Bool())
 		case "falloff_attribute_id":
 			out.FalloffAttributeId = int32(in.Int32())
+		case "icon_id":
+			out.IconId = int32(in.Int32())
+		case "is_assistance":
+			out.IsAssistance = bool(in.Bool())
+		case "is_offensive":
+			out.IsOffensive = bool(in.Bool())
+		case "is_warp_safe":
+			out.IsWarpSafe = bool(in.Bool())
 		case "modifiers":
 			if in.IsNull() {
 				in.Skip()
@@ -166,6 +152,20 @@ func easyjson315d323dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetD
 				}
 				in.Delim(']')
 			}
+		case "name":
+			out.Name = string(in.String())
+		case "post_expression":
+			out.PostExpression = int32(in.Int32())
+		case "pre_expression":
+			out.PreExpression = int32(in.Int32())
+		case "published":
+			out.Published = bool(in.Bool())
+		case "range_attribute_id":
+			out.RangeAttributeId = int32(in.Int32())
+		case "range_chance":
+			out.RangeChance = bool(in.Bool())
+		case "tracking_speed_attribute_id":
+			out.TrackingSpeedAttributeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -180,36 +180,6 @@ func easyjson315d323dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.EffectId != 0 {
-		const prefix string = ",\"effect_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.EffectId))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
-	if in.DisplayName != "" {
-		const prefix string = ",\"display_name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.DisplayName))
-	}
 	if in.Description != "" {
 		const prefix string = ",\"description\":"
 		if first {
@@ -219,66 +189,6 @@ func easyjson315d323dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Description))
-	}
-	if in.IconId != 0 {
-		const prefix string = ",\"icon_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.IconId))
-	}
-	if in.EffectCategory != 0 {
-		const prefix string = ",\"effect_category\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.EffectCategory))
-	}
-	if in.PreExpression != 0 {
-		const prefix string = ",\"pre_expression\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.PreExpression))
-	}
-	if in.PostExpression != 0 {
-		const prefix string = ",\"post_expression\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.PostExpression))
-	}
-	if in.IsOffensive {
-		const prefix string = ",\"is_offensive\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.IsOffensive))
-	}
-	if in.IsAssistance {
-		const prefix string = ",\"is_assistance\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.IsAssistance))
 	}
 	if in.DisallowAutoRepeat {
 		const prefix string = ",\"disallow_auto_repeat\":"
@@ -290,45 +200,25 @@ func easyjson315d323dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Bool(bool(in.DisallowAutoRepeat))
 	}
-	if in.Published {
-		const prefix string = ",\"published\":"
+	if in.DischargeAttributeId != 0 {
+		const prefix string = ",\"discharge_attribute_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Bool(bool(in.Published))
+		out.Int32(int32(in.DischargeAttributeId))
 	}
-	if in.IsWarpSafe {
-		const prefix string = ",\"is_warp_safe\":"
+	if in.DisplayName != "" {
+		const prefix string = ",\"display_name\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Bool(bool(in.IsWarpSafe))
-	}
-	if in.RangeChance {
-		const prefix string = ",\"range_chance\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.RangeChance))
-	}
-	if in.ElectronicChance {
-		const prefix string = ",\"electronic_chance\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.ElectronicChance))
+		out.String(string(in.DisplayName))
 	}
 	if in.DurationAttributeId != 0 {
 		const prefix string = ",\"duration_attribute_id\":"
@@ -340,35 +230,35 @@ func easyjson315d323dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.DurationAttributeId))
 	}
-	if in.TrackingSpeedAttributeId != 0 {
-		const prefix string = ",\"tracking_speed_attribute_id\":"
+	if in.EffectCategory != 0 {
+		const prefix string = ",\"effect_category\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.TrackingSpeedAttributeId))
+		out.Int32(int32(in.EffectCategory))
 	}
-	if in.DischargeAttributeId != 0 {
-		const prefix string = ",\"discharge_attribute_id\":"
+	if in.EffectId != 0 {
+		const prefix string = ",\"effect_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.DischargeAttributeId))
+		out.Int32(int32(in.EffectId))
 	}
-	if in.RangeAttributeId != 0 {
-		const prefix string = ",\"range_attribute_id\":"
+	if in.ElectronicChance {
+		const prefix string = ",\"electronic_chance\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.RangeAttributeId))
+		out.Bool(bool(in.ElectronicChance))
 	}
 	if in.FalloffAttributeId != 0 {
 		const prefix string = ",\"falloff_attribute_id\":"
@@ -379,6 +269,46 @@ func easyjson315d323dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.FalloffAttributeId))
+	}
+	if in.IconId != 0 {
+		const prefix string = ",\"icon_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.IconId))
+	}
+	if in.IsAssistance {
+		const prefix string = ",\"is_assistance\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.IsAssistance))
+	}
+	if in.IsOffensive {
+		const prefix string = ",\"is_offensive\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.IsOffensive))
+	}
+	if in.IsWarpSafe {
+		const prefix string = ",\"is_warp_safe\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.IsWarpSafe))
 	}
 	if len(in.Modifiers) != 0 {
 		const prefix string = ",\"modifiers\":"
@@ -398,6 +328,76 @@ func easyjson315d323dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	if in.PostExpression != 0 {
+		const prefix string = ",\"post_expression\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.PostExpression))
+	}
+	if in.PreExpression != 0 {
+		const prefix string = ",\"pre_expression\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.PreExpression))
+	}
+	if in.Published {
+		const prefix string = ",\"published\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.Published))
+	}
+	if in.RangeAttributeId != 0 {
+		const prefix string = ",\"range_attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.RangeAttributeId))
+	}
+	if in.RangeChance {
+		const prefix string = ",\"range_chance\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.RangeChance))
+	}
+	if in.TrackingSpeedAttributeId != 0 {
+		const prefix string = ",\"tracking_speed_attribute_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TrackingSpeedAttributeId))
 	}
 	out.RawByte('}')
 }

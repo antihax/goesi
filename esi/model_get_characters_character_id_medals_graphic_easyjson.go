@@ -103,14 +103,14 @@ func easyjson6d4c19fbDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "part":
-			out.Part = int32(in.Int32())
-		case "layer":
-			out.Layer = int32(in.Int32())
-		case "graphic":
-			out.Graphic = string(in.String())
 		case "color":
 			out.Color = int32(in.Int32())
+		case "graphic":
+			out.Graphic = string(in.String())
+		case "layer":
+			out.Layer = int32(in.Int32())
+		case "part":
+			out.Part = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -125,25 +125,15 @@ func easyjson6d4c19fbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Part != 0 {
-		const prefix string = ",\"part\":"
+	if in.Color != 0 {
+		const prefix string = ",\"color\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.Part))
-	}
-	if in.Layer != 0 {
-		const prefix string = ",\"layer\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Layer))
+		out.Int32(int32(in.Color))
 	}
 	if in.Graphic != "" {
 		const prefix string = ",\"graphic\":"
@@ -155,15 +145,25 @@ func easyjson6d4c19fbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Graphic))
 	}
-	if in.Color != 0 {
-		const prefix string = ",\"color\":"
+	if in.Layer != 0 {
+		const prefix string = ",\"layer\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.Color))
+		out.Int32(int32(in.Layer))
+	}
+	if in.Part != 0 {
+		const prefix string = ",\"part\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Part))
 	}
 	out.RawByte('}')
 }

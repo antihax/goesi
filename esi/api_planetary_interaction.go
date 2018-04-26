@@ -48,6 +48,7 @@ Returns a list of all planetary colonies owned by a character.  ---  This route 
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdPlanetsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -56,10 +57,11 @@ Returns a list of all planetary colonies owned by a character.  ---  This route 
 */
 
 type GetCharactersCharacterIdPlanetsOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanets(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdPlanetsOpts) ([]GetCharactersCharacterIdPlanets200Ok, *http.Response, error) {
@@ -92,7 +94,7 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanets(ctx con
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -107,6 +109,9 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanets(ctx con
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -232,6 +237,7 @@ Returns full details on the layout of a single planetary colony, including links
  * @param planetId Planet id of the target planet
  * @param optional nil or *GetCharactersCharacterIdPlanetsPlanetIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -240,10 +246,11 @@ Returns full details on the layout of a single planetary colony, including links
 */
 
 type GetCharactersCharacterIdPlanetsPlanetIdOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId(ctx context.Context, characterId int32, planetId int32, localVarOptionals *GetCharactersCharacterIdPlanetsPlanetIdOpts) (GetCharactersCharacterIdPlanetsPlanetIdOk, *http.Response, error) {
@@ -277,7 +284,7 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -292,6 +299,9 @@ func (a *PlanetaryInteractionApiService) GetCharactersCharacterIdPlanetsPlanetId
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -427,6 +437,7 @@ List customs offices owned by a corporation  ---  This route is cached for up to
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdCustomsOfficesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -436,11 +447,12 @@ List customs offices owned by a corporation  ---  This route is cached for up to
 */
 
 type GetCorporationsCorporationIdCustomsOfficesOpts struct {
-	Datasource optional.String
-	Page       optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *PlanetaryInteractionApiService) GetCorporationsCorporationIdCustomsOffices(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdCustomsOfficesOpts) ([]GetCorporationsCorporationIdCustomsOffices200Ok, *http.Response, error) {
@@ -476,7 +488,7 @@ func (a *PlanetaryInteractionApiService) GetCorporationsCorporationIdCustomsOffi
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -491,6 +503,9 @@ func (a *PlanetaryInteractionApiService) GetCorporationsCorporationIdCustomsOffi
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -615,6 +630,7 @@ Get information on a planetary factory schematic  ---  This route is cached for 
  * @param schematicId A PI schematic ID
  * @param optional nil or *GetUniverseSchematicsSchematicIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
@@ -622,9 +638,10 @@ Get information on a planetary factory schematic  ---  This route is cached for 
 */
 
 type GetUniverseSchematicsSchematicIdOpts struct {
-	Datasource optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *PlanetaryInteractionApiService) GetUniverseSchematicsSchematicId(ctx context.Context, schematicId int32, localVarOptionals *GetUniverseSchematicsSchematicIdOpts) (GetUniverseSchematicsSchematicIdOk, *http.Response, error) {
@@ -651,7 +668,7 @@ func (a *PlanetaryInteractionApiService) GetUniverseSchematicsSchematicId(ctx co
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -666,6 +683,9 @@ func (a *PlanetaryInteractionApiService) GetUniverseSchematicsSchematicId(ctx co
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")

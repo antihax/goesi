@@ -103,18 +103,18 @@ func easyjson5567d6bcDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "id":
-			out.Id = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
 		case "bloodline_id":
 			out.BloodlineId = int32(in.Int32())
 		case "description":
 			out.Description = string(in.String())
-		case "short_description":
-			out.ShortDescription = string(in.String())
 		case "icon_id":
 			out.IconId = int32(in.Int32())
+		case "id":
+			out.Id = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		case "short_description":
+			out.ShortDescription = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -129,26 +129,6 @@ func easyjson5567d6bcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Id != 0 {
-		const prefix string = ",\"id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Id))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
 	if in.BloodlineId != 0 {
 		const prefix string = ",\"bloodline_id\":"
 		if first {
@@ -169,16 +149,6 @@ func easyjson5567d6bcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Description))
 	}
-	if in.ShortDescription != "" {
-		const prefix string = ",\"short_description\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.ShortDescription))
-	}
 	if in.IconId != 0 {
 		const prefix string = ",\"icon_id\":"
 		if first {
@@ -188,6 +158,36 @@ func easyjson5567d6bcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.IconId))
+	}
+	if in.Id != 0 {
+		const prefix string = ",\"id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Id))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	if in.ShortDescription != "" {
+		const prefix string = ",\"short_description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.ShortDescription))
 	}
 	out.RawByte('}')
 }

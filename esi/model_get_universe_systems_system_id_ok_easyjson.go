@@ -103,20 +103,10 @@ func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "star_id":
-			out.StarId = int32(in.Int32())
-		case "system_id":
-			out.SystemId = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		case "position":
-			easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi2(in, &out.Position)
-		case "security_status":
-			out.SecurityStatus = float32(in.Float32())
-		case "security_class":
-			out.SecurityClass = string(in.String())
 		case "constellation_id":
 			out.ConstellationId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
 		case "planets":
 			if in.IsNull() {
 				in.Skip()
@@ -134,12 +124,20 @@ func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				for !in.IsDelim(']') {
 					var v4 GetUniverseSystemsSystemIdPlanet
-					easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi3(in, &v4)
+					easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Planets = append(out.Planets, v4)
 					in.WantComma()
 				}
 				in.Delim(']')
 			}
+		case "position":
+			easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi3(in, &out.Position)
+		case "security_class":
+			out.SecurityClass = string(in.String())
+		case "security_status":
+			out.SecurityStatus = float32(in.Float32())
+		case "star_id":
+			out.StarId = int32(in.Int32())
 		case "stargates":
 			if in.IsNull() {
 				in.Skip()
@@ -186,6 +184,8 @@ func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
+		case "system_id":
+			out.SystemId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -200,25 +200,15 @@ func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.StarId != 0 {
-		const prefix string = ",\"star_id\":"
+	if in.ConstellationId != 0 {
+		const prefix string = ",\"constellation_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.StarId))
-	}
-	if in.SystemId != 0 {
-		const prefix string = ",\"system_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.SystemId))
+		out.Int32(int32(in.ConstellationId))
 	}
 	if in.Name != "" {
 		const prefix string = ",\"name\":"
@@ -229,46 +219,6 @@ func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Name))
-	}
-	if true {
-		const prefix string = ",\"position\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi2(out, in.Position)
-	}
-	if in.SecurityStatus != 0 {
-		const prefix string = ",\"security_status\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.SecurityStatus))
-	}
-	if in.SecurityClass != "" {
-		const prefix string = ",\"security_class\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.SecurityClass))
-	}
-	if in.ConstellationId != 0 {
-		const prefix string = ",\"constellation_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ConstellationId))
 	}
 	if len(in.Planets) != 0 {
 		const prefix string = ",\"planets\":"
@@ -284,10 +234,50 @@ func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v7 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi3(out, v8)
+				easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi2(out, v8)
 			}
 			out.RawByte(']')
 		}
+	}
+	if true {
+		const prefix string = ",\"position\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi3(out, in.Position)
+	}
+	if in.SecurityClass != "" {
+		const prefix string = ",\"security_class\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.SecurityClass))
+	}
+	if in.SecurityStatus != 0 {
+		const prefix string = ",\"security_status\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.SecurityStatus))
+	}
+	if in.StarId != 0 {
+		const prefix string = ",\"star_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.StarId))
 	}
 	if len(in.Stargates) != 0 {
 		const prefix string = ",\"stargates\":"
@@ -327,6 +317,16 @@ func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
+	if in.SystemId != 0 {
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SystemId))
+	}
 	out.RawByte('}')
 }
 
@@ -353,138 +353,7 @@ func (v *GetUniverseSystemsSystemIdOk) UnmarshalJSON(data []byte) error {
 func (v *GetUniverseSystemsSystemIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetUniverseSystemsSystemIdPlanet) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "planet_id":
-			out.PlanetId = int32(in.Int32())
-		case "moons":
-			if in.IsNull() {
-				in.Skip()
-				out.Moons = nil
-			} else {
-				in.Delim('[')
-				if out.Moons == nil {
-					if !in.IsDelim(']') {
-						out.Moons = make([]int32, 0, 16)
-					} else {
-						out.Moons = []int32{}
-					}
-				} else {
-					out.Moons = (out.Moons)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v13 int32
-					v13 = int32(in.Int32())
-					out.Moons = append(out.Moons, v13)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
-		case "asteroid_belts":
-			if in.IsNull() {
-				in.Skip()
-				out.AsteroidBelts = nil
-			} else {
-				in.Delim('[')
-				if out.AsteroidBelts == nil {
-					if !in.IsDelim(']') {
-						out.AsteroidBelts = make([]int32, 0, 16)
-					} else {
-						out.AsteroidBelts = []int32{}
-					}
-				} else {
-					out.AsteroidBelts = (out.AsteroidBelts)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v14 int32
-					v14 = int32(in.Int32())
-					out.AsteroidBelts = append(out.AsteroidBelts, v14)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetUniverseSystemsSystemIdPlanet) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.PlanetId != 0 {
-		const prefix string = ",\"planet_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.PlanetId))
-	}
-	if len(in.Moons) != 0 {
-		const prefix string = ",\"moons\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v15, v16 := range in.Moons {
-				if v15 > 0 {
-					out.RawByte(',')
-				}
-				out.Int32(int32(v16))
-			}
-			out.RawByte(']')
-		}
-	}
-	if len(in.AsteroidBelts) != 0 {
-		const prefix string = ",\"asteroid_belts\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v17, v18 := range in.AsteroidBelts {
-				if v17 > 0 {
-					out.RawByte(',')
-				}
-				out.Int32(int32(v18))
-			}
-			out.RawByte(']')
-		}
-	}
-	out.RawByte('}')
-}
-func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetUniverseSystemsSystemIdPosition) {
+func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetUniverseSystemsSystemIdPosition) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -519,7 +388,7 @@ func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetU
 		in.Consumed()
 	}
 }
-func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetUniverseSystemsSystemIdPosition) {
+func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetUniverseSystemsSystemIdPosition) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -552,6 +421,137 @@ func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Float64(float64(in.Z))
+	}
+	out.RawByte('}')
+}
+func easyjsonF4e2485aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetUniverseSystemsSystemIdPlanet) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "asteroid_belts":
+			if in.IsNull() {
+				in.Skip()
+				out.AsteroidBelts = nil
+			} else {
+				in.Delim('[')
+				if out.AsteroidBelts == nil {
+					if !in.IsDelim(']') {
+						out.AsteroidBelts = make([]int32, 0, 16)
+					} else {
+						out.AsteroidBelts = []int32{}
+					}
+				} else {
+					out.AsteroidBelts = (out.AsteroidBelts)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v13 int32
+					v13 = int32(in.Int32())
+					out.AsteroidBelts = append(out.AsteroidBelts, v13)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "moons":
+			if in.IsNull() {
+				in.Skip()
+				out.Moons = nil
+			} else {
+				in.Delim('[')
+				if out.Moons == nil {
+					if !in.IsDelim(']') {
+						out.Moons = make([]int32, 0, 16)
+					} else {
+						out.Moons = []int32{}
+					}
+				} else {
+					out.Moons = (out.Moons)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v14 int32
+					v14 = int32(in.Int32())
+					out.Moons = append(out.Moons, v14)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "planet_id":
+			out.PlanetId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetUniverseSystemsSystemIdPlanet) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if len(in.AsteroidBelts) != 0 {
+		const prefix string = ",\"asteroid_belts\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v15, v16 := range in.AsteroidBelts {
+				if v15 > 0 {
+					out.RawByte(',')
+				}
+				out.Int32(int32(v16))
+			}
+			out.RawByte(']')
+		}
+	}
+	if len(in.Moons) != 0 {
+		const prefix string = ",\"moons\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v17, v18 := range in.Moons {
+				if v17 > 0 {
+					out.RawByte(',')
+				}
+				out.Int32(int32(v18))
+			}
+			out.RawByte(']')
+		}
+	}
+	if in.PlanetId != 0 {
+		const prefix string = ",\"planet_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.PlanetId))
 	}
 	out.RawByte('}')
 }

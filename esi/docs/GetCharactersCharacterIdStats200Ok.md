@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Year** | **int32** | Gregorian year for this set of aggregates | [default to null]
 **Character** | [**GetCharactersCharacterIdStatsCharacter**](get_characters_character_id_stats_character.md) |  | [optional] [default to null]
 **Combat** | [**GetCharactersCharacterIdStatsCombat**](get_characters_character_id_stats_combat.md) |  | [optional] [default to null]
 **Industry** | [**GetCharactersCharacterIdStatsIndustry**](get_characters_character_id_stats_industry.md) |  | [optional] [default to null]
@@ -16,6 +15,7 @@ Name | Type | Description | Notes
 **Pve** | [**GetCharactersCharacterIdStatsPve**](get_characters_character_id_stats_pve.md) |  | [optional] [default to null]
 **Social** | [**GetCharactersCharacterIdStatsSocial**](get_characters_character_id_stats_social.md) |  | [optional] [default to null]
 **Travel** | [**GetCharactersCharacterIdStatsTravel**](get_characters_character_id_stats_travel.md) |  | [optional] [default to null]
+**Year** | **int32** | Gregorian year for this set of aggregates | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

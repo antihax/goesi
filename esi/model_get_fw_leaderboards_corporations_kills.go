@@ -29,7 +29,7 @@ type GetFwLeaderboardsCorporationsKillsList []GetFwLeaderboardsCorporationsKills
 /* Top 10 rankings of corporations by number of kills from yesterday, last week and in total. */
 //easyjson:json
 type GetFwLeaderboardsCorporationsKills struct {
-	Yesterday   []GetFwLeaderboardsCorporationsYesterday   `json:"yesterday,omitempty"`    /* Top 10 ranking of corporations by kills in the past day */
-	LastWeek    []GetFwLeaderboardsCorporationsLastWeek    `json:"last_week,omitempty"`    /* Top 10 ranking of corporations by kills in the past week */
 	ActiveTotal []GetFwLeaderboardsCorporationsActiveTotal `json:"active_total,omitempty"` /* Top 10 ranking of corporations active in faction warfare by total kills. A corporation is considered \"active\" if they have participated in faction warfare in the past 14 days. */
+	LastWeek    []GetFwLeaderboardsCorporationsLastWeek    `json:"last_week,omitempty"`    /* Top 10 ranking of corporations by kills in the past week */
+	Yesterday   []GetFwLeaderboardsCorporationsYesterday   `json:"yesterday,omitempty"`    /* Top 10 ranking of corporations by kills in the past day */
 }

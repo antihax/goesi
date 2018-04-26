@@ -33,11 +33,11 @@ type GetCharactersCharacterIdNotifications200OkList []GetCharactersCharacterIdNo
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdNotifications200Ok struct {
+	IsRead         bool      `json:"is_read,omitempty"`         /* is_read boolean */
 	NotificationId int64     `json:"notification_id,omitempty"` /* notification_id integer */
 	SenderId       int32     `json:"sender_id,omitempty"`       /* sender_id integer */
 	SenderType     string    `json:"sender_type,omitempty"`     /* sender_type string */
-	Timestamp      time.Time `json:"timestamp,omitempty"`       /* timestamp string */
-	IsRead         bool      `json:"is_read,omitempty"`         /* is_read boolean */
 	Text           string    `json:"text,omitempty"`            /* text string */
+	Timestamp      time.Time `json:"timestamp,omitempty"`       /* timestamp string */
 	Type_          string    `json:"type,omitempty"`            /* type string */
 }

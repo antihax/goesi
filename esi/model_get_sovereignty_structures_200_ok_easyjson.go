@@ -113,13 +113,13 @@ func easyjson1e8c5b0bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetS
 			out.StructureTypeId = int32(in.Int32())
 		case "vulnerability_occupancy_level":
 			out.VulnerabilityOccupancyLevel = float32(in.Float32())
-		case "vulnerable_start_time":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.VulnerableStartTime).UnmarshalJSON(data))
-			}
 		case "vulnerable_end_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.VulnerableEndTime).UnmarshalJSON(data))
+			}
+		case "vulnerable_start_time":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.VulnerableStartTime).UnmarshalJSON(data))
 			}
 		default:
 			in.SkipRecursive()
@@ -186,16 +186,6 @@ func easyjson1e8c5b0bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.Float32(float32(in.VulnerabilityOccupancyLevel))
 	}
 	if true {
-		const prefix string = ",\"vulnerable_start_time\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.VulnerableStartTime).MarshalJSON())
-	}
-	if true {
 		const prefix string = ",\"vulnerable_end_time\":"
 		if first {
 			first = false
@@ -204,6 +194,16 @@ func easyjson1e8c5b0bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Raw((in.VulnerableEndTime).MarshalJSON())
+	}
+	if true {
+		const prefix string = ",\"vulnerable_start_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.VulnerableStartTime).MarshalJSON())
 	}
 	out.RawByte('}')
 }

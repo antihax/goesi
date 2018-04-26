@@ -29,6 +29,6 @@ type GetCharactersCharacterIdMailLabelsOkList []GetCharactersCharacterIdMailLabe
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdMailLabelsOk struct {
-	TotalUnreadCount int32                                     `json:"total_unread_count,omitempty"` /* total_unread_count integer */
 	Labels           []GetCharactersCharacterIdMailLabelsLabel `json:"labels,omitempty"`             /* labels array */
+	TotalUnreadCount int32                                     `json:"total_unread_count,omitempty"` /* total_unread_count integer */
 }

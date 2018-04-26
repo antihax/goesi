@@ -33,9 +33,9 @@ type GetCharactersCharacterIdCalendar200OkList []GetCharactersCharacterIdCalenda
 /* event */
 //easyjson:json
 type GetCharactersCharacterIdCalendar200Ok struct {
-	EventId       int32     `json:"event_id,omitempty"`       /* event_id integer */
 	EventDate     time.Time `json:"event_date,omitempty"`     /* event_date string */
-	Title         string    `json:"title,omitempty"`          /* title string */
-	Importance    int32     `json:"importance,omitempty"`     /* importance integer */
+	EventId       int32     `json:"event_id,omitempty"`       /* event_id integer */
 	EventResponse string    `json:"event_response,omitempty"` /* event_response string */
+	Importance    int32     `json:"importance,omitempty"`     /* importance integer */
+	Title         string    `json:"title,omitempty"`          /* title string */
 }

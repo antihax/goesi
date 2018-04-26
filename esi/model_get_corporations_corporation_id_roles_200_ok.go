@@ -30,12 +30,12 @@ type GetCorporationsCorporationIdRoles200OkList []GetCorporationsCorporationIdRo
 //easyjson:json
 type GetCorporationsCorporationIdRoles200Ok struct {
 	CharacterId           int32    `json:"character_id,omitempty"`             /* character_id integer */
-	Roles                 []string `json:"roles,omitempty"`                    /* roles array */
 	GrantableRoles        []string `json:"grantable_roles,omitempty"`          /* grantable_roles array */
-	RolesAtHq             []string `json:"roles_at_hq,omitempty"`              /* roles_at_hq array */
-	GrantableRolesAtHq    []string `json:"grantable_roles_at_hq,omitempty"`    /* grantable_roles_at_hq array */
-	RolesAtBase           []string `json:"roles_at_base,omitempty"`            /* roles_at_base array */
 	GrantableRolesAtBase  []string `json:"grantable_roles_at_base,omitempty"`  /* grantable_roles_at_base array */
-	RolesAtOther          []string `json:"roles_at_other,omitempty"`           /* roles_at_other array */
+	GrantableRolesAtHq    []string `json:"grantable_roles_at_hq,omitempty"`    /* grantable_roles_at_hq array */
 	GrantableRolesAtOther []string `json:"grantable_roles_at_other,omitempty"` /* grantable_roles_at_other array */
+	Roles                 []string `json:"roles,omitempty"`                    /* roles array */
+	RolesAtBase           []string `json:"roles_at_base,omitempty"`            /* roles_at_base array */
+	RolesAtHq             []string `json:"roles_at_hq,omitempty"`              /* roles_at_hq array */
+	RolesAtOther          []string `json:"roles_at_other,omitempty"`           /* roles_at_other array */
 }

@@ -29,8 +29,8 @@ type GetUniverseStructuresStructureIdOkList []GetUniverseStructuresStructureIdOk
 /* 200 ok object */
 //easyjson:json
 type GetUniverseStructuresStructureIdOk struct {
-	Name          string                                   `json:"name,omitempty"`            /* The full name of the structure */
+	Name          string                                   `json:"name,omitempty"` /* The full name of the structure */
+	Position      GetUniverseStructuresStructureIdPosition `json:"position,omitempty"`
 	SolarSystemId int32                                    `json:"solar_system_id,omitempty"` /* solar_system_id integer */
 	TypeId        int32                                    `json:"type_id,omitempty"`         /* type_id integer */
-	Position      GetUniverseStructuresStructureIdPosition `json:"position,omitempty"`
 }

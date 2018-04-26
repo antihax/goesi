@@ -33,11 +33,11 @@ type GetCharactersCharacterIdMail200OkList []GetCharactersCharacterIdMail200Ok
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdMail200Ok struct {
-	MailId     int32                                   `json:"mail_id,omitempty"`    /* mail_id integer */
-	Subject    string                                  `json:"subject,omitempty"`    /* Mail subject */
 	From       int32                                   `json:"from,omitempty"`       /* From whom the mail was sent */
-	Timestamp  time.Time                               `json:"timestamp,omitempty"`  /* When the mail was sent */
-	Labels     []int32                                 `json:"labels,omitempty"`     /* labels array */
-	Recipients []GetCharactersCharacterIdMailRecipient `json:"recipients,omitempty"` /* Recipients of the mail */
 	IsRead     bool                                    `json:"is_read,omitempty"`    /* is_read boolean */
+	Labels     []int32                                 `json:"labels,omitempty"`     /* labels array */
+	MailId     int32                                   `json:"mail_id,omitempty"`    /* mail_id integer */
+	Recipients []GetCharactersCharacterIdMailRecipient `json:"recipients,omitempty"` /* Recipients of the mail */
+	Subject    string                                  `json:"subject,omitempty"`    /* Mail subject */
+	Timestamp  time.Time                               `json:"timestamp,omitempty"`  /* When the mail was sent */
 }

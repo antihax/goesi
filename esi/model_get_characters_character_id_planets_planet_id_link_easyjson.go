@@ -103,12 +103,12 @@ func easyjson7d1d947bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "source_pin_id":
-			out.SourcePinId = int64(in.Int64())
 		case "destination_pin_id":
 			out.DestinationPinId = int64(in.Int64())
 		case "link_level":
 			out.LinkLevel = int32(in.Int32())
+		case "source_pin_id":
+			out.SourcePinId = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -123,16 +123,6 @@ func easyjson7d1d947bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.SourcePinId != 0 {
-		const prefix string = ",\"source_pin_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.SourcePinId))
-	}
 	if in.DestinationPinId != 0 {
 		const prefix string = ",\"destination_pin_id\":"
 		if first {
@@ -152,6 +142,16 @@ func easyjson7d1d947bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.LinkLevel))
+	}
+	if in.SourcePinId != 0 {
+		const prefix string = ",\"source_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.SourcePinId))
 	}
 	out.RawByte('}')
 }

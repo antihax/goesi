@@ -287,29 +287,6 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				in.Delim(']')
 			}
-		case "systems":
-			if in.IsNull() {
-				in.Skip()
-				out.Systems = nil
-			} else {
-				in.Delim('[')
-				if out.Systems == nil {
-					if !in.IsDelim(']') {
-						out.Systems = make([]PostUniverseIdsSystem, 0, 2)
-					} else {
-						out.Systems = []PostUniverseIdsSystem{}
-					}
-				} else {
-					out.Systems = (out.Systems)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v12 PostUniverseIdsSystem
-					(v12).UnmarshalEasyJSON(in)
-					out.Systems = append(out.Systems, v12)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
 		case "stations":
 			if in.IsNull() {
 				in.Skip()
@@ -326,9 +303,32 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 					out.Stations = (out.Stations)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v13 PostUniverseIdsStation
+					var v12 PostUniverseIdsStation
+					(v12).UnmarshalEasyJSON(in)
+					out.Stations = append(out.Stations, v12)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "systems":
+			if in.IsNull() {
+				in.Skip()
+				out.Systems = nil
+			} else {
+				in.Delim('[')
+				if out.Systems == nil {
+					if !in.IsDelim(']') {
+						out.Systems = make([]PostUniverseIdsSystem, 0, 2)
+					} else {
+						out.Systems = []PostUniverseIdsSystem{}
+					}
+				} else {
+					out.Systems = (out.Systems)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v13 PostUniverseIdsSystem
 					(v13).UnmarshalEasyJSON(in)
-					out.Stations = append(out.Stations, v13)
+					out.Systems = append(out.Systems, v13)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -499,25 +499,6 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 			out.RawByte(']')
 		}
 	}
-	if len(in.Systems) != 0 {
-		const prefix string = ",\"systems\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v30, v31 := range in.Systems {
-				if v30 > 0 {
-					out.RawByte(',')
-				}
-				(v31).MarshalEasyJSON(out)
-			}
-			out.RawByte(']')
-		}
-	}
 	if len(in.Stations) != 0 {
 		const prefix string = ",\"stations\":"
 		if first {
@@ -528,7 +509,26 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 		}
 		{
 			out.RawByte('[')
-			for v32, v33 := range in.Stations {
+			for v30, v31 := range in.Stations {
+				if v30 > 0 {
+					out.RawByte(',')
+				}
+				(v31).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
+	}
+	if len(in.Systems) != 0 {
+		const prefix string = ",\"systems\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v32, v33 := range in.Systems {
 				if v32 > 0 {
 					out.RawByte(',')
 				}

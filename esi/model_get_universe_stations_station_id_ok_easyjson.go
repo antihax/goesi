@@ -103,28 +103,22 @@ func easyjson71b62f52DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "station_id":
-			out.StationId = int32(in.Int32())
+		case "max_dockable_ship_volume":
+			out.MaxDockableShipVolume = float32(in.Float32())
 		case "name":
 			out.Name = string(in.String())
+		case "office_rental_cost":
+			out.OfficeRentalCost = float32(in.Float32())
 		case "owner":
 			out.Owner = int32(in.Int32())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "race_id":
-			out.RaceId = int32(in.Int32())
 		case "position":
 			(out.Position).UnmarshalEasyJSON(in)
-		case "system_id":
-			out.SystemId = int32(in.Int32())
+		case "race_id":
+			out.RaceId = int32(in.Int32())
 		case "reprocessing_efficiency":
 			out.ReprocessingEfficiency = float32(in.Float32())
 		case "reprocessing_stations_take":
 			out.ReprocessingStationsTake = float32(in.Float32())
-		case "max_dockable_ship_volume":
-			out.MaxDockableShipVolume = float32(in.Float32())
-		case "office_rental_cost":
-			out.OfficeRentalCost = float32(in.Float32())
 		case "services":
 			if in.IsNull() {
 				in.Skip()
@@ -148,6 +142,12 @@ func easyjson71b62f52DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
+		case "station_id":
+			out.StationId = int32(in.Int32())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -162,15 +162,15 @@ func easyjson71b62f52EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.StationId != 0 {
-		const prefix string = ",\"station_id\":"
+	if in.MaxDockableShipVolume != 0 {
+		const prefix string = ",\"max_dockable_ship_volume\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.StationId))
+		out.Float32(float32(in.MaxDockableShipVolume))
 	}
 	if in.Name != "" {
 		const prefix string = ",\"name\":"
@@ -182,6 +182,16 @@ func easyjson71b62f52EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Name))
 	}
+	if in.OfficeRentalCost != 0 {
+		const prefix string = ",\"office_rental_cost\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.OfficeRentalCost))
+	}
 	if in.Owner != 0 {
 		const prefix string = ",\"owner\":"
 		if first {
@@ -191,26 +201,6 @@ func easyjson71b62f52EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Owner))
-	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
-	if in.RaceId != 0 {
-		const prefix string = ",\"race_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.RaceId))
 	}
 	if true {
 		const prefix string = ",\"position\":"
@@ -222,15 +212,15 @@ func easyjson71b62f52EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		(in.Position).MarshalEasyJSON(out)
 	}
-	if in.SystemId != 0 {
-		const prefix string = ",\"system_id\":"
+	if in.RaceId != 0 {
+		const prefix string = ",\"race_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.SystemId))
+		out.Int32(int32(in.RaceId))
 	}
 	if in.ReprocessingEfficiency != 0 {
 		const prefix string = ",\"reprocessing_efficiency\":"
@@ -252,26 +242,6 @@ func easyjson71b62f52EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Float32(float32(in.ReprocessingStationsTake))
 	}
-	if in.MaxDockableShipVolume != 0 {
-		const prefix string = ",\"max_dockable_ship_volume\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.MaxDockableShipVolume))
-	}
-	if in.OfficeRentalCost != 0 {
-		const prefix string = ",\"office_rental_cost\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.OfficeRentalCost))
-	}
 	if len(in.Services) != 0 {
 		const prefix string = ",\"services\":"
 		if first {
@@ -290,6 +260,36 @@ func easyjson71b62f52EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.StationId != 0 {
+		const prefix string = ",\"station_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.StationId))
+	}
+	if in.SystemId != 0 {
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SystemId))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

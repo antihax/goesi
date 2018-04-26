@@ -103,16 +103,16 @@ func easyjson334413eDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetUn
 			continue
 		}
 		switch key {
-		case "planet_id":
-			out.PlanetId = int32(in.Int32())
 		case "name":
 			out.Name = string(in.String())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
+		case "planet_id":
+			out.PlanetId = int32(in.Int32())
 		case "position":
 			easyjson334413eDecodeGithubComAntihaxGoesiEsi2(in, &out.Position)
 		case "system_id":
 			out.SystemId = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -127,16 +127,6 @@ func easyjson334413eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetU
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.PlanetId != 0 {
-		const prefix string = ",\"planet_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.PlanetId))
-	}
 	if in.Name != "" {
 		const prefix string = ",\"name\":"
 		if first {
@@ -147,15 +137,15 @@ func easyjson334413eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetU
 		}
 		out.String(string(in.Name))
 	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
+	if in.PlanetId != 0 {
+		const prefix string = ",\"planet_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.TypeId))
+		out.Int32(int32(in.PlanetId))
 	}
 	if true {
 		const prefix string = ",\"position\":"
@@ -176,6 +166,16 @@ func easyjson334413eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetU
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.SystemId))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

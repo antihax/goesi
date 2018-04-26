@@ -29,8 +29,8 @@ type GetFleetsFleetIdOkList []GetFleetsFleetIdOk
 /* 200 ok object */
 //easyjson:json
 type GetFleetsFleetIdOk struct {
-	Motd           string `json:"motd,omitempty"`             /* Fleet MOTD in CCP flavoured HTML */
 	IsFreeMove     bool   `json:"is_free_move,omitempty"`     /* Is free-move enabled */
 	IsRegistered   bool   `json:"is_registered,omitempty"`    /* Does the fleet have an active fleet advertisement */
 	IsVoiceEnabled bool   `json:"is_voice_enabled,omitempty"` /* Is EVE Voice enabled */
+	Motd           string `json:"motd,omitempty"`             /* Fleet MOTD in CCP flavoured HTML */
 }

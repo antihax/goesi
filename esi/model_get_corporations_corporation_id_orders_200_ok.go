@@ -33,18 +33,18 @@ type GetCorporationsCorporationIdOrders200OkList []GetCorporationsCorporationIdO
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdOrders200Ok struct {
-	OrderId        int64     `json:"order_id,omitempty"`        /* Unique order ID */
-	TypeId         int32     `json:"type_id,omitempty"`         /* The type ID of the item transacted in this order */
-	RegionId       int32     `json:"region_id,omitempty"`       /* ID of the region where order was placed */
-	LocationId     int64     `json:"location_id,omitempty"`     /* ID of the location where order was placed */
-	Range_         string    `json:"range,omitempty"`           /* Valid order range, numbers are ranges in jumps */
-	Price          float64   `json:"price,omitempty"`           /* Cost per unit for this order */
-	VolumeTotal    int32     `json:"volume_total,omitempty"`    /* Quantity of items required or offered at time order was placed */
-	VolumeRemain   int32     `json:"volume_remain,omitempty"`   /* Quantity of items still required or offered */
-	Issued         time.Time `json:"issued,omitempty"`          /* Date and time when this order was issued */
-	IsBuyOrder     bool      `json:"is_buy_order,omitempty"`    /* True if the order is a bid (buy) order */
-	MinVolume      int32     `json:"min_volume,omitempty"`      /* For buy orders, the minimum quantity that will be accepted in a matching sell order */
-	Escrow         float64   `json:"escrow,omitempty"`          /* For buy orders, the amount of ISK in escrow */
 	Duration       int32     `json:"duration,omitempty"`        /* Number of days for which order is valid (starting from the issued date). An order expires at time issued + duration */
+	Escrow         float64   `json:"escrow,omitempty"`          /* For buy orders, the amount of ISK in escrow */
+	IsBuyOrder     bool      `json:"is_buy_order,omitempty"`    /* True if the order is a bid (buy) order */
+	Issued         time.Time `json:"issued,omitempty"`          /* Date and time when this order was issued */
+	LocationId     int64     `json:"location_id,omitempty"`     /* ID of the location where order was placed */
+	MinVolume      int32     `json:"min_volume,omitempty"`      /* For buy orders, the minimum quantity that will be accepted in a matching sell order */
+	OrderId        int64     `json:"order_id,omitempty"`        /* Unique order ID */
+	Price          float64   `json:"price,omitempty"`           /* Cost per unit for this order */
+	Range_         string    `json:"range,omitempty"`           /* Valid order range, numbers are ranges in jumps */
+	RegionId       int32     `json:"region_id,omitempty"`       /* ID of the region where order was placed */
+	TypeId         int32     `json:"type_id,omitempty"`         /* The type ID of the item transacted in this order */
+	VolumeRemain   int32     `json:"volume_remain,omitempty"`   /* Quantity of items still required or offered */
+	VolumeTotal    int32     `json:"volume_total,omitempty"`    /* Quantity of items required or offered at time order was placed */
 	WalletDivision int32     `json:"wallet_division,omitempty"` /* The corporation wallet division used for this order. */
 }

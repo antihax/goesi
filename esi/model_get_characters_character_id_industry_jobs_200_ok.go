@@ -33,26 +33,26 @@ type GetCharactersCharacterIdIndustryJobs200OkList []GetCharactersCharacterIdInd
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdIndustryJobs200Ok struct {
-	JobId                int32     `json:"job_id,omitempty"`                 /* Unique job ID */
-	InstallerId          int32     `json:"installer_id,omitempty"`           /* ID of the character which installed this job */
-	FacilityId           int64     `json:"facility_id,omitempty"`            /* ID of the facility where this job is running */
-	StationId            int64     `json:"station_id,omitempty"`             /* ID of the station where industry facility is located */
 	ActivityId           int32     `json:"activity_id,omitempty"`            /* Job activity ID */
 	BlueprintId          int64     `json:"blueprint_id,omitempty"`           /* blueprint_id integer */
-	BlueprintTypeId      int32     `json:"blueprint_type_id,omitempty"`      /* blueprint_type_id integer */
 	BlueprintLocationId  int64     `json:"blueprint_location_id,omitempty"`  /* Location ID of the location from which the blueprint was installed. Normally a station ID, but can also be an asset (e.g. container) or corporation facility */
-	OutputLocationId     int64     `json:"output_location_id,omitempty"`     /* Location ID of the location to which the output of the job will be delivered. Normally a station ID, but can also be a corporation facility */
-	Runs                 int32     `json:"runs,omitempty"`                   /* Number of runs for a manufacturing job, or number of copies to make for a blueprint copy */
+	BlueprintTypeId      int32     `json:"blueprint_type_id,omitempty"`      /* blueprint_type_id integer */
+	CompletedCharacterId int32     `json:"completed_character_id,omitempty"` /* ID of the character which completed this job */
+	CompletedDate        time.Time `json:"completed_date,omitempty"`         /* Date and time when this job was completed */
 	Cost                 float64   `json:"cost,omitempty"`                   /* The sume of job installation fee and industry facility tax */
+	Duration             int32     `json:"duration,omitempty"`               /* Job duration in seconds */
+	EndDate              time.Time `json:"end_date,omitempty"`               /* Date and time when this job finished */
+	FacilityId           int64     `json:"facility_id,omitempty"`            /* ID of the facility where this job is running */
+	InstallerId          int32     `json:"installer_id,omitempty"`           /* ID of the character which installed this job */
+	JobId                int32     `json:"job_id,omitempty"`                 /* Unique job ID */
 	LicensedRuns         int32     `json:"licensed_runs,omitempty"`          /* Number of runs blueprint is licensed for */
+	OutputLocationId     int64     `json:"output_location_id,omitempty"`     /* Location ID of the location to which the output of the job will be delivered. Normally a station ID, but can also be a corporation facility */
+	PauseDate            time.Time `json:"pause_date,omitempty"`             /* Date and time when this job was paused (i.e. time when the facility where this job was installed went offline) */
 	Probability          float32   `json:"probability,omitempty"`            /* Chance of success for invention */
 	ProductTypeId        int32     `json:"product_type_id,omitempty"`        /* Type ID of product (manufactured, copied or invented) */
-	Status               string    `json:"status,omitempty"`                 /* status string */
-	Duration             int32     `json:"duration,omitempty"`               /* Job duration in seconds */
+	Runs                 int32     `json:"runs,omitempty"`                   /* Number of runs for a manufacturing job, or number of copies to make for a blueprint copy */
 	StartDate            time.Time `json:"start_date,omitempty"`             /* Date and time when this job started */
-	EndDate              time.Time `json:"end_date,omitempty"`               /* Date and time when this job finished */
-	PauseDate            time.Time `json:"pause_date,omitempty"`             /* Date and time when this job was paused (i.e. time when the facility where this job was installed went offline) */
-	CompletedDate        time.Time `json:"completed_date,omitempty"`         /* Date and time when this job was completed */
-	CompletedCharacterId int32     `json:"completed_character_id,omitempty"` /* ID of the character which completed this job */
+	StationId            int64     `json:"station_id,omitempty"`             /* ID of the station where industry facility is located */
+	Status               string    `json:"status,omitempty"`                 /* status string */
 	SuccessfulRuns       int32     `json:"successful_runs,omitempty"`        /* Number of successful runs for this job. Equal to runs unless this is an invention job */
 }

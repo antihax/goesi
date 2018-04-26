@@ -103,56 +103,56 @@ func easyjsonB493deffDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "job_id":
-			out.JobId = int32(in.Int32())
-		case "installer_id":
-			out.InstallerId = int32(in.Int32())
-		case "facility_id":
-			out.FacilityId = int64(in.Int64())
-		case "location_id":
-			out.LocationId = int64(in.Int64())
 		case "activity_id":
 			out.ActivityId = int32(in.Int32())
 		case "blueprint_id":
 			out.BlueprintId = int64(in.Int64())
-		case "blueprint_type_id":
-			out.BlueprintTypeId = int32(in.Int32())
 		case "blueprint_location_id":
 			out.BlueprintLocationId = int64(in.Int64())
-		case "output_location_id":
-			out.OutputLocationId = int64(in.Int64())
-		case "runs":
-			out.Runs = int32(in.Int32())
-		case "cost":
-			out.Cost = float64(in.Float64())
-		case "licensed_runs":
-			out.LicensedRuns = int32(in.Int32())
-		case "probability":
-			out.Probability = float32(in.Float32())
-		case "product_type_id":
-			out.ProductTypeId = int32(in.Int32())
-		case "status":
-			out.Status = string(in.String())
-		case "duration":
-			out.Duration = int32(in.Int32())
-		case "start_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.StartDate).UnmarshalJSON(data))
-			}
-		case "end_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.EndDate).UnmarshalJSON(data))
-			}
-		case "pause_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.PauseDate).UnmarshalJSON(data))
-			}
+		case "blueprint_type_id":
+			out.BlueprintTypeId = int32(in.Int32())
+		case "completed_character_id":
+			out.CompletedCharacterId = int32(in.Int32())
 		case "completed_date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.CompletedDate).UnmarshalJSON(data))
 			}
-		case "completed_character_id":
-			out.CompletedCharacterId = int32(in.Int32())
+		case "cost":
+			out.Cost = float64(in.Float64())
+		case "duration":
+			out.Duration = int32(in.Int32())
+		case "end_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.EndDate).UnmarshalJSON(data))
+			}
+		case "facility_id":
+			out.FacilityId = int64(in.Int64())
+		case "installer_id":
+			out.InstallerId = int32(in.Int32())
+		case "job_id":
+			out.JobId = int32(in.Int32())
+		case "licensed_runs":
+			out.LicensedRuns = int32(in.Int32())
+		case "location_id":
+			out.LocationId = int64(in.Int64())
+		case "output_location_id":
+			out.OutputLocationId = int64(in.Int64())
+		case "pause_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.PauseDate).UnmarshalJSON(data))
+			}
+		case "probability":
+			out.Probability = float32(in.Float32())
+		case "product_type_id":
+			out.ProductTypeId = int32(in.Int32())
+		case "runs":
+			out.Runs = int32(in.Int32())
+		case "start_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.StartDate).UnmarshalJSON(data))
+			}
+		case "status":
+			out.Status = string(in.String())
 		case "successful_runs":
 			out.SuccessfulRuns = int32(in.Int32())
 		default:
@@ -169,46 +169,6 @@ func easyjsonB493deffEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.JobId != 0 {
-		const prefix string = ",\"job_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.JobId))
-	}
-	if in.InstallerId != 0 {
-		const prefix string = ",\"installer_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.InstallerId))
-	}
-	if in.FacilityId != 0 {
-		const prefix string = ",\"facility_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.FacilityId))
-	}
-	if in.LocationId != 0 {
-		const prefix string = ",\"location_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.LocationId))
-	}
 	if in.ActivityId != 0 {
 		const prefix string = ",\"activity_id\":"
 		if first {
@@ -229,16 +189,6 @@ func easyjsonB493deffEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.BlueprintId))
 	}
-	if in.BlueprintTypeId != 0 {
-		const prefix string = ",\"blueprint_type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.BlueprintTypeId))
-	}
 	if in.BlueprintLocationId != 0 {
 		const prefix string = ",\"blueprint_location_id\":"
 		if first {
@@ -249,25 +199,35 @@ func easyjsonB493deffEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.BlueprintLocationId))
 	}
-	if in.OutputLocationId != 0 {
-		const prefix string = ",\"output_location_id\":"
+	if in.BlueprintTypeId != 0 {
+		const prefix string = ",\"blueprint_type_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int64(int64(in.OutputLocationId))
+		out.Int32(int32(in.BlueprintTypeId))
 	}
-	if in.Runs != 0 {
-		const prefix string = ",\"runs\":"
+	if in.CompletedCharacterId != 0 {
+		const prefix string = ",\"completed_character_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.Runs))
+		out.Int32(int32(in.CompletedCharacterId))
+	}
+	if true {
+		const prefix string = ",\"completed_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.CompletedDate).MarshalJSON())
 	}
 	if in.Cost != 0 {
 		const prefix string = ",\"cost\":"
@@ -279,6 +239,56 @@ func easyjsonB493deffEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Float64(float64(in.Cost))
 	}
+	if in.Duration != 0 {
+		const prefix string = ",\"duration\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Duration))
+	}
+	if true {
+		const prefix string = ",\"end_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.EndDate).MarshalJSON())
+	}
+	if in.FacilityId != 0 {
+		const prefix string = ",\"facility_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.FacilityId))
+	}
+	if in.InstallerId != 0 {
+		const prefix string = ",\"installer_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.InstallerId))
+	}
+	if in.JobId != 0 {
+		const prefix string = ",\"job_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.JobId))
+	}
 	if in.LicensedRuns != 0 {
 		const prefix string = ",\"licensed_runs\":"
 		if first {
@@ -288,6 +298,36 @@ func easyjsonB493deffEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.LicensedRuns))
+	}
+	if in.LocationId != 0 {
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.LocationId))
+	}
+	if in.OutputLocationId != 0 {
+		const prefix string = ",\"output_location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.OutputLocationId))
+	}
+	if true {
+		const prefix string = ",\"pause_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.PauseDate).MarshalJSON())
 	}
 	if in.Probability != 0 {
 		const prefix string = ",\"probability\":"
@@ -309,25 +349,15 @@ func easyjsonB493deffEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.ProductTypeId))
 	}
-	if in.Status != "" {
-		const prefix string = ",\"status\":"
+	if in.Runs != 0 {
+		const prefix string = ",\"runs\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.Status))
-	}
-	if in.Duration != 0 {
-		const prefix string = ",\"duration\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Duration))
+		out.Int32(int32(in.Runs))
 	}
 	if true {
 		const prefix string = ",\"start_date\":"
@@ -339,45 +369,15 @@ func easyjsonB493deffEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Raw((in.StartDate).MarshalJSON())
 	}
-	if true {
-		const prefix string = ",\"end_date\":"
+	if in.Status != "" {
+		const prefix string = ",\"status\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.EndDate).MarshalJSON())
-	}
-	if true {
-		const prefix string = ",\"pause_date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.PauseDate).MarshalJSON())
-	}
-	if true {
-		const prefix string = ",\"completed_date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.CompletedDate).MarshalJSON())
-	}
-	if in.CompletedCharacterId != 0 {
-		const prefix string = ",\"completed_character_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.CompletedCharacterId))
+		out.String(string(in.Status))
 	}
 	if in.SuccessfulRuns != 0 {
 		const prefix string = ",\"successful_runs\":"

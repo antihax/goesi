@@ -103,24 +103,18 @@ func easyjsonA3c42e6bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "owner_id":
-			out.OwnerId = int32(in.Int32())
-		case "system_id":
-			out.SystemId = int32(in.Int32())
+		case "coordinates":
+			(out.Coordinates).UnmarshalEasyJSON(in)
 		case "docking_cost_per_ship_volume":
 			out.DockingCostPerShipVolume = float32(in.Float32())
 		case "office_rental_cost":
 			out.OfficeRentalCost = int64(in.Int64())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
+		case "owner_id":
+			out.OwnerId = int32(in.Int32())
 		case "reprocessing_efficiency":
 			out.ReprocessingEfficiency = float32(in.Float32())
 		case "reprocessing_station_take":
 			out.ReprocessingStationTake = float32(in.Float32())
-		case "standing_owner_id":
-			out.StandingOwnerId = int32(in.Int32())
-		case "coordinates":
-			(out.Coordinates).UnmarshalEasyJSON(in)
 		case "services":
 			if in.IsNull() {
 				in.Skip()
@@ -144,6 +138,12 @@ func easyjsonA3c42e6bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
+		case "standing_owner_id":
+			out.StandingOwnerId = int32(in.Int32())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -158,25 +158,15 @@ func easyjsonA3c42e6bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.OwnerId != 0 {
-		const prefix string = ",\"owner_id\":"
+	if true {
+		const prefix string = ",\"coordinates\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.OwnerId))
-	}
-	if in.SystemId != 0 {
-		const prefix string = ",\"system_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.SystemId))
+		(in.Coordinates).MarshalEasyJSON(out)
 	}
 	if in.DockingCostPerShipVolume != 0 {
 		const prefix string = ",\"docking_cost_per_ship_volume\":"
@@ -198,15 +188,15 @@ func easyjsonA3c42e6bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.OfficeRentalCost))
 	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
+	if in.OwnerId != 0 {
+		const prefix string = ",\"owner_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.TypeId))
+		out.Int32(int32(in.OwnerId))
 	}
 	if in.ReprocessingEfficiency != 0 {
 		const prefix string = ",\"reprocessing_efficiency\":"
@@ -228,26 +218,6 @@ func easyjsonA3c42e6bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Float32(float32(in.ReprocessingStationTake))
 	}
-	if in.StandingOwnerId != 0 {
-		const prefix string = ",\"standing_owner_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.StandingOwnerId))
-	}
-	if true {
-		const prefix string = ",\"coordinates\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		(in.Coordinates).MarshalEasyJSON(out)
-	}
 	if len(in.Services) != 0 {
 		const prefix string = ",\"services\":"
 		if first {
@@ -266,6 +236,36 @@ func easyjsonA3c42e6bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.StandingOwnerId != 0 {
+		const prefix string = ",\"standing_owner_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.StandingOwnerId))
+	}
+	if in.SystemId != 0 {
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SystemId))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

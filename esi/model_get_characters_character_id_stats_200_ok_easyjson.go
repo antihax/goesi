@@ -103,8 +103,6 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "year":
-			out.Year = int32(in.Int32())
 		case "character":
 			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi2(in, &out.Character)
 		case "combat":
@@ -129,6 +127,8 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi10(in, &out.Social)
 		case "travel":
 			(out.Travel).UnmarshalEasyJSON(in)
+		case "year":
+			out.Year = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -143,16 +143,6 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Year != 0 {
-		const prefix string = ",\"year\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Year))
-	}
 	if true {
 		const prefix string = ",\"character\":"
 		if first {
@@ -272,6 +262,16 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		(in.Travel).MarshalEasyJSON(out)
+	}
+	if in.Year != 0 {
+		const prefix string = ",\"year\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Year))
 	}
 	out.RawByte('}')
 }

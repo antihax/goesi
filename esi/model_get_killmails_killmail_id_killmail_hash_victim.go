@@ -29,12 +29,12 @@ type GetKillmailsKillmailIdKillmailHashVictimList []GetKillmailsKillmailIdKillma
 /* victim object */
 //easyjson:json
 type GetKillmailsKillmailIdKillmailHashVictim struct {
+	AllianceId    int32                                      `json:"alliance_id,omitempty"`    /* alliance_id integer */
 	CharacterId   int32                                      `json:"character_id,omitempty"`   /* character_id integer */
 	CorporationId int32                                      `json:"corporation_id,omitempty"` /* corporation_id integer */
-	AllianceId    int32                                      `json:"alliance_id,omitempty"`    /* alliance_id integer */
-	FactionId     int32                                      `json:"faction_id,omitempty"`     /* faction_id integer */
 	DamageTaken   int32                                      `json:"damage_taken,omitempty"`   /* How much total damage was taken by the victim  */
-	ShipTypeId    int32                                      `json:"ship_type_id,omitempty"`   /* The ship that the victim was piloting and was destroyed  */
+	FactionId     int32                                      `json:"faction_id,omitempty"`     /* faction_id integer */
 	Items         []GetKillmailsKillmailIdKillmailHashItem1  `json:"items,omitempty"`          /* items array */
 	Position      GetKillmailsKillmailIdKillmailHashPosition `json:"position,omitempty"`
+	ShipTypeId    int32                                      `json:"ship_type_id,omitempty"` /* The ship that the victim was piloting and was destroyed  */
 }

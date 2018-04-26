@@ -29,6 +29,6 @@ type GetFwWars200OkList []GetFwWars200Ok
 /* 200 ok object */
 //easyjson:json
 type GetFwWars200Ok struct {
-	FactionId int32 `json:"faction_id,omitempty"` /* faction_id integer */
 	AgainstId int32 `json:"against_id,omitempty"` /* The faction ID of the enemy faction. */
+	FactionId int32 `json:"faction_id,omitempty"` /* faction_id integer */
 }

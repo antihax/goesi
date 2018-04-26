@@ -29,11 +29,11 @@ type GetLoyaltyStoresCorporationIdOffers200OkList []GetLoyaltyStoresCorporationI
 /* 200 ok object */
 //easyjson:json
 type GetLoyaltyStoresCorporationIdOffers200Ok struct {
-	OfferId       int32                                             `json:"offer_id,omitempty"`       /* offer_id integer */
-	TypeId        int32                                             `json:"type_id,omitempty"`        /* type_id integer */
-	Quantity      int32                                             `json:"quantity,omitempty"`       /* quantity integer */
-	LpCost        int32                                             `json:"lp_cost,omitempty"`        /* lp_cost integer */
-	IskCost       int64                                             `json:"isk_cost,omitempty"`       /* isk_cost integer */
 	AkCost        int32                                             `json:"ak_cost,omitempty"`        /* Analysis kredit cost */
+	IskCost       int64                                             `json:"isk_cost,omitempty"`       /* isk_cost integer */
+	LpCost        int32                                             `json:"lp_cost,omitempty"`        /* lp_cost integer */
+	OfferId       int32                                             `json:"offer_id,omitempty"`       /* offer_id integer */
+	Quantity      int32                                             `json:"quantity,omitempty"`       /* quantity integer */
 	RequiredItems []GetLoyaltyStoresCorporationIdOffersRequiredItem `json:"required_items,omitempty"` /* required_items array */
+	TypeId        int32                                             `json:"type_id,omitempty"`        /* type_id integer */
 }

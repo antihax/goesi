@@ -103,32 +103,32 @@ func easyjson6abb6e4eDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "office_id":
-			out.OfficeId = int64(in.Int64())
-		case "system_id":
-			out.SystemId = int32(in.Int32())
-		case "reinforce_exit_start":
-			out.ReinforceExitStart = int32(in.Int32())
-		case "reinforce_exit_end":
-			out.ReinforceExitEnd = int32(in.Int32())
-		case "corporation_tax_rate":
-			out.CorporationTaxRate = float32(in.Float32())
-		case "allow_alliance_access":
-			out.AllowAllianceAccess = bool(in.Bool())
 		case "alliance_tax_rate":
 			out.AllianceTaxRate = float32(in.Float32())
 		case "allow_access_with_standings":
 			out.AllowAccessWithStandings = bool(in.Bool())
-		case "standing_level":
-			out.StandingLevel = string(in.String())
+		case "allow_alliance_access":
+			out.AllowAllianceAccess = bool(in.Bool())
+		case "bad_standing_tax_rate":
+			out.BadStandingTaxRate = float32(in.Float32())
+		case "corporation_tax_rate":
+			out.CorporationTaxRate = float32(in.Float32())
 		case "excellent_standing_tax_rate":
 			out.ExcellentStandingTaxRate = float32(in.Float32())
 		case "good_standing_tax_rate":
 			out.GoodStandingTaxRate = float32(in.Float32())
 		case "neutral_standing_tax_rate":
 			out.NeutralStandingTaxRate = float32(in.Float32())
-		case "bad_standing_tax_rate":
-			out.BadStandingTaxRate = float32(in.Float32())
+		case "office_id":
+			out.OfficeId = int64(in.Int64())
+		case "reinforce_exit_end":
+			out.ReinforceExitEnd = int32(in.Int32())
+		case "reinforce_exit_start":
+			out.ReinforceExitStart = int32(in.Int32())
+		case "standing_level":
+			out.StandingLevel = string(in.String())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
 		case "terrible_standing_tax_rate":
 			out.TerribleStandingTaxRate = float32(in.Float32())
 		default:
@@ -145,66 +145,6 @@ func easyjson6abb6e4eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.OfficeId != 0 {
-		const prefix string = ",\"office_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.OfficeId))
-	}
-	if in.SystemId != 0 {
-		const prefix string = ",\"system_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.SystemId))
-	}
-	if in.ReinforceExitStart != 0 {
-		const prefix string = ",\"reinforce_exit_start\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ReinforceExitStart))
-	}
-	if in.ReinforceExitEnd != 0 {
-		const prefix string = ",\"reinforce_exit_end\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ReinforceExitEnd))
-	}
-	if in.CorporationTaxRate != 0 {
-		const prefix string = ",\"corporation_tax_rate\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.CorporationTaxRate))
-	}
-	if in.AllowAllianceAccess {
-		const prefix string = ",\"allow_alliance_access\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.AllowAllianceAccess))
-	}
 	if in.AllianceTaxRate != 0 {
 		const prefix string = ",\"alliance_tax_rate\":"
 		if first {
@@ -225,15 +165,35 @@ func easyjson6abb6e4eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Bool(bool(in.AllowAccessWithStandings))
 	}
-	if in.StandingLevel != "" {
-		const prefix string = ",\"standing_level\":"
+	if in.AllowAllianceAccess {
+		const prefix string = ",\"allow_alliance_access\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.StandingLevel))
+		out.Bool(bool(in.AllowAllianceAccess))
+	}
+	if in.BadStandingTaxRate != 0 {
+		const prefix string = ",\"bad_standing_tax_rate\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.BadStandingTaxRate))
+	}
+	if in.CorporationTaxRate != 0 {
+		const prefix string = ",\"corporation_tax_rate\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.CorporationTaxRate))
 	}
 	if in.ExcellentStandingTaxRate != 0 {
 		const prefix string = ",\"excellent_standing_tax_rate\":"
@@ -265,15 +225,55 @@ func easyjson6abb6e4eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Float32(float32(in.NeutralStandingTaxRate))
 	}
-	if in.BadStandingTaxRate != 0 {
-		const prefix string = ",\"bad_standing_tax_rate\":"
+	if in.OfficeId != 0 {
+		const prefix string = ",\"office_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.BadStandingTaxRate))
+		out.Int64(int64(in.OfficeId))
+	}
+	if in.ReinforceExitEnd != 0 {
+		const prefix string = ",\"reinforce_exit_end\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ReinforceExitEnd))
+	}
+	if in.ReinforceExitStart != 0 {
+		const prefix string = ",\"reinforce_exit_start\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ReinforceExitStart))
+	}
+	if in.StandingLevel != "" {
+		const prefix string = ",\"standing_level\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.StandingLevel))
+	}
+	if in.SystemId != 0 {
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SystemId))
 	}
 	if in.TerribleStandingTaxRate != 0 {
 		const prefix string = ",\"terrible_standing_tax_rate\":"

@@ -29,6 +29,6 @@ type GetFleetsFleetIdWingsSquadList []GetFleetsFleetIdWingsSquad
 /* squad object */
 //easyjson:json
 type GetFleetsFleetIdWingsSquad struct {
-	Name string `json:"name,omitempty"` /* name string */
 	Id   int64  `json:"id,omitempty"`   /* id integer */
+	Name string `json:"name,omitempty"` /* name string */
 }

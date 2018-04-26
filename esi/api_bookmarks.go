@@ -48,6 +48,7 @@ A list of your character&#39;s personal bookmarks  ---  This route is cached for
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdBookmarksOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -57,11 +58,12 @@ A list of your character&#39;s personal bookmarks  ---  This route is cached for
 */
 
 type GetCharactersCharacterIdBookmarksOpts struct {
-	Datasource optional.String
-	Page       optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *BookmarksApiService) GetCharactersCharacterIdBookmarks(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdBookmarksOpts) ([]GetCharactersCharacterIdBookmarks200Ok, *http.Response, error) {
@@ -97,7 +99,7 @@ func (a *BookmarksApiService) GetCharactersCharacterIdBookmarks(ctx context.Cont
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -112,6 +114,9 @@ func (a *BookmarksApiService) GetCharactersCharacterIdBookmarks(ctx context.Cont
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -236,6 +241,7 @@ A list of your character&#39;s personal bookmark folders  ---  This route is cac
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdBookmarksFoldersOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -245,11 +251,12 @@ A list of your character&#39;s personal bookmark folders  ---  This route is cac
 */
 
 type GetCharactersCharacterIdBookmarksFoldersOpts struct {
-	Datasource optional.String
-	Page       optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *BookmarksApiService) GetCharactersCharacterIdBookmarksFolders(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdBookmarksFoldersOpts) ([]GetCharactersCharacterIdBookmarksFolders200Ok, *http.Response, error) {
@@ -285,7 +292,7 @@ func (a *BookmarksApiService) GetCharactersCharacterIdBookmarksFolders(ctx conte
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -300,6 +307,9 @@ func (a *BookmarksApiService) GetCharactersCharacterIdBookmarksFolders(ctx conte
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -424,6 +434,7 @@ A list of your corporation&#39;s bookmarks  ---  This route is cached for up to 
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdBookmarksOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -433,11 +444,12 @@ A list of your corporation&#39;s bookmarks  ---  This route is cached for up to 
 */
 
 type GetCorporationsCorporationIdBookmarksOpts struct {
-	Datasource optional.String
-	Page       optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *BookmarksApiService) GetCorporationsCorporationIdBookmarks(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdBookmarksOpts) ([]GetCorporationsCorporationIdBookmarks200Ok, *http.Response, error) {
@@ -473,7 +485,7 @@ func (a *BookmarksApiService) GetCorporationsCorporationIdBookmarks(ctx context.
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -488,6 +500,9 @@ func (a *BookmarksApiService) GetCorporationsCorporationIdBookmarks(ctx context.
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -612,6 +627,7 @@ A list of your corporation&#39;s bookmark folders  ---  This route is cached for
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdBookmarksFoldersOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
@@ -621,11 +637,12 @@ A list of your corporation&#39;s bookmark folders  ---  This route is cached for
 */
 
 type GetCorporationsCorporationIdBookmarksFoldersOpts struct {
-	Datasource optional.String
-	Page       optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Page        optional.Int32
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *BookmarksApiService) GetCorporationsCorporationIdBookmarksFolders(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdBookmarksFoldersOpts) ([]GetCorporationsCorporationIdBookmarksFolders200Ok, *http.Response, error) {
@@ -661,7 +678,7 @@ func (a *BookmarksApiService) GetCorporationsCorporationIdBookmarksFolders(ctx c
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -676,6 +693,9 @@ func (a *BookmarksApiService) GetCorporationsCorporationIdBookmarksFolders(ctx c
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")

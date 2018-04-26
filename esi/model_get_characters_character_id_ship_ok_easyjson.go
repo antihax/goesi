@@ -103,12 +103,12 @@ func easyjson7f2db38bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "ship_type_id":
-			out.ShipTypeId = int32(in.Int32())
 		case "ship_item_id":
 			out.ShipItemId = int64(in.Int64())
 		case "ship_name":
 			out.ShipName = string(in.String())
+		case "ship_type_id":
+			out.ShipTypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -123,16 +123,6 @@ func easyjson7f2db38bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.ShipTypeId != 0 {
-		const prefix string = ",\"ship_type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ShipTypeId))
-	}
 	if in.ShipItemId != 0 {
 		const prefix string = ",\"ship_item_id\":"
 		if first {
@@ -152,6 +142,16 @@ func easyjson7f2db38bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.ShipName))
+	}
+	if in.ShipTypeId != 0 {
+		const prefix string = ",\"ship_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ShipTypeId))
 	}
 	out.RawByte('}')
 }

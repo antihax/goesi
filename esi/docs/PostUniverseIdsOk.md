@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **Factions** | [**[]PostUniverseIdsFaction**](post_universe_ids_faction.md) | factions array | [optional] [default to null]
 **InventoryTypes** | [**[]PostUniverseIdsInventoryType**](post_universe_ids_inventory_type.md) | inventory_types array | [optional] [default to null]
 **Regions** | [**[]PostUniverseIdsRegion**](post_universe_ids_region.md) | regions array | [optional] [default to null]
-**Systems** | [**[]PostUniverseIdsSystem**](post_universe_ids_system.md) | systems array | [optional] [default to null]
 **Stations** | [**[]PostUniverseIdsStation**](post_universe_ids_station.md) | stations array | [optional] [default to null]
+**Systems** | [**[]PostUniverseIdsSystem**](post_universe_ids_system.md) | systems array | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

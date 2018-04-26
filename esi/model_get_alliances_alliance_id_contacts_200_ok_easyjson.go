@@ -103,14 +103,14 @@ func easyjson8f4a097DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetAl
 			continue
 		}
 		switch key {
-		case "standing":
-			out.Standing = float32(in.Float32())
-		case "contact_type":
-			out.ContactType = string(in.String())
 		case "contact_id":
 			out.ContactId = int32(in.Int32())
+		case "contact_type":
+			out.ContactType = string(in.String())
 		case "label_id":
 			out.LabelId = int64(in.Int64())
+		case "standing":
+			out.Standing = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -125,15 +125,15 @@ func easyjson8f4a097EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetA
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Standing != 0 {
-		const prefix string = ",\"standing\":"
+	if in.ContactId != 0 {
+		const prefix string = ",\"contact_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.Standing))
+		out.Int32(int32(in.ContactId))
 	}
 	if in.ContactType != "" {
 		const prefix string = ",\"contact_type\":"
@@ -145,16 +145,6 @@ func easyjson8f4a097EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetA
 		}
 		out.String(string(in.ContactType))
 	}
-	if in.ContactId != 0 {
-		const prefix string = ",\"contact_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ContactId))
-	}
 	if in.LabelId != 0 {
 		const prefix string = ",\"label_id\":"
 		if first {
@@ -164,6 +154,16 @@ func easyjson8f4a097EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetA
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.LabelId))
+	}
+	if in.Standing != 0 {
+		const prefix string = ",\"standing\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Standing))
 	}
 	out.RawByte('}')
 }

@@ -33,10 +33,10 @@ type GetCorporationsCorporationIdRolesHistory200OkList []GetCorporationsCorporat
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdRolesHistory200Ok struct {
-	CharacterId int32     `json:"character_id,omitempty"` /* The character whose roles are changed */
 	ChangedAt   time.Time `json:"changed_at,omitempty"`   /* changed_at string */
+	CharacterId int32     `json:"character_id,omitempty"` /* The character whose roles are changed */
 	IssuerId    int32     `json:"issuer_id,omitempty"`    /* ID of the character who issued this change */
-	RoleType    string    `json:"role_type,omitempty"`    /* role_type string */
-	OldRoles    []string  `json:"old_roles,omitempty"`    /* old_roles array */
 	NewRoles    []string  `json:"new_roles,omitempty"`    /* new_roles array */
+	OldRoles    []string  `json:"old_roles,omitempty"`    /* old_roles array */
+	RoleType    string    `json:"role_type,omitempty"`    /* role_type string */
 }

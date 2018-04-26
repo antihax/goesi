@@ -103,6 +103,8 @@ func easyjson89bac63DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCh
 			continue
 		}
 		switch key {
+		case "amount":
+			out.Amount = float32(in.Float32())
 		case "bid_id":
 			out.BidId = int32(in.Int32())
 		case "bidder_id":
@@ -111,8 +113,6 @@ func easyjson89bac63DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCh
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.DateBid).UnmarshalJSON(data))
 			}
-		case "amount":
-			out.Amount = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -127,6 +127,16 @@ func easyjson89bac63EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Amount != 0 {
+		const prefix string = ",\"amount\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Amount))
+	}
 	if in.BidId != 0 {
 		const prefix string = ",\"bid_id\":"
 		if first {
@@ -156,16 +166,6 @@ func easyjson89bac63EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 			out.RawString(prefix)
 		}
 		out.Raw((in.DateBid).MarshalJSON())
-	}
-	if in.Amount != 0 {
-		const prefix string = ",\"amount\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Amount))
 	}
 	out.RawByte('}')
 }

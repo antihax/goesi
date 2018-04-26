@@ -29,8 +29,8 @@ type GetWarsWarIdAggressorList []GetWarsWarIdAggressor
 /* The aggressor corporation or alliance that declared this war, only contains either corporation_id or alliance_id */
 //easyjson:json
 type GetWarsWarIdAggressor struct {
-	CorporationId int32   `json:"corporation_id,omitempty"` /* Corporation ID if and only if the aggressor is a corporation */
 	AllianceId    int32   `json:"alliance_id,omitempty"`    /* Alliance ID if and only if the aggressor is an alliance */
-	ShipsKilled   int32   `json:"ships_killed,omitempty"`   /* The number of ships the aggressor has killed */
+	CorporationId int32   `json:"corporation_id,omitempty"` /* Corporation ID if and only if the aggressor is a corporation */
 	IskDestroyed  float32 `json:"isk_destroyed,omitempty"`  /* ISK value of ships the aggressor has destroyed */
+	ShipsKilled   int32   `json:"ships_killed,omitempty"`   /* The number of ships the aggressor has killed */
 }

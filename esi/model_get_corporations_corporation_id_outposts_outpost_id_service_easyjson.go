@@ -103,14 +103,14 @@ func easyjson8b80e2a4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "service_name":
-			out.ServiceName = string(in.String())
-		case "minimum_standing":
-			out.MinimumStanding = float64(in.Float64())
-		case "surcharge_per_bad_standing":
-			out.SurchargePerBadStanding = float64(in.Float64())
 		case "discount_per_good_standing":
 			out.DiscountPerGoodStanding = float64(in.Float64())
+		case "minimum_standing":
+			out.MinimumStanding = float64(in.Float64())
+		case "service_name":
+			out.ServiceName = string(in.String())
+		case "surcharge_per_bad_standing":
+			out.SurchargePerBadStanding = float64(in.Float64())
 		default:
 			in.SkipRecursive()
 		}
@@ -125,15 +125,15 @@ func easyjson8b80e2a4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.ServiceName != "" {
-		const prefix string = ",\"service_name\":"
+	if in.DiscountPerGoodStanding != 0 {
+		const prefix string = ",\"discount_per_good_standing\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.ServiceName))
+		out.Float64(float64(in.DiscountPerGoodStanding))
 	}
 	if in.MinimumStanding != 0 {
 		const prefix string = ",\"minimum_standing\":"
@@ -145,6 +145,16 @@ func easyjson8b80e2a4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Float64(float64(in.MinimumStanding))
 	}
+	if in.ServiceName != "" {
+		const prefix string = ",\"service_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.ServiceName))
+	}
 	if in.SurchargePerBadStanding != 0 {
 		const prefix string = ",\"surcharge_per_bad_standing\":"
 		if first {
@@ -154,16 +164,6 @@ func easyjson8b80e2a4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Float64(float64(in.SurchargePerBadStanding))
-	}
-	if in.DiscountPerGoodStanding != 0 {
-		const prefix string = ",\"discount_per_good_standing\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.DiscountPerGoodStanding))
 	}
 	out.RawByte('}')
 }

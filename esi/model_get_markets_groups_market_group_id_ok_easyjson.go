@@ -103,12 +103,14 @@ func easyjson821c4c1dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetM
 			continue
 		}
 		switch key {
+		case "description":
+			out.Description = string(in.String())
 		case "market_group_id":
 			out.MarketGroupId = int32(in.Int32())
 		case "name":
 			out.Name = string(in.String())
-		case "description":
-			out.Description = string(in.String())
+		case "parent_group_id":
+			out.ParentGroupId = int32(in.Int32())
 		case "types":
 			if in.IsNull() {
 				in.Skip()
@@ -132,8 +134,6 @@ func easyjson821c4c1dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetM
 				}
 				in.Delim(']')
 			}
-		case "parent_group_id":
-			out.ParentGroupId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -148,6 +148,16 @@ func easyjson821c4c1dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.Description != "" {
+		const prefix string = ",\"description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Description))
+	}
 	if in.MarketGroupId != 0 {
 		const prefix string = ",\"market_group_id\":"
 		if first {
@@ -168,15 +178,15 @@ func easyjson821c4c1dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Name))
 	}
-	if in.Description != "" {
-		const prefix string = ",\"description\":"
+	if in.ParentGroupId != 0 {
+		const prefix string = ",\"parent_group_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.Description))
+		out.Int32(int32(in.ParentGroupId))
 	}
 	if len(in.Types) != 0 {
 		const prefix string = ",\"types\":"
@@ -196,16 +206,6 @@ func easyjson821c4c1dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	if in.ParentGroupId != 0 {
-		const prefix string = ",\"parent_group_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ParentGroupId))
 	}
 	out.RawByte('}')
 }

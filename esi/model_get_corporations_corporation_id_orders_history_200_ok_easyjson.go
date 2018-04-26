@@ -103,36 +103,36 @@ func easyjsonEf608ee4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "order_id":
-			out.OrderId = int64(in.Int64())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "region_id":
-			out.RegionId = int32(in.Int32())
-		case "location_id":
-			out.LocationId = int64(in.Int64())
-		case "range":
-			out.Range_ = string(in.String())
-		case "price":
-			out.Price = float64(in.Float64())
-		case "volume_total":
-			out.VolumeTotal = int32(in.Int32())
-		case "volume_remain":
-			out.VolumeRemain = int32(in.Int32())
+		case "duration":
+			out.Duration = int32(in.Int32())
+		case "escrow":
+			out.Escrow = float64(in.Float64())
+		case "is_buy_order":
+			out.IsBuyOrder = bool(in.Bool())
 		case "issued":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Issued).UnmarshalJSON(data))
 			}
-		case "is_buy_order":
-			out.IsBuyOrder = bool(in.Bool())
+		case "location_id":
+			out.LocationId = int64(in.Int64())
 		case "min_volume":
 			out.MinVolume = int32(in.Int32())
-		case "escrow":
-			out.Escrow = float64(in.Float64())
-		case "duration":
-			out.Duration = int32(in.Int32())
+		case "order_id":
+			out.OrderId = int64(in.Int64())
+		case "price":
+			out.Price = float64(in.Float64())
+		case "range":
+			out.Range_ = string(in.String())
+		case "region_id":
+			out.RegionId = int32(in.Int32())
 		case "state":
 			out.State = string(in.String())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		case "volume_remain":
+			out.VolumeRemain = int32(in.Int32())
+		case "volume_total":
+			out.VolumeTotal = int32(in.Int32())
 		case "wallet_division":
 			out.WalletDivision = int32(in.Int32())
 		default:
@@ -149,115 +149,15 @@ func easyjsonEf608ee4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.OrderId != 0 {
-		const prefix string = ",\"order_id\":"
+	if in.Duration != 0 {
+		const prefix string = ",\"duration\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int64(int64(in.OrderId))
-	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
-	if in.RegionId != 0 {
-		const prefix string = ",\"region_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.RegionId))
-	}
-	if in.LocationId != 0 {
-		const prefix string = ",\"location_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.LocationId))
-	}
-	if in.Range_ != "" {
-		const prefix string = ",\"range\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Range_))
-	}
-	if in.Price != 0 {
-		const prefix string = ",\"price\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Price))
-	}
-	if in.VolumeTotal != 0 {
-		const prefix string = ",\"volume_total\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.VolumeTotal))
-	}
-	if in.VolumeRemain != 0 {
-		const prefix string = ",\"volume_remain\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.VolumeRemain))
-	}
-	if true {
-		const prefix string = ",\"issued\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.Issued).MarshalJSON())
-	}
-	if in.IsBuyOrder {
-		const prefix string = ",\"is_buy_order\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.IsBuyOrder))
-	}
-	if in.MinVolume != 0 {
-		const prefix string = ",\"min_volume\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.MinVolume))
+		out.Int32(int32(in.Duration))
 	}
 	if in.Escrow != 0 {
 		const prefix string = ",\"escrow\":"
@@ -269,15 +169,85 @@ func easyjsonEf608ee4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Float64(float64(in.Escrow))
 	}
-	if in.Duration != 0 {
-		const prefix string = ",\"duration\":"
+	if in.IsBuyOrder {
+		const prefix string = ",\"is_buy_order\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.Duration))
+		out.Bool(bool(in.IsBuyOrder))
+	}
+	if true {
+		const prefix string = ",\"issued\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.Issued).MarshalJSON())
+	}
+	if in.LocationId != 0 {
+		const prefix string = ",\"location_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.LocationId))
+	}
+	if in.MinVolume != 0 {
+		const prefix string = ",\"min_volume\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.MinVolume))
+	}
+	if in.OrderId != 0 {
+		const prefix string = ",\"order_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.OrderId))
+	}
+	if in.Price != 0 {
+		const prefix string = ",\"price\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.Price))
+	}
+	if in.Range_ != "" {
+		const prefix string = ",\"range\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Range_))
+	}
+	if in.RegionId != 0 {
+		const prefix string = ",\"region_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.RegionId))
 	}
 	if in.State != "" {
 		const prefix string = ",\"state\":"
@@ -288,6 +258,36 @@ func easyjsonEf608ee4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.State))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
+	}
+	if in.VolumeRemain != 0 {
+		const prefix string = ",\"volume_remain\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.VolumeRemain))
+	}
+	if in.VolumeTotal != 0 {
+		const prefix string = ",\"volume_total\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.VolumeTotal))
 	}
 	if in.WalletDivision != 0 {
 		const prefix string = ",\"wallet_division\":"

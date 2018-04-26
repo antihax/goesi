@@ -105,12 +105,12 @@ func easyjson615b321bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		switch key {
 		case "fleet_id":
 			out.FleetId = int64(in.Int64())
-		case "wing_id":
-			out.WingId = int64(in.Int64())
-		case "squad_id":
-			out.SquadId = int64(in.Int64())
 		case "role":
 			out.Role = string(in.String())
+		case "squad_id":
+			out.SquadId = int64(in.Int64())
+		case "wing_id":
+			out.WingId = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -135,15 +135,15 @@ func easyjson615b321bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.FleetId))
 	}
-	if in.WingId != 0 {
-		const prefix string = ",\"wing_id\":"
+	if in.Role != "" {
+		const prefix string = ",\"role\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int64(int64(in.WingId))
+		out.String(string(in.Role))
 	}
 	if in.SquadId != 0 {
 		const prefix string = ",\"squad_id\":"
@@ -155,15 +155,15 @@ func easyjson615b321bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.SquadId))
 	}
-	if in.Role != "" {
-		const prefix string = ",\"role\":"
+	if in.WingId != 0 {
+		const prefix string = ",\"wing_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.Role))
+		out.Int64(int64(in.WingId))
 	}
 	out.RawByte('}')
 }

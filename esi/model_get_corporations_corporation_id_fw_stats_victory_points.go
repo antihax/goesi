@@ -29,7 +29,7 @@ type GetCorporationsCorporationIdFwStatsVictoryPointsList []GetCorporationsCorpo
 /* Summary of victory points gained by the given corporation for the enlisted faction */
 //easyjson:json
 type GetCorporationsCorporationIdFwStatsVictoryPoints struct {
-	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's victory points gained by members of the given corporation */
 	LastWeek  int32 `json:"last_week,omitempty"` /* Last week's victory points gained by members of the given corporation */
 	Total     int32 `json:"total,omitempty"`     /* Total victory points gained since the given corporation enlisted */
+	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's victory points gained by members of the given corporation */
 }

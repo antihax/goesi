@@ -29,8 +29,8 @@ type GetCorporationsCorporationIdOutpostsOutpostIdServiceList []GetCorporationsC
 /* service object */
 //easyjson:json
 type GetCorporationsCorporationIdOutpostsOutpostIdService struct {
-	ServiceName             string  `json:"service_name,omitempty"`               /* service_name string */
-	MinimumStanding         float64 `json:"minimum_standing,omitempty"`           /* minimum_standing number */
-	SurchargePerBadStanding float64 `json:"surcharge_per_bad_standing,omitempty"` /* surcharge_per_bad_standing number */
 	DiscountPerGoodStanding float64 `json:"discount_per_good_standing,omitempty"` /* discount_per_good_standing number */
+	MinimumStanding         float64 `json:"minimum_standing,omitempty"`           /* minimum_standing number */
+	ServiceName             string  `json:"service_name,omitempty"`               /* service_name string */
+	SurchargePerBadStanding float64 `json:"surcharge_per_bad_standing,omitempty"` /* surcharge_per_bad_standing number */
 }

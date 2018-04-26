@@ -103,22 +103,22 @@ func easyjsonF7263cfaDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "graphic_id":
-			out.GraphicId = int32(in.Int32())
-		case "graphic_file":
-			out.GraphicFile = string(in.String())
-		case "sof_race_name":
-			out.SofRaceName = string(in.String())
-		case "sof_fation_name":
-			out.SofFationName = string(in.String())
-		case "sof_dna":
-			out.SofDna = string(in.String())
-		case "sof_hull_name":
-			out.SofHullName = string(in.String())
 		case "collision_file":
 			out.CollisionFile = string(in.String())
+		case "graphic_file":
+			out.GraphicFile = string(in.String())
+		case "graphic_id":
+			out.GraphicId = int32(in.Int32())
 		case "icon_folder":
 			out.IconFolder = string(in.String())
+		case "sof_dna":
+			out.SofDna = string(in.String())
+		case "sof_fation_name":
+			out.SofFationName = string(in.String())
+		case "sof_hull_name":
+			out.SofHullName = string(in.String())
+		case "sof_race_name":
+			out.SofRaceName = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -133,15 +133,15 @@ func easyjsonF7263cfaEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.GraphicId != 0 {
-		const prefix string = ",\"graphic_id\":"
+	if in.CollisionFile != "" {
+		const prefix string = ",\"collision_file\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.GraphicId))
+		out.String(string(in.CollisionFile))
 	}
 	if in.GraphicFile != "" {
 		const prefix string = ",\"graphic_file\":"
@@ -153,25 +153,25 @@ func easyjsonF7263cfaEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.GraphicFile))
 	}
-	if in.SofRaceName != "" {
-		const prefix string = ",\"sof_race_name\":"
+	if in.GraphicId != 0 {
+		const prefix string = ",\"graphic_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.SofRaceName))
+		out.Int32(int32(in.GraphicId))
 	}
-	if in.SofFationName != "" {
-		const prefix string = ",\"sof_fation_name\":"
+	if in.IconFolder != "" {
+		const prefix string = ",\"icon_folder\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.SofFationName))
+		out.String(string(in.IconFolder))
 	}
 	if in.SofDna != "" {
 		const prefix string = ",\"sof_dna\":"
@@ -183,6 +183,16 @@ func easyjsonF7263cfaEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.SofDna))
 	}
+	if in.SofFationName != "" {
+		const prefix string = ",\"sof_fation_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.SofFationName))
+	}
 	if in.SofHullName != "" {
 		const prefix string = ",\"sof_hull_name\":"
 		if first {
@@ -193,25 +203,15 @@ func easyjsonF7263cfaEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.SofHullName))
 	}
-	if in.CollisionFile != "" {
-		const prefix string = ",\"collision_file\":"
+	if in.SofRaceName != "" {
+		const prefix string = ",\"sof_race_name\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.CollisionFile))
-	}
-	if in.IconFolder != "" {
-		const prefix string = ",\"icon_folder\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.IconFolder))
+		out.String(string(in.SofRaceName))
 	}
 	out.RawByte('}')
 }

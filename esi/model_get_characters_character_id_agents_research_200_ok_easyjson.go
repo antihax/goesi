@@ -105,16 +105,16 @@ func easyjsonB249e244DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		switch key {
 		case "agent_id":
 			out.AgentId = int32(in.Int32())
+		case "points_per_day":
+			out.PointsPerDay = float32(in.Float32())
+		case "remainder_points":
+			out.RemainderPoints = float32(in.Float32())
 		case "skill_type_id":
 			out.SkillTypeId = int32(in.Int32())
 		case "started_at":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.StartedAt).UnmarshalJSON(data))
 			}
-		case "points_per_day":
-			out.PointsPerDay = float32(in.Float32())
-		case "remainder_points":
-			out.RemainderPoints = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -139,26 +139,6 @@ func easyjsonB249e244EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.AgentId))
 	}
-	if in.SkillTypeId != 0 {
-		const prefix string = ",\"skill_type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.SkillTypeId))
-	}
-	if true {
-		const prefix string = ",\"started_at\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.StartedAt).MarshalJSON())
-	}
 	if in.PointsPerDay != 0 {
 		const prefix string = ",\"points_per_day\":"
 		if first {
@@ -178,6 +158,26 @@ func easyjsonB249e244EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Float32(float32(in.RemainderPoints))
+	}
+	if in.SkillTypeId != 0 {
+		const prefix string = ",\"skill_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SkillTypeId))
+	}
+	if true {
+		const prefix string = ",\"started_at\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.StartedAt).MarshalJSON())
 	}
 	out.RawByte('}')
 }

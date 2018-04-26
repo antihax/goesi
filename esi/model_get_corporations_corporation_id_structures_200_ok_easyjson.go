@@ -103,20 +103,26 @@ func easyjson52e0404DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCo
 			continue
 		}
 		switch key {
-		case "structure_id":
-			out.StructureId = int64(in.Int64())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
 		case "corporation_id":
 			out.CorporationId = int32(in.Int32())
-		case "system_id":
-			out.SystemId = int32(in.Int32())
-		case "profile_id":
-			out.ProfileId = int32(in.Int32())
 		case "fuel_expires":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.FuelExpires).UnmarshalJSON(data))
 			}
+		case "next_reinforce_apply":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.NextReinforceApply).UnmarshalJSON(data))
+			}
+		case "next_reinforce_hour":
+			out.NextReinforceHour = int32(in.Int32())
+		case "next_reinforce_weekday":
+			out.NextReinforceWeekday = int32(in.Int32())
+		case "profile_id":
+			out.ProfileId = int32(in.Int32())
+		case "reinforce_hour":
+			out.ReinforceHour = int32(in.Int32())
+		case "reinforce_weekday":
+			out.ReinforceWeekday = int32(in.Int32())
 		case "services":
 			if in.IsNull() {
 				in.Skip()
@@ -140,31 +146,25 @@ func easyjson52e0404DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCo
 				}
 				in.Delim(']')
 			}
-		case "state_timer_start":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.StateTimerStart).UnmarshalJSON(data))
-			}
+		case "state":
+			out.State = string(in.String())
 		case "state_timer_end":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.StateTimerEnd).UnmarshalJSON(data))
 			}
+		case "state_timer_start":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.StateTimerStart).UnmarshalJSON(data))
+			}
+		case "structure_id":
+			out.StructureId = int64(in.Int64())
+		case "system_id":
+			out.SystemId = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		case "unanchors_at":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.UnanchorsAt).UnmarshalJSON(data))
-			}
-		case "state":
-			out.State = string(in.String())
-		case "reinforce_weekday":
-			out.ReinforceWeekday = int32(in.Int32())
-		case "reinforce_hour":
-			out.ReinforceHour = int32(in.Int32())
-		case "next_reinforce_weekday":
-			out.NextReinforceWeekday = int32(in.Int32())
-		case "next_reinforce_hour":
-			out.NextReinforceHour = int32(in.Int32())
-		case "next_reinforce_apply":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.NextReinforceApply).UnmarshalJSON(data))
 			}
 		default:
 			in.SkipRecursive()
@@ -180,26 +180,6 @@ func easyjson52e0404EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.StructureId != 0 {
-		const prefix string = ",\"structure_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.StructureId))
-	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
 	if in.CorporationId != 0 {
 		const prefix string = ",\"corporation_id\":"
 		if first {
@@ -210,15 +190,45 @@ func easyjson52e0404EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 		}
 		out.Int32(int32(in.CorporationId))
 	}
-	if in.SystemId != 0 {
-		const prefix string = ",\"system_id\":"
+	if true {
+		const prefix string = ",\"fuel_expires\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.SystemId))
+		out.Raw((in.FuelExpires).MarshalJSON())
+	}
+	if true {
+		const prefix string = ",\"next_reinforce_apply\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.NextReinforceApply).MarshalJSON())
+	}
+	if in.NextReinforceHour != 0 {
+		const prefix string = ",\"next_reinforce_hour\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.NextReinforceHour))
+	}
+	if in.NextReinforceWeekday != 0 {
+		const prefix string = ",\"next_reinforce_weekday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.NextReinforceWeekday))
 	}
 	if in.ProfileId != 0 {
 		const prefix string = ",\"profile_id\":"
@@ -230,15 +240,25 @@ func easyjson52e0404EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 		}
 		out.Int32(int32(in.ProfileId))
 	}
-	if true {
-		const prefix string = ",\"fuel_expires\":"
+	if in.ReinforceHour != 0 {
+		const prefix string = ",\"reinforce_hour\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.FuelExpires).MarshalJSON())
+		out.Int32(int32(in.ReinforceHour))
+	}
+	if in.ReinforceWeekday != 0 {
+		const prefix string = ",\"reinforce_weekday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ReinforceWeekday))
 	}
 	if len(in.Services) != 0 {
 		const prefix string = ",\"services\":"
@@ -259,15 +279,15 @@ func easyjson52e0404EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 			out.RawByte(']')
 		}
 	}
-	if true {
-		const prefix string = ",\"state_timer_start\":"
+	if in.State != "" {
+		const prefix string = ",\"state\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.StateTimerStart).MarshalJSON())
+		out.String(string(in.State))
 	}
 	if true {
 		const prefix string = ",\"state_timer_end\":"
@@ -280,6 +300,46 @@ func easyjson52e0404EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 		out.Raw((in.StateTimerEnd).MarshalJSON())
 	}
 	if true {
+		const prefix string = ",\"state_timer_start\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.StateTimerStart).MarshalJSON())
+	}
+	if in.StructureId != 0 {
+		const prefix string = ",\"structure_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.StructureId))
+	}
+	if in.SystemId != 0 {
+		const prefix string = ",\"system_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SystemId))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
+	}
+	if true {
 		const prefix string = ",\"unanchors_at\":"
 		if first {
 			first = false
@@ -288,66 +348,6 @@ func easyjson52e0404EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 			out.RawString(prefix)
 		}
 		out.Raw((in.UnanchorsAt).MarshalJSON())
-	}
-	if in.State != "" {
-		const prefix string = ",\"state\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.State))
-	}
-	if in.ReinforceWeekday != 0 {
-		const prefix string = ",\"reinforce_weekday\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ReinforceWeekday))
-	}
-	if in.ReinforceHour != 0 {
-		const prefix string = ",\"reinforce_hour\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ReinforceHour))
-	}
-	if in.NextReinforceWeekday != 0 {
-		const prefix string = ",\"next_reinforce_weekday\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.NextReinforceWeekday))
-	}
-	if in.NextReinforceHour != 0 {
-		const prefix string = ",\"next_reinforce_hour\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.NextReinforceHour))
-	}
-	if true {
-		const prefix string = ",\"next_reinforce_apply\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.NextReinforceApply).MarshalJSON())
 	}
 	out.RawByte('}')
 }

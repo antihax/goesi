@@ -103,20 +103,20 @@ func easyjsonDa9764faDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
 		case "character_id":
 			out.CharacterId = int32(in.Int32())
 		case "corporation_id":
 			out.CorporationId = int32(in.Int32())
-		case "alliance_id":
-			out.AllianceId = int32(in.Int32())
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
-		case "security_status":
-			out.SecurityStatus = float32(in.Float32())
-		case "final_blow":
-			out.FinalBlow = bool(in.Bool())
 		case "damage_done":
 			out.DamageDone = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
+		case "final_blow":
+			out.FinalBlow = bool(in.Bool())
+		case "security_status":
+			out.SecurityStatus = float32(in.Float32())
 		case "ship_type_id":
 			out.ShipTypeId = int32(in.Int32())
 		case "weapon_type_id":
@@ -135,6 +135,16 @@ func easyjsonDa9764faEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.AllianceId != 0 {
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.AllianceId))
+	}
 	if in.CharacterId != 0 {
 		const prefix string = ",\"character_id\":"
 		if first {
@@ -155,15 +165,15 @@ func easyjsonDa9764faEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.CorporationId))
 	}
-	if in.AllianceId != 0 {
-		const prefix string = ",\"alliance_id\":"
+	if in.DamageDone != 0 {
+		const prefix string = ",\"damage_done\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.AllianceId))
+		out.Int32(int32(in.DamageDone))
 	}
 	if in.FactionId != 0 {
 		const prefix string = ",\"faction_id\":"
@@ -175,16 +185,6 @@ func easyjsonDa9764faEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.FactionId))
 	}
-	if in.SecurityStatus != 0 {
-		const prefix string = ",\"security_status\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.SecurityStatus))
-	}
 	if in.FinalBlow {
 		const prefix string = ",\"final_blow\":"
 		if first {
@@ -195,15 +195,15 @@ func easyjsonDa9764faEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Bool(bool(in.FinalBlow))
 	}
-	if in.DamageDone != 0 {
-		const prefix string = ",\"damage_done\":"
+	if in.SecurityStatus != 0 {
+		const prefix string = ",\"security_status\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.DamageDone))
+		out.Float32(float32(in.SecurityStatus))
 	}
 	if in.ShipTypeId != 0 {
 		const prefix string = ",\"ship_type_id\":"

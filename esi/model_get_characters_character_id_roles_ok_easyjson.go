@@ -126,29 +126,6 @@ func easyjsonB983e026DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "roles_at_hq":
-			if in.IsNull() {
-				in.Skip()
-				out.RolesAtHq = nil
-			} else {
-				in.Delim('[')
-				if out.RolesAtHq == nil {
-					if !in.IsDelim(']') {
-						out.RolesAtHq = make([]string, 0, 4)
-					} else {
-						out.RolesAtHq = []string{}
-					}
-				} else {
-					out.RolesAtHq = (out.RolesAtHq)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v5 string
-					v5 = string(in.String())
-					out.RolesAtHq = append(out.RolesAtHq, v5)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
 		case "roles_at_base":
 			if in.IsNull() {
 				in.Skip()
@@ -165,9 +142,32 @@ func easyjsonB983e026DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 					out.RolesAtBase = (out.RolesAtBase)[:0]
 				}
 				for !in.IsDelim(']') {
+					var v5 string
+					v5 = string(in.String())
+					out.RolesAtBase = append(out.RolesAtBase, v5)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "roles_at_hq":
+			if in.IsNull() {
+				in.Skip()
+				out.RolesAtHq = nil
+			} else {
+				in.Delim('[')
+				if out.RolesAtHq == nil {
+					if !in.IsDelim(']') {
+						out.RolesAtHq = make([]string, 0, 4)
+					} else {
+						out.RolesAtHq = []string{}
+					}
+				} else {
+					out.RolesAtHq = (out.RolesAtHq)[:0]
+				}
+				for !in.IsDelim(']') {
 					var v6 string
 					v6 = string(in.String())
-					out.RolesAtBase = append(out.RolesAtBase, v6)
+					out.RolesAtHq = append(out.RolesAtHq, v6)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -228,25 +228,6 @@ func easyjsonB983e026EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
-	if len(in.RolesAtHq) != 0 {
-		const prefix string = ",\"roles_at_hq\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v10, v11 := range in.RolesAtHq {
-				if v10 > 0 {
-					out.RawByte(',')
-				}
-				out.String(string(v11))
-			}
-			out.RawByte(']')
-		}
-	}
 	if len(in.RolesAtBase) != 0 {
 		const prefix string = ",\"roles_at_base\":"
 		if first {
@@ -257,7 +238,26 @@ func easyjsonB983e026EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v12, v13 := range in.RolesAtBase {
+			for v10, v11 := range in.RolesAtBase {
+				if v10 > 0 {
+					out.RawByte(',')
+				}
+				out.String(string(v11))
+			}
+			out.RawByte(']')
+		}
+	}
+	if len(in.RolesAtHq) != 0 {
+		const prefix string = ",\"roles_at_hq\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v12, v13 := range in.RolesAtHq {
 				if v12 > 0 {
 					out.RawByte(',')
 				}

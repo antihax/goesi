@@ -103,10 +103,10 @@ func easyjsonBa5469f6DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 			continue
 		}
 		switch key {
-		case "name":
-			out.Name = string(in.String())
 		case "color":
 			out.Color = string(in.String())
+		case "name":
+			out.Name = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -121,16 +121,6 @@ func easyjsonBa5469f6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
 	if in.Color != "" {
 		const prefix string = ",\"color\":"
 		if first {
@@ -140,6 +130,16 @@ func easyjsonBa5469f6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 			out.RawString(prefix)
 		}
 		out.String(string(in.Color))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
 	}
 	out.RawByte('}')
 }

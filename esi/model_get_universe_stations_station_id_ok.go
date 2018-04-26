@@ -29,16 +29,16 @@ type GetUniverseStationsStationIdOkList []GetUniverseStationsStationIdOk
 /* 200 ok object */
 //easyjson:json
 type GetUniverseStationsStationIdOk struct {
-	StationId                int32                                `json:"station_id,omitempty"` /* station_id integer */
-	Name                     string                               `json:"name,omitempty"`       /* name string */
-	Owner                    int32                                `json:"owner,omitempty"`      /* ID of the corporation that controls this station */
-	TypeId                   int32                                `json:"type_id,omitempty"`    /* type_id integer */
-	RaceId                   int32                                `json:"race_id,omitempty"`    /* race_id integer */
+	MaxDockableShipVolume    float32                              `json:"max_dockable_ship_volume,omitempty"` /* max_dockable_ship_volume number */
+	Name                     string                               `json:"name,omitempty"`                     /* name string */
+	OfficeRentalCost         float32                              `json:"office_rental_cost,omitempty"`       /* office_rental_cost number */
+	Owner                    int32                                `json:"owner,omitempty"`                    /* ID of the corporation that controls this station */
 	Position                 GetUniverseStationsStationIdPosition `json:"position,omitempty"`
-	SystemId                 int32                                `json:"system_id,omitempty"`                  /* The solar system this station is in */
+	RaceId                   int32                                `json:"race_id,omitempty"`                    /* race_id integer */
 	ReprocessingEfficiency   float32                              `json:"reprocessing_efficiency,omitempty"`    /* reprocessing_efficiency number */
 	ReprocessingStationsTake float32                              `json:"reprocessing_stations_take,omitempty"` /* reprocessing_stations_take number */
-	MaxDockableShipVolume    float32                              `json:"max_dockable_ship_volume,omitempty"`   /* max_dockable_ship_volume number */
-	OfficeRentalCost         float32                              `json:"office_rental_cost,omitempty"`         /* office_rental_cost number */
 	Services                 []string                             `json:"services,omitempty"`                   /* services array */
+	StationId                int32                                `json:"station_id,omitempty"`                 /* station_id integer */
+	SystemId                 int32                                `json:"system_id,omitempty"`                  /* The solar system this station is in */
+	TypeId                   int32                                `json:"type_id,omitempty"`                    /* type_id integer */
 }

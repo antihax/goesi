@@ -103,10 +103,10 @@ func easyjsonC359722aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "division":
-			out.Division = int32(in.Int32())
 		case "balance":
 			out.Balance = float64(in.Float64())
+		case "division":
+			out.Division = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -121,16 +121,6 @@ func easyjsonC359722aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Division != 0 {
-		const prefix string = ",\"division\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Division))
-	}
 	if in.Balance != 0 {
 		const prefix string = ",\"balance\":"
 		if first {
@@ -140,6 +130,16 @@ func easyjsonC359722aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Float64(float64(in.Balance))
+	}
+	if in.Division != 0 {
+		const prefix string = ",\"division\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Division))
 	}
 	out.RawByte('}')
 }

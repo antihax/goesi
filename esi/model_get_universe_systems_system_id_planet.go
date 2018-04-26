@@ -29,7 +29,7 @@ type GetUniverseSystemsSystemIdPlanetList []GetUniverseSystemsSystemIdPlanet
 /* planet object */
 //easyjson:json
 type GetUniverseSystemsSystemIdPlanet struct {
-	PlanetId      int32   `json:"planet_id,omitempty"`      /* planet_id integer */
-	Moons         []int32 `json:"moons,omitempty"`          /* moons array */
 	AsteroidBelts []int32 `json:"asteroid_belts,omitempty"` /* asteroid_belts array */
+	Moons         []int32 `json:"moons,omitempty"`          /* moons array */
+	PlanetId      int32   `json:"planet_id,omitempty"`      /* planet_id integer */
 }

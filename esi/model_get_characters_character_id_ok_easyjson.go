@@ -103,30 +103,30 @@ func easyjsonD2c9dba0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "name":
-			out.Name = string(in.String())
-		case "description":
-			out.Description = string(in.String())
-		case "corporation_id":
-			out.CorporationId = int32(in.Int32())
 		case "alliance_id":
 			out.AllianceId = int32(in.Int32())
+		case "ancestry_id":
+			out.AncestryId = int32(in.Int32())
 		case "birthday":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Birthday).UnmarshalJSON(data))
 			}
-		case "gender":
-			out.Gender = string(in.String())
-		case "race_id":
-			out.RaceId = int32(in.Int32())
 		case "bloodline_id":
 			out.BloodlineId = int32(in.Int32())
-		case "ancestry_id":
-			out.AncestryId = int32(in.Int32())
-		case "security_status":
-			out.SecurityStatus = float32(in.Float32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		case "description":
+			out.Description = string(in.String())
 		case "faction_id":
 			out.FactionId = int32(in.Int32())
+		case "gender":
+			out.Gender = string(in.String())
+		case "name":
+			out.Name = string(in.String())
+		case "race_id":
+			out.RaceId = int32(in.Int32())
+		case "security_status":
+			out.SecurityStatus = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -141,36 +141,6 @@ func easyjsonD2c9dba0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
-	if in.Description != "" {
-		const prefix string = ",\"description\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Description))
-	}
-	if in.CorporationId != 0 {
-		const prefix string = ",\"corporation_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.CorporationId))
-	}
 	if in.AllianceId != 0 {
 		const prefix string = ",\"alliance_id\":"
 		if first {
@@ -180,46 +150,6 @@ func easyjsonD2c9dba0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.AllianceId))
-	}
-	if true {
-		const prefix string = ",\"birthday\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.Birthday).MarshalJSON())
-	}
-	if in.Gender != "" {
-		const prefix string = ",\"gender\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Gender))
-	}
-	if in.RaceId != 0 {
-		const prefix string = ",\"race_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.RaceId))
-	}
-	if in.BloodlineId != 0 {
-		const prefix string = ",\"bloodline_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.BloodlineId))
 	}
 	if in.AncestryId != 0 {
 		const prefix string = ",\"ancestry_id\":"
@@ -231,15 +161,45 @@ func easyjsonD2c9dba0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.AncestryId))
 	}
-	if in.SecurityStatus != 0 {
-		const prefix string = ",\"security_status\":"
+	if true {
+		const prefix string = ",\"birthday\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float32(float32(in.SecurityStatus))
+		out.Raw((in.Birthday).MarshalJSON())
+	}
+	if in.BloodlineId != 0 {
+		const prefix string = ",\"bloodline_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.BloodlineId))
+	}
+	if in.CorporationId != 0 {
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CorporationId))
+	}
+	if in.Description != "" {
+		const prefix string = ",\"description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Description))
 	}
 	if in.FactionId != 0 {
 		const prefix string = ",\"faction_id\":"
@@ -250,6 +210,46 @@ func easyjsonD2c9dba0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.FactionId))
+	}
+	if in.Gender != "" {
+		const prefix string = ",\"gender\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Gender))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	if in.RaceId != 0 {
+		const prefix string = ",\"race_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.RaceId))
+	}
+	if in.SecurityStatus != 0 {
+		const prefix string = ",\"security_status\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.SecurityStatus))
 	}
 	out.RawByte('}')
 }

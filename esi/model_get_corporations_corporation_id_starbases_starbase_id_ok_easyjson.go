@@ -103,32 +103,24 @@ func easyjsonAa81674fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "fuel_bay_view":
-			out.FuelBayView = string(in.String())
-		case "fuel_bay_take":
-			out.FuelBayTake = string(in.String())
-		case "anchor":
-			out.Anchor = string(in.String())
-		case "unanchor":
-			out.Unanchor = string(in.String())
-		case "online":
-			out.Online = string(in.String())
-		case "offline":
-			out.Offline = string(in.String())
-		case "allow_corporation_members":
-			out.AllowCorporationMembers = bool(in.Bool())
 		case "allow_alliance_members":
 			out.AllowAllianceMembers = bool(in.Bool())
-		case "use_alliance_standings":
-			out.UseAllianceStandings = bool(in.Bool())
-		case "attack_standing_threshold":
-			out.AttackStandingThreshold = float32(in.Float32())
-		case "attack_security_status_threshold":
-			out.AttackSecurityStatusThreshold = float32(in.Float32())
-		case "attack_if_other_security_status_dropping":
-			out.AttackIfOtherSecurityStatusDropping = bool(in.Bool())
+		case "allow_corporation_members":
+			out.AllowCorporationMembers = bool(in.Bool())
+		case "anchor":
+			out.Anchor = string(in.String())
 		case "attack_if_at_war":
 			out.AttackIfAtWar = bool(in.Bool())
+		case "attack_if_other_security_status_dropping":
+			out.AttackIfOtherSecurityStatusDropping = bool(in.Bool())
+		case "attack_security_status_threshold":
+			out.AttackSecurityStatusThreshold = float32(in.Float32())
+		case "attack_standing_threshold":
+			out.AttackStandingThreshold = float32(in.Float32())
+		case "fuel_bay_take":
+			out.FuelBayTake = string(in.String())
+		case "fuel_bay_view":
+			out.FuelBayView = string(in.String())
 		case "fuels":
 			if in.IsNull() {
 				in.Skip()
@@ -152,6 +144,14 @@ func easyjsonAa81674fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
+		case "offline":
+			out.Offline = string(in.String())
+		case "online":
+			out.Online = string(in.String())
+		case "unanchor":
+			out.Unanchor = string(in.String())
+		case "use_alliance_standings":
+			out.UseAllianceStandings = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -166,65 +166,15 @@ func easyjsonAa81674fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.FuelBayView != "" {
-		const prefix string = ",\"fuel_bay_view\":"
+	if in.AllowAllianceMembers {
+		const prefix string = ",\"allow_alliance_members\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.FuelBayView))
-	}
-	if in.FuelBayTake != "" {
-		const prefix string = ",\"fuel_bay_take\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.FuelBayTake))
-	}
-	if in.Anchor != "" {
-		const prefix string = ",\"anchor\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Anchor))
-	}
-	if in.Unanchor != "" {
-		const prefix string = ",\"unanchor\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Unanchor))
-	}
-	if in.Online != "" {
-		const prefix string = ",\"online\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Online))
-	}
-	if in.Offline != "" {
-		const prefix string = ",\"offline\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Offline))
+		out.Bool(bool(in.AllowAllianceMembers))
 	}
 	if in.AllowCorporationMembers {
 		const prefix string = ",\"allow_corporation_members\":"
@@ -236,45 +186,25 @@ func easyjsonAa81674fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Bool(bool(in.AllowCorporationMembers))
 	}
-	if in.AllowAllianceMembers {
-		const prefix string = ",\"allow_alliance_members\":"
+	if in.Anchor != "" {
+		const prefix string = ",\"anchor\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Bool(bool(in.AllowAllianceMembers))
+		out.String(string(in.Anchor))
 	}
-	if in.UseAllianceStandings {
-		const prefix string = ",\"use_alliance_standings\":"
+	if in.AttackIfAtWar {
+		const prefix string = ",\"attack_if_at_war\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Bool(bool(in.UseAllianceStandings))
-	}
-	if in.AttackStandingThreshold != 0 {
-		const prefix string = ",\"attack_standing_threshold\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.AttackStandingThreshold))
-	}
-	if in.AttackSecurityStatusThreshold != 0 {
-		const prefix string = ",\"attack_security_status_threshold\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.AttackSecurityStatusThreshold))
+		out.Bool(bool(in.AttackIfAtWar))
 	}
 	if in.AttackIfOtherSecurityStatusDropping {
 		const prefix string = ",\"attack_if_other_security_status_dropping\":"
@@ -286,15 +216,45 @@ func easyjsonAa81674fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Bool(bool(in.AttackIfOtherSecurityStatusDropping))
 	}
-	if in.AttackIfAtWar {
-		const prefix string = ",\"attack_if_at_war\":"
+	if in.AttackSecurityStatusThreshold != 0 {
+		const prefix string = ",\"attack_security_status_threshold\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Bool(bool(in.AttackIfAtWar))
+		out.Float32(float32(in.AttackSecurityStatusThreshold))
+	}
+	if in.AttackStandingThreshold != 0 {
+		const prefix string = ",\"attack_standing_threshold\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.AttackStandingThreshold))
+	}
+	if in.FuelBayTake != "" {
+		const prefix string = ",\"fuel_bay_take\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.FuelBayTake))
+	}
+	if in.FuelBayView != "" {
+		const prefix string = ",\"fuel_bay_view\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.FuelBayView))
 	}
 	if len(in.Fuels) != 0 {
 		const prefix string = ",\"fuels\":"
@@ -314,6 +274,46 @@ func easyjsonAa81674fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.Offline != "" {
+		const prefix string = ",\"offline\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Offline))
+	}
+	if in.Online != "" {
+		const prefix string = ",\"online\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Online))
+	}
+	if in.Unanchor != "" {
+		const prefix string = ",\"unanchor\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Unanchor))
+	}
+	if in.UseAllianceStandings {
+		const prefix string = ",\"use_alliance_standings\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.UseAllianceStandings))
 	}
 	out.RawByte('}')
 }
@@ -360,10 +360,10 @@ func easyjsonAa81674fDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "type_id":
-			out.TypeId = int32(in.Int32())
 		case "quantity":
 			out.Quantity = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -378,16 +378,6 @@ func easyjsonAa81674fEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
 	if in.Quantity != 0 {
 		const prefix string = ",\"quantity\":"
 		if first {
@@ -397,6 +387,16 @@ func easyjsonAa81674fEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Quantity))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

@@ -29,25 +29,25 @@ type GetDogmaEffectsEffectIdOkList []GetDogmaEffectsEffectIdOk
 /* 200 ok object */
 //easyjson:json
 type GetDogmaEffectsEffectIdOk struct {
-	EffectId                 int32                             `json:"effect_id,omitempty"`                   /* effect_id integer */
-	Name                     string                            `json:"name,omitempty"`                        /* name string */
-	DisplayName              string                            `json:"display_name,omitempty"`                /* display_name string */
 	Description              string                            `json:"description,omitempty"`                 /* description string */
-	IconId                   int32                             `json:"icon_id,omitempty"`                     /* icon_id integer */
-	EffectCategory           int32                             `json:"effect_category,omitempty"`             /* effect_category integer */
-	PreExpression            int32                             `json:"pre_expression,omitempty"`              /* pre_expression integer */
-	PostExpression           int32                             `json:"post_expression,omitempty"`             /* post_expression integer */
-	IsOffensive              bool                              `json:"is_offensive,omitempty"`                /* is_offensive boolean */
-	IsAssistance             bool                              `json:"is_assistance,omitempty"`               /* is_assistance boolean */
 	DisallowAutoRepeat       bool                              `json:"disallow_auto_repeat,omitempty"`        /* disallow_auto_repeat boolean */
-	Published                bool                              `json:"published,omitempty"`                   /* published boolean */
-	IsWarpSafe               bool                              `json:"is_warp_safe,omitempty"`                /* is_warp_safe boolean */
-	RangeChance              bool                              `json:"range_chance,omitempty"`                /* range_chance boolean */
-	ElectronicChance         bool                              `json:"electronic_chance,omitempty"`           /* electronic_chance boolean */
-	DurationAttributeId      int32                             `json:"duration_attribute_id,omitempty"`       /* duration_attribute_id integer */
-	TrackingSpeedAttributeId int32                             `json:"tracking_speed_attribute_id,omitempty"` /* tracking_speed_attribute_id integer */
 	DischargeAttributeId     int32                             `json:"discharge_attribute_id,omitempty"`      /* discharge_attribute_id integer */
-	RangeAttributeId         int32                             `json:"range_attribute_id,omitempty"`          /* range_attribute_id integer */
+	DisplayName              string                            `json:"display_name,omitempty"`                /* display_name string */
+	DurationAttributeId      int32                             `json:"duration_attribute_id,omitempty"`       /* duration_attribute_id integer */
+	EffectCategory           int32                             `json:"effect_category,omitempty"`             /* effect_category integer */
+	EffectId                 int32                             `json:"effect_id,omitempty"`                   /* effect_id integer */
+	ElectronicChance         bool                              `json:"electronic_chance,omitempty"`           /* electronic_chance boolean */
 	FalloffAttributeId       int32                             `json:"falloff_attribute_id,omitempty"`        /* falloff_attribute_id integer */
+	IconId                   int32                             `json:"icon_id,omitempty"`                     /* icon_id integer */
+	IsAssistance             bool                              `json:"is_assistance,omitempty"`               /* is_assistance boolean */
+	IsOffensive              bool                              `json:"is_offensive,omitempty"`                /* is_offensive boolean */
+	IsWarpSafe               bool                              `json:"is_warp_safe,omitempty"`                /* is_warp_safe boolean */
 	Modifiers                []GetDogmaEffectsEffectIdModifier `json:"modifiers,omitempty"`                   /* modifiers array */
+	Name                     string                            `json:"name,omitempty"`                        /* name string */
+	PostExpression           int32                             `json:"post_expression,omitempty"`             /* post_expression integer */
+	PreExpression            int32                             `json:"pre_expression,omitempty"`              /* pre_expression integer */
+	Published                bool                              `json:"published,omitempty"`                   /* published boolean */
+	RangeAttributeId         int32                             `json:"range_attribute_id,omitempty"`          /* range_attribute_id integer */
+	RangeChance              bool                              `json:"range_chance,omitempty"`                /* range_chance boolean */
+	TrackingSpeedAttributeId int32                             `json:"tracking_speed_attribute_id,omitempty"` /* tracking_speed_attribute_id integer */
 }

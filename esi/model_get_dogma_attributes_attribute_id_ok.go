@@ -30,13 +30,13 @@ type GetDogmaAttributesAttributeIdOkList []GetDogmaAttributesAttributeIdOk
 //easyjson:json
 type GetDogmaAttributesAttributeIdOk struct {
 	AttributeId  int32   `json:"attribute_id,omitempty"`  /* attribute_id integer */
-	Name         string  `json:"name,omitempty"`          /* name string */
-	Description  string  `json:"description,omitempty"`   /* description string */
-	IconId       int32   `json:"icon_id,omitempty"`       /* icon_id integer */
 	DefaultValue float32 `json:"default_value,omitempty"` /* default_value number */
-	Published    bool    `json:"published,omitempty"`     /* published boolean */
+	Description  string  `json:"description,omitempty"`   /* description string */
 	DisplayName  string  `json:"display_name,omitempty"`  /* display_name string */
-	UnitId       int32   `json:"unit_id,omitempty"`       /* unit_id integer */
-	Stackable    bool    `json:"stackable,omitempty"`     /* stackable boolean */
 	HighIsGood   bool    `json:"high_is_good,omitempty"`  /* high_is_good boolean */
+	IconId       int32   `json:"icon_id,omitempty"`       /* icon_id integer */
+	Name         string  `json:"name,omitempty"`          /* name string */
+	Published    bool    `json:"published,omitempty"`     /* published boolean */
+	Stackable    bool    `json:"stackable,omitempty"`     /* stackable boolean */
+	UnitId       int32   `json:"unit_id,omitempty"`       /* unit_id integer */
 }

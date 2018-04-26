@@ -33,7 +33,7 @@ type GetCharactersCharacterIdFatigueOkList []GetCharactersCharacterIdFatigueOk
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdFatigueOk struct {
-	LastJumpDate          time.Time `json:"last_jump_date,omitempty"`           /* Character's last jump activation */
 	JumpFatigueExpireDate time.Time `json:"jump_fatigue_expire_date,omitempty"` /* Character's jump fatigue expiry */
+	LastJumpDate          time.Time `json:"last_jump_date,omitempty"`           /* Character's last jump activation */
 	LastUpdateDate        time.Time `json:"last_update_date,omitempty"`         /* Character's last jump update */
 }

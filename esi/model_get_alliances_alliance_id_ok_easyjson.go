@@ -103,22 +103,22 @@ func easyjson3ab323d2DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetA
 			continue
 		}
 		switch key {
-		case "name":
-			out.Name = string(in.String())
-		case "creator_id":
-			out.CreatorId = int32(in.Int32())
 		case "creator_corporation_id":
 			out.CreatorCorporationId = int32(in.Int32())
-		case "ticker":
-			out.Ticker = string(in.String())
-		case "executor_corporation_id":
-			out.ExecutorCorporationId = int32(in.Int32())
+		case "creator_id":
+			out.CreatorId = int32(in.Int32())
 		case "date_founded":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.DateFounded).UnmarshalJSON(data))
 			}
+		case "executor_corporation_id":
+			out.ExecutorCorporationId = int32(in.Int32())
 		case "faction_id":
 			out.FactionId = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		case "ticker":
+			out.Ticker = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -133,15 +133,15 @@ func easyjson3ab323d2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
+	if in.CreatorCorporationId != 0 {
+		const prefix string = ",\"creator_corporation_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.Name))
+		out.Int32(int32(in.CreatorCorporationId))
 	}
 	if in.CreatorId != 0 {
 		const prefix string = ",\"creator_id\":"
@@ -153,25 +153,15 @@ func easyjson3ab323d2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.CreatorId))
 	}
-	if in.CreatorCorporationId != 0 {
-		const prefix string = ",\"creator_corporation_id\":"
+	if true {
+		const prefix string = ",\"date_founded\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.CreatorCorporationId))
-	}
-	if in.Ticker != "" {
-		const prefix string = ",\"ticker\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Ticker))
+		out.Raw((in.DateFounded).MarshalJSON())
 	}
 	if in.ExecutorCorporationId != 0 {
 		const prefix string = ",\"executor_corporation_id\":"
@@ -183,16 +173,6 @@ func easyjson3ab323d2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.ExecutorCorporationId))
 	}
-	if true {
-		const prefix string = ",\"date_founded\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.DateFounded).MarshalJSON())
-	}
 	if in.FactionId != 0 {
 		const prefix string = ",\"faction_id\":"
 		if first {
@@ -202,6 +182,26 @@ func easyjson3ab323d2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.FactionId))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	if in.Ticker != "" {
+		const prefix string = ",\"ticker\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Ticker))
 	}
 	out.RawByte('}')
 }

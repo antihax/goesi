@@ -35,6 +35,6 @@ type GetCharactersCharacterIdChatChannelsBlockedList []GetCharactersCharacterIdC
 type GetCharactersCharacterIdChatChannelsBlocked struct {
 	AccessorId   int32     `json:"accessor_id,omitempty"`   /* ID of a blocked channel member */
 	AccessorType string    `json:"accessor_type,omitempty"` /* accessor_type string */
-	Reason       string    `json:"reason,omitempty"`        /* Reason this accessor is blocked */
 	EndAt        time.Time `json:"end_at,omitempty"`        /* Time at which this accessor will no longer be blocked */
+	Reason       string    `json:"reason,omitempty"`        /* Reason this accessor is blocked */
 }

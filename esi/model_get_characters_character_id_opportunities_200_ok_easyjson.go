@@ -103,12 +103,12 @@ func easyjsonD15c35bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCh
 			continue
 		}
 		switch key {
-		case "task_id":
-			out.TaskId = int32(in.Int32())
 		case "completed_at":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.CompletedAt).UnmarshalJSON(data))
 			}
+		case "task_id":
+			out.TaskId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -123,16 +123,6 @@ func easyjsonD15c35bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.TaskId != 0 {
-		const prefix string = ",\"task_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TaskId))
-	}
 	if true {
 		const prefix string = ",\"completed_at\":"
 		if first {
@@ -142,6 +132,16 @@ func easyjsonD15c35bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 			out.RawString(prefix)
 		}
 		out.Raw((in.CompletedAt).MarshalJSON())
+	}
+	if in.TaskId != 0 {
+		const prefix string = ",\"task_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TaskId))
 	}
 	out.RawByte('}')
 }

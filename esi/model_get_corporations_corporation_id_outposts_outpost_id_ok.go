@@ -29,14 +29,14 @@ type GetCorporationsCorporationIdOutpostsOutpostIdOkList []GetCorporationsCorpor
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdOutpostsOutpostIdOk struct {
-	OwnerId                  int32                                                    `json:"owner_id,omitempty"`                     /* The entity that owns the station (e.g. the entity whose logo is on the station services bar) */
-	SystemId                 int32                                                    `json:"system_id,omitempty"`                    /* The ID of the solar system the outpost rests in */
+	Coordinates              GetCorporationsCorporationIdOutpostsOutpostIdCoordinates `json:"coordinates,omitempty"`
 	DockingCostPerShipVolume float32                                                  `json:"docking_cost_per_ship_volume,omitempty"` /* docking_cost_per_ship_volume number */
 	OfficeRentalCost         int64                                                    `json:"office_rental_cost,omitempty"`           /* office_rental_cost integer */
-	TypeId                   int32                                                    `json:"type_id,omitempty"`                      /* The type ID of the given outpost */
+	OwnerId                  int32                                                    `json:"owner_id,omitempty"`                     /* The entity that owns the station (e.g. the entity whose logo is on the station services bar) */
 	ReprocessingEfficiency   float32                                                  `json:"reprocessing_efficiency,omitempty"`      /* reprocessing_efficiency number */
 	ReprocessingStationTake  float32                                                  `json:"reprocessing_station_take,omitempty"`    /* reprocessing_station_take number */
+	Services                 []GetCorporationsCorporationIdOutpostsOutpostIdService   `json:"services,omitempty"`                     /* A list of services the given outpost provides */
 	StandingOwnerId          int32                                                    `json:"standing_owner_id,omitempty"`            /* The owner ID that sets the ability for someone to dock based on standings. */
-	Coordinates              GetCorporationsCorporationIdOutpostsOutpostIdCoordinates `json:"coordinates,omitempty"`
-	Services                 []GetCorporationsCorporationIdOutpostsOutpostIdService   `json:"services,omitempty"` /* A list of services the given outpost provides */
+	SystemId                 int32                                                    `json:"system_id,omitempty"`                    /* The ID of the solar system the outpost rests in */
+	TypeId                   int32                                                    `json:"type_id,omitempty"`                      /* The type ID of the given outpost */
 }

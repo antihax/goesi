@@ -33,15 +33,15 @@ type GetCharactersCharacterIdOkList []GetCharactersCharacterIdOk
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdOk struct {
-	Name           string    `json:"name,omitempty"`            /* name string */
-	Description    string    `json:"description,omitempty"`     /* description string */
-	CorporationId  int32     `json:"corporation_id,omitempty"`  /* The character's corporation ID */
 	AllianceId     int32     `json:"alliance_id,omitempty"`     /* The character's alliance ID */
-	Birthday       time.Time `json:"birthday,omitempty"`        /* Creation date of the character */
-	Gender         string    `json:"gender,omitempty"`          /* gender string */
-	RaceId         int32     `json:"race_id,omitempty"`         /* race_id integer */
-	BloodlineId    int32     `json:"bloodline_id,omitempty"`    /* bloodline_id integer */
 	AncestryId     int32     `json:"ancestry_id,omitempty"`     /* ancestry_id integer */
-	SecurityStatus float32   `json:"security_status,omitempty"` /* security_status number */
+	Birthday       time.Time `json:"birthday,omitempty"`        /* Creation date of the character */
+	BloodlineId    int32     `json:"bloodline_id,omitempty"`    /* bloodline_id integer */
+	CorporationId  int32     `json:"corporation_id,omitempty"`  /* The character's corporation ID */
+	Description    string    `json:"description,omitempty"`     /* description string */
 	FactionId      int32     `json:"faction_id,omitempty"`      /* ID of the faction the character is fighting for, if the character is enlisted in Factional Warfare */
+	Gender         string    `json:"gender,omitempty"`          /* gender string */
+	Name           string    `json:"name,omitempty"`            /* name string */
+	RaceId         int32     `json:"race_id,omitempty"`         /* race_id integer */
+	SecurityStatus float32   `json:"security_status,omitempty"` /* security_status number */
 }

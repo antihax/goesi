@@ -103,24 +103,14 @@ func easyjson88215edcDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "medal_id":
-			out.MedalId = int32(in.Int32())
-		case "title":
-			out.Title = string(in.String())
-		case "description":
-			out.Description = string(in.String())
 		case "corporation_id":
 			out.CorporationId = int32(in.Int32())
-		case "issuer_id":
-			out.IssuerId = int32(in.Int32())
 		case "date":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Date).UnmarshalJSON(data))
 			}
-		case "reason":
-			out.Reason = string(in.String())
-		case "status":
-			out.Status = string(in.String())
+		case "description":
+			out.Description = string(in.String())
 		case "graphics":
 			if in.IsNull() {
 				in.Skip()
@@ -144,6 +134,16 @@ func easyjson88215edcDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
+		case "issuer_id":
+			out.IssuerId = int32(in.Int32())
+		case "medal_id":
+			out.MedalId = int32(in.Int32())
+		case "reason":
+			out.Reason = string(in.String())
+		case "status":
+			out.Status = string(in.String())
+		case "title":
+			out.Title = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -158,25 +158,25 @@ func easyjson88215edcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.MedalId != 0 {
-		const prefix string = ",\"medal_id\":"
+	if in.CorporationId != 0 {
+		const prefix string = ",\"corporation_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.MedalId))
+		out.Int32(int32(in.CorporationId))
 	}
-	if in.Title != "" {
-		const prefix string = ",\"title\":"
+	if true {
+		const prefix string = ",\"date\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.Title))
+		out.Raw((in.Date).MarshalJSON())
 	}
 	if in.Description != "" {
 		const prefix string = ",\"description\":"
@@ -188,15 +188,24 @@ func easyjson88215edcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Description))
 	}
-	if in.CorporationId != 0 {
-		const prefix string = ",\"corporation_id\":"
+	if len(in.Graphics) != 0 {
+		const prefix string = ",\"graphics\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.CorporationId))
+		{
+			out.RawByte('[')
+			for v5, v6 := range in.Graphics {
+				if v5 > 0 {
+					out.RawByte(',')
+				}
+				easyjson88215edcEncodeGithubComAntihaxGoesiEsi2(out, v6)
+			}
+			out.RawByte(']')
+		}
 	}
 	if in.IssuerId != 0 {
 		const prefix string = ",\"issuer_id\":"
@@ -208,15 +217,15 @@ func easyjson88215edcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.IssuerId))
 	}
-	if true {
-		const prefix string = ",\"date\":"
+	if in.MedalId != 0 {
+		const prefix string = ",\"medal_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.Date).MarshalJSON())
+		out.Int32(int32(in.MedalId))
 	}
 	if in.Reason != "" {
 		const prefix string = ",\"reason\":"
@@ -238,24 +247,15 @@ func easyjson88215edcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Status))
 	}
-	if len(in.Graphics) != 0 {
-		const prefix string = ",\"graphics\":"
+	if in.Title != "" {
+		const prefix string = ",\"title\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		{
-			out.RawByte('[')
-			for v5, v6 := range in.Graphics {
-				if v5 > 0 {
-					out.RawByte(',')
-				}
-				easyjson88215edcEncodeGithubComAntihaxGoesiEsi2(out, v6)
-			}
-			out.RawByte(']')
-		}
+		out.String(string(in.Title))
 	}
 	out.RawByte('}')
 }
@@ -302,14 +302,14 @@ func easyjson88215edcDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "part":
-			out.Part = int32(in.Int32())
-		case "layer":
-			out.Layer = int32(in.Int32())
-		case "graphic":
-			out.Graphic = string(in.String())
 		case "color":
 			out.Color = int32(in.Int32())
+		case "graphic":
+			out.Graphic = string(in.String())
+		case "layer":
+			out.Layer = int32(in.Int32())
+		case "part":
+			out.Part = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -324,25 +324,15 @@ func easyjson88215edcEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Part != 0 {
-		const prefix string = ",\"part\":"
+	if in.Color != 0 {
+		const prefix string = ",\"color\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.Part))
-	}
-	if in.Layer != 0 {
-		const prefix string = ",\"layer\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Layer))
+		out.Int32(int32(in.Color))
 	}
 	if in.Graphic != "" {
 		const prefix string = ",\"graphic\":"
@@ -354,15 +344,25 @@ func easyjson88215edcEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Graphic))
 	}
-	if in.Color != 0 {
-		const prefix string = ",\"color\":"
+	if in.Layer != 0 {
+		const prefix string = ",\"layer\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.Color))
+		out.Int32(int32(in.Layer))
+	}
+	if in.Part != 0 {
+		const prefix string = ",\"part\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Part))
 	}
 	out.RawByte('}')
 }

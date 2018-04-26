@@ -29,7 +29,7 @@ type GetMarketsPrices200OkList []GetMarketsPrices200Ok
 /* 200 ok object */
 //easyjson:json
 type GetMarketsPrices200Ok struct {
-	TypeId        int32   `json:"type_id,omitempty"`        /* type_id integer */
-	AveragePrice  float64 `json:"average_price,omitempty"`  /* average_price number */
 	AdjustedPrice float64 `json:"adjusted_price,omitempty"` /* adjusted_price number */
+	AveragePrice  float64 `json:"average_price,omitempty"`  /* average_price number */
+	TypeId        int32   `json:"type_id,omitempty"`        /* type_id integer */
 }

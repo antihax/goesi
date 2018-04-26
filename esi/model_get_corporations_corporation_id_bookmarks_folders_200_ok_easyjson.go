@@ -103,12 +103,12 @@ func easyjsonB6f122f3DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "creator_id":
+			out.CreatorId = int32(in.Int32())
 		case "folder_id":
 			out.FolderId = int32(in.Int32())
 		case "name":
 			out.Name = string(in.String())
-		case "creator_id":
-			out.CreatorId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -123,6 +123,16 @@ func easyjsonB6f122f3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.CreatorId != 0 {
+		const prefix string = ",\"creator_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CreatorId))
+	}
 	if in.FolderId != 0 {
 		const prefix string = ",\"folder_id\":"
 		if first {
@@ -142,16 +152,6 @@ func easyjsonB6f122f3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Name))
-	}
-	if in.CreatorId != 0 {
-		const prefix string = ",\"creator_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.CreatorId))
 	}
 	out.RawByte('}')
 }

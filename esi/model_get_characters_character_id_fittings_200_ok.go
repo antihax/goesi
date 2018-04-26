@@ -29,9 +29,9 @@ type GetCharactersCharacterIdFittings200OkList []GetCharactersCharacterIdFitting
 /* 200 ok object */
 //easyjson:json
 type GetCharactersCharacterIdFittings200Ok struct {
-	FittingId   int32                                  `json:"fitting_id,omitempty"`   /* fitting_id integer */
-	Name        string                                 `json:"name,omitempty"`         /* name string */
 	Description string                                 `json:"description,omitempty"`  /* description string */
-	ShipTypeId  int32                                  `json:"ship_type_id,omitempty"` /* ship_type_id integer */
+	FittingId   int32                                  `json:"fitting_id,omitempty"`   /* fitting_id integer */
 	Items       []GetCharactersCharacterIdFittingsItem `json:"items,omitempty"`        /* items array */
+	Name        string                                 `json:"name,omitempty"`         /* name string */
+	ShipTypeId  int32                                  `json:"ship_type_id,omitempty"` /* ship_type_id integer */
 }

@@ -34,12 +34,12 @@ type GetCharactersCharacterIdBookmarks200OkList []GetCharactersCharacterIdBookma
 //easyjson:json
 type GetCharactersCharacterIdBookmarks200Ok struct {
 	BookmarkId  int32                                        `json:"bookmark_id,omitempty"` /* bookmark_id integer */
-	FolderId    int32                                        `json:"folder_id,omitempty"`   /* folder_id integer */
-	Created     time.Time                                    `json:"created,omitempty"`     /* created string */
-	Label       string                                       `json:"label,omitempty"`       /* label string */
-	Notes       string                                       `json:"notes,omitempty"`       /* notes string */
-	LocationId  int32                                        `json:"location_id,omitempty"` /* location_id integer */
-	CreatorId   int32                                        `json:"creator_id,omitempty"`  /* creator_id integer */
-	Item        GetCharactersCharacterIdBookmarksItem        `json:"item,omitempty"`
 	Coordinates GetCharactersCharacterIdBookmarksCoordinates `json:"coordinates,omitempty"`
+	Created     time.Time                                    `json:"created,omitempty"`    /* created string */
+	CreatorId   int32                                        `json:"creator_id,omitempty"` /* creator_id integer */
+	FolderId    int32                                        `json:"folder_id,omitempty"`  /* folder_id integer */
+	Item        GetCharactersCharacterIdBookmarksItem        `json:"item,omitempty"`
+	Label       string                                       `json:"label,omitempty"`       /* label string */
+	LocationId  int32                                        `json:"location_id,omitempty"` /* location_id integer */
+	Notes       string                                       `json:"notes,omitempty"`       /* notes string */
 }

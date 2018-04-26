@@ -103,10 +103,10 @@ func easyjson3b9f5914DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "schematic_name":
-			out.SchematicName = string(in.String())
 		case "cycle_time":
 			out.CycleTime = int32(in.Int32())
+		case "schematic_name":
+			out.SchematicName = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -121,16 +121,6 @@ func easyjson3b9f5914EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.SchematicName != "" {
-		const prefix string = ",\"schematic_name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.SchematicName))
-	}
 	if in.CycleTime != 0 {
 		const prefix string = ",\"cycle_time\":"
 		if first {
@@ -140,6 +130,16 @@ func easyjson3b9f5914EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.CycleTime))
+	}
+	if in.SchematicName != "" {
+		const prefix string = ",\"schematic_name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.SchematicName))
 	}
 	out.RawByte('}')
 }

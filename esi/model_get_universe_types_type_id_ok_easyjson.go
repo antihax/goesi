@@ -103,34 +103,10 @@ func easyjson2d81da92DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		case "description":
-			out.Description = string(in.String())
-		case "published":
-			out.Published = bool(in.Bool())
-		case "group_id":
-			out.GroupId = int32(in.Int32())
-		case "market_group_id":
-			out.MarketGroupId = int32(in.Int32())
-		case "radius":
-			out.Radius = float32(in.Float32())
-		case "volume":
-			out.Volume = float32(in.Float32())
-		case "packaged_volume":
-			out.PackagedVolume = float32(in.Float32())
-		case "icon_id":
-			out.IconId = int32(in.Int32())
 		case "capacity":
 			out.Capacity = float32(in.Float32())
-		case "portion_size":
-			out.PortionSize = int32(in.Int32())
-		case "mass":
-			out.Mass = float32(in.Float32())
-		case "graphic_id":
-			out.GraphicId = int32(in.Int32())
+		case "description":
+			out.Description = string(in.String())
 		case "dogma_attributes":
 			if in.IsNull() {
 				in.Skip()
@@ -177,6 +153,30 @@ func easyjson2d81da92DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 				}
 				in.Delim(']')
 			}
+		case "graphic_id":
+			out.GraphicId = int32(in.Int32())
+		case "group_id":
+			out.GroupId = int32(in.Int32())
+		case "icon_id":
+			out.IconId = int32(in.Int32())
+		case "market_group_id":
+			out.MarketGroupId = int32(in.Int32())
+		case "mass":
+			out.Mass = float32(in.Float32())
+		case "name":
+			out.Name = string(in.String())
+		case "packaged_volume":
+			out.PackagedVolume = float32(in.Float32())
+		case "portion_size":
+			out.PortionSize = int32(in.Int32())
+		case "published":
+			out.Published = bool(in.Bool())
+		case "radius":
+			out.Radius = float32(in.Float32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		case "volume":
+			out.Volume = float32(in.Float32())
 		default:
 			in.SkipRecursive()
 		}
@@ -191,106 +191,6 @@ func easyjson2d81da92EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
-	if in.Description != "" {
-		const prefix string = ",\"description\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Description))
-	}
-	if in.Published {
-		const prefix string = ",\"published\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.Published))
-	}
-	if in.GroupId != 0 {
-		const prefix string = ",\"group_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.GroupId))
-	}
-	if in.MarketGroupId != 0 {
-		const prefix string = ",\"market_group_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.MarketGroupId))
-	}
-	if in.Radius != 0 {
-		const prefix string = ",\"radius\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Radius))
-	}
-	if in.Volume != 0 {
-		const prefix string = ",\"volume\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Volume))
-	}
-	if in.PackagedVolume != 0 {
-		const prefix string = ",\"packaged_volume\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.PackagedVolume))
-	}
-	if in.IconId != 0 {
-		const prefix string = ",\"icon_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.IconId))
-	}
 	if in.Capacity != 0 {
 		const prefix string = ",\"capacity\":"
 		if first {
@@ -301,35 +201,15 @@ func easyjson2d81da92EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Float32(float32(in.Capacity))
 	}
-	if in.PortionSize != 0 {
-		const prefix string = ",\"portion_size\":"
+	if in.Description != "" {
+		const prefix string = ",\"description\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.PortionSize))
-	}
-	if in.Mass != 0 {
-		const prefix string = ",\"mass\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Mass))
-	}
-	if in.GraphicId != 0 {
-		const prefix string = ",\"graphic_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.GraphicId))
+		out.String(string(in.Description))
 	}
 	if len(in.DogmaAttributes) != 0 {
 		const prefix string = ",\"dogma_attributes\":"
@@ -368,6 +248,126 @@ func easyjson2d81da92EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.GraphicId != 0 {
+		const prefix string = ",\"graphic_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.GraphicId))
+	}
+	if in.GroupId != 0 {
+		const prefix string = ",\"group_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.GroupId))
+	}
+	if in.IconId != 0 {
+		const prefix string = ",\"icon_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.IconId))
+	}
+	if in.MarketGroupId != 0 {
+		const prefix string = ",\"market_group_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.MarketGroupId))
+	}
+	if in.Mass != 0 {
+		const prefix string = ",\"mass\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Mass))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	if in.PackagedVolume != 0 {
+		const prefix string = ",\"packaged_volume\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.PackagedVolume))
+	}
+	if in.PortionSize != 0 {
+		const prefix string = ",\"portion_size\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.PortionSize))
+	}
+	if in.Published {
+		const prefix string = ",\"published\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.Published))
+	}
+	if in.Radius != 0 {
+		const prefix string = ",\"radius\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Radius))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
+	}
+	if in.Volume != 0 {
+		const prefix string = ",\"volume\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Volume))
 	}
 	out.RawByte('}')
 }

@@ -103,16 +103,10 @@ func easyjson69f56f1fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "mail_id":
-			out.MailId = int32(in.Int32())
-		case "subject":
-			out.Subject = string(in.String())
 		case "from":
 			out.From = int32(in.Int32())
-		case "timestamp":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.Timestamp).UnmarshalJSON(data))
-			}
+		case "is_read":
+			out.IsRead = bool(in.Bool())
 		case "labels":
 			if in.IsNull() {
 				in.Skip()
@@ -136,6 +130,8 @@ func easyjson69f56f1fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
+		case "mail_id":
+			out.MailId = int32(in.Int32())
 		case "recipients":
 			if in.IsNull() {
 				in.Skip()
@@ -159,8 +155,12 @@ func easyjson69f56f1fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				in.Delim(']')
 			}
-		case "is_read":
-			out.IsRead = bool(in.Bool())
+		case "subject":
+			out.Subject = string(in.String())
+		case "timestamp":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.Timestamp).UnmarshalJSON(data))
+			}
 		default:
 			in.SkipRecursive()
 		}
@@ -175,26 +175,6 @@ func easyjson69f56f1fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.MailId != 0 {
-		const prefix string = ",\"mail_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.MailId))
-	}
-	if in.Subject != "" {
-		const prefix string = ",\"subject\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Subject))
-	}
 	if in.From != 0 {
 		const prefix string = ",\"from\":"
 		if first {
@@ -205,15 +185,15 @@ func easyjson69f56f1fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.From))
 	}
-	if true {
-		const prefix string = ",\"timestamp\":"
+	if in.IsRead {
+		const prefix string = ",\"is_read\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.Timestamp).MarshalJSON())
+		out.Bool(bool(in.IsRead))
 	}
 	if len(in.Labels) != 0 {
 		const prefix string = ",\"labels\":"
@@ -234,6 +214,16 @@ func easyjson69f56f1fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
+	if in.MailId != 0 {
+		const prefix string = ",\"mail_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.MailId))
+	}
 	if len(in.Recipients) != 0 {
 		const prefix string = ",\"recipients\":"
 		if first {
@@ -253,15 +243,25 @@ func easyjson69f56f1fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawByte(']')
 		}
 	}
-	if in.IsRead {
-		const prefix string = ",\"is_read\":"
+	if in.Subject != "" {
+		const prefix string = ",\"subject\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Bool(bool(in.IsRead))
+		out.String(string(in.Subject))
+	}
+	if true {
+		const prefix string = ",\"timestamp\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.Timestamp).MarshalJSON())
 	}
 	out.RawByte('}')
 }
@@ -308,10 +308,10 @@ func easyjson69f56f1fDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "recipient_type":
-			out.RecipientType = string(in.String())
 		case "recipient_id":
 			out.RecipientId = int32(in.Int32())
+		case "recipient_type":
+			out.RecipientType = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -326,16 +326,6 @@ func easyjson69f56f1fEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.RecipientType != "" {
-		const prefix string = ",\"recipient_type\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.RecipientType))
-	}
 	if in.RecipientId != 0 {
 		const prefix string = ",\"recipient_id\":"
 		if first {
@@ -345,6 +335,16 @@ func easyjson69f56f1fEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.RecipientId))
+	}
+	if in.RecipientType != "" {
+		const prefix string = ",\"recipient_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.RecipientType))
 	}
 	out.RawByte('}')
 }

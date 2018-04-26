@@ -29,10 +29,10 @@ type GetDogmaEffectsEffectIdModifierList []GetDogmaEffectsEffectIdModifier
 /* modifier object */
 //easyjson:json
 type GetDogmaEffectsEffectIdModifier struct {
-	Func_                string `json:"func,omitempty"`                   /* func string */
 	Domain               string `json:"domain,omitempty"`                 /* domain string */
+	EffectId             int32  `json:"effect_id,omitempty"`              /* effect_id integer */
+	Func_                string `json:"func,omitempty"`                   /* func string */
 	ModifiedAttributeId  int32  `json:"modified_attribute_id,omitempty"`  /* modified_attribute_id integer */
 	ModifyingAttributeId int32  `json:"modifying_attribute_id,omitempty"` /* modifying_attribute_id integer */
-	EffectId             int32  `json:"effect_id,omitempty"`              /* effect_id integer */
 	Operator             int32  `json:"operator,omitempty"`               /* operator integer */
 }

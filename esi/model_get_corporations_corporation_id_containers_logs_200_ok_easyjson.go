@@ -103,32 +103,32 @@ func easyjsonD2e11036DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "logged_at":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.LoggedAt).UnmarshalJSON(data))
-			}
+		case "action":
+			out.Action = string(in.String())
+		case "character_id":
+			out.CharacterId = int32(in.Int32())
 		case "container_id":
 			out.ContainerId = int64(in.Int64())
 		case "container_type_id":
 			out.ContainerTypeId = int32(in.Int32())
-		case "character_id":
-			out.CharacterId = int32(in.Int32())
-		case "location_id":
-			out.LocationId = int64(in.Int64())
-		case "action":
-			out.Action = string(in.String())
-		case "password_type":
-			out.PasswordType = string(in.String())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "quantity":
-			out.Quantity = int32(in.Int32())
-		case "old_config_bitmask":
-			out.OldConfigBitmask = int32(in.Int32())
-		case "new_config_bitmask":
-			out.NewConfigBitmask = int32(in.Int32())
 		case "location_flag":
 			out.LocationFlag = string(in.String())
+		case "location_id":
+			out.LocationId = int64(in.Int64())
+		case "logged_at":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.LoggedAt).UnmarshalJSON(data))
+			}
+		case "new_config_bitmask":
+			out.NewConfigBitmask = int32(in.Int32())
+		case "old_config_bitmask":
+			out.OldConfigBitmask = int32(in.Int32())
+		case "password_type":
+			out.PasswordType = string(in.String())
+		case "quantity":
+			out.Quantity = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -143,15 +143,25 @@ func easyjsonD2e11036EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if true {
-		const prefix string = ",\"logged_at\":"
+	if in.Action != "" {
+		const prefix string = ",\"action\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.LoggedAt).MarshalJSON())
+		out.String(string(in.Action))
+	}
+	if in.CharacterId != 0 {
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CharacterId))
 	}
 	if in.ContainerId != 0 {
 		const prefix string = ",\"container_id\":"
@@ -173,15 +183,15 @@ func easyjsonD2e11036EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.ContainerTypeId))
 	}
-	if in.CharacterId != 0 {
-		const prefix string = ",\"character_id\":"
+	if in.LocationFlag != "" {
+		const prefix string = ",\"location_flag\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.CharacterId))
+		out.String(string(in.LocationFlag))
 	}
 	if in.LocationId != 0 {
 		const prefix string = ",\"location_id\":"
@@ -193,55 +203,15 @@ func easyjsonD2e11036EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.LocationId))
 	}
-	if in.Action != "" {
-		const prefix string = ",\"action\":"
+	if true {
+		const prefix string = ",\"logged_at\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.Action))
-	}
-	if in.PasswordType != "" {
-		const prefix string = ",\"password_type\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.PasswordType))
-	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TypeId))
-	}
-	if in.Quantity != 0 {
-		const prefix string = ",\"quantity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Quantity))
-	}
-	if in.OldConfigBitmask != 0 {
-		const prefix string = ",\"old_config_bitmask\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.OldConfigBitmask))
+		out.Raw((in.LoggedAt).MarshalJSON())
 	}
 	if in.NewConfigBitmask != 0 {
 		const prefix string = ",\"new_config_bitmask\":"
@@ -253,15 +223,45 @@ func easyjsonD2e11036EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.NewConfigBitmask))
 	}
-	if in.LocationFlag != "" {
-		const prefix string = ",\"location_flag\":"
+	if in.OldConfigBitmask != 0 {
+		const prefix string = ",\"old_config_bitmask\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.LocationFlag))
+		out.Int32(int32(in.OldConfigBitmask))
+	}
+	if in.PasswordType != "" {
+		const prefix string = ",\"password_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.PasswordType))
+	}
+	if in.Quantity != 0 {
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Quantity))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

@@ -103,26 +103,26 @@ func easyjsonFa541e84DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "accrued_remap_cooldown_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.AccruedRemapCooldownDate).UnmarshalJSON(data))
+			}
+		case "bonus_remaps":
+			out.BonusRemaps = int32(in.Int32())
 		case "charisma":
 			out.Charisma = int32(in.Int32())
 		case "intelligence":
 			out.Intelligence = int32(in.Int32())
+		case "last_remap_date":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.LastRemapDate).UnmarshalJSON(data))
+			}
 		case "memory":
 			out.Memory = int32(in.Int32())
 		case "perception":
 			out.Perception = int32(in.Int32())
 		case "willpower":
 			out.Willpower = int32(in.Int32())
-		case "bonus_remaps":
-			out.BonusRemaps = int32(in.Int32())
-		case "last_remap_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.LastRemapDate).UnmarshalJSON(data))
-			}
-		case "accrued_remap_cooldown_date":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.AccruedRemapCooldownDate).UnmarshalJSON(data))
-			}
 		default:
 			in.SkipRecursive()
 		}
@@ -137,6 +137,26 @@ func easyjsonFa541e84EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if true {
+		const prefix string = ",\"accrued_remap_cooldown_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.AccruedRemapCooldownDate).MarshalJSON())
+	}
+	if in.BonusRemaps != 0 {
+		const prefix string = ",\"bonus_remaps\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.BonusRemaps))
+	}
 	if in.Charisma != 0 {
 		const prefix string = ",\"charisma\":"
 		if first {
@@ -156,6 +176,16 @@ func easyjsonFa541e84EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Intelligence))
+	}
+	if true {
+		const prefix string = ",\"last_remap_date\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.LastRemapDate).MarshalJSON())
 	}
 	if in.Memory != 0 {
 		const prefix string = ",\"memory\":"
@@ -186,36 +216,6 @@ func easyjsonFa541e84EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.Willpower))
-	}
-	if in.BonusRemaps != 0 {
-		const prefix string = ",\"bonus_remaps\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.BonusRemaps))
-	}
-	if true {
-		const prefix string = ",\"last_remap_date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.LastRemapDate).MarshalJSON())
-	}
-	if true {
-		const prefix string = ",\"accrued_remap_cooldown_date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.AccruedRemapCooldownDate).MarshalJSON())
 	}
 	out.RawByte('}')
 }

@@ -103,14 +103,14 @@ func easyjsonCd04e186DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetS
 			continue
 		}
 		switch key {
-		case "start_time":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.StartTime).UnmarshalJSON(data))
-			}
 		case "players":
 			out.Players = int32(in.Int32())
 		case "server_version":
 			out.ServerVersion = string(in.String())
+		case "start_time":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.StartTime).UnmarshalJSON(data))
+			}
 		case "vip":
 			out.Vip = bool(in.Bool())
 		default:
@@ -127,16 +127,6 @@ func easyjsonCd04e186EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if true {
-		const prefix string = ",\"start_time\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Raw((in.StartTime).MarshalJSON())
-	}
 	if in.Players != 0 {
 		const prefix string = ",\"players\":"
 		if first {
@@ -156,6 +146,16 @@ func easyjsonCd04e186EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.ServerVersion))
+	}
+	if true {
+		const prefix string = ",\"start_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.StartTime).MarshalJSON())
 	}
 	if in.Vip {
 		const prefix string = ",\"vip\":"

@@ -29,7 +29,7 @@ type GetCharactersCharacterIdFwStatsVictoryPointsList []GetCharactersCharacterId
 /* Summary of victory points gained by the given character for the enlisted faction */
 //easyjson:json
 type GetCharactersCharacterIdFwStatsVictoryPoints struct {
-	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's victory points gained by the given character */
 	LastWeek  int32 `json:"last_week,omitempty"` /* Last week's victory points gained by the given character */
 	Total     int32 `json:"total,omitempty"`     /* Total victory points gained since the given character enlisted */
+	Yesterday int32 `json:"yesterday,omitempty"` /* Yesterday's victory points gained by the given character */
 }

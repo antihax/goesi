@@ -103,16 +103,16 @@ func easyjson2de64a6cDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "content_type_id":
+			out.ContentTypeId = int32(in.Int32())
+		case "destination_pin_id":
+			out.DestinationPinId = int64(in.Int64())
+		case "quantity":
+			out.Quantity = float32(in.Float32())
 		case "route_id":
 			out.RouteId = int64(in.Int64())
 		case "source_pin_id":
 			out.SourcePinId = int64(in.Int64())
-		case "destination_pin_id":
-			out.DestinationPinId = int64(in.Int64())
-		case "content_type_id":
-			out.ContentTypeId = int32(in.Int32())
-		case "quantity":
-			out.Quantity = float32(in.Float32())
 		case "waypoints":
 			if in.IsNull() {
 				in.Skip()
@@ -150,6 +150,36 @@ func easyjson2de64a6cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.ContentTypeId != 0 {
+		const prefix string = ",\"content_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ContentTypeId))
+	}
+	if in.DestinationPinId != 0 {
+		const prefix string = ",\"destination_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DestinationPinId))
+	}
+	if in.Quantity != 0 {
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Quantity))
+	}
 	if in.RouteId != 0 {
 		const prefix string = ",\"route_id\":"
 		if first {
@@ -169,36 +199,6 @@ func easyjson2de64a6cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.SourcePinId))
-	}
-	if in.DestinationPinId != 0 {
-		const prefix string = ",\"destination_pin_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.DestinationPinId))
-	}
-	if in.ContentTypeId != 0 {
-		const prefix string = ",\"content_type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ContentTypeId))
-	}
-	if in.Quantity != 0 {
-		const prefix string = ",\"quantity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Quantity))
 	}
 	if len(in.Waypoints) != 0 {
 		const prefix string = ",\"waypoints\":"

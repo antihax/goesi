@@ -103,8 +103,6 @@ func easyjsonAd2c4d9fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *PutC
 			continue
 		}
 		switch key {
-		case "read":
-			out.Read = bool(in.Bool())
 		case "labels":
 			if in.IsNull() {
 				in.Skip()
@@ -128,6 +126,8 @@ func easyjsonAd2c4d9fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *PutC
 				}
 				in.Delim(']')
 			}
+		case "read":
+			out.Read = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -142,16 +142,6 @@ func easyjsonAd2c4d9fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Put
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Read {
-		const prefix string = ",\"read\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.Read))
-	}
 	if len(in.Labels) != 0 {
 		const prefix string = ",\"labels\":"
 		if first {
@@ -170,6 +160,16 @@ func easyjsonAd2c4d9fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Put
 			}
 			out.RawByte(']')
 		}
+	}
+	if in.Read {
+		const prefix string = ",\"read\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.Read))
 	}
 	out.RawByte('}')
 }

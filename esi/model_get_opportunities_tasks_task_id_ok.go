@@ -29,8 +29,8 @@ type GetOpportunitiesTasksTaskIdOkList []GetOpportunitiesTasksTaskIdOk
 /* 200 ok object */
 //easyjson:json
 type GetOpportunitiesTasksTaskIdOk struct {
-	TaskId       int32  `json:"task_id,omitempty"`      /* task_id integer */
-	Name         string `json:"name,omitempty"`         /* name string */
 	Description  string `json:"description,omitempty"`  /* description string */
+	Name         string `json:"name,omitempty"`         /* name string */
 	Notification string `json:"notification,omitempty"` /* notification string */
+	TaskId       int32  `json:"task_id,omitempty"`      /* task_id integer */
 }

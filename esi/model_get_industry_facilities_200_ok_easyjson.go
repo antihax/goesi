@@ -105,16 +105,16 @@ func easyjsonB29675b3DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetI
 		switch key {
 		case "facility_id":
 			out.FacilityId = int64(in.Int64())
-		case "tax":
-			out.Tax = float32(in.Float32())
 		case "owner_id":
 			out.OwnerId = int32(in.Int32())
-		case "type_id":
-			out.TypeId = int32(in.Int32())
-		case "solar_system_id":
-			out.SolarSystemId = int32(in.Int32())
 		case "region_id":
 			out.RegionId = int32(in.Int32())
+		case "solar_system_id":
+			out.SolarSystemId = int32(in.Int32())
+		case "tax":
+			out.Tax = float32(in.Float32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -139,16 +139,6 @@ func easyjsonB29675b3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int64(int64(in.FacilityId))
 	}
-	if in.Tax != 0 {
-		const prefix string = ",\"tax\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Tax))
-	}
 	if in.OwnerId != 0 {
 		const prefix string = ",\"owner_id\":"
 		if first {
@@ -159,15 +149,15 @@ func easyjsonB29675b3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.OwnerId))
 	}
-	if in.TypeId != 0 {
-		const prefix string = ",\"type_id\":"
+	if in.RegionId != 0 {
+		const prefix string = ",\"region_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.TypeId))
+		out.Int32(int32(in.RegionId))
 	}
 	if in.SolarSystemId != 0 {
 		const prefix string = ",\"solar_system_id\":"
@@ -179,15 +169,25 @@ func easyjsonB29675b3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.SolarSystemId))
 	}
-	if in.RegionId != 0 {
-		const prefix string = ",\"region_id\":"
+	if in.Tax != 0 {
+		const prefix string = ",\"tax\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.RegionId))
+		out.Float32(float32(in.Tax))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
 	}
 	out.RawByte('}')
 }

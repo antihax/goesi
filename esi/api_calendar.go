@@ -49,6 +49,7 @@ Get 50 event summaries from the calendar. If no from_event ID is given, the reso
  * @param optional nil or *GetCharactersCharacterIdCalendarOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "FromEvent" (optional.Int32) -  The event ID to retrieve events from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -57,11 +58,12 @@ Get 50 event summaries from the calendar. If no from_event ID is given, the reso
 */
 
 type GetCharactersCharacterIdCalendarOpts struct {
-	Datasource optional.String
-	FromEvent  optional.Int32
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	FromEvent   optional.Int32
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CalendarApiService) GetCharactersCharacterIdCalendar(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdCalendarOpts) ([]GetCharactersCharacterIdCalendar200Ok, *http.Response, error) {
@@ -97,7 +99,7 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendar(ctx context.Contex
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -112,6 +114,9 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendar(ctx context.Contex
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -237,6 +242,7 @@ Get all the information for a specific event  ---  This route is cached for up t
  * @param eventId The id of the event requested
  * @param optional nil or *GetCharactersCharacterIdCalendarEventIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -245,10 +251,11 @@ Get all the information for a specific event  ---  This route is cached for up t
 */
 
 type GetCharactersCharacterIdCalendarEventIdOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventId(ctx context.Context, characterId int32, eventId int32, localVarOptionals *GetCharactersCharacterIdCalendarEventIdOpts) (GetCharactersCharacterIdCalendarEventIdOk, *http.Response, error) {
@@ -282,7 +289,7 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventId(ctx context
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -297,6 +304,9 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventId(ctx context
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -433,6 +443,7 @@ Get all invited attendees for a given event  ---  This route is cached for up to
  * @param eventId The id of the event requested
  * @param optional nil or *GetCharactersCharacterIdCalendarEventIdAttendeesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -441,10 +452,11 @@ Get all invited attendees for a given event  ---  This route is cached for up to
 */
 
 type GetCharactersCharacterIdCalendarEventIdAttendeesOpts struct {
-	Datasource optional.String
-	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
+	Datasource  optional.String
+	IfNoneMatch optional.String
+	Token       optional.String
+	UserAgent   optional.String
+	XUserAgent  optional.String
 }
 
 func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventIdAttendees(ctx context.Context, characterId int32, eventId int32, localVarOptionals *GetCharactersCharacterIdCalendarEventIdAttendeesOpts) ([]GetCharactersCharacterIdCalendarEventIdAttendees200Ok, *http.Response, error) {
@@ -478,7 +490,7 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventIdAttendees(ct
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -493,6 +505,9 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventIdAttendees(ct
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
 		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
@@ -674,7 +689,7 @@ func (a *CalendarApiService) PutCharactersCharacterIdCalendarEventId(ctx context
 		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)

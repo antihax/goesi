@@ -103,14 +103,14 @@ func easyjsonE0d2a1b4DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 			continue
 		}
 		switch key {
+		case "category_id":
+			out.CategoryId = int32(in.Int32())
 		case "group_id":
 			out.GroupId = int32(in.Int32())
 		case "name":
 			out.Name = string(in.String())
 		case "published":
 			out.Published = bool(in.Bool())
-		case "category_id":
-			out.CategoryId = int32(in.Int32())
 		case "types":
 			if in.IsNull() {
 				in.Skip()
@@ -148,6 +148,16 @@ func easyjsonE0d2a1b4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.CategoryId != 0 {
+		const prefix string = ",\"category_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CategoryId))
+	}
 	if in.GroupId != 0 {
 		const prefix string = ",\"group_id\":"
 		if first {
@@ -177,16 +187,6 @@ func easyjsonE0d2a1b4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Bool(bool(in.Published))
-	}
-	if in.CategoryId != 0 {
-		const prefix string = ",\"category_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.CategoryId))
 	}
 	if len(in.Types) != 0 {
 		const prefix string = ",\"types\":"

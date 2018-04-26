@@ -29,9 +29,9 @@ type GetMarketsGroupsMarketGroupIdOkList []GetMarketsGroupsMarketGroupIdOk
 /* 200 ok object */
 //easyjson:json
 type GetMarketsGroupsMarketGroupIdOk struct {
+	Description   string  `json:"description,omitempty"`     /* description string */
 	MarketGroupId int32   `json:"market_group_id,omitempty"` /* market_group_id integer */
 	Name          string  `json:"name,omitempty"`            /* name string */
-	Description   string  `json:"description,omitempty"`     /* description string */
-	Types         []int32 `json:"types,omitempty"`           /* types array */
 	ParentGroupId int32   `json:"parent_group_id,omitempty"` /* parent_group_id integer */
+	Types         []int32 `json:"types,omitempty"`           /* types array */
 }

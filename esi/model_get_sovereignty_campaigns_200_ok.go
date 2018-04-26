@@ -33,14 +33,14 @@ type GetSovereigntyCampaigns200OkList []GetSovereigntyCampaigns200Ok
 /* 200 ok object */
 //easyjson:json
 type GetSovereigntyCampaigns200Ok struct {
+	AttackersScore  float32                              `json:"attackers_score,omitempty"`  /* Score for all attacking parties, only present in Defense Events.  */
 	CampaignId      int32                                `json:"campaign_id,omitempty"`      /* Unique ID for this campaign. */
-	StructureId     int64                                `json:"structure_id,omitempty"`     /* The structure item ID that is related to this campaign.  */
-	SolarSystemId   int32                                `json:"solar_system_id,omitempty"`  /* The solar system the structure is located in.  */
 	ConstellationId int32                                `json:"constellation_id,omitempty"` /* The constellation in which the campaign will take place.  */
-	EventType       string                               `json:"event_type,omitempty"`       /* Type of event this campaign is for. tcu_defense, ihub_defense and station_defense are referred to as \"Defense Events\", station_freeport as \"Freeport Events\".  */
-	StartTime       time.Time                            `json:"start_time,omitempty"`       /* Time the event is scheduled to start.  */
 	DefenderId      int32                                `json:"defender_id,omitempty"`      /* Defending alliance, only present in Defense Events  */
 	DefenderScore   float32                              `json:"defender_score,omitempty"`   /* Score for the defending alliance, only present in Defense Events.  */
-	AttackersScore  float32                              `json:"attackers_score,omitempty"`  /* Score for all attacking parties, only present in Defense Events.  */
+	EventType       string                               `json:"event_type,omitempty"`       /* Type of event this campaign is for. tcu_defense, ihub_defense and station_defense are referred to as \"Defense Events\", station_freeport as \"Freeport Events\".  */
 	Participants    []GetSovereigntyCampaignsParticipant `json:"participants,omitempty"`     /* Alliance participating and their respective scores, only present in Freeport Events.  */
+	SolarSystemId   int32                                `json:"solar_system_id,omitempty"`  /* The solar system the structure is located in.  */
+	StartTime       time.Time                            `json:"start_time,omitempty"`       /* Time the event is scheduled to start.  */
+	StructureId     int64                                `json:"structure_id,omitempty"`     /* The structure item ID that is related to this campaign.  */
 }

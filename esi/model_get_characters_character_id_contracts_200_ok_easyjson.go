@@ -103,56 +103,56 @@ func easyjsonAa810831DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "contract_id":
-			out.ContractId = int32(in.Int32())
-		case "issuer_id":
-			out.IssuerId = int32(in.Int32())
-		case "issuer_corporation_id":
-			out.IssuerCorporationId = int32(in.Int32())
-		case "assignee_id":
-			out.AssigneeId = int32(in.Int32())
 		case "acceptor_id":
 			out.AcceptorId = int32(in.Int32())
-		case "start_location_id":
-			out.StartLocationId = int64(in.Int64())
-		case "end_location_id":
-			out.EndLocationId = int64(in.Int64())
-		case "type":
-			out.Type_ = string(in.String())
-		case "status":
-			out.Status = string(in.String())
-		case "title":
-			out.Title = string(in.String())
-		case "for_corporation":
-			out.ForCorporation = bool(in.Bool())
+		case "assignee_id":
+			out.AssigneeId = int32(in.Int32())
 		case "availability":
 			out.Availability = string(in.String())
-		case "date_issued":
+		case "buyout":
+			out.Buyout = float64(in.Float64())
+		case "collateral":
+			out.Collateral = float64(in.Float64())
+		case "contract_id":
+			out.ContractId = int32(in.Int32())
+		case "date_accepted":
 			if data := in.Raw(); in.Ok() {
-				in.AddError((out.DateIssued).UnmarshalJSON(data))
+				in.AddError((out.DateAccepted).UnmarshalJSON(data))
+			}
+		case "date_completed":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.DateCompleted).UnmarshalJSON(data))
 			}
 		case "date_expired":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.DateExpired).UnmarshalJSON(data))
 			}
-		case "date_accepted":
+		case "date_issued":
 			if data := in.Raw(); in.Ok() {
-				in.AddError((out.DateAccepted).UnmarshalJSON(data))
+				in.AddError((out.DateIssued).UnmarshalJSON(data))
 			}
 		case "days_to_complete":
 			out.DaysToComplete = int32(in.Int32())
-		case "date_completed":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.DateCompleted).UnmarshalJSON(data))
-			}
+		case "end_location_id":
+			out.EndLocationId = int64(in.Int64())
+		case "for_corporation":
+			out.ForCorporation = bool(in.Bool())
+		case "issuer_corporation_id":
+			out.IssuerCorporationId = int32(in.Int32())
+		case "issuer_id":
+			out.IssuerId = int32(in.Int32())
 		case "price":
 			out.Price = float64(in.Float64())
 		case "reward":
 			out.Reward = float64(in.Float64())
-		case "collateral":
-			out.Collateral = float64(in.Float64())
-		case "buyout":
-			out.Buyout = float64(in.Float64())
+		case "start_location_id":
+			out.StartLocationId = int64(in.Int64())
+		case "status":
+			out.Status = string(in.String())
+		case "title":
+			out.Title = string(in.String())
+		case "type":
+			out.Type_ = string(in.String())
 		case "volume":
 			out.Volume = float64(in.Float64())
 		default:
@@ -169,35 +169,15 @@ func easyjsonAa810831EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.ContractId != 0 {
-		const prefix string = ",\"contract_id\":"
+	if in.AcceptorId != 0 {
+		const prefix string = ",\"acceptor_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.ContractId))
-	}
-	if in.IssuerId != 0 {
-		const prefix string = ",\"issuer_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.IssuerId))
-	}
-	if in.IssuerCorporationId != 0 {
-		const prefix string = ",\"issuer_corporation_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.IssuerCorporationId))
+		out.Int32(int32(in.AcceptorId))
 	}
 	if in.AssigneeId != 0 {
 		const prefix string = ",\"assignee_id\":"
@@ -209,76 +189,6 @@ func easyjsonAa810831EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.AssigneeId))
 	}
-	if in.AcceptorId != 0 {
-		const prefix string = ",\"acceptor_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.AcceptorId))
-	}
-	if in.StartLocationId != 0 {
-		const prefix string = ",\"start_location_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.StartLocationId))
-	}
-	if in.EndLocationId != 0 {
-		const prefix string = ",\"end_location_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.EndLocationId))
-	}
-	if in.Type_ != "" {
-		const prefix string = ",\"type\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Type_))
-	}
-	if in.Status != "" {
-		const prefix string = ",\"status\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Status))
-	}
-	if in.Title != "" {
-		const prefix string = ",\"title\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Title))
-	}
-	if in.ForCorporation {
-		const prefix string = ",\"for_corporation\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.ForCorporation))
-	}
 	if in.Availability != "" {
 		const prefix string = ",\"availability\":"
 		if first {
@@ -289,15 +199,55 @@ func easyjsonAa810831EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.String(string(in.Availability))
 	}
-	if true {
-		const prefix string = ",\"date_issued\":"
+	if in.Buyout != 0 {
+		const prefix string = ",\"buyout\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.DateIssued).MarshalJSON())
+		out.Float64(float64(in.Buyout))
+	}
+	if in.Collateral != 0 {
+		const prefix string = ",\"collateral\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float64(float64(in.Collateral))
+	}
+	if in.ContractId != 0 {
+		const prefix string = ",\"contract_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ContractId))
+	}
+	if true {
+		const prefix string = ",\"date_accepted\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.DateAccepted).MarshalJSON())
+	}
+	if true {
+		const prefix string = ",\"date_completed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Raw((in.DateCompleted).MarshalJSON())
 	}
 	if true {
 		const prefix string = ",\"date_expired\":"
@@ -310,14 +260,14 @@ func easyjsonAa810831EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		out.Raw((in.DateExpired).MarshalJSON())
 	}
 	if true {
-		const prefix string = ",\"date_accepted\":"
+		const prefix string = ",\"date_issued\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.DateAccepted).MarshalJSON())
+		out.Raw((in.DateIssued).MarshalJSON())
 	}
 	if in.DaysToComplete != 0 {
 		const prefix string = ",\"days_to_complete\":"
@@ -329,15 +279,45 @@ func easyjsonAa810831EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.DaysToComplete))
 	}
-	if true {
-		const prefix string = ",\"date_completed\":"
+	if in.EndLocationId != 0 {
+		const prefix string = ",\"end_location_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Raw((in.DateCompleted).MarshalJSON())
+		out.Int64(int64(in.EndLocationId))
+	}
+	if in.ForCorporation {
+		const prefix string = ",\"for_corporation\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.ForCorporation))
+	}
+	if in.IssuerCorporationId != 0 {
+		const prefix string = ",\"issuer_corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.IssuerCorporationId))
+	}
+	if in.IssuerId != 0 {
+		const prefix string = ",\"issuer_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.IssuerId))
 	}
 	if in.Price != 0 {
 		const prefix string = ",\"price\":"
@@ -359,25 +339,45 @@ func easyjsonAa810831EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Float64(float64(in.Reward))
 	}
-	if in.Collateral != 0 {
-		const prefix string = ",\"collateral\":"
+	if in.StartLocationId != 0 {
+		const prefix string = ",\"start_location_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float64(float64(in.Collateral))
+		out.Int64(int64(in.StartLocationId))
 	}
-	if in.Buyout != 0 {
-		const prefix string = ",\"buyout\":"
+	if in.Status != "" {
+		const prefix string = ",\"status\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Float64(float64(in.Buyout))
+		out.String(string(in.Status))
+	}
+	if in.Title != "" {
+		const prefix string = ",\"title\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Title))
+	}
+	if in.Type_ != "" {
+		const prefix string = ",\"type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Type_))
 	}
 	if in.Volume != 0 {
 		const prefix string = ",\"volume\":"

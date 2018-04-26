@@ -103,14 +103,6 @@ func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
-		case "killmail_id":
-			out.KillmailId = int32(in.Int32())
-		case "killmail_time":
-			if data := in.Raw(); in.Ok() {
-				in.AddError((out.KillmailTime).UnmarshalJSON(data))
-			}
-		case "victim":
-			easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi2(in, &out.Victim)
 		case "attackers":
 			if in.IsNull() {
 				in.Skip()
@@ -128,16 +120,24 @@ func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 				}
 				for !in.IsDelim(']') {
 					var v4 GetKillmailsKillmailIdKillmailHashAttacker
-					easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi3(in, &v4)
+					easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Attackers = append(out.Attackers, v4)
 					in.WantComma()
 				}
 				in.Delim(']')
 			}
-		case "solar_system_id":
-			out.SolarSystemId = int32(in.Int32())
+		case "killmail_id":
+			out.KillmailId = int32(in.Int32())
+		case "killmail_time":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.KillmailTime).UnmarshalJSON(data))
+			}
 		case "moon_id":
 			out.MoonId = int32(in.Int32())
+		case "solar_system_id":
+			out.SolarSystemId = int32(in.Int32())
+		case "victim":
+			easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi3(in, &out.Victim)
 		case "war_id":
 			out.WarId = int32(in.Int32())
 		default:
@@ -154,6 +154,25 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if len(in.Attackers) != 0 {
+		const prefix string = ",\"attackers\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v5, v6 := range in.Attackers {
+				if v5 > 0 {
+					out.RawByte(',')
+				}
+				easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out, v6)
+			}
+			out.RawByte(']')
+		}
+	}
 	if in.KillmailId != 0 {
 		const prefix string = ",\"killmail_id\":"
 		if first {
@@ -174,34 +193,15 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Raw((in.KillmailTime).MarshalJSON())
 	}
-	if true {
-		const prefix string = ",\"victim\":"
+	if in.MoonId != 0 {
+		const prefix string = ",\"moon_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out, in.Victim)
-	}
-	if len(in.Attackers) != 0 {
-		const prefix string = ",\"attackers\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v5, v6 := range in.Attackers {
-				if v5 > 0 {
-					out.RawByte(',')
-				}
-				easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi3(out, v6)
-			}
-			out.RawByte(']')
-		}
+		out.Int32(int32(in.MoonId))
 	}
 	if in.SolarSystemId != 0 {
 		const prefix string = ",\"solar_system_id\":"
@@ -213,15 +213,15 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.SolarSystemId))
 	}
-	if in.MoonId != 0 {
-		const prefix string = ",\"moon_id\":"
+	if true {
+		const prefix string = ",\"victim\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.MoonId))
+		easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi3(out, in.Victim)
 	}
 	if in.WarId != 0 {
 		const prefix string = ",\"war_id\":"
@@ -259,7 +259,7 @@ func (v *GetKillmailsKillmailIdKillmailHashOk) UnmarshalJSON(data []byte) error 
 func (v *GetKillmailsKillmailIdKillmailHashOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashAttacker) {
+func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashVictim) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -278,161 +278,16 @@ func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetK
 			continue
 		}
 		switch key {
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
 		case "character_id":
 			out.CharacterId = int32(in.Int32())
 		case "corporation_id":
 			out.CorporationId = int32(in.Int32())
-		case "alliance_id":
-			out.AllianceId = int32(in.Int32())
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
-		case "security_status":
-			out.SecurityStatus = float32(in.Float32())
-		case "final_blow":
-			out.FinalBlow = bool(in.Bool())
-		case "damage_done":
-			out.DamageDone = int32(in.Int32())
-		case "ship_type_id":
-			out.ShipTypeId = int32(in.Int32())
-		case "weapon_type_id":
-			out.WeaponTypeId = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashAttacker) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.CharacterId != 0 {
-		const prefix string = ",\"character_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.CharacterId))
-	}
-	if in.CorporationId != 0 {
-		const prefix string = ",\"corporation_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.CorporationId))
-	}
-	if in.AllianceId != 0 {
-		const prefix string = ",\"alliance_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.AllianceId))
-	}
-	if in.FactionId != 0 {
-		const prefix string = ",\"faction_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.FactionId))
-	}
-	if in.SecurityStatus != 0 {
-		const prefix string = ",\"security_status\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.SecurityStatus))
-	}
-	if in.FinalBlow {
-		const prefix string = ",\"final_blow\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.FinalBlow))
-	}
-	if in.DamageDone != 0 {
-		const prefix string = ",\"damage_done\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.DamageDone))
-	}
-	if in.ShipTypeId != 0 {
-		const prefix string = ",\"ship_type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ShipTypeId))
-	}
-	if in.WeaponTypeId != 0 {
-		const prefix string = ",\"weapon_type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.WeaponTypeId))
-	}
-	out.RawByte('}')
-}
-func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashVictim) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "character_id":
-			out.CharacterId = int32(in.Int32())
-		case "corporation_id":
-			out.CorporationId = int32(in.Int32())
-		case "alliance_id":
-			out.AllianceId = int32(in.Int32())
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
 		case "damage_taken":
 			out.DamageTaken = int32(in.Int32())
-		case "ship_type_id":
-			out.ShipTypeId = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
 		case "items":
 			if in.IsNull() {
 				in.Skip()
@@ -458,6 +313,8 @@ func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetK
 			}
 		case "position":
 			(out.Position).UnmarshalEasyJSON(in)
+		case "ship_type_id":
+			out.ShipTypeId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -468,10 +325,20 @@ func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetK
 		in.Consumed()
 	}
 }
-func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashVictim) {
+func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashVictim) {
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.AllianceId != 0 {
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.AllianceId))
+	}
 	if in.CharacterId != 0 {
 		const prefix string = ",\"character_id\":"
 		if first {
@@ -492,26 +359,6 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.CorporationId))
 	}
-	if in.AllianceId != 0 {
-		const prefix string = ",\"alliance_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.AllianceId))
-	}
-	if in.FactionId != 0 {
-		const prefix string = ",\"faction_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.FactionId))
-	}
 	if in.DamageTaken != 0 {
 		const prefix string = ",\"damage_taken\":"
 		if first {
@@ -522,15 +369,15 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		}
 		out.Int32(int32(in.DamageTaken))
 	}
-	if in.ShipTypeId != 0 {
-		const prefix string = ",\"ship_type_id\":"
+	if in.FactionId != 0 {
+		const prefix string = ",\"faction_id\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.ShipTypeId))
+		out.Int32(int32(in.FactionId))
 	}
 	if len(in.Items) != 0 {
 		const prefix string = ",\"items\":"
@@ -560,6 +407,159 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		(in.Position).MarshalEasyJSON(out)
+	}
+	if in.ShipTypeId != 0 {
+		const prefix string = ",\"ship_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ShipTypeId))
+	}
+	out.RawByte('}')
+}
+func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashAttacker) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "character_id":
+			out.CharacterId = int32(in.Int32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		case "damage_done":
+			out.DamageDone = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
+		case "final_blow":
+			out.FinalBlow = bool(in.Bool())
+		case "security_status":
+			out.SecurityStatus = float32(in.Float32())
+		case "ship_type_id":
+			out.ShipTypeId = int32(in.Int32())
+		case "weapon_type_id":
+			out.WeaponTypeId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashAttacker) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AllianceId != 0 {
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.CharacterId != 0 {
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CharacterId))
+	}
+	if in.CorporationId != 0 {
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CorporationId))
+	}
+	if in.DamageDone != 0 {
+		const prefix string = ",\"damage_done\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.DamageDone))
+	}
+	if in.FactionId != 0 {
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.FactionId))
+	}
+	if in.FinalBlow {
+		const prefix string = ",\"final_blow\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.FinalBlow))
+	}
+	if in.SecurityStatus != 0 {
+		const prefix string = ",\"security_status\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.SecurityStatus))
+	}
+	if in.ShipTypeId != 0 {
+		const prefix string = ",\"ship_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ShipTypeId))
+	}
+	if in.WeaponTypeId != 0 {
+		const prefix string = ",\"weapon_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.WeaponTypeId))
 	}
 	out.RawByte('}')
 }

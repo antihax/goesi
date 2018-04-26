@@ -29,11 +29,11 @@ type GetCorporationsCorporationIdAssets200OkList []GetCorporationsCorporationIdA
 /* 200 ok object */
 //easyjson:json
 type GetCorporationsCorporationIdAssets200Ok struct {
-	TypeId       int32  `json:"type_id,omitempty"`       /* type_id integer */
-	Quantity     int32  `json:"quantity,omitempty"`      /* quantity integer */
+	IsSingleton  bool   `json:"is_singleton,omitempty"`  /* is_singleton boolean */
+	ItemId       int64  `json:"item_id,omitempty"`       /* item_id integer */
+	LocationFlag string `json:"location_flag,omitempty"` /* location_flag string */
 	LocationId   int64  `json:"location_id,omitempty"`   /* location_id integer */
 	LocationType string `json:"location_type,omitempty"` /* location_type string */
-	ItemId       int64  `json:"item_id,omitempty"`       /* item_id integer */
-	IsSingleton  bool   `json:"is_singleton,omitempty"`  /* is_singleton boolean */
-	LocationFlag string `json:"location_flag,omitempty"` /* location_flag string */
+	Quantity     int32  `json:"quantity,omitempty"`      /* quantity integer */
+	TypeId       int32  `json:"type_id,omitempty"`       /* type_id integer */
 }

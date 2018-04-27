@@ -43,7 +43,6 @@ Class | Method | HTTP request | Description
 *CharacterApi* | [**GetCharactersCharacterId**](docs/CharacterApi.md#getcharacterscharacterid) | **Get** /v4/characters/{character_id}/ | Get character&#39;s public information
 *CharacterApi* | [**GetCharactersCharacterIdAgentsResearch**](docs/CharacterApi.md#getcharacterscharacteridagentsresearch) | **Get** /v1/characters/{character_id}/agents_research/ | Get agents research
 *CharacterApi* | [**GetCharactersCharacterIdBlueprints**](docs/CharacterApi.md#getcharacterscharacteridblueprints) | **Get** /v2/characters/{character_id}/blueprints/ | Get blueprints
-*CharacterApi* | [**GetCharactersCharacterIdChatChannels**](docs/CharacterApi.md#getcharacterscharacteridchatchannels) | **Get** /v1/characters/{character_id}/chat_channels/ | Get chat channels
 *CharacterApi* | [**GetCharactersCharacterIdCorporationhistory**](docs/CharacterApi.md#getcharacterscharacteridcorporationhistory) | **Get** /v1/characters/{character_id}/corporationhistory/ | Get corporation history
 *CharacterApi* | [**GetCharactersCharacterIdFatigue**](docs/CharacterApi.md#getcharacterscharacteridfatigue) | **Get** /v1/characters/{character_id}/fatigue/ | Get jump fatigue
 *CharacterApi* | [**GetCharactersCharacterIdMedals**](docs/CharacterApi.md#getcharacterscharacteridmedals) | **Get** /v1/characters/{character_id}/medals/ | Get medals
@@ -260,11 +259,6 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdCalendarEventIdAttendeesNotFound](docs/GetCharactersCharacterIdCalendarEventIdAttendeesNotFound.md)
  - [GetCharactersCharacterIdCalendarEventIdNotFound](docs/GetCharactersCharacterIdCalendarEventIdNotFound.md)
  - [GetCharactersCharacterIdCalendarEventIdOk](docs/GetCharactersCharacterIdCalendarEventIdOk.md)
- - [GetCharactersCharacterIdChatChannels200Ok](docs/GetCharactersCharacterIdChatChannels200Ok.md)
- - [GetCharactersCharacterIdChatChannelsAllowed](docs/GetCharactersCharacterIdChatChannelsAllowed.md)
- - [GetCharactersCharacterIdChatChannelsBlocked](docs/GetCharactersCharacterIdChatChannelsBlocked.md)
- - [GetCharactersCharacterIdChatChannelsMuted](docs/GetCharactersCharacterIdChatChannelsMuted.md)
- - [GetCharactersCharacterIdChatChannelsOperator](docs/GetCharactersCharacterIdChatChannelsOperator.md)
  - [GetCharactersCharacterIdClonesHomeLocation](docs/GetCharactersCharacterIdClonesHomeLocation.md)
  - [GetCharactersCharacterIdClonesJumpClone](docs/GetCharactersCharacterIdClonesJumpClone.md)
  - [GetCharactersCharacterIdClonesOk](docs/GetCharactersCharacterIdClonesOk.md)
@@ -602,7 +596,6 @@ Class | Method | HTTP request | Description
  - **esi-calendar.respond_calendar_events.v1**: EVE SSO scope esi-calendar.respond_calendar_events.v1
  - **esi-characters.read_agents_research.v1**: EVE SSO scope esi-characters.read_agents_research.v1
  - **esi-characters.read_blueprints.v1**: EVE SSO scope esi-characters.read_blueprints.v1
- - **esi-characters.read_chat_channels.v1**: EVE SSO scope esi-characters.read_chat_channels.v1
  - **esi-characters.read_contacts.v1**: EVE SSO scope esi-characters.read_contacts.v1
  - **esi-characters.read_corporation_roles.v1**: EVE SSO scope esi-characters.read_corporation_roles.v1
  - **esi-characters.read_fatigue.v1**: EVE SSO scope esi-characters.read_fatigue.v1

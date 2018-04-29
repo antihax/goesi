@@ -2,8 +2,11 @@ package goesi
 
 import (
 	"bytes"
+	"encoding/base64"
 	"encoding/json"
 	"errors"
+	"fmt"
+	"io"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -11,6 +14,7 @@ import (
 	"sync"
 
 	"context"
+
 	"golang.org/x/oauth2"
 )
 
@@ -77,6 +81,41 @@ func (c *SSOAuthenticator) AuthorizeURL(state string, onlineAccess bool, scopes 
 	}
 
 	return url
+}
+
+// TokenRevoke revokes a refresh token
+func (c *SSOAuthenticator) TokenRevoke(refreshToken string) error {
+	v := url.Values{
+		"token_type_hint": {"refresh_token"},
+		"token":           {refreshToken},
+	}
+	req, err := http.NewRequest("POST", "https://login.eveonline.com/oauth/revoke", strings.NewReader(v.Encode()))
+	if err != nil {
+		return err
+	}
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
+	req.Header.Set("Authorization",
+		"Basic "+base64.URLEncoding.EncodeToString(
+			[]byte(c.oauthConfig.ClientID+":"+c.oauthConfig.ClientSecret),
+		))
+
+	r, err := c.httpClient.Do(req)
+	if err != nil {
+		return err
+	}
+	defer r.Body.Close()
+	body, err := ioutil.ReadAll(io.LimitReader(r.Body, 1<<20))
+	if err != nil {
+		return fmt.Errorf("oauth2: cannot revoke token: %v", err)
+	}
+	if code := r.StatusCode; code < 200 || code > 299 {
+		return &oauth2.RetrieveError{
+			Response: r,
+			Body:     body,
+		}
+	}
+	return nil
 }
 
 // TokenExchange exchanges the code returned to the redirectURL with

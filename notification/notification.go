@@ -1,4 +1,4 @@
-package notifications
+package notification
 
 type AcceptedAlly struct {
 	AllyID   int32   `yaml:"allyID"`

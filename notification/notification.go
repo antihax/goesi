@@ -516,13 +516,11 @@ type IncursionCompletedMsg struct {
 }
 
 type IndustryTeamAuctionLost struct {
-	SolarSystemID int32 `yaml:"solarSystemID"`
-	SystemBids    struct {
-		Num1343798995 float64 `yaml:"1343798995"`
-	} `yaml:"systemBids"`
-	TeamNameInfo []interface{} `yaml:"teamNameInfo"`
-	TotalIsk     float64       `yaml:"totalIsk"`
-	YourAmount   float64       `yaml:"yourAmount"`
+	SolarSystemID int32             `yaml:"solarSystemID"`
+	SystemBids    map[int32]float64 `yaml:"systemBids"`
+	TeamNameInfo  []interface{}     `yaml:"teamNameInfo"`
+	TotalIsk      float64           `yaml:"totalIsk"`
+	YourAmount    float64           `yaml:"yourAmount"`
 }
 
 type InsuranceExpirationMsg struct {
@@ -620,18 +618,18 @@ type KillRightUsed struct {
 
 type LocateCharMsg struct {
 	AgentLocation struct {
-		Num3  int32 `yaml:"3"`
-		Num4  int32 `yaml:"4"`
-		Num5  int32 `yaml:"5"`
-		Num15 int32 `yaml:"15"`
+		Region        int32 `yaml:"3"`
+		Constellation int32 `yaml:"4"`
+		SolarSystem   int32 `yaml:"5"`
+		Station       int32 `yaml:"15"`
 	} `yaml:"agentLocation"`
 	CharacterID    int32 `yaml:"characterID"`
 	MessageIndex   int32 `yaml:"messageIndex"`
 	TargetLocation struct {
-		Num3  int32 `yaml:"3"`
-		Num4  int32 `yaml:"4"`
-		Num5  int32 `yaml:"5"`
-		Num15 int32 `yaml:"15"`
+		Region        int32 `yaml:"3"`
+		Constellation int32 `yaml:"4"`
+		SolarSystem   int32 `yaml:"5"`
+		Station       int32 `yaml:"15"`
 	} `yaml:"targetLocation"`
 }
 
@@ -688,61 +686,46 @@ type MoonminingExtractionCancelled struct {
 }
 
 type MoonminingExtractionFinished struct {
-	AutoTime        int64  `yaml:"autoTime"`
-	MoonID          int32  `yaml:"moonID"`
-	MoonLink        string `yaml:"moonLink"`
-	OreVolumeByType struct {
-		Num45493 float64 `yaml:"45493"`
-		Num46678 float64 `yaml:"46678"`
-		Num46680 float64 `yaml:"46680"`
-		Num46683 float64 `yaml:"46683"`
-	} `yaml:"oreVolumeByType"`
-	SolarSystemID   int32  `yaml:"solarSystemID"`
-	SolarSystemLink string `yaml:"solarSystemLink"`
-	StructureID     int64  `yaml:"structureID"`
-	StructureLink   string `yaml:"structureLink"`
-	StructureName   string `yaml:"structureName"`
-	StructureTypeID int32  `yaml:"structureTypeID"`
+	AutoTime        int64             `yaml:"autoTime"`
+	MoonID          int32             `yaml:"moonID"`
+	MoonLink        string            `yaml:"moonLink"`
+	OreVolumeByType map[int32]float64 `yaml:"oreVolumeByType"`
+	SolarSystemID   int32             `yaml:"solarSystemID"`
+	SolarSystemLink string            `yaml:"solarSystemLink"`
+	StructureID     int64             `yaml:"structureID"`
+	StructureLink   string            `yaml:"structureLink"`
+	StructureName   string            `yaml:"structureName"`
+	StructureTypeID int32             `yaml:"structureTypeID"`
 }
 
 type MoonminingExtractionStarted struct {
-	AutoTime        int64  `yaml:"autoTime"`
-	MoonID          int32  `yaml:"moonID"`
-	MoonLink        string `yaml:"moonLink"`
-	OreVolumeByType struct {
-		Num45493 float64 `yaml:"45493"`
-		Num46678 float64 `yaml:"46678"`
-		Num46680 float64 `yaml:"46680"`
-		Num46683 float64 `yaml:"46683"`
-	} `yaml:"oreVolumeByType"`
-	ReadyTime       int64  `yaml:"readyTime"`
-	SolarSystemID   int32  `yaml:"solarSystemID"`
-	SolarSystemLink string `yaml:"solarSystemLink"`
-	StartedBy       int32  `yaml:"startedBy"`
-	StartedByLink   string `yaml:"startedByLink"`
-	StructureID     int64  `yaml:"structureID"`
-	StructureLink   string `yaml:"structureLink"`
-	StructureName   string `yaml:"structureName"`
-	StructureTypeID int32  `yaml:"structureTypeID"`
+	AutoTime        int64             `yaml:"autoTime"`
+	MoonID          int32             `yaml:"moonID"`
+	MoonLink        string            `yaml:"moonLink"`
+	OreVolumeByType map[int32]float64 `yaml:"oreVolumeByType"`
+	ReadyTime       int64             `yaml:"readyTime"`
+	SolarSystemID   int32             `yaml:"solarSystemID"`
+	SolarSystemLink string            `yaml:"solarSystemLink"`
+	StartedBy       int32             `yaml:"startedBy"`
+	StartedByLink   string            `yaml:"startedByLink"`
+	StructureID     int64             `yaml:"structureID"`
+	StructureLink   string            `yaml:"structureLink"`
+	StructureName   string            `yaml:"structureName"`
+	StructureTypeID int32             `yaml:"structureTypeID"`
 }
 
 type MoonminingLaserFired struct {
-	FiredBy         int32  `yaml:"firedBy"`
-	FiredByLink     string `yaml:"firedByLink"`
-	MoonID          int32  `yaml:"moonID"`
-	MoonLink        string `yaml:"moonLink"`
-	OreVolumeByType struct {
-		Num45493 float64 `yaml:"45493"`
-		Num46678 float64 `yaml:"46678"`
-		Num46680 float64 `yaml:"46680"`
-		Num46683 float64 `yaml:"46683"`
-	} `yaml:"oreVolumeByType"`
-	SolarSystemID   int32  `yaml:"solarSystemID"`
-	SolarSystemLink string `yaml:"solarSystemLink"`
-	StructureID     int64  `yaml:"structureID"`
-	StructureLink   string `yaml:"structureLink"`
-	StructureName   string `yaml:"structureName"`
-	StructureTypeID int32  `yaml:"structureTypeID"`
+	FiredBy         int32             `yaml:"firedBy"`
+	FiredByLink     string            `yaml:"firedByLink"`
+	MoonID          int32             `yaml:"moonID"`
+	MoonLink        string            `yaml:"moonLink"`
+	OreVolumeByType map[int32]float64 `yaml:"oreVolumeByType"`
+	SolarSystemID   int32             `yaml:"solarSystemID"`
+	SolarSystemLink string            `yaml:"solarSystemLink"`
+	StructureID     int64             `yaml:"structureID"`
+	StructureLink   string            `yaml:"structureLink"`
+	StructureName   string            `yaml:"structureName"`
+	StructureTypeID int32             `yaml:"structureTypeID"`
 }
 
 type NPCStandingsGained [][]float64
@@ -1090,22 +1073,17 @@ type WarSurrenderOfferMsg struct {
 }
 
 type NotificationTypeMoonminingExtractionStarted struct {
-	AutoTime        int64  `yaml:"autoTime"`
-	MoonID          int32  `yaml:"moonID"`
-	MoonLink        string `yaml:"moonLink"`
-	OreVolumeByType struct {
-		Num45493 float64 `yaml:"45493"`
-		Num46678 float64 `yaml:"46678"`
-		Num46680 float64 `yaml:"46680"`
-		Num46683 float64 `yaml:"46683"`
-	} `yaml:"oreVolumeByType"`
-	ReadyTime       int64  `yaml:"readyTime"`
-	SolarSystemID   int32  `yaml:"solarSystemID"`
-	SolarSystemLink string `yaml:"solarSystemLink"`
-	StartedBy       int32  `yaml:"startedBy"`
-	StartedByLink   string `yaml:"startedByLink"`
-	StructureID     int64  `yaml:"structureID"`
-	StructureLink   string `yaml:"structureLink"`
-	StructureName   string `yaml:"structureName"`
-	StructureTypeID int32  `yaml:"structureTypeID"`
+	AutoTime        int64             `yaml:"autoTime"`
+	MoonID          int32             `yaml:"moonID"`
+	MoonLink        string            `yaml:"moonLink"`
+	OreVolumeByType map[int32]float64 `yaml:"oreVolumeByType"`
+	ReadyTime       int64             `yaml:"readyTime"`
+	SolarSystemID   int32             `yaml:"solarSystemID"`
+	SolarSystemLink string            `yaml:"solarSystemLink"`
+	StartedBy       int32             `yaml:"startedBy"`
+	StartedByLink   string            `yaml:"startedByLink"`
+	StructureID     int64             `yaml:"structureID"`
+	StructureLink   string            `yaml:"structureLink"`
+	StructureName   string            `yaml:"structureName"`
+	StructureTypeID int32             `yaml:"structureTypeID"`
 }

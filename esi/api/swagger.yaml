@@ -4,7 +4,7 @@ info:
   description: "An OpenAPI for EVE Online"
   version: "0.8.0"
   title: "EVE Swagger Interface"
-host: "esi.tech.ccp.is"
+host: "esi.evetech.net"
 schemes:
 - "https"
 consumes:
@@ -139,7 +139,7 @@ paths:
       - "Contacts"
       summary: "Get alliance contacts"
       description: "Return contacts of an alliance\n\n---\n\nThis route is cached\
-        \ for up to 300 seconds\n\n---\n[This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/alliances/{alliance_id}/contacts/)"
+        \ for up to 300 seconds\n\n---\n[This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/contacts/)"
       operationId: "get_alliances_alliance_id_contacts"
       parameters:
       - name: "alliance_id"
@@ -1734,7 +1734,7 @@ paths:
       - "Contacts"
       summary: "Get contacts"
       description: "Return contacts of a character\n\n---\n\nThis route is cached\
-        \ for up to 300 seconds\n\n---\n[This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/characters/{character_id}/contacts/)"
+        \ for up to 300 seconds\n\n---\n[This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/contacts/)"
       operationId: "get_characters_character_id_contacts"
       parameters:
       - name: "character_id"
@@ -1898,7 +1898,7 @@ paths:
       - "Contacts"
       summary: "Add contacts"
       description: "Bulk add contacts with same settings\n\n---\n\n[This route has\
-        \ an available update](https://esi.tech.ccp.is/diff/latest/dev/#POST-/characters/{character_id}/contacts/)"
+        \ an available update](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/contacts/)"
       operationId: "post_characters_character_id_contacts"
       parameters:
       - name: "character_id"
@@ -2054,7 +2054,7 @@ paths:
       - "Contacts"
       summary: "Edit contacts"
       description: "Bulk edit contacts with same settings\n\n---\n\n[This route has\
-        \ an available update](https://esi.tech.ccp.is/diff/latest/dev/#PUT-/characters/{character_id}/contacts/)"
+        \ an available update](https://esi.evetech.net/diff/latest/dev/#PUT-/characters/{character_id}/contacts/)"
       operationId: "put_characters_character_id_contacts"
       parameters:
       - name: "character_id"
@@ -8393,7 +8393,7 @@ paths:
       - "Contacts"
       summary: "Get corporation contacts"
       description: "Return contacts of a corporation\n\n---\n\nThis route is cached\
-        \ for up to 300 seconds\n\n---\n[This route has an available update](https://esi.tech.ccp.is/diff/latest/dev/#GET-/corporations/{corporation_id}/contacts/)"
+        \ for up to 300 seconds\n\n---\n[This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/contacts/)"
       operationId: "get_corporations_corporation_id_contacts"
       parameters:
       - name: "corporation_id"

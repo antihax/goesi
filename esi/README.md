@@ -17,7 +17,7 @@ import "./esi"
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://esi.tech.ccp.is*
+All URIs are relative to *https://esi.evetech.net*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

@@ -791,7 +791,7 @@ No authorization required
 > GetUniverseStationsStationIdOk GetUniverseStationsStationId(ctx, stationId, optional)
 Get station information
 
-Get information on a station  ---  This route is cached for up to 300 seconds
+Get information on a station  ---  This route expires daily at 11:05
 
 ### Required Parameters
 

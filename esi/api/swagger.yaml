@@ -27080,8 +27080,8 @@ paths:
       tags:
       - "Universe"
       summary: "Get station information"
-      description: "Get information on a station\n\n---\n\nThis route is cached for\
-        \ up to 300 seconds"
+      description: "Get information on a station\n\n---\n\nThis route expires daily\
+        \ at 11:05"
       operationId: "get_universe_stations_station_id"
       parameters:
       - name: "datasource"
@@ -27224,7 +27224,6 @@ paths:
       x-alternate-versions:
       - "dev"
       - "v2"
-      x-cached-seconds: 300
   /v2/universe/system_kills/:
     get:
       tags:

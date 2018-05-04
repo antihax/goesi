@@ -3171,7 +3171,7 @@ func (a *UniverseApiService) GetUniverseStarsStarId(ctx context.Context, starId 
 
 /*
 UniverseApiService Get station information
-Get information on a station  ---  This route is cached for up to 300 seconds
+Get information on a station  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param stationId station_id integer
  * @param optional nil or *GetUniverseStationsStationIdOpts - Optional Parameters:

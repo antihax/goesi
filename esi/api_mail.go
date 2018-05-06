@@ -136,7 +136,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx contex
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -147,7 +147,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx contex
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -158,7 +158,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx contex
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -169,7 +169,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx contex
 
 		if localVarHttpResponse.StatusCode == 422 {
 			var v DeleteCharactersCharacterIdMailLabelsLabelIdUnprocessableEntity
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -180,7 +180,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx contex
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -191,7 +191,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx contex
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -202,7 +202,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailLabelsLabelId(ctx contex
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -312,7 +312,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -323,7 +323,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -334,7 +334,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -345,7 +345,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -356,7 +356,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -367,7 +367,7 @@ func (a *MailApiService) DeleteCharactersCharacterIdMailMailId(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -485,7 +485,7 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -499,7 +499,7 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdMail200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -510,7 +510,7 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -521,7 +521,7 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -532,7 +532,7 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -543,7 +543,7 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -554,7 +554,7 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -565,7 +565,7 @@ func (a *MailApiService) GetCharactersCharacterIdMail(ctx context.Context, chara
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -673,7 +673,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context,
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -687,7 +687,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetCharactersCharacterIdMailLabelsOk
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -698,7 +698,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -709,7 +709,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -720,7 +720,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -731,7 +731,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -742,7 +742,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -753,7 +753,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLabels(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -861,7 +861,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -875,7 +875,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdMailLists200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -886,7 +886,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -897,7 +897,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -908,7 +908,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -919,7 +919,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -930,7 +930,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -941,7 +941,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailLists(ctx context.Context, 
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1051,7 +1051,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1065,7 +1065,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetCharactersCharacterIdMailMailIdOk
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1076,7 +1076,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1087,7 +1087,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1098,7 +1098,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1109,7 +1109,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 404 {
 			var v GetCharactersCharacterIdMailMailIdNotFound
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1120,7 +1120,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1131,7 +1131,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1142,7 +1142,7 @@ func (a *MailApiService) GetCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1248,7 +1248,7 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1262,7 +1262,7 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 201 {
 			var v int32
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1273,7 +1273,7 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1284,7 +1284,7 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1295,7 +1295,7 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1306,7 +1306,7 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1317,7 +1317,7 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1328,7 +1328,7 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1339,7 +1339,7 @@ func (a *MailApiService) PostCharactersCharacterIdMail(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 520 {
 			var v PostCharactersCharacterIdMail520Response
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1445,7 +1445,7 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1459,7 +1459,7 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 201 {
 			var v int32
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1470,7 +1470,7 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1481,7 +1481,7 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1492,7 +1492,7 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1503,7 +1503,7 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1514,7 +1514,7 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1525,7 +1525,7 @@ func (a *MailApiService) PostCharactersCharacterIdMailLabels(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1638,7 +1638,7 @@ func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -1649,7 +1649,7 @@ func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -1660,7 +1660,7 @@ func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -1671,7 +1671,7 @@ func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -1682,7 +1682,7 @@ func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
@@ -1693,7 +1693,7 @@ func (a *MailApiService) PutCharactersCharacterIdMailMailId(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr

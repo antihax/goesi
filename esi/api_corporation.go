@@ -129,7 +129,7 @@ func (a *CorporationApiService) GetCorporationsCorporationId(ctx context.Context
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -143,7 +143,7 @@ func (a *CorporationApiService) GetCorporationsCorporationId(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetCorporationsCorporationIdOk
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -154,7 +154,7 @@ func (a *CorporationApiService) GetCorporationsCorporationId(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -165,7 +165,7 @@ func (a *CorporationApiService) GetCorporationsCorporationId(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 404 {
 			var v GetCorporationsCorporationIdNotFound
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -176,7 +176,7 @@ func (a *CorporationApiService) GetCorporationsCorporationId(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -187,7 +187,7 @@ func (a *CorporationApiService) GetCorporationsCorporationId(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -198,7 +198,7 @@ func (a *CorporationApiService) GetCorporationsCorporationId(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -301,7 +301,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(ctx 
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -315,7 +315,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(ctx 
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdAlliancehistory200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -326,7 +326,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(ctx 
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -337,7 +337,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(ctx 
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -348,7 +348,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(ctx 
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -359,7 +359,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(ctx 
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -472,7 +472,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -486,7 +486,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdBlueprints200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -497,7 +497,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -508,7 +508,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -519,7 +519,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -530,7 +530,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -541,7 +541,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -552,7 +552,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -665,7 +665,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -679,7 +679,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdContainersLogs200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -690,7 +690,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -701,7 +701,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -712,7 +712,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -723,7 +723,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -734,7 +734,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -745,7 +745,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -853,7 +853,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx contex
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -867,7 +867,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx contex
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetCorporationsCorporationIdDivisionsOk
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -878,7 +878,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx contex
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -889,7 +889,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx contex
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -900,7 +900,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx contex
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -911,7 +911,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx contex
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -922,7 +922,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx contex
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -933,7 +933,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx contex
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1041,7 +1041,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdFacilities(ctx conte
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1055,7 +1055,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdFacilities(ctx conte
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdFacilities200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1066,7 +1066,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdFacilities(ctx conte
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1077,7 +1077,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdFacilities(ctx conte
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1088,7 +1088,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdFacilities(ctx conte
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1099,7 +1099,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdFacilities(ctx conte
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1110,7 +1110,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdFacilities(ctx conte
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1121,7 +1121,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdFacilities(ctx conte
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1224,7 +1224,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(ctx context.Co
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1238,7 +1238,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetCorporationsCorporationIdIconsOk
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1249,7 +1249,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1260,7 +1260,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 404 {
 			var v GetCorporationsCorporationIdIconsNotFound
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1271,7 +1271,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1282,7 +1282,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1293,7 +1293,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1406,7 +1406,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedals(ctx context.C
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1420,7 +1420,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedals(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdMedals200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1431,7 +1431,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedals(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1442,7 +1442,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedals(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1453,7 +1453,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedals(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1464,7 +1464,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedals(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1475,7 +1475,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedals(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1486,7 +1486,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedals(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1599,7 +1599,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1613,7 +1613,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdMedalsIssued200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1624,7 +1624,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1635,7 +1635,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1646,7 +1646,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1657,7 +1657,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1668,7 +1668,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1679,7 +1679,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1787,7 +1787,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1801,7 +1801,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []int32
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1812,7 +1812,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1823,7 +1823,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1834,7 +1834,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1845,7 +1845,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1856,7 +1856,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1867,7 +1867,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1975,7 +1975,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx con
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1989,7 +1989,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx con
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v int32
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2000,7 +2000,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx con
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2011,7 +2011,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx con
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2022,7 +2022,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx con
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2033,7 +2033,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx con
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2044,7 +2044,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx con
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2055,7 +2055,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx con
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2163,7 +2163,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersTitles(ctx co
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -2177,7 +2177,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersTitles(ctx co
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdMembersTitles200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2188,7 +2188,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersTitles(ctx co
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2199,7 +2199,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersTitles(ctx co
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2210,7 +2210,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersTitles(ctx co
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2221,7 +2221,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersTitles(ctx co
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2232,7 +2232,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersTitles(ctx co
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2243,7 +2243,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersTitles(ctx co
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2351,7 +2351,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembertracking(ctx c
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -2365,7 +2365,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembertracking(ctx c
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdMembertracking200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2376,7 +2376,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembertracking(ctx c
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2387,7 +2387,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembertracking(ctx c
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2398,7 +2398,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembertracking(ctx c
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2409,7 +2409,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembertracking(ctx c
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2420,7 +2420,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembertracking(ctx c
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2431,7 +2431,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembertracking(ctx c
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2544,7 +2544,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutposts(ctx context
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -2558,7 +2558,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutposts(ctx context
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []int32
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2569,7 +2569,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutposts(ctx context
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2580,7 +2580,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutposts(ctx context
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2591,7 +2591,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutposts(ctx context
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2602,7 +2602,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutposts(ctx context
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2613,7 +2613,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutposts(ctx context
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2624,7 +2624,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutposts(ctx context
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2734,7 +2734,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutpostsOutpostId(ct
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -2748,7 +2748,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutpostsOutpostId(ct
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetCorporationsCorporationIdOutpostsOutpostIdOk
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2759,7 +2759,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutpostsOutpostId(ct
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2770,7 +2770,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutpostsOutpostId(ct
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2781,7 +2781,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutpostsOutpostId(ct
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2792,7 +2792,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutpostsOutpostId(ct
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2803,7 +2803,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutpostsOutpostId(ct
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2814,7 +2814,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdOutpostsOutpostId(ct
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2922,7 +2922,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -2936,7 +2936,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdRoles200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2947,7 +2947,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2958,7 +2958,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2969,7 +2969,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2980,7 +2980,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2991,7 +2991,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3002,7 +3002,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3115,7 +3115,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRolesHistory(ctx con
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -3129,7 +3129,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRolesHistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdRolesHistory200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3140,7 +3140,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRolesHistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3151,7 +3151,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRolesHistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3162,7 +3162,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRolesHistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3173,7 +3173,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRolesHistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3184,7 +3184,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRolesHistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3195,7 +3195,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRolesHistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3308,7 +3308,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdShareholders(ctx con
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -3322,7 +3322,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdShareholders(ctx con
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdShareholders200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3333,7 +3333,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdShareholders(ctx con
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3344,7 +3344,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdShareholders(ctx con
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3355,7 +3355,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdShareholders(ctx con
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3366,7 +3366,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdShareholders(ctx con
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3377,7 +3377,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdShareholders(ctx con
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3388,7 +3388,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdShareholders(ctx con
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3501,7 +3501,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStandings(ctx contex
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -3515,7 +3515,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStandings(ctx contex
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdStandings200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3526,7 +3526,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStandings(ctx contex
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3537,7 +3537,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStandings(ctx contex
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3548,7 +3548,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStandings(ctx contex
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3559,7 +3559,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStandings(ctx contex
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3570,7 +3570,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStandings(ctx contex
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3581,7 +3581,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStandings(ctx contex
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3694,7 +3694,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbases(ctx contex
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -3708,7 +3708,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbases(ctx contex
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdStarbases200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3719,7 +3719,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbases(ctx contex
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3730,7 +3730,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbases(ctx contex
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3741,7 +3741,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbases(ctx contex
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3752,7 +3752,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbases(ctx contex
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3763,7 +3763,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbases(ctx contex
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3774,7 +3774,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbases(ctx contex
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3886,7 +3886,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -3900,7 +3900,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetCorporationsCorporationIdStarbasesStarbaseIdOk
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3911,7 +3911,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3922,7 +3922,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3933,7 +3933,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3944,7 +3944,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3955,7 +3955,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -3966,7 +3966,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4084,7 +4084,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -4098,7 +4098,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdStructures200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4109,7 +4109,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4120,7 +4120,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4131,7 +4131,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4142,7 +4142,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4153,7 +4153,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4164,7 +4164,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4272,7 +4272,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -4286,7 +4286,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdTitles200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4297,7 +4297,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4308,7 +4308,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4319,7 +4319,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4330,7 +4330,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4341,7 +4341,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4352,7 +4352,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4458,7 +4458,7 @@ func (a *CorporationApiService) GetCorporationsNames(ctx context.Context, corpor
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -4472,7 +4472,7 @@ func (a *CorporationApiService) GetCorporationsNames(ctx context.Context, corpor
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsNames200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4483,7 +4483,7 @@ func (a *CorporationApiService) GetCorporationsNames(ctx context.Context, corpor
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4494,7 +4494,7 @@ func (a *CorporationApiService) GetCorporationsNames(ctx context.Context, corpor
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4505,7 +4505,7 @@ func (a *CorporationApiService) GetCorporationsNames(ctx context.Context, corpor
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4516,7 +4516,7 @@ func (a *CorporationApiService) GetCorporationsNames(ctx context.Context, corpor
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4614,7 +4614,7 @@ func (a *CorporationApiService) GetCorporationsNpccorps(ctx context.Context, loc
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -4628,7 +4628,7 @@ func (a *CorporationApiService) GetCorporationsNpccorps(ctx context.Context, loc
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []int32
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4639,7 +4639,7 @@ func (a *CorporationApiService) GetCorporationsNpccorps(ctx context.Context, loc
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4650,7 +4650,7 @@ func (a *CorporationApiService) GetCorporationsNpccorps(ctx context.Context, loc
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4661,7 +4661,7 @@ func (a *CorporationApiService) GetCorporationsNpccorps(ctx context.Context, loc
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -4672,7 +4672,7 @@ func (a *CorporationApiService) GetCorporationsNpccorps(ctx context.Context, loc
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr

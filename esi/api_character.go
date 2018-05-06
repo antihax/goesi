@@ -129,7 +129,7 @@ func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, char
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -143,7 +143,7 @@ func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetCharactersCharacterIdOk
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -154,7 +154,7 @@ func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -165,7 +165,7 @@ func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 404 {
 			var v GetCharactersCharacterIdNotFound
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -176,7 +176,7 @@ func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -187,7 +187,7 @@ func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -198,7 +198,7 @@ func (a *CharacterApiService) GetCharactersCharacterId(ctx context.Context, char
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -306,7 +306,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -320,7 +320,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdAgentsResearch200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -331,7 +331,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -342,7 +342,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -353,7 +353,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -364,7 +364,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -375,7 +375,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -386,7 +386,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdAgentsResearch(ctx context
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -499,7 +499,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -513,7 +513,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdBlueprints200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -524,7 +524,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -535,7 +535,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -546,7 +546,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -557,7 +557,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -568,7 +568,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -579,7 +579,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -682,7 +682,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(ctx con
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -696,7 +696,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdCorporationhistory200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -707,7 +707,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -718,7 +718,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -729,7 +729,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -740,7 +740,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdCorporationhistory(ctx con
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -848,7 +848,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -862,7 +862,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetCharactersCharacterIdFatigueOk
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -873,7 +873,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -884,7 +884,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -895,7 +895,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -906,7 +906,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -917,7 +917,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -928,7 +928,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdFatigue(ctx context.Contex
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1036,7 +1036,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1050,7 +1050,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdMedals200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1061,7 +1061,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1072,7 +1072,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1083,7 +1083,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1094,7 +1094,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1105,7 +1105,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1116,7 +1116,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1224,7 +1224,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1238,7 +1238,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdNotifications200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1249,7 +1249,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1260,7 +1260,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1271,7 +1271,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1282,7 +1282,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1293,7 +1293,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1304,7 +1304,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1412,7 +1412,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1426,7 +1426,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdNotificationsContacts200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1437,7 +1437,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1448,7 +1448,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1459,7 +1459,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1470,7 +1470,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1481,7 +1481,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1492,7 +1492,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1595,7 +1595,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1609,7 +1609,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetCharactersCharacterIdPortraitOk
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1620,7 +1620,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1631,7 +1631,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 404 {
 			var v GetCharactersCharacterIdPortraitNotFound
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1642,7 +1642,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1653,7 +1653,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1664,7 +1664,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdPortrait(ctx context.Conte
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1772,7 +1772,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1786,7 +1786,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetCharactersCharacterIdRolesOk
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1797,7 +1797,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1808,7 +1808,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1819,7 +1819,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1830,7 +1830,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1841,7 +1841,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1852,7 +1852,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdRoles(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1960,7 +1960,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1974,7 +1974,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdStandings200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1985,7 +1985,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1996,7 +1996,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2007,7 +2007,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2018,7 +2018,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2029,7 +2029,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2040,7 +2040,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStandings(ctx context.Cont
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2148,7 +2148,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -2162,7 +2162,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdStats200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2173,7 +2173,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2184,7 +2184,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2195,7 +2195,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2206,7 +2206,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2217,7 +2217,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2228,7 +2228,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdStats(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2336,7 +2336,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -2350,7 +2350,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdTitles200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2361,7 +2361,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2372,7 +2372,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2383,7 +2383,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2394,7 +2394,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2405,7 +2405,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2416,7 +2416,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2522,7 +2522,7 @@ func (a *CharacterApiService) GetCharactersNames(ctx context.Context, characterI
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -2536,7 +2536,7 @@ func (a *CharacterApiService) GetCharactersNames(ctx context.Context, characterI
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersNames200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2547,7 +2547,7 @@ func (a *CharacterApiService) GetCharactersNames(ctx context.Context, characterI
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2558,7 +2558,7 @@ func (a *CharacterApiService) GetCharactersNames(ctx context.Context, characterI
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2569,7 +2569,7 @@ func (a *CharacterApiService) GetCharactersNames(ctx context.Context, characterI
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2580,7 +2580,7 @@ func (a *CharacterApiService) GetCharactersNames(ctx context.Context, characterI
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2681,7 +2681,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -2695,7 +2695,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []PostCharactersAffiliation200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2706,7 +2706,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2717,7 +2717,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 
 		if localVarHttpResponse.StatusCode == 404 {
 			var v PostCharactersAffiliationNotFound
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2728,7 +2728,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2739,7 +2739,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2750,7 +2750,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2856,7 +2856,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -2870,7 +2870,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 201 {
 			var v float32
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2881,7 +2881,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2892,7 +2892,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2903,7 +2903,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2914,7 +2914,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2925,7 +2925,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -2936,7 +2936,7 @@ func (a *CharacterApiService) PostCharactersCharacterIdCspa(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr

@@ -139,7 +139,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -153,7 +153,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdIndustryJobs200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -164,7 +164,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -175,7 +175,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -186,7 +186,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -197,7 +197,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -208,7 +208,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -219,7 +219,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -332,7 +332,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -346,7 +346,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCharactersCharacterIdMining200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -357,7 +357,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -368,7 +368,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -379,7 +379,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -390,7 +390,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -401,7 +401,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -412,7 +412,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -525,7 +525,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -539,7 +539,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationCorporationIdMiningExtractions200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -550,7 +550,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -561,7 +561,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -572,7 +572,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -583,7 +583,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -594,7 +594,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -605,7 +605,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -718,7 +718,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -732,7 +732,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationCorporationIdMiningObservers200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -743,7 +743,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -754,7 +754,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -765,7 +765,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -776,7 +776,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -787,7 +787,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -798,7 +798,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -913,7 +913,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -927,7 +927,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationCorporationIdMiningObserversObserverId200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -938,7 +938,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -949,7 +949,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -960,7 +960,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -971,7 +971,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -982,7 +982,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -993,7 +993,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1111,7 +1111,7 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1125,7 +1125,7 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetCorporationsCorporationIdIndustryJobs200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1136,7 +1136,7 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1147,7 +1147,7 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 
 		if localVarHttpResponse.StatusCode == 401 {
 			var v Unauthorized
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1158,7 +1158,7 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1169,7 +1169,7 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1180,7 +1180,7 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1191,7 +1191,7 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1289,7 +1289,7 @@ func (a *IndustryApiService) GetIndustryFacilities(ctx context.Context, localVar
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1303,7 +1303,7 @@ func (a *IndustryApiService) GetIndustryFacilities(ctx context.Context, localVar
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetIndustryFacilities200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1314,7 +1314,7 @@ func (a *IndustryApiService) GetIndustryFacilities(ctx context.Context, localVar
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1325,7 +1325,7 @@ func (a *IndustryApiService) GetIndustryFacilities(ctx context.Context, localVar
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1336,7 +1336,7 @@ func (a *IndustryApiService) GetIndustryFacilities(ctx context.Context, localVar
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1347,7 +1347,7 @@ func (a *IndustryApiService) GetIndustryFacilities(ctx context.Context, localVar
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1445,7 +1445,7 @@ func (a *IndustryApiService) GetIndustrySystems(ctx context.Context, localVarOpt
 
 	if localVarHttpResponse.StatusCode < 400 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 		if err == nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
@@ -1459,7 +1459,7 @@ func (a *IndustryApiService) GetIndustrySystems(ctx context.Context, localVarOpt
 
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []GetIndustrySystems200Ok
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1470,7 +1470,7 @@ func (a *IndustryApiService) GetIndustrySystems(ctx context.Context, localVarOpt
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1481,7 +1481,7 @@ func (a *IndustryApiService) GetIndustrySystems(ctx context.Context, localVarOpt
 
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1492,7 +1492,7 @@ func (a *IndustryApiService) GetIndustrySystems(ctx context.Context, localVarOpt
 
 		if localVarHttpResponse.StatusCode == 502 {
 			var v BadGateway
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
@@ -1503,7 +1503,7 @@ func (a *IndustryApiService) GetIndustrySystems(ctx context.Context, localVarOpt
 
 		if localVarHttpResponse.StatusCode == 503 {
 			var v ServiceUnavailable
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr

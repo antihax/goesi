@@ -462,7 +462,7 @@ type cacheControl map[string]string
 
 func parseCacheControl(headers http.Header) cacheControl {
 	cc := cacheControl{}
-	ccHeader := headers.Get("Cache-Control")
+	ccHeader := headers.Get("cache-control")
 	for _, part := range strings.Split(ccHeader, ",") {
 		part = strings.Trim(part, " ")
 		if part == "" {
@@ -495,7 +495,7 @@ func CacheExpires(r *http.Response) time.Time {
 		}
 		expires = now.Add(lifetime)
 	} else {
-		expiresHeader := r.Header.Get("Expires")
+		expiresHeader := r.Header.Get("expires")
 		if expiresHeader != "" {
 			expires, err = time.Parse(time.RFC1123, expiresHeader)
 			if err != nil {

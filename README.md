@@ -92,7 +92,7 @@ var (
 
 // Custom transport to chain into the HTTPClient to gather statistics.
 type ETagTransport struct {
-	next *http.Transport
+	Next *http.Transport
 }
 
 // RoundTrip wraps http.DefaultTransport.RoundTrip to provide stats and handle error rates.
@@ -102,7 +102,7 @@ func (t *ETagTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 	}
 
 	// Run the request.
-	return t.next.RoundTrip(req)
+	return t.Next.RoundTrip(req)
 }
 ```
 
@@ -111,7 +111,7 @@ This is then looped in the transport, and passed through a context like so:
 ```go
 func main() {
 	// Loop in our middleware
-	client := &http.Client{Transport: &ETagTransport{&http.Transport{}}}
+	client := &http.Client{Transport: &ETagTransport{Next: &http.Transport{}}}
 
 	// Make a new client with the middleware
 	esiClient := goesi.NewAPIClient(client, "MyApp (someone@somewhere.com dude on slack)")

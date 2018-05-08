@@ -175,6 +175,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -1770,6 +1771,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -2384,6 +2386,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -5751,6 +5754,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -6222,6 +6226,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -7321,6 +7326,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -7490,6 +7496,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -7664,6 +7671,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -8084,6 +8092,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -8266,6 +8275,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -8429,6 +8439,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -8746,6 +8757,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -8933,6 +8945,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -9282,6 +9295,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -10052,6 +10066,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -10393,6 +10408,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -10561,6 +10577,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -11195,6 +11212,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -11378,6 +11396,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -11872,6 +11891,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -12044,6 +12064,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -12219,6 +12240,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -12391,6 +12413,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -17276,6 +17299,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -17614,6 +17638,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -17785,6 +17810,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -20721,6 +20747,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -22709,6 +22736,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -23109,6 +23137,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -23523,6 +23552,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -23691,6 +23721,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -23872,6 +23903,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -25701,6 +25733,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -25873,6 +25906,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -26062,6 +26096,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -26256,6 +26291,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -27516,6 +27552,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -28658,6 +28695,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -28990,6 +29028,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -29887,6 +29926,7 @@ paths:
         required: false
         type: "integer"
         default: 1
+        minimum: 1
         format: "int32"
         x-exportParamName: "Page"
         x-optionalDataType: "Int32"
@@ -43657,6 +43697,7 @@ parameters:
     required: false
     type: "integer"
     default: 1
+    minimum: 1
     format: "int32"
     x-exportParamName: "Page"
     x-optionalDataType: "Int32"

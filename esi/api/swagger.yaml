@@ -17680,7 +17680,7 @@ paths:
             title: "get_markets_region_id_orders_ok"
             items:
               $ref: "#/definitions/get_markets_region_id_orders_200_ok"
-            maxItems: 10000
+            maxItems: 1000
           examples:
             application/json:
             - duration: 90

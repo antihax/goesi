@@ -15825,7 +15825,8 @@ paths:
       - "Faction Warfare"
       summary: "Ownership of faction warfare systems"
       description: "An overview of the current ownership of faction warfare solar\
-        \ systems\n\n---\n\nThis route is cached for up to 1800 seconds"
+        \ systems\n\n---\n\nThis route is cached for up to 1800 seconds\n\n---\n[This\
+        \ route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/fw/systems/)"
       operationId: "get_fw_systems"
       parameters:
       - name: "datasource"
@@ -15863,7 +15864,7 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "All faction war solar systems"
+          description: "All faction warfare solar systems"
           schema:
             type: "array"
             description: "200 ok array"
@@ -15936,7 +15937,6 @@ paths:
             application/json:
               error: "Service unavailable message"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 1800

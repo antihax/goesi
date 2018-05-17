@@ -214,7 +214,7 @@ func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Con
 
 /*
 ContactsApiService Get alliance contacts
-Return contacts of an alliance  ---  This route is cached for up to 300 seconds  --- [This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/contacts/)
+Return contacts of an alliance  ---  This route is cached for up to 300 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/contacts/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param allianceId An EVE alliance ID
  * @param optional nil or *GetAlliancesAllianceIdContactsOpts - Optional Parameters:
@@ -595,7 +595,7 @@ func (a *ContactsApiService) GetAlliancesAllianceIdContactsLabels(ctx context.Co
 
 /*
 ContactsApiService Get contacts
-Return contacts of a character  ---  This route is cached for up to 300 seconds  --- [This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/contacts/)
+Return contacts of a character  ---  This route is cached for up to 300 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/contacts/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdContactsOpts - Optional Parameters:
@@ -976,7 +976,7 @@ func (a *ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.
 
 /*
 ContactsApiService Get corporation contacts
-Return contacts of a corporation  ---  This route is cached for up to 300 seconds  --- [This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/contacts/)
+Return contacts of a corporation  ---  This route is cached for up to 300 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/contacts/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdContactsOpts - Optional Parameters:
@@ -1357,7 +1357,7 @@ func (a *ContactsApiService) GetCorporationsCorporationIdContactsLabels(ctx cont
 
 /*
 ContactsApiService Add contacts
-Bulk add contacts with same settings  ---  [This route has an available update](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/contacts/)
+Bulk add contacts with same settings  ---  Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/contacts/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param contactIds A list of contacts
@@ -1561,7 +1561,7 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 
 /*
 ContactsApiService Edit contacts
-Bulk edit contacts with same settings  ---  [This route has an available update](https://esi.evetech.net/diff/latest/dev/#PUT-/characters/{character_id}/contacts/)
+Bulk edit contacts with same settings  ---  Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#PUT-/characters/{character_id}/contacts/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param contactIds A list of contacts

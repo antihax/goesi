@@ -139,7 +139,8 @@ paths:
       - "Contacts"
       summary: "Get alliance contacts"
       description: "Return contacts of an alliance\n\n---\n\nThis route is cached\
-        \ for up to 300 seconds\n\n---\n[This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/contacts/)"
+        \ for up to 300 seconds\n\n---\nWarning: This route has an upgrade available.\n\
+        \n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/contacts/)"
       operationId: "get_alliances_alliance_id_contacts"
       parameters:
       - name: "alliance_id"
@@ -1735,7 +1736,8 @@ paths:
       - "Contacts"
       summary: "Get contacts"
       description: "Return contacts of a character\n\n---\n\nThis route is cached\
-        \ for up to 300 seconds\n\n---\n[This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/contacts/)"
+        \ for up to 300 seconds\n\n---\nWarning: This route has an upgrade available.\n\
+        \n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/contacts/)"
       operationId: "get_characters_character_id_contacts"
       parameters:
       - name: "character_id"
@@ -1899,8 +1901,8 @@ paths:
       tags:
       - "Contacts"
       summary: "Add contacts"
-      description: "Bulk add contacts with same settings\n\n---\n\n[This route has\
-        \ an available update](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/contacts/)"
+      description: "Bulk add contacts with same settings\n\n---\n\nWarning: This route\
+        \ has an upgrade available.\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/contacts/)"
       operationId: "post_characters_character_id_contacts"
       parameters:
       - name: "character_id"
@@ -2055,8 +2057,8 @@ paths:
       tags:
       - "Contacts"
       summary: "Edit contacts"
-      description: "Bulk edit contacts with same settings\n\n---\n\n[This route has\
-        \ an available update](https://esi.evetech.net/diff/latest/dev/#PUT-/characters/{character_id}/contacts/)"
+      description: "Bulk edit contacts with same settings\n\n---\n\nWarning: This\
+        \ route has an upgrade available.\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#PUT-/characters/{character_id}/contacts/)"
       operationId: "put_characters_character_id_contacts"
       parameters:
       - name: "character_id"
@@ -8020,6 +8022,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        404:
+          description: "Invalid IDs"
+          schema:
+            $ref: "#/definitions/post_corporations_corporation_id_assets_names_not_found"
+          examples:
+            application/json:
+              error: "Not found message"
         500:
           description: "Internal server error"
           schema:
@@ -8403,7 +8412,8 @@ paths:
       - "Contacts"
       summary: "Get corporation contacts"
       description: "Return contacts of a corporation\n\n---\n\nThis route is cached\
-        \ for up to 300 seconds\n\n---\n[This route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/contacts/)"
+        \ for up to 300 seconds\n\n---\nWarning: This route has an upgrade available.\n\
+        \n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/contacts/)"
       operationId: "get_corporations_corporation_id_contacts"
       parameters:
       - name: "corporation_id"
@@ -15825,8 +15835,8 @@ paths:
       - "Faction Warfare"
       summary: "Ownership of faction warfare systems"
       description: "An overview of the current ownership of faction warfare solar\
-        \ systems\n\n---\n\nThis route is cached for up to 1800 seconds\n\n---\n[This\
-        \ route has an available update](https://esi.evetech.net/diff/latest/dev/#GET-/fw/systems/)"
+        \ systems\n\n---\n\nThis route is cached for up to 1800 seconds\n\n---\nWarning:\
+        \ This route has an upgrade available.\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/fw/systems/)"
       operationId: "get_fw_systems"
       parameters:
       - name: "datasource"
@@ -25661,6 +25671,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        404:
+          description: "Invalid IDs"
+          schema:
+            $ref: "#/definitions/post_corporations_corporation_id_assets_locations_not_found"
+          examples:
+            application/json:
+              error: "Not found message"
         500:
           description: "Internal server error"
           schema:
@@ -32159,6 +32176,13 @@ definitions:
         description: "name string"
         title: "post_corporations_corporation_id_assets_names_name"
     description: "200 ok object"
+  post_corporations_corporation_id_assets_names_not_found:
+    properties:
+      error:
+        type: "string"
+        description: "Not found message"
+        title: "post_corporations_corporation_id_assets_names_404_not_found"
+    description: "Not found"
   get_corporations_corporation_id_bookmarks_coordinates:
     required:
     - "x"
@@ -40683,6 +40707,13 @@ definitions:
       position:
         $ref: "#/definitions/post_corporations_corporation_id_assets_locations_position"
     description: "200 ok object"
+  post_corporations_corporation_id_assets_locations_not_found:
+    properties:
+      error:
+        type: "string"
+        description: "Not found message"
+        title: "post_corporations_corporation_id_assets_locations_404_not_found"
+    description: "Not found"
   get_corporations_corporation_id_blueprints_200_ok:
     required:
     - "item_id"

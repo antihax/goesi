@@ -946,6 +946,17 @@ func (a *AssetsApiService) PostCorporationsCorporationIdAssetsLocations(ctx cont
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 
+		if localVarHttpResponse.StatusCode == 404 {
+			var v PostCorporationsCorporationIdAssetsLocationsNotFound
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
@@ -1123,6 +1134,17 @@ func (a *AssetsApiService) PostCorporationsCorporationIdAssetsNames(ctx context.
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 404 {
+			var v PostCorporationsCorporationIdAssetsNamesNotFound
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()

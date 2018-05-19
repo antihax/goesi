@@ -111,15 +111,15 @@ func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				in.Delim('[')
 				if out.ActiveTotal == nil {
 					if !in.IsDelim(']') {
-						out.ActiveTotal = make([]GetFwLeaderboardsActiveTotal, 0, 8)
+						out.ActiveTotal = make([]GetFwLeaderboardsActiveTotalActiveTotal, 0, 8)
 					} else {
-						out.ActiveTotal = []GetFwLeaderboardsActiveTotal{}
+						out.ActiveTotal = []GetFwLeaderboardsActiveTotalActiveTotal{}
 					}
 				} else {
 					out.ActiveTotal = (out.ActiveTotal)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v4 GetFwLeaderboardsActiveTotal
+					var v4 GetFwLeaderboardsActiveTotalActiveTotal
 					easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.ActiveTotal = append(out.ActiveTotal, v4)
 					in.WantComma()
@@ -134,16 +134,16 @@ func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				in.Delim('[')
 				if out.LastWeek == nil {
 					if !in.IsDelim(']') {
-						out.LastWeek = make([]GetFwLeaderboardsLastWeek, 0, 8)
+						out.LastWeek = make([]GetFwLeaderboardsLastWeekLastWeek, 0, 8)
 					} else {
-						out.LastWeek = []GetFwLeaderboardsLastWeek{}
+						out.LastWeek = []GetFwLeaderboardsLastWeekLastWeek{}
 					}
 				} else {
 					out.LastWeek = (out.LastWeek)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v5 GetFwLeaderboardsLastWeek
-					easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi3(in, &v5)
+					var v5 GetFwLeaderboardsLastWeekLastWeek
+					(v5).UnmarshalEasyJSON(in)
 					out.LastWeek = append(out.LastWeek, v5)
 					in.WantComma()
 				}
@@ -157,16 +157,16 @@ func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				in.Delim('[')
 				if out.Yesterday == nil {
 					if !in.IsDelim(']') {
-						out.Yesterday = make([]GetFwLeaderboardsYesterday, 0, 8)
+						out.Yesterday = make([]GetFwLeaderboardsYesterdayYesterday, 0, 8)
 					} else {
-						out.Yesterday = []GetFwLeaderboardsYesterday{}
+						out.Yesterday = []GetFwLeaderboardsYesterdayYesterday{}
 					}
 				} else {
 					out.Yesterday = (out.Yesterday)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v6 GetFwLeaderboardsYesterday
-					easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi4(in, &v6)
+					var v6 GetFwLeaderboardsYesterdayYesterday
+					(v6).UnmarshalEasyJSON(in)
 					out.Yesterday = append(out.Yesterday, v6)
 					in.WantComma()
 				}
@@ -219,7 +219,7 @@ func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v9 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi3(out, v10)
+				(v10).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -238,7 +238,7 @@ func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v11 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi4(out, v12)
+				(v12).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -269,7 +269,7 @@ func (v *GetFwLeaderboardsKills) UnmarshalJSON(data []byte) error {
 func (v *GetFwLeaderboardsKills) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetFwLeaderboardsYesterday) {
+func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFwLeaderboardsActiveTotalActiveTotal) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -302,125 +302,7 @@ func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetF
 		in.Consumed()
 	}
 }
-func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetFwLeaderboardsYesterday) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Amount != 0 {
-		const prefix string = ",\"amount\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Amount))
-	}
-	if in.FactionId != 0 {
-		const prefix string = ",\"faction_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.FactionId))
-	}
-	out.RawByte('}')
-}
-func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetFwLeaderboardsLastWeek) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "amount":
-			out.Amount = int32(in.Int32())
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetFwLeaderboardsLastWeek) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Amount != 0 {
-		const prefix string = ",\"amount\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Amount))
-	}
-	if in.FactionId != 0 {
-		const prefix string = ",\"faction_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.FactionId))
-	}
-	out.RawByte('}')
-}
-func easyjsonBb9f82c7DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFwLeaderboardsActiveTotal) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "amount":
-			out.Amount = int32(in.Int32())
-		case "faction_id":
-			out.FactionId = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFwLeaderboardsActiveTotal) {
+func easyjsonBb9f82c7EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFwLeaderboardsActiveTotalActiveTotal) {
 	out.RawByte('{')
 	first := true
 	_ = first

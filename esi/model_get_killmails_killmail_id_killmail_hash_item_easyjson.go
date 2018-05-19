@@ -27,7 +27,7 @@ func easyjson3bbccc1aDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetKi
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetKillmailsKillmailIdKillmailHashItemList, 0, 2)
+				*out = make(GetKillmailsKillmailIdKillmailHashItemList, 0, 1)
 			} else {
 				*out = GetKillmailsKillmailIdKillmailHashItemList{}
 			}
@@ -107,6 +107,29 @@ func easyjson3bbccc1aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 			out.Flag = int32(in.Int32())
 		case "item_type_id":
 			out.ItemTypeId = int32(in.Int32())
+		case "items":
+			if in.IsNull() {
+				in.Skip()
+				out.Items = nil
+			} else {
+				in.Delim('[')
+				if out.Items == nil {
+					if !in.IsDelim(']') {
+						out.Items = make([]GetKillmailsKillmailIdKillmailHashItemsItem, 0, 2)
+					} else {
+						out.Items = []GetKillmailsKillmailIdKillmailHashItemsItem{}
+					}
+				} else {
+					out.Items = (out.Items)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v4 GetKillmailsKillmailIdKillmailHashItemsItem
+					(v4).UnmarshalEasyJSON(in)
+					out.Items = append(out.Items, v4)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
 		case "quantity_destroyed":
 			out.QuantityDestroyed = int64(in.Int64())
 		case "quantity_dropped":
@@ -146,6 +169,25 @@ func easyjson3bbccc1aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.ItemTypeId))
+	}
+	if len(in.Items) != 0 {
+		const prefix string = ",\"items\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v5, v6 := range in.Items {
+				if v5 > 0 {
+					out.RawByte(',')
+				}
+				(v6).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
 	}
 	if in.QuantityDestroyed != 0 {
 		const prefix string = ",\"quantity_destroyed\":"

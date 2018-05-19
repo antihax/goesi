@@ -111,15 +111,15 @@ func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.Delim('[')
 				if out.Hangar == nil {
 					if !in.IsDelim(']') {
-						out.Hangar = make([]GetCorporationsCorporationIdDivisionsHangar, 0, 2)
+						out.Hangar = make([]GetCorporationsCorporationIdDivisionsHangarHangar, 0, 2)
 					} else {
-						out.Hangar = []GetCorporationsCorporationIdDivisionsHangar{}
+						out.Hangar = []GetCorporationsCorporationIdDivisionsHangarHangar{}
 					}
 				} else {
 					out.Hangar = (out.Hangar)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v4 GetCorporationsCorporationIdDivisionsHangar
+					var v4 GetCorporationsCorporationIdDivisionsHangarHangar
 					easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Hangar = append(out.Hangar, v4)
 					in.WantComma()
@@ -134,15 +134,15 @@ func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.Delim('[')
 				if out.Wallet == nil {
 					if !in.IsDelim(']') {
-						out.Wallet = make([]GetCorporationsCorporationIdDivisionsWallet, 0, 2)
+						out.Wallet = make([]GetCorporationsCorporationIdDivisionsWalletWallet, 0, 2)
 					} else {
-						out.Wallet = []GetCorporationsCorporationIdDivisionsWallet{}
+						out.Wallet = []GetCorporationsCorporationIdDivisionsWalletWallet{}
 					}
 				} else {
 					out.Wallet = (out.Wallet)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v5 GetCorporationsCorporationIdDivisionsWallet
+					var v5 GetCorporationsCorporationIdDivisionsWalletWallet
 					easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi3(in, &v5)
 					out.Wallet = append(out.Wallet, v5)
 					in.WantComma()
@@ -227,7 +227,7 @@ func (v *GetCorporationsCorporationIdDivisionsOk) UnmarshalJSON(data []byte) err
 func (v *GetCorporationsCorporationIdDivisionsOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCorporationsCorporationIdDivisionsWallet) {
+func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCorporationsCorporationIdDivisionsWalletWallet) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -260,7 +260,7 @@ func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCorporationsCorporationIdDivisionsWallet) {
+func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCorporationsCorporationIdDivisionsWalletWallet) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -286,7 +286,7 @@ func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	}
 	out.RawByte('}')
 }
-func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdDivisionsHangar) {
+func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdDivisionsHangarHangar) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -319,7 +319,7 @@ func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdDivisionsHangar) {
+func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdDivisionsHangarHangar) {
 	out.RawByte('{')
 	first := true
 	_ = first

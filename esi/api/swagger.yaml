@@ -2,7 +2,7 @@
 swagger: "2.0"
 info:
   description: "An OpenAPI for EVE Online"
-  version: "0.8.1"
+  version: "0.8.2"
   title: "EVE Swagger Interface"
 host: "esi.evetech.net"
 schemes:
@@ -31135,17 +31135,17 @@ definitions:
         type: "integer"
         format: "int32"
         description: "Last week's victory points gained by the given character"
-        title: "get_characters_character_id_fw_stats_last_week"
+        title: "get_characters_character_id_fw_stats_victory_points_last_week"
       total:
         type: "integer"
         format: "int32"
         description: "Total victory points gained since the given character enlisted"
-        title: "get_characters_character_id_fw_stats_total"
+        title: "get_characters_character_id_fw_stats_victory_points_total"
       yesterday:
         type: "integer"
         format: "int32"
         description: "Yesterday's victory points gained by the given character"
-        title: "get_characters_character_id_fw_stats_yesterday"
+        title: "get_characters_character_id_fw_stats_victory_points_yesterday"
     description: "Summary of victory points gained by the given character for the\
       \ enlisted faction"
   get_characters_character_id_fw_stats_ok:
@@ -31629,7 +31629,7 @@ definitions:
       graphic:
         type: "string"
         description: "graphic string"
-        title: "get_characters_character_id_medals_graphic"
+        title: "get_characters_character_id_medals_graphic_graphic"
       layer:
         type: "integer"
         format: "int32"
@@ -32665,7 +32665,7 @@ definitions:
         description: "terrible_standing_tax_rate number"
         title: "get_corporations_corporation_id_customs_offices_terrible_standing_tax_rate"
     description: "200 ok object"
-  get_corporations_corporation_id_divisions_hangar:
+  get_corporations_corporation_id_divisions_hangar_hangar:
     properties:
       division:
         type: "integer"
@@ -32680,19 +32680,19 @@ definitions:
         title: "get_corporations_corporation_id_divisions_name"
         maxLength: 50
     description: "hangar object"
-  get_corporations_corporation_id_divisions_wallet:
+  get_corporations_corporation_id_divisions_wallet_wallet:
     properties:
       division:
         type: "integer"
         format: "int32"
         description: "division integer"
-        title: "get_corporations_corporation_id_divisions_division"
+        title: "get_corporations_corporation_id_divisions_wallet_division"
         minimum: 1
         maximum: 7
       name:
         type: "string"
         description: "name string"
-        title: "get_corporations_corporation_id_divisions_name"
+        title: "get_corporations_corporation_id_divisions_wallet_name"
         maxLength: 50
     description: "wallet object"
   get_corporations_corporation_id_divisions_ok:
@@ -32702,14 +32702,14 @@ definitions:
         description: "hangar array"
         title: "get_corporations_corporation_id_divisions_hangar"
         items:
-          $ref: "#/definitions/get_corporations_corporation_id_divisions_hangar"
+          $ref: "#/definitions/get_corporations_corporation_id_divisions_hangar_hangar"
         maxItems: 7
       wallet:
         type: "array"
         description: "wallet array"
         title: "get_corporations_corporation_id_divisions_wallet"
         items:
-          $ref: "#/definitions/get_corporations_corporation_id_divisions_wallet"
+          $ref: "#/definitions/get_corporations_corporation_id_divisions_wallet_wallet"
         maxItems: 7
     description: "200 ok object"
   get_corporations_corporation_id_facilities_200_ok:
@@ -32769,17 +32769,17 @@ definitions:
         type: "integer"
         format: "int32"
         description: "Last week's victory points gained by members of the given corporation"
-        title: "get_corporations_corporation_id_fw_stats_last_week"
+        title: "get_corporations_corporation_id_fw_stats_victory_points_last_week"
       total:
         type: "integer"
         format: "int32"
         description: "Total victory points gained since the given corporation enlisted"
-        title: "get_corporations_corporation_id_fw_stats_total"
+        title: "get_corporations_corporation_id_fw_stats_victory_points_total"
       yesterday:
         type: "integer"
         format: "int32"
         description: "Yesterday's victory points gained by members of the given corporation"
-        title: "get_corporations_corporation_id_fw_stats_yesterday"
+        title: "get_corporations_corporation_id_fw_stats_victory_points_yesterday"
     description: "Summary of victory points gained by the given corporation for the\
       \ enlisted faction"
   get_corporations_corporation_id_fw_stats_ok:
@@ -33450,7 +33450,7 @@ definitions:
         items:
           type: "string"
           description: "grantable_roles_at_base string"
-          title: "get_corporations_corporation_id_roles_grantable_roles_at_base"
+          title: "get_corporations_corporation_id_roles_grantable_roles_at_base_grantable_roles_at_base"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -33510,7 +33510,7 @@ definitions:
         items:
           type: "string"
           description: "grantable_roles_at_hq string"
-          title: "get_corporations_corporation_id_roles_grantable_roles_at_hq"
+          title: "get_corporations_corporation_id_roles_grantable_roles_at_hq_grantable_roles_at_hq"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -33570,7 +33570,7 @@ definitions:
         items:
           type: "string"
           description: "grantable_roles_at_other string"
-          title: "get_corporations_corporation_id_roles_grantable_roles_at_other"
+          title: "get_corporations_corporation_id_roles_grantable_roles_at_other_grantable_roles_at_other"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -33690,7 +33690,7 @@ definitions:
         items:
           type: "string"
           description: "roles_at_base string"
-          title: "get_corporations_corporation_id_roles_roles_at_base"
+          title: "get_corporations_corporation_id_roles_roles_at_base_roles_at_base"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -33750,7 +33750,7 @@ definitions:
         items:
           type: "string"
           description: "roles_at_hq string"
-          title: "get_corporations_corporation_id_roles_roles_at_hq"
+          title: "get_corporations_corporation_id_roles_roles_at_hq_roles_at_hq"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -33810,7 +33810,7 @@ definitions:
         items:
           type: "string"
           description: "roles_at_other string"
-          title: "get_corporations_corporation_id_roles_roles_at_other"
+          title: "get_corporations_corporation_id_roles_roles_at_other_roles_at_other"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -34327,7 +34327,7 @@ definitions:
         items:
           type: "string"
           description: "grantable_roles_at_base string"
-          title: "get_corporations_corporation_id_titles_grantable_roles_at_base"
+          title: "get_corporations_corporation_id_titles_grantable_roles_at_base_grantable_roles_at_base"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -34387,7 +34387,7 @@ definitions:
         items:
           type: "string"
           description: "grantable_roles_at_hq string"
-          title: "get_corporations_corporation_id_titles_grantable_roles_at_hq"
+          title: "get_corporations_corporation_id_titles_grantable_roles_at_hq_grantable_roles_at_hq"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -34447,7 +34447,7 @@ definitions:
         items:
           type: "string"
           description: "grantable_roles_at_other string"
-          title: "get_corporations_corporation_id_titles_grantable_roles_at_other"
+          title: "get_corporations_corporation_id_titles_grantable_roles_at_other_grantable_roles_at_other"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -34571,7 +34571,7 @@ definitions:
         items:
           type: "string"
           description: "roles_at_base string"
-          title: "get_corporations_corporation_id_titles_roles_at_base"
+          title: "get_corporations_corporation_id_titles_roles_at_base_roles_at_base"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -34631,7 +34631,7 @@ definitions:
         items:
           type: "string"
           description: "roles_at_hq string"
-          title: "get_corporations_corporation_id_titles_roles_at_hq"
+          title: "get_corporations_corporation_id_titles_roles_at_hq_roles_at_hq"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -34691,7 +34691,7 @@ definitions:
         items:
           type: "string"
           description: "roles_at_other string"
-          title: "get_corporations_corporation_id_titles_roles_at_other"
+          title: "get_corporations_corporation_id_titles_roles_at_other_roles_at_other"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -35150,11 +35150,11 @@ definitions:
         type: "integer"
         format: "int64"
         description: "id integer"
-        title: "get_fleets_fleet_id_wings_id"
+        title: "get_fleets_fleet_id_wings_squad_id"
       name:
         type: "string"
         description: "name string"
-        title: "get_fleets_fleet_id_wings_name"
+        title: "get_fleets_fleet_id_wings_squad_name"
     description: "squad object"
   get_fleets_fleet_id_wings_200_ok:
     required:
@@ -35246,7 +35246,7 @@ definitions:
         description: "Not found message"
         title: "post_fleets_fleet_id_wings_wing_id_squads_404_not_found"
     description: "Not found"
-  get_fw_leaderboards_active_total:
+  get_fw_leaderboards_active_total_active_total:
     properties:
       amount:
         type: "integer"
@@ -35259,31 +35259,31 @@ definitions:
         description: "faction_id integer"
         title: "get_fw_leaderboards_faction_id"
     description: "active_total object"
-  get_fw_leaderboards_last_week:
+  get_fw_leaderboards_last_week_last_week:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of kills"
-        title: "get_fw_leaderboards_amount"
+        title: "get_fw_leaderboards_last_week_amount"
       faction_id:
         type: "integer"
         format: "int32"
         description: "faction_id integer"
-        title: "get_fw_leaderboards_faction_id"
+        title: "get_fw_leaderboards_last_week_faction_id"
     description: "last_week object"
-  get_fw_leaderboards_yesterday:
+  get_fw_leaderboards_yesterday_yesterday:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of kills"
-        title: "get_fw_leaderboards_amount"
+        title: "get_fw_leaderboards_yesterday_amount"
       faction_id:
         type: "integer"
         format: "int32"
         description: "faction_id integer"
-        title: "get_fw_leaderboards_faction_id"
+        title: "get_fw_leaderboards_yesterday_faction_id"
     description: "yesterday object"
   get_fw_leaderboards_kills:
     required:
@@ -35298,62 +35298,62 @@ definitions:
           \ faction warfare in the past 14 days."
         title: "get_fw_leaderboards_active_total"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_active_total"
+          $ref: "#/definitions/get_fw_leaderboards_active_total_active_total"
         maxItems: 4
       last_week:
         type: "array"
         description: "Top 4 ranking of factions by kills in the past week"
         title: "get_fw_leaderboards_last_week"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_last_week"
+          $ref: "#/definitions/get_fw_leaderboards_last_week_last_week"
         maxItems: 4
       yesterday:
         type: "array"
         description: "Top 4 ranking of factions by kills in the past day"
         title: "get_fw_leaderboards_yesterday"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_yesterday"
+          $ref: "#/definitions/get_fw_leaderboards_yesterday_yesterday"
         maxItems: 4
     description: "Top 4 rankings of factions by number of kills from yesterday, last\
       \ week and in total."
-  get_fw_leaderboards_active_total_1:
+  get_fw_leaderboards_active_total_active_total_1:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of victory points"
-        title: "get_fw_leaderboards_amount"
+        title: "get_fw_leaderboards_active_total_amount"
       faction_id:
         type: "integer"
         format: "int32"
         description: "faction_id integer"
-        title: "get_fw_leaderboards_faction_id"
+        title: "get_fw_leaderboards_active_total_faction_id"
     description: "active_total object"
-  get_fw_leaderboards_last_week_1:
+  get_fw_leaderboards_last_week_last_week_1:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of victory points"
-        title: "get_fw_leaderboards_amount"
+        title: "get_fw_leaderboards_last_week_amount_1"
       faction_id:
         type: "integer"
         format: "int32"
         description: "faction_id integer"
-        title: "get_fw_leaderboards_faction_id"
+        title: "get_fw_leaderboards_last_week_faction_id_1"
     description: "last_week object"
-  get_fw_leaderboards_yesterday_1:
+  get_fw_leaderboards_yesterday_yesterday_1:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of victory points"
-        title: "get_fw_leaderboards_amount"
+        title: "get_fw_leaderboards_yesterday_amount_1"
       faction_id:
         type: "integer"
         format: "int32"
         description: "faction_id integer"
-        title: "get_fw_leaderboards_faction_id"
+        title: "get_fw_leaderboards_yesterday_faction_id_1"
     description: "yesterday object"
   get_fw_leaderboards_victory_points:
     required:
@@ -35366,23 +35366,23 @@ definitions:
         description: "Top 4 ranking of factions active in faction warfare by total\
           \ victory points. A faction is considered \"active\" if they have participated\
           \ in faction warfare in the past 14 days."
-        title: "get_fw_leaderboards_active_total"
+        title: "get_fw_leaderboards_victory_points_active_total"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_active_total_1"
+          $ref: "#/definitions/get_fw_leaderboards_active_total_active_total_1"
         maxItems: 4
       last_week:
         type: "array"
         description: "Top 4 ranking of factions by victory points in the past week"
-        title: "get_fw_leaderboards_last_week"
+        title: "get_fw_leaderboards_victory_points_last_week"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_last_week_1"
+          $ref: "#/definitions/get_fw_leaderboards_last_week_last_week_1"
         maxItems: 4
       yesterday:
         type: "array"
         description: "Top 4 ranking of factions by victory points in the past day"
-        title: "get_fw_leaderboards_yesterday"
+        title: "get_fw_leaderboards_victory_points_yesterday"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_yesterday_1"
+          $ref: "#/definitions/get_fw_leaderboards_yesterday_yesterday_1"
         maxItems: 4
     description: "Top 4 rankings of factions by victory points from yesterday, last\
       \ week and in total"
@@ -35396,7 +35396,7 @@ definitions:
       victory_points:
         $ref: "#/definitions/get_fw_leaderboards_victory_points"
     description: "200 ok object"
-  get_fw_leaderboards_characters_active_total:
+  get_fw_leaderboards_characters_active_total_active_total:
     properties:
       amount:
         type: "integer"
@@ -35409,31 +35409,31 @@ definitions:
         description: "character_id integer"
         title: "get_fw_leaderboards_characters_character_id"
     description: "active_total object"
-  get_fw_leaderboards_characters_last_week:
+  get_fw_leaderboards_characters_last_week_last_week:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of kills"
-        title: "get_fw_leaderboards_characters_amount"
+        title: "get_fw_leaderboards_characters_last_week_amount"
       character_id:
         type: "integer"
         format: "int32"
         description: "character_id integer"
-        title: "get_fw_leaderboards_characters_character_id"
+        title: "get_fw_leaderboards_characters_last_week_character_id"
     description: "last_week object"
-  get_fw_leaderboards_characters_yesterday:
+  get_fw_leaderboards_characters_yesterday_yesterday:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of kills"
-        title: "get_fw_leaderboards_characters_amount"
+        title: "get_fw_leaderboards_characters_yesterday_amount"
       character_id:
         type: "integer"
         format: "int32"
         description: "character_id integer"
-        title: "get_fw_leaderboards_characters_character_id"
+        title: "get_fw_leaderboards_characters_yesterday_character_id"
     description: "yesterday object"
   get_fw_leaderboards_characters_kills:
     required:
@@ -35448,62 +35448,62 @@ definitions:
           \ warfare in the past 14 days."
         title: "get_fw_leaderboards_characters_active_total"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_characters_active_total"
+          $ref: "#/definitions/get_fw_leaderboards_characters_active_total_active_total"
         maxItems: 100
       last_week:
         type: "array"
         description: "Top 100 ranking of pilots by kills in the past week"
         title: "get_fw_leaderboards_characters_last_week"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_characters_last_week"
+          $ref: "#/definitions/get_fw_leaderboards_characters_last_week_last_week"
         maxItems: 100
       yesterday:
         type: "array"
         description: "Top 100 ranking of pilots by kills in the past day"
         title: "get_fw_leaderboards_characters_yesterday"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_characters_yesterday"
+          $ref: "#/definitions/get_fw_leaderboards_characters_yesterday_yesterday"
         maxItems: 100
     description: "Top 100 rankings of pilots by number of kills from yesterday, last\
       \ week and in total."
-  get_fw_leaderboards_characters_active_total_1:
+  get_fw_leaderboards_characters_active_total_active_total_1:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of victory points"
-        title: "get_fw_leaderboards_characters_amount"
+        title: "get_fw_leaderboards_characters_active_total_amount"
       character_id:
         type: "integer"
         format: "int32"
         description: "character_id integer"
-        title: "get_fw_leaderboards_characters_character_id"
+        title: "get_fw_leaderboards_characters_active_total_character_id"
     description: "active_total object"
-  get_fw_leaderboards_characters_last_week_1:
+  get_fw_leaderboards_characters_last_week_last_week_1:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of victory points"
-        title: "get_fw_leaderboards_characters_amount"
+        title: "get_fw_leaderboards_characters_last_week_amount_1"
       character_id:
         type: "integer"
         format: "int32"
         description: "character_id integer"
-        title: "get_fw_leaderboards_characters_character_id"
+        title: "get_fw_leaderboards_characters_last_week_character_id_1"
     description: "last_week object"
-  get_fw_leaderboards_characters_yesterday_1:
+  get_fw_leaderboards_characters_yesterday_yesterday_1:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of victory points"
-        title: "get_fw_leaderboards_characters_amount"
+        title: "get_fw_leaderboards_characters_yesterday_amount_1"
       character_id:
         type: "integer"
         format: "int32"
         description: "character_id integer"
-        title: "get_fw_leaderboards_characters_character_id"
+        title: "get_fw_leaderboards_characters_yesterday_character_id_1"
     description: "yesterday object"
   get_fw_leaderboards_characters_victory_points:
     required:
@@ -35516,23 +35516,23 @@ definitions:
         description: "Top 100 ranking of pilots active in faction warfare by total\
           \ victory points. A pilot is considered \"active\" if they have participated\
           \ in faction warfare in the past 14 days."
-        title: "get_fw_leaderboards_characters_active_total"
+        title: "get_fw_leaderboards_characters_victory_points_active_total"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_characters_active_total_1"
+          $ref: "#/definitions/get_fw_leaderboards_characters_active_total_active_total_1"
         maxItems: 100
       last_week:
         type: "array"
         description: "Top 100 ranking of pilots by victory points in the past week"
-        title: "get_fw_leaderboards_characters_last_week"
+        title: "get_fw_leaderboards_characters_victory_points_last_week"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_characters_last_week_1"
+          $ref: "#/definitions/get_fw_leaderboards_characters_last_week_last_week_1"
         maxItems: 100
       yesterday:
         type: "array"
         description: "Top 100 ranking of pilots by victory points in the past day"
-        title: "get_fw_leaderboards_characters_yesterday"
+        title: "get_fw_leaderboards_characters_victory_points_yesterday"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_characters_yesterday_1"
+          $ref: "#/definitions/get_fw_leaderboards_characters_yesterday_yesterday_1"
         maxItems: 100
     description: "Top 100 rankings of pilots by victory points from yesterday, last\
       \ week and in total"
@@ -35546,7 +35546,7 @@ definitions:
       victory_points:
         $ref: "#/definitions/get_fw_leaderboards_characters_victory_points"
     description: "200 ok object"
-  get_fw_leaderboards_corporations_active_total:
+  get_fw_leaderboards_corporations_active_total_active_total:
     properties:
       amount:
         type: "integer"
@@ -35559,31 +35559,31 @@ definitions:
         description: "corporation_id integer"
         title: "get_fw_leaderboards_corporations_corporation_id"
     description: "active_total object"
-  get_fw_leaderboards_corporations_last_week:
+  get_fw_leaderboards_corporations_last_week_last_week:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of kills"
-        title: "get_fw_leaderboards_corporations_amount"
+        title: "get_fw_leaderboards_corporations_last_week_amount"
       corporation_id:
         type: "integer"
         format: "int32"
         description: "corporation_id integer"
-        title: "get_fw_leaderboards_corporations_corporation_id"
+        title: "get_fw_leaderboards_corporations_last_week_corporation_id"
     description: "last_week object"
-  get_fw_leaderboards_corporations_yesterday:
+  get_fw_leaderboards_corporations_yesterday_yesterday:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of kills"
-        title: "get_fw_leaderboards_corporations_amount"
+        title: "get_fw_leaderboards_corporations_yesterday_amount"
       corporation_id:
         type: "integer"
         format: "int32"
         description: "corporation_id integer"
-        title: "get_fw_leaderboards_corporations_corporation_id"
+        title: "get_fw_leaderboards_corporations_yesterday_corporation_id"
     description: "yesterday object"
   get_fw_leaderboards_corporations_kills:
     required:
@@ -35598,62 +35598,62 @@ definitions:
           \ in faction warfare in the past 14 days."
         title: "get_fw_leaderboards_corporations_active_total"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_corporations_active_total"
+          $ref: "#/definitions/get_fw_leaderboards_corporations_active_total_active_total"
         maxItems: 10
       last_week:
         type: "array"
         description: "Top 10 ranking of corporations by kills in the past week"
         title: "get_fw_leaderboards_corporations_last_week"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_corporations_last_week"
+          $ref: "#/definitions/get_fw_leaderboards_corporations_last_week_last_week"
         maxItems: 10
       yesterday:
         type: "array"
         description: "Top 10 ranking of corporations by kills in the past day"
         title: "get_fw_leaderboards_corporations_yesterday"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_corporations_yesterday"
+          $ref: "#/definitions/get_fw_leaderboards_corporations_yesterday_yesterday"
         maxItems: 10
     description: "Top 10 rankings of corporations by number of kills from yesterday,\
       \ last week and in total."
-  get_fw_leaderboards_corporations_active_total_1:
+  get_fw_leaderboards_corporations_active_total_active_total_1:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of victory points"
-        title: "get_fw_leaderboards_corporations_amount"
+        title: "get_fw_leaderboards_corporations_active_total_amount"
       corporation_id:
         type: "integer"
         format: "int32"
         description: "corporation_id integer"
-        title: "get_fw_leaderboards_corporations_corporation_id"
+        title: "get_fw_leaderboards_corporations_active_total_corporation_id"
     description: "active_total object"
-  get_fw_leaderboards_corporations_last_week_1:
+  get_fw_leaderboards_corporations_last_week_last_week_1:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of victory points"
-        title: "get_fw_leaderboards_corporations_amount"
+        title: "get_fw_leaderboards_corporations_last_week_amount_1"
       corporation_id:
         type: "integer"
         format: "int32"
         description: "corporation_id integer"
-        title: "get_fw_leaderboards_corporations_corporation_id"
+        title: "get_fw_leaderboards_corporations_last_week_corporation_id_1"
     description: "last_week object"
-  get_fw_leaderboards_corporations_yesterday_1:
+  get_fw_leaderboards_corporations_yesterday_yesterday_1:
     properties:
       amount:
         type: "integer"
         format: "int32"
         description: "Amount of victory points"
-        title: "get_fw_leaderboards_corporations_amount"
+        title: "get_fw_leaderboards_corporations_yesterday_amount_1"
       corporation_id:
         type: "integer"
         format: "int32"
         description: "corporation_id integer"
-        title: "get_fw_leaderboards_corporations_corporation_id"
+        title: "get_fw_leaderboards_corporations_yesterday_corporation_id_1"
     description: "yesterday object"
   get_fw_leaderboards_corporations_victory_points:
     required:
@@ -35666,25 +35666,25 @@ definitions:
         description: "Top 10 ranking of corporations active in faction warfare by\
           \ total victory points. A corporation is considered \"active\" if they have\
           \ participated in faction warfare in the past 14 days."
-        title: "get_fw_leaderboards_corporations_active_total"
+        title: "get_fw_leaderboards_corporations_victory_points_active_total"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_corporations_active_total_1"
+          $ref: "#/definitions/get_fw_leaderboards_corporations_active_total_active_total_1"
         maxItems: 10
       last_week:
         type: "array"
         description: "Top 10 ranking of corporations by victory points in the past\
           \ week"
-        title: "get_fw_leaderboards_corporations_last_week"
+        title: "get_fw_leaderboards_corporations_victory_points_last_week"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_corporations_last_week_1"
+          $ref: "#/definitions/get_fw_leaderboards_corporations_last_week_last_week_1"
         maxItems: 10
       yesterday:
         type: "array"
         description: "Top 10 ranking of corporations by victory points in the past\
           \ day"
-        title: "get_fw_leaderboards_corporations_yesterday"
+        title: "get_fw_leaderboards_corporations_victory_points_yesterday"
         items:
-          $ref: "#/definitions/get_fw_leaderboards_corporations_yesterday_1"
+          $ref: "#/definitions/get_fw_leaderboards_corporations_yesterday_yesterday_1"
         maxItems: 10
     description: "Top 10 rankings of corporations by victory points from yesterday,\
       \ last week and in total"
@@ -35731,17 +35731,17 @@ definitions:
         type: "integer"
         format: "int32"
         description: "Last week's victory points gained"
-        title: "get_fw_stats_last_week"
+        title: "get_fw_stats_victory_points_last_week"
       total:
         type: "integer"
         format: "int32"
         description: "Total victory points gained since faction warfare began"
-        title: "get_fw_stats_total"
+        title: "get_fw_stats_victory_points_total"
       yesterday:
         type: "integer"
         format: "int32"
         description: "Yesterday's victory points gained"
-        title: "get_fw_stats_yesterday"
+        title: "get_fw_stats_victory_points_yesterday"
     description: "Summary of victory points gained for the given faction"
   get_fw_stats_200_ok:
     required:
@@ -36058,7 +36058,7 @@ definitions:
         description: "What weapon was used by the attacker for the kill\n"
         title: "get_killmails_killmail_id_killmail_hash_weapon_type_id"
     description: "attacker object"
-  get_killmails_killmail_id_killmail_hash_item:
+  get_killmails_killmail_id_killmail_hash_items_item:
     required:
     - "flag"
     - "item_type_id"
@@ -36068,29 +36068,29 @@ definitions:
         type: "integer"
         format: "int32"
         description: "flag integer"
-        title: "get_killmails_killmail_id_killmail_hash_flag"
+        title: "get_killmails_killmail_id_killmail_hash_item_flag"
       item_type_id:
         type: "integer"
         format: "int32"
         description: "item_type_id integer"
-        title: "get_killmails_killmail_id_killmail_hash_item_type_id"
+        title: "get_killmails_killmail_id_killmail_hash_item_item_type_id"
       quantity_destroyed:
         type: "integer"
         format: "int64"
         description: "quantity_destroyed integer"
-        title: "get_killmails_killmail_id_killmail_hash_quantity_destroyed"
+        title: "get_killmails_killmail_id_killmail_hash_item_quantity_destroyed"
       quantity_dropped:
         type: "integer"
         format: "int64"
         description: "quantity_dropped integer"
-        title: "get_killmails_killmail_id_killmail_hash_quantity_dropped"
+        title: "get_killmails_killmail_id_killmail_hash_item_quantity_dropped"
       singleton:
         type: "integer"
         format: "int32"
         description: "singleton integer"
-        title: "get_killmails_killmail_id_killmail_hash_singleton"
+        title: "get_killmails_killmail_id_killmail_hash_item_singleton"
     description: "item object"
-  get_killmails_killmail_id_killmail_hash_item_1:
+  get_killmails_killmail_id_killmail_hash_item:
     required:
     - "flag"
     - "item_type_id"
@@ -36109,9 +36109,9 @@ definitions:
       items:
         type: "array"
         description: "items array"
-        title: "get_killmails_killmail_id_killmail_hash_items"
+        title: "get_killmails_killmail_id_killmail_hash_item_items"
         items:
-          $ref: "#/definitions/get_killmails_killmail_id_killmail_hash_item"
+          $ref: "#/definitions/get_killmails_killmail_id_killmail_hash_items_item"
         maxItems: 10000
       quantity_destroyed:
         type: "integer"
@@ -36160,17 +36160,17 @@ definitions:
         type: "integer"
         format: "int32"
         description: "alliance_id integer"
-        title: "get_killmails_killmail_id_killmail_hash_alliance_id"
+        title: "get_killmails_killmail_id_killmail_hash_victim_alliance_id"
       character_id:
         type: "integer"
         format: "int32"
         description: "character_id integer"
-        title: "get_killmails_killmail_id_killmail_hash_character_id"
+        title: "get_killmails_killmail_id_killmail_hash_victim_character_id"
       corporation_id:
         type: "integer"
         format: "int32"
         description: "corporation_id integer"
-        title: "get_killmails_killmail_id_killmail_hash_corporation_id"
+        title: "get_killmails_killmail_id_killmail_hash_victim_corporation_id"
       damage_taken:
         type: "integer"
         format: "int32"
@@ -36180,13 +36180,13 @@ definitions:
         type: "integer"
         format: "int32"
         description: "faction_id integer"
-        title: "get_killmails_killmail_id_killmail_hash_faction_id"
+        title: "get_killmails_killmail_id_killmail_hash_victim_faction_id"
       items:
         type: "array"
         description: "items array"
         title: "get_killmails_killmail_id_killmail_hash_items"
         items:
-          $ref: "#/definitions/get_killmails_killmail_id_killmail_hash_item_1"
+          $ref: "#/definitions/get_killmails_killmail_id_killmail_hash_item"
         maxItems: 10000
       position:
         $ref: "#/definitions/get_killmails_killmail_id_killmail_hash_position"
@@ -36194,7 +36194,7 @@ definitions:
         type: "integer"
         format: "int32"
         description: "The ship that the victim was piloting and was destroyed\n"
-        title: "get_killmails_killmail_id_killmail_hash_ship_type_id"
+        title: "get_killmails_killmail_id_killmail_hash_victim_ship_type_id"
     description: "victim object"
   get_killmails_killmail_id_killmail_hash_ok:
     required:
@@ -36256,12 +36256,12 @@ definitions:
         type: "integer"
         format: "int32"
         description: "quantity integer"
-        title: "get_loyalty_stores_corporation_id_offers_quantity"
+        title: "get_loyalty_stores_corporation_id_offers_required_item_quantity"
       type_id:
         type: "integer"
         format: "int32"
         description: "type_id integer"
-        title: "get_loyalty_stores_corporation_id_offers_type_id"
+        title: "get_loyalty_stores_corporation_id_offers_required_item_type_id"
     description: "required_item object"
   get_loyalty_stores_corporation_id_offers_200_ok:
     required:
@@ -37299,11 +37299,11 @@ definitions:
         type: "integer"
         format: "int32"
         description: "id integer"
-        title: "post_universe_ids_id"
+        title: "post_universe_ids_alliance_id"
       name:
         type: "string"
         description: "name string"
-        title: "post_universe_ids_name"
+        title: "post_universe_ids_alliance_name"
     description: "alliance object"
   post_universe_ids_character:
     properties:
@@ -37311,11 +37311,11 @@ definitions:
         type: "integer"
         format: "int32"
         description: "id integer"
-        title: "post_universe_ids_id"
+        title: "post_universe_ids_character_id"
       name:
         type: "string"
         description: "name string"
-        title: "post_universe_ids_name"
+        title: "post_universe_ids_character_name"
     description: "character object"
   post_universe_ids_constellation:
     properties:
@@ -37323,11 +37323,11 @@ definitions:
         type: "integer"
         format: "int32"
         description: "id integer"
-        title: "post_universe_ids_id"
+        title: "post_universe_ids_constellation_id"
       name:
         type: "string"
         description: "name string"
-        title: "post_universe_ids_name"
+        title: "post_universe_ids_constellation_name"
     description: "constellation object"
   post_universe_ids_corporation:
     properties:
@@ -37335,11 +37335,11 @@ definitions:
         type: "integer"
         format: "int32"
         description: "id integer"
-        title: "post_universe_ids_id"
+        title: "post_universe_ids_corporation_id"
       name:
         type: "string"
         description: "name string"
-        title: "post_universe_ids_name"
+        title: "post_universe_ids_corporation_name"
     description: "corporation object"
   post_universe_ids_faction:
     properties:
@@ -37347,11 +37347,11 @@ definitions:
         type: "integer"
         format: "int32"
         description: "id integer"
-        title: "post_universe_ids_id"
+        title: "post_universe_ids_faction_id"
       name:
         type: "string"
         description: "name string"
-        title: "post_universe_ids_name"
+        title: "post_universe_ids_faction_name"
     description: "faction object"
   post_universe_ids_inventory_type:
     properties:
@@ -37359,11 +37359,11 @@ definitions:
         type: "integer"
         format: "int32"
         description: "id integer"
-        title: "post_universe_ids_id"
+        title: "post_universe_ids_inventory_type_id"
       name:
         type: "string"
         description: "name string"
-        title: "post_universe_ids_name"
+        title: "post_universe_ids_inventory_type_name"
     description: "inventory_type object"
   post_universe_ids_region:
     properties:
@@ -37371,11 +37371,11 @@ definitions:
         type: "integer"
         format: "int32"
         description: "id integer"
-        title: "post_universe_ids_id"
+        title: "post_universe_ids_region_id"
       name:
         type: "string"
         description: "name string"
-        title: "post_universe_ids_name"
+        title: "post_universe_ids_region_name"
     description: "region object"
   post_universe_ids_station:
     properties:
@@ -37383,11 +37383,11 @@ definitions:
         type: "integer"
         format: "int32"
         description: "id integer"
-        title: "post_universe_ids_id"
+        title: "post_universe_ids_station_id"
       name:
         type: "string"
         description: "name string"
-        title: "post_universe_ids_name"
+        title: "post_universe_ids_station_name"
     description: "station object"
   post_universe_ids_system:
     properties:
@@ -37395,11 +37395,11 @@ definitions:
         type: "integer"
         format: "int32"
         description: "id integer"
-        title: "post_universe_ids_id"
+        title: "post_universe_ids_system_id"
       name:
         type: "string"
         description: "name string"
-        title: "post_universe_ids_name"
+        title: "post_universe_ids_system_name"
     description: "system object"
   post_universe_ids_ok:
     properties:
@@ -37680,12 +37680,12 @@ definitions:
         type: "integer"
         format: "int32"
         description: "The stargate this stargate connects to"
-        title: "get_universe_stargates_stargate_id_stargate_id"
+        title: "get_universe_stargates_stargate_id_destination_stargate_id"
       system_id:
         type: "integer"
         format: "int32"
         description: "The solar system this stargate connects to"
-        title: "get_universe_stargates_stargate_id_system_id"
+        title: "get_universe_stargates_stargate_id_destination_system_id"
     description: "destination object"
   get_universe_stargates_stargate_id_position:
     required:
@@ -37990,12 +37990,12 @@ definitions:
         type: "integer"
         format: "int32"
         description: "Alliance ID if and only if this ally is an alliance"
-        title: "get_wars_war_id_alliance_id"
+        title: "get_wars_war_id_ally_alliance_id"
       corporation_id:
         type: "integer"
         format: "int32"
         description: "Corporation ID if and only if this ally is a corporation"
-        title: "get_wars_war_id_corporation_id"
+        title: "get_wars_war_id_ally_corporation_id"
     description: "ally object"
   get_wars_war_id_defender:
     required:
@@ -38006,22 +38006,22 @@ definitions:
         type: "integer"
         format: "int32"
         description: "Alliance ID if and only if the defender is an alliance"
-        title: "get_wars_war_id_alliance_id"
+        title: "get_wars_war_id_defender_alliance_id"
       corporation_id:
         type: "integer"
         format: "int32"
         description: "Corporation ID if and only if the defender is a corporation"
-        title: "get_wars_war_id_corporation_id"
+        title: "get_wars_war_id_defender_corporation_id"
       isk_destroyed:
         type: "number"
         format: "float"
         description: "ISK value of ships the defender has killed"
-        title: "get_wars_war_id_isk_destroyed"
+        title: "get_wars_war_id_defender_isk_destroyed"
       ships_killed:
         type: "integer"
         format: "int32"
         description: "The number of ships the defender has killed"
-        title: "get_wars_war_id_ships_killed"
+        title: "get_wars_war_id_defender_ships_killed"
     description: "The defending corporation or alliance that declared this war, only\
       \ contains either corporation_id or alliance_id"
   get_wars_war_id_ok:
@@ -38882,7 +38882,7 @@ definitions:
         items:
           type: "string"
           description: "roles_at_base string"
-          title: "get_characters_character_id_roles_roles_at_base"
+          title: "get_characters_character_id_roles_roles_at_base_roles_at_base"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -38942,7 +38942,7 @@ definitions:
         items:
           type: "string"
           description: "roles_at_hq string"
-          title: "get_characters_character_id_roles_roles_at_hq"
+          title: "get_characters_character_id_roles_roles_at_hq_roles_at_hq"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -39002,7 +39002,7 @@ definitions:
         items:
           type: "string"
           description: "roles_at_other string"
-          title: "get_characters_character_id_roles_roles_at_other"
+          title: "get_characters_character_id_roles_roles_at_other_roles_at_other"
           enum:
           - "Account_Take_1"
           - "Account_Take_2"
@@ -41202,7 +41202,7 @@ definitions:
       state:
         type: "string"
         description: "state string"
-        title: "get_corporations_corporation_id_structures_state"
+        title: "get_corporations_corporation_id_structures_service_state"
         enum:
         - "online"
         - "offline"
@@ -41342,7 +41342,7 @@ definitions:
         type: "integer"
         format: "int32"
         description: "effect_id integer"
-        title: "get_dogma_effects_effect_id_effect_id"
+        title: "get_dogma_effects_effect_id_modifier_effect_id"
       func:
         type: "string"
         description: "func string"
@@ -41482,7 +41482,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "agent integer"
-          title: "get_search_agent"
+          title: "get_search_agent_agent"
         maxItems: 500
       alliance:
         type: "array"
@@ -41492,7 +41492,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "alliance integer"
-          title: "get_search_alliance"
+          title: "get_search_alliance_alliance"
         maxItems: 500
       character:
         type: "array"
@@ -41502,7 +41502,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "character integer"
-          title: "get_search_character"
+          title: "get_search_character_character"
         maxItems: 500
       constellation:
         type: "array"
@@ -41512,7 +41512,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "constellation integer"
-          title: "get_search_constellation"
+          title: "get_search_constellation_constellation"
         maxItems: 500
       corporation:
         type: "array"
@@ -41522,7 +41522,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "corporation integer"
-          title: "get_search_corporation"
+          title: "get_search_corporation_corporation"
         maxItems: 500
       faction:
         type: "array"
@@ -41532,7 +41532,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "faction integer"
-          title: "get_search_faction"
+          title: "get_search_faction_faction"
         maxItems: 500
       inventory_type:
         type: "array"
@@ -41542,7 +41542,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "inventory_type integer"
-          title: "get_search_inventory_type"
+          title: "get_search_inventory_type_inventory_type"
         maxItems: 500
       region:
         type: "array"
@@ -41552,7 +41552,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "region integer"
-          title: "get_search_region"
+          title: "get_search_region_region"
         maxItems: 500
       solar_system:
         type: "array"
@@ -41562,7 +41562,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "solar_system integer"
-          title: "get_search_solar_system"
+          title: "get_search_solar_system_solar_system"
         maxItems: 500
       station:
         type: "array"
@@ -41572,7 +41572,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "station integer"
-          title: "get_search_station"
+          title: "get_search_station_station"
         maxItems: 500
     description: "200 ok object"
   get_universe_factions_200_ok:
@@ -42084,7 +42084,7 @@ definitions:
       response:
         type: "string"
         description: "response string"
-        title: "put_characters_character_id_calendar_event_id_response"
+        title: "put_characters_character_id_calendar_event_id_response_response"
         enum:
         - "accepted"
         - "declined"
@@ -42132,11 +42132,11 @@ definitions:
         type: "integer"
         format: "int64"
         description: "location_id integer"
-        title: "get_characters_character_id_clones_location_id"
+        title: "get_characters_character_id_clones_jump_clone_location_id"
       location_type:
         type: "string"
         description: "location_type string"
-        title: "get_characters_character_id_clones_location_type"
+        title: "get_characters_character_id_clones_jump_clone_location_type"
         enum:
         - "station"
         - "structure"
@@ -42267,7 +42267,7 @@ definitions:
         type: "integer"
         format: "int32"
         description: "type_id integer"
-        title: "get_characters_character_id_planets_planet_id_type_id"
+        title: "get_characters_character_id_planets_planet_id_content_type_id"
     description: "content object"
   get_characters_character_id_planets_planet_id_head:
     required:
@@ -42286,12 +42286,12 @@ definitions:
         type: "number"
         format: "float"
         description: "latitude number"
-        title: "get_characters_character_id_planets_planet_id_latitude"
+        title: "get_characters_character_id_planets_planet_id_head_latitude"
       longitude:
         type: "number"
         format: "float"
         description: "longitude number"
-        title: "get_characters_character_id_planets_planet_id_longitude"
+        title: "get_characters_character_id_planets_planet_id_head_longitude"
     description: "head object"
   get_characters_character_id_planets_planet_id_extractor_details:
     required:
@@ -42333,7 +42333,7 @@ definitions:
         type: "integer"
         format: "int32"
         description: "schematic_id integer"
-        title: "get_characters_character_id_planets_planet_id_schematic_id"
+        title: "get_characters_character_id_planets_planet_id_factory_details_schematic_id"
     description: "factory_details object"
   get_characters_character_id_planets_planet_id_pin:
     required:
@@ -42406,12 +42406,12 @@ definitions:
         type: "integer"
         format: "int32"
         description: "content_type_id integer"
-        title: "get_characters_character_id_planets_planet_id_content_type_id"
+        title: "get_characters_character_id_planets_planet_id_route_content_type_id"
       destination_pin_id:
         type: "integer"
         format: "int64"
         description: "destination_pin_id integer"
-        title: "get_characters_character_id_planets_planet_id_destination_pin_id"
+        title: "get_characters_character_id_planets_planet_id_route_destination_pin_id"
       quantity:
         type: "number"
         format: "float"
@@ -42426,7 +42426,7 @@ definitions:
         type: "integer"
         format: "int64"
         description: "source_pin_id integer"
-        title: "get_characters_character_id_planets_planet_id_source_pin_id"
+        title: "get_characters_character_id_planets_planet_id_route_source_pin_id"
       waypoints:
         type: "array"
         description: "list of pin ID waypoints"
@@ -42483,7 +42483,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "agent integer"
-          title: "get_characters_character_id_search_agent"
+          title: "get_characters_character_id_search_agent_agent"
         maxItems: 500
       alliance:
         type: "array"
@@ -42493,7 +42493,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "alliance integer"
-          title: "get_characters_character_id_search_alliance"
+          title: "get_characters_character_id_search_alliance_alliance"
         maxItems: 500
       character:
         type: "array"
@@ -42503,7 +42503,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "character integer"
-          title: "get_characters_character_id_search_character"
+          title: "get_characters_character_id_search_character_character"
         maxItems: 500
       constellation:
         type: "array"
@@ -42513,7 +42513,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "constellation integer"
-          title: "get_characters_character_id_search_constellation"
+          title: "get_characters_character_id_search_constellation_constellation"
         maxItems: 500
       corporation:
         type: "array"
@@ -42523,7 +42523,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "corporation integer"
-          title: "get_characters_character_id_search_corporation"
+          title: "get_characters_character_id_search_corporation_corporation"
         maxItems: 500
       faction:
         type: "array"
@@ -42533,7 +42533,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "faction integer"
-          title: "get_characters_character_id_search_faction"
+          title: "get_characters_character_id_search_faction_faction"
         maxItems: 500
       inventory_type:
         type: "array"
@@ -42543,7 +42543,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "inventory_type integer"
-          title: "get_characters_character_id_search_inventory_type"
+          title: "get_characters_character_id_search_inventory_type_inventory_type"
         maxItems: 500
       region:
         type: "array"
@@ -42553,7 +42553,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "region integer"
-          title: "get_characters_character_id_search_region"
+          title: "get_characters_character_id_search_region_region"
         maxItems: 500
       solar_system:
         type: "array"
@@ -42563,7 +42563,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "solar_system integer"
-          title: "get_characters_character_id_search_solar_system"
+          title: "get_characters_character_id_search_solar_system_solar_system"
         maxItems: 500
       station:
         type: "array"
@@ -42573,7 +42573,7 @@ definitions:
           type: "integer"
           format: "int32"
           description: "station integer"
-          title: "get_characters_character_id_search_station"
+          title: "get_characters_character_id_search_station_station"
         maxItems: 500
       structure:
         type: "array"
@@ -42583,7 +42583,7 @@ definitions:
           type: "integer"
           format: "int64"
           description: "structure integer"
-          title: "get_characters_character_id_search_structure"
+          title: "get_characters_character_id_search_structure_structure"
         maxItems: 500
     description: "200 ok object"
   get_corporations_corporation_id_assets_200_ok:

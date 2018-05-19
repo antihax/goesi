@@ -111,15 +111,15 @@ func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				in.Delim('[')
 				if out.ActiveTotal == nil {
 					if !in.IsDelim(']') {
-						out.ActiveTotal = make([]GetFwLeaderboardsCharactersActiveTotal1, 0, 8)
+						out.ActiveTotal = make([]GetFwLeaderboardsCharactersActiveTotalActiveTotal1, 0, 8)
 					} else {
-						out.ActiveTotal = []GetFwLeaderboardsCharactersActiveTotal1{}
+						out.ActiveTotal = []GetFwLeaderboardsCharactersActiveTotalActiveTotal1{}
 					}
 				} else {
 					out.ActiveTotal = (out.ActiveTotal)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v4 GetFwLeaderboardsCharactersActiveTotal1
+					var v4 GetFwLeaderboardsCharactersActiveTotalActiveTotal1
 					easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.ActiveTotal = append(out.ActiveTotal, v4)
 					in.WantComma()
@@ -134,15 +134,15 @@ func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				in.Delim('[')
 				if out.LastWeek == nil {
 					if !in.IsDelim(']') {
-						out.LastWeek = make([]GetFwLeaderboardsCharactersLastWeek1, 0, 8)
+						out.LastWeek = make([]GetFwLeaderboardsCharactersLastWeekLastWeek1, 0, 8)
 					} else {
-						out.LastWeek = []GetFwLeaderboardsCharactersLastWeek1{}
+						out.LastWeek = []GetFwLeaderboardsCharactersLastWeekLastWeek1{}
 					}
 				} else {
 					out.LastWeek = (out.LastWeek)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v5 GetFwLeaderboardsCharactersLastWeek1
+					var v5 GetFwLeaderboardsCharactersLastWeekLastWeek1
 					easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi3(in, &v5)
 					out.LastWeek = append(out.LastWeek, v5)
 					in.WantComma()
@@ -157,15 +157,15 @@ func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				in.Delim('[')
 				if out.Yesterday == nil {
 					if !in.IsDelim(']') {
-						out.Yesterday = make([]GetFwLeaderboardsCharactersYesterday1, 0, 8)
+						out.Yesterday = make([]GetFwLeaderboardsCharactersYesterdayYesterday1, 0, 8)
 					} else {
-						out.Yesterday = []GetFwLeaderboardsCharactersYesterday1{}
+						out.Yesterday = []GetFwLeaderboardsCharactersYesterdayYesterday1{}
 					}
 				} else {
 					out.Yesterday = (out.Yesterday)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v6 GetFwLeaderboardsCharactersYesterday1
+					var v6 GetFwLeaderboardsCharactersYesterdayYesterday1
 					easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi4(in, &v6)
 					out.Yesterday = append(out.Yesterday, v6)
 					in.WantComma()
@@ -269,7 +269,7 @@ func (v *GetFwLeaderboardsCharactersVictoryPoints) UnmarshalJSON(data []byte) er
 func (v *GetFwLeaderboardsCharactersVictoryPoints) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetFwLeaderboardsCharactersYesterday1) {
+func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetFwLeaderboardsCharactersYesterdayYesterday1) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -302,7 +302,7 @@ func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetF
 		in.Consumed()
 	}
 }
-func easyjson5d999fdbEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetFwLeaderboardsCharactersYesterday1) {
+func easyjson5d999fdbEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetFwLeaderboardsCharactersYesterdayYesterday1) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -328,7 +328,7 @@ func easyjson5d999fdbEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in Get
 	}
 	out.RawByte('}')
 }
-func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetFwLeaderboardsCharactersLastWeek1) {
+func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetFwLeaderboardsCharactersLastWeekLastWeek1) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -361,7 +361,7 @@ func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetF
 		in.Consumed()
 	}
 }
-func easyjson5d999fdbEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetFwLeaderboardsCharactersLastWeek1) {
+func easyjson5d999fdbEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetFwLeaderboardsCharactersLastWeekLastWeek1) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -387,7 +387,7 @@ func easyjson5d999fdbEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	}
 	out.RawByte('}')
 }
-func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFwLeaderboardsCharactersActiveTotal1) {
+func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFwLeaderboardsCharactersActiveTotalActiveTotal1) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -420,7 +420,7 @@ func easyjson5d999fdbDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetF
 		in.Consumed()
 	}
 }
-func easyjson5d999fdbEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFwLeaderboardsCharactersActiveTotal1) {
+func easyjson5d999fdbEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFwLeaderboardsCharactersActiveTotalActiveTotal1) {
 	out.RawByte('{')
 	first := true
 	_ = first

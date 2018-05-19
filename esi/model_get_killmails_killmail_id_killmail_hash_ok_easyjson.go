@@ -296,16 +296,16 @@ func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetK
 				in.Delim('[')
 				if out.Items == nil {
 					if !in.IsDelim(']') {
-						out.Items = make([]GetKillmailsKillmailIdKillmailHashItem1, 0, 1)
+						out.Items = make([]GetKillmailsKillmailIdKillmailHashItem, 0, 1)
 					} else {
-						out.Items = []GetKillmailsKillmailIdKillmailHashItem1{}
+						out.Items = []GetKillmailsKillmailIdKillmailHashItem{}
 					}
 				} else {
 					out.Items = (out.Items)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v7 GetKillmailsKillmailIdKillmailHashItem1
-					(v7).UnmarshalEasyJSON(in)
+					var v7 GetKillmailsKillmailIdKillmailHashItem
+					easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi4(in, &v7)
 					out.Items = append(out.Items, v7)
 					in.WantComma()
 				}
@@ -393,7 +393,7 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 				if v8 > 0 {
 					out.RawByte(',')
 				}
-				(v9).MarshalEasyJSON(out)
+				easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi4(out, v9)
 			}
 			out.RawByte(']')
 		}
@@ -417,6 +417,143 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.ShipTypeId))
+	}
+	out.RawByte('}')
+}
+func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashItem) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "flag":
+			out.Flag = int32(in.Int32())
+		case "item_type_id":
+			out.ItemTypeId = int32(in.Int32())
+		case "items":
+			if in.IsNull() {
+				in.Skip()
+				out.Items = nil
+			} else {
+				in.Delim('[')
+				if out.Items == nil {
+					if !in.IsDelim(']') {
+						out.Items = make([]GetKillmailsKillmailIdKillmailHashItemsItem, 0, 2)
+					} else {
+						out.Items = []GetKillmailsKillmailIdKillmailHashItemsItem{}
+					}
+				} else {
+					out.Items = (out.Items)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v10 GetKillmailsKillmailIdKillmailHashItemsItem
+					(v10).UnmarshalEasyJSON(in)
+					out.Items = append(out.Items, v10)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "quantity_destroyed":
+			out.QuantityDestroyed = int64(in.Int64())
+		case "quantity_dropped":
+			out.QuantityDropped = int64(in.Int64())
+		case "singleton":
+			out.Singleton = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashItem) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Flag != 0 {
+		const prefix string = ",\"flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Flag))
+	}
+	if in.ItemTypeId != 0 {
+		const prefix string = ",\"item_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ItemTypeId))
+	}
+	if len(in.Items) != 0 {
+		const prefix string = ",\"items\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v11, v12 := range in.Items {
+				if v11 > 0 {
+					out.RawByte(',')
+				}
+				(v12).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
+	}
+	if in.QuantityDestroyed != 0 {
+		const prefix string = ",\"quantity_destroyed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.QuantityDestroyed))
+	}
+	if in.QuantityDropped != 0 {
+		const prefix string = ",\"quantity_dropped\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.QuantityDropped))
+	}
+	if in.Singleton != 0 {
+		const prefix string = ",\"singleton\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Singleton))
 	}
 	out.RawByte('}')
 }

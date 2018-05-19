@@ -111,16 +111,16 @@ func easyjson2624bd49DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				in.Delim('[')
 				if out.ActiveTotal == nil {
 					if !in.IsDelim(']') {
-						out.ActiveTotal = make([]GetFwLeaderboardsCorporationsActiveTotal, 0, 8)
+						out.ActiveTotal = make([]GetFwLeaderboardsCorporationsActiveTotalActiveTotal, 0, 8)
 					} else {
-						out.ActiveTotal = []GetFwLeaderboardsCorporationsActiveTotal{}
+						out.ActiveTotal = []GetFwLeaderboardsCorporationsActiveTotalActiveTotal{}
 					}
 				} else {
 					out.ActiveTotal = (out.ActiveTotal)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v4 GetFwLeaderboardsCorporationsActiveTotal
-					easyjson2624bd49DecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					var v4 GetFwLeaderboardsCorporationsActiveTotalActiveTotal
+					(v4).UnmarshalEasyJSON(in)
 					out.ActiveTotal = append(out.ActiveTotal, v4)
 					in.WantComma()
 				}
@@ -134,15 +134,15 @@ func easyjson2624bd49DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				in.Delim('[')
 				if out.LastWeek == nil {
 					if !in.IsDelim(']') {
-						out.LastWeek = make([]GetFwLeaderboardsCorporationsLastWeek, 0, 8)
+						out.LastWeek = make([]GetFwLeaderboardsCorporationsLastWeekLastWeek, 0, 8)
 					} else {
-						out.LastWeek = []GetFwLeaderboardsCorporationsLastWeek{}
+						out.LastWeek = []GetFwLeaderboardsCorporationsLastWeekLastWeek{}
 					}
 				} else {
 					out.LastWeek = (out.LastWeek)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v5 GetFwLeaderboardsCorporationsLastWeek
+					var v5 GetFwLeaderboardsCorporationsLastWeekLastWeek
 					(v5).UnmarshalEasyJSON(in)
 					out.LastWeek = append(out.LastWeek, v5)
 					in.WantComma()
@@ -157,15 +157,15 @@ func easyjson2624bd49DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				in.Delim('[')
 				if out.Yesterday == nil {
 					if !in.IsDelim(']') {
-						out.Yesterday = make([]GetFwLeaderboardsCorporationsYesterday, 0, 8)
+						out.Yesterday = make([]GetFwLeaderboardsCorporationsYesterdayYesterday, 0, 8)
 					} else {
-						out.Yesterday = []GetFwLeaderboardsCorporationsYesterday{}
+						out.Yesterday = []GetFwLeaderboardsCorporationsYesterdayYesterday{}
 					}
 				} else {
 					out.Yesterday = (out.Yesterday)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v6 GetFwLeaderboardsCorporationsYesterday
+					var v6 GetFwLeaderboardsCorporationsYesterdayYesterday
 					(v6).UnmarshalEasyJSON(in)
 					out.Yesterday = append(out.Yesterday, v6)
 					in.WantComma()
@@ -200,7 +200,7 @@ func easyjson2624bd49EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v7 > 0 {
 					out.RawByte(',')
 				}
-				easyjson2624bd49EncodeGithubComAntihaxGoesiEsi2(out, v8)
+				(v8).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -268,63 +268,4 @@ func (v *GetFwLeaderboardsCorporationsKills) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetFwLeaderboardsCorporationsKills) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson2624bd49DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson2624bd49DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFwLeaderboardsCorporationsActiveTotal) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "amount":
-			out.Amount = int32(in.Int32())
-		case "corporation_id":
-			out.CorporationId = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson2624bd49EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFwLeaderboardsCorporationsActiveTotal) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Amount != 0 {
-		const prefix string = ",\"amount\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Amount))
-	}
-	if in.CorporationId != 0 {
-		const prefix string = ",\"corporation_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.CorporationId))
-	}
-	out.RawByte('}')
 }

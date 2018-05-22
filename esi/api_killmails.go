@@ -42,15 +42,14 @@ var (
 type KillmailsApiService service
 
 /*
-KillmailsApiService Get character kills and losses
-Return a list of character&#39;s recent kills and losses  ---  This route is cached for up to 120 seconds
+KillmailsApiService Get a character&#39;s recent kills and losses
+Return a list of a character&#39;s kills and losses going back 90 days  ---  This route is cached for up to 300 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdKillmailsRecentOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "MaxCount" (optional.Int32) -  How many killmails to return at maximum
-     * @param "MaxKillId" (optional.Int32) -  Only return killmails with ID smaller than this.
+     * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -61,8 +60,7 @@ Return a list of character&#39;s recent kills and losses  ---  This route is cac
 type GetCharactersCharacterIdKillmailsRecentOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	MaxCount    optional.Int32
-	MaxKillId   optional.Int32
+	Page        optional.Int32
 	Token       optional.String
 	UserAgent   optional.String
 	XUserAgent  optional.String
@@ -91,11 +89,8 @@ func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx contex
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.MaxCount.IsSet() {
-		localVarQueryParams.Add("max_count", parameterToString(localVarOptionals.MaxCount.Value(), ""))
-	}
-	if localVarOptionals != nil && localVarOptionals.MaxKillId.IsSet() {
-		localVarQueryParams.Add("max_kill_id", parameterToString(localVarOptionals.MaxKillId.Value(), ""))
+	if localVarOptionals != nil && localVarOptionals.Page.IsSet() {
+		localVarQueryParams.Add("page", parameterToString(localVarOptionals.Page.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
@@ -240,14 +235,14 @@ func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx contex
 }
 
 /*
-KillmailsApiService Get corporation kills and losses
-Get a list of corporation&#39;s recent kills and losses  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Director
+KillmailsApiService Get a corporation&#39;s recent kills and losses
+Get a list of a corporation&#39;s kills and losses going back 90 days  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Director
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdKillmailsRecentOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "MaxKillId" (optional.Int32) -  Only return killmails with ID smaller than this
+     * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
@@ -258,7 +253,7 @@ Get a list of corporation&#39;s recent kills and losses  ---  This route is cach
 type GetCorporationsCorporationIdKillmailsRecentOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	MaxKillId   optional.Int32
+	Page        optional.Int32
 	Token       optional.String
 	UserAgent   optional.String
 	XUserAgent  optional.String
@@ -287,8 +282,8 @@ func (a *KillmailsApiService) GetCorporationsCorporationIdKillmailsRecent(ctx co
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.MaxKillId.IsSet() {
-		localVarQueryParams.Add("max_kill_id", parameterToString(localVarOptionals.MaxKillId.Value(), ""))
+	if localVarOptionals != nil && localVarOptionals.Page.IsSet() {
+		localVarQueryParams.Add("page", parameterToString(localVarOptionals.Page.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))

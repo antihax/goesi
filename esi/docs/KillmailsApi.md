@@ -4,16 +4,16 @@ All URIs are relative to *https://esi.evetech.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCharactersCharacterIdKillmailsRecent**](KillmailsApi.md#GetCharactersCharacterIdKillmailsRecent) | **Get** /v1/characters/{character_id}/killmails/recent/ | Get character kills and losses
-[**GetCorporationsCorporationIdKillmailsRecent**](KillmailsApi.md#GetCorporationsCorporationIdKillmailsRecent) | **Get** /v1/corporations/{corporation_id}/killmails/recent/ | Get corporation kills and losses
+[**GetCharactersCharacterIdKillmailsRecent**](KillmailsApi.md#GetCharactersCharacterIdKillmailsRecent) | **Get** /v1/characters/{character_id}/killmails/recent/ | Get a character&#39;s recent kills and losses
+[**GetCorporationsCorporationIdKillmailsRecent**](KillmailsApi.md#GetCorporationsCorporationIdKillmailsRecent) | **Get** /v1/corporations/{corporation_id}/killmails/recent/ | Get a corporation&#39;s recent kills and losses
 [**GetKillmailsKillmailIdKillmailHash**](KillmailsApi.md#GetKillmailsKillmailIdKillmailHash) | **Get** /v1/killmails/{killmail_id}/{killmail_hash}/ | Get a single killmail
 
 
 # **GetCharactersCharacterIdKillmailsRecent**
 > []GetCharactersCharacterIdKillmailsRecent200Ok GetCharactersCharacterIdKillmailsRecent(ctx, characterId, optional)
-Get character kills and losses
+Get a character's recent kills and losses
 
-Return a list of character's recent kills and losses  ---  This route is cached for up to 120 seconds
+Return a list of a character's kills and losses going back 90 days  ---  This route is cached for up to 300 seconds
 
 ### Required Parameters
 
@@ -31,8 +31,7 @@ Name | Type | Description  | Notes
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **maxCount** | **int32**| How many killmails to return at maximum | [default to 50]
- **maxKillId** | **int32**| Only return killmails with ID smaller than this.  | 
+ **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
@@ -54,9 +53,9 @@ Name | Type | Description  | Notes
 
 # **GetCorporationsCorporationIdKillmailsRecent**
 > []GetCorporationsCorporationIdKillmailsRecent200Ok GetCorporationsCorporationIdKillmailsRecent(ctx, corporationId, optional)
-Get corporation kills and losses
+Get a corporation's recent kills and losses
 
-Get a list of corporation's recent kills and losses  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Director
+Get a list of a corporation's kills and losses going back 90 days  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 
@@ -74,7 +73,7 @@ Name | Type | Description  | Notes
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **maxKillId** | **int32**| Only return killmails with ID smaller than this | 
+ **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
  **userAgent** | **string**| Client identifier, takes precedence over headers | 
  **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 

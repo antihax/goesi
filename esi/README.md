@@ -137,8 +137,8 @@ Class | Method | HTTP request | Description
 *IndustryApi* | [**GetIndustryFacilities**](docs/IndustryApi.md#getindustryfacilities) | **Get** /v1/industry/facilities/ | List industry facilities
 *IndustryApi* | [**GetIndustrySystems**](docs/IndustryApi.md#getindustrysystems) | **Get** /v1/industry/systems/ | List solar system cost indices
 *InsuranceApi* | [**GetInsurancePrices**](docs/InsuranceApi.md#getinsuranceprices) | **Get** /v1/insurance/prices/ | List insurance levels
-*KillmailsApi* | [**GetCharactersCharacterIdKillmailsRecent**](docs/KillmailsApi.md#getcharacterscharacteridkillmailsrecent) | **Get** /v1/characters/{character_id}/killmails/recent/ | Get character kills and losses
-*KillmailsApi* | [**GetCorporationsCorporationIdKillmailsRecent**](docs/KillmailsApi.md#getcorporationscorporationidkillmailsrecent) | **Get** /v1/corporations/{corporation_id}/killmails/recent/ | Get corporation kills and losses
+*KillmailsApi* | [**GetCharactersCharacterIdKillmailsRecent**](docs/KillmailsApi.md#getcharacterscharacteridkillmailsrecent) | **Get** /v1/characters/{character_id}/killmails/recent/ | Get a character&#39;s recent kills and losses
+*KillmailsApi* | [**GetCorporationsCorporationIdKillmailsRecent**](docs/KillmailsApi.md#getcorporationscorporationidkillmailsrecent) | **Get** /v1/corporations/{corporation_id}/killmails/recent/ | Get a corporation&#39;s recent kills and losses
 *KillmailsApi* | [**GetKillmailsKillmailIdKillmailHash**](docs/KillmailsApi.md#getkillmailskillmailidkillmailhash) | **Get** /v1/killmails/{killmail_id}/{killmail_hash}/ | Get a single killmail
 *LocationApi* | [**GetCharactersCharacterIdLocation**](docs/LocationApi.md#getcharacterscharacteridlocation) | **Get** /v1/characters/{character_id}/location/ | Get character location
 *LocationApi* | [**GetCharactersCharacterIdOnline**](docs/LocationApi.md#getcharacterscharacteridonline) | **Get** /v2/characters/{character_id}/online/ | Get character online

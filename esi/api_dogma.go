@@ -158,6 +158,17 @@ func (a *DogmaApiService) GetDogmaAttributes(ctx context.Context, localVarOption
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
@@ -327,6 +338,17 @@ func (a *DogmaApiService) GetDogmaAttributesAttributeId(ctx context.Context, att
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
@@ -474,6 +496,17 @@ func (a *DogmaApiService) GetDogmaEffects(ctx context.Context, localVarOptionals
 
 		if localVarHttpResponse.StatusCode == 400 {
 			var v BadRequest
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -643,6 +676,17 @@ func (a *DogmaApiService) GetDogmaEffectsEffectId(ctx context.Context, effectId 
 
 		if localVarHttpResponse.StatusCode == 404 {
 			var v GetDogmaEffectsEffectIdNotFound
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()

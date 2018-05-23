@@ -164,6 +164,17 @@ func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, a
 			return localVarHttpResponse, newErr
 		}
 
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarHttpResponse, newErr
+		}
+
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
@@ -315,6 +326,17 @@ func (a *UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, 
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -484,6 +506,17 @@ func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Contex
 			return localVarHttpResponse, newErr
 		}
 
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarHttpResponse, newErr
+		}
+
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
@@ -635,6 +668,17 @@ func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Cont
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -796,6 +840,17 @@ func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, n
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()

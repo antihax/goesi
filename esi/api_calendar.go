@@ -195,6 +195,17 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendar(ctx context.Contex
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
@@ -387,6 +398,17 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventId(ctx context
 
 		if localVarHttpResponse.StatusCode == 404 {
 			var v GetCharactersCharacterIdCalendarEventIdNotFound
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -597,6 +619,17 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventIdAttendees(ct
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
 		if localVarHttpResponse.StatusCode == 500 {
 			var v InternalServerError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
@@ -756,6 +789,17 @@ func (a *CalendarApiService) PutCharactersCharacterIdCalendarEventId(ctx context
 
 		if localVarHttpResponse.StatusCode == 403 {
 			var v Forbidden
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
 			if err != nil {
 				newErr.error = err.Error()

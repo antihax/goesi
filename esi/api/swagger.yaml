@@ -107,6 +107,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -270,6 +277,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -418,6 +432,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -549,6 +570,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -676,6 +704,13 @@ paths:
           examples:
             application/json:
               error: "No image server for this datasource"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -818,6 +853,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -946,6 +988,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -1097,6 +1146,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -1227,6 +1283,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -1373,6 +1436,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -1536,6 +1606,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -1701,6 +1778,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -1869,6 +1953,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -2026,6 +2117,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -2168,6 +2266,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -2315,6 +2420,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -2499,6 +2611,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -2664,6 +2783,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -2830,6 +2956,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -2963,6 +3096,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -3105,6 +3245,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -3260,6 +3407,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -3372,6 +3526,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -3479,6 +3640,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -3631,6 +3799,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -3783,6 +3958,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -3935,6 +4117,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -4105,6 +4294,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -4271,6 +4467,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -4418,6 +4621,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -4567,6 +4777,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -4747,6 +4964,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -4861,6 +5085,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -4976,6 +5207,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         422:
           description: "Default labels cannot be deleted"
           schema:
@@ -5131,6 +5369,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -5295,6 +5540,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -5409,6 +5661,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -5515,6 +5774,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -5682,6 +5948,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -5852,6 +6125,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -6004,6 +6284,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -6153,6 +6440,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -6331,6 +6625,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -6492,6 +6793,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -6637,6 +6945,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -6793,6 +7108,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -6942,6 +7264,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -7087,6 +7416,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -7253,6 +7589,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -7421,6 +7764,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -7589,6 +7939,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -7766,6 +8123,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -7892,6 +8256,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -8026,6 +8397,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -8210,6 +8588,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -8374,6 +8759,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -8541,6 +8933,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -8690,6 +9089,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -8873,6 +9279,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -9054,6 +9467,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -9221,6 +9641,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -9405,6 +9832,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -9557,6 +9991,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -9710,6 +10151,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -9865,6 +10313,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -9996,6 +10451,13 @@ paths:
           examples:
             application/json:
               error: "No image server for this datasource"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -10180,6 +10642,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -10349,6 +10818,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -10518,6 +10994,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -10688,6 +11171,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -10836,6 +11326,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -10988,6 +11485,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -11151,6 +11655,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -11333,6 +11844,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -11508,6 +12026,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -11679,6 +12204,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -11833,6 +12365,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -12004,6 +12543,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -12181,6 +12727,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -12354,6 +12907,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -12521,6 +13081,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -12691,6 +13258,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -12846,6 +13420,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -13010,6 +13591,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -13188,6 +13776,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -13315,6 +13910,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -13447,6 +14049,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -13567,6 +14176,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -13715,6 +14331,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -13828,6 +14451,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -14015,6 +14645,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -14129,6 +14766,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         422:
           description: "Errors in invitation"
           schema:
@@ -14256,6 +14900,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         422:
           description: "Errors in invitation"
           schema:
@@ -14375,6 +15026,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -14495,6 +15153,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -14607,6 +15272,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -14789,6 +15461,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -14900,6 +15579,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -15020,6 +15706,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -15133,6 +15826,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -15251,6 +15951,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -15397,6 +16104,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -15540,6 +16254,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -15683,6 +16404,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -15808,6 +16536,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -15929,6 +16664,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -16045,6 +16787,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -16174,6 +16923,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -16295,6 +17051,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -16414,6 +17177,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -16559,6 +17329,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -16709,6 +17486,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         422:
           description: "Invalid killmail_id and/or killmail_hash"
           schema:
@@ -16861,6 +17645,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -16981,6 +17772,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -17136,6 +17934,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -17253,6 +18058,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -17422,6 +18234,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -17567,6 +18386,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         422:
           description: "Not found"
           schema:
@@ -17756,6 +18582,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         422:
           description: "Not found"
           schema:
@@ -17907,6 +18740,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -18029,6 +18869,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -18178,6 +19025,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -18299,6 +19153,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -18419,6 +19280,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -18600,6 +19468,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -18724,6 +19599,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -18842,6 +19724,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -18964,6 +19853,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -19077,6 +19973,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -19174,6 +20077,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -19274,6 +20184,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -19374,6 +20291,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -19474,6 +20398,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         422:
           description: "Invalid request"
           schema:
@@ -19628,6 +20559,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -19757,6 +20695,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -19907,6 +20852,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -20027,6 +20979,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -20182,6 +21141,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -20301,6 +21267,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -20459,6 +21432,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -20577,6 +21557,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -20702,6 +21689,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -20837,6 +21831,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -20993,6 +21994,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -21121,6 +22129,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -21251,6 +22266,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -21382,6 +22404,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -21525,6 +22554,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -21643,6 +22679,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -21797,6 +22840,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -21922,6 +22972,13 @@ paths:
           examples:
             application/json:
               error: "Schematic not found"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -22057,6 +23114,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -22181,6 +23245,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -22302,6 +23373,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -22450,6 +23528,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -22572,6 +23657,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -22692,6 +23784,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -22826,6 +23925,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -22954,6 +24060,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -23084,6 +24197,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         422:
           description: "War not found"
           schema:
@@ -23233,6 +24353,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         422:
           description: "War not found"
           schema:
@@ -23368,6 +24495,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -23497,6 +24631,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -23665,6 +24806,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -23847,6 +24995,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -24010,6 +25165,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -24121,6 +25283,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -24234,6 +25403,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -24388,6 +25564,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -24533,6 +25716,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -24693,6 +25883,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -24824,6 +26021,13 @@ paths:
           examples:
             application/json:
               error: "No image server for this datasource"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -24965,6 +26169,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -25126,6 +26337,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -25287,6 +26505,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -25417,6 +26642,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -25545,6 +26777,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -25682,6 +26921,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -25853,6 +27099,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -26044,6 +27297,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -26222,6 +27482,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -26421,6 +27688,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -26558,6 +27832,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -26738,6 +28019,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -26850,6 +28138,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -26999,6 +28294,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -27108,6 +28410,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -27257,6 +28566,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -27376,6 +28692,13 @@ paths:
           examples:
             application/json:
               error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -27506,6 +28829,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -27671,6 +29001,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -27840,6 +29177,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -27953,6 +29297,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -28102,6 +29453,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -28254,6 +29612,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -28431,6 +29796,13 @@ paths:
           examples:
             application/json:
               error: "Colony not found"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -28645,6 +30017,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -28814,6 +30193,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -28968,6 +30354,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -29151,6 +30544,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -29322,6 +30722,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -29474,6 +30881,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -29605,6 +31019,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -29727,6 +31148,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -29877,6 +31305,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -30048,6 +31483,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -30186,6 +31628,13 @@ paths:
           examples:
             application/json:
               error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
         500:
           description: "Internal server error"
           schema:
@@ -30306,6 +31755,16 @@ definitions:
         description: "Bad request message"
     title: "Bad request"
     description: "Bad request model"
+  error_limited:
+    type: "object"
+    required:
+    - "error"
+    properties:
+      error:
+        type: "string"
+        description: "Error limited message"
+    title: "Error limited"
+    description: "Error limited model"
   forbidden:
     type: "object"
     required:

@@ -50,8 +50,6 @@ Statistical overview of a character involved in faction warfare  ---  This route
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return GetCharactersCharacterIdFwStatsOk
 */
@@ -60,8 +58,6 @@ type GetCharactersCharacterIdFwStatsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *FactionWarfareApiService) GetCharactersCharacterIdFwStats(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdFwStatsOpts) (GetCharactersCharacterIdFwStatsOk, *http.Response, error) {
@@ -90,9 +86,6 @@ func (a *FactionWarfareApiService) GetCharactersCharacterIdFwStats(ctx context.C
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -112,9 +105,6 @@ func (a *FactionWarfareApiService) GetCharactersCharacterIdFwStats(ctx context.C
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -249,8 +239,6 @@ Statistics about a corporation involved in faction warfare  ---  This route expi
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return GetCorporationsCorporationIdFwStatsOk
 */
@@ -259,8 +247,6 @@ type GetCorporationsCorporationIdFwStatsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *FactionWarfareApiService) GetCorporationsCorporationIdFwStats(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdFwStatsOpts) (GetCorporationsCorporationIdFwStatsOk, *http.Response, error) {
@@ -289,9 +275,6 @@ func (a *FactionWarfareApiService) GetCorporationsCorporationIdFwStats(ctx conte
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -311,9 +294,6 @@ func (a *FactionWarfareApiService) GetCorporationsCorporationIdFwStats(ctx conte
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -446,8 +426,6 @@ Top 4 leaderboard of factions for kills and victory points separated by total, l
  * @param optional nil or *GetFwLeaderboardsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return GetFwLeaderboardsOk
 */
@@ -455,8 +433,6 @@ Top 4 leaderboard of factions for kills and victory points separated by total, l
 type GetFwLeaderboardsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *FactionWarfareApiService) GetFwLeaderboards(ctx context.Context, localVarOptionals *GetFwLeaderboardsOpts) (GetFwLeaderboardsOk, *http.Response, error) {
@@ -478,9 +454,6 @@ func (a *FactionWarfareApiService) GetFwLeaderboards(ctx context.Context, localV
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -500,9 +473,6 @@ func (a *FactionWarfareApiService) GetFwLeaderboards(ctx context.Context, localV
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -613,8 +583,6 @@ Top 100 leaderboard of pilots for kills and victory points separated by total, l
  * @param optional nil or *GetFwLeaderboardsCharactersOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return GetFwLeaderboardsCharactersOk
 */
@@ -622,8 +590,6 @@ Top 100 leaderboard of pilots for kills and victory points separated by total, l
 type GetFwLeaderboardsCharactersOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *FactionWarfareApiService) GetFwLeaderboardsCharacters(ctx context.Context, localVarOptionals *GetFwLeaderboardsCharactersOpts) (GetFwLeaderboardsCharactersOk, *http.Response, error) {
@@ -645,9 +611,6 @@ func (a *FactionWarfareApiService) GetFwLeaderboardsCharacters(ctx context.Conte
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -667,9 +630,6 @@ func (a *FactionWarfareApiService) GetFwLeaderboardsCharacters(ctx context.Conte
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -780,8 +740,6 @@ Top 10 leaderboard of corporations for kills and victory points separated by tot
  * @param optional nil or *GetFwLeaderboardsCorporationsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return GetFwLeaderboardsCorporationsOk
 */
@@ -789,8 +747,6 @@ Top 10 leaderboard of corporations for kills and victory points separated by tot
 type GetFwLeaderboardsCorporationsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *FactionWarfareApiService) GetFwLeaderboardsCorporations(ctx context.Context, localVarOptionals *GetFwLeaderboardsCorporationsOpts) (GetFwLeaderboardsCorporationsOk, *http.Response, error) {
@@ -812,9 +768,6 @@ func (a *FactionWarfareApiService) GetFwLeaderboardsCorporations(ctx context.Con
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -834,9 +787,6 @@ func (a *FactionWarfareApiService) GetFwLeaderboardsCorporations(ctx context.Con
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -947,8 +897,6 @@ Statistical overviews of factions involved in faction warfare  ---  This route e
  * @param optional nil or *GetFwStatsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetFwStats200Ok
 */
@@ -956,8 +904,6 @@ Statistical overviews of factions involved in faction warfare  ---  This route e
 type GetFwStatsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *FactionWarfareApiService) GetFwStats(ctx context.Context, localVarOptionals *GetFwStatsOpts) ([]GetFwStats200Ok, *http.Response, error) {
@@ -979,9 +925,6 @@ func (a *FactionWarfareApiService) GetFwStats(ctx context.Context, localVarOptio
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1001,9 +944,6 @@ func (a *FactionWarfareApiService) GetFwStats(ctx context.Context, localVarOptio
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1114,8 +1054,6 @@ An overview of the current ownership of faction warfare solar systems  ---  This
  * @param optional nil or *GetFwSystemsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetFwSystems200Ok
 */
@@ -1123,8 +1061,6 @@ An overview of the current ownership of faction warfare solar systems  ---  This
 type GetFwSystemsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *FactionWarfareApiService) GetFwSystems(ctx context.Context, localVarOptionals *GetFwSystemsOpts) ([]GetFwSystems200Ok, *http.Response, error) {
@@ -1146,9 +1082,6 @@ func (a *FactionWarfareApiService) GetFwSystems(ctx context.Context, localVarOpt
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1168,9 +1101,6 @@ func (a *FactionWarfareApiService) GetFwSystems(ctx context.Context, localVarOpt
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1281,8 +1211,6 @@ Data about which NPC factions are at war  ---  This route expires daily at 11:05
  * @param optional nil or *GetFwWarsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetFwWars200Ok
 */
@@ -1290,8 +1218,6 @@ Data about which NPC factions are at war  ---  This route expires daily at 11:05
 type GetFwWarsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *FactionWarfareApiService) GetFwWars(ctx context.Context, localVarOptionals *GetFwWarsOpts) ([]GetFwWars200Ok, *http.Response, error) {
@@ -1313,9 +1239,6 @@ func (a *FactionWarfareApiService) GetFwWars(ctx context.Context, localVarOption
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1335,9 +1258,6 @@ func (a *FactionWarfareApiService) GetFwWars(ctx context.Context, localVarOption
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

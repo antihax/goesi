@@ -50,8 +50,6 @@ List open market orders placed by a character  ---  This route is cached for up 
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCharactersCharacterIdOrders200Ok
 */
@@ -60,8 +58,6 @@ type GetCharactersCharacterIdOrdersOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdOrdersOpts) ([]GetCharactersCharacterIdOrders200Ok, *http.Response, error) {
@@ -90,9 +86,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -112,9 +105,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrders(ctx context.Context, c
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -250,8 +240,6 @@ List cancelled and expired market orders placed by a character up to 90 days in 
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCharactersCharacterIdOrdersHistory200Ok
 */
@@ -261,8 +249,6 @@ type GetCharactersCharacterIdOrdersHistoryOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *MarketApiService) GetCharactersCharacterIdOrdersHistory(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdOrdersHistoryOpts) ([]GetCharactersCharacterIdOrdersHistory200Ok, *http.Response, error) {
@@ -294,9 +280,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrdersHistory(ctx context.Con
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -316,9 +299,6 @@ func (a *MarketApiService) GetCharactersCharacterIdOrdersHistory(ctx context.Con
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -454,8 +434,6 @@ List open market orders placed on behalf of a corporation  ---  This route is ca
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCorporationsCorporationIdOrders200Ok
 */
@@ -465,8 +443,6 @@ type GetCorporationsCorporationIdOrdersOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdOrdersOpts) ([]GetCorporationsCorporationIdOrders200Ok, *http.Response, error) {
@@ -498,9 +474,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Contex
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -520,9 +493,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Contex
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -658,8 +628,6 @@ List cancelled and expired market orders placed on behalf of a corporation up to
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCorporationsCorporationIdOrdersHistory200Ok
 */
@@ -669,8 +637,6 @@ type GetCorporationsCorporationIdOrdersHistoryOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *MarketApiService) GetCorporationsCorporationIdOrdersHistory(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdOrdersHistoryOpts) ([]GetCorporationsCorporationIdOrdersHistory200Ok, *http.Response, error) {
@@ -702,9 +668,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrdersHistory(ctx context
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -724,9 +687,6 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrdersHistory(ctx context
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -859,8 +819,6 @@ Get a list of item groups  ---  This route expires daily at 11:05
  * @param optional nil or *GetMarketsGroupsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []int32
 */
@@ -868,8 +826,6 @@ Get a list of item groups  ---  This route expires daily at 11:05
 type GetMarketsGroupsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *MarketApiService) GetMarketsGroups(ctx context.Context, localVarOptionals *GetMarketsGroupsOpts) ([]int32, *http.Response, error) {
@@ -891,9 +847,6 @@ func (a *MarketApiService) GetMarketsGroups(ctx context.Context, localVarOptiona
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -913,9 +866,6 @@ func (a *MarketApiService) GetMarketsGroups(ctx context.Context, localVarOptiona
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1025,21 +975,19 @@ Get information on an item group  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param marketGroupId An Eve item group ID
  * @param optional nil or *GetMarketsGroupsMarketGroupIdOpts - Optional Parameters:
+     * @param "AcceptLanguage" (optional.String) -  Language to use in the response
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "Language" (optional.String) -  Language to use in the response
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
+     * @param "Language" (optional.String) -  Language to use in the response, takes precedence over Accept-Language
 
 @return GetMarketsGroupsMarketGroupIdOk
 */
 
 type GetMarketsGroupsMarketGroupIdOpts struct {
-	Datasource  optional.String
-	IfNoneMatch optional.String
-	Language    optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
+	AcceptLanguage optional.String
+	Datasource     optional.String
+	IfNoneMatch    optional.String
+	Language       optional.String
 }
 
 func (a *MarketApiService) GetMarketsGroupsMarketGroupId(ctx context.Context, marketGroupId int32, localVarOptionals *GetMarketsGroupsMarketGroupIdOpts) (GetMarketsGroupsMarketGroupIdOk, *http.Response, error) {
@@ -1065,9 +1013,6 @@ func (a *MarketApiService) GetMarketsGroupsMarketGroupId(ctx context.Context, ma
 	if localVarOptionals != nil && localVarOptionals.Language.IsSet() {
 		localVarQueryParams.Add("language", parameterToString(localVarOptionals.Language.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1085,11 +1030,11 @@ func (a *MarketApiService) GetMarketsGroupsMarketGroupId(ctx context.Context, ma
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	if localVarOptionals != nil && localVarOptionals.AcceptLanguage.IsSet() {
+		localVarHeaderParams["Accept-Language"] = parameterToString(localVarOptionals.AcceptLanguage.Value(), "")
+	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1211,8 +1156,6 @@ Return a list of prices  ---  This route is cached for up to 3600 seconds
  * @param optional nil or *GetMarketsPricesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetMarketsPrices200Ok
 */
@@ -1220,8 +1163,6 @@ Return a list of prices  ---  This route is cached for up to 3600 seconds
 type GetMarketsPricesOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *MarketApiService) GetMarketsPrices(ctx context.Context, localVarOptionals *GetMarketsPricesOpts) ([]GetMarketsPrices200Ok, *http.Response, error) {
@@ -1243,9 +1184,6 @@ func (a *MarketApiService) GetMarketsPrices(ctx context.Context, localVarOptiona
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1265,9 +1203,6 @@ func (a *MarketApiService) GetMarketsPrices(ctx context.Context, localVarOptiona
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1380,8 +1315,6 @@ Return a list of historical market statistics for the specified type in a region
  * @param optional nil or *GetMarketsRegionIdHistoryOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetMarketsRegionIdHistory200Ok
 */
@@ -1389,8 +1322,6 @@ Return a list of historical market statistics for the specified type in a region
 type GetMarketsRegionIdHistoryOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *MarketApiService) GetMarketsRegionIdHistory(ctx context.Context, regionId int32, typeId int32, localVarOptionals *GetMarketsRegionIdHistoryOpts) ([]GetMarketsRegionIdHistory200Ok, *http.Response, error) {
@@ -1414,9 +1345,6 @@ func (a *MarketApiService) GetMarketsRegionIdHistory(ctx context.Context, region
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
 	localVarQueryParams.Add("type_id", parameterToString(typeId, ""))
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1436,9 +1364,6 @@ func (a *MarketApiService) GetMarketsRegionIdHistory(ctx context.Context, region
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1586,8 +1511,6 @@ Return a list of orders in a region  ---  This route is cached for up to 300 sec
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "TypeId" (optional.Int32) -  Return orders only for this type
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetMarketsRegionIdOrders200Ok
 */
@@ -1597,8 +1520,6 @@ type GetMarketsRegionIdOrdersOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	TypeId      optional.Int32
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *MarketApiService) GetMarketsRegionIdOrders(ctx context.Context, orderType string, regionId int32, localVarOptionals *GetMarketsRegionIdOrdersOpts) ([]GetMarketsRegionIdOrders200Ok, *http.Response, error) {
@@ -1628,9 +1549,6 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(ctx context.Context, orderTy
 	if localVarOptionals != nil && localVarOptionals.TypeId.IsSet() {
 		localVarQueryParams.Add("type_id", parameterToString(localVarOptionals.TypeId.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1650,9 +1568,6 @@ func (a *MarketApiService) GetMarketsRegionIdOrders(ctx context.Context, orderTy
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1787,8 +1702,6 @@ Return a list of type IDs that have active orders in the region, for efficient m
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []int32
 */
@@ -1797,8 +1710,6 @@ type GetMarketsRegionIdTypesOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
 	Page        optional.Int32
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *MarketApiService) GetMarketsRegionIdTypes(ctx context.Context, regionId int32, localVarOptionals *GetMarketsRegionIdTypesOpts) ([]int32, *http.Response, error) {
@@ -1824,9 +1735,6 @@ func (a *MarketApiService) GetMarketsRegionIdTypes(ctx context.Context, regionId
 	if localVarOptionals != nil && localVarOptionals.Page.IsSet() {
 		localVarQueryParams.Add("page", parameterToString(localVarOptionals.Page.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1846,9 +1754,6 @@ func (a *MarketApiService) GetMarketsRegionIdTypes(ctx context.Context, regionId
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1962,8 +1867,6 @@ Return all orders in a structure  ---  This route is cached for up to 300 second
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetMarketsStructuresStructureId200Ok
 */
@@ -1973,8 +1876,6 @@ type GetMarketsStructuresStructureIdOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, structureId int64, localVarOptionals *GetMarketsStructuresStructureIdOpts) ([]GetMarketsStructuresStructureId200Ok, *http.Response, error) {
@@ -2003,9 +1904,6 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -2025,9 +1923,6 @@ func (a *MarketApiService) GetMarketsStructuresStructureId(ctx context.Context, 
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

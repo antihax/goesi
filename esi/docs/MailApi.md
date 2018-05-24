@@ -39,8 +39,6 @@ Name | Type | Description  | Notes
  **labelId** | **int32**| An EVE label id | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -81,8 +79,6 @@ Name | Type | Description  | Notes
  **mailId** | **int32**| An EVE mail ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -124,8 +120,6 @@ Name | Type | Description  | Notes
  **labels** | [**[]int32**](int32.md)| Fetch only mails that match one or more of the given labels | 
  **lastMailId** | **int32**| List only mail with an ID lower than the given ID, if present | 
  **token** | **string**| Access token to use if unable to set a header | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -165,8 +159,6 @@ Name | Type | Description  | Notes
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -206,8 +198,6 @@ Name | Type | Description  | Notes
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -249,8 +239,6 @@ Name | Type | Description  | Notes
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -291,8 +279,6 @@ Name | Type | Description  | Notes
  **mail** | [**PostCharactersCharacterIdMailMail**](PostCharactersCharacterIdMailMail.md)| The mail to send | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -333,8 +319,6 @@ Name | Type | Description  | Notes
  **label** | [**PostCharactersCharacterIdMailLabelsLabel**](PostCharactersCharacterIdMailLabelsLabel.md)| Label to create | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 
@@ -377,8 +361,6 @@ Name | Type | Description  | Notes
  **mailId** | **int32**| An EVE mail ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **token** | **string**| Access token to use if unable to set a header | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

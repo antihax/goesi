@@ -51,8 +51,6 @@ Return a list of the characters assets  ---  This route is cached for up to 3600
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCharactersCharacterIdAssets200Ok
 */
@@ -62,8 +60,6 @@ type GetCharactersCharacterIdAssetsOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *AssetsApiService) GetCharactersCharacterIdAssets(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdAssetsOpts) ([]GetCharactersCharacterIdAssets200Ok, *http.Response, error) {
@@ -95,9 +91,6 @@ func (a *AssetsApiService) GetCharactersCharacterIdAssets(ctx context.Context, c
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -117,9 +110,6 @@ func (a *AssetsApiService) GetCharactersCharacterIdAssets(ctx context.Context, c
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -255,8 +245,6 @@ Return a list of the corporation assets  ---  This route is cached for up to 360
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCorporationsCorporationIdAssets200Ok
 */
@@ -266,8 +254,6 @@ type GetCorporationsCorporationIdAssetsOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *AssetsApiService) GetCorporationsCorporationIdAssets(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdAssetsOpts) ([]GetCorporationsCorporationIdAssets200Ok, *http.Response, error) {
@@ -299,9 +285,6 @@ func (a *AssetsApiService) GetCorporationsCorporationIdAssets(ctx context.Contex
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -321,9 +304,6 @@ func (a *AssetsApiService) GetCorporationsCorporationIdAssets(ctx context.Contex
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -458,8 +438,6 @@ Return locations for a set of item ids, which you can get from character assets 
  * @param optional nil or *PostCharactersCharacterIdAssetsLocationsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []PostCharactersCharacterIdAssetsLocations200Ok
 */
@@ -467,8 +445,6 @@ Return locations for a set of item ids, which you can get from character assets 
 type PostCharactersCharacterIdAssetsLocationsOpts struct {
 	Datasource optional.String
 	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
 }
 
 func (a *AssetsApiService) PostCharactersCharacterIdAssetsLocations(ctx context.Context, characterId int32, itemIds []int64, localVarOptionals *PostCharactersCharacterIdAssetsLocationsOpts) ([]PostCharactersCharacterIdAssetsLocations200Ok, *http.Response, error) {
@@ -497,9 +473,6 @@ func (a *AssetsApiService) PostCharactersCharacterIdAssetsLocations(ctx context.
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -516,9 +489,6 @@ func (a *AssetsApiService) PostCharactersCharacterIdAssetsLocations(ctx context.
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	// body params
 	localVarPostBody = &itemIds
@@ -655,8 +625,6 @@ Return names for a set of item ids, which you can get from character assets endp
  * @param optional nil or *PostCharactersCharacterIdAssetsNamesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []PostCharactersCharacterIdAssetsNames200Ok
 */
@@ -664,8 +632,6 @@ Return names for a set of item ids, which you can get from character assets endp
 type PostCharactersCharacterIdAssetsNamesOpts struct {
 	Datasource optional.String
 	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
 }
 
 func (a *AssetsApiService) PostCharactersCharacterIdAssetsNames(ctx context.Context, characterId int32, itemIds []int64, localVarOptionals *PostCharactersCharacterIdAssetsNamesOpts) ([]PostCharactersCharacterIdAssetsNames200Ok, *http.Response, error) {
@@ -694,9 +660,6 @@ func (a *AssetsApiService) PostCharactersCharacterIdAssetsNames(ctx context.Cont
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -713,9 +676,6 @@ func (a *AssetsApiService) PostCharactersCharacterIdAssetsNames(ctx context.Cont
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	// body params
 	localVarPostBody = &itemIds
@@ -852,8 +812,6 @@ Return locations for a set of item ids, which you can get from corporation asset
  * @param optional nil or *PostCorporationsCorporationIdAssetsLocationsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []PostCorporationsCorporationIdAssetsLocations200Ok
 */
@@ -861,8 +819,6 @@ Return locations for a set of item ids, which you can get from corporation asset
 type PostCorporationsCorporationIdAssetsLocationsOpts struct {
 	Datasource optional.String
 	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
 }
 
 func (a *AssetsApiService) PostCorporationsCorporationIdAssetsLocations(ctx context.Context, corporationId int32, itemIds []int64, localVarOptionals *PostCorporationsCorporationIdAssetsLocationsOpts) ([]PostCorporationsCorporationIdAssetsLocations200Ok, *http.Response, error) {
@@ -891,9 +847,6 @@ func (a *AssetsApiService) PostCorporationsCorporationIdAssetsLocations(ctx cont
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -910,9 +863,6 @@ func (a *AssetsApiService) PostCorporationsCorporationIdAssetsLocations(ctx cont
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	// body params
 	localVarPostBody = &itemIds
@@ -1060,8 +1010,6 @@ Return names for a set of item ids, which you can get from corporation assets en
  * @param optional nil or *PostCorporationsCorporationIdAssetsNamesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []PostCorporationsCorporationIdAssetsNames200Ok
 */
@@ -1069,8 +1017,6 @@ Return names for a set of item ids, which you can get from corporation assets en
 type PostCorporationsCorporationIdAssetsNamesOpts struct {
 	Datasource optional.String
 	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
 }
 
 func (a *AssetsApiService) PostCorporationsCorporationIdAssetsNames(ctx context.Context, corporationId int32, itemIds []int64, localVarOptionals *PostCorporationsCorporationIdAssetsNamesOpts) ([]PostCorporationsCorporationIdAssetsNames200Ok, *http.Response, error) {
@@ -1099,9 +1045,6 @@ func (a *AssetsApiService) PostCorporationsCorporationIdAssetsNames(ctx context.
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1118,9 +1061,6 @@ func (a *AssetsApiService) PostCorporationsCorporationIdAssetsNames(ctx context.
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	// body params
 	localVarPostBody = &itemIds

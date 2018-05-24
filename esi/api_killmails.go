@@ -51,8 +51,6 @@ Return a list of a character&#39;s kills and losses going back 90 days  ---  Thi
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCharactersCharacterIdKillmailsRecent200Ok
 */
@@ -62,8 +60,6 @@ type GetCharactersCharacterIdKillmailsRecentOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdKillmailsRecentOpts) ([]GetCharactersCharacterIdKillmailsRecent200Ok, *http.Response, error) {
@@ -95,9 +91,6 @@ func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx contex
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -117,9 +110,6 @@ func (a *KillmailsApiService) GetCharactersCharacterIdKillmailsRecent(ctx contex
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -255,8 +245,6 @@ Get a list of a corporation&#39;s kills and losses going back 90 days  ---  This
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCorporationsCorporationIdKillmailsRecent200Ok
 */
@@ -266,8 +254,6 @@ type GetCorporationsCorporationIdKillmailsRecentOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *KillmailsApiService) GetCorporationsCorporationIdKillmailsRecent(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdKillmailsRecentOpts) ([]GetCorporationsCorporationIdKillmailsRecent200Ok, *http.Response, error) {
@@ -299,9 +285,6 @@ func (a *KillmailsApiService) GetCorporationsCorporationIdKillmailsRecent(ctx co
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -321,9 +304,6 @@ func (a *KillmailsApiService) GetCorporationsCorporationIdKillmailsRecent(ctx co
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -458,8 +438,6 @@ Return a single killmail from its ID and hash  ---  This route is cached for up 
  * @param optional nil or *GetKillmailsKillmailIdKillmailHashOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return GetKillmailsKillmailIdKillmailHashOk
 */
@@ -467,8 +445,6 @@ Return a single killmail from its ID and hash  ---  This route is cached for up 
 type GetKillmailsKillmailIdKillmailHashOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *KillmailsApiService) GetKillmailsKillmailIdKillmailHash(ctx context.Context, killmailHash string, killmailId int32, localVarOptionals *GetKillmailsKillmailIdKillmailHashOpts) (GetKillmailsKillmailIdKillmailHashOk, *http.Response, error) {
@@ -492,9 +468,6 @@ func (a *KillmailsApiService) GetKillmailsKillmailIdKillmailHash(ctx context.Con
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -514,9 +487,6 @@ func (a *KillmailsApiService) GetKillmailsKillmailIdKillmailHash(ctx context.Con
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

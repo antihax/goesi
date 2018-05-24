@@ -50,8 +50,6 @@ Bulk delete contacts  ---
  * @param optional nil or *DeleteCharactersCharacterIdContactsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 
 */
@@ -59,8 +57,6 @@ Bulk delete contacts  ---
 type DeleteCharactersCharacterIdContactsOpts struct {
 	Datasource optional.String
 	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
 }
 
 func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, localVarOptionals *DeleteCharactersCharacterIdContactsOpts) (*http.Response, error) {
@@ -95,9 +91,6 @@ func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Con
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -114,9 +107,6 @@ func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Con
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -233,8 +223,6 @@ Return contacts of an alliance  ---  This route is cached for up to 300 seconds 
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetAlliancesAllianceIdContacts200Ok
 */
@@ -244,8 +232,6 @@ type GetAlliancesAllianceIdContactsOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *ContactsApiService) GetAlliancesAllianceIdContacts(ctx context.Context, allianceId int32, localVarOptionals *GetAlliancesAllianceIdContactsOpts) ([]GetAlliancesAllianceIdContacts200Ok, *http.Response, error) {
@@ -277,9 +263,6 @@ func (a *ContactsApiService) GetAlliancesAllianceIdContacts(ctx context.Context,
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -299,9 +282,6 @@ func (a *ContactsApiService) GetAlliancesAllianceIdContacts(ctx context.Context,
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -436,8 +416,6 @@ Return custom labels for an alliance&#39;s contacts  ---  This route is cached f
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetAlliancesAllianceIdContactsLabels200Ok
 */
@@ -446,8 +424,6 @@ type GetAlliancesAllianceIdContactsLabelsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *ContactsApiService) GetAlliancesAllianceIdContactsLabels(ctx context.Context, allianceId int32, localVarOptionals *GetAlliancesAllianceIdContactsLabelsOpts) ([]GetAlliancesAllianceIdContactsLabels200Ok, *http.Response, error) {
@@ -476,9 +452,6 @@ func (a *ContactsApiService) GetAlliancesAllianceIdContactsLabels(ctx context.Co
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -498,9 +471,6 @@ func (a *ContactsApiService) GetAlliancesAllianceIdContactsLabels(ctx context.Co
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -636,8 +606,6 @@ Return contacts of a character  ---  This route is cached for up to 300 seconds 
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCharactersCharacterIdContacts200Ok
 */
@@ -647,8 +615,6 @@ type GetCharactersCharacterIdContactsOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdContactsOpts) ([]GetCharactersCharacterIdContacts200Ok, *http.Response, error) {
@@ -680,9 +646,6 @@ func (a *ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Contex
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -702,9 +665,6 @@ func (a *ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Contex
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -839,8 +799,6 @@ Return custom labels for a character&#39;s contacts  ---  This route is cached f
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCharactersCharacterIdContactsLabels200Ok
 */
@@ -849,8 +807,6 @@ type GetCharactersCharacterIdContactsLabelsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdContactsLabelsOpts) ([]GetCharactersCharacterIdContactsLabels200Ok, *http.Response, error) {
@@ -879,9 +835,6 @@ func (a *ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -901,9 +854,6 @@ func (a *ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1039,8 +989,6 @@ Return contacts of a corporation  ---  This route is cached for up to 300 second
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCorporationsCorporationIdContacts200Ok
 */
@@ -1050,8 +998,6 @@ type GetCorporationsCorporationIdContactsOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *ContactsApiService) GetCorporationsCorporationIdContacts(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdContactsOpts) ([]GetCorporationsCorporationIdContacts200Ok, *http.Response, error) {
@@ -1083,9 +1029,6 @@ func (a *ContactsApiService) GetCorporationsCorporationIdContacts(ctx context.Co
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1105,9 +1048,6 @@ func (a *ContactsApiService) GetCorporationsCorporationIdContacts(ctx context.Co
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1242,8 +1182,6 @@ Return custom labels for a corporation&#39;s contacts  ---  This route is cached
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCorporationsCorporationIdContactsLabels200Ok
 */
@@ -1252,8 +1190,6 @@ type GetCorporationsCorporationIdContactsLabelsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *ContactsApiService) GetCorporationsCorporationIdContactsLabels(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdContactsLabelsOpts) ([]GetCorporationsCorporationIdContactsLabels200Ok, *http.Response, error) {
@@ -1282,9 +1218,6 @@ func (a *ContactsApiService) GetCorporationsCorporationIdContactsLabels(ctx cont
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1304,9 +1237,6 @@ func (a *ContactsApiService) GetCorporationsCorporationIdContactsLabels(ctx cont
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1443,9 +1373,7 @@ Bulk add contacts with same settings  ---  Warning: This route has an upgrade av
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "LabelId" (optional.Int64) -  Add a custom label to the new contact
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "Watched" (optional.Bool) -  Whether the contact should be watched, note this is only effective on characters
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []int32
 */
@@ -1454,9 +1382,7 @@ type PostCharactersCharacterIdContactsOpts struct {
 	Datasource optional.String
 	LabelId    optional.Int64
 	Token      optional.String
-	UserAgent  optional.String
 	Watched    optional.Bool
-	XUserAgent optional.String
 }
 
 func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, standing float32, localVarOptionals *PostCharactersCharacterIdContactsOpts) ([]int32, *http.Response, error) {
@@ -1495,9 +1421,6 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	if localVarOptionals != nil && localVarOptionals.Watched.IsSet() {
 		localVarQueryParams.Add("watched", parameterToString(localVarOptionals.Watched.Value(), ""))
 	}
@@ -1517,9 +1440,6 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	// body params
 	localVarPostBody = &contactIds
@@ -1658,9 +1578,7 @@ Bulk edit contacts with same settings  ---  Warning: This route has an upgrade a
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "LabelId" (optional.Int64) -  Add a custom label to the contact, use 0 for clearing label
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
      * @param "Watched" (optional.Bool) -  Whether the contact should be watched, note this is only effective on characters
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 
 */
@@ -1669,9 +1587,7 @@ type PutCharactersCharacterIdContactsOpts struct {
 	Datasource optional.String
 	LabelId    optional.Int64
 	Token      optional.String
-	UserAgent  optional.String
 	Watched    optional.Bool
-	XUserAgent optional.String
 }
 
 func (a *ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Context, characterId int32, contactIds []int32, standing float32, localVarOptionals *PutCharactersCharacterIdContactsOpts) (*http.Response, error) {
@@ -1709,9 +1625,6 @@ func (a *ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Contex
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	if localVarOptionals != nil && localVarOptionals.Watched.IsSet() {
 		localVarQueryParams.Add("watched", parameterToString(localVarOptionals.Watched.Value(), ""))
 	}
@@ -1731,9 +1644,6 @@ func (a *ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Contex
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	// body params
 	localVarPostBody = &contactIds

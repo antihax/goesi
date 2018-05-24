@@ -49,8 +49,6 @@ Set a solar system as autopilot waypoint  ---
  * @param optional nil or *PostUiAutopilotWaypointOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 
 */
@@ -58,8 +56,6 @@ Set a solar system as autopilot waypoint  ---
 type PostUiAutopilotWaypointOpts struct {
 	Datasource optional.String
 	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
 }
 
 func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, addToBeginning bool, clearOtherWaypoints bool, destinationId int64, localVarOptionals *PostUiAutopilotWaypointOpts) (*http.Response, error) {
@@ -86,9 +82,6 @@ func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, a
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -105,9 +98,6 @@ func (a *UserInterfaceApiService) PostUiAutopilotWaypoint(ctx context.Context, a
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -222,8 +212,6 @@ Open the contract window inside the client  ---
  * @param optional nil or *PostUiOpenwindowContractOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 
 */
@@ -231,8 +219,6 @@ Open the contract window inside the client  ---
 type PostUiOpenwindowContractOpts struct {
 	Datasource optional.String
 	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
 }
 
 func (a *UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, contractId int32, localVarOptionals *PostUiOpenwindowContractOpts) (*http.Response, error) {
@@ -257,9 +243,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, 
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -276,9 +259,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowContract(ctx context.Context, 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -393,8 +373,6 @@ Open the information window for a character, corporation or alliance inside the 
  * @param optional nil or *PostUiOpenwindowInformationOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 
 */
@@ -402,8 +380,6 @@ Open the information window for a character, corporation or alliance inside the 
 type PostUiOpenwindowInformationOpts struct {
 	Datasource optional.String
 	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
 }
 
 func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Context, targetId int32, localVarOptionals *PostUiOpenwindowInformationOpts) (*http.Response, error) {
@@ -428,9 +404,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Contex
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -447,9 +420,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowInformation(ctx context.Contex
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -564,8 +534,6 @@ Open the market details window for a specific typeID inside the client  ---
  * @param optional nil or *PostUiOpenwindowMarketdetailsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 
 */
@@ -573,8 +541,6 @@ Open the market details window for a specific typeID inside the client  ---
 type PostUiOpenwindowMarketdetailsOpts struct {
 	Datasource optional.String
 	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
 }
 
 func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Context, typeId int32, localVarOptionals *PostUiOpenwindowMarketdetailsOpts) (*http.Response, error) {
@@ -599,9 +565,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Cont
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
 	localVarQueryParams.Add("type_id", parameterToString(typeId, ""))
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -618,9 +581,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowMarketdetails(ctx context.Cont
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -735,8 +695,6 @@ Open the New Mail window, according to settings from the request if applicable  
  * @param optional nil or *PostUiOpenwindowNewmailOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 
 */
@@ -744,8 +702,6 @@ Open the New Mail window, according to settings from the request if applicable  
 type PostUiOpenwindowNewmailOpts struct {
 	Datasource optional.String
 	Token      optional.String
-	UserAgent  optional.String
-	XUserAgent optional.String
 }
 
 func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, newMail PostUiOpenwindowNewmailNewMail, localVarOptionals *PostUiOpenwindowNewmailOpts) (*http.Response, error) {
@@ -769,9 +725,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, n
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -788,9 +741,6 @@ func (a *UserInterfaceApiService) PostUiOpenwindowNewmail(ctx context.Context, n
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	// body params
 	localVarPostBody = &newMail

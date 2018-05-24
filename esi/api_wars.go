@@ -49,8 +49,6 @@ Return a list of wars  ---  This route is cached for up to 3600 seconds
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "MaxWarId" (optional.Int32) -  Only return wars with ID smaller than this.
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []int32
 */
@@ -59,8 +57,6 @@ type GetWarsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
 	MaxWarId    optional.Int32
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *WarsApiService) GetWars(ctx context.Context, localVarOptionals *GetWarsOpts) ([]int32, *http.Response, error) {
@@ -85,9 +81,6 @@ func (a *WarsApiService) GetWars(ctx context.Context, localVarOptionals *GetWars
 	if localVarOptionals != nil && localVarOptionals.MaxWarId.IsSet() {
 		localVarQueryParams.Add("max_war_id", parameterToString(localVarOptionals.MaxWarId.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -107,9 +100,6 @@ func (a *WarsApiService) GetWars(ctx context.Context, localVarOptionals *GetWars
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -221,8 +211,6 @@ Return details about a war  ---  This route is cached for up to 3600 seconds
  * @param optional nil or *GetWarsWarIdOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return GetWarsWarIdOk
 */
@@ -230,8 +218,6 @@ Return details about a war  ---  This route is cached for up to 3600 seconds
 type GetWarsWarIdOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *WarsApiService) GetWarsWarId(ctx context.Context, warId int32, localVarOptionals *GetWarsWarIdOpts) (GetWarsWarIdOk, *http.Response, error) {
@@ -257,9 +243,6 @@ func (a *WarsApiService) GetWarsWarId(ctx context.Context, warId int32, localVar
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -279,9 +262,6 @@ func (a *WarsApiService) GetWarsWarId(ctx context.Context, warId int32, localVar
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -405,8 +385,6 @@ Return a list of kills related to a war  ---  This route is cached for up to 360
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetWarsWarIdKillmails200Ok
 */
@@ -415,8 +393,6 @@ type GetWarsWarIdKillmailsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
 	Page        optional.Int32
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *WarsApiService) GetWarsWarIdKillmails(ctx context.Context, warId int32, localVarOptionals *GetWarsWarIdKillmailsOpts) ([]GetWarsWarIdKillmails200Ok, *http.Response, error) {
@@ -445,9 +421,6 @@ func (a *WarsApiService) GetWarsWarIdKillmails(ctx context.Context, warId int32,
 	if localVarOptionals != nil && localVarOptionals.Page.IsSet() {
 		localVarQueryParams.Add("page", parameterToString(localVarOptionals.Page.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -467,9 +440,6 @@ func (a *WarsApiService) GetWarsWarIdKillmails(ctx context.Context, warId int32,
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

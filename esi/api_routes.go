@@ -53,8 +53,6 @@ Get the systems between origin and destination  ---  This route is cached for up
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "Flag" (optional.String) -  route security preference
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []int32
 */
@@ -65,8 +63,6 @@ type GetRouteOriginDestinationOpts struct {
 	Datasource  optional.String
 	Flag        optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *RoutesApiService) GetRouteOriginDestination(ctx context.Context, destination int32, origin int32, localVarOptionals *GetRouteOriginDestinationOpts) ([]int32, *http.Response, error) {
@@ -99,9 +95,6 @@ func (a *RoutesApiService) GetRouteOriginDestination(ctx context.Context, destin
 	if localVarOptionals != nil && localVarOptionals.Flag.IsSet() {
 		localVarQueryParams.Add("flag", parameterToString(localVarOptionals.Flag.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -121,9 +114,6 @@ func (a *RoutesApiService) GetRouteOriginDestination(ctx context.Context, destin
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

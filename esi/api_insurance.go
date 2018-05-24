@@ -44,21 +44,19 @@ InsuranceApiService List insurance levels
 Return available insurance levels for all ship types  ---  This route is cached for up to 3600 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetInsurancePricesOpts - Optional Parameters:
+     * @param "AcceptLanguage" (optional.String) -  Language to use in the response
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "Language" (optional.String) -  Language to use in the response
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
+     * @param "Language" (optional.String) -  Language to use in the response, takes precedence over Accept-Language
 
 @return []GetInsurancePrices200Ok
 */
 
 type GetInsurancePricesOpts struct {
-	Datasource  optional.String
-	IfNoneMatch optional.String
-	Language    optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
+	AcceptLanguage optional.String
+	Datasource     optional.String
+	IfNoneMatch    optional.String
+	Language       optional.String
 }
 
 func (a *InsuranceApiService) GetInsurancePrices(ctx context.Context, localVarOptionals *GetInsurancePricesOpts) ([]GetInsurancePrices200Ok, *http.Response, error) {
@@ -83,9 +81,6 @@ func (a *InsuranceApiService) GetInsurancePrices(ctx context.Context, localVarOp
 	if localVarOptionals != nil && localVarOptionals.Language.IsSet() {
 		localVarQueryParams.Add("language", parameterToString(localVarOptionals.Language.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -103,11 +98,11 @@ func (a *InsuranceApiService) GetInsurancePrices(ctx context.Context, localVarOp
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	if localVarOptionals != nil && localVarOptionals.AcceptLanguage.IsSet() {
+		localVarHeaderParams["Accept-Language"] = parameterToString(localVarOptionals.AcceptLanguage.Value(), "")
+	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

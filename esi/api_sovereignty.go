@@ -46,8 +46,6 @@ Shows sovereignty data for campaigns.  ---  This route is cached for up to 5 sec
  * @param optional nil or *GetSovereigntyCampaignsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetSovereigntyCampaigns200Ok
 */
@@ -55,8 +53,6 @@ Shows sovereignty data for campaigns.  ---  This route is cached for up to 5 sec
 type GetSovereigntyCampaignsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *SovereigntyApiService) GetSovereigntyCampaigns(ctx context.Context, localVarOptionals *GetSovereigntyCampaignsOpts) ([]GetSovereigntyCampaigns200Ok, *http.Response, error) {
@@ -78,9 +74,6 @@ func (a *SovereigntyApiService) GetSovereigntyCampaigns(ctx context.Context, loc
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -100,9 +93,6 @@ func (a *SovereigntyApiService) GetSovereigntyCampaigns(ctx context.Context, loc
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -213,8 +203,6 @@ Shows sovereignty information for solar systems  ---  This route is cached for u
  * @param optional nil or *GetSovereigntyMapOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetSovereigntyMap200Ok
 */
@@ -222,8 +210,6 @@ Shows sovereignty information for solar systems  ---  This route is cached for u
 type GetSovereigntyMapOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *SovereigntyApiService) GetSovereigntyMap(ctx context.Context, localVarOptionals *GetSovereigntyMapOpts) ([]GetSovereigntyMap200Ok, *http.Response, error) {
@@ -245,9 +231,6 @@ func (a *SovereigntyApiService) GetSovereigntyMap(ctx context.Context, localVarO
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -267,9 +250,6 @@ func (a *SovereigntyApiService) GetSovereigntyMap(ctx context.Context, localVarO
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -380,8 +360,6 @@ Shows sovereignty data for structures.  ---  This route is cached for up to 120 
  * @param optional nil or *GetSovereigntyStructuresOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetSovereigntyStructures200Ok
 */
@@ -389,8 +367,6 @@ Shows sovereignty data for structures.  ---  This route is cached for up to 120 
 type GetSovereigntyStructuresOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *SovereigntyApiService) GetSovereigntyStructures(ctx context.Context, localVarOptionals *GetSovereigntyStructuresOpts) ([]GetSovereigntyStructures200Ok, *http.Response, error) {
@@ -412,9 +388,6 @@ func (a *SovereigntyApiService) GetSovereigntyStructures(ctx context.Context, lo
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -434,9 +407,6 @@ func (a *SovereigntyApiService) GetSovereigntyStructures(ctx context.Context, lo
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

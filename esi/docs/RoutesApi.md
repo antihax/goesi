@@ -34,8 +34,6 @@ Name | Type | Description  | Notes
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **flag** | **string**| route security preference | [default to shortest]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **userAgent** | **string**| Client identifier, takes precedence over headers | 
- **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
 
 ### Return type
 

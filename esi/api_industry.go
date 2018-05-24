@@ -51,8 +51,6 @@ List industry jobs placed by a character  ---  This route is cached for up to 30
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "IncludeCompleted" (optional.Bool) -  Whether retrieve completed character industry jobs as well
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCharactersCharacterIdIndustryJobs200Ok
 */
@@ -62,8 +60,6 @@ type GetCharactersCharacterIdIndustryJobsOpts struct {
 	IfNoneMatch      optional.String
 	IncludeCompleted optional.Bool
 	Token            optional.String
-	UserAgent        optional.String
-	XUserAgent       optional.String
 }
 
 func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdIndustryJobsOpts) ([]GetCharactersCharacterIdIndustryJobs200Ok, *http.Response, error) {
@@ -95,9 +91,6 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -117,9 +110,6 @@ func (a *IndustryApiService) GetCharactersCharacterIdIndustryJobs(ctx context.Co
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -255,8 +245,6 @@ Paginated record of all mining done by a character for the past 30 days  ---  Th
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCharactersCharacterIdMining200Ok
 */
@@ -266,8 +254,6 @@ type GetCharactersCharacterIdMiningOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context, characterId int32, localVarOptionals *GetCharactersCharacterIdMiningOpts) ([]GetCharactersCharacterIdMining200Ok, *http.Response, error) {
@@ -299,9 +285,6 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -321,9 +304,6 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -459,8 +439,6 @@ Extraction timers for all moon chunks being extracted by refineries belonging to
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCorporationCorporationIdMiningExtractions200Ok
 */
@@ -470,8 +448,6 @@ type GetCorporationCorporationIdMiningExtractionsOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationCorporationIdMiningExtractionsOpts) ([]GetCorporationCorporationIdMiningExtractions200Ok, *http.Response, error) {
@@ -503,9 +479,6 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -525,9 +498,6 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningExtractions(ctx co
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -663,8 +633,6 @@ Paginated list of all entities capable of observing and recording mining for a c
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCorporationCorporationIdMiningObservers200Ok
 */
@@ -674,8 +642,6 @@ type GetCorporationCorporationIdMiningObserversOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationCorporationIdMiningObserversOpts) ([]GetCorporationCorporationIdMiningObservers200Ok, *http.Response, error) {
@@ -707,9 +673,6 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -729,9 +692,6 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObservers(ctx cont
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -868,8 +828,6 @@ Paginated record of all mining seen by an observer  ---  This route is cached fo
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCorporationCorporationIdMiningObserversObserverId200Ok
 */
@@ -879,8 +837,6 @@ type GetCorporationCorporationIdMiningObserversObserverIdOpts struct {
 	IfNoneMatch optional.String
 	Page        optional.Int32
 	Token       optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverId(ctx context.Context, corporationId int32, observerId int64, localVarOptionals *GetCorporationCorporationIdMiningObserversObserverIdOpts) ([]GetCorporationCorporationIdMiningObserversObserverId200Ok, *http.Response, error) {
@@ -913,9 +869,6 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -935,9 +888,6 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1074,8 +1024,6 @@ List industry jobs run by a corporation  ---  This route is cached for up to 300
      * @param "IncludeCompleted" (optional.Bool) -  Whether retrieve completed industry jobs as well
      * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetCorporationsCorporationIdIndustryJobs200Ok
 */
@@ -1086,8 +1034,6 @@ type GetCorporationsCorporationIdIndustryJobsOpts struct {
 	IncludeCompleted optional.Bool
 	Page             optional.Int32
 	Token            optional.String
-	UserAgent        optional.String
-	XUserAgent       optional.String
 }
 
 func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx context.Context, corporationId int32, localVarOptionals *GetCorporationsCorporationIdIndustryJobsOpts) ([]GetCorporationsCorporationIdIndustryJobs200Ok, *http.Response, error) {
@@ -1122,9 +1068,6 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1144,9 +1087,6 @@ func (a *IndustryApiService) GetCorporationsCorporationIdIndustryJobs(ctx contex
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1279,8 +1219,6 @@ Return a list of industry facilities  ---  This route is cached for up to 3600 s
  * @param optional nil or *GetIndustryFacilitiesOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetIndustryFacilities200Ok
 */
@@ -1288,8 +1226,6 @@ Return a list of industry facilities  ---  This route is cached for up to 3600 s
 type GetIndustryFacilitiesOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *IndustryApiService) GetIndustryFacilities(ctx context.Context, localVarOptionals *GetIndustryFacilitiesOpts) ([]GetIndustryFacilities200Ok, *http.Response, error) {
@@ -1311,9 +1247,6 @@ func (a *IndustryApiService) GetIndustryFacilities(ctx context.Context, localVar
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1333,9 +1266,6 @@ func (a *IndustryApiService) GetIndustryFacilities(ctx context.Context, localVar
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1446,8 +1376,6 @@ Return cost indices for solar systems  ---  This route is cached for up to 3600 
  * @param optional nil or *GetIndustrySystemsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
-     * @param "UserAgent" (optional.String) -  Client identifier, takes precedence over headers
-     * @param "XUserAgent" (optional.String) -  Client identifier, takes precedence over User-Agent
 
 @return []GetIndustrySystems200Ok
 */
@@ -1455,8 +1383,6 @@ Return cost indices for solar systems  ---  This route is cached for up to 3600 
 type GetIndustrySystemsOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
-	UserAgent   optional.String
-	XUserAgent  optional.String
 }
 
 func (a *IndustryApiService) GetIndustrySystems(ctx context.Context, localVarOptionals *GetIndustrySystemsOpts) ([]GetIndustrySystems200Ok, *http.Response, error) {
@@ -1478,9 +1404,6 @@ func (a *IndustryApiService) GetIndustrySystems(ctx context.Context, localVarOpt
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.UserAgent.IsSet() {
-		localVarQueryParams.Add("user_agent", parameterToString(localVarOptionals.UserAgent.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1500,9 +1423,6 @@ func (a *IndustryApiService) GetIndustrySystems(ctx context.Context, localVarOpt
 	}
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
 		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
-	}
-	if localVarOptionals != nil && localVarOptionals.XUserAgent.IsSet() {
-		localVarHeaderParams["X-User-Agent"] = parameterToString(localVarOptionals.XUserAgent.Value(), "")
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

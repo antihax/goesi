@@ -103,6 +103,8 @@ func easyjson80dfb29fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
+		case "is_blueprint_copy":
+			out.IsBlueprintCopy = bool(in.Bool())
 		case "is_singleton":
 			out.IsSingleton = bool(in.Bool())
 		case "item_id":
@@ -131,6 +133,16 @@ func easyjson80dfb29fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
+	if in.IsBlueprintCopy {
+		const prefix string = ",\"is_blueprint_copy\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.IsBlueprintCopy))
+	}
 	if in.IsSingleton {
 		const prefix string = ",\"is_singleton\":"
 		if first {

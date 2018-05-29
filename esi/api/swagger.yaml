@@ -2,7 +2,7 @@
 swagger: "2.0"
 info:
   description: "An OpenAPI for EVE Online"
-  version: "0.8.2"
+  version: "0.8.3"
   title: "EVE Swagger Interface"
 host: "esi.evetech.net"
 schemes:
@@ -107,13 +107,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -121,6 +114,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -263,13 +263,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -277,6 +270,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-alliances.read_contacts.v1"
@@ -404,13 +404,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -418,6 +411,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-alliances.read_contacts.v1"
@@ -528,13 +528,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -542,6 +535,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -648,13 +648,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -662,6 +655,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -783,13 +783,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -797,6 +790,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -904,13 +904,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -918,6 +911,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -1048,13 +1048,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -1062,6 +1055,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_agents_research.v1"
@@ -1171,13 +1171,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -1185,6 +1178,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-assets.read_assets.v1"
@@ -1310,13 +1310,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -1324,6 +1317,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-skills.read_skills.v1"
@@ -1466,13 +1466,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -1480,6 +1473,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-calendar.read_calendar_events.v1"
@@ -1624,13 +1624,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -1638,6 +1631,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-calendar.read_calendar_events.v1"
@@ -1785,13 +1785,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -1799,6 +1792,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_contacts.v1"
@@ -1935,13 +1935,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -1949,6 +1942,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.write_contacts.v1"
@@ -2070,13 +2070,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -2084,6 +2077,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.write_contacts.v1"
@@ -2210,13 +2210,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -2224,6 +2217,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_contacts.v1"
@@ -2387,13 +2387,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -2401,6 +2394,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-contracts.read_character_contracts.v1"
@@ -2545,13 +2545,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -2559,6 +2552,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-contracts.read_character_contracts.v1"
@@ -2704,13 +2704,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -2718,6 +2711,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-contracts.read_character_contracts.v1"
@@ -2830,13 +2830,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -2844,6 +2837,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -2965,13 +2965,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -2979,6 +2972,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_fatigue.v1"
@@ -3113,13 +3113,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -3127,6 +3120,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fittings.read_fittings.v1"
@@ -3218,13 +3218,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -3232,6 +3225,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fittings.write_fittings.v1"
@@ -3318,13 +3318,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -3332,6 +3325,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fittings.write_fittings.v1"
@@ -3463,13 +3463,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -3477,6 +3470,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.read_fleet.v1"
@@ -3608,13 +3608,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -3622,6 +3615,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_fw_stats.v1"
@@ -3753,13 +3753,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -3767,6 +3760,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-clones.read_implants.v1"
@@ -3916,13 +3916,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -3930,6 +3923,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-industry.read_character_jobs.v1"
@@ -4075,13 +4075,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -4089,6 +4082,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-killmails.read_killmails.v1"
@@ -4215,13 +4215,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -4229,6 +4222,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-location.read_location.v1"
@@ -4357,13 +4357,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -4371,6 +4364,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_loyalty.v1"
@@ -4530,13 +4530,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -4544,6 +4537,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-mail.read_mail.v1"
@@ -4637,13 +4637,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -4651,14 +4644,21 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
         520:
           description: "Internal error thrown from the EVE server. Most of the time\
             \ this means you have hit an EVE server rate limit."
           schema:
-            $ref: "#/definitions/post_characters_character_id_mail_520_response"
+            $ref: "#/definitions/post_characters_character_id_mail_error_520"
           examples:
             application/json:
-              error: "520 response message"
+              error: "Error 520 message"
       security:
       - evesso:
         - "esi-mail.send_mail.v1"
@@ -4752,13 +4752,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -4766,6 +4759,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-mail.organize_mail.v1"
@@ -4893,13 +4893,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -4907,6 +4900,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-mail.read_mail.v1"
@@ -5050,13 +5050,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -5064,6 +5057,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-mail.read_mail.v1"
@@ -5157,13 +5157,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -5171,6 +5164,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-mail.organize_mail.v1"
@@ -5256,13 +5256,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -5270,6 +5263,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-mail.organize_mail.v1"
@@ -5416,13 +5416,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -5430,6 +5423,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_medals.v1"
@@ -5579,13 +5579,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -5593,6 +5586,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-industry.read_character_mining.v1"
@@ -5724,13 +5724,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -5738,6 +5731,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_notifications.v1"
@@ -5866,13 +5866,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -5880,6 +5873,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_opportunities.v1"
@@ -6037,13 +6037,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -6051,6 +6044,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-markets.read_character_orders.v1"
@@ -6191,13 +6191,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -6205,6 +6198,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-planets.manage_planets.v1"
@@ -6329,13 +6329,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -6343,6 +6336,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-location.read_ship_type.v1"
@@ -6478,13 +6478,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -6492,6 +6485,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_standings.v1"
@@ -6620,13 +6620,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -6634,6 +6627,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_titles.v1"
@@ -6758,13 +6758,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -6772,6 +6765,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-wallet.read_character_wallet.v1"
@@ -6917,13 +6917,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -6931,6 +6924,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-wallet.read_character_wallet.v1"
@@ -7078,13 +7078,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -7092,6 +7085,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-industry.read_corporation_mining.v1"
@@ -7239,13 +7239,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -7253,6 +7246,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-industry.read_corporation_mining.v1"
@@ -7409,13 +7409,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -7423,6 +7416,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-industry.read_corporation_mining.v1"
@@ -7528,13 +7528,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -7542,6 +7535,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -7655,13 +7655,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -7669,6 +7662,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-assets.read_corporation_assets.v1"
@@ -7832,13 +7832,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -7846,6 +7839,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-bookmarks.read_corporation_bookmarks.v1"
@@ -7989,13 +7989,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -8003,6 +7996,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-bookmarks.read_corporation_bookmarks.v1"
@@ -8149,13 +8149,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -8163,6 +8156,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_contacts.v1"
@@ -8291,13 +8291,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -8305,6 +8298,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_contacts.v1"
@@ -8318,8 +8318,8 @@ paths:
     get:
       tags:
       - "Contracts"
-      summary: "Get coporation contracts"
-      description: "Returns contracts available to a coporation, only if the corporation\
+      summary: "Get corporation contracts"
+      description: "Returns contracts available to a corporation, only if the corporation\
         \ is issuer, acceptor or assignee. Only returns contracts no older than 30\
         \ days, or if the status is \"in_progress\".\n\n---\n\nThis route is cached\
         \ for up to 300 seconds"
@@ -8467,13 +8467,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -8481,6 +8474,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-contracts.read_corporation_contracts.v1"
@@ -8641,13 +8641,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -8655,6 +8648,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-contracts.read_corporation_contracts.v1"
@@ -8801,13 +8801,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -8815,14 +8808,21 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
         520:
           description: "Internal error thrown from the EVE server. Most of the time\
             \ this means you have hit an EVE server rate limit."
           schema:
-            $ref: "#/definitions/get_corporations_corporation_id_contracts_contract_id_items_520_response"
+            $ref: "#/definitions/get_corporations_corporation_id_contracts_contract_id_items_error_520"
           examples:
             application/json:
-              error: "520 response message"
+              error: "Error 520 message"
       security:
       - evesso:
         - "esi-contracts.read_corporation_contracts.v1"
@@ -8978,13 +8978,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -8992,6 +8985,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-planets.read_customs_offices.v1"
@@ -9123,13 +9123,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -9137,6 +9130,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_divisions.v1"
@@ -9269,13 +9269,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -9283,6 +9276,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_facilities.v1"
@@ -9417,13 +9417,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -9431,6 +9424,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_fw_stats.v1"
@@ -9541,13 +9541,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -9555,6 +9548,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -9718,13 +9718,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -9732,6 +9725,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-industry.read_corporation_jobs.v1"
@@ -9880,13 +9880,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -9894,6 +9887,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-killmails.read_corporation_killmails.v1"
@@ -10042,13 +10042,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -10056,6 +10049,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_medals.v1"
@@ -10205,13 +10205,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -10219,6 +10212,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_medals.v1"
@@ -10346,13 +10346,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -10360,6 +10353,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.track_members.v1"
@@ -10491,13 +10491,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -10505,6 +10498,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_titles.v1"
@@ -10647,13 +10647,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -10661,6 +10654,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.track_members.v1"
@@ -10822,13 +10822,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -10836,6 +10829,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-markets.read_corporation_orders.v1"
@@ -10990,13 +10990,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -11004,6 +10997,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_outposts.v1"
@@ -11154,13 +11154,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -11168,6 +11161,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_outposts.v1"
@@ -11301,13 +11301,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -11315,6 +11308,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_corporation_membership.v1"
@@ -11465,13 +11465,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -11479,6 +11472,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_corporation_membership.v1"
@@ -11635,13 +11635,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -11649,6 +11642,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-wallet.read_corporation_wallets.v1"
@@ -11801,13 +11801,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -11815,6 +11808,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_standings.v1"
@@ -11961,13 +11961,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -11975,6 +11968,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_starbases.v1"
@@ -12124,13 +12124,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -12138,6 +12131,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_starbases.v1"
@@ -12272,13 +12272,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -12286,6 +12279,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_titles.v1"
@@ -12429,13 +12429,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -12443,6 +12436,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-wallet.read_corporation_wallets.v1"
@@ -12600,13 +12600,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -12614,6 +12607,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-wallet.read_corporation_wallets.v1"
@@ -12720,13 +12720,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -12734,6 +12727,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -12845,13 +12845,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -12859,6 +12852,145 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
+  /v1/dogma/dynamic/items/{type_id}/{item_id}/:
+    get:
+      tags:
+      - "Dogma"
+      summary: "Get dynamic item information"
+      description: "Returns info about a dynamic item resulting from mutation with\
+        \ a mutaplasmid.\n\n---\n\nThis route expires daily at 11:05"
+      operationId: "get_dogma_dynamic_items_type_id_item_id"
+      parameters:
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "item_id"
+        in: "path"
+        description: "item_id integer"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-exportParamName: "ItemId"
+      - name: "type_id"
+        in: "path"
+        description: "type_id integer"
+        required: true
+        type: "integer"
+        format: "int32"
+        x-exportParamName: "TypeId"
+      responses:
+        200:
+          description: "Details about a dynamic item"
+          schema:
+            $ref: "#/definitions/get_dogma_dynamic_items_type_id_item_id_ok"
+          examples:
+            application/json:
+              created_by: 2112625428
+              dogma_attributes:
+              - attribute_id: 9
+                value: 350
+              dogma_effects:
+              - effect_id: 508
+                is_default: false
+              mutator_type_id: 47845
+              source_type_id: 33103
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        404:
+          description: "Item not found"
+          schema:
+            $ref: "#/definitions/get_dogma_dynamic_items_type_id_item_id_not_found"
+          examples:
+            application/json:
+              error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -12958,13 +13090,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -12972,6 +13097,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -13099,13 +13231,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -13113,6 +13238,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.read_fleet.v1"
@@ -13205,13 +13337,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -13219,6 +13344,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.write_fleet.v1"
@@ -13400,13 +13532,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -13414,6 +13539,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.read_fleet.v1"
@@ -13514,13 +13646,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -13528,6 +13653,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.write_fleet.v1"
@@ -13634,13 +13766,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -13648,6 +13773,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.write_fleet.v1"
@@ -13739,13 +13871,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -13753,6 +13878,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.write_fleet.v1"
@@ -13852,13 +13984,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -13866,6 +13991,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.write_fleet.v1"
@@ -13957,13 +14089,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -13971,6 +14096,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.write_fleet.v1"
@@ -14147,13 +14279,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -14161,6 +14286,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.read_fleet.v1"
@@ -14251,13 +14383,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -14265,6 +14390,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.write_fleet.v1"
@@ -14364,13 +14496,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -14378,6 +14503,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.write_fleet.v1"
@@ -14470,13 +14602,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -14484,6 +14609,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.write_fleet.v1"
@@ -14581,13 +14713,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -14595,6 +14720,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-fleets.write_fleet.v1"
@@ -14720,13 +14852,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -14734,6 +14859,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -14856,13 +14988,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -14870,6 +14995,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -14992,13 +15124,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -15006,6 +15131,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -15110,13 +15242,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -15124,6 +15249,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -15224,13 +15356,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -15238,6 +15363,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "legacy"
       - "v1"
@@ -15333,13 +15465,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -15347,6 +15472,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -15455,13 +15587,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -15469,6 +15594,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -15569,13 +15701,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -15583,6 +15708,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -15681,13 +15813,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -15695,6 +15820,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -15834,13 +15966,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -15848,6 +15973,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -15984,13 +16116,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -15998,6 +16123,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -16122,13 +16254,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -16136,6 +16261,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -16235,13 +16367,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -16249,6 +16374,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -16398,13 +16530,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -16412,6 +16537,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -16508,13 +16640,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -16522,6 +16647,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -16670,13 +16802,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -16684,6 +16809,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-markets.structure_markets.v1"
@@ -16815,13 +16947,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -16829,13 +16954,20 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
         520:
           description: "Internal error thrown from the EVE server."
           schema:
-            $ref: "#/definitions/get_markets_region_id_history_520_response"
+            $ref: "#/definitions/get_markets_region_id_history_error_520"
           examples:
             application/json:
-              error: "520 response message"
+              error: "Error 520 message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -16997,13 +17129,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -17011,6 +17136,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -17134,13 +17266,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -17148,6 +17273,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -17249,13 +17381,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -17263,6 +17388,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -17406,13 +17538,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -17420,6 +17545,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -17520,13 +17652,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -17534,6 +17659,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -17633,13 +17765,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -17647,6 +17772,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -17807,13 +17939,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -17821,6 +17946,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -17924,13 +18056,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -17938,6 +18063,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -18035,13 +18167,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -18049,6 +18174,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -18150,13 +18282,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -18164,6 +18289,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -18256,13 +18388,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -18270,6 +18395,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -18346,13 +18478,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -18360,6 +18485,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-ui.open_window.v1"
@@ -18439,13 +18571,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -18453,6 +18578,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-ui.open_window.v1"
@@ -18532,13 +18664,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -18546,6 +18671,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-ui.open_window.v1"
@@ -18632,13 +18764,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -18646,6 +18771,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-ui.open_window.v1"
@@ -18787,13 +18919,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -18801,6 +18926,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -18909,13 +19041,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -18923,6 +19048,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -19067,13 +19199,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -19081,6 +19206,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -19180,13 +19312,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -19194,6 +19319,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -19343,13 +19475,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -19357,6 +19482,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -19455,13 +19587,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -19469,6 +19594,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -19621,13 +19753,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -19635,6 +19760,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -19732,13 +19864,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -19746,6 +19871,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -19850,13 +19982,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -19864,6 +19989,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -19978,13 +20110,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -19992,6 +20117,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -20142,13 +20274,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -20156,6 +20281,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -20278,13 +20410,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -20292,6 +20417,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -20401,13 +20533,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -20415,6 +20540,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -20525,13 +20657,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -20539,6 +20664,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -20676,13 +20808,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -20690,6 +20815,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -20787,13 +20919,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -20801,6 +20926,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -20949,13 +21081,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -20963,6 +21088,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -21067,13 +21199,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -21081,6 +21206,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -21195,13 +21327,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -21209,6 +21334,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -21312,13 +21444,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -21326,6 +21451,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -21426,13 +21558,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -21440,6 +21565,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -21452,7 +21584,8 @@ paths:
       summary: "Get structure information"
       description: "Returns information on requested structure, if you are on the\
         \ ACL. Otherwise, returns \"Forbidden\" for all inputs.\n\n---\n\nThis route\
-        \ is cached for up to 3600 seconds"
+        \ is cached for up to 3600 seconds\n\n---\nWarning: This route has an upgrade\
+        \ available.\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/structures/{structure_id}/)"
       operationId: "get_universe_structures_structure_id"
       parameters:
       - name: "datasource"
@@ -21567,13 +21700,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -21581,11 +21707,17 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-universe.read_structures.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -21682,13 +21814,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -21696,6 +21821,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -21795,13 +21927,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -21809,6 +21934,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -21922,13 +22054,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -21936,6 +22061,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -22043,13 +22175,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -22057,6 +22182,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -22173,13 +22305,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -22187,6 +22312,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -22315,13 +22447,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -22329,6 +22454,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -22436,13 +22568,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -22450,6 +22575,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v2"
@@ -22558,13 +22690,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -22572,6 +22697,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-assets.read_assets.v1"
@@ -22719,13 +22851,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -22733,6 +22858,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_blueprints.v1"
@@ -22894,13 +23026,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -22908,6 +23033,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-bookmarks.read_character_bookmarks.v1"
@@ -23050,13 +23182,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -23064,6 +23189,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-bookmarks.read_character_bookmarks.v1"
@@ -23154,13 +23286,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -23168,6 +23293,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.write_contacts.v1"
@@ -23260,13 +23392,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -23274,6 +23399,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-mail.organize_mail.v1"
@@ -23407,13 +23539,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -23421,6 +23546,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_notifications.v1"
@@ -23545,13 +23677,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -23559,6 +23684,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-location.read_online.v1"
@@ -23698,13 +23830,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -23712,6 +23837,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-markets.read_character_orders.v1"
@@ -23822,13 +23954,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -23836,6 +23961,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v2"
@@ -23956,13 +24088,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -23970,6 +24095,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_corporation_roles.v1"
@@ -24110,13 +24242,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -24124,6 +24249,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-skills.read_skillqueue.v1"
@@ -24264,13 +24396,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -24278,6 +24403,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characterstats.read.v1"
@@ -24387,13 +24519,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -24401,6 +24526,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v2"
@@ -24508,13 +24640,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -24522,6 +24647,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v2"
@@ -24638,13 +24770,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -24652,6 +24777,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-assets.read_corporation_assets.v1"
@@ -24802,13 +24934,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -24816,6 +24941,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_blueprints.v1"
@@ -24986,13 +25118,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -25000,6 +25125,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_container_logs.v1"
@@ -25157,13 +25289,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -25171,6 +25296,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-markets.read_corporation_orders.v1"
@@ -25364,13 +25496,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -25378,6 +25503,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_structures.v1"
@@ -25494,13 +25626,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -25508,6 +25633,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v2"
@@ -25682,13 +25814,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -25696,6 +25821,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v2"
@@ -25787,13 +25919,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -25801,6 +25926,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-ui.write_waypoint.v1"
@@ -25944,13 +26076,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -25958,6 +26083,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v2"
@@ -26046,13 +26178,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -26060,6 +26185,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v2"
@@ -26188,13 +26320,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -26202,6 +26327,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v2"
@@ -26300,13 +26432,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -26314,6 +26439,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v2"
@@ -26423,13 +26555,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -26437,6 +26562,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v3"
@@ -26506,7 +26638,8 @@ paths:
             maxItems: 1000
           examples:
             application/json:
-            - is_singleton: true
+            - is_blueprint_copy: true
+              is_singleton: true
               item_id: 1000000016835
               location_flag: "Hangar"
               location_id: 60002959
@@ -26581,13 +26714,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -26595,6 +26721,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-assets.read_assets.v1"
@@ -26743,13 +26876,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -26757,6 +26883,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-calendar.read_calendar_events.v1"
@@ -26849,13 +26982,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -26863,6 +26989,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-calendar.respond_calendar_events.v1"
@@ -26991,13 +27124,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -27005,6 +27131,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-clones.read_clones.v1"
@@ -27136,13 +27269,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -27150,6 +27276,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-mail.read_mail.v1"
@@ -27306,13 +27439,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -27320,6 +27446,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-planets.manage_planets.v1"
@@ -27528,13 +27661,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -27542,6 +27668,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-search.search_structures.v1"
@@ -27615,7 +27748,8 @@ paths:
             maxItems: 1000
           examples:
             application/json:
-            - is_singleton: true
+            - is_blueprint_copy: true
+              is_singleton: true
               item_id: 1000000016835
               location_flag: "Hangar"
               location_id: 60002959
@@ -27690,13 +27824,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -27704,6 +27831,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-assets.read_corporation_assets.v1"
@@ -27837,13 +27971,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -27851,6 +27978,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-corporations.read_corporation_membership.v1"
@@ -28013,13 +28147,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -28027,6 +28154,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-wallet.read_corporation_wallets.v1"
@@ -28042,8 +28176,10 @@ paths:
       tags:
       - "Universe"
       summary: "Get solar system information"
-      description: "Get information on a solar system\n\n---\n\nThis route expires\
-        \ daily at 11:05"
+      description: "Get information on a solar system. NOTE: This route does not work\
+        \ with abyssal systems.\n\n---\n\nThis route expires daily at 11:05\n\n---\n\
+        Warning: This route has an upgrade available.\n\n---\n[Diff of the upcoming\
+        \ changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/systems/{system_id}/)"
       operationId: "get_universe_systems_system_id"
       parameters:
       - name: "Accept-Language"
@@ -28192,13 +28328,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -28206,8 +28335,14 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "v3"
   /v3/universe/types/{type_id}/:
     get:
@@ -28352,13 +28487,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -28366,6 +28494,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v3"
@@ -28476,13 +28611,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -28490,6 +28618,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v4"
@@ -28591,13 +28726,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -28605,6 +28733,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-characters.read_contacts.v1"
@@ -28734,13 +28869,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -28748,6 +28876,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-skills.read_skills.v1"
@@ -28898,13 +29033,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -28912,6 +29040,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       security:
       - evesso:
         - "esi-wallet.read_character_wallet.v1"
@@ -29029,13 +29164,6 @@ paths:
           examples:
             application/json:
               error: "Internal server error message"
-        502:
-          description: "Bad gateway"
-          schema:
-            $ref: "#/definitions/bad_gateway"
-          examples:
-            application/json:
-              error: "Bad gateway message"
         503:
           description: "Service unavailable"
           schema:
@@ -29043,6 +29171,13 @@ paths:
           examples:
             application/json:
               error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
       - "v4"
@@ -29122,16 +29257,6 @@ securityDefinitions:
       esi-wallet.read_character_wallet.v1: "EVE SSO scope esi-wallet.read_character_wallet.v1"
       esi-wallet.read_corporation_wallets.v1: "EVE SSO scope esi-wallet.read_corporation_wallets.v1"
 definitions:
-  bad_gateway:
-    type: "object"
-    required:
-    - "error"
-    properties:
-      error:
-        type: "string"
-        description: "Bad gateway message"
-    title: "Bad gateway"
-    description: "Bad gateway model"
   bad_request:
     type: "object"
     required:
@@ -29162,9 +29287,22 @@ definitions:
         description: "Forbidden message"
       sso_status:
         type: "integer"
-        description: "Status code received from SSO"
+        description: "status code received from SSO"
     title: "Forbidden"
     description: "Forbidden model"
+  gateway_timeout:
+    type: "object"
+    required:
+    - "error"
+    properties:
+      error:
+        type: "string"
+        description: "Gateway timeout message"
+      timeout:
+        type: "integer"
+        description: "number of seconds the request was given"
+    title: "Gateway timeout"
+    description: "Gateway timeout model"
   internal_server_error:
     type: "object"
     required:
@@ -30344,13 +30482,13 @@ definitions:
         maxLength: 1000
     title: "post_characters_character_id_mail_mail"
     description: "mail object"
-  post_characters_character_id_mail_520_response:
+  post_characters_character_id_mail_error_520:
     properties:
       error:
         type: "string"
-        description: "520 response message"
-        title: "post_characters_character_id_mail_520_520_response"
-    description: "520 response"
+        description: "Error 520 message"
+        title: "post_characters_character_id_mail_520_error_520"
+    description: "Error 520"
   delete_characters_character_id_mail_labels_label_id_unprocessable_entity:
     properties:
       error:
@@ -31415,13 +31553,13 @@ definitions:
         description: "Not found message"
         title: "get_corporations_corporation_id_contracts_contract_id_items_404_not_found"
     description: "Not found"
-  get_corporations_corporation_id_contracts_contract_id_items_520_response:
+  get_corporations_corporation_id_contracts_contract_id_items_error_520:
     properties:
       error:
         type: "string"
-        description: "520 response message"
-        title: "get_corporations_corporation_id_contracts_contract_id_items_520_520_response"
-    description: "520 response"
+        description: "Error 520 message"
+        title: "get_corporations_corporation_id_contracts_contract_id_items_520_error_520"
+    description: "Error 520"
   get_corporations_corporation_id_customs_offices_200_ok:
     required:
     - "allow_access_with_standings"
@@ -33731,6 +33869,83 @@ definitions:
         description: "Not found message"
         title: "get_dogma_attributes_attribute_id_404_not_found"
     description: "Not found"
+  get_dogma_dynamic_items_type_id_item_id_dogma_attribute:
+    required:
+    - "attribute_id"
+    - "value"
+    properties:
+      attribute_id:
+        type: "integer"
+        format: "int32"
+        description: "attribute_id integer"
+        title: "get_dogma_dynamic_items_type_id_item_id_attribute_id"
+      value:
+        type: "number"
+        format: "float"
+        description: "value number"
+        title: "get_dogma_dynamic_items_type_id_item_id_value"
+    description: "dogma_attribute object"
+  get_dogma_dynamic_items_type_id_item_id_dogma_effect:
+    required:
+    - "effect_id"
+    - "is_default"
+    properties:
+      effect_id:
+        type: "integer"
+        format: "int32"
+        description: "effect_id integer"
+        title: "get_dogma_dynamic_items_type_id_item_id_effect_id"
+      is_default:
+        type: "boolean"
+        description: "is_default boolean"
+        title: "get_dogma_dynamic_items_type_id_item_id_is_default"
+    description: "dogma_effect object"
+  get_dogma_dynamic_items_type_id_item_id_ok:
+    required:
+    - "created_by"
+    - "dogma_attributes"
+    - "dogma_effects"
+    - "mutator_type_id"
+    - "source_type_id"
+    properties:
+      created_by:
+        type: "integer"
+        format: "int32"
+        description: "The ID of the character who created the item"
+        title: "get_dogma_dynamic_items_type_id_item_id_created_by"
+      dogma_attributes:
+        type: "array"
+        description: "dogma_attributes array"
+        title: "get_dogma_dynamic_items_type_id_item_id_dogma_attributes"
+        items:
+          $ref: "#/definitions/get_dogma_dynamic_items_type_id_item_id_dogma_attribute"
+        maxItems: 1000
+      dogma_effects:
+        type: "array"
+        description: "dogma_effects array"
+        title: "get_dogma_dynamic_items_type_id_item_id_dogma_effects"
+        items:
+          $ref: "#/definitions/get_dogma_dynamic_items_type_id_item_id_dogma_effect"
+        maxItems: 1000
+      mutator_type_id:
+        type: "integer"
+        format: "int32"
+        description: "The type ID of the mutator used to generate the dynamic item."
+        title: "get_dogma_dynamic_items_type_id_item_id_mutator_type_id"
+      source_type_id:
+        type: "integer"
+        format: "int32"
+        description: "The type ID of the source item the mutator was applied to create\
+          \ the dynamic item."
+        title: "get_dogma_dynamic_items_type_id_item_id_source_type_id"
+    description: "200 ok object"
+  get_dogma_dynamic_items_type_id_item_id_not_found:
+    properties:
+      error:
+        type: "string"
+        description: "Not found message"
+        title: "get_dogma_dynamic_items_type_id_item_id_404_not_found"
+    description: "Not found"
   get_fleets_fleet_id_ok:
     required:
     - "is_free_move"
@@ -35365,13 +35580,13 @@ definitions:
         description: "Unprocessable entity message"
         title: "get_markets_region_id_history_422_unprocessable_entity"
     description: "Unprocessable entity"
-  get_markets_region_id_history_520_response:
+  get_markets_region_id_history_error_520:
     properties:
       error:
         type: "string"
-        description: "520 response message"
-        title: "get_markets_region_id_history_520_520_response"
-    description: "520 response"
+        description: "Error 520 message"
+        title: "get_markets_region_id_history_520_error_520"
+    description: "Error 520"
   get_markets_region_id_orders_200_ok:
     required:
     - "duration"
@@ -40738,6 +40953,10 @@ definitions:
     - "quantity"
     - "type_id"
     properties:
+      is_blueprint_copy:
+        type: "boolean"
+        description: "is_blueprint_copy boolean"
+        title: "get_characters_character_id_assets_is_blueprint_copy"
       is_singleton:
         type: "boolean"
         description: "is_singleton boolean"
@@ -41446,6 +41665,10 @@ definitions:
     - "quantity"
     - "type_id"
     properties:
+      is_blueprint_copy:
+        type: "boolean"
+        description: "is_blueprint_copy boolean"
+        title: "get_corporations_corporation_id_assets_is_blueprint_copy"
       is_singleton:
         type: "boolean"
         description: "is_singleton boolean"

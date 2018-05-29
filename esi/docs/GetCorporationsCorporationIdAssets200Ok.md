@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**IsBlueprintCopy** | **bool** | is_blueprint_copy boolean | [optional] [default to null]
 **IsSingleton** | **bool** | is_singleton boolean | [default to null]
 **ItemId** | **int64** | item_id integer | [default to null]
 **LocationFlag** | **string** | location_flag string | [default to null]

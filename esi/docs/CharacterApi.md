@@ -586,7 +586,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **characters** | **[]int32**| The character IDs to fetch affiliations for. All characters must exist, or none will be returned. | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
 
 ### Return type
 

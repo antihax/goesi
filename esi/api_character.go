@@ -2616,14 +2616,12 @@ Bulk lookup of character IDs to corporation, alliance and faction  ---  This rou
  * @param characters The character IDs to fetch affiliations for. All characters must exist, or none will be returned.
  * @param optional nil or *PostCharactersAffiliationOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
-     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
 
 @return []PostCharactersAffiliation200Ok
 */
 
 type PostCharactersAffiliationOpts struct {
-	Datasource  optional.String
-	IfNoneMatch optional.String
+	Datasource optional.String
 }
 
 func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, characters []int32, localVarOptionals *PostCharactersAffiliationOpts) ([]PostCharactersAffiliation200Ok, *http.Response, error) {
@@ -2661,9 +2659,6 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
-		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 	// body params
 	localVarPostBody = &characters

@@ -47,5 +47,5 @@ type GetCorporationsCorporationIdOrdersHistory200Ok struct {
 	TypeId         int32     `json:"type_id,omitempty"`         /* The type ID of the item transacted in this order */
 	VolumeRemain   int32     `json:"volume_remain,omitempty"`   /* Quantity of items still required or offered */
 	VolumeTotal    int32     `json:"volume_total,omitempty"`    /* Quantity of items required or offered at time order was placed */
-	WalletDivision int32     `json:"wallet_division,omitempty"` /* The corporation wallet division used for this order. */
+	WalletDivision int32     `json:"wallet_division,omitempty"` /* The corporation wallet division used for this order */
 }

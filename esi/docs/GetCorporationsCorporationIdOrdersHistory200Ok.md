@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **TypeId** | **int32** | The type ID of the item transacted in this order | [default to null]
 **VolumeRemain** | **int32** | Quantity of items still required or offered | [default to null]
 **VolumeTotal** | **int32** | Quantity of items required or offered at time order was placed | [default to null]
-**WalletDivision** | **int32** | The corporation wallet division used for this order. | [default to null]
+**WalletDivision** | **int32** | The corporation wallet division used for this order | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

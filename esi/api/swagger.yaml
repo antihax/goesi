@@ -33745,7 +33745,7 @@ definitions:
       journal_ref_id:
         type: "integer"
         format: "int64"
-        description: "journal_ref_id integer"
+        description: "-1 if there is no corresponding wallet journal entry"
         title: "get_corporations_corporation_id_wallets_division_transactions_journal_ref_id"
       location_id:
         type: "integer"

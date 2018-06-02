@@ -36,7 +36,7 @@ type GetCorporationsCorporationIdWalletsDivisionTransactions200Ok struct {
 	ClientId      int32     `json:"client_id,omitempty"`      /* client_id integer */
 	Date          time.Time `json:"date,omitempty"`           /* Date and time of transaction */
 	IsBuy         bool      `json:"is_buy,omitempty"`         /* is_buy boolean */
-	JournalRefId  int64     `json:"journal_ref_id,omitempty"` /* journal_ref_id integer */
+	JournalRefId  int64     `json:"journal_ref_id,omitempty"` /* -1 if there is no corresponding wallet journal entry */
 	LocationId    int64     `json:"location_id,omitempty"`    /* location_id integer */
 	Quantity      int32     `json:"quantity,omitempty"`       /* quantity integer */
 	TransactionId int64     `json:"transaction_id,omitempty"` /* Unique transaction ID */

@@ -5,14 +5,14 @@ All URIs are relative to *https://esi.evetech.net*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteCharactersCharacterIdContacts**](ContactsApi.md#DeleteCharactersCharacterIdContacts) | **Delete** /v2/characters/{character_id}/contacts/ | Delete contacts
-[**GetAlliancesAllianceIdContacts**](ContactsApi.md#GetAlliancesAllianceIdContacts) | **Get** /v1/alliances/{alliance_id}/contacts/ | Get alliance contacts
+[**GetAlliancesAllianceIdContacts**](ContactsApi.md#GetAlliancesAllianceIdContacts) | **Get** /v2/alliances/{alliance_id}/contacts/ | Get alliance contacts
 [**GetAlliancesAllianceIdContactsLabels**](ContactsApi.md#GetAlliancesAllianceIdContactsLabels) | **Get** /v1/alliances/{alliance_id}/contacts/labels/ | Get alliance contact labels
-[**GetCharactersCharacterIdContacts**](ContactsApi.md#GetCharactersCharacterIdContacts) | **Get** /v1/characters/{character_id}/contacts/ | Get contacts
+[**GetCharactersCharacterIdContacts**](ContactsApi.md#GetCharactersCharacterIdContacts) | **Get** /v2/characters/{character_id}/contacts/ | Get contacts
 [**GetCharactersCharacterIdContactsLabels**](ContactsApi.md#GetCharactersCharacterIdContactsLabels) | **Get** /v1/characters/{character_id}/contacts/labels/ | Get contact labels
-[**GetCorporationsCorporationIdContacts**](ContactsApi.md#GetCorporationsCorporationIdContacts) | **Get** /v1/corporations/{corporation_id}/contacts/ | Get corporation contacts
+[**GetCorporationsCorporationIdContacts**](ContactsApi.md#GetCorporationsCorporationIdContacts) | **Get** /v2/corporations/{corporation_id}/contacts/ | Get corporation contacts
 [**GetCorporationsCorporationIdContactsLabels**](ContactsApi.md#GetCorporationsCorporationIdContactsLabels) | **Get** /v1/corporations/{corporation_id}/contacts/labels/ | Get corporation contact labels
-[**PostCharactersCharacterIdContacts**](ContactsApi.md#PostCharactersCharacterIdContacts) | **Post** /v1/characters/{character_id}/contacts/ | Add contacts
-[**PutCharactersCharacterIdContacts**](ContactsApi.md#PutCharactersCharacterIdContacts) | **Put** /v1/characters/{character_id}/contacts/ | Edit contacts
+[**PostCharactersCharacterIdContacts**](ContactsApi.md#PostCharactersCharacterIdContacts) | **Post** /v2/characters/{character_id}/contacts/ | Add contacts
+[**PutCharactersCharacterIdContacts**](ContactsApi.md#PutCharactersCharacterIdContacts) | **Put** /v2/characters/{character_id}/contacts/ | Edit contacts
 
 
 # **DeleteCharactersCharacterIdContacts**
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 > []GetAlliancesAllianceIdContacts200Ok GetAlliancesAllianceIdContacts(ctx, allianceId, optional)
 Get alliance contacts
 
-Return contacts of an alliance  ---  This route is cached for up to 300 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/contacts/)
+Return contacts of an alliance  ---  This route is cached for up to 300 seconds
 
 ### Required Parameters
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdContacts200Ok GetCharactersCharacterIdContacts(ctx, characterId, optional)
 Get contacts
 
-Return contacts of a character  ---  This route is cached for up to 300 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/contacts/)
+Return contacts of a character  ---  This route is cached for up to 300 seconds
 
 ### Required Parameters
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdContacts200Ok GetCorporationsCorporationIdContacts(ctx, corporationId, optional)
 Get corporation contacts
 
-Return contacts of a corporation  ---  This route is cached for up to 300 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/contacts/)
+Return contacts of a corporation  ---  This route is cached for up to 300 seconds
 
 ### Required Parameters
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 > []int32 PostCharactersCharacterIdContacts(ctx, characterId, contactIds, standing, optional)
 Add contacts
 
-Bulk add contacts with same settings  ---  Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/contacts/)
+Bulk add contacts with same settings  --- 
 
 ### Required Parameters
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
  **contactIds** | **[]int32**| A list of contacts | 
  **standing** | **float32**| Standing for the contact | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **labelId** | **int64**| Add a custom label to the new contact | [default to 0]
+ **labelIds** | [**[]int64**](int64.md)| Add custom labels to the new contact | 
  **token** | **string**| Access token to use if unable to set a header | 
  **watched** | **bool**| Whether the contact should be watched, note this is only effective on characters | [default to false]
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 > PutCharactersCharacterIdContacts(ctx, characterId, contactIds, standing, optional)
 Edit contacts
 
-Bulk edit contacts with same settings  ---  Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#PUT-/characters/{character_id}/contacts/)
+Bulk edit contacts with same settings  --- 
 
 ### Required Parameters
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
  **contactIds** | **[]int32**| A list of contacts | 
  **standing** | **float32**| Standing for the contact | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **labelId** | **int64**| Add a custom label to the contact, use 0 for clearing label | [default to 0]
+ **labelIds** | [**[]int64**](int64.md)| Add custom labels to the contact | 
  **token** | **string**| Access token to use if unable to set a header | 
  **watched** | **bool**| Whether the contact should be watched, note this is only effective on characters | [default to false]
 

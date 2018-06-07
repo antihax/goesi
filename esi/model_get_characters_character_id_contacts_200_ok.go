@@ -33,6 +33,6 @@ type GetCharactersCharacterIdContacts200Ok struct {
 	ContactType string  `json:"contact_type,omitempty"` /* contact_type string */
 	IsBlocked   bool    `json:"is_blocked,omitempty"`   /* Whether this contact is in the blocked list. Note a missing value denotes unknown, not true or false */
 	IsWatched   bool    `json:"is_watched,omitempty"`   /* Whether this contact is being watched */
-	LabelId     int64   `json:"label_id,omitempty"`     /* Custom label of the contact */
+	LabelIds    []int64 `json:"label_ids,omitempty"`    /* label_ids array */
 	Standing    float32 `json:"standing,omitempty"`     /* Standing of the contact */
 }

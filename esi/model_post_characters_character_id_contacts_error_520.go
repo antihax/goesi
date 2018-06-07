@@ -22,15 +22,12 @@
 
 package esi
 
-/* A list of GetAlliancesAllianceIdContacts200Ok. */
+/* A list of PostCharactersCharacterIdContactsError520. */
 //easyjson:json
-type GetAlliancesAllianceIdContacts200OkList []GetAlliancesAllianceIdContacts200Ok
+type PostCharactersCharacterIdContactsError520List []PostCharactersCharacterIdContactsError520
 
-/* 200 ok object */
+/* Error 520 */
 //easyjson:json
-type GetAlliancesAllianceIdContacts200Ok struct {
-	ContactId   int32   `json:"contact_id,omitempty"`   /* contact_id integer */
-	ContactType string  `json:"contact_type,omitempty"` /* contact_type string */
-	LabelIds    []int64 `json:"label_ids,omitempty"`    /* label_ids array */
-	Standing    float32 `json:"standing,omitempty"`     /* Standing of the contact */
+type PostCharactersCharacterIdContactsError520 struct {
+	Error_ string `json:"error,omitempty"` /* Error 520 message */
 }

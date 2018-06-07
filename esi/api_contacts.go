@@ -215,7 +215,7 @@ func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Con
 
 /*
 ContactsApiService Get alliance contacts
-Return contacts of an alliance  ---  This route is cached for up to 300 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/contacts/)
+Return contacts of an alliance  ---  This route is cached for up to 300 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param allianceId An EVE alliance ID
  * @param optional nil or *GetAlliancesAllianceIdContactsOpts - Optional Parameters:
@@ -244,7 +244,7 @@ func (a *ContactsApiService) GetAlliancesAllianceIdContacts(ctx context.Context,
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/alliances/{alliance_id}/contacts/"
+	localVarPath := a.client.basePath + "/v2/alliances/{alliance_id}/contacts/"
 	localVarPath = strings.Replace(localVarPath, "{"+"alliance_id"+"}", fmt.Sprintf("%v", allianceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -598,7 +598,7 @@ func (a *ContactsApiService) GetAlliancesAllianceIdContactsLabels(ctx context.Co
 
 /*
 ContactsApiService Get contacts
-Return contacts of a character  ---  This route is cached for up to 300 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/contacts/)
+Return contacts of a character  ---  This route is cached for up to 300 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdContactsOpts - Optional Parameters:
@@ -627,7 +627,7 @@ func (a *ContactsApiService) GetCharactersCharacterIdContacts(ctx context.Contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/characters/{character_id}/contacts/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/contacts/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -981,7 +981,7 @@ func (a *ContactsApiService) GetCharactersCharacterIdContactsLabels(ctx context.
 
 /*
 ContactsApiService Get corporation contacts
-Return contacts of a corporation  ---  This route is cached for up to 300 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/contacts/)
+Return contacts of a corporation  ---  This route is cached for up to 300 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdContactsOpts - Optional Parameters:
@@ -1010,7 +1010,7 @@ func (a *ContactsApiService) GetCorporationsCorporationIdContacts(ctx context.Co
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/contacts/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/contacts/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1364,14 +1364,14 @@ func (a *ContactsApiService) GetCorporationsCorporationIdContactsLabels(ctx cont
 
 /*
 ContactsApiService Add contacts
-Bulk add contacts with same settings  ---  Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/contacts/)
+Bulk add contacts with same settings  ---
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param contactIds A list of contacts
  * @param standing Standing for the contact
  * @param optional nil or *PostCharactersCharacterIdContactsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
-     * @param "LabelId" (optional.Int64) -  Add a custom label to the new contact
+     * @param "LabelIds" (optional.Interface of []int64) -  Add custom labels to the new contact
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "Watched" (optional.Bool) -  Whether the contact should be watched, note this is only effective on characters
 
@@ -1380,7 +1380,7 @@ Bulk add contacts with same settings  ---  Warning: This route has an upgrade av
 
 type PostCharactersCharacterIdContactsOpts struct {
 	Datasource optional.String
-	LabelId    optional.Int64
+	LabelIds   optional.Interface
 	Token      optional.String
 	Watched    optional.Bool
 }
@@ -1395,7 +1395,7 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/characters/{character_id}/contacts/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/contacts/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1414,8 +1414,8 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.LabelId.IsSet() {
-		localVarQueryParams.Add("label_id", parameterToString(localVarOptionals.LabelId.Value(), ""))
+	if localVarOptionals != nil && localVarOptionals.LabelIds.IsSet() {
+		localVarQueryParams.Add("label_ids", parameterToString(localVarOptionals.LabelIds.Value(), "csv"))
 	}
 	localVarQueryParams.Add("standing", parameterToString(standing, ""))
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
@@ -1561,6 +1561,17 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 
+		if localVarHttpResponse.StatusCode == 520 {
+			var v PostCharactersCharacterIdContactsError520
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
@@ -1569,14 +1580,14 @@ func (a *ContactsApiService) PostCharactersCharacterIdContacts(ctx context.Conte
 
 /*
 ContactsApiService Edit contacts
-Bulk edit contacts with same settings  ---  Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#PUT-/characters/{character_id}/contacts/)
+Bulk edit contacts with same settings  ---
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param contactIds A list of contacts
  * @param standing Standing for the contact
  * @param optional nil or *PutCharactersCharacterIdContactsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
-     * @param "LabelId" (optional.Int64) -  Add a custom label to the contact, use 0 for clearing label
+     * @param "LabelIds" (optional.Interface of []int64) -  Add custom labels to the contact
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
      * @param "Watched" (optional.Bool) -  Whether the contact should be watched, note this is only effective on characters
 
@@ -1585,7 +1596,7 @@ Bulk edit contacts with same settings  ---  Warning: This route has an upgrade a
 
 type PutCharactersCharacterIdContactsOpts struct {
 	Datasource optional.String
-	LabelId    optional.Int64
+	LabelIds   optional.Interface
 	Token      optional.String
 	Watched    optional.Bool
 }
@@ -1599,7 +1610,7 @@ func (a *ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/characters/{character_id}/contacts/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/contacts/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1618,8 +1629,8 @@ func (a *ContactsApiService) PutCharactersCharacterIdContacts(ctx context.Contex
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.LabelId.IsSet() {
-		localVarQueryParams.Add("label_id", parameterToString(localVarOptionals.LabelId.Value(), ""))
+	if localVarOptionals != nil && localVarOptionals.LabelIds.IsSet() {
+		localVarQueryParams.Add("label_ids", parameterToString(localVarOptionals.LabelIds.Value(), "csv"))
 	}
 	localVarQueryParams.Add("standing", parameterToString(standing, ""))
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {

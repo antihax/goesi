@@ -111,8 +111,29 @@ func easyjsonCb381401DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.IsBlocked = bool(in.Bool())
 		case "is_watched":
 			out.IsWatched = bool(in.Bool())
-		case "label_id":
-			out.LabelId = int64(in.Int64())
+		case "label_ids":
+			if in.IsNull() {
+				in.Skip()
+				out.LabelIds = nil
+			} else {
+				in.Delim('[')
+				if out.LabelIds == nil {
+					if !in.IsDelim(']') {
+						out.LabelIds = make([]int64, 0, 8)
+					} else {
+						out.LabelIds = []int64{}
+					}
+				} else {
+					out.LabelIds = (out.LabelIds)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v4 int64
+					v4 = int64(in.Int64())
+					out.LabelIds = append(out.LabelIds, v4)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
 		case "standing":
 			out.Standing = float32(in.Float32())
 		default:
@@ -169,15 +190,24 @@ func easyjsonCb381401EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		}
 		out.Bool(bool(in.IsWatched))
 	}
-	if in.LabelId != 0 {
-		const prefix string = ",\"label_id\":"
+	if len(in.LabelIds) != 0 {
+		const prefix string = ",\"label_ids\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int64(int64(in.LabelId))
+		{
+			out.RawByte('[')
+			for v5, v6 := range in.LabelIds {
+				if v5 > 0 {
+					out.RawByte(',')
+				}
+				out.Int64(int64(v6))
+			}
+			out.RawByte(']')
+		}
 	}
 	if in.Standing != 0 {
 		const prefix string = ",\"standing\":"

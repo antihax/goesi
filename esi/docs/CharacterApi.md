@@ -17,7 +17,6 @@ Method | HTTP request | Description
 [**GetCharactersCharacterIdStandings**](CharacterApi.md#GetCharactersCharacterIdStandings) | **Get** /v1/characters/{character_id}/standings/ | Get standings
 [**GetCharactersCharacterIdStats**](CharacterApi.md#GetCharactersCharacterIdStats) | **Get** /v2/characters/{character_id}/stats/ | Yearly aggregate stats
 [**GetCharactersCharacterIdTitles**](CharacterApi.md#GetCharactersCharacterIdTitles) | **Get** /v1/characters/{character_id}/titles/ | Get character corporation titles
-[**GetCharactersNames**](CharacterApi.md#GetCharactersNames) | **Get** /v1/characters/names/ | Get character names
 [**PostCharactersAffiliation**](CharacterApi.md#PostCharactersAffiliation) | **Post** /v1/characters/affiliation/ | Character affiliation
 [**PostCharactersCharacterIdCspa**](CharacterApi.md#PostCharactersCharacterIdCspa) | **Post** /v4/characters/{character_id}/cspa/ | Calculate a CSPA charge cost
 
@@ -519,44 +518,6 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [evesso](../README.md#evesso)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetCharactersNames**
-> []GetCharactersNames200Ok GetCharactersNames(ctx, characterIds, optional)
-Get character names
-
-Resolve a set of character IDs to character names  ---  This route is cached for up to 3600 seconds
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
-  **characterIds** | [**[]int64**](int64.md)| A comma separated list of character IDs | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **characterIds** | [**[]int64**](int64.md)| A comma separated list of character IDs | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
-
-### Return type
-
-[**[]GetCharactersNames200Ok**](get_characters_names_200_ok.md)
-
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 

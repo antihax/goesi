@@ -53,7 +53,6 @@ Class | Method | HTTP request | Description
 *CharacterApi* | [**GetCharactersCharacterIdStandings**](docs/CharacterApi.md#getcharacterscharacteridstandings) | **Get** /v1/characters/{character_id}/standings/ | Get standings
 *CharacterApi* | [**GetCharactersCharacterIdStats**](docs/CharacterApi.md#getcharacterscharacteridstats) | **Get** /v2/characters/{character_id}/stats/ | Yearly aggregate stats
 *CharacterApi* | [**GetCharactersCharacterIdTitles**](docs/CharacterApi.md#getcharacterscharacteridtitles) | **Get** /v1/characters/{character_id}/titles/ | Get character corporation titles
-*CharacterApi* | [**GetCharactersNames**](docs/CharacterApi.md#getcharactersnames) | **Get** /v1/characters/names/ | Get character names
 *CharacterApi* | [**PostCharactersAffiliation**](docs/CharacterApi.md#postcharactersaffiliation) | **Post** /v1/characters/affiliation/ | Character affiliation
 *CharacterApi* | [**PostCharactersCharacterIdCspa**](docs/CharacterApi.md#postcharacterscharacteridcspa) | **Post** /v4/characters/{character_id}/cspa/ | Calculate a CSPA charge cost
 *ClonesApi* | [**GetCharactersCharacterIdClones**](docs/ClonesApi.md#getcharacterscharacteridclones) | **Get** /v3/characters/{character_id}/clones/ | Get clones
@@ -96,7 +95,6 @@ Class | Method | HTTP request | Description
 *CorporationApi* | [**GetCorporationsCorporationIdStarbasesStarbaseId**](docs/CorporationApi.md#getcorporationscorporationidstarbasesstarbaseid) | **Get** /v1/corporations/{corporation_id}/starbases/{starbase_id}/ | Get starbase (POS) detail
 *CorporationApi* | [**GetCorporationsCorporationIdStructures**](docs/CorporationApi.md#getcorporationscorporationidstructures) | **Get** /v2/corporations/{corporation_id}/structures/ | Get corporation structures
 *CorporationApi* | [**GetCorporationsCorporationIdTitles**](docs/CorporationApi.md#getcorporationscorporationidtitles) | **Get** /v1/corporations/{corporation_id}/titles/ | Get corporation titles
-*CorporationApi* | [**GetCorporationsNames**](docs/CorporationApi.md#getcorporationsnames) | **Get** /v2/corporations/names/ | Get corporation names
 *CorporationApi* | [**GetCorporationsNpccorps**](docs/CorporationApi.md#getcorporationsnpccorps) | **Get** /v1/corporations/npccorps/ | Get npc corporations
 *DogmaApi* | [**GetDogmaAttributes**](docs/DogmaApi.md#getdogmaattributes) | **Get** /v1/dogma/attributes/ | Get attributes
 *DogmaApi* | [**GetDogmaAttributesAttributeId**](docs/DogmaApi.md#getdogmaattributesattributeid) | **Get** /v1/dogma/attributes/{attribute_id}/ | Get attribute information
@@ -338,7 +336,6 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdTitles200Ok](docs/GetCharactersCharacterIdTitles200Ok.md)
  - [GetCharactersCharacterIdWalletJournal200Ok](docs/GetCharactersCharacterIdWalletJournal200Ok.md)
  - [GetCharactersCharacterIdWalletTransactions200Ok](docs/GetCharactersCharacterIdWalletTransactions200Ok.md)
- - [GetCharactersNames200Ok](docs/GetCharactersNames200Ok.md)
  - [GetCorporationCorporationIdMiningExtractions200Ok](docs/GetCorporationCorporationIdMiningExtractions200Ok.md)
  - [GetCorporationCorporationIdMiningObservers200Ok](docs/GetCorporationCorporationIdMiningObservers200Ok.md)
  - [GetCorporationCorporationIdMiningObserversObserverId200Ok](docs/GetCorporationCorporationIdMiningObserversObserverId200Ok.md)
@@ -394,7 +391,6 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdWallets200Ok](docs/GetCorporationsCorporationIdWallets200Ok.md)
  - [GetCorporationsCorporationIdWalletsDivisionJournal200Ok](docs/GetCorporationsCorporationIdWalletsDivisionJournal200Ok.md)
  - [GetCorporationsCorporationIdWalletsDivisionTransactions200Ok](docs/GetCorporationsCorporationIdWalletsDivisionTransactions200Ok.md)
- - [GetCorporationsNames200Ok](docs/GetCorporationsNames200Ok.md)
  - [GetDogmaAttributesAttributeIdNotFound](docs/GetDogmaAttributesAttributeIdNotFound.md)
  - [GetDogmaAttributesAttributeIdOk](docs/GetDogmaAttributesAttributeIdOk.md)
  - [GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute](docs/GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute.md)

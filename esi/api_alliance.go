@@ -708,7 +708,7 @@ func (a *AllianceApiService) GetAlliancesAllianceIdIcons(ctx context.Context, al
 
 /*
 AllianceApiService Get alliance names
-Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds
+Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds  --- Warning: This route will be deleted on June 21st, 2018
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param allianceIds A comma separated list of alliance IDs
  * @param optional nil or *GetAlliancesNamesOpts - Optional Parameters:

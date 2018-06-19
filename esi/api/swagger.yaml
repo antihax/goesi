@@ -21553,7 +21553,8 @@ paths:
       - "Alliance"
       summary: "Get alliance names"
       description: "Resolve a set of alliance IDs to alliance names\n\n---\n\nThis\
-        \ route is cached for up to 3600 seconds"
+        \ route is cached for up to 3600 seconds\n\n---\nWarning: This route will\
+        \ be deleted on June 21st, 2018"
       operationId: "get_alliances_names"
       parameters:
       - name: "alliance_ids"
@@ -21663,6 +21664,7 @@ paths:
           examples:
             application/json:
               error: "Gateway timeout message"
+      deprecated: true
       x-alternate-versions:
       - "dev"
       - "v2"

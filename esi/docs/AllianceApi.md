@@ -165,7 +165,7 @@ No authorization required
 > []GetAlliancesNames200Ok GetAlliancesNames(ctx, allianceIds, optional)
 Get alliance names
 
-Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds
+Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds  --- Warning: This route will be deleted on June 21st, 2018
 
 ### Required Parameters
 

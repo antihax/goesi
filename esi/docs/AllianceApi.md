@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**GetAlliancesAllianceId**](AllianceApi.md#GetAlliancesAllianceId) | **Get** /v3/alliances/{alliance_id}/ | Get alliance information
 [**GetAlliancesAllianceIdCorporations**](AllianceApi.md#GetAlliancesAllianceIdCorporations) | **Get** /v1/alliances/{alliance_id}/corporations/ | List alliance&#39;s corporations
 [**GetAlliancesAllianceIdIcons**](AllianceApi.md#GetAlliancesAllianceIdIcons) | **Get** /v1/alliances/{alliance_id}/icons/ | Get alliance icon
-[**GetAlliancesNames**](AllianceApi.md#GetAlliancesNames) | **Get** /v2/alliances/names/ | Get alliance names
 
 
 # **GetAlliances**
@@ -149,44 +148,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetAlliancesAllianceIdIconsOk**](get_alliances_alliance_id_icons_ok.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetAlliancesNames**
-> []GetAlliancesNames200Ok GetAlliancesNames(ctx, allianceIds, optional)
-Get alliance names
-
-Resolve a set of alliance IDs to alliance names  ---  This route is cached for up to 3600 seconds  --- Warning: This route will be deleted on June 21st, 2018
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
-  **allianceIds** | [**[]int32**](int32.md)| A comma separated list of alliance IDs | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **allianceIds** | [**[]int32**](int32.md)| A comma separated list of alliance IDs | 
- **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
-
-### Return type
-
-[**[]GetAlliancesNames200Ok**](get_alliances_names_200_ok.md)
 
 ### Authorization
 

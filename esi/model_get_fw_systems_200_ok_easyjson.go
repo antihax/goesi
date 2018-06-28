@@ -27,7 +27,7 @@ func easyjsonB042087bDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetFw
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetFwSystems200OkList, 0, 2)
+				*out = make(GetFwSystems200OkList, 0, 1)
 			} else {
 				*out = GetFwSystems200OkList{}
 			}
@@ -104,7 +104,7 @@ func easyjsonB042087bDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 		}
 		switch key {
 		case "contested":
-			out.Contested = bool(in.Bool())
+			out.Contested = string(in.String())
 		case "occupier_faction_id":
 			out.OccupierFactionId = int32(in.Int32())
 		case "owner_faction_id":
@@ -129,7 +129,7 @@ func easyjsonB042087bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Contested {
+	if in.Contested != "" {
 		const prefix string = ",\"contested\":"
 		if first {
 			first = false
@@ -137,7 +137,7 @@ func easyjsonB042087bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Bool(bool(in.Contested))
+		out.String(string(in.Contested))
 	}
 	if in.OccupierFactionId != 0 {
 		const prefix string = ",\"occupier_faction_id\":"

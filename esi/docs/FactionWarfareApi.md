@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**GetFwLeaderboardsCharacters**](FactionWarfareApi.md#GetFwLeaderboardsCharacters) | **Get** /v1/fw/leaderboards/characters/ | List of the top pilots in faction warfare
 [**GetFwLeaderboardsCorporations**](FactionWarfareApi.md#GetFwLeaderboardsCorporations) | **Get** /v1/fw/leaderboards/corporations/ | List of the top corporations in faction warfare
 [**GetFwStats**](FactionWarfareApi.md#GetFwStats) | **Get** /v1/fw/stats/ | An overview of statistics about factions involved in faction warfare
-[**GetFwSystems**](FactionWarfareApi.md#GetFwSystems) | **Get** /v1/fw/systems/ | Ownership of faction warfare systems
+[**GetFwSystems**](FactionWarfareApi.md#GetFwSystems) | **Get** /v2/fw/systems/ | Ownership of faction warfare systems
 [**GetFwWars**](FactionWarfareApi.md#GetFwWars) | **Get** /v1/fw/wars/ | Data about which NPC factions are at war
 
 
@@ -240,7 +240,7 @@ No authorization required
 > []GetFwSystems200Ok GetFwSystems(ctx, optional)
 Ownership of faction warfare systems
 
-An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 1800 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/fw/systems/)
+An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 1800 seconds
 
 ### Required Parameters
 

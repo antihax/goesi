@@ -1049,7 +1049,7 @@ func (a *FactionWarfareApiService) GetFwStats(ctx context.Context, localVarOptio
 
 /*
 FactionWarfareApiService Ownership of faction warfare systems
-An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 1800 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/fw/systems/)
+An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 1800 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetFwSystemsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
@@ -1073,7 +1073,7 @@ func (a *FactionWarfareApiService) GetFwSystems(ctx context.Context, localVarOpt
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/fw/systems/"
+	localVarPath := a.client.basePath + "/v2/fw/systems/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

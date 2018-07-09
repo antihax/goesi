@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCharactersCharacterIdOrders**](MarketApi.md#GetCharactersCharacterIdOrders) | **Get** /v2/characters/{character_id}/orders/ | List open orders from a character
 [**GetCharactersCharacterIdOrdersHistory**](MarketApi.md#GetCharactersCharacterIdOrdersHistory) | **Get** /v1/characters/{character_id}/orders/history/ | List historical orders by a character
-[**GetCorporationsCorporationIdOrders**](MarketApi.md#GetCorporationsCorporationIdOrders) | **Get** /v2/corporations/{corporation_id}/orders/ | List open orders from a corporation
-[**GetCorporationsCorporationIdOrdersHistory**](MarketApi.md#GetCorporationsCorporationIdOrdersHistory) | **Get** /v1/corporations/{corporation_id}/orders/history/ | List historical orders from a corporation
+[**GetCorporationsCorporationIdOrders**](MarketApi.md#GetCorporationsCorporationIdOrders) | **Get** /v3/corporations/{corporation_id}/orders/ | List open orders from a corporation
+[**GetCorporationsCorporationIdOrdersHistory**](MarketApi.md#GetCorporationsCorporationIdOrdersHistory) | **Get** /v2/corporations/{corporation_id}/orders/history/ | List historical orders from a corporation
 [**GetMarketsGroups**](MarketApi.md#GetMarketsGroups) | **Get** /v1/markets/groups/ | Get item groups
 [**GetMarketsGroupsMarketGroupId**](MarketApi.md#GetMarketsGroupsMarketGroupId) | **Get** /v1/markets/groups/{market_group_id}/ | Get item group information
 [**GetMarketsPrices**](MarketApi.md#GetMarketsPrices) | **Get** /v1/markets/prices/ | List market prices
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdOrders200Ok GetCorporationsCorporationIdOrders(ctx, corporationId, optional)
 List open orders from a corporation
 
-List open market orders placed on behalf of a corporation  ---  This route is cached for up to 1200 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/orders/)
+List open market orders placed on behalf of a corporation  ---  This route is cached for up to 1200 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader
 
 ### Required Parameters
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdOrdersHistory200Ok GetCorporationsCorporationIdOrdersHistory(ctx, corporationId, optional)
 List historical orders from a corporation
 
-List cancelled and expired market orders placed on behalf of a corporation up to 90 days in the past.  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/orders/history/)
+List cancelled and expired market orders placed on behalf of a corporation up to 90 days in the past.  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader
 
 ### Required Parameters
 

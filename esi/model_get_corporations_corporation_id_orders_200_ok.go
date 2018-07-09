@@ -37,6 +37,7 @@ type GetCorporationsCorporationIdOrders200Ok struct {
 	Escrow         float64   `json:"escrow,omitempty"`          /* For buy orders, the amount of ISK in escrow */
 	IsBuyOrder     bool      `json:"is_buy_order,omitempty"`    /* True if the order is a bid (buy) order */
 	Issued         time.Time `json:"issued,omitempty"`          /* Date and time when this order was issued */
+	IssuedBy       int32     `json:"issued_by,omitempty"`       /* The character who issued this order */
 	LocationId     int64     `json:"location_id,omitempty"`     /* ID of the location where order was placed */
 	MinVolume      int32     `json:"min_volume,omitempty"`      /* For buy orders, the minimum quantity that will be accepted in a matching sell order */
 	OrderId        int64     `json:"order_id,omitempty"`        /* Unique order ID */

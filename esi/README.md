@@ -84,8 +84,6 @@ Class | Method | HTTP request | Description
 *CorporationApi* | [**GetCorporationsCorporationIdMembersLimit**](docs/CorporationApi.md#getcorporationscorporationidmemberslimit) | **Get** /v1/corporations/{corporation_id}/members/limit/ | Get corporation member limit
 *CorporationApi* | [**GetCorporationsCorporationIdMembersTitles**](docs/CorporationApi.md#getcorporationscorporationidmemberstitles) | **Get** /v1/corporations/{corporation_id}/members/titles/ | Get corporation&#39;s members&#39; titles
 *CorporationApi* | [**GetCorporationsCorporationIdMembertracking**](docs/CorporationApi.md#getcorporationscorporationidmembertracking) | **Get** /v1/corporations/{corporation_id}/membertracking/ | Track corporation members
-*CorporationApi* | [**GetCorporationsCorporationIdOutposts**](docs/CorporationApi.md#getcorporationscorporationidoutposts) | **Get** /v1/corporations/{corporation_id}/outposts/ | Get corporation outposts
-*CorporationApi* | [**GetCorporationsCorporationIdOutpostsOutpostId**](docs/CorporationApi.md#getcorporationscorporationidoutpostsoutpostid) | **Get** /v1/corporations/{corporation_id}/outposts/{outpost_id}/ | Get corporation outpost details
 *CorporationApi* | [**GetCorporationsCorporationIdRoles**](docs/CorporationApi.md#getcorporationscorporationidroles) | **Get** /v1/corporations/{corporation_id}/roles/ | Get corporation member roles
 *CorporationApi* | [**GetCorporationsCorporationIdRolesHistory**](docs/CorporationApi.md#getcorporationscorporationidroleshistory) | **Get** /v1/corporations/{corporation_id}/roles/history/ | Get corporation member roles history
 *CorporationApi* | [**GetCorporationsCorporationIdShareholders**](docs/CorporationApi.md#getcorporationscorporationidshareholders) | **Get** /v1/corporations/{corporation_id}/shareholders/ | Get corporation shareholders
@@ -154,8 +152,8 @@ Class | Method | HTTP request | Description
 *MailApi* | [**PutCharactersCharacterIdMailMailId**](docs/MailApi.md#putcharacterscharacteridmailmailid) | **Put** /v1/characters/{character_id}/mail/{mail_id}/ | Update metadata about a mail
 *MarketApi* | [**GetCharactersCharacterIdOrders**](docs/MarketApi.md#getcharacterscharacteridorders) | **Get** /v2/characters/{character_id}/orders/ | List open orders from a character
 *MarketApi* | [**GetCharactersCharacterIdOrdersHistory**](docs/MarketApi.md#getcharacterscharacteridordershistory) | **Get** /v1/characters/{character_id}/orders/history/ | List historical orders by a character
-*MarketApi* | [**GetCorporationsCorporationIdOrders**](docs/MarketApi.md#getcorporationscorporationidorders) | **Get** /v2/corporations/{corporation_id}/orders/ | List open orders from a corporation
-*MarketApi* | [**GetCorporationsCorporationIdOrdersHistory**](docs/MarketApi.md#getcorporationscorporationidordershistory) | **Get** /v1/corporations/{corporation_id}/orders/history/ | List historical orders from a corporation
+*MarketApi* | [**GetCorporationsCorporationIdOrders**](docs/MarketApi.md#getcorporationscorporationidorders) | **Get** /v3/corporations/{corporation_id}/orders/ | List open orders from a corporation
+*MarketApi* | [**GetCorporationsCorporationIdOrdersHistory**](docs/MarketApi.md#getcorporationscorporationidordershistory) | **Get** /v2/corporations/{corporation_id}/orders/history/ | List historical orders from a corporation
 *MarketApi* | [**GetMarketsGroups**](docs/MarketApi.md#getmarketsgroups) | **Get** /v1/markets/groups/ | Get item groups
 *MarketApi* | [**GetMarketsGroupsMarketGroupId**](docs/MarketApi.md#getmarketsgroupsmarketgroupid) | **Get** /v1/markets/groups/{market_group_id}/ | Get item group information
 *MarketApi* | [**GetMarketsPrices**](docs/MarketApi.md#getmarketsprices) | **Get** /v1/markets/prices/ | List market prices
@@ -203,11 +201,11 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseStarsStarId**](docs/UniverseApi.md#getuniversestarsstarid) | **Get** /v1/universe/stars/{star_id}/ | Get star information
 *UniverseApi* | [**GetUniverseStationsStationId**](docs/UniverseApi.md#getuniversestationsstationid) | **Get** /v2/universe/stations/{station_id}/ | Get station information
 *UniverseApi* | [**GetUniverseStructures**](docs/UniverseApi.md#getuniversestructures) | **Get** /v1/universe/structures/ | List all public structures
-*UniverseApi* | [**GetUniverseStructuresStructureId**](docs/UniverseApi.md#getuniversestructuresstructureid) | **Get** /v1/universe/structures/{structure_id}/ | Get structure information
+*UniverseApi* | [**GetUniverseStructuresStructureId**](docs/UniverseApi.md#getuniversestructuresstructureid) | **Get** /v2/universe/structures/{structure_id}/ | Get structure information
 *UniverseApi* | [**GetUniverseSystemJumps**](docs/UniverseApi.md#getuniversesystemjumps) | **Get** /v1/universe/system_jumps/ | Get system jumps
 *UniverseApi* | [**GetUniverseSystemKills**](docs/UniverseApi.md#getuniversesystemkills) | **Get** /v2/universe/system_kills/ | Get system kills
 *UniverseApi* | [**GetUniverseSystems**](docs/UniverseApi.md#getuniversesystems) | **Get** /v1/universe/systems/ | Get solar systems
-*UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /v3/universe/systems/{system_id}/ | Get solar system information
+*UniverseApi* | [**GetUniverseSystemsSystemId**](docs/UniverseApi.md#getuniversesystemssystemid) | **Get** /v4/universe/systems/{system_id}/ | Get solar system information
 *UniverseApi* | [**GetUniverseTypes**](docs/UniverseApi.md#getuniversetypes) | **Get** /v1/universe/types/ | Get types
 *UniverseApi* | [**GetUniverseTypesTypeId**](docs/UniverseApi.md#getuniversetypestypeid) | **Get** /v3/universe/types/{type_id}/ | Get type information
 *UniverseApi* | [**PostUniverseIds**](docs/UniverseApi.md#postuniverseids) | **Post** /v1/universe/ids/ | Bulk names to IDs
@@ -373,9 +371,6 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdOk](docs/GetCorporationsCorporationIdOk.md)
  - [GetCorporationsCorporationIdOrders200Ok](docs/GetCorporationsCorporationIdOrders200Ok.md)
  - [GetCorporationsCorporationIdOrdersHistory200Ok](docs/GetCorporationsCorporationIdOrdersHistory200Ok.md)
- - [GetCorporationsCorporationIdOutpostsOutpostIdCoordinates](docs/GetCorporationsCorporationIdOutpostsOutpostIdCoordinates.md)
- - [GetCorporationsCorporationIdOutpostsOutpostIdOk](docs/GetCorporationsCorporationIdOutpostsOutpostIdOk.md)
- - [GetCorporationsCorporationIdOutpostsOutpostIdService](docs/GetCorporationsCorporationIdOutpostsOutpostIdService.md)
  - [GetCorporationsCorporationIdRoles200Ok](docs/GetCorporationsCorporationIdRoles200Ok.md)
  - [GetCorporationsCorporationIdRolesHistory200Ok](docs/GetCorporationsCorporationIdRolesHistory200Ok.md)
  - [GetCorporationsCorporationIdShareholders200Ok](docs/GetCorporationsCorporationIdShareholders200Ok.md)
@@ -623,7 +618,6 @@ Class | Method | HTTP request | Description
  - **esi-corporations.read_facilities.v1**: EVE SSO scope esi-corporations.read_facilities.v1
  - **esi-corporations.read_fw_stats.v1**: EVE SSO scope esi-corporations.read_fw_stats.v1
  - **esi-corporations.read_medals.v1**: EVE SSO scope esi-corporations.read_medals.v1
- - **esi-corporations.read_outposts.v1**: EVE SSO scope esi-corporations.read_outposts.v1
  - **esi-corporations.read_standings.v1**: EVE SSO scope esi-corporations.read_standings.v1
  - **esi-corporations.read_starbases.v1**: EVE SSO scope esi-corporations.read_starbases.v1
  - **esi-corporations.read_structures.v1**: EVE SSO scope esi-corporations.read_structures.v1

@@ -3557,7 +3557,7 @@ func (a *UniverseApiService) GetUniverseStructures(ctx context.Context, localVar
 
 /*
 UniverseApiService Get structure information
-Returns information on requested structure, if you are on the ACL. Otherwise, returns \&quot;Forbidden\&quot; for all inputs.  ---  This route is cached for up to 3600 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/structures/{structure_id}/)
+Returns information on requested structure if you are on the ACL. Otherwise, returns \&quot;Forbidden\&quot; for all inputs.  ---  This route is cached for up to 3600 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param structureId An Eve structure ID
  * @param optional nil or *GetUniverseStructuresStructureIdOpts - Optional Parameters:
@@ -3584,7 +3584,7 @@ func (a *UniverseApiService) GetUniverseStructuresStructureId(ctx context.Contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/universe/structures/{structure_id}/"
+	localVarPath := a.client.basePath + "/v2/universe/structures/{structure_id}/"
 	localVarPath = strings.Replace(localVarPath, "{"+"structure_id"+"}", fmt.Sprintf("%v", structureId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4225,7 +4225,7 @@ func (a *UniverseApiService) GetUniverseSystems(ctx context.Context, localVarOpt
 
 /*
 UniverseApiService Get solar system information
-Get information on a solar system. NOTE: This route does not work with abyssal systems.  ---  This route expires daily at 11:05  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/systems/{system_id}/)
+Get information on a solar system.  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param systemId system_id integer
  * @param optional nil or *GetUniverseSystemsSystemIdOpts - Optional Parameters:
@@ -4254,7 +4254,7 @@ func (a *UniverseApiService) GetUniverseSystemsSystemId(ctx context.Context, sys
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v3/universe/systems/{system_id}/"
+	localVarPath := a.client.basePath + "/v4/universe/systems/{system_id}/"
 	localVarPath = strings.Replace(localVarPath, "{"+"system_id"+"}", fmt.Sprintf("%v", systemId), -1)
 
 	localVarHeaderParams := make(map[string]string)

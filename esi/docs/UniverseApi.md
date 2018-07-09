@@ -25,11 +25,11 @@ Method | HTTP request | Description
 [**GetUniverseStarsStarId**](UniverseApi.md#GetUniverseStarsStarId) | **Get** /v1/universe/stars/{star_id}/ | Get star information
 [**GetUniverseStationsStationId**](UniverseApi.md#GetUniverseStationsStationId) | **Get** /v2/universe/stations/{station_id}/ | Get station information
 [**GetUniverseStructures**](UniverseApi.md#GetUniverseStructures) | **Get** /v1/universe/structures/ | List all public structures
-[**GetUniverseStructuresStructureId**](UniverseApi.md#GetUniverseStructuresStructureId) | **Get** /v1/universe/structures/{structure_id}/ | Get structure information
+[**GetUniverseStructuresStructureId**](UniverseApi.md#GetUniverseStructuresStructureId) | **Get** /v2/universe/structures/{structure_id}/ | Get structure information
 [**GetUniverseSystemJumps**](UniverseApi.md#GetUniverseSystemJumps) | **Get** /v1/universe/system_jumps/ | Get system jumps
 [**GetUniverseSystemKills**](UniverseApi.md#GetUniverseSystemKills) | **Get** /v2/universe/system_kills/ | Get system kills
 [**GetUniverseSystems**](UniverseApi.md#GetUniverseSystems) | **Get** /v1/universe/systems/ | Get solar systems
-[**GetUniverseSystemsSystemId**](UniverseApi.md#GetUniverseSystemsSystemId) | **Get** /v3/universe/systems/{system_id}/ | Get solar system information
+[**GetUniverseSystemsSystemId**](UniverseApi.md#GetUniverseSystemsSystemId) | **Get** /v4/universe/systems/{system_id}/ | Get solar system information
 [**GetUniverseTypes**](UniverseApi.md#GetUniverseTypes) | **Get** /v1/universe/types/ | Get types
 [**GetUniverseTypesTypeId**](UniverseApi.md#GetUniverseTypesTypeId) | **Get** /v3/universe/types/{type_id}/ | Get type information
 [**PostUniverseIds**](UniverseApi.md#PostUniverseIds) | **Post** /v1/universe/ids/ | Bulk names to IDs
@@ -835,7 +835,7 @@ No authorization required
 > GetUniverseStructuresStructureIdOk GetUniverseStructuresStructureId(ctx, structureId, optional)
 Get structure information
 
-Returns information on requested structure, if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  ---  This route is cached for up to 3600 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/structures/{structure_id}/)
+Returns information on requested structure if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -982,7 +982,7 @@ No authorization required
 > GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(ctx, systemId, optional)
 Get solar system information
 
-Get information on a solar system. NOTE: This route does not work with abyssal systems.  ---  This route expires daily at 11:05  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/systems/{system_id}/)
+Get information on a solar system.  ---  This route expires daily at 11:05
 
 ### Required Parameters
 

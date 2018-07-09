@@ -113,6 +113,8 @@ func easyjsonEafc027DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCo
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Issued).UnmarshalJSON(data))
 			}
+		case "issued_by":
+			out.IssuedBy = int32(in.Int32())
 		case "location_id":
 			out.LocationId = int64(in.Int64())
 		case "min_volume":
@@ -186,6 +188,16 @@ func easyjsonEafc027EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 			out.RawString(prefix)
 		}
 		out.Raw((in.Issued).MarshalJSON())
+	}
+	if in.IssuedBy != 0 {
+		const prefix string = ",\"issued_by\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.IssuedBy))
 	}
 	if in.LocationId != 0 {
 		const prefix string = ",\"location_id\":"

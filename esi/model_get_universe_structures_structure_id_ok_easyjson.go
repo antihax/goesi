@@ -105,6 +105,8 @@ func easyjsonCccd358cDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 		switch key {
 		case "name":
 			out.Name = string(in.String())
+		case "owner_id":
+			out.OwnerId = int32(in.Int32())
 		case "position":
 			(out.Position).UnmarshalEasyJSON(in)
 		case "solar_system_id":
@@ -134,6 +136,16 @@ func easyjsonCccd358cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Name))
+	}
+	if in.OwnerId != 0 {
+		const prefix string = ",\"owner_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.OwnerId))
 	}
 	if true {
 		const prefix string = ",\"position\":"

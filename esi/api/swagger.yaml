@@ -2,7 +2,7 @@
 swagger: "2.0"
 info:
   description: "An OpenAPI for EVE Online"
-  version: "0.8.4"
+  version: "0.8.5"
   title: "EVE Swagger Interface"
 host: "esi.evetech.net"
 schemes:

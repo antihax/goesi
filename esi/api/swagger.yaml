@@ -28461,7 +28461,7 @@ paths:
 securityDefinitions:
   evesso:
     type: "oauth2"
-    authorizationUrl: "https://login.eveonline.com/oauth/authorize"
+    authorizationUrl: "https://login.eveonline.com/v2/oauth/authorize"
     flow: "implicit"
     scopes:
       esi-alliances.read_contacts.v1: "EVE SSO scope esi-alliances.read_contacts.v1"

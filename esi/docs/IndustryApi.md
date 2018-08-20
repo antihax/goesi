@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **includeCompleted** | **bool**| Whether retrieve completed character industry jobs as well | 
+ **includeCompleted** | **bool**| Whether to retrieve completed character industry jobs. Only includes jobs from the past 90 days. | 
  **token** | **string**| Access token to use if unable to set a header | 
 
 ### Return type
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
  **corporationId** | **int32**| An EVE corporation ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **includeCompleted** | **bool**| Whether retrieve completed industry jobs as well | [default to false]
+ **includeCompleted** | **bool**| Whether to retrieve completed corporation industry jobs. Only includes jobs from the past 90 days. | [default to false]
  **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
 

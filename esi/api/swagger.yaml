@@ -3054,7 +3054,8 @@ paths:
         x-optionalDataType: "String"
       - name: "include_completed"
         in: "query"
-        description: "Whether retrieve completed character industry jobs as well"
+        description: "Whether to retrieve completed character industry jobs. Only\
+          \ includes jobs from the past 90 days."
         required: false
         type: "boolean"
         x-exportParamName: "IncludeCompleted"
@@ -8680,7 +8681,8 @@ paths:
         x-optionalDataType: "String"
       - name: "include_completed"
         in: "query"
-        description: "Whether retrieve completed industry jobs as well"
+        description: "Whether to retrieve completed corporation industry jobs. Only\
+          \ includes jobs from the past 90 days."
         required: false
         type: "boolean"
         default: false

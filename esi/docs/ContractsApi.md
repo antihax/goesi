@@ -7,6 +7,9 @@ Method | HTTP request | Description
 [**GetCharactersCharacterIdContracts**](ContractsApi.md#GetCharactersCharacterIdContracts) | **Get** /v1/characters/{character_id}/contracts/ | Get contracts
 [**GetCharactersCharacterIdContractsContractIdBids**](ContractsApi.md#GetCharactersCharacterIdContractsContractIdBids) | **Get** /v1/characters/{character_id}/contracts/{contract_id}/bids/ | Get contract bids
 [**GetCharactersCharacterIdContractsContractIdItems**](ContractsApi.md#GetCharactersCharacterIdContractsContractIdItems) | **Get** /v1/characters/{character_id}/contracts/{contract_id}/items/ | Get contract items
+[**GetContractsPublicBidsContractId**](ContractsApi.md#GetContractsPublicBidsContractId) | **Get** /v1/contracts/public/bids/{contract_id}/ | Get public contract bids
+[**GetContractsPublicItemsContractId**](ContractsApi.md#GetContractsPublicItemsContractId) | **Get** /v1/contracts/public/items/{contract_id}/ | Get public contract items
+[**GetContractsPublicRegionId**](ContractsApi.md#GetContractsPublicRegionId) | **Get** /v1/contracts/public/{region_id}/ | Get public contracts
 [**GetCorporationsCorporationIdContracts**](ContractsApi.md#GetCorporationsCorporationIdContracts) | **Get** /v1/corporations/{corporation_id}/contracts/ | Get corporation contracts
 [**GetCorporationsCorporationIdContractsContractIdBids**](ContractsApi.md#GetCorporationsCorporationIdContractsContractIdBids) | **Get** /v1/corporations/{corporation_id}/contracts/{contract_id}/bids/ | Get corporation contract bids
 [**GetCorporationsCorporationIdContractsContractIdItems**](ContractsApi.md#GetCorporationsCorporationIdContractsContractIdItems) | **Get** /v1/corporations/{corporation_id}/contracts/{contract_id}/items/ | Get corporation contract items
@@ -126,6 +129,123 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetContractsPublicBidsContractId**
+> []GetContractsPublicBidsContractId200Ok GetContractsPublicBidsContractId(ctx, contractId, optional)
+Get public contract bids
+
+Lists bids on a public auction contract  ---  This route is cached for up to 300 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+  **contractId** | **int32**| ID of a contract | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contractId** | **int32**| ID of a contract | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
+ **page** | **int32**| Which page of results to return | [default to 1]
+
+### Return type
+
+[**[]GetContractsPublicBidsContractId200Ok**](get_contracts_public_bids_contract_id_200_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetContractsPublicItemsContractId**
+> []GetContractsPublicItemsContractId200Ok GetContractsPublicItemsContractId(ctx, contractId, optional)
+Get public contract items
+
+Lists items of a public contract  ---  This route is cached for up to 3600 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+  **contractId** | **int32**| ID of a contract | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contractId** | **int32**| ID of a contract | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
+ **page** | **int32**| Which page of results to return | [default to 1]
+
+### Return type
+
+[**[]GetContractsPublicItemsContractId200Ok**](get_contracts_public_items_contract_id_200_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetContractsPublicRegionId**
+> []GetContractsPublicRegionId200Ok GetContractsPublicRegionId(ctx, regionId, optional)
+Get public contracts
+
+Returns a paginated list of all public contracts in the given region  ---  This route is cached for up to 1800 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+  **regionId** | **int32**| An EVE region id | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **regionId** | **int32**| An EVE region id | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
+ **page** | **int32**| Which page of results to return | [default to 1]
+
+### Return type
+
+[**[]GetContractsPublicRegionId200Ok**](get_contracts_public_region_id_200_ok.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

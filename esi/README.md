@@ -68,6 +68,9 @@ Class | Method | HTTP request | Description
 *ContractsApi* | [**GetCharactersCharacterIdContracts**](docs/ContractsApi.md#getcharacterscharacteridcontracts) | **Get** /v1/characters/{character_id}/contracts/ | Get contracts
 *ContractsApi* | [**GetCharactersCharacterIdContractsContractIdBids**](docs/ContractsApi.md#getcharacterscharacteridcontractscontractidbids) | **Get** /v1/characters/{character_id}/contracts/{contract_id}/bids/ | Get contract bids
 *ContractsApi* | [**GetCharactersCharacterIdContractsContractIdItems**](docs/ContractsApi.md#getcharacterscharacteridcontractscontractiditems) | **Get** /v1/characters/{character_id}/contracts/{contract_id}/items/ | Get contract items
+*ContractsApi* | [**GetContractsPublicBidsContractId**](docs/ContractsApi.md#getcontractspublicbidscontractid) | **Get** /v1/contracts/public/bids/{contract_id}/ | Get public contract bids
+*ContractsApi* | [**GetContractsPublicItemsContractId**](docs/ContractsApi.md#getcontractspublicitemscontractid) | **Get** /v1/contracts/public/items/{contract_id}/ | Get public contract items
+*ContractsApi* | [**GetContractsPublicRegionId**](docs/ContractsApi.md#getcontractspublicregionid) | **Get** /v1/contracts/public/{region_id}/ | Get public contracts
 *ContractsApi* | [**GetCorporationsCorporationIdContracts**](docs/ContractsApi.md#getcorporationscorporationidcontracts) | **Get** /v1/corporations/{corporation_id}/contracts/ | Get corporation contracts
 *ContractsApi* | [**GetCorporationsCorporationIdContractsContractIdBids**](docs/ContractsApi.md#getcorporationscorporationidcontractscontractidbids) | **Get** /v1/corporations/{corporation_id}/contracts/{contract_id}/bids/ | Get corporation contract bids
 *ContractsApi* | [**GetCorporationsCorporationIdContractsContractIdItems**](docs/ContractsApi.md#getcorporationscorporationidcontractscontractiditems) | **Get** /v1/corporations/{corporation_id}/contracts/{contract_id}/items/ | Get corporation contract items
@@ -332,6 +335,14 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdTitles200Ok](docs/GetCharactersCharacterIdTitles200Ok.md)
  - [GetCharactersCharacterIdWalletJournal200Ok](docs/GetCharactersCharacterIdWalletJournal200Ok.md)
  - [GetCharactersCharacterIdWalletTransactions200Ok](docs/GetCharactersCharacterIdWalletTransactions200Ok.md)
+ - [GetContractsPublicBidsContractId200Ok](docs/GetContractsPublicBidsContractId200Ok.md)
+ - [GetContractsPublicBidsContractIdForbidden](docs/GetContractsPublicBidsContractIdForbidden.md)
+ - [GetContractsPublicBidsContractIdNotFound](docs/GetContractsPublicBidsContractIdNotFound.md)
+ - [GetContractsPublicItemsContractId200Ok](docs/GetContractsPublicItemsContractId200Ok.md)
+ - [GetContractsPublicItemsContractIdForbidden](docs/GetContractsPublicItemsContractIdForbidden.md)
+ - [GetContractsPublicItemsContractIdNotFound](docs/GetContractsPublicItemsContractIdNotFound.md)
+ - [GetContractsPublicRegionId200Ok](docs/GetContractsPublicRegionId200Ok.md)
+ - [GetContractsPublicRegionIdNotFound](docs/GetContractsPublicRegionIdNotFound.md)
  - [GetCorporationCorporationIdMiningExtractions200Ok](docs/GetCorporationCorporationIdMiningExtractions200Ok.md)
  - [GetCorporationCorporationIdMiningObservers200Ok](docs/GetCorporationCorporationIdMiningObservers200Ok.md)
  - [GetCorporationCorporationIdMiningObserversObserverId200Ok](docs/GetCorporationCorporationIdMiningObserversObserverId200Ok.md)

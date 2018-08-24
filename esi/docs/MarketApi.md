@@ -339,7 +339,7 @@ Return a list of orders in a region  ---  This route is cached for up to 300 sec
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
-  **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. | [default to all]
+  **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders | [default to all]
   **regionId** | **int32**| Return orders in this region | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
@@ -348,7 +348,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. | [default to all]
+ **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders | [default to all]
  **regionId** | **int32**| Return orders in this region | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 

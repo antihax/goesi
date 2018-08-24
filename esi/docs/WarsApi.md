@@ -29,7 +29,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **maxWarId** | **int32**| Only return wars with ID smaller than this. | 
+ **maxWarId** | **int32**| Only return wars with ID smaller than this | 
 
 ### Return type
 

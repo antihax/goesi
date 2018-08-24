@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 > GetFwLeaderboardsOk GetFwLeaderboards(ctx, optional)
 List of the top factions in faction warfare
 
-Top 4 leaderboard of factions for kills and victory points separated by total, last week and yesterday.  ---  This route expires daily at 11:05
+Top 4 leaderboard of factions for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -132,7 +132,7 @@ No authorization required
 > GetFwLeaderboardsCharactersOk GetFwLeaderboardsCharacters(ctx, optional)
 List of the top pilots in faction warfare
 
-Top 100 leaderboard of pilots for kills and victory points separated by total, last week and yesterday.  ---  This route expires daily at 11:05
+Top 100 leaderboard of pilots for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -168,7 +168,7 @@ No authorization required
 > GetFwLeaderboardsCorporationsOk GetFwLeaderboardsCorporations(ctx, optional)
 List of the top corporations in faction warfare
 
-Top 10 leaderboard of corporations for kills and victory points separated by total, last week and yesterday.  ---  This route expires daily at 11:05
+Top 10 leaderboard of corporations for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05
 
 ### Required Parameters
 

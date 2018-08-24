@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**PostCharactersCharacterIdAssetsLocations**](AssetsApi.md#PostCharactersCharacterIdAssetsLocations) | **Post** /v2/characters/{character_id}/assets/locations/ | Get character asset locations
 [**PostCharactersCharacterIdAssetsNames**](AssetsApi.md#PostCharactersCharacterIdAssetsNames) | **Post** /v1/characters/{character_id}/assets/names/ | Get character asset names
 [**PostCorporationsCorporationIdAssetsLocations**](AssetsApi.md#PostCorporationsCorporationIdAssetsLocations) | **Post** /v2/corporations/{corporation_id}/assets/locations/ | Get corporation asset locations
-[**PostCorporationsCorporationIdAssetsNames**](AssetsApi.md#PostCorporationsCorporationIdAssetsNames) | **Post** /v1/corporations/{corporation_id}/assets/names/ | Get coporation asset names
+[**PostCorporationsCorporationIdAssetsNames**](AssetsApi.md#PostCorporationsCorporationIdAssetsNames) | **Post** /v1/corporations/{corporation_id}/assets/names/ | Get corporation asset names
 
 
 # **GetCharactersCharacterIdAssets**
@@ -214,9 +214,9 @@ Name | Type | Description  | Notes
 
 # **PostCorporationsCorporationIdAssetsNames**
 > []PostCorporationsCorporationIdAssetsNames200Ok PostCorporationsCorporationIdAssetsNames(ctx, corporationId, itemIds, optional)
-Get coporation asset names
+Get corporation asset names
 
-Return names for a set of item ids, which you can get from corporation assets endpoint. Only valid for items that can customize names, like containers or ships.  ---  Requires one of the following EVE corporation role(s): Director
+Return names for a set of item ids, which you can get from corporation assets endpoint. Only valid for items that can customize names, like containers or ships  ---  Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 

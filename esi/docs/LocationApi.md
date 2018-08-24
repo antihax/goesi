@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > GetCharactersCharacterIdLocationOk GetCharactersCharacterIdLocation(ctx, characterId, optional)
 Get character location
 
-Information about the characters current location. Returns the current solar system id, and also the current station or structure ID if applicable.  ---  This route is cached for up to 5 seconds
+Information about the characters current location. Returns the current solar system id, and also the current station or structure ID if applicable  ---  This route is cached for up to 5 seconds
 
 ### Required Parameters
 

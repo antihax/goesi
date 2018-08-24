@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdNotifications200Ok GetCharactersCharacterIdNotifications(ctx, characterId, optional)
 Get character notifications
 
-Return character notifications  ---  This route is cached for up to 600 seconds  --- Warning: This route has an upgrade available.  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/notifications/)
+Return character notifications  ---  This route is cached for up to 600 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/notifications/)
 
 ### Required Parameters
 
@@ -537,7 +537,7 @@ Bulk lookup of character IDs to corporation, alliance and faction  ---  This rou
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
-  **characters** | **[]int32**| The character IDs to fetch affiliations for. All characters must exist, or none will be returned. | 
+  **characters** | **[]int32**| The character IDs to fetch affiliations for. All characters must exist, or none will be returned | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -545,7 +545,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characters** | **[]int32**| The character IDs to fetch affiliations for. All characters must exist, or none will be returned. | 
+ **characters** | **[]int32**| The character IDs to fetch affiliations for. All characters must exist, or none will be returned | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
 
 ### Return type

@@ -431,7 +431,7 @@ func (a *IndustryApiService) GetCharactersCharacterIdMining(ctx context.Context,
 
 /*
 IndustryApiService Moon extraction timers
-Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.  ---  This route is cached for up to 1800 seconds  --- Requires one of the following EVE corporation role(s): Structure_manager
+Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.  ---  This route is cached for up to 1800 seconds  --- Requires one of the following EVE corporation role(s): Station_Manager
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationCorporationIdMiningExtractionsOpts - Optional Parameters:
@@ -1015,7 +1015,7 @@ func (a *IndustryApiService) GetCorporationCorporationIdMiningObserversObserverI
 
 /*
 IndustryApiService List corporation industry jobs
-List industry jobs run by a corporation  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): FactoryManager
+List industry jobs run by a corporation  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Factory_Manager
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdIndustryJobsOpts - Optional Parameters:

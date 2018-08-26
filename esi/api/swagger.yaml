@@ -6666,7 +6666,7 @@ paths:
       summary: "Moon extraction timers"
       description: "Extraction timers for all moon chunks being extracted by refineries\
         \ belonging to a corporation.\n\n---\n\nThis route is cached for up to 1800\
-        \ seconds\n\n---\nRequires one of the following EVE corporation role(s): Structure_manager"
+        \ seconds\n\n---\nRequires one of the following EVE corporation role(s): Station_Manager"
       operationId: "get_corporation_corporation_id_mining_extractions"
       parameters:
       - name: "corporation_id"
@@ -6821,7 +6821,7 @@ paths:
       - "v1"
       x-cached-seconds: 1800
       x-required-roles:
-      - "Structure_manager"
+      - "Station_Manager"
   /v1/corporation/{corporation_id}/mining/observers/:
     get:
       tags:
@@ -9127,7 +9127,7 @@ paths:
       summary: "List corporation industry jobs"
       description: "List industry jobs run by a corporation\n\n---\n\nThis route is\
         \ cached for up to 300 seconds\n\n---\nRequires one of the following EVE corporation\
-        \ role(s): FactoryManager"
+        \ role(s): Factory_Manager"
       operationId: "get_corporations_corporation_id_industry_jobs"
       parameters:
       - name: "corporation_id"
@@ -9302,7 +9302,7 @@ paths:
       - "v1"
       x-cached-seconds: 300
       x-required-roles:
-      - "FactoryManager"
+      - "Factory_Manager"
   /v1/corporations/{corporation_id}/killmails/recent/:
     get:
       tags:
@@ -24646,7 +24646,7 @@ paths:
       description: "Get a list of corporation structures. This route's version includes\
         \ the changes to structures detailed in this blog: https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th\n\
         \n---\n\nThis route is cached for up to 3600 seconds\n\n---\nRequires one\
-        \ of the following EVE corporation role(s): StationManager"
+        \ of the following EVE corporation role(s): Station_Manager"
       operationId: "get_corporations_corporation_id_structures"
       parameters:
       - name: "Accept-Language"
@@ -24843,7 +24843,7 @@ paths:
       - "v2"
       x-cached-seconds: 3600
       x-required-roles:
-      - "StationManager"
+      - "Station_Manager"
   /v2/dogma/effects/{effect_id}/:
     get:
       tags:

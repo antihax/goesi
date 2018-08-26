@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 > []GetCorporationCorporationIdMiningExtractions200Ok GetCorporationCorporationIdMiningExtractions(ctx, corporationId, optional)
 Moon extraction timers
 
-Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.  ---  This route is cached for up to 1800 seconds  --- Requires one of the following EVE corporation role(s): Structure_manager
+Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.  ---  This route is cached for up to 1800 seconds  --- Requires one of the following EVE corporation role(s): Station_Manager
 
 ### Required Parameters
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdIndustryJobs200Ok GetCorporationsCorporationIdIndustryJobs(ctx, corporationId, optional)
 List corporation industry jobs
 
-List industry jobs run by a corporation  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): FactoryManager
+List industry jobs run by a corporation  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Factory_Manager
 
 ### Required Parameters
 

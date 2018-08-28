@@ -27,7 +27,7 @@ func easyjson1a6ccbc6DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCo
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetContractsPublicBidsContractId200OkList, 0, 1)
+				*out = make(GetContractsPublicBidsContractId200OkList, 0, 2)
 			} else {
 				*out = GetContractsPublicBidsContractId200OkList{}
 			}
@@ -107,8 +107,6 @@ func easyjson1a6ccbc6DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.Amount = float32(in.Float32())
 		case "bid_id":
 			out.BidId = int32(in.Int32())
-		case "bidder_id":
-			out.BidderId = int32(in.Int32())
 		case "date_bid":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.DateBid).UnmarshalJSON(data))
@@ -146,16 +144,6 @@ func easyjson1a6ccbc6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.BidId))
-	}
-	if in.BidderId != 0 {
-		const prefix string = ",\"bidder_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.BidderId))
 	}
 	if true {
 		const prefix string = ",\"date_bid\":"

@@ -6240,7 +6240,6 @@ paths:
             application/json:
             - amount: 1.23
               bid_id: 1
-              bidder_id: 123
               date_bid: "2017-01-01T10:10:10Z"
           headers:
             Cache-Control:
@@ -30726,7 +30725,6 @@ definitions:
     required:
     - "amount"
     - "bid_id"
-    - "bidder_id"
     - "date_bid"
     properties:
       amount:
@@ -30739,11 +30737,6 @@ definitions:
         format: "int32"
         description: "Unique ID for the bid"
         title: "get_contracts_public_bids_contract_id_bid_id"
-      bidder_id:
-        type: "integer"
-        format: "int32"
-        description: "Character ID of the bidder"
-        title: "get_contracts_public_bids_contract_id_bidder_id"
       date_bid:
         type: "string"
         format: "date-time"

@@ -122,7 +122,7 @@ func easyjson5a3b9194DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetD
 				}
 				for !in.IsDelim(']') {
 					var v4 GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute
-					easyjson5a3b9194DecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.DogmaAttributes = append(out.DogmaAttributes, v4)
 					in.WantComma()
 				}
@@ -193,7 +193,7 @@ func easyjson5a3b9194EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v6 > 0 {
 					out.RawByte(',')
 				}
-				easyjson5a3b9194EncodeGithubComAntihaxGoesiEsi2(out, v7)
+				(v7).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -262,63 +262,4 @@ func (v *GetDogmaDynamicItemsTypeIdItemIdOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetDogmaDynamicItemsTypeIdItemIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson5a3b9194DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson5a3b9194DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "attribute_id":
-			out.AttributeId = int32(in.Int32())
-		case "value":
-			out.Value = float32(in.Float32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson5a3b9194EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.AttributeId != 0 {
-		const prefix string = ",\"attribute_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.AttributeId))
-	}
-	if in.Value != 0 {
-		const prefix string = ",\"value\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Value))
-	}
-	out.RawByte('}')
 }

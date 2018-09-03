@@ -122,7 +122,7 @@ func easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetW
 				}
 				for !in.IsDelim(']') {
 					var v4 GetWarsWarIdAlly
-					(v4).UnmarshalEasyJSON(in)
+					easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi3(in, &v4)
 					out.Allies = append(out.Allies, v4)
 					in.WantComma()
 				}
@@ -133,7 +133,7 @@ func easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetW
 				in.AddError((out.Declared).UnmarshalJSON(data))
 			}
 		case "defender":
-			(out.Defender).UnmarshalEasyJSON(in)
+			easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi4(in, &out.Defender)
 		case "finished":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Finished).UnmarshalJSON(data))
@@ -190,7 +190,7 @@ func easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi3(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -213,7 +213,7 @@ func easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Defender).MarshalEasyJSON(out)
+		easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi4(out, in.Defender)
 	}
 	if true {
 		const prefix string = ",\"finished\":"
@@ -300,6 +300,148 @@ func (v *GetWarsWarIdOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetWarsWarIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetWarsWarIdDefender) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		case "isk_destroyed":
+			out.IskDestroyed = float32(in.Float32())
+		case "ships_killed":
+			out.ShipsKilled = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetWarsWarIdDefender) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AllianceId != 0 {
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.CorporationId != 0 {
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CorporationId))
+	}
+	if in.IskDestroyed != 0 {
+		const prefix string = ",\"isk_destroyed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.IskDestroyed))
+	}
+	if in.ShipsKilled != 0 {
+		const prefix string = ",\"ships_killed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ShipsKilled))
+	}
+	out.RawByte('}')
+}
+func easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetWarsWarIdAlly) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetWarsWarIdAlly) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AllianceId != 0 {
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.CorporationId != 0 {
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CorporationId))
+	}
+	out.RawByte('}')
 }
 func easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetWarsWarIdAggressor) {
 	isTopLevel := in.IsStart()

@@ -143,7 +143,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v5 PostUniverseIdsAlliance
-					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi2(in, &v5)
+					(v5).UnmarshalEasyJSON(in)
 					out.Alliances = append(out.Alliances, v5)
 					in.WantComma()
 				}
@@ -166,7 +166,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v6 PostUniverseIdsCharacter
-					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi3(in, &v6)
+					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi2(in, &v6)
 					out.Characters = append(out.Characters, v6)
 					in.WantComma()
 				}
@@ -189,7 +189,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v7 PostUniverseIdsConstellation
-					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi4(in, &v7)
+					(v7).UnmarshalEasyJSON(in)
 					out.Constellations = append(out.Constellations, v7)
 					in.WantComma()
 				}
@@ -212,7 +212,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v8 PostUniverseIdsCorporation
-					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi5(in, &v8)
+					(v8).UnmarshalEasyJSON(in)
 					out.Corporations = append(out.Corporations, v8)
 					in.WantComma()
 				}
@@ -258,7 +258,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v10 PostUniverseIdsInventoryType
-					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi6(in, &v10)
+					(v10).UnmarshalEasyJSON(in)
 					out.InventoryTypes = append(out.InventoryTypes, v10)
 					in.WantComma()
 				}
@@ -380,7 +380,7 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v16 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi2(out, v17)
+				(v17).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -399,7 +399,7 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v18 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi3(out, v19)
+				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi2(out, v19)
 			}
 			out.RawByte(']')
 		}
@@ -418,7 +418,7 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v20 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi4(out, v21)
+				(v21).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -437,7 +437,7 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v22 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi5(out, v23)
+				(v23).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -475,7 +475,7 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v26 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi6(out, v27)
+				(v27).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -563,7 +563,7 @@ func (v *PostUniverseIdsOk) UnmarshalJSON(data []byte) error {
 func (v *PostUniverseIdsOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi6(in *jlexer.Lexer, out *PostUniverseIdsInventoryType) {
+func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *PostUniverseIdsCharacter) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -596,243 +596,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi6(in *jlexer.Lexer, out *Post
 		in.Consumed()
 	}
 }
-func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi6(out *jwriter.Writer, in PostUniverseIdsInventoryType) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Id != 0 {
-		const prefix string = ",\"id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Id))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
-	out.RawByte('}')
-}
-func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *PostUniverseIdsCorporation) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "id":
-			out.Id = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in PostUniverseIdsCorporation) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Id != 0 {
-		const prefix string = ",\"id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Id))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
-	out.RawByte('}')
-}
-func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *PostUniverseIdsConstellation) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "id":
-			out.Id = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in PostUniverseIdsConstellation) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Id != 0 {
-		const prefix string = ",\"id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Id))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
-	out.RawByte('}')
-}
-func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *PostUniverseIdsCharacter) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "id":
-			out.Id = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in PostUniverseIdsCharacter) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Id != 0 {
-		const prefix string = ",\"id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Id))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
-	out.RawByte('}')
-}
-func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *PostUniverseIdsAlliance) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "id":
-			out.Id = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in PostUniverseIdsAlliance) {
+func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in PostUniverseIdsCharacter) {
 	out.RawByte('{')
 	first := true
 	_ = first

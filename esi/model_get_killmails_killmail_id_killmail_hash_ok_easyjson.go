@@ -120,7 +120,7 @@ func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 				}
 				for !in.IsDelim(']') {
 					var v4 GetKillmailsKillmailIdKillmailHashAttacker
-					(v4).UnmarshalEasyJSON(in)
+					easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Attackers = append(out.Attackers, v4)
 					in.WantComma()
 				}
@@ -137,7 +137,7 @@ func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 		case "solar_system_id":
 			out.SolarSystemId = int32(in.Int32())
 		case "victim":
-			(out.Victim).UnmarshalEasyJSON(in)
+			easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi3(in, &out.Victim)
 		case "war_id":
 			out.WarId = int32(in.Int32())
 		default:
@@ -168,7 +168,7 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -221,7 +221,7 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Victim).MarshalEasyJSON(out)
+		easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi3(out, in.Victim)
 	}
 	if in.WarId != 0 {
 		const prefix string = ",\"war_id\":"
@@ -258,4 +258,445 @@ func (v *GetKillmailsKillmailIdKillmailHashOk) UnmarshalJSON(data []byte) error 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetKillmailsKillmailIdKillmailHashOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashVictim) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "character_id":
+			out.CharacterId = int32(in.Int32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		case "damage_taken":
+			out.DamageTaken = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
+		case "items":
+			if in.IsNull() {
+				in.Skip()
+				out.Items = nil
+			} else {
+				in.Delim('[')
+				if out.Items == nil {
+					if !in.IsDelim(']') {
+						out.Items = make([]GetKillmailsKillmailIdKillmailHashItem, 0, 1)
+					} else {
+						out.Items = []GetKillmailsKillmailIdKillmailHashItem{}
+					}
+				} else {
+					out.Items = (out.Items)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v7 GetKillmailsKillmailIdKillmailHashItem
+					easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi4(in, &v7)
+					out.Items = append(out.Items, v7)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "position":
+			(out.Position).UnmarshalEasyJSON(in)
+		case "ship_type_id":
+			out.ShipTypeId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashVictim) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AllianceId != 0 {
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.CharacterId != 0 {
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CharacterId))
+	}
+	if in.CorporationId != 0 {
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CorporationId))
+	}
+	if in.DamageTaken != 0 {
+		const prefix string = ",\"damage_taken\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.DamageTaken))
+	}
+	if in.FactionId != 0 {
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.FactionId))
+	}
+	if len(in.Items) != 0 {
+		const prefix string = ",\"items\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v8, v9 := range in.Items {
+				if v8 > 0 {
+					out.RawByte(',')
+				}
+				easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi4(out, v9)
+			}
+			out.RawByte(']')
+		}
+	}
+	if true {
+		const prefix string = ",\"position\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		(in.Position).MarshalEasyJSON(out)
+	}
+	if in.ShipTypeId != 0 {
+		const prefix string = ",\"ship_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ShipTypeId))
+	}
+	out.RawByte('}')
+}
+func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashItem) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "flag":
+			out.Flag = int32(in.Int32())
+		case "item_type_id":
+			out.ItemTypeId = int32(in.Int32())
+		case "items":
+			if in.IsNull() {
+				in.Skip()
+				out.Items = nil
+			} else {
+				in.Delim('[')
+				if out.Items == nil {
+					if !in.IsDelim(']') {
+						out.Items = make([]GetKillmailsKillmailIdKillmailHashItemsItem, 0, 2)
+					} else {
+						out.Items = []GetKillmailsKillmailIdKillmailHashItemsItem{}
+					}
+				} else {
+					out.Items = (out.Items)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v10 GetKillmailsKillmailIdKillmailHashItemsItem
+					(v10).UnmarshalEasyJSON(in)
+					out.Items = append(out.Items, v10)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "quantity_destroyed":
+			out.QuantityDestroyed = int64(in.Int64())
+		case "quantity_dropped":
+			out.QuantityDropped = int64(in.Int64())
+		case "singleton":
+			out.Singleton = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashItem) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Flag != 0 {
+		const prefix string = ",\"flag\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Flag))
+	}
+	if in.ItemTypeId != 0 {
+		const prefix string = ",\"item_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ItemTypeId))
+	}
+	if len(in.Items) != 0 {
+		const prefix string = ",\"items\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v11, v12 := range in.Items {
+				if v11 > 0 {
+					out.RawByte(',')
+				}
+				(v12).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
+	}
+	if in.QuantityDestroyed != 0 {
+		const prefix string = ",\"quantity_destroyed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.QuantityDestroyed))
+	}
+	if in.QuantityDropped != 0 {
+		const prefix string = ",\"quantity_dropped\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.QuantityDropped))
+	}
+	if in.Singleton != 0 {
+		const prefix string = ",\"singleton\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Singleton))
+	}
+	out.RawByte('}')
+}
+func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashAttacker) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "character_id":
+			out.CharacterId = int32(in.Int32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		case "damage_done":
+			out.DamageDone = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
+		case "final_blow":
+			out.FinalBlow = bool(in.Bool())
+		case "security_status":
+			out.SecurityStatus = float32(in.Float32())
+		case "ship_type_id":
+			out.ShipTypeId = int32(in.Int32())
+		case "weapon_type_id":
+			out.WeaponTypeId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashAttacker) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AllianceId != 0 {
+		const prefix string = ",\"alliance_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.CharacterId != 0 {
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CharacterId))
+	}
+	if in.CorporationId != 0 {
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CorporationId))
+	}
+	if in.DamageDone != 0 {
+		const prefix string = ",\"damage_done\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.DamageDone))
+	}
+	if in.FactionId != 0 {
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.FactionId))
+	}
+	if in.FinalBlow {
+		const prefix string = ",\"final_blow\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.FinalBlow))
+	}
+	if in.SecurityStatus != 0 {
+		const prefix string = ",\"security_status\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.SecurityStatus))
+	}
+	if in.ShipTypeId != 0 {
+		const prefix string = ",\"ship_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ShipTypeId))
+	}
+	if in.WeaponTypeId != 0 {
+		const prefix string = ",\"weapon_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.WeaponTypeId))
+	}
+	out.RawByte('}')
 }

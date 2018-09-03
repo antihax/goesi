@@ -104,27 +104,27 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		}
 		switch key {
 		case "character":
-			(out.Character).UnmarshalEasyJSON(in)
+			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi2(in, &out.Character)
 		case "combat":
-			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi2(in, &out.Combat)
+			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi3(in, &out.Combat)
 		case "industry":
 			(out.Industry).UnmarshalEasyJSON(in)
 		case "inventory":
-			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi3(in, &out.Inventory)
+			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi4(in, &out.Inventory)
 		case "isk":
-			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi4(in, &out.Isk)
+			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi5(in, &out.Isk)
 		case "market":
-			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi5(in, &out.Market)
+			(out.Market).UnmarshalEasyJSON(in)
 		case "mining":
 			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi6(in, &out.Mining)
 		case "module":
-			(out.Module).UnmarshalEasyJSON(in)
+			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi7(in, &out.Module)
 		case "orbital":
-			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi7(in, &out.Orbital)
+			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi8(in, &out.Orbital)
 		case "pve":
-			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi8(in, &out.Pve)
+			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi9(in, &out.Pve)
 		case "social":
-			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi9(in, &out.Social)
+			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi10(in, &out.Social)
 		case "travel":
 			(out.Travel).UnmarshalEasyJSON(in)
 		case "year":
@@ -151,7 +151,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Character).MarshalEasyJSON(out)
+		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi2(out, in.Character)
 	}
 	if true {
 		const prefix string = ",\"combat\":"
@@ -161,7 +161,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi2(out, in.Combat)
+		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi3(out, in.Combat)
 	}
 	if true {
 		const prefix string = ",\"industry\":"
@@ -181,7 +181,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi3(out, in.Inventory)
+		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi4(out, in.Inventory)
 	}
 	if true {
 		const prefix string = ",\"isk\":"
@@ -191,7 +191,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi4(out, in.Isk)
+		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi5(out, in.Isk)
 	}
 	if true {
 		const prefix string = ",\"market\":"
@@ -201,7 +201,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi5(out, in.Market)
+		(in.Market).MarshalEasyJSON(out)
 	}
 	if true {
 		const prefix string = ",\"mining\":"
@@ -221,7 +221,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Module).MarshalEasyJSON(out)
+		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi7(out, in.Module)
 	}
 	if true {
 		const prefix string = ",\"orbital\":"
@@ -231,7 +231,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi7(out, in.Orbital)
+		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi8(out, in.Orbital)
 	}
 	if true {
 		const prefix string = ",\"pve\":"
@@ -241,7 +241,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi8(out, in.Pve)
+		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi9(out, in.Pve)
 	}
 	if true {
 		const prefix string = ",\"social\":"
@@ -251,7 +251,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi9(out, in.Social)
+		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi10(out, in.Social)
 	}
 	if true {
 		const prefix string = ",\"travel\":"
@@ -299,7 +299,7 @@ func (v *GetCharactersCharacterIdStats200Ok) UnmarshalJSON(data []byte) error {
 func (v *GetCharactersCharacterIdStats200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson19558e8dDecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi9(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsSocial) {
+func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi10(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsSocial) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -378,7 +378,7 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi9(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi9(out *jwriter.Writer, in GetCharactersCharacterIdStatsSocial) {
+func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi10(out *jwriter.Writer, in GetCharactersCharacterIdStatsSocial) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -634,7 +634,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi9(out *jwriter.Writer, in Get
 	}
 	out.RawByte('}')
 }
-func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi8(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsPve) {
+func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi9(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsPve) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -671,7 +671,7 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi8(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi8(out *jwriter.Writer, in GetCharactersCharacterIdStatsPve) {
+func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi9(out *jwriter.Writer, in GetCharactersCharacterIdStatsPve) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -717,7 +717,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi8(out *jwriter.Writer, in Get
 	}
 	out.RawByte('}')
 }
-func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi7(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsOrbital) {
+func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi8(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsOrbital) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -752,7 +752,7 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi7(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi7(out *jwriter.Writer, in GetCharactersCharacterIdStatsOrbital) {
+func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi8(out *jwriter.Writer, in GetCharactersCharacterIdStatsOrbital) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -785,6 +785,869 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi7(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.StrikeDamageToPlayersShieldAmount))
+	}
+	out.RawByte('}')
+}
+func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi7(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsModule) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "activations_armor_hardener":
+			out.ActivationsArmorHardener = int64(in.Int64())
+		case "activations_armor_repair_unit":
+			out.ActivationsArmorRepairUnit = int64(in.Int64())
+		case "activations_armor_resistance_shift_hardener":
+			out.ActivationsArmorResistanceShiftHardener = int64(in.Int64())
+		case "activations_automated_targeting_system":
+			out.ActivationsAutomatedTargetingSystem = int64(in.Int64())
+		case "activations_bastion":
+			out.ActivationsBastion = int64(in.Int64())
+		case "activations_bomb_launcher":
+			out.ActivationsBombLauncher = int64(in.Int64())
+		case "activations_capacitor_booster":
+			out.ActivationsCapacitorBooster = int64(in.Int64())
+		case "activations_cargo_scanner":
+			out.ActivationsCargoScanner = int64(in.Int64())
+		case "activations_cloaking_device":
+			out.ActivationsCloakingDevice = int64(in.Int64())
+		case "activations_clone_vat_bay":
+			out.ActivationsCloneVatBay = int64(in.Int64())
+		case "activations_cynosural_field":
+			out.ActivationsCynosuralField = int64(in.Int64())
+		case "activations_damage_control":
+			out.ActivationsDamageControl = int64(in.Int64())
+		case "activations_data_miners":
+			out.ActivationsDataMiners = int64(in.Int64())
+		case "activations_drone_control_unit":
+			out.ActivationsDroneControlUnit = int64(in.Int64())
+		case "activations_drone_tracking_modules":
+			out.ActivationsDroneTrackingModules = int64(in.Int64())
+		case "activations_eccm":
+			out.ActivationsEccm = int64(in.Int64())
+		case "activations_ecm":
+			out.ActivationsEcm = int64(in.Int64())
+		case "activations_ecm_burst":
+			out.ActivationsEcmBurst = int64(in.Int64())
+		case "activations_energy_destabilizer":
+			out.ActivationsEnergyDestabilizer = int64(in.Int64())
+		case "activations_energy_vampire":
+			out.ActivationsEnergyVampire = int64(in.Int64())
+		case "activations_energy_weapon":
+			out.ActivationsEnergyWeapon = int64(in.Int64())
+		case "activations_festival_launcher":
+			out.ActivationsFestivalLauncher = int64(in.Int64())
+		case "activations_frequency_mining_laser":
+			out.ActivationsFrequencyMiningLaser = int64(in.Int64())
+		case "activations_fueled_armor_repairer":
+			out.ActivationsFueledArmorRepairer = int64(in.Int64())
+		case "activations_fueled_shield_booster":
+			out.ActivationsFueledShieldBooster = int64(in.Int64())
+		case "activations_gang_coordinator":
+			out.ActivationsGangCoordinator = int64(in.Int64())
+		case "activations_gas_cloud_harvester":
+			out.ActivationsGasCloudHarvester = int64(in.Int64())
+		case "activations_hull_repair_unit":
+			out.ActivationsHullRepairUnit = int64(in.Int64())
+		case "activations_hybrid_weapon":
+			out.ActivationsHybridWeapon = int64(in.Int64())
+		case "activations_industrial_core":
+			out.ActivationsIndustrialCore = int64(in.Int64())
+		case "activations_interdiction_sphere_launcher":
+			out.ActivationsInterdictionSphereLauncher = int64(in.Int64())
+		case "activations_micro_jump_drive":
+			out.ActivationsMicroJumpDrive = int64(in.Int64())
+		case "activations_mining_laser":
+			out.ActivationsMiningLaser = int64(in.Int64())
+		case "activations_missile_launcher":
+			out.ActivationsMissileLauncher = int64(in.Int64())
+		case "activations_passive_targeting_system":
+			out.ActivationsPassiveTargetingSystem = int64(in.Int64())
+		case "activations_probe_launcher":
+			out.ActivationsProbeLauncher = int64(in.Int64())
+		case "activations_projected_eccm":
+			out.ActivationsProjectedEccm = int64(in.Int64())
+		case "activations_projectile_weapon":
+			out.ActivationsProjectileWeapon = int64(in.Int64())
+		case "activations_propulsion_module":
+			out.ActivationsPropulsionModule = int64(in.Int64())
+		case "activations_remote_armor_repairer":
+			out.ActivationsRemoteArmorRepairer = int64(in.Int64())
+		case "activations_remote_capacitor_transmitter":
+			out.ActivationsRemoteCapacitorTransmitter = int64(in.Int64())
+		case "activations_remote_ecm_burst":
+			out.ActivationsRemoteEcmBurst = int64(in.Int64())
+		case "activations_remote_hull_repairer":
+			out.ActivationsRemoteHullRepairer = int64(in.Int64())
+		case "activations_remote_sensor_booster":
+			out.ActivationsRemoteSensorBooster = int64(in.Int64())
+		case "activations_remote_sensor_damper":
+			out.ActivationsRemoteSensorDamper = int64(in.Int64())
+		case "activations_remote_shield_booster":
+			out.ActivationsRemoteShieldBooster = int64(in.Int64())
+		case "activations_remote_tracking_computer":
+			out.ActivationsRemoteTrackingComputer = int64(in.Int64())
+		case "activations_salvager":
+			out.ActivationsSalvager = int64(in.Int64())
+		case "activations_sensor_booster":
+			out.ActivationsSensorBooster = int64(in.Int64())
+		case "activations_shield_booster":
+			out.ActivationsShieldBooster = int64(in.Int64())
+		case "activations_shield_hardener":
+			out.ActivationsShieldHardener = int64(in.Int64())
+		case "activations_ship_scanner":
+			out.ActivationsShipScanner = int64(in.Int64())
+		case "activations_siege":
+			out.ActivationsSiege = int64(in.Int64())
+		case "activations_smart_bomb":
+			out.ActivationsSmartBomb = int64(in.Int64())
+		case "activations_stasis_web":
+			out.ActivationsStasisWeb = int64(in.Int64())
+		case "activations_strip_miner":
+			out.ActivationsStripMiner = int64(in.Int64())
+		case "activations_super_weapon":
+			out.ActivationsSuperWeapon = int64(in.Int64())
+		case "activations_survey_scanner":
+			out.ActivationsSurveyScanner = int64(in.Int64())
+		case "activations_target_breaker":
+			out.ActivationsTargetBreaker = int64(in.Int64())
+		case "activations_target_painter":
+			out.ActivationsTargetPainter = int64(in.Int64())
+		case "activations_tracking_computer":
+			out.ActivationsTrackingComputer = int64(in.Int64())
+		case "activations_tracking_disruptor":
+			out.ActivationsTrackingDisruptor = int64(in.Int64())
+		case "activations_tractor_beam":
+			out.ActivationsTractorBeam = int64(in.Int64())
+		case "activations_triage":
+			out.ActivationsTriage = int64(in.Int64())
+		case "activations_warp_disrupt_field_generator":
+			out.ActivationsWarpDisruptFieldGenerator = int64(in.Int64())
+		case "activations_warp_scrambler":
+			out.ActivationsWarpScrambler = int64(in.Int64())
+		case "link_weapons":
+			out.LinkWeapons = int64(in.Int64())
+		case "overload":
+			out.Overload = int64(in.Int64())
+		case "repairs":
+			out.Repairs = int64(in.Int64())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi7(out *jwriter.Writer, in GetCharactersCharacterIdStatsModule) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.ActivationsArmorHardener != 0 {
+		const prefix string = ",\"activations_armor_hardener\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsArmorHardener))
+	}
+	if in.ActivationsArmorRepairUnit != 0 {
+		const prefix string = ",\"activations_armor_repair_unit\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsArmorRepairUnit))
+	}
+	if in.ActivationsArmorResistanceShiftHardener != 0 {
+		const prefix string = ",\"activations_armor_resistance_shift_hardener\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsArmorResistanceShiftHardener))
+	}
+	if in.ActivationsAutomatedTargetingSystem != 0 {
+		const prefix string = ",\"activations_automated_targeting_system\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsAutomatedTargetingSystem))
+	}
+	if in.ActivationsBastion != 0 {
+		const prefix string = ",\"activations_bastion\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsBastion))
+	}
+	if in.ActivationsBombLauncher != 0 {
+		const prefix string = ",\"activations_bomb_launcher\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsBombLauncher))
+	}
+	if in.ActivationsCapacitorBooster != 0 {
+		const prefix string = ",\"activations_capacitor_booster\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsCapacitorBooster))
+	}
+	if in.ActivationsCargoScanner != 0 {
+		const prefix string = ",\"activations_cargo_scanner\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsCargoScanner))
+	}
+	if in.ActivationsCloakingDevice != 0 {
+		const prefix string = ",\"activations_cloaking_device\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsCloakingDevice))
+	}
+	if in.ActivationsCloneVatBay != 0 {
+		const prefix string = ",\"activations_clone_vat_bay\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsCloneVatBay))
+	}
+	if in.ActivationsCynosuralField != 0 {
+		const prefix string = ",\"activations_cynosural_field\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsCynosuralField))
+	}
+	if in.ActivationsDamageControl != 0 {
+		const prefix string = ",\"activations_damage_control\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsDamageControl))
+	}
+	if in.ActivationsDataMiners != 0 {
+		const prefix string = ",\"activations_data_miners\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsDataMiners))
+	}
+	if in.ActivationsDroneControlUnit != 0 {
+		const prefix string = ",\"activations_drone_control_unit\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsDroneControlUnit))
+	}
+	if in.ActivationsDroneTrackingModules != 0 {
+		const prefix string = ",\"activations_drone_tracking_modules\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsDroneTrackingModules))
+	}
+	if in.ActivationsEccm != 0 {
+		const prefix string = ",\"activations_eccm\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsEccm))
+	}
+	if in.ActivationsEcm != 0 {
+		const prefix string = ",\"activations_ecm\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsEcm))
+	}
+	if in.ActivationsEcmBurst != 0 {
+		const prefix string = ",\"activations_ecm_burst\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsEcmBurst))
+	}
+	if in.ActivationsEnergyDestabilizer != 0 {
+		const prefix string = ",\"activations_energy_destabilizer\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsEnergyDestabilizer))
+	}
+	if in.ActivationsEnergyVampire != 0 {
+		const prefix string = ",\"activations_energy_vampire\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsEnergyVampire))
+	}
+	if in.ActivationsEnergyWeapon != 0 {
+		const prefix string = ",\"activations_energy_weapon\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsEnergyWeapon))
+	}
+	if in.ActivationsFestivalLauncher != 0 {
+		const prefix string = ",\"activations_festival_launcher\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsFestivalLauncher))
+	}
+	if in.ActivationsFrequencyMiningLaser != 0 {
+		const prefix string = ",\"activations_frequency_mining_laser\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsFrequencyMiningLaser))
+	}
+	if in.ActivationsFueledArmorRepairer != 0 {
+		const prefix string = ",\"activations_fueled_armor_repairer\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsFueledArmorRepairer))
+	}
+	if in.ActivationsFueledShieldBooster != 0 {
+		const prefix string = ",\"activations_fueled_shield_booster\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsFueledShieldBooster))
+	}
+	if in.ActivationsGangCoordinator != 0 {
+		const prefix string = ",\"activations_gang_coordinator\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsGangCoordinator))
+	}
+	if in.ActivationsGasCloudHarvester != 0 {
+		const prefix string = ",\"activations_gas_cloud_harvester\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsGasCloudHarvester))
+	}
+	if in.ActivationsHullRepairUnit != 0 {
+		const prefix string = ",\"activations_hull_repair_unit\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsHullRepairUnit))
+	}
+	if in.ActivationsHybridWeapon != 0 {
+		const prefix string = ",\"activations_hybrid_weapon\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsHybridWeapon))
+	}
+	if in.ActivationsIndustrialCore != 0 {
+		const prefix string = ",\"activations_industrial_core\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsIndustrialCore))
+	}
+	if in.ActivationsInterdictionSphereLauncher != 0 {
+		const prefix string = ",\"activations_interdiction_sphere_launcher\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsInterdictionSphereLauncher))
+	}
+	if in.ActivationsMicroJumpDrive != 0 {
+		const prefix string = ",\"activations_micro_jump_drive\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsMicroJumpDrive))
+	}
+	if in.ActivationsMiningLaser != 0 {
+		const prefix string = ",\"activations_mining_laser\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsMiningLaser))
+	}
+	if in.ActivationsMissileLauncher != 0 {
+		const prefix string = ",\"activations_missile_launcher\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsMissileLauncher))
+	}
+	if in.ActivationsPassiveTargetingSystem != 0 {
+		const prefix string = ",\"activations_passive_targeting_system\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsPassiveTargetingSystem))
+	}
+	if in.ActivationsProbeLauncher != 0 {
+		const prefix string = ",\"activations_probe_launcher\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsProbeLauncher))
+	}
+	if in.ActivationsProjectedEccm != 0 {
+		const prefix string = ",\"activations_projected_eccm\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsProjectedEccm))
+	}
+	if in.ActivationsProjectileWeapon != 0 {
+		const prefix string = ",\"activations_projectile_weapon\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsProjectileWeapon))
+	}
+	if in.ActivationsPropulsionModule != 0 {
+		const prefix string = ",\"activations_propulsion_module\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsPropulsionModule))
+	}
+	if in.ActivationsRemoteArmorRepairer != 0 {
+		const prefix string = ",\"activations_remote_armor_repairer\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsRemoteArmorRepairer))
+	}
+	if in.ActivationsRemoteCapacitorTransmitter != 0 {
+		const prefix string = ",\"activations_remote_capacitor_transmitter\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsRemoteCapacitorTransmitter))
+	}
+	if in.ActivationsRemoteEcmBurst != 0 {
+		const prefix string = ",\"activations_remote_ecm_burst\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsRemoteEcmBurst))
+	}
+	if in.ActivationsRemoteHullRepairer != 0 {
+		const prefix string = ",\"activations_remote_hull_repairer\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsRemoteHullRepairer))
+	}
+	if in.ActivationsRemoteSensorBooster != 0 {
+		const prefix string = ",\"activations_remote_sensor_booster\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsRemoteSensorBooster))
+	}
+	if in.ActivationsRemoteSensorDamper != 0 {
+		const prefix string = ",\"activations_remote_sensor_damper\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsRemoteSensorDamper))
+	}
+	if in.ActivationsRemoteShieldBooster != 0 {
+		const prefix string = ",\"activations_remote_shield_booster\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsRemoteShieldBooster))
+	}
+	if in.ActivationsRemoteTrackingComputer != 0 {
+		const prefix string = ",\"activations_remote_tracking_computer\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsRemoteTrackingComputer))
+	}
+	if in.ActivationsSalvager != 0 {
+		const prefix string = ",\"activations_salvager\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsSalvager))
+	}
+	if in.ActivationsSensorBooster != 0 {
+		const prefix string = ",\"activations_sensor_booster\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsSensorBooster))
+	}
+	if in.ActivationsShieldBooster != 0 {
+		const prefix string = ",\"activations_shield_booster\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsShieldBooster))
+	}
+	if in.ActivationsShieldHardener != 0 {
+		const prefix string = ",\"activations_shield_hardener\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsShieldHardener))
+	}
+	if in.ActivationsShipScanner != 0 {
+		const prefix string = ",\"activations_ship_scanner\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsShipScanner))
+	}
+	if in.ActivationsSiege != 0 {
+		const prefix string = ",\"activations_siege\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsSiege))
+	}
+	if in.ActivationsSmartBomb != 0 {
+		const prefix string = ",\"activations_smart_bomb\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsSmartBomb))
+	}
+	if in.ActivationsStasisWeb != 0 {
+		const prefix string = ",\"activations_stasis_web\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsStasisWeb))
+	}
+	if in.ActivationsStripMiner != 0 {
+		const prefix string = ",\"activations_strip_miner\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsStripMiner))
+	}
+	if in.ActivationsSuperWeapon != 0 {
+		const prefix string = ",\"activations_super_weapon\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsSuperWeapon))
+	}
+	if in.ActivationsSurveyScanner != 0 {
+		const prefix string = ",\"activations_survey_scanner\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsSurveyScanner))
+	}
+	if in.ActivationsTargetBreaker != 0 {
+		const prefix string = ",\"activations_target_breaker\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsTargetBreaker))
+	}
+	if in.ActivationsTargetPainter != 0 {
+		const prefix string = ",\"activations_target_painter\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsTargetPainter))
+	}
+	if in.ActivationsTrackingComputer != 0 {
+		const prefix string = ",\"activations_tracking_computer\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsTrackingComputer))
+	}
+	if in.ActivationsTrackingDisruptor != 0 {
+		const prefix string = ",\"activations_tracking_disruptor\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsTrackingDisruptor))
+	}
+	if in.ActivationsTractorBeam != 0 {
+		const prefix string = ",\"activations_tractor_beam\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsTractorBeam))
+	}
+	if in.ActivationsTriage != 0 {
+		const prefix string = ",\"activations_triage\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsTriage))
+	}
+	if in.ActivationsWarpDisruptFieldGenerator != 0 {
+		const prefix string = ",\"activations_warp_disrupt_field_generator\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsWarpDisruptFieldGenerator))
+	}
+	if in.ActivationsWarpScrambler != 0 {
+		const prefix string = ",\"activations_warp_scrambler\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ActivationsWarpScrambler))
+	}
+	if in.LinkWeapons != 0 {
+		const prefix string = ",\"link_weapons\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.LinkWeapons))
+	}
+	if in.Overload != 0 {
+		const prefix string = ",\"overload\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.Overload))
+	}
+	if in.Repairs != 0 {
+		const prefix string = ",\"repairs\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.Repairs))
 	}
 	out.RawByte('}')
 }
@@ -1051,198 +1914,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi6(out *jwriter.Writer, in Get
 	}
 	out.RawByte('}')
 }
-func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsMarket) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "accept_contracts_courier":
-			out.AcceptContractsCourier = int64(in.Int64())
-		case "accept_contracts_item_exchange":
-			out.AcceptContractsItemExchange = int64(in.Int64())
-		case "buy_orders_placed":
-			out.BuyOrdersPlaced = int64(in.Int64())
-		case "cancel_market_order":
-			out.CancelMarketOrder = int64(in.Int64())
-		case "create_contracts_auction":
-			out.CreateContractsAuction = int64(in.Int64())
-		case "create_contracts_courier":
-			out.CreateContractsCourier = int64(in.Int64())
-		case "create_contracts_item_exchange":
-			out.CreateContractsItemExchange = int64(in.Int64())
-		case "deliver_courier_contract":
-			out.DeliverCourierContract = int64(in.Int64())
-		case "isk_gained":
-			out.IskGained = int64(in.Int64())
-		case "isk_spent":
-			out.IskSpent = int64(in.Int64())
-		case "modify_market_order":
-			out.ModifyMarketOrder = int64(in.Int64())
-		case "search_contracts":
-			out.SearchContracts = int64(in.Int64())
-		case "sell_orders_placed":
-			out.SellOrdersPlaced = int64(in.Int64())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in GetCharactersCharacterIdStatsMarket) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.AcceptContractsCourier != 0 {
-		const prefix string = ",\"accept_contracts_courier\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.AcceptContractsCourier))
-	}
-	if in.AcceptContractsItemExchange != 0 {
-		const prefix string = ",\"accept_contracts_item_exchange\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.AcceptContractsItemExchange))
-	}
-	if in.BuyOrdersPlaced != 0 {
-		const prefix string = ",\"buy_orders_placed\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.BuyOrdersPlaced))
-	}
-	if in.CancelMarketOrder != 0 {
-		const prefix string = ",\"cancel_market_order\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.CancelMarketOrder))
-	}
-	if in.CreateContractsAuction != 0 {
-		const prefix string = ",\"create_contracts_auction\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.CreateContractsAuction))
-	}
-	if in.CreateContractsCourier != 0 {
-		const prefix string = ",\"create_contracts_courier\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.CreateContractsCourier))
-	}
-	if in.CreateContractsItemExchange != 0 {
-		const prefix string = ",\"create_contracts_item_exchange\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.CreateContractsItemExchange))
-	}
-	if in.DeliverCourierContract != 0 {
-		const prefix string = ",\"deliver_courier_contract\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.DeliverCourierContract))
-	}
-	if in.IskGained != 0 {
-		const prefix string = ",\"isk_gained\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.IskGained))
-	}
-	if in.IskSpent != 0 {
-		const prefix string = ",\"isk_spent\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.IskSpent))
-	}
-	if in.ModifyMarketOrder != 0 {
-		const prefix string = ",\"modify_market_order\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.ModifyMarketOrder))
-	}
-	if in.SearchContracts != 0 {
-		const prefix string = ",\"search_contracts\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.SearchContracts))
-	}
-	if in.SellOrdersPlaced != 0 {
-		const prefix string = ",\"sell_orders_placed\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.SellOrdersPlaced))
-	}
-	out.RawByte('}')
-}
-func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsIsk) {
+func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsIsk) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -1275,7 +1947,7 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCharactersCharacterIdStatsIsk) {
+func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in GetCharactersCharacterIdStatsIsk) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -1301,7 +1973,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in Get
 	}
 	out.RawByte('}')
 }
-func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsInventory) {
+func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsInventory) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -1334,7 +2006,7 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdStatsInventory) {
+func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCharactersCharacterIdStatsInventory) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -1360,7 +2032,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	}
 	out.RawByte('}')
 }
-func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsCombat) {
+func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsCombat) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -1577,7 +2249,7 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdStatsCombat) {
+func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdStatsCombat) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -2520,6 +3192,77 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.WebifyingPc))
+	}
+	out.RawByte('}')
+}
+func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsCharacter) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "days_of_activity":
+			out.DaysOfActivity = int64(in.Int64())
+		case "minutes":
+			out.Minutes = int64(in.Int64())
+		case "sessions_started":
+			out.SessionsStarted = int64(in.Int64())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdStatsCharacter) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.DaysOfActivity != 0 {
+		const prefix string = ",\"days_of_activity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DaysOfActivity))
+	}
+	if in.Minutes != 0 {
+		const prefix string = ",\"minutes\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.Minutes))
+	}
+	if in.SessionsStarted != 0 {
+		const prefix string = ",\"sessions_started\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.SessionsStarted))
 	}
 	out.RawByte('}')
 }

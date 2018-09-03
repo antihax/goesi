@@ -120,7 +120,7 @@ func easyjson29210505DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCharactersCharacterIdPlanetsPlanetIdLink
-					(v4).UnmarshalEasyJSON(in)
+					easyjson29210505DecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Links = append(out.Links, v4)
 					in.WantComma()
 				}
@@ -143,7 +143,7 @@ func easyjson29210505DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v5 GetCharactersCharacterIdPlanetsPlanetIdPin
-					easyjson29210505DecodeGithubComAntihaxGoesiEsi2(in, &v5)
+					easyjson29210505DecodeGithubComAntihaxGoesiEsi3(in, &v5)
 					out.Pins = append(out.Pins, v5)
 					in.WantComma()
 				}
@@ -166,7 +166,7 @@ func easyjson29210505DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v6 GetCharactersCharacterIdPlanetsPlanetIdRoute
-					(v6).UnmarshalEasyJSON(in)
+					easyjson29210505DecodeGithubComAntihaxGoesiEsi4(in, &v6)
 					out.Routes = append(out.Routes, v6)
 					in.WantComma()
 				}
@@ -200,7 +200,7 @@ func easyjson29210505EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v7 > 0 {
 					out.RawByte(',')
 				}
-				(v8).MarshalEasyJSON(out)
+				easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out, v8)
 			}
 			out.RawByte(']')
 		}
@@ -219,7 +219,7 @@ func easyjson29210505EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v9 > 0 {
 					out.RawByte(',')
 				}
-				easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out, v10)
+				easyjson29210505EncodeGithubComAntihaxGoesiEsi3(out, v10)
 			}
 			out.RawByte(']')
 		}
@@ -238,7 +238,7 @@ func easyjson29210505EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v11 > 0 {
 					out.RawByte(',')
 				}
-				(v12).MarshalEasyJSON(out)
+				easyjson29210505EncodeGithubComAntihaxGoesiEsi4(out, v12)
 			}
 			out.RawByte(']')
 		}
@@ -269,7 +269,144 @@ func (v *GetCharactersCharacterIdPlanetsPlanetIdOk) UnmarshalJSON(data []byte) e
 func (v *GetCharactersCharacterIdPlanetsPlanetIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson29210505DecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson29210505DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdPin) {
+func easyjson29210505DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdRoute) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "content_type_id":
+			out.ContentTypeId = int32(in.Int32())
+		case "destination_pin_id":
+			out.DestinationPinId = int64(in.Int64())
+		case "quantity":
+			out.Quantity = float32(in.Float32())
+		case "route_id":
+			out.RouteId = int64(in.Int64())
+		case "source_pin_id":
+			out.SourcePinId = int64(in.Int64())
+		case "waypoints":
+			if in.IsNull() {
+				in.Skip()
+				out.Waypoints = nil
+			} else {
+				in.Delim('[')
+				if out.Waypoints == nil {
+					if !in.IsDelim(']') {
+						out.Waypoints = make([]int64, 0, 8)
+					} else {
+						out.Waypoints = []int64{}
+					}
+				} else {
+					out.Waypoints = (out.Waypoints)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v13 int64
+					v13 = int64(in.Int64())
+					out.Waypoints = append(out.Waypoints, v13)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson29210505EncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdRoute) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.ContentTypeId != 0 {
+		const prefix string = ",\"content_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ContentTypeId))
+	}
+	if in.DestinationPinId != 0 {
+		const prefix string = ",\"destination_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DestinationPinId))
+	}
+	if in.Quantity != 0 {
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Quantity))
+	}
+	if in.RouteId != 0 {
+		const prefix string = ",\"route_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.RouteId))
+	}
+	if in.SourcePinId != 0 {
+		const prefix string = ",\"source_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.SourcePinId))
+	}
+	if len(in.Waypoints) != 0 {
+		const prefix string = ",\"waypoints\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v14, v15 := range in.Waypoints {
+				if v14 > 0 {
+					out.RawByte(',')
+				}
+				out.Int64(int64(v15))
+			}
+			out.RawByte(']')
+		}
+	}
+	out.RawByte('}')
+}
+func easyjson29210505DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdPin) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -304,9 +441,9 @@ func easyjson29210505DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 					out.Contents = (out.Contents)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v13 GetCharactersCharacterIdPlanetsPlanetIdContent
-					(v13).UnmarshalEasyJSON(in)
-					out.Contents = append(out.Contents, v13)
+					var v16 GetCharactersCharacterIdPlanetsPlanetIdContent
+					easyjson29210505DecodeGithubComAntihaxGoesiEsi5(in, &v16)
+					out.Contents = append(out.Contents, v16)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -316,9 +453,9 @@ func easyjson29210505DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 				in.AddError((out.ExpiryTime).UnmarshalJSON(data))
 			}
 		case "extractor_details":
-			(out.ExtractorDetails).UnmarshalEasyJSON(in)
+			easyjson29210505DecodeGithubComAntihaxGoesiEsi6(in, &out.ExtractorDetails)
 		case "factory_details":
-			(out.FactoryDetails).UnmarshalEasyJSON(in)
+			easyjson29210505DecodeGithubComAntihaxGoesiEsi7(in, &out.FactoryDetails)
 		case "install_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.InstallTime).UnmarshalJSON(data))
@@ -347,7 +484,7 @@ func easyjson29210505DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdPin) {
+func easyjson29210505EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdPin) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -361,11 +498,11 @@ func easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		}
 		{
 			out.RawByte('[')
-			for v14, v15 := range in.Contents {
-				if v14 > 0 {
+			for v17, v18 := range in.Contents {
+				if v17 > 0 {
 					out.RawByte(',')
 				}
-				(v15).MarshalEasyJSON(out)
+				easyjson29210505EncodeGithubComAntihaxGoesiEsi5(out, v18)
 			}
 			out.RawByte(']')
 		}
@@ -388,7 +525,7 @@ func easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.ExtractorDetails).MarshalEasyJSON(out)
+		easyjson29210505EncodeGithubComAntihaxGoesiEsi6(out, in.ExtractorDetails)
 	}
 	if true {
 		const prefix string = ",\"factory_details\":"
@@ -398,7 +535,7 @@ func easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.FactoryDetails).MarshalEasyJSON(out)
+		easyjson29210505EncodeGithubComAntihaxGoesiEsi7(out, in.FactoryDetails)
 	}
 	if true {
 		const prefix string = ",\"install_time\":"
@@ -469,6 +606,379 @@ func easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.TypeId))
+	}
+	out.RawByte('}')
+}
+func easyjson29210505DecodeGithubComAntihaxGoesiEsi7(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "schematic_id":
+			out.SchematicId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson29210505EncodeGithubComAntihaxGoesiEsi7(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.SchematicId != 0 {
+		const prefix string = ",\"schematic_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.SchematicId))
+	}
+	out.RawByte('}')
+}
+func easyjson29210505DecodeGithubComAntihaxGoesiEsi6(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "cycle_time":
+			out.CycleTime = int32(in.Int32())
+		case "head_radius":
+			out.HeadRadius = float32(in.Float32())
+		case "heads":
+			if in.IsNull() {
+				in.Skip()
+				out.Heads = nil
+			} else {
+				in.Delim('[')
+				if out.Heads == nil {
+					if !in.IsDelim(']') {
+						out.Heads = make([]GetCharactersCharacterIdPlanetsPlanetIdHead, 0, 5)
+					} else {
+						out.Heads = []GetCharactersCharacterIdPlanetsPlanetIdHead{}
+					}
+				} else {
+					out.Heads = (out.Heads)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v19 GetCharactersCharacterIdPlanetsPlanetIdHead
+					easyjson29210505DecodeGithubComAntihaxGoesiEsi8(in, &v19)
+					out.Heads = append(out.Heads, v19)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "product_type_id":
+			out.ProductTypeId = int32(in.Int32())
+		case "qty_per_cycle":
+			out.QtyPerCycle = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson29210505EncodeGithubComAntihaxGoesiEsi6(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.CycleTime != 0 {
+		const prefix string = ",\"cycle_time\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CycleTime))
+	}
+	if in.HeadRadius != 0 {
+		const prefix string = ",\"head_radius\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.HeadRadius))
+	}
+	if len(in.Heads) != 0 {
+		const prefix string = ",\"heads\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v20, v21 := range in.Heads {
+				if v20 > 0 {
+					out.RawByte(',')
+				}
+				easyjson29210505EncodeGithubComAntihaxGoesiEsi8(out, v21)
+			}
+			out.RawByte(']')
+		}
+	}
+	if in.ProductTypeId != 0 {
+		const prefix string = ",\"product_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ProductTypeId))
+	}
+	if in.QtyPerCycle != 0 {
+		const prefix string = ",\"qty_per_cycle\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.QtyPerCycle))
+	}
+	out.RawByte('}')
+}
+func easyjson29210505DecodeGithubComAntihaxGoesiEsi8(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdHead) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "head_id":
+			out.HeadId = int32(in.Int32())
+		case "latitude":
+			out.Latitude = float32(in.Float32())
+		case "longitude":
+			out.Longitude = float32(in.Float32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson29210505EncodeGithubComAntihaxGoesiEsi8(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdHead) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.HeadId != 0 {
+		const prefix string = ",\"head_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.HeadId))
+	}
+	if in.Latitude != 0 {
+		const prefix string = ",\"latitude\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Latitude))
+	}
+	if in.Longitude != 0 {
+		const prefix string = ",\"longitude\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Longitude))
+	}
+	out.RawByte('}')
+}
+func easyjson29210505DecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdContent) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "amount":
+			out.Amount = int64(in.Int64())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson29210505EncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdContent) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Amount != 0 {
+		const prefix string = ",\"amount\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.Amount))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
+	}
+	out.RawByte('}')
+}
+func easyjson29210505DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdLink) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "destination_pin_id":
+			out.DestinationPinId = int64(in.Int64())
+		case "link_level":
+			out.LinkLevel = int32(in.Int32())
+		case "source_pin_id":
+			out.SourcePinId = int64(in.Int64())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdLink) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.DestinationPinId != 0 {
+		const prefix string = ",\"destination_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DestinationPinId))
+	}
+	if in.LinkLevel != 0 {
+		const prefix string = ",\"link_level\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.LinkLevel))
+	}
+	if in.SourcePinId != 0 {
+		const prefix string = ",\"source_pin_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.SourcePinId))
 	}
 	out.RawByte('}')
 }

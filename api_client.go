@@ -28,6 +28,7 @@ import (
 	"time"
 
 	"github.com/antihax/goesi/esi"
+	"github.com/antihax/goesi/meta"
 )
 
 // Handle our context keys.
@@ -46,7 +47,8 @@ var (
 // APIClient manages communication with the EVE Swagger Interface API
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
-	ESI *esi.APIClient
+	ESI  *esi.APIClient
+	Meta *meta.APIClient
 }
 
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
@@ -59,13 +61,14 @@ func NewAPIClient(httpClient *http.Client, userAgent string) *APIClient {
 	c := &APIClient{}
 
 	c.ESI = esi.NewAPIClient(httpClient, userAgent)
-
+	c.Meta = meta.NewAPIClient(httpClient, userAgent)
 	return c
 }
 
 // ChangeBasePath allows alternate ESI paths to be used for testing
 func (c *APIClient) ChangeBasePath(path string) {
 	c.ESI.ChangeBasePath(path)
+	c.Meta.ChangeBasePath(path)
 }
 
 // Ripped from https://github.com/gregjones/httpcache/blob/master/httpcache.go

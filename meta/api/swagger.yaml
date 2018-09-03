@@ -1,0 +1,1351 @@
+---
+swagger: "2.0"
+info:
+  description: "ESI specs and miscellaneous routes"
+  version: "0.1"
+  title: "ESI Meta Spec"
+host: "esi.evetech.net"
+schemes:
+- "https"
+produces:
+- "application/json"
+- "text/plain; charset=utf-8"
+- "text/html; charset=utf-8"
+paths:
+  /_dev/swagger.json:
+    get:
+      tags:
+      - "Swagger"
+      summary: "Get _dev spec (versioned)"
+      description: "The _dev ESI swagger specification. The underscore swagger specs\
+        \ do not have a basePath, giving you an easy way to generate stable clients\
+        \ on versioned routes."
+      operationId: "get__dev_swagger"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI _dev swagger specification"
+          schema:
+            type: "object"
+            description: "ESI _dev swagger 2.0 spec"
+            title: "get__dev_swagger_ok"
+            properties: {}
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+  /_latest/swagger.json:
+    get:
+      tags:
+      - "Swagger"
+      summary: "Get _latest spec (versioned)"
+      description: "The _latest ESI swagger specification. The underscore swagger\
+        \ specs do not have a basePath, giving you an easy way to generate stable\
+        \ clients on versioned routes."
+      operationId: "get__latest_swagger"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI _latest swagger specification"
+          schema:
+            type: "object"
+            description: "ESI _latest swagger 2.0 spec"
+            title: "get__latest_swagger_ok"
+            properties: {}
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+  /_legacy/swagger.json:
+    get:
+      tags:
+      - "Swagger"
+      summary: "Get _legacy spec (versioned)"
+      description: "The _legacy ESI swagger specification. The underscore swagger\
+        \ specs do not have a basePath, giving you an easy way to generate stable\
+        \ clients on versioned routes."
+      operationId: "get__legacy_swagger"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI _legacy swagger specification"
+          schema:
+            type: "object"
+            description: "ESI _legacy swagger 2.0 spec"
+            title: "get__legacy_swagger_ok"
+            properties: {}
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+  /dev/:
+    get:
+      tags:
+      - "WebUI"
+      summary: "SwaggerUI route (v2)"
+      description: "ESI dev web UI. Note that this is a legacy (v2) SwaggerUI route,\
+        \ which will someday be removed. You can get mostly the same functionality\
+        \ by going to https://esi.evetech.net/ui/?version=dev"
+      operationId: "get_dev"
+      produces:
+      - "text/html; charset=utf-8"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "v2 SwaggerUI"
+          schema:
+            type: "string"
+            description: "ESI web UI (legacy)"
+            title: "get_dev_ok"
+  /dev/swagger.json:
+    get:
+      tags:
+      - "Swagger"
+      summary: "Get dev swagger spec"
+      description: "The dev ESI swagger specification."
+      operationId: "get_dev_swagger"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI dev swagger specification"
+          schema:
+            type: "object"
+            description: "ESI dev swagger 2.0 spec"
+            title: "get_dev_swagger_ok"
+            properties: {}
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+  /diff/{version_a}/{version_b}/:
+    get:
+      tags:
+      - "WebUI"
+      summary: "Diff route"
+      description: "Diff two ESI specs"
+      operationId: "get_diff_version_a_version_b"
+      produces:
+      - "text/html; charset=utf-8"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "version_a"
+        in: "path"
+        description: "Swagger spec version to compare with"
+        required: true
+        type: "string"
+        enum:
+        - "_dev"
+        - "_latest"
+        - "_legacy"
+        - "dev"
+        - "latest"
+        - "legacy"
+        - "v1"
+        - "v2"
+        - "v3"
+        - "v4"
+        x-exportParamName: "VersionA"
+      - name: "version_b"
+        in: "path"
+        description: "Swagger spec version to compare against"
+        required: true
+        type: "string"
+        enum:
+        - "_dev"
+        - "_latest"
+        - "_legacy"
+        - "dev"
+        - "latest"
+        - "legacy"
+        - "v1"
+        - "v2"
+        - "v3"
+        - "v4"
+        x-exportParamName: "VersionB"
+      responses:
+        200:
+          description: "Diff results"
+          schema:
+            type: "string"
+            description: "Diff HTML response"
+            title: "get_diff_version_a_version_b_ok"
+  /headers/:
+    get:
+      tags:
+      - "Meta"
+      summary: "Debug request headers"
+      description: "Echo the request headers for debugging purposes. Note that the\
+        \ 'Connection' header and any 'X-' headers are not included"
+      operationId: "get_headers"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Headers OK"
+          schema:
+            type: "object"
+            description: "Headers response"
+            title: "get_headers_ok"
+            additionalProperties:
+              type: "string"
+  /latest/:
+    get:
+      tags:
+      - "WebUI"
+      summary: "SwaggerUI route (v2)"
+      description: "ESI latest web UI. Note that this is a legacy (v2) SwaggerUI route,\
+        \ which will someday be removed. You can get mostly the same functionality\
+        \ by going to https://esi.evetech.net/ui/?version=latest"
+      operationId: "get_latest"
+      produces:
+      - "text/html; charset=utf-8"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "v2 SwaggerUI"
+          schema:
+            type: "string"
+            description: "ESI web UI (legacy)"
+            title: "get_latest_ok"
+  /latest/swagger.json:
+    get:
+      tags:
+      - "Swagger"
+      summary: "Get latest swagger spec"
+      description: "The latest ESI swagger specification."
+      operationId: "get_latest_swagger"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI latest swagger specification"
+          schema:
+            type: "object"
+            description: "ESI latest swagger 2.0 spec"
+            title: "get_latest_swagger_ok"
+            properties: {}
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+  /legacy/:
+    get:
+      tags:
+      - "WebUI"
+      summary: "SwaggerUI route (v2)"
+      description: "ESI legacy web UI. Note that this is a legacy (v2) SwaggerUI route,\
+        \ which will someday be removed. You can get mostly the same functionality\
+        \ by going to https://esi.evetech.net/ui/?version=legacy"
+      operationId: "get_legacy"
+      produces:
+      - "text/html; charset=utf-8"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "v2 SwaggerUI"
+          schema:
+            type: "string"
+            description: "ESI web UI (legacy)"
+            title: "get_legacy_ok"
+  /legacy/swagger.json:
+    get:
+      tags:
+      - "Swagger"
+      summary: "Get legacy swagger spec"
+      description: "The legacy ESI swagger specification."
+      operationId: "get_legacy_swagger"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI legacy swagger specification"
+          schema:
+            type: "object"
+            description: "ESI legacy swagger 2.0 spec"
+            title: "get_legacy_swagger_ok"
+            properties: {}
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+  /ping:
+    get:
+      tags:
+      - "Meta"
+      summary: "Ping route"
+      description: "Ping the ESI routers"
+      operationId: "get_ping"
+      produces:
+      - "text/plain; charset=utf-8"
+      parameters: []
+      responses:
+        200:
+          description: "Ping OK"
+          schema:
+            type: "string"
+            description: "OK response"
+            title: "get_ping_ok"
+            enum:
+            - "ok"
+  /status.json:
+    get:
+      tags:
+      - "Meta"
+      summary: "ESI health status"
+      description: "Provides a general health indicator per route and method"
+      operationId: "get_status"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "version"
+        in: "query"
+        description: "The version of metrics to request. Note that alternate versions\
+          \ are grouped together"
+        required: false
+        type: "string"
+        default: "latest"
+        enum:
+        - "latest"
+        - "dev"
+        - "legacy"
+        - "meta"
+        x-exportParamName: "Version"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI Status"
+          schema:
+            type: "array"
+            description: "ESI Status JSON"
+            title: "get_status_ok"
+            items:
+              $ref: "#/definitions/get_status_item"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        404:
+          description: "Unsupported version"
+          schema:
+            $ref: "#/definitions/get_status_not_found"
+      x-cached-seconds: 60
+  /swagger.json:
+    get:
+      tags:
+      - "Swagger"
+      summary: "Get meta swagger spec"
+      description: "The meta ESI swagger specification."
+      operationId: "get_meta_swagger"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI meta swagger specification"
+          schema:
+            type: "object"
+            description: "ESI meta swagger 2.0 spec"
+            title: "get_meta_swagger_ok"
+            properties: {}
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+  /ui/:
+    get:
+      tags:
+      - "WebUI"
+      summary: "SwaggerUI route (v3)"
+      description: "ESI web UI. This is an open source project. If you find ESI web\
+        \ UI specific bugs, please report them to https://github.com/esi/esi-swagger-ui/issues"
+      operationId: "get_ui"
+      produces:
+      - "text/html; charset=utf-8"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "version"
+        in: "query"
+        description: "The Swagger spec version to display"
+        required: false
+        type: "string"
+        default: "latest"
+        enum:
+        - "_dev"
+        - "_latest"
+        - "_legacy"
+        - "dev"
+        - "latest"
+        - "legacy"
+        - "v1"
+        - "v2"
+        - "v3"
+        - "v4"
+        x-exportParamName: "Version"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "v3 SwaggerUI"
+          schema:
+            type: "string"
+            description: "ESI web UI"
+            title: "get_ui_ok"
+  /v1/swagger.json:
+    get:
+      tags:
+      - "Swagger"
+      summary: "Get v1 swagger spec"
+      description: "The v1 ESI swagger specification."
+      operationId: "get_v1_swagger"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI v1 swagger specification"
+          schema:
+            type: "object"
+            description: "ESI v1 swagger 2.0 spec"
+            title: "get_v1_swagger_ok"
+            properties: {}
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+  /v2/swagger.json:
+    get:
+      tags:
+      - "Swagger"
+      summary: "Get v2 swagger spec"
+      description: "The v2 ESI swagger specification."
+      operationId: "get_v2_swagger"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI v2 swagger specification"
+          schema:
+            type: "object"
+            description: "ESI v2 swagger 2.0 spec"
+            title: "get_v2_swagger_ok"
+            properties: {}
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+  /v3/swagger.json:
+    get:
+      tags:
+      - "Swagger"
+      summary: "Get v3 swagger spec"
+      description: "The v3 ESI swagger specification."
+      operationId: "get_v3_swagger"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI v3 swagger specification"
+          schema:
+            type: "object"
+            description: "ESI v3 swagger 2.0 spec"
+            title: "get_v3_swagger_ok"
+            properties: {}
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+  /v4/swagger.json:
+    get:
+      tags:
+      - "Swagger"
+      summary: "Get v4 swagger spec"
+      description: "The v4 ESI swagger specification."
+      operationId: "get_v4_swagger"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ESI v4 swagger specification"
+          schema:
+            type: "object"
+            description: "ESI v4 swagger 2.0 spec"
+            title: "get_v4_swagger_ok"
+            properties: {}
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+  /verify/:
+    get:
+      tags:
+      - "Meta"
+      summary: "Verify access token"
+      description: "Verify authorization tokens in ESI's auth cache"
+      operationId: "get_verify"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      - name: "Authorization"
+        in: "header"
+        description: "Access token, in the format of \"Bearer <access token>\""
+        required: false
+        type: "string"
+        x-exportParamName: "Authorization"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "SSO /verify JSON response"
+          schema:
+            $ref: "#/definitions/get_verify_ok"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "SSO /verify JSON error"
+          schema:
+            $ref: "#/definitions/get_verify_error"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        401:
+          description: "Authorization not provided"
+          schema:
+            $ref: "#/definitions/get_verify_unauthorized"
+        404:
+          description: "Unsupported datasource"
+          schema:
+            $ref: "#/definitions/get_verify_not_found"
+      x-cached-seconds: 30
+  /versions/:
+    get:
+      tags:
+      - "Meta"
+      summary: "List versions"
+      description: "List all endpoint versions"
+      operationId: "get_versions"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_agent"
+        in: "query"
+        description: "Client identifier, takes precedence over headers"
+        required: false
+        type: "string"
+        x-exportParamName: "UserAgent"
+        x-optionalDataType: "String"
+      - name: "X-User-Agent"
+        in: "header"
+        description: "Client identifier, takes precedence over User-Agent"
+        required: false
+        type: "string"
+        x-exportParamName: "XUserAgent"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "Version list"
+          schema:
+            type: "array"
+            description: "List of versions"
+            title: "get_versions_ok"
+            items:
+              type: "string"
+              description: "Available version"
+              title: "get_versions_version"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+      x-cached-seconds: 60
+definitions:
+  get_verify_ok:
+    required:
+    - "CharacterID"
+    properties:
+      CharacterID:
+        type: "integer"
+        format: "int32"
+        description: "Token owner's character ID"
+        title: "get_verify_character_id"
+      CharacterName:
+        type: "string"
+        description: "Token owner's character name"
+        title: "get_verify_character_name"
+      CharacterOwnerHash:
+        type: "string"
+        description: "Hash of the character's owner. If the character is sold or otherwise\
+          \ transferred, this will change"
+        title: "get_verify_character_owner_hash"
+      ExpiresOn:
+        type: "string"
+        description: "Expiry time of the token (not RFC3339)"
+        title: "get_verify_expires_on"
+      IntellectualProperty:
+        type: "string"
+        description: "The IP which generated the token"
+        title: "get_verify_intellectual_property"
+      Scopes:
+        type: "string"
+        description: "Space separated list of scopes the token is valid for"
+        title: "get_verify_scopes"
+      TokenType:
+        type: "string"
+        description: "Type of access token"
+        title: "get_verify_token_type"
+    description: "SSO /verify JSON"
+    example:
+      TokenType: "TokenType"
+      IntellectualProperty: "IntellectualProperty"
+      Scopes: "Scopes"
+      CharacterID: 0
+      CharacterName: "CharacterName"
+      ExpiresOn: "ExpiresOn"
+      CharacterOwnerHash: "CharacterOwnerHash"
+  get_verify_error:
+    required:
+    - "error"
+    properties:
+      error:
+        type: "string"
+        description: "Generic error returned by SSO"
+        title: "get_verify_error_error"
+      error_description:
+        type: "string"
+        description: "Detailed error description from SSO"
+        title: "get_verify_error_description"
+    description: "SSO /verify JSON"
+  get_verify_unauthorized:
+    required:
+    - "error"
+    properties:
+      error:
+        type: "string"
+        description: "Authorization not provided"
+        title: "get_verify_unauthorized_error"
+    description: "Authorization not provided"
+  get_status_item:
+    required:
+    - "endpoint"
+    - "method"
+    - "route"
+    - "status"
+    - "tags"
+    properties:
+      endpoint:
+        type: "string"
+        description: "ESI Endpoint cluster advertising this route"
+        title: "get_status_endpoint"
+      method:
+        type: "string"
+        description: "Swagger defined method"
+        title: "get_status_method"
+      route:
+        type: "string"
+        description: "Swagger defined route, not including version prefix"
+        title: "get_status_route"
+      status:
+        type: "string"
+        description: "Vague route status. Green is good, yellow is degraded, meaning\
+          \ slow or potentially dropping requests. Red means most requests are not\
+          \ succeeding and/or are very slow (5s+) on average."
+        title: "get_status_status"
+        enum:
+        - "green"
+        - "yellow"
+        - "red"
+      tags:
+        type: "array"
+        description: "Swagger tags applicable to this route"
+        title: "get_status_tags"
+        items:
+          type: "string"
+          description: "Swagger tag"
+          title: "get_status_tag"
+    description: "Per route status"
+    example:
+      endpoint: "endpoint"
+      route: "route"
+      method: "method"
+      status: "green"
+      tags:
+      - "tags"
+      - "tags"
+  get_verify_not_found:
+    required:
+    - "error"
+    properties:
+      error:
+        type: "string"
+        description: "Unsupported datasource"
+        title: "get_verify_not_found_error"
+    description: "Unsupported datasource"
+  get_status_not_found:
+    required:
+    - "error"
+    properties:
+      error:
+        type: "string"
+        description: "Unsupported version"
+        title: "get_status_not_found_error"
+    description: "Unsupported version"
+parameters:
+  Authorization:
+    name: "Authorization"
+    in: "header"
+    description: "Access token, in the format of \"Bearer <access token>\""
+    required: false
+    type: "string"
+    x-exportParamName: "Authorization"
+    x-optionalDataType: "String"
+  X-User-Agent:
+    name: "X-User-Agent"
+    in: "header"
+    description: "Client identifier, takes precedence over User-Agent"
+    required: false
+    type: "string"
+    x-exportParamName: "XUserAgent"
+    x-optionalDataType: "String"
+  datasource:
+    name: "datasource"
+    in: "query"
+    description: "The server name you would like data from"
+    required: false
+    type: "string"
+    default: "tranquility"
+    enum:
+    - "tranquility"
+    - "singularity"
+    x-exportParamName: "Datasource"
+    x-optionalDataType: "String"
+  token:
+    name: "token"
+    in: "query"
+    description: "Access token to use if unable to set a header"
+    required: false
+    type: "string"
+    x-exportParamName: "Token"
+    x-optionalDataType: "String"
+  user_agent:
+    name: "user_agent"
+    in: "query"
+    description: "Client identifier, takes precedence over headers"
+    required: false
+    type: "string"
+    x-exportParamName: "UserAgent"
+    x-optionalDataType: "String"
+  version:
+    name: "version"
+    in: "query"
+    description: "The version of metrics to request. Note that alternate versions\
+      \ are grouped together"
+    required: false
+    type: "string"
+    default: "latest"
+    enum:
+    - "latest"
+    - "dev"
+    - "legacy"
+    - "meta"
+    x-exportParamName: "Version"
+    x-optionalDataType: "String"
+  version-ui:
+    name: "version"
+    in: "query"
+    description: "The Swagger spec version to display"
+    required: false
+    type: "string"
+    default: "latest"
+    enum:
+    - "_dev"
+    - "_latest"
+    - "_legacy"
+    - "dev"
+    - "latest"
+    - "legacy"
+    - "v1"
+    - "v2"
+    - "v3"
+    - "v4"
+    x-exportParamName: "Version"
+    x-optionalDataType: "String"
+  version_a:
+    name: "version_a"
+    in: "path"
+    description: "Swagger spec version to compare with"
+    required: true
+    type: "string"
+    enum:
+    - "_dev"
+    - "_latest"
+    - "_legacy"
+    - "dev"
+    - "latest"
+    - "legacy"
+    - "v1"
+    - "v2"
+    - "v3"
+    - "v4"
+    x-exportParamName: "VersionA"
+  version_b:
+    name: "version_b"
+    in: "path"
+    description: "Swagger spec version to compare against"
+    required: true
+    type: "string"
+    enum:
+    - "_dev"
+    - "_latest"
+    - "_legacy"
+    - "dev"
+    - "latest"
+    - "legacy"
+    - "v1"
+    - "v2"
+    - "v3"
+    - "v4"
+    x-exportParamName: "VersionB"

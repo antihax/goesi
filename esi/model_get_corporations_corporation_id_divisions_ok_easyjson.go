@@ -143,7 +143,7 @@ func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v5 GetCorporationsCorporationIdDivisionsWalletWallet
-					easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi3(in, &v5)
+					(v5).UnmarshalEasyJSON(in)
 					out.Wallet = append(out.Wallet, v5)
 					in.WantComma()
 				}
@@ -196,7 +196,7 @@ func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v8 > 0 {
 					out.RawByte(',')
 				}
-				easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi3(out, v9)
+				(v9).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -226,65 +226,6 @@ func (v *GetCorporationsCorporationIdDivisionsOk) UnmarshalJSON(data []byte) err
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCorporationsCorporationIdDivisionsOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCorporationsCorporationIdDivisionsWalletWallet) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "division":
-			out.Division = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCorporationsCorporationIdDivisionsWalletWallet) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Division != 0 {
-		const prefix string = ",\"division\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Division))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
-	out.RawByte('}')
 }
 func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdDivisionsHangarHangar) {
 	isTopLevel := in.IsStart()

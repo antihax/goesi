@@ -33,24 +33,49 @@ type SSOAuthenticator struct {
 // Requires your application clientID, clientSecret, and redirectURL.
 // RedirectURL must match exactly to what you registered with CCP.
 func NewSSOAuthenticator(client *http.Client, clientID string, clientSecret string, redirectURL string, scopes []string) *SSOAuthenticator {
+	return newSSOAuthenticator(
+		client,
+		clientID,
+		clientSecret,
+		redirectURL,
+		scopes,
+		oauth2.Endpoint{
+			AuthURL:  "https://login.eveonline.com/oauth/authorize",
+			TokenURL: "https://login.eveonline.com/oauth/token",
+		},
+	)
+}
 
+// NewSSOAuthenticatorV2 create a new EVE SSO Authenticator with the v2 urls.
+// Requires your application clientID, clientSecret, and redirectURL.
+// RedirectURL must match exactly to what you registered with CCP.
+func NewSSOAuthenticatorV2(client *http.Client, clientID string, clientSecret string, redirectURL string, scopes []string) *SSOAuthenticator {
+	return newSSOAuthenticator(
+		client,
+		clientID,
+		clientSecret,
+		redirectURL,
+		scopes,
+		oauth2.Endpoint{
+			AuthURL:  "https://login.eveonline.com/v2/oauth/authorize",
+			TokenURL: "https://login.eveonline.com/v2/oauth/token",
+		},
+	)
+}
+
+func newSSOAuthenticator(client *http.Client, clientID string, clientSecret string, redirectURL string, scopes []string, endpoint oauth2.Endpoint) *SSOAuthenticator {
 	if client == nil {
 		return nil
 	}
 
 	c := &SSOAuthenticator{}
-
 	c.httpClient = client
-
 	c.oauthConfig = &oauth2.Config{
 		ClientID:     clientID,
 		ClientSecret: clientSecret,
-		Endpoint: oauth2.Endpoint{
-			AuthURL:  "https://login.eveonline.com/oauth/authorize",
-			TokenURL: "https://login.eveonline.com/oauth/token",
-		},
-		Scopes:      scopes,
-		RedirectURL: redirectURL,
+		Endpoint:     endpoint,
+		Scopes:       scopes,
+		RedirectURL:  redirectURL,
 	}
 
 	return c

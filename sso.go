@@ -155,8 +155,8 @@ func (c *SSOAuthenticator) TokenExchange(code string) (*oauth2.Token, error) {
 }
 
 // TokenSource creates a refreshable token that can be passed to ESI functions
-func (c *SSOAuthenticator) TokenSource(token *oauth2.Token) (oauth2.TokenSource, error) {
-	return c.oauthConfig.TokenSource(createContext(c.httpClient), token), nil
+func (c *SSOAuthenticator) TokenSource(token *oauth2.Token) oauth2.TokenSource {
+	return c.oauthConfig.TokenSource(createContext(c.httpClient), token)
 }
 
 type VerifyResponse struct {

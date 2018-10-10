@@ -15659,7 +15659,7 @@ paths:
             title: "get_markets_structures_structure_id_ok"
             items:
               $ref: "#/definitions/get_markets_structures_structure_id_200_ok"
-            maxItems: 5000
+            maxItems: 1000
           examples:
             application/json:
             - duration: 90

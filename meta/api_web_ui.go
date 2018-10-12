@@ -24,12 +24,11 @@ package meta
 
 import (
 	"context"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"fmt"
 
 	"github.com/antihax/goesi/optional"
 )

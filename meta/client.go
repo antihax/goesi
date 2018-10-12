@@ -24,6 +24,7 @@ package meta
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"encoding/xml"
 	"errors"
@@ -40,8 +41,6 @@ import (
 	"strings"
 	"time"
 	"unicode/utf8"
-
-	"context"
 
 	"golang.org/x/oauth2"
 )

@@ -1139,7 +1139,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdMedals(ctx context.Context
 
 /*
 CharacterApiService Get character notifications
-Return character notifications  ---  This route is cached for up to 600 seconds
+Return character notifications  ---  This route is cached for up to 600 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/notifications/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdNotificationsOpts - Optional Parameters:

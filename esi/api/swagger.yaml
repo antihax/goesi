@@ -39721,7 +39721,7 @@ definitions:
           \ and Sunday is 6"
         title: "get_corporations_corporation_id_structures_reinforce_weekday"
         minimum: 0
-        maximum: 6
+        maximum: 255
       services:
         type: "array"
         description: "Contains a list of service upgrades, and their state"

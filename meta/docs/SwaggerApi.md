@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**GetV2Swagger**](SwaggerApi.md#GetV2Swagger) | **Get** /v2/swagger.json | Get v2 swagger spec
 [**GetV3Swagger**](SwaggerApi.md#GetV3Swagger) | **Get** /v3/swagger.json | Get v3 swagger spec
 [**GetV4Swagger**](SwaggerApi.md#GetV4Swagger) | **Get** /v4/swagger.json | Get v4 swagger spec
+[**GetV5Swagger**](SwaggerApi.md#GetV5Swagger) | **Get** /v5/swagger.json | Get v5 swagger spec
 
 
 # **GetDevSwagger**
@@ -392,6 +393,43 @@ No authorization required
 Get v4 swagger spec
 
 The v4 ESI swagger specification.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userAgent** | **string**| Client identifier, takes precedence over headers | 
+ **xUserAgent** | **string**| Client identifier, takes precedence over User-Agent | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+
+### Return type
+
+[**interface{}**](interface{}.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetV5Swagger**
+> interface{} GetV5Swagger(ctx, optional)
+Get v5 swagger spec
+
+The v5 ESI swagger specification.
 
 ### Required Parameters
 

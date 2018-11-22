@@ -809,7 +809,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWallets(ctx context.Conte
 
 /*
 WalletApiService Get corporation wallet journal
-Retrieve the given corporation&#39;s wallet journal for the given division going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+Retrieve the given corporation&#39;s wallet journal for the given division going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/wallets/{division}/journal/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param division Wallet key of the division to fetch journals from

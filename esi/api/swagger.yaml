@@ -394,8 +394,8 @@ paths:
       tags:
       - "Alliance"
       summary: "Get alliance icon"
-      description: "Get the icon urls for a alliance\n\n---\n\nThis route is cached\
-        \ for up to 3600 seconds"
+      description: "Get the icon urls for a alliance\n\n---\n\nThis route expires\
+        \ daily at 11:05"
       operationId: "get_alliances_alliance_id_icons"
       parameters:
       - name: "alliance_id"
@@ -508,7 +508,6 @@ paths:
       - "dev"
       - "legacy"
       - "v1"
-      x-cached-seconds: 3600
   /v1/characters/affiliation/:
     post:
       tags:
@@ -22990,8 +22989,8 @@ paths:
       tags:
       - "Character"
       summary: "Get character portraits"
-      description: "Get portrait urls for a character\n\n---\n\nThis route is cached\
-        \ for up to 3600 seconds"
+      description: "Get portrait urls for a character\n\n---\n\nThis route expires\
+        \ daily at 11:05"
       operationId: "get_characters_character_id_portrait"
       parameters:
       - name: "character_id"
@@ -23105,7 +23104,6 @@ paths:
       x-alternate-versions:
       - "dev"
       - "v2"
-      x-cached-seconds: 3600
   /v2/characters/{character_id}/roles/:
     get:
       tags:
@@ -27754,7 +27752,8 @@ paths:
       description: "Retrieve the given corporation's wallet journal for the given\
         \ division going 30 days back\n\n---\n\nThis route is cached for up to 3600\
         \ seconds\n\n---\nRequires one of the following EVE corporation role(s): Accountant,\
-        \ Junior_Accountant"
+        \ Junior_Accountant\n\n---\nWarning: This route has an upgrade available\n\
+        \n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/wallets/{division}/journal/)"
       operationId: "get_corporations_corporation_id_wallets_division_journal"
       parameters:
       - name: "corporation_id"
@@ -27919,7 +27918,6 @@ paths:
       - evesso:
         - "esi-wallet.read_corporation_wallets.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v3"
       x-cached-seconds: 3600

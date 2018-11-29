@@ -24494,9 +24494,13 @@ paths:
       - "Corporation"
       summary: "Get corporation structures"
       description: "Get a list of corporation structures. This route's version includes\
-        \ the changes to structures detailed in this blog: https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th\n\
+        \ the changes to structures detailed in this blog: https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th\
+        \ Note: this route will not return any flex structures owned by a corporation,\
+        \ use the v3 route to have those included in the response. A list of FLEX\
+        \ structures can be found here: https://support.eveonline.com/hc/en-us/articles/213021829-Upwell-Structures\n\
         \n---\n\nThis route is cached for up to 3600 seconds\n\n---\nRequires one\
-        \ of the following EVE corporation role(s): Station_Manager"
+        \ of the following EVE corporation role(s): Station_Manager\n\n---\nWarning:\
+        \ This route has an upgrade available\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/structures/)"
       operationId: "get_corporations_corporation_id_structures"
       parameters:
       - name: "Accept-Language"
@@ -24689,7 +24693,6 @@ paths:
       - evesso:
         - "esi-corporations.read_structures.v1"
       x-alternate-versions:
-      - "dev"
       - "v2"
       x-cached-seconds: 3600
       x-required-roles:
@@ -39722,7 +39725,7 @@ definitions:
           \ and Sunday is 6"
         title: "get_corporations_corporation_id_structures_reinforce_weekday"
         minimum: 0
-        maximum: 255
+        maximum: 6
       services:
         type: "array"
         description: "Contains a list of service upgrades, and their state"

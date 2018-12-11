@@ -46,4 +46,5 @@ type GetCorporationsCorporationIdOk struct {
 	TaxRate       float32   `json:"tax_rate,omitempty"`        /* tax_rate number */
 	Ticker        string    `json:"ticker,omitempty"`          /* the short name of the corporation */
 	Url           string    `json:"url,omitempty"`             /* url string */
+	WarEligible   bool      `json:"war_eligible,omitempty"`    /* war_eligible boolean */
 }

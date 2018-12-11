@@ -131,6 +131,8 @@ func easyjson71be149aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.Ticker = string(in.String())
 		case "url":
 			out.Url = string(in.String())
+		case "war_eligible":
+			out.WarEligible = bool(in.Bool())
 		default:
 			in.SkipRecursive()
 		}
@@ -274,6 +276,16 @@ func easyjson71be149aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.String(string(in.Url))
+	}
+	if in.WarEligible {
+		const prefix string = ",\"war_eligible\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Bool(bool(in.WarEligible))
 	}
 	out.RawByte('}')
 }

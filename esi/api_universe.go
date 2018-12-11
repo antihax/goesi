@@ -3404,6 +3404,7 @@ List all public structures  ---  This route is cached for up to 3600 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseStructuresOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "Filter" (optional.String) -  Only list public structures that have this service online
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
 
 @return []int64
@@ -3411,6 +3412,7 @@ List all public structures  ---  This route is cached for up to 3600 seconds
 
 type GetUniverseStructuresOpts struct {
 	Datasource  optional.String
+	Filter      optional.String
 	IfNoneMatch optional.String
 }
 
@@ -3432,6 +3434,9 @@ func (a *UniverseApiService) GetUniverseStructures(ctx context.Context, localVar
 
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Filter.IsSet() {
+		localVarQueryParams.Add("filter", parameterToString(localVarOptionals.Filter.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}

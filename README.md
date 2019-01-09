@@ -220,7 +220,7 @@ func eveSSOAnswer(c *appContext.AppContext, w http.ResponseWriter, r *http.Reque
 
 ## Passing Tokens
 
-OAuth2 tokens are passed to endpoings via contexts. Example:
+OAuth2 tokens are passed to endpoints via contexts. Example:
 
 ```go
 	ctx := context.WithValue(context.Background(), goesi.ContextOAuth2, ESIPublicToken)

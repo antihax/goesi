@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **NextReinforceWeekday** | **int32** | The requested change to reinforce_weekday that will take effect at the time shown by next_reinforce_apply | [optional] [default to null]
 **ProfileId** | **int32** | The id of the ACL profile for this citadel | [default to null]
 **ReinforceHour** | **int32** | The hour of day that determines the four hour window when the structure will randomly exit its reinforcement periods and become vulnerable to attack against its armor and/or hull. The structure will become vulnerable at a random time that is +/- 2 hours centered on the value of this property | [default to null]
-**ReinforceWeekday** | **int32** | The day of the week when the structure exits its final reinforcement period and becomes vulnerable to attack against its hull. Monday is 0 and Sunday is 6 | [default to null]
+**ReinforceWeekday** | **int32** | The day of the week when the structure exits its final reinforcement period and becomes vulnerable to attack against its hull. Monday is 0 and Sunday is 6 | [optional] [default to null]
 **Services** | [**[]GetCorporationsCorporationIdStructuresService**](get_corporations_corporation_id_structures_service.md) | Contains a list of service upgrades, and their state | [optional] [default to null]
 **State** | **string** | state string | [default to null]
 **StateTimerEnd** | [**time.Time**](time.Time.md) | Date at which the structure will move to it&#39;s next state | [optional] [default to null]

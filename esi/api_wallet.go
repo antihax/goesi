@@ -232,7 +232,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWallet(ctx context.Context, c
 
 /*
 WalletApiService Get character wallet journal
-Retrieve the given character&#39;s wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/journal/)
+Retrieve the given character&#39;s wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdWalletJournalOpts - Optional Parameters:
@@ -261,7 +261,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletJournal(ctx context.Con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v4/characters/{character_id}/wallet/journal/"
+	localVarPath := a.client.basePath + "/v5/characters/{character_id}/wallet/journal/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -809,7 +809,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWallets(ctx context.Conte
 
 /*
 WalletApiService Get corporation wallet journal
-Retrieve the given corporation&#39;s wallet journal for the given division going 30 days back. Note: any journal records having to do with the new navigation structures from the release of Onslaught will not show up in this version. To see those, use the v4 version of this route.  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/wallets/{division}/journal/)
+Retrieve the given corporation&#39;s wallet journal for the given division going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param division Wallet key of the division to fetch journals from
@@ -839,7 +839,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionJournal(ct
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v3/corporations/{corporation_id}/wallets/{division}/journal/"
+	localVarPath := a.client.basePath + "/v4/corporations/{corporation_id}/wallets/{division}/journal/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"division"+"}", fmt.Sprintf("%v", division), -1)
 

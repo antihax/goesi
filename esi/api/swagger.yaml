@@ -882,7 +882,7 @@ paths:
       - "Skills"
       summary: "Get character attributes"
       description: "Return attributes of a character\n\n---\n\nThis route is cached\
-        \ for up to 3600 seconds"
+        \ for up to 120 seconds"
       operationId: "get_characters_character_id_attributes"
       parameters:
       - name: "character_id"
@@ -1015,7 +1015,7 @@ paths:
       - "dev"
       - "legacy"
       - "v1"
-      x-cached-seconds: 3600
+      x-cached-seconds: 120
   /v1/characters/{character_id}/calendar/:
     get:
       tags:
@@ -2875,7 +2875,7 @@ paths:
       - "Clones"
       summary: "Get active implants"
       description: "Return implants on the active clone of a character\n\n---\n\n\
-        This route is cached for up to 300 seconds"
+        This route is cached for up to 120 seconds"
       operationId: "get_characters_character_id_implants"
       parameters:
       - name: "character_id"
@@ -3014,7 +3014,7 @@ paths:
       - "dev"
       - "legacy"
       - "v1"
-      x-cached-seconds: 300
+      x-cached-seconds: 120
   /v1/characters/{character_id}/industry/jobs/:
     get:
       tags:
@@ -19298,7 +19298,7 @@ paths:
             maxLength: 100
           example: "[\"CCP Zoetrope\"]"
           minItems: 1
-          maxItems: 1000
+          maxItems: 500
         x-exportParamName: "Names"
       responses:
         200:
@@ -36029,70 +36029,70 @@ definitions:
         title: "post_universe_ids_agents"
         items:
           $ref: "#/definitions/post_universe_ids_agent"
-        maxItems: 1000
+        maxItems: 500
       alliances:
         type: "array"
         description: "alliances array"
         title: "post_universe_ids_alliances"
         items:
           $ref: "#/definitions/post_universe_ids_alliance"
-        maxItems: 1000
+        maxItems: 500
       characters:
         type: "array"
         description: "characters array"
         title: "post_universe_ids_characters"
         items:
           $ref: "#/definitions/post_universe_ids_character"
-        maxItems: 1000
+        maxItems: 500
       constellations:
         type: "array"
         description: "constellations array"
         title: "post_universe_ids_constellations"
         items:
           $ref: "#/definitions/post_universe_ids_constellation"
-        maxItems: 1000
+        maxItems: 500
       corporations:
         type: "array"
         description: "corporations array"
         title: "post_universe_ids_corporations"
         items:
           $ref: "#/definitions/post_universe_ids_corporation"
-        maxItems: 1000
+        maxItems: 500
       factions:
         type: "array"
         description: "factions array"
         title: "post_universe_ids_factions"
         items:
           $ref: "#/definitions/post_universe_ids_faction"
-        maxItems: 1000
+        maxItems: 500
       inventory_types:
         type: "array"
         description: "inventory_types array"
         title: "post_universe_ids_inventory_types"
         items:
           $ref: "#/definitions/post_universe_ids_inventory_type"
-        maxItems: 1000
+        maxItems: 500
       regions:
         type: "array"
         description: "regions array"
         title: "post_universe_ids_regions"
         items:
           $ref: "#/definitions/post_universe_ids_region"
-        maxItems: 1000
+        maxItems: 500
       stations:
         type: "array"
         description: "stations array"
         title: "post_universe_ids_stations"
         items:
           $ref: "#/definitions/post_universe_ids_station"
-        maxItems: 1000
+        maxItems: 500
       systems:
         type: "array"
         description: "systems array"
         title: "post_universe_ids_systems"
         items:
           $ref: "#/definitions/post_universe_ids_system"
-        maxItems: 1000
+        maxItems: 500
     description: "200 ok object"
   get_universe_moons_moon_id_position:
     required:

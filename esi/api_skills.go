@@ -43,7 +43,7 @@ type SkillsApiService service
 
 /*
 SkillsApiService Get character attributes
-Return attributes of a character  ---  This route is cached for up to 3600 seconds
+Return attributes of a character  ---  This route is cached for up to 120 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdAttributesOpts - Optional Parameters:

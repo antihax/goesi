@@ -232,7 +232,7 @@ func (a *ClonesApiService) GetCharactersCharacterIdClones(ctx context.Context, c
 
 /*
 ClonesApiService Get active implants
-Return implants on the active clone of a character  ---  This route is cached for up to 300 seconds
+Return implants on the active clone of a character  ---  This route is cached for up to 120 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdImplantsOpts - Optional Parameters:

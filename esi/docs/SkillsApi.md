@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > GetCharactersCharacterIdAttributesOk GetCharactersCharacterIdAttributes(ctx, characterId, optional)
 Get character attributes
 
-Return attributes of a character  ---  This route is cached for up to 3600 seconds
+Return attributes of a character  ---  This route is cached for up to 120 seconds
 
 ### Required Parameters
 

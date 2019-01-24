@@ -33,7 +33,7 @@ Method | HTTP request | Description
 [**GetUniverseTypes**](UniverseApi.md#GetUniverseTypes) | **Get** /v1/universe/types/ | Get types
 [**GetUniverseTypesTypeId**](UniverseApi.md#GetUniverseTypesTypeId) | **Get** /v3/universe/types/{type_id}/ | Get type information
 [**PostUniverseIds**](UniverseApi.md#PostUniverseIds) | **Post** /v1/universe/ids/ | Bulk names to IDs
-[**PostUniverseNames**](UniverseApi.md#PostUniverseNames) | **Post** /v2/universe/names/ | Get names and categories for a set of ID&#39;s
+[**PostUniverseNames**](UniverseApi.md#PostUniverseNames) | **Post** /v2/universe/names/ | Get names and categories for a set of IDs
 
 
 # **GetUniverseAncestries**
@@ -1137,9 +1137,9 @@ No authorization required
 
 # **PostUniverseNames**
 > []PostUniverseNames200Ok PostUniverseNames(ctx, ids, optional)
-Get names and categories for a set of ID's
+Get names and categories for a set of IDs
 
-Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types  --- 
+Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types  ---  Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/universe/names/)
 
 ### Required Parameters
 

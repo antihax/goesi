@@ -25030,6 +25030,7 @@ paths:
         - "esi-ui.write_waypoint.v1"
       x-alternate-versions:
       - "dev"
+      - "legacy"
       - "v2"
   /v2/universe/factions/:
     get:
@@ -25189,10 +25190,11 @@ paths:
     post:
       tags:
       - "Universe"
-      summary: "Get names and categories for a set of ID's"
+      summary: "Get names and categories for a set of IDs"
       description: "Resolve a set of IDs to names and categories. Supported ID's for\
         \ resolving are: Characters, Corporations, Alliances, Stations, Solar Systems,\
-        \ Constellations, Regions, Types\n\n---\n"
+        \ Constellations, Regions, Types\n\n---\n\nWarning: This route has an upgrade\
+        \ available\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/universe/names/)"
       operationId: "post_universe_names"
       parameters:
       - name: "datasource"
@@ -25225,7 +25227,7 @@ paths:
         x-exportParamName: "Ids"
       responses:
         200:
-          description: "List of id/name associations for a set of ID's. All ID's must\
+          description: "List of id/name associations for a set of IDs. All IDs must\
             \ resolve to a name, or nothing will be returned"
           schema:
             type: "array"
@@ -25285,7 +25287,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "v2"
   /v2/universe/stations/{station_id}/:
     get:

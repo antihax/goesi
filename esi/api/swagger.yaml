@@ -2233,7 +2233,8 @@ paths:
       - "Fittings"
       summary: "Get fittings"
       description: "Return fittings of a character\n\n---\n\nThis route is cached\
-        \ for up to 300 seconds"
+        \ for up to 300 seconds\n\n---\nWarning: This route has an upgrade available\n\
+        \n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/fittings/)"
       operationId: "get_characters_character_id_fittings"
       parameters:
       - name: "character_id"
@@ -2371,7 +2372,6 @@ paths:
       - evesso:
         - "esi-fittings.read_fittings.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 300
@@ -2379,7 +2379,8 @@ paths:
       tags:
       - "Fittings"
       summary: "Create fitting"
-      description: "Save a new fitting for a character\n\n---\n"
+      description: "Save a new fitting for a character\n\n---\n\nWarning: This route\
+        \ has an upgrade available\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/fittings/)"
       operationId: "post_characters_character_id_fittings"
       parameters:
       - name: "character_id"
@@ -2476,7 +2477,6 @@ paths:
       - evesso:
         - "esi-fittings.write_fittings.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
   /v1/characters/{character_id}/fittings/{fitting_id}/:

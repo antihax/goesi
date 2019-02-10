@@ -29,7 +29,7 @@ It is also good manners to provide a user-agent describing the point of use of t
 Example:
 
 ```go
-client := goesi.NewAPIClient(context.Background(), "my esi client http://mysite.com contact <SomeDude> ingame")
+client := goesi.NewAPIClient(&http.Client, "my esi client http://mysite.com contact <SomeDude> ingame")
 result, response, err := client.V#.Endpoint.Operation(requestContext, requiredParam, &esi.OperationOpts{
 																	Optional1: optional.NewString("someValue"),
 																	Optional2: optional.NewFloat64(1234.56),

@@ -25186,108 +25186,6 @@ paths:
       x-alternate-versions:
       - "dev"
       - "v2"
-  /v2/universe/names/:
-    post:
-      tags:
-      - "Universe"
-      summary: "Get names and categories for a set of IDs"
-      description: "Resolve a set of IDs to names and categories. Supported ID's for\
-        \ resolving are: Characters, Corporations, Alliances, Stations, Solar Systems,\
-        \ Constellations, Regions, Types\n\n---\n\nWarning: This route has an upgrade\
-        \ available\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/universe/names/)"
-      operationId: "post_universe_names"
-      parameters:
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      - in: "body"
-        name: "ids"
-        description: "The ids to resolve"
-        required: true
-        schema:
-          title: "post_universe_names_ids"
-          type: "array"
-          description: "ids array"
-          items:
-            type: "integer"
-            format: "int32"
-            description: "id integer"
-            title: "post_universe_names_id"
-          example: "[95465499,30000142]"
-          minItems: 1
-          maxItems: 1000
-        x-exportParamName: "Ids"
-      responses:
-        200:
-          description: "List of id/name associations for a set of IDs. All IDs must\
-            \ resolve to a name, or nothing will be returned"
-          schema:
-            type: "array"
-            description: "200 ok array"
-            title: "post_universe_names_ok"
-            items:
-              $ref: "#/definitions/post_universe_names_200_ok"
-            maxItems: 1000
-          examples:
-            application/json:
-            - category: "character"
-              id: 95465499
-              name: "CCP Bartender"
-            - category: "solar_system"
-              id: 30000142
-              name: "Jita"
-        400:
-          description: "Bad request"
-          schema:
-            $ref: "#/definitions/bad_request"
-          examples:
-            application/json:
-              error: "Bad request message"
-        404:
-          description: "Ensure all IDs are valid before resolving"
-          schema:
-            $ref: "#/definitions/post_universe_names_not_found"
-          examples:
-            application/json:
-              error: "Not found message"
-        420:
-          description: "Error limited"
-          schema:
-            $ref: "#/definitions/error_limited"
-          examples:
-            application/json:
-              error: "Error limited message"
-        500:
-          description: "Internal server error"
-          schema:
-            $ref: "#/definitions/internal_server_error"
-          examples:
-            application/json:
-              error: "Internal server error message"
-        503:
-          description: "Service unavailable"
-          schema:
-            $ref: "#/definitions/service_unavailable"
-          examples:
-            application/json:
-              error: "Service unavailable message"
-        504:
-          description: "Gateway timeout"
-          schema:
-            $ref: "#/definitions/gateway_timeout"
-          examples:
-            application/json:
-              error: "Gateway timeout message"
-      x-alternate-versions:
-      - "v2"
   /v2/universe/stations/{station_id}/:
     get:
       tags:
@@ -27608,6 +27506,108 @@ paths:
       x-cached-seconds: 3600
       x-required-roles:
       - "Station_Manager"
+  /v3/universe/names/:
+    post:
+      tags:
+      - "Universe"
+      summary: "Get names and categories for a set of IDs"
+      description: "Resolve a set of IDs to names and categories. Supported ID's for\
+        \ resolving are: Characters, Corporations, Alliances, Stations, Solar Systems,\
+        \ Constellations, Regions, Types, Factions\n\n---\n"
+      operationId: "post_universe_names"
+      parameters:
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - in: "body"
+        name: "ids"
+        description: "The ids to resolve"
+        required: true
+        schema:
+          title: "post_universe_names_ids"
+          type: "array"
+          description: "ids array"
+          items:
+            type: "integer"
+            format: "int32"
+            description: "id integer"
+            title: "post_universe_names_id"
+          example: "[95465499,30000142]"
+          minItems: 1
+          maxItems: 1000
+        x-exportParamName: "Ids"
+      responses:
+        200:
+          description: "List of id/name associations for a set of IDs. All IDs must\
+            \ resolve to a name, or nothing will be returned"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "post_universe_names_ok"
+            items:
+              $ref: "#/definitions/post_universe_names_200_ok"
+            maxItems: 1000
+          examples:
+            application/json:
+            - category: "character"
+              id: 95465499
+              name: "CCP Bartender"
+            - category: "solar_system"
+              id: 30000142
+              name: "Jita"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        404:
+          description: "Ensure all IDs are valid before resolving"
+          schema:
+            $ref: "#/definitions/post_universe_names_not_found"
+          examples:
+            application/json:
+              error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      x-alternate-versions:
+      - "dev"
+      - "v3"
   /v3/universe/types/{type_id}/:
     get:
       tags:
@@ -39991,42 +39991,6 @@ definitions:
         description: "station_system_count integer"
         title: "get_universe_factions_station_system_count"
     description: "200 ok object"
-  post_universe_names_200_ok:
-    required:
-    - "category"
-    - "id"
-    - "name"
-    properties:
-      category:
-        type: "string"
-        description: "category string"
-        title: "post_universe_names_category"
-        enum:
-        - "alliance"
-        - "character"
-        - "constellation"
-        - "corporation"
-        - "inventory_type"
-        - "region"
-        - "solar_system"
-        - "station"
-      id:
-        type: "integer"
-        format: "int32"
-        description: "id integer"
-        title: "post_universe_names_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "post_universe_names_name"
-    description: "200 ok object"
-  post_universe_names_not_found:
-    properties:
-      error:
-        type: "string"
-        description: "Not found message"
-        title: "post_universe_names_404_not_found"
-    description: "Not found"
   get_universe_stations_station_id_position:
     required:
     - "x"
@@ -41420,6 +41384,43 @@ definitions:
         description: "Date at which the structure will unanchor"
         title: "get_corporations_corporation_id_structures_unanchors_at"
     description: "200 ok object"
+  post_universe_names_200_ok:
+    required:
+    - "category"
+    - "id"
+    - "name"
+    properties:
+      category:
+        type: "string"
+        description: "category string"
+        title: "post_universe_names_category"
+        enum:
+        - "alliance"
+        - "character"
+        - "constellation"
+        - "corporation"
+        - "inventory_type"
+        - "region"
+        - "solar_system"
+        - "station"
+        - "faction"
+      id:
+        type: "integer"
+        format: "int32"
+        description: "id integer"
+        title: "post_universe_names_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "post_universe_names_name"
+    description: "200 ok object"
+  post_universe_names_not_found:
+    properties:
+      error:
+        type: "string"
+        description: "Not found message"
+        title: "post_universe_names_404_not_found"
+    description: "Not found"
   get_universe_types_type_id_dogma_attribute:
     required:
     - "attribute_id"

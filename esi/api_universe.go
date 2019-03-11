@@ -4917,7 +4917,7 @@ func (a *UniverseApiService) PostUniverseIds(ctx context.Context, names []string
 
 /*
 UniverseApiService Get names and categories for a set of IDs
-Resolve a set of IDs to names and categories. Supported ID&#39;s for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types  ---  Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/universe/names/)
+Resolve a set of IDs to names and categories. Supported ID&#39;s for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types, Factions  ---
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ids The ids to resolve
  * @param optional nil or *PostUniverseNamesOpts - Optional Parameters:
@@ -4940,7 +4940,7 @@ func (a *UniverseApiService) PostUniverseNames(ctx context.Context, ids []int32,
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/universe/names/"
+	localVarPath := a.client.basePath + "/v3/universe/names/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

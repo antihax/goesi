@@ -110,8 +110,8 @@ Class | Method | HTTP request | Description
 *FactionWarfareApi* | [**GetFwSystems**](docs/FactionWarfareApi.md#getfwsystems) | **Get** /v2/fw/systems/ | Ownership of faction warfare systems
 *FactionWarfareApi* | [**GetFwWars**](docs/FactionWarfareApi.md#getfwwars) | **Get** /v1/fw/wars/ | Data about which NPC factions are at war
 *FittingsApi* | [**DeleteCharactersCharacterIdFittingsFittingId**](docs/FittingsApi.md#deletecharacterscharacteridfittingsfittingid) | **Delete** /v1/characters/{character_id}/fittings/{fitting_id}/ | Delete fitting
-*FittingsApi* | [**GetCharactersCharacterIdFittings**](docs/FittingsApi.md#getcharacterscharacteridfittings) | **Get** /v1/characters/{character_id}/fittings/ | Get fittings
-*FittingsApi* | [**PostCharactersCharacterIdFittings**](docs/FittingsApi.md#postcharacterscharacteridfittings) | **Post** /v1/characters/{character_id}/fittings/ | Create fitting
+*FittingsApi* | [**GetCharactersCharacterIdFittings**](docs/FittingsApi.md#getcharacterscharacteridfittings) | **Get** /v2/characters/{character_id}/fittings/ | Get fittings
+*FittingsApi* | [**PostCharactersCharacterIdFittings**](docs/FittingsApi.md#postcharacterscharacteridfittings) | **Post** /v2/characters/{character_id}/fittings/ | Create fitting
 *FleetsApi* | [**DeleteFleetsFleetIdMembersMemberId**](docs/FleetsApi.md#deletefleetsfleetidmembersmemberid) | **Delete** /v1/fleets/{fleet_id}/members/{member_id}/ | Kick fleet member
 *FleetsApi* | [**DeleteFleetsFleetIdSquadsSquadId**](docs/FleetsApi.md#deletefleetsfleetidsquadssquadid) | **Delete** /v1/fleets/{fleet_id}/squads/{squad_id}/ | Delete fleet squad
 *FleetsApi* | [**DeleteFleetsFleetIdWingsWingId**](docs/FleetsApi.md#deletefleetsfleetidwingswingid) | **Delete** /v1/fleets/{fleet_id}/wings/{wing_id}/ | Delete fleet wing

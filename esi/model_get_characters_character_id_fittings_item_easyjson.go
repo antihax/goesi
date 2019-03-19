@@ -27,7 +27,7 @@ func easyjson43ca1e42DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCh
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetCharactersCharacterIdFittingsItemList, 0, 5)
+				*out = make(GetCharactersCharacterIdFittingsItemList, 0, 2)
 			} else {
 				*out = GetCharactersCharacterIdFittingsItemList{}
 			}
@@ -104,7 +104,7 @@ func easyjson43ca1e42DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		}
 		switch key {
 		case "flag":
-			out.Flag = int32(in.Int32())
+			out.Flag = string(in.String())
 		case "quantity":
 			out.Quantity = int32(in.Int32())
 		case "type_id":
@@ -123,7 +123,7 @@ func easyjson43ca1e42EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Flag != 0 {
+	if in.Flag != "" {
 		const prefix string = ",\"flag\":"
 		if first {
 			first = false
@@ -131,7 +131,7 @@ func easyjson43ca1e42EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.Flag))
+		out.String(string(in.Flag))
 	}
 	if in.Quantity != 0 {
 		const prefix string = ",\"quantity\":"

@@ -29,7 +29,7 @@ type PostCharactersCharacterIdFittingsItemList []PostCharactersCharacterIdFittin
 /* item object */
 //easyjson:json
 type PostCharactersCharacterIdFittingsItem struct {
-	Flag     int32 `json:"flag,omitempty"`     /* flag integer */
-	Quantity int32 `json:"quantity,omitempty"` /* quantity integer */
-	TypeId   int32 `json:"type_id,omitempty"`  /* type_id integer */
+	Flag     string `json:"flag,omitempty"`     /* Fitting location for the item. Entries placed in 'Invalid' will be discarded. If this leaves the fitting with nothing, it will cause an error. */
+	Quantity int32  `json:"quantity,omitempty"` /* quantity integer */
+	TypeId   int32  `json:"type_id,omitempty"`  /* type_id integer */
 }

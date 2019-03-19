@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Flag** | **int32** | flag integer | [default to null]
+**Flag** | **string** | flag string | [default to null]
 **Quantity** | **int32** | quantity integer | [default to null]
 **TypeId** | **int32** | type_id integer | [default to null]
 

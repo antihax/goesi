@@ -113,7 +113,7 @@ func easyjsonC29a6102DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				in.Delim('[')
 				if out.Items == nil {
 					if !in.IsDelim(']') {
-						out.Items = make([]PostCharactersCharacterIdFittingsItem, 0, 5)
+						out.Items = make([]PostCharactersCharacterIdFittingsItem, 0, 2)
 					} else {
 						out.Items = []PostCharactersCharacterIdFittingsItem{}
 					}
@@ -241,7 +241,7 @@ func easyjsonC29a6102DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *Post
 		}
 		switch key {
 		case "flag":
-			out.Flag = int32(in.Int32())
+			out.Flag = string(in.String())
 		case "quantity":
 			out.Quantity = int32(in.Int32())
 		case "type_id":
@@ -260,7 +260,7 @@ func easyjsonC29a6102EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Pos
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.Flag != 0 {
+	if in.Flag != "" {
 		const prefix string = ",\"flag\":"
 		if first {
 			first = false
@@ -268,7 +268,7 @@ func easyjsonC29a6102EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Pos
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int32(int32(in.Flag))
+		out.String(string(in.Flag))
 	}
 	if in.Quantity != 0 {
 		const prefix string = ",\"quantity\":"

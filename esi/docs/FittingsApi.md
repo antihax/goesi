@@ -5,8 +5,8 @@ All URIs are relative to *https://esi.evetech.net*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteCharactersCharacterIdFittingsFittingId**](FittingsApi.md#DeleteCharactersCharacterIdFittingsFittingId) | **Delete** /v1/characters/{character_id}/fittings/{fitting_id}/ | Delete fitting
-[**GetCharactersCharacterIdFittings**](FittingsApi.md#GetCharactersCharacterIdFittings) | **Get** /v1/characters/{character_id}/fittings/ | Get fittings
-[**PostCharactersCharacterIdFittings**](FittingsApi.md#PostCharactersCharacterIdFittings) | **Post** /v1/characters/{character_id}/fittings/ | Create fitting
+[**GetCharactersCharacterIdFittings**](FittingsApi.md#GetCharactersCharacterIdFittings) | **Get** /v2/characters/{character_id}/fittings/ | Get fittings
+[**PostCharactersCharacterIdFittings**](FittingsApi.md#PostCharactersCharacterIdFittings) | **Post** /v2/characters/{character_id}/fittings/ | Create fitting
 
 
 # **DeleteCharactersCharacterIdFittingsFittingId**
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdFittings200Ok GetCharactersCharacterIdFittings(ctx, characterId, optional)
 Get fittings
 
-Return fittings of a character  ---  This route is cached for up to 300 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/fittings/)
+Return fittings of a character  ---  This route is cached for up to 300 seconds
 
 ### Required Parameters
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 > PostCharactersCharacterIdFittingsCreated PostCharactersCharacterIdFittings(ctx, characterId, fitting, optional)
 Create fitting
 
-Save a new fitting for a character  ---  Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/fittings/)
+Save a new fitting for a character  --- 
 
 ### Required Parameters
 

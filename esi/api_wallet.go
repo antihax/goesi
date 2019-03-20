@@ -232,7 +232,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWallet(ctx context.Context, c
 
 /*
 WalletApiService Get character wallet journal
-Retrieve the given character&#39;s wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds
+Retrieve the given character&#39;s wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/journal/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdWalletJournalOpts - Optional Parameters:

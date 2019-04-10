@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Name** | **string** | name string | [default to null]
 **RaceId** | **int32** | race_id integer | [default to null]
 **SecurityStatus** | **float32** | security_status number | [optional] [default to null]
+**Title** | **string** | The individual title of the character | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

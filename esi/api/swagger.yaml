@@ -27817,6 +27817,7 @@ paths:
               gender: "male"
               name: "CCP Bartender"
               race_id: 2
+              title: "All round pretty awesome guy"
           headers:
             Cache-Control:
               type: "string"
@@ -41702,6 +41703,10 @@ definitions:
         title: "get_characters_character_id_security_status"
         minimum: -10
         maximum: 10
+      title:
+        type: "string"
+        description: "The individual title of the character"
+        title: "get_characters_character_id_title"
     description: "200 ok object"
   get_characters_character_id_not_found:
     properties:

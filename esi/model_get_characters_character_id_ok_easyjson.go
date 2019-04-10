@@ -127,6 +127,8 @@ func easyjsonD2c9dba0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 			out.RaceId = int32(in.Int32())
 		case "security_status":
 			out.SecurityStatus = float32(in.Float32())
+		case "title":
+			out.Title = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -250,6 +252,16 @@ func easyjsonD2c9dba0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Float32(float32(in.SecurityStatus))
+	}
+	if in.Title != "" {
+		const prefix string = ",\"title\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Title))
 	}
 	out.RawByte('}')
 }

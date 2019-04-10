@@ -44,4 +44,5 @@ type GetCharactersCharacterIdOk struct {
 	Name           string    `json:"name,omitempty"`            /* name string */
 	RaceId         int32     `json:"race_id,omitempty"`         /* race_id integer */
 	SecurityStatus float32   `json:"security_status,omitempty"` /* security_status number */
+	Title          string    `json:"title,omitempty"`           /* The individual title of the character */
 }

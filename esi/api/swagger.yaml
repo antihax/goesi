@@ -28779,14 +28779,13 @@ paths:
       x-alternate-versions:
       - "dev"
       - "v4"
-  /v5/characters/{character_id}/wallet/journal/:
+  /v6/characters/{character_id}/wallet/journal/:
     get:
       tags:
       - "Wallet"
       summary: "Get character wallet journal"
       description: "Retrieve the given character's wallet journal going 30 days back\n\
-        \n---\n\nThis route is cached for up to 3600 seconds\n\n---\nWarning: This\
-        \ route has an upgrade available\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/journal/)"
+        \n---\n\nThis route is cached for up to 3600 seconds"
       operationId: "get_characters_character_id_wallet_journal"
       parameters:
       - name: "character_id"
@@ -28941,7 +28940,8 @@ paths:
       - evesso:
         - "esi-wallet.read_character_wallet.v1"
       x-alternate-versions:
-      - "v5"
+      - "dev"
+      - "v6"
       x-cached-seconds: 3600
 securityDefinitions:
   evesso:
@@ -42578,6 +42578,7 @@ definitions:
         - "infrastructure_hub_maintenance"
         - "inheritance"
         - "insurance"
+        - "item_trader_payment"
         - "jump_clone_activation_fee"
         - "jump_clone_installation_fee"
         - "kill_right_fee"
@@ -42613,6 +42614,7 @@ definitions:
         - "reverse_engineering"
         - "security_processing_fee"
         - "shares"
+        - "skill_purchase"
         - "sovereignity_bill"
         - "store_purchase"
         - "store_purchase_refund"

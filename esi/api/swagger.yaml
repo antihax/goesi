@@ -28015,7 +28015,8 @@ paths:
       - "Character"
       summary: "Get character notifications"
       description: "Return character notifications\n\n---\n\nThis route is cached\
-        \ for up to 600 seconds"
+        \ for up to 600 seconds\n\n---\nWarning: This route has an upgrade available\n\
+        \n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/notifications/)"
       operationId: "get_characters_character_id_notifications"
       parameters:
       - name: "character_id"
@@ -28153,7 +28154,6 @@ paths:
       - evesso:
         - "esi-characters.read_notifications.v1"
       x-alternate-versions:
-      - "dev"
       - "v4"
       x-cached-seconds: 600
   /v4/characters/{character_id}/skills/:
@@ -37568,7 +37568,8 @@ definitions:
       finish_date:
         type: "string"
         format: "date-time"
-        description: "finish_date string"
+        description: "Date on which training of the skill will complete. Omitted if\
+          \ the skill queue is paused."
         title: "get_characters_character_id_skillqueue_finish_date"
       finished_level:
         type: "integer"

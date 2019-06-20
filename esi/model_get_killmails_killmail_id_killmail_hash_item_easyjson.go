@@ -152,12 +152,8 @@ func easyjson3bbccc1aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.Flag != 0 {
 		const prefix string = ",\"flag\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Flag))
 	}
 	if in.ItemTypeId != 0 {

@@ -147,12 +147,8 @@ func easyjson6abb6e4eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.AllianceTaxRate != 0 {
 		const prefix string = ",\"alliance_tax_rate\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float32(float32(in.AllianceTaxRate))
 	}
 	if in.AllowAccessWithStandings {

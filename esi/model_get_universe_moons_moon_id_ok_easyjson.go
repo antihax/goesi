@@ -127,12 +127,8 @@ func easyjsonC5702a3aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.MoonId != 0 {
 		const prefix string = ",\"moon_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.MoonId))
 	}
 	if in.Name != "" {
@@ -232,12 +228,8 @@ func easyjsonC5702a3aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.X != 0 {
 		const prefix string = ",\"x\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float64(float64(in.X))
 	}
 	if in.Y != 0 {

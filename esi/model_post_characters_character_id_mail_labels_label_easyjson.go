@@ -123,12 +123,8 @@ func easyjsonBa5469f6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	_ = first
 	if in.Color != "" {
 		const prefix string = ",\"color\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Color))
 	}
 	if in.Name != "" {

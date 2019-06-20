@@ -156,12 +156,8 @@ func easyjson8cf1533EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetK
 	_ = first
 	if in.AllianceId != 0 {
 		const prefix string = ",\"alliance_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.CharacterId != 0 {
@@ -337,12 +333,8 @@ func easyjson8cf1533EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetK
 	_ = first
 	if in.Flag != 0 {
 		const prefix string = ",\"flag\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Flag))
 	}
 	if in.ItemTypeId != 0 {

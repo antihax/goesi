@@ -168,12 +168,8 @@ func easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if true {
 		const prefix string = ",\"aggressor\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi2(out, in.Aggressor)
 	}
 	if len(in.Allies) != 0 {
@@ -344,12 +340,8 @@ func easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in Get
 	_ = first
 	if in.AllianceId != 0 {
 		const prefix string = ",\"alliance_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.CorporationId != 0 {
@@ -423,12 +415,8 @@ func easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	_ = first
 	if in.AllianceId != 0 {
 		const prefix string = ",\"alliance_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.CorporationId != 0 {
@@ -486,12 +474,8 @@ func easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.AllianceId != 0 {
 		const prefix string = ",\"alliance_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.CorporationId != 0 {

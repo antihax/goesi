@@ -123,12 +123,8 @@ func easyjson5e6bca6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetU
 	_ = first
 	if in.StargateId != 0 {
 		const prefix string = ",\"stargate_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.StargateId))
 	}
 	if in.SystemId != 0 {

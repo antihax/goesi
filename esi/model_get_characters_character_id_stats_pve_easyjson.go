@@ -127,12 +127,8 @@ func easyjson239dd91fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.DungeonsCompletedAgent != 0 {
 		const prefix string = ",\"dungeons_completed_agent\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.DungeonsCompletedAgent))
 	}
 	if in.DungeonsCompletedDistribution != 0 {

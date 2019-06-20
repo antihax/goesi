@@ -141,12 +141,8 @@ func easyjsonBeee0876EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.MoonId != 0 {
 		const prefix string = ",\"moon_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.MoonId))
 	}
 	if true {

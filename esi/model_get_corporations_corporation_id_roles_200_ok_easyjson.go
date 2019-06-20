@@ -305,12 +305,8 @@ func easyjson42304e79EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.CharacterId != 0 {
 		const prefix string = ",\"character_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.CharacterId))
 	}
 	if len(in.GrantableRoles) != 0 {

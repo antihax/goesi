@@ -125,12 +125,8 @@ func easyjson58057d25EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.DaysOfActivity != 0 {
 		const prefix string = ",\"days_of_activity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.DaysOfActivity))
 	}
 	if in.Minutes != 0 {

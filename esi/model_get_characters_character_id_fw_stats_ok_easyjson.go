@@ -133,12 +133,8 @@ func easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.CurrentRank != 0 {
 		const prefix string = ",\"current_rank\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.CurrentRank))
 	}
 	if true {
@@ -258,12 +254,8 @@ func easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.LastWeek != 0 {
 		const prefix string = ",\"last_week\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.LastWeek))
 	}
 	if in.Total != 0 {

@@ -145,12 +145,8 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if true {
 		const prefix string = ",\"character\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi2(out, in.Character)
 	}
 	if true {
@@ -384,12 +380,8 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi10(out *jwriter.Writer, in Ge
 	_ = first
 	if in.AddContactBad != 0 {
 		const prefix string = ",\"add_contact_bad\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.AddContactBad))
 	}
 	if in.AddContactGood != 0 {
@@ -677,12 +669,8 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi9(out *jwriter.Writer, in Get
 	_ = first
 	if in.DungeonsCompletedAgent != 0 {
 		const prefix string = ",\"dungeons_completed_agent\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.DungeonsCompletedAgent))
 	}
 	if in.DungeonsCompletedDistribution != 0 {
@@ -758,12 +746,8 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi8(out *jwriter.Writer, in Get
 	_ = first
 	if in.StrikeCharactersKilled != 0 {
 		const prefix string = ",\"strike_characters_killed\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.StrikeCharactersKilled))
 	}
 	if in.StrikeDamageToPlayersArmorAmount != 0 {
@@ -961,12 +945,8 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi7(out *jwriter.Writer, in Get
 	_ = first
 	if in.ActivationsArmorHardener != 0 {
 		const prefix string = ",\"activations_armor_hardener\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.ActivationsArmorHardener))
 	}
 	if in.ActivationsArmorRepairUnit != 0 {
@@ -1724,12 +1704,8 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi6(out *jwriter.Writer, in Get
 	_ = first
 	if in.DroneMine != 0 {
 		const prefix string = ",\"drone_mine\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.DroneMine))
 	}
 	if in.OreArkonor != 0 {
@@ -1953,12 +1929,8 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in Get
 	_ = first
 	if in.In != 0 {
 		const prefix string = ",\"in\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.In))
 	}
 	if in.Out != 0 {
@@ -2012,12 +1984,8 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in Get
 	_ = first
 	if in.AbandonLootQuantity != 0 {
 		const prefix string = ",\"abandon_loot_quantity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.AbandonLootQuantity))
 	}
 	if in.TrashItemQuantity != 0 {
@@ -2255,12 +2223,8 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	_ = first
 	if in.CapDrainedbyNpc != 0 {
 		const prefix string = ",\"cap_drainedby_npc\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.CapDrainedbyNpc))
 	}
 	if in.CapDrainedbyPc != 0 {
@@ -3236,12 +3200,8 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.DaysOfActivity != 0 {
 		const prefix string = ",\"days_of_activity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.DaysOfActivity))
 	}
 	if in.Minutes != 0 {

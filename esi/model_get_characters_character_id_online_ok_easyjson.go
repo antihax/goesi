@@ -131,12 +131,8 @@ func easyjson93c87c1aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if true {
 		const prefix string = ",\"last_login\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Raw((in.LastLogin).MarshalJSON())
 	}
 	if true {

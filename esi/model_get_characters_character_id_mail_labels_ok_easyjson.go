@@ -144,12 +144,8 @@ func easyjson30a3ef00EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if len(in.Labels) != 0 {
 		const prefix string = ",\"labels\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v5, v6 := range in.Labels {
@@ -240,12 +236,8 @@ func easyjson30a3ef00EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.Color != "" {
 		const prefix string = ",\"color\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Color))
 	}
 	if in.LabelId != 0 {

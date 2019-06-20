@@ -141,12 +141,8 @@ func easyjson9e281deaEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.BloodlineId != 0 {
 		const prefix string = ",\"bloodline_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.BloodlineId))
 	}
 	if in.Charisma != 0 {

@@ -145,12 +145,8 @@ func easyjsonE319ea96EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.AcceptContractsCourier != 0 {
 		const prefix string = ",\"accept_contracts_courier\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.AcceptContractsCourier))
 	}
 	if in.AcceptContractsItemExchange != 0 {

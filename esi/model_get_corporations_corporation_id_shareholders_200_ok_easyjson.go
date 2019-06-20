@@ -125,12 +125,8 @@ func easyjson68d0aa8cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.ShareCount != 0 {
 		const prefix string = ",\"share_count\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.ShareCount))
 	}
 	if in.ShareholderId != 0 {

@@ -123,12 +123,8 @@ func easyjsonC359722aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.Balance != 0 {
 		const prefix string = ",\"balance\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float64(float64(in.Balance))
 	}
 	if in.Division != 0 {

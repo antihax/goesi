@@ -139,12 +139,8 @@ func easyjson2c8f07c0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if true {
 		const prefix string = ",\"finish_date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Raw((in.FinishDate).MarshalJSON())
 	}
 	if in.FinishedLevel != 0 {

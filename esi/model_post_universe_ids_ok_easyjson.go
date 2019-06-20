@@ -349,12 +349,8 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	_ = first
 	if len(in.Agents) != 0 {
 		const prefix string = ",\"agents\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v14, v15 := range in.Agents {
@@ -602,12 +598,8 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Pos
 	_ = first
 	if in.Id != 0 {
 		const prefix string = ",\"id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Id))
 	}
 	if in.Name != "" {

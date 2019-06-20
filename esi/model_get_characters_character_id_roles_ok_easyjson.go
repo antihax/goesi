@@ -211,12 +211,8 @@ func easyjsonB983e026EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if len(in.Roles) != 0 {
 		const prefix string = ",\"roles\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v8, v9 := range in.Roles {

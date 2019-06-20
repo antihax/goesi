@@ -202,12 +202,8 @@ func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.ConstellationId != 0 {
 		const prefix string = ",\"constellation_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.ConstellationId))
 	}
 	if in.Name != "" {
@@ -394,12 +390,8 @@ func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	_ = first
 	if in.X != 0 {
 		const prefix string = ",\"x\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float64(float64(in.X))
 	}
 	if in.Y != 0 {
@@ -507,12 +499,8 @@ func easyjsonF4e2485aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if len(in.AsteroidBelts) != 0 {
 		const prefix string = ",\"asteroid_belts\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v15, v16 := range in.AsteroidBelts {

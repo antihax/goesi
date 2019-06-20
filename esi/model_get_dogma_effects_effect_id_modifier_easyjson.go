@@ -131,12 +131,8 @@ func easyjsonAd79ccc0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.Domain != "" {
 		const prefix string = ",\"domain\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Domain))
 	}
 	if in.EffectId != 0 {

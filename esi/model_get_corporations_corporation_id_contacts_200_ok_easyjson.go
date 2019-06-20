@@ -150,12 +150,8 @@ func easyjsonFc689a0fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.ContactId != 0 {
 		const prefix string = ",\"contact_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.ContactId))
 	}
 	if in.ContactType != "" {

@@ -123,12 +123,8 @@ func easyjson67942d1eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	_ = first
 	if in.ItemId != 0 {
 		const prefix string = ",\"item_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.ItemId))
 	}
 	if true {
@@ -208,12 +204,8 @@ func easyjson67942d1eEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Pos
 	_ = first
 	if in.X != 0 {
 		const prefix string = ",\"x\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float64(float64(in.X))
 	}
 	if in.Y != 0 {

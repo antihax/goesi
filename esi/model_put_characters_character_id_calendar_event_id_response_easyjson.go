@@ -121,12 +121,8 @@ func easyjsonEccd30aaEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Put
 	_ = first
 	if in.Response != "" {
 		const prefix string = ",\"response\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Response))
 	}
 	out.RawByte('}')

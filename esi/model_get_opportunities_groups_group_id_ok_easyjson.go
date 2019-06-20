@@ -173,12 +173,8 @@ func easyjson2bed092EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetO
 	_ = first
 	if len(in.ConnectedGroups) != 0 {
 		const prefix string = ",\"connected_groups\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v6, v7 := range in.ConnectedGroups {

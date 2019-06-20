@@ -121,12 +121,8 @@ func easyjsonFbb8b2acEncodeGithubComAntihaxGoesiMeta1(out *jwriter.Writer, in Ge
 	_ = first
 	if in.Error_ != "" {
 		const prefix string = ",\"error\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Error_))
 	}
 	out.RawByte('}')

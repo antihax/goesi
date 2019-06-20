@@ -123,12 +123,8 @@ func easyjson6bd9f6ceEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.EffectId != 0 {
 		const prefix string = ",\"effect_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.EffectId))
 	}
 	if in.IsDefault {

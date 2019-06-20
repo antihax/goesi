@@ -123,12 +123,8 @@ func easyjson955c47c3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Put
 	_ = first
 	if in.IsFreeMove {
 		const prefix string = ",\"is_free_move\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Bool(bool(in.IsFreeMove))
 	}
 	if in.Motd != "" {

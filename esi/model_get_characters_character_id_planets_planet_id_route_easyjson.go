@@ -152,12 +152,8 @@ func easyjson2de64a6cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.ContentTypeId != 0 {
 		const prefix string = ",\"content_type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.ContentTypeId))
 	}
 	if in.DestinationPinId != 0 {

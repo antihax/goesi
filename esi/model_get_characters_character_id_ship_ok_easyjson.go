@@ -125,12 +125,8 @@ func easyjson7f2db38bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.ShipItemId != 0 {
 		const prefix string = ",\"ship_item_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.ShipItemId))
 	}
 	if in.ShipName != "" {

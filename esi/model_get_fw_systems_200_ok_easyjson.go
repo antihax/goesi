@@ -131,12 +131,8 @@ func easyjsonB042087bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.Contested != "" {
 		const prefix string = ",\"contested\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Contested))
 	}
 	if in.OccupierFactionId != 0 {

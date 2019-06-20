@@ -131,12 +131,8 @@ func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if true {
 		const prefix string = ",\"destination\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi2(out, in.Destination)
 	}
 	if in.Name != "" {
@@ -256,12 +252,8 @@ func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	_ = first
 	if in.X != 0 {
 		const prefix string = ",\"x\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float64(float64(in.X))
 	}
 	if in.Y != 0 {
@@ -325,12 +317,8 @@ func easyjson5e0a8a62EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.StargateId != 0 {
 		const prefix string = ",\"stargate_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.StargateId))
 	}
 	if in.SystemId != 0 {

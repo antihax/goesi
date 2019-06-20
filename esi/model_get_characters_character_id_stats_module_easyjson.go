@@ -257,12 +257,8 @@ func easyjson314a5fcaEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.ActivationsArmorHardener != 0 {
 		const prefix string = ",\"activations_armor_hardener\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.ActivationsArmorHardener))
 	}
 	if in.ActivationsArmorRepairUnit != 0 {

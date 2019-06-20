@@ -125,12 +125,8 @@ func easyjsonC80ffb65EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.AdjustedPrice != 0 {
 		const prefix string = ",\"adjusted_price\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float64(float64(in.AdjustedPrice))
 	}
 	if in.AveragePrice != 0 {

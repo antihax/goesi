@@ -131,12 +131,8 @@ func easyjsonB6f9bc1aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if true {
 		const prefix string = ",\"created_at\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Raw((in.CreatedAt).MarshalJSON())
 	}
 	if in.CreatorId != 0 {

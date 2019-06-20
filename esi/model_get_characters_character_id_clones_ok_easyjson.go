@@ -152,12 +152,8 @@ func easyjson13ace497EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if true {
 		const prefix string = ",\"home_location\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		(in.HomeLocation).MarshalEasyJSON(out)
 	}
 	if len(in.JumpClones) != 0 {

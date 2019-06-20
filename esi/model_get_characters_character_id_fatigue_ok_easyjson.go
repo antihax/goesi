@@ -131,12 +131,8 @@ func easyjsonDc1671d6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if true {
 		const prefix string = ",\"jump_fatigue_expire_date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Raw((in.JumpFatigueExpireDate).MarshalJSON())
 	}
 	if true {

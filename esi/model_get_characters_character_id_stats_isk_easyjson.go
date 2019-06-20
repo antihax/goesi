@@ -123,12 +123,8 @@ func easyjson57003a2fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.In != 0 {
 		const prefix string = ",\"in\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.In))
 	}
 	if in.Out != 0 {

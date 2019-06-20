@@ -150,12 +150,8 @@ func easyjson1bb873dcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.CycleTime != 0 {
 		const prefix string = ",\"cycle_time\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.CycleTime))
 	}
 	if in.HeadRadius != 0 {
@@ -274,12 +270,8 @@ func easyjson1bb873dcEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.HeadId != 0 {
 		const prefix string = ",\"head_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.HeadId))
 	}
 	if in.Latitude != 0 {

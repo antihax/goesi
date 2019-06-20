@@ -146,12 +146,8 @@ func easyjson275affcbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if len(in.Skills) != 0 {
 		const prefix string = ",\"skills\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v5, v6 := range in.Skills {
@@ -252,12 +248,8 @@ func easyjson275affcbEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.ActiveSkillLevel != 0 {
 		const prefix string = ",\"active_skill_level\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.ActiveSkillLevel))
 	}
 	if in.SkillId != 0 {

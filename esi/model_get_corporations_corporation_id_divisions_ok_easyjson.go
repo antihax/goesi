@@ -165,12 +165,8 @@ func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if len(in.Hangar) != 0 {
 		const prefix string = ",\"hangar\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v6, v7 := range in.Hangar {
@@ -266,12 +262,8 @@ func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	_ = first
 	if in.Division != 0 {
 		const prefix string = ",\"division\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Division))
 	}
 	if in.Name != "" {
@@ -325,12 +317,8 @@ func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.Division != 0 {
 		const prefix string = ",\"division\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Division))
 	}
 	if in.Name != "" {

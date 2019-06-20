@@ -144,12 +144,8 @@ func easyjsonA4a1cff6EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if len(in.CostIndices) != 0 {
 		const prefix string = ",\"cost_indices\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v5, v6 := range in.CostIndices {

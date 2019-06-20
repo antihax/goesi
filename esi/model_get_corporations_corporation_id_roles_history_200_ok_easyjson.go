@@ -175,12 +175,8 @@ func easyjson1c7af11eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if true {
 		const prefix string = ",\"changed_at\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Raw((in.ChangedAt).MarshalJSON())
 	}
 	if in.CharacterId != 0 {

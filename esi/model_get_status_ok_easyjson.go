@@ -129,12 +129,8 @@ func easyjsonCd04e186EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.Players != 0 {
 		const prefix string = ",\"players\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Players))
 	}
 	if in.ServerVersion != "" {

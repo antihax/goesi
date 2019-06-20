@@ -148,12 +148,8 @@ func easyjson28a4c0c5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	_ = first
 	if in.ApprovedCost != 0 {
 		const prefix string = ",\"approved_cost\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.ApprovedCost))
 	}
 	if in.Body != "" {

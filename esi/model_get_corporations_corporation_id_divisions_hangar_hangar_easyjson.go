@@ -123,12 +123,8 @@ func easyjson3951f242EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.Division != 0 {
 		const prefix string = ",\"division\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Division))
 	}
 	if in.Name != "" {

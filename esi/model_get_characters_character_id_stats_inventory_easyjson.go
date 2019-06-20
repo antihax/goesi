@@ -123,12 +123,8 @@ func easyjsonC637344cEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.AbandonLootQuantity != 0 {
 		const prefix string = ",\"abandon_loot_quantity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.AbandonLootQuantity))
 	}
 	if in.TrashItemQuantity != 0 {

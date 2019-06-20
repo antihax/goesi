@@ -125,12 +125,8 @@ func easyjsonD15c35bEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 	_ = first
 	if true {
 		const prefix string = ",\"completed_at\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Raw((in.CompletedAt).MarshalJSON())
 	}
 	if in.TaskId != 0 {

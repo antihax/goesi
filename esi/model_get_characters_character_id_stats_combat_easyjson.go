@@ -307,12 +307,8 @@ func easyjsonE480c656EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.CapDrainedbyNpc != 0 {
 		const prefix string = ",\"cap_drainedby_npc\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.CapDrainedbyNpc))
 	}
 	if in.CapDrainedbyPc != 0 {

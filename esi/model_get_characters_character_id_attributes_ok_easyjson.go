@@ -139,12 +139,8 @@ func easyjsonFa541e84EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if true {
 		const prefix string = ",\"accrued_remap_cooldown_date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Raw((in.AccruedRemapCooldownDate).MarshalJSON())
 	}
 	if in.BonusRemaps != 0 {

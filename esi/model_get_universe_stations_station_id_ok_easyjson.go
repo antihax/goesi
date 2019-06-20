@@ -164,12 +164,8 @@ func easyjson71b62f52EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.MaxDockableShipVolume != 0 {
 		const prefix string = ",\"max_dockable_ship_volume\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float32(float32(in.MaxDockableShipVolume))
 	}
 	if in.Name != "" {

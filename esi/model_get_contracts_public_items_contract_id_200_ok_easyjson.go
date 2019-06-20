@@ -137,12 +137,8 @@ func easyjson93df16c2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.IsBlueprintCopy {
 		const prefix string = ",\"is_blueprint_copy\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Bool(bool(in.IsBlueprintCopy))
 	}
 	if in.IsIncluded {

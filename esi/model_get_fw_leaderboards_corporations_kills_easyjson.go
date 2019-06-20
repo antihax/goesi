@@ -188,12 +188,8 @@ func easyjson2624bd49EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if len(in.ActiveTotal) != 0 {
 		const prefix string = ",\"active_total\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v7, v8 := range in.ActiveTotal {

@@ -150,12 +150,8 @@ func easyjson3c44e3bdEncodeGithubComAntihaxGoesiMeta1(out *jwriter.Writer, in Ge
 	_ = first
 	if in.Endpoint != "" {
 		const prefix string = ",\"endpoint\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Endpoint))
 	}
 	if in.Method != "" {

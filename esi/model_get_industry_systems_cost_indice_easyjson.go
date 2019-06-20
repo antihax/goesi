@@ -123,12 +123,8 @@ func easyjson2fbd70c3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.Activity != "" {
 		const prefix string = ",\"activity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Activity))
 	}
 	if in.CostIndex != 0 {

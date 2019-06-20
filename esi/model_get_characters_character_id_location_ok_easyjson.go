@@ -125,12 +125,8 @@ func easyjson6da70a8eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.SolarSystemId != 0 {
 		const prefix string = ",\"solar_system_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.SolarSystemId))
 	}
 	if in.StationId != 0 {

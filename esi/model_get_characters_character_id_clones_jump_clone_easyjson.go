@@ -150,12 +150,8 @@ func easyjson35bb60e3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if len(in.Implants) != 0 {
 		const prefix string = ",\"implants\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v5, v6 := range in.Implants {

@@ -123,12 +123,8 @@ func easyjson47f8f3adEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.FolderId != 0 {
 		const prefix string = ",\"folder_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.FolderId))
 	}
 	if in.Name != "" {

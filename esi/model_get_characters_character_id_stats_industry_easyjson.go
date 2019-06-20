@@ -191,12 +191,8 @@ func easyjson996343d4EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.HackingSuccesses != 0 {
 		const prefix string = ",\"hacking_successes\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.HackingSuccesses))
 	}
 	if in.JobsCancelled != 0 {

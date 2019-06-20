@@ -139,12 +139,8 @@ func easyjsonDac4178EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetU
 	_ = first
 	if in.CorporationId != 0 {
 		const prefix string = ",\"corporation_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.CorporationId))
 	}
 	if in.Description != "" {

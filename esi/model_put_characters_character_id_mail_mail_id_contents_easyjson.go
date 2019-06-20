@@ -144,12 +144,8 @@ func easyjsonAd2c4d9fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Put
 	_ = first
 	if len(in.Labels) != 0 {
 		const prefix string = ",\"labels\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v5, v6 := range in.Labels {

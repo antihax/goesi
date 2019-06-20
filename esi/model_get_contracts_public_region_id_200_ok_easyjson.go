@@ -155,12 +155,8 @@ func easyjsonE838f8a7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.Buyout != 0 {
 		const prefix string = ",\"buyout\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float64(float64(in.Buyout))
 	}
 	if in.Collateral != 0 {

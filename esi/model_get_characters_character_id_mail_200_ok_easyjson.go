@@ -177,12 +177,8 @@ func easyjson69f56f1fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.From != 0 {
 		const prefix string = ",\"from\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.From))
 	}
 	if in.IsRead {
@@ -328,12 +324,8 @@ func easyjson69f56f1fEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.RecipientId != 0 {
 		const prefix string = ",\"recipient_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.RecipientId))
 	}
 	if in.RecipientType != "" {

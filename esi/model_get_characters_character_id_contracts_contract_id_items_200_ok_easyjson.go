@@ -131,12 +131,8 @@ func easyjson9e70d5c7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.IsIncluded {
 		const prefix string = ",\"is_included\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Bool(bool(in.IsIncluded))
 	}
 	if in.IsSingleton {

@@ -125,12 +125,8 @@ func easyjsonCbc331dfEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Put
 	_ = first
 	if in.Role != "" {
 		const prefix string = ",\"role\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Role))
 	}
 	if in.SquadId != 0 {

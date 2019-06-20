@@ -129,12 +129,8 @@ func easyjson334413eEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetU
 	_ = first
 	if in.Name != "" {
 		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Name))
 	}
 	if in.PlanetId != 0 {
@@ -244,12 +240,8 @@ func easyjson334413eEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetU
 	_ = first
 	if in.X != 0 {
 		const prefix string = ",\"x\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float64(float64(in.X))
 	}
 	if in.Y != 0 {

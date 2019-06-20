@@ -135,12 +135,8 @@ func easyjson697854beEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.IsRead {
 		const prefix string = ",\"is_read\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Bool(bool(in.IsRead))
 	}
 	if in.NotificationId != 0 {

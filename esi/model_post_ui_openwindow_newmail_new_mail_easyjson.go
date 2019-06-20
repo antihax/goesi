@@ -150,12 +150,8 @@ func easyjson6b8ca5bfEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	_ = first
 	if in.Body != "" {
 		const prefix string = ",\"body\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Body))
 	}
 	if len(in.Recipients) != 0 {

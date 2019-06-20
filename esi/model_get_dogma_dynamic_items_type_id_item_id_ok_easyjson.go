@@ -171,12 +171,8 @@ func easyjson5a3b9194EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.CreatedBy != 0 {
 		const prefix string = ",\"created_by\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.CreatedBy))
 	}
 	if len(in.DogmaAttributes) != 0 {

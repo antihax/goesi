@@ -123,12 +123,8 @@ func easyjson7a98a6fdEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if true {
 		const prefix string = ",\"kills\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		easyjson7a98a6fdEncodeGithubComAntihaxGoesiEsi2(out, in.Kills)
 	}
 	if true {
@@ -271,12 +267,8 @@ func easyjson7a98a6fdEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if len(in.ActiveTotal) != 0 {
 		const prefix string = ",\"active_total\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v7, v8 := range in.ActiveTotal {
@@ -367,12 +359,8 @@ func easyjson7a98a6fdEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in Get
 	_ = first
 	if in.Amount != 0 {
 		const prefix string = ",\"amount\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Amount))
 	}
 	if in.CharacterId != 0 {
@@ -426,12 +414,8 @@ func easyjson7a98a6fdEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in Get
 	_ = first
 	if in.Amount != 0 {
 		const prefix string = ",\"amount\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Amount))
 	}
 	if in.CharacterId != 0 {
@@ -485,12 +469,8 @@ func easyjson7a98a6fdEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	_ = first
 	if in.Amount != 0 {
 		const prefix string = ",\"amount\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Amount))
 	}
 	if in.CharacterId != 0 {

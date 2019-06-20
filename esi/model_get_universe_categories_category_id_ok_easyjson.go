@@ -148,12 +148,8 @@ func easyjson5c16eda7EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.CategoryId != 0 {
 		const prefix string = ",\"category_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.CategoryId))
 	}
 	if len(in.Groups) != 0 {

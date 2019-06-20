@@ -156,12 +156,8 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if len(in.Attackers) != 0 {
 		const prefix string = ",\"attackers\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v5, v6 := range in.Attackers {
@@ -331,12 +327,8 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	_ = first
 	if in.AllianceId != 0 {
 		const prefix string = ",\"alliance_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.CharacterId != 0 {
@@ -488,12 +480,8 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in Get
 	_ = first
 	if in.Flag != 0 {
 		const prefix string = ",\"flag\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Flag))
 	}
 	if in.ItemTypeId != 0 {
@@ -610,12 +598,8 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.AllianceId != 0 {
 		const prefix string = ",\"alliance_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.AllianceId))
 	}
 	if in.CharacterId != 0 {

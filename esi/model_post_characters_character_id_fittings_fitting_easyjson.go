@@ -148,12 +148,8 @@ func easyjsonC29a6102EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 	_ = first
 	if in.Description != "" {
 		const prefix string = ",\"description\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Description))
 	}
 	if len(in.Items) != 0 {
@@ -262,12 +258,8 @@ func easyjsonC29a6102EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Pos
 	_ = first
 	if in.Flag != "" {
 		const prefix string = ",\"flag\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Flag))
 	}
 	if in.Quantity != 0 {

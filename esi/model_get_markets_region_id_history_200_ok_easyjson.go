@@ -131,12 +131,8 @@ func easyjson7c5b8388EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.Average != 0 {
 		const prefix string = ",\"average\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float64(float64(in.Average))
 	}
 	if in.Date != "" {

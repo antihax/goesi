@@ -127,12 +127,8 @@ func easyjson49880f36EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.NpcKills != 0 {
 		const prefix string = ",\"npc_kills\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.NpcKills))
 	}
 	if in.PodKills != 0 {

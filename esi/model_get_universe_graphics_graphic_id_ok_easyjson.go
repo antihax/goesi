@@ -135,12 +135,8 @@ func easyjsonF7263cfaEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.CollisionFile != "" {
 		const prefix string = ",\"collision_file\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.CollisionFile))
 	}
 	if in.GraphicFile != "" {

@@ -125,12 +125,8 @@ func easyjson5df92982EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.LastWeek != 0 {
 		const prefix string = ",\"last_week\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.LastWeek))
 	}
 	if in.Total != 0 {

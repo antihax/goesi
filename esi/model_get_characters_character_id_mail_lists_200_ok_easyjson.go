@@ -123,12 +123,8 @@ func easyjson1e2f2d49EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.MailingListId != 0 {
 		const prefix string = ",\"mailing_list_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.MailingListId))
 	}
 	if in.Name != "" {

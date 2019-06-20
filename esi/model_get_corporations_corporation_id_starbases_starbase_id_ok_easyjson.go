@@ -168,12 +168,8 @@ func easyjsonAa81674fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.AllowAllianceMembers {
 		const prefix string = ",\"allow_alliance_members\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Bool(bool(in.AllowAllianceMembers))
 	}
 	if in.AllowCorporationMembers {
@@ -380,12 +376,8 @@ func easyjsonAa81674fEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.Quantity != 0 {
 		const prefix string = ",\"quantity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.Quantity))
 	}
 	if in.TypeId != 0 {

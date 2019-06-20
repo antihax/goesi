@@ -141,12 +141,8 @@ func easyjson70b0868EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 	_ = first
 	if true {
 		const prefix string = ",\"date\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Raw((in.Date).MarshalJSON())
 	}
 	if in.Duration != 0 {

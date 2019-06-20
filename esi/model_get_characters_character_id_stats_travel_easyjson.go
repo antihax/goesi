@@ -161,12 +161,8 @@ func easyjsonCed40366EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.AccelerationGateActivations != 0 {
 		const prefix string = ",\"acceleration_gate_activations\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int64(int64(in.AccelerationGateActivations))
 	}
 	if in.AlignTo != 0 {

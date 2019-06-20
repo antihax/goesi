@@ -123,12 +123,8 @@ func easyjsonAe9dec1fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in For
 	_ = first
 	if in.Error_ != "" {
 		const prefix string = ",\"error\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.String(string(in.Error_))
 	}
 	if in.SsoStatus != 0 {

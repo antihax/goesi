@@ -193,12 +193,8 @@ func easyjson2d81da92EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.Capacity != 0 {
 		const prefix string = ",\"capacity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Float32(float32(in.Capacity))
 	}
 	if in.Description != "" {
@@ -434,12 +430,8 @@ func easyjson2d81da92EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 	_ = first
 	if in.EffectId != 0 {
 		const prefix string = ",\"effect_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.EffectId))
 	}
 	if in.IsDefault {
@@ -493,12 +485,8 @@ func easyjson2d81da92EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in Get
 	_ = first
 	if in.AttributeId != 0 {
 		const prefix string = ",\"attribute_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.AttributeId))
 	}
 	if in.Value != 0 {

@@ -125,12 +125,8 @@ func easyjsonCd2065b3EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if in.FromId != 0 {
 		const prefix string = ",\"from_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		out.Int32(int32(in.FromId))
 	}
 	if in.FromType != "" {

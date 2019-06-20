@@ -167,12 +167,8 @@ func easyjsonFed59962EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 	_ = first
 	if len(in.AsteroidBelts) != 0 {
 		const prefix string = ",\"asteroid_belts\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
+		first = false
+		out.RawString(prefix[1:])
 		{
 			out.RawByte('[')
 			for v6, v7 := range in.AsteroidBelts {

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**GetCharactersCharacterIdCorporationhistory**](CharacterApi.md#GetCharactersCharacterIdCorporationhistory) | **Get** /v1/characters/{character_id}/corporationhistory/ | Get corporation history
 [**GetCharactersCharacterIdFatigue**](CharacterApi.md#GetCharactersCharacterIdFatigue) | **Get** /v1/characters/{character_id}/fatigue/ | Get jump fatigue
 [**GetCharactersCharacterIdMedals**](CharacterApi.md#GetCharactersCharacterIdMedals) | **Get** /v1/characters/{character_id}/medals/ | Get medals
-[**GetCharactersCharacterIdNotifications**](CharacterApi.md#GetCharactersCharacterIdNotifications) | **Get** /v4/characters/{character_id}/notifications/ | Get character notifications
+[**GetCharactersCharacterIdNotifications**](CharacterApi.md#GetCharactersCharacterIdNotifications) | **Get** /v5/characters/{character_id}/notifications/ | Get character notifications
 [**GetCharactersCharacterIdNotificationsContacts**](CharacterApi.md#GetCharactersCharacterIdNotificationsContacts) | **Get** /v1/characters/{character_id}/notifications/contacts/ | Get new contact notifications
 [**GetCharactersCharacterIdPortrait**](CharacterApi.md#GetCharactersCharacterIdPortrait) | **Get** /v2/characters/{character_id}/portrait/ | Get character portraits
 [**GetCharactersCharacterIdRoles**](CharacterApi.md#GetCharactersCharacterIdRoles) | **Get** /v2/characters/{character_id}/roles/ | Get character corporation roles
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdNotifications200Ok GetCharactersCharacterIdNotifications(ctx, characterId, optional)
 Get character notifications
 
-Return character notifications  ---  This route is cached for up to 600 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/notifications/)
+Return character notifications  ---  This route is cached for up to 600 seconds
 
 ### Required Parameters
 

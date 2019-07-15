@@ -24920,6 +24920,7 @@ paths:
               error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
+      - "legacy"
       - "v2"
       x-cached-seconds: 3600
   /v2/ui/autopilot/waypoint/:
@@ -26813,6 +26814,7 @@ paths:
         - "esi-search.search_structures.v1"
       x-alternate-versions:
       - "dev"
+      - "legacy"
       - "v3"
       x-cached-seconds: 3600
   /v3/corporations/{corporation_id}/assets/:

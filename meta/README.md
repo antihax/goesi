@@ -39,10 +39,7 @@ Class | Method | HTTP request | Description
 *SwaggerApi* | [**GetV4Swagger**](docs/SwaggerApi.md#getv4swagger) | **Get** /v4/swagger.json | Get v4 swagger spec
 *SwaggerApi* | [**GetV5Swagger**](docs/SwaggerApi.md#getv5swagger) | **Get** /v5/swagger.json | Get v5 swagger spec
 *SwaggerApi* | [**GetV6Swagger**](docs/SwaggerApi.md#getv6swagger) | **Get** /v6/swagger.json | Get v6 swagger spec
-*WebUIApi* | [**GetDev**](docs/WebUIApi.md#getdev) | **Get** /dev/ | SwaggerUI route (v2)
 *WebUIApi* | [**GetDiffVersionAVersionB**](docs/WebUIApi.md#getdiffversionaversionb) | **Get** /diff/{version_a}/{version_b}/ | Diff route
-*WebUIApi* | [**GetLatest**](docs/WebUIApi.md#getlatest) | **Get** /latest/ | SwaggerUI route (v2)
-*WebUIApi* | [**GetLegacy**](docs/WebUIApi.md#getlegacy) | **Get** /legacy/ | SwaggerUI route (v2)
 *WebUIApi* | [**GetUi**](docs/WebUIApi.md#getui) | **Get** /ui/ | SwaggerUI route (v3)
 
 

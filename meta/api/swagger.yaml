@@ -180,50 +180,6 @@ paths:
               type: "string"
               description: "RFC7231 formatted datetime string"
       x-cached-seconds: 60
-  /dev/:
-    get:
-      tags:
-      - "WebUI"
-      summary: "SwaggerUI route (v2)"
-      description: "ESI dev web UI. Note that this is a legacy (v2) SwaggerUI route,\
-        \ which will someday be removed. You can get mostly the same functionality\
-        \ by going to https://esi.evetech.net/ui/?version=dev"
-      operationId: "get_dev"
-      produces:
-      - "text/html; charset=utf-8"
-      parameters:
-      - name: "user_agent"
-        in: "query"
-        description: "Client identifier, takes precedence over headers"
-        required: false
-        type: "string"
-        x-exportParamName: "UserAgent"
-        x-optionalDataType: "String"
-      - name: "X-User-Agent"
-        in: "header"
-        description: "Client identifier, takes precedence over User-Agent"
-        required: false
-        type: "string"
-        x-exportParamName: "XUserAgent"
-        x-optionalDataType: "String"
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "v2 SwaggerUI"
-          schema:
-            type: "string"
-            description: "ESI web UI (legacy)"
-            title: "get_dev_ok"
   /dev/swagger.json:
     get:
       tags:
@@ -378,50 +334,6 @@ paths:
             title: "get_headers_ok"
             additionalProperties:
               type: "string"
-  /latest/:
-    get:
-      tags:
-      - "WebUI"
-      summary: "SwaggerUI route (v2)"
-      description: "ESI latest web UI. Note that this is a legacy (v2) SwaggerUI route,\
-        \ which will someday be removed. You can get mostly the same functionality\
-        \ by going to https://esi.evetech.net/ui/?version=latest"
-      operationId: "get_latest"
-      produces:
-      - "text/html; charset=utf-8"
-      parameters:
-      - name: "user_agent"
-        in: "query"
-        description: "Client identifier, takes precedence over headers"
-        required: false
-        type: "string"
-        x-exportParamName: "UserAgent"
-        x-optionalDataType: "String"
-      - name: "X-User-Agent"
-        in: "header"
-        description: "Client identifier, takes precedence over User-Agent"
-        required: false
-        type: "string"
-        x-exportParamName: "XUserAgent"
-        x-optionalDataType: "String"
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "v2 SwaggerUI"
-          schema:
-            type: "string"
-            description: "ESI web UI (legacy)"
-            title: "get_latest_ok"
   /latest/swagger.json:
     get:
       tags:
@@ -476,50 +388,6 @@ paths:
               type: "string"
               description: "RFC7231 formatted datetime string"
       x-cached-seconds: 60
-  /legacy/:
-    get:
-      tags:
-      - "WebUI"
-      summary: "SwaggerUI route (v2)"
-      description: "ESI legacy web UI. Note that this is a legacy (v2) SwaggerUI route,\
-        \ which will someday be removed. You can get mostly the same functionality\
-        \ by going to https://esi.evetech.net/ui/?version=legacy"
-      operationId: "get_legacy"
-      produces:
-      - "text/html; charset=utf-8"
-      parameters:
-      - name: "user_agent"
-        in: "query"
-        description: "Client identifier, takes precedence over headers"
-        required: false
-        type: "string"
-        x-exportParamName: "UserAgent"
-        x-optionalDataType: "String"
-      - name: "X-User-Agent"
-        in: "header"
-        description: "Client identifier, takes precedence over User-Agent"
-        required: false
-        type: "string"
-        x-exportParamName: "XUserAgent"
-        x-optionalDataType: "String"
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "v2 SwaggerUI"
-          schema:
-            type: "string"
-            description: "ESI web UI (legacy)"
-            title: "get_legacy_ok"
   /legacy/swagger.json:
     get:
       tags:

@@ -421,7 +421,7 @@ func (a *LocationApiService) GetCharactersCharacterIdOnline(ctx context.Context,
 
 /*
 LocationApiService Get current ship
-Get the current ship type, name and id  ---  This route is cached for up to 5 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/ship/)
+Get the current ship type, name and id  ---  This route is cached for up to 5 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdShipOpts - Optional Parameters:

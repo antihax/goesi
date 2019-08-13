@@ -3222,6 +3222,7 @@ paths:
       - evesso:
         - "esi-location.read_location.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 5
@@ -5207,7 +5208,7 @@ paths:
       - "Location"
       summary: "Get current ship"
       description: "Get the current ship type, name and id\n\n---\n\nThis route is\
-        \ cached for up to 5 seconds\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/ship/)"
+        \ cached for up to 5 seconds"
       operationId: "get_characters_character_id_ship"
       parameters:
       - name: "character_id"
@@ -5335,6 +5336,7 @@ paths:
       - evesso:
         - "esi-location.read_ship_type.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 5
@@ -22834,6 +22836,7 @@ paths:
       - evesso:
         - "esi-location.read_online.v1"
       x-alternate-versions:
+      - "dev"
       - "v2"
       x-cached-seconds: 60
   /v2/characters/{character_id}/orders/:
@@ -42319,6 +42322,7 @@ definitions:
         - "KillRightUsed"
         - "LocateCharMsg"
         - "MadeWarMutual"
+        - "MercOfferRetractedMsg"
         - "MercOfferedNegotiationMsg"
         - "MissionOfferExpirationMsg"
         - "MissionTimeoutMsg"
@@ -42333,6 +42337,7 @@ definitions:
         - "MutualWarInviteSent"
         - "NPCStandingsGained"
         - "NPCStandingsLost"
+        - "OfferToAllyRetracted"
         - "OfferedSurrender"
         - "OfferedToAlly"
         - "OldLscMessages"

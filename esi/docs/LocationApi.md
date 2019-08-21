@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 > GetCharactersCharacterIdShipOk GetCharactersCharacterIdShip(ctx, characterId, optional)
 Get current ship
 
-Get the current ship type, name and id  ---  This route is cached for up to 5 seconds
+Get the current ship type, name and id  ---  This route is cached for up to 5 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/ship/)
 
 ### Required Parameters
 

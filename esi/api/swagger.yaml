@@ -2614,7 +2614,6 @@ paths:
       - evesso:
         - "esi-characters.read_fw_stats.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
   /v1/characters/{character_id}/implants/:
@@ -8603,7 +8602,7 @@ paths:
       - "Faction Warfare"
       summary: "Overview of a corporation involved in faction warfare"
       description: "Statistics about a corporation involved in faction warfare\n\n\
-        ---\n\nThis route expires daily at 11:05"
+        ---\n\nThis route expires daily at 11:05\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/fw/stats/)"
       operationId: "get_corporations_corporation_id_fw_stats"
       parameters:
       - name: "corporation_id"
@@ -8739,7 +8738,6 @@ paths:
       - evesso:
         - "esi-corporations.read_fw_stats.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-required-roles: []
@@ -13665,7 +13663,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
   /v1/fw/leaderboards/characters/:
@@ -13801,7 +13798,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
   /v1/fw/leaderboards/corporations/:
@@ -13937,7 +13933,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
   /v1/fw/stats/:
@@ -14055,7 +14050,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
   /v1/fw/wars/:
@@ -14164,7 +14158,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
   /v1/incursions/:
@@ -24727,7 +24720,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "v2"
       x-cached-seconds: 1800
   /v2/search/:

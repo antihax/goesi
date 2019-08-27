@@ -232,7 +232,7 @@ func (a *FactionWarfareApiService) GetCharactersCharacterIdFwStats(ctx context.C
 
 /*
 FactionWarfareApiService Overview of a corporation involved in faction warfare
-Statistics about a corporation involved in faction warfare  ---  This route expires daily at 11:05
+Statistics about a corporation involved in faction warfare  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/fw/stats/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdFwStatsOpts - Optional Parameters:

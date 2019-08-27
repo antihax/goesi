@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 > GetCorporationsCorporationIdFwStatsOk GetCorporationsCorporationIdFwStats(ctx, corporationId, optional)
 Overview of a corporation involved in faction warfare
 
-Statistics about a corporation involved in faction warfare  ---  This route expires daily at 11:05
+Statistics about a corporation involved in faction warfare  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/fw/stats/)
 
 ### Required Parameters
 

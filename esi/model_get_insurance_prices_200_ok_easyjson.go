@@ -120,7 +120,7 @@ func easyjson24365b2aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetI
 				}
 				for !in.IsDelim(']') {
 					var v4 GetInsurancePricesLevel
-					(v4).UnmarshalEasyJSON(in)
+					easyjson24365b2aDecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Levels = append(out.Levels, v4)
 					in.WantComma()
 				}
@@ -152,7 +152,7 @@ func easyjson24365b2aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjson24365b2aEncodeGithubComAntihaxGoesiEsi2(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -192,4 +192,71 @@ func (v *GetInsurancePrices200Ok) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetInsurancePrices200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson24365b2aDecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson24365b2aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetInsurancePricesLevel) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "cost":
+			out.Cost = float32(in.Float32())
+		case "name":
+			out.Name = string(in.String())
+		case "payout":
+			out.Payout = float32(in.Float32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson24365b2aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetInsurancePricesLevel) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Cost != 0 {
+		const prefix string = ",\"cost\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Float32(float32(in.Cost))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	if in.Payout != 0 {
+		const prefix string = ",\"payout\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.Payout))
+	}
+	out.RawByte('}')
 }

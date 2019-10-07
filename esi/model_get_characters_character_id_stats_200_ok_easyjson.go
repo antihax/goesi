@@ -110,11 +110,11 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "industry":
 			(out.Industry).UnmarshalEasyJSON(in)
 		case "inventory":
-			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi4(in, &out.Inventory)
+			(out.Inventory).UnmarshalEasyJSON(in)
 		case "isk":
-			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi5(in, &out.Isk)
+			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi4(in, &out.Isk)
 		case "market":
-			(out.Market).UnmarshalEasyJSON(in)
+			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi5(in, &out.Market)
 		case "mining":
 			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi6(in, &out.Mining)
 		case "module":
@@ -126,7 +126,7 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "social":
 			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi10(in, &out.Social)
 		case "travel":
-			(out.Travel).UnmarshalEasyJSON(in)
+			easyjson19558e8dDecodeGithubComAntihaxGoesiEsi11(in, &out.Travel)
 		case "year":
 			out.Year = int32(in.Int32())
 		default:
@@ -177,7 +177,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi4(out, in.Inventory)
+		(in.Inventory).MarshalEasyJSON(out)
 	}
 	if true {
 		const prefix string = ",\"isk\":"
@@ -187,7 +187,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi5(out, in.Isk)
+		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi4(out, in.Isk)
 	}
 	if true {
 		const prefix string = ",\"market\":"
@@ -197,7 +197,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Market).MarshalEasyJSON(out)
+		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi5(out, in.Market)
 	}
 	if true {
 		const prefix string = ",\"mining\":"
@@ -257,7 +257,7 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Travel).MarshalEasyJSON(out)
+		easyjson19558e8dEncodeGithubComAntihaxGoesiEsi11(out, in.Travel)
 	}
 	if in.Year != 0 {
 		const prefix string = ",\"year\":"
@@ -294,6 +294,289 @@ func (v *GetCharactersCharacterIdStats200Ok) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCharactersCharacterIdStats200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson19558e8dDecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi11(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsTravel) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "acceleration_gate_activations":
+			out.AccelerationGateActivations = int64(in.Int64())
+		case "align_to":
+			out.AlignTo = int64(in.Int64())
+		case "distance_warped_high_sec":
+			out.DistanceWarpedHighSec = int64(in.Int64())
+		case "distance_warped_low_sec":
+			out.DistanceWarpedLowSec = int64(in.Int64())
+		case "distance_warped_null_sec":
+			out.DistanceWarpedNullSec = int64(in.Int64())
+		case "distance_warped_wormhole":
+			out.DistanceWarpedWormhole = int64(in.Int64())
+		case "docks_high_sec":
+			out.DocksHighSec = int64(in.Int64())
+		case "docks_low_sec":
+			out.DocksLowSec = int64(in.Int64())
+		case "docks_null_sec":
+			out.DocksNullSec = int64(in.Int64())
+		case "jumps_stargate_high_sec":
+			out.JumpsStargateHighSec = int64(in.Int64())
+		case "jumps_stargate_low_sec":
+			out.JumpsStargateLowSec = int64(in.Int64())
+		case "jumps_stargate_null_sec":
+			out.JumpsStargateNullSec = int64(in.Int64())
+		case "jumps_wormhole":
+			out.JumpsWormhole = int64(in.Int64())
+		case "warps_high_sec":
+			out.WarpsHighSec = int64(in.Int64())
+		case "warps_low_sec":
+			out.WarpsLowSec = int64(in.Int64())
+		case "warps_null_sec":
+			out.WarpsNullSec = int64(in.Int64())
+		case "warps_to_bookmark":
+			out.WarpsToBookmark = int64(in.Int64())
+		case "warps_to_celestial":
+			out.WarpsToCelestial = int64(in.Int64())
+		case "warps_to_fleet_member":
+			out.WarpsToFleetMember = int64(in.Int64())
+		case "warps_to_scan_result":
+			out.WarpsToScanResult = int64(in.Int64())
+		case "warps_wormhole":
+			out.WarpsWormhole = int64(in.Int64())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi11(out *jwriter.Writer, in GetCharactersCharacterIdStatsTravel) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AccelerationGateActivations != 0 {
+		const prefix string = ",\"acceleration_gate_activations\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int64(int64(in.AccelerationGateActivations))
+	}
+	if in.AlignTo != 0 {
+		const prefix string = ",\"align_to\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.AlignTo))
+	}
+	if in.DistanceWarpedHighSec != 0 {
+		const prefix string = ",\"distance_warped_high_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DistanceWarpedHighSec))
+	}
+	if in.DistanceWarpedLowSec != 0 {
+		const prefix string = ",\"distance_warped_low_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DistanceWarpedLowSec))
+	}
+	if in.DistanceWarpedNullSec != 0 {
+		const prefix string = ",\"distance_warped_null_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DistanceWarpedNullSec))
+	}
+	if in.DistanceWarpedWormhole != 0 {
+		const prefix string = ",\"distance_warped_wormhole\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DistanceWarpedWormhole))
+	}
+	if in.DocksHighSec != 0 {
+		const prefix string = ",\"docks_high_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DocksHighSec))
+	}
+	if in.DocksLowSec != 0 {
+		const prefix string = ",\"docks_low_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DocksLowSec))
+	}
+	if in.DocksNullSec != 0 {
+		const prefix string = ",\"docks_null_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DocksNullSec))
+	}
+	if in.JumpsStargateHighSec != 0 {
+		const prefix string = ",\"jumps_stargate_high_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.JumpsStargateHighSec))
+	}
+	if in.JumpsStargateLowSec != 0 {
+		const prefix string = ",\"jumps_stargate_low_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.JumpsStargateLowSec))
+	}
+	if in.JumpsStargateNullSec != 0 {
+		const prefix string = ",\"jumps_stargate_null_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.JumpsStargateNullSec))
+	}
+	if in.JumpsWormhole != 0 {
+		const prefix string = ",\"jumps_wormhole\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.JumpsWormhole))
+	}
+	if in.WarpsHighSec != 0 {
+		const prefix string = ",\"warps_high_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.WarpsHighSec))
+	}
+	if in.WarpsLowSec != 0 {
+		const prefix string = ",\"warps_low_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.WarpsLowSec))
+	}
+	if in.WarpsNullSec != 0 {
+		const prefix string = ",\"warps_null_sec\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.WarpsNullSec))
+	}
+	if in.WarpsToBookmark != 0 {
+		const prefix string = ",\"warps_to_bookmark\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.WarpsToBookmark))
+	}
+	if in.WarpsToCelestial != 0 {
+		const prefix string = ",\"warps_to_celestial\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.WarpsToCelestial))
+	}
+	if in.WarpsToFleetMember != 0 {
+		const prefix string = ",\"warps_to_fleet_member\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.WarpsToFleetMember))
+	}
+	if in.WarpsToScanResult != 0 {
+		const prefix string = ",\"warps_to_scan_result\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.WarpsToScanResult))
+	}
+	if in.WarpsWormhole != 0 {
+		const prefix string = ",\"warps_wormhole\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.WarpsWormhole))
+	}
+	out.RawByte('}')
 }
 func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi10(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsSocial) {
 	isTopLevel := in.IsStart()
@@ -1890,7 +2173,194 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi6(out *jwriter.Writer, in Get
 	}
 	out.RawByte('}')
 }
-func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsIsk) {
+func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsMarket) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "accept_contracts_courier":
+			out.AcceptContractsCourier = int64(in.Int64())
+		case "accept_contracts_item_exchange":
+			out.AcceptContractsItemExchange = int64(in.Int64())
+		case "buy_orders_placed":
+			out.BuyOrdersPlaced = int64(in.Int64())
+		case "cancel_market_order":
+			out.CancelMarketOrder = int64(in.Int64())
+		case "create_contracts_auction":
+			out.CreateContractsAuction = int64(in.Int64())
+		case "create_contracts_courier":
+			out.CreateContractsCourier = int64(in.Int64())
+		case "create_contracts_item_exchange":
+			out.CreateContractsItemExchange = int64(in.Int64())
+		case "deliver_courier_contract":
+			out.DeliverCourierContract = int64(in.Int64())
+		case "isk_gained":
+			out.IskGained = int64(in.Int64())
+		case "isk_spent":
+			out.IskSpent = int64(in.Int64())
+		case "modify_market_order":
+			out.ModifyMarketOrder = int64(in.Int64())
+		case "search_contracts":
+			out.SearchContracts = int64(in.Int64())
+		case "sell_orders_placed":
+			out.SellOrdersPlaced = int64(in.Int64())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in GetCharactersCharacterIdStatsMarket) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AcceptContractsCourier != 0 {
+		const prefix string = ",\"accept_contracts_courier\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int64(int64(in.AcceptContractsCourier))
+	}
+	if in.AcceptContractsItemExchange != 0 {
+		const prefix string = ",\"accept_contracts_item_exchange\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.AcceptContractsItemExchange))
+	}
+	if in.BuyOrdersPlaced != 0 {
+		const prefix string = ",\"buy_orders_placed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.BuyOrdersPlaced))
+	}
+	if in.CancelMarketOrder != 0 {
+		const prefix string = ",\"cancel_market_order\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.CancelMarketOrder))
+	}
+	if in.CreateContractsAuction != 0 {
+		const prefix string = ",\"create_contracts_auction\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.CreateContractsAuction))
+	}
+	if in.CreateContractsCourier != 0 {
+		const prefix string = ",\"create_contracts_courier\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.CreateContractsCourier))
+	}
+	if in.CreateContractsItemExchange != 0 {
+		const prefix string = ",\"create_contracts_item_exchange\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.CreateContractsItemExchange))
+	}
+	if in.DeliverCourierContract != 0 {
+		const prefix string = ",\"deliver_courier_contract\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.DeliverCourierContract))
+	}
+	if in.IskGained != 0 {
+		const prefix string = ",\"isk_gained\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.IskGained))
+	}
+	if in.IskSpent != 0 {
+		const prefix string = ",\"isk_spent\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.IskSpent))
+	}
+	if in.ModifyMarketOrder != 0 {
+		const prefix string = ",\"modify_market_order\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.ModifyMarketOrder))
+	}
+	if in.SearchContracts != 0 {
+		const prefix string = ",\"search_contracts\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.SearchContracts))
+	}
+	if in.SellOrdersPlaced != 0 {
+		const prefix string = ",\"sell_orders_placed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int64(int64(in.SellOrdersPlaced))
+	}
+	out.RawByte('}')
+}
+func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsIsk) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -1923,7 +2393,7 @@ func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in GetCharactersCharacterIdStatsIsk) {
+func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCharactersCharacterIdStatsIsk) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -1942,61 +2412,6 @@ func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in Get
 			out.RawString(prefix)
 		}
 		out.Int64(int64(in.Out))
-	}
-	out.RawByte('}')
-}
-func easyjson19558e8dDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCharactersCharacterIdStatsInventory) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "abandon_loot_quantity":
-			out.AbandonLootQuantity = int64(in.Int64())
-		case "trash_item_quantity":
-			out.TrashItemQuantity = int64(in.Int64())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson19558e8dEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCharactersCharacterIdStatsInventory) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.AbandonLootQuantity != 0 {
-		const prefix string = ",\"abandon_loot_quantity\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.Int64(int64(in.AbandonLootQuantity))
-	}
-	if in.TrashItemQuantity != 0 {
-		const prefix string = ",\"trash_item_quantity\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.TrashItemQuantity))
 	}
 	out.RawByte('}')
 }

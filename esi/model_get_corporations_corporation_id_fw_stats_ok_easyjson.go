@@ -110,11 +110,11 @@ func easyjson9f888528DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "faction_id":
 			out.FactionId = int32(in.Int32())
 		case "kills":
-			(out.Kills).UnmarshalEasyJSON(in)
+			easyjson9f888528DecodeGithubComAntihaxGoesiEsi2(in, &out.Kills)
 		case "pilots":
 			out.Pilots = int32(in.Int32())
 		case "victory_points":
-			easyjson9f888528DecodeGithubComAntihaxGoesiEsi2(in, &out.VictoryPoints)
+			easyjson9f888528DecodeGithubComAntihaxGoesiEsi3(in, &out.VictoryPoints)
 		default:
 			in.SkipRecursive()
 		}
@@ -153,7 +153,7 @@ func easyjson9f888528EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Kills).MarshalEasyJSON(out)
+		easyjson9f888528EncodeGithubComAntihaxGoesiEsi2(out, in.Kills)
 	}
 	if in.Pilots != 0 {
 		const prefix string = ",\"pilots\":"
@@ -173,7 +173,7 @@ func easyjson9f888528EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson9f888528EncodeGithubComAntihaxGoesiEsi2(out, in.VictoryPoints)
+		easyjson9f888528EncodeGithubComAntihaxGoesiEsi3(out, in.VictoryPoints)
 	}
 	out.RawByte('}')
 }
@@ -201,7 +201,7 @@ func (v *GetCorporationsCorporationIdFwStatsOk) UnmarshalJSON(data []byte) error
 func (v *GetCorporationsCorporationIdFwStatsOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson9f888528DecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson9f888528DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdFwStatsVictoryPoints) {
+func easyjson9f888528DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCorporationsCorporationIdFwStatsVictoryPoints) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -236,7 +236,74 @@ func easyjson9f888528DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson9f888528EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdFwStatsVictoryPoints) {
+func easyjson9f888528EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCorporationsCorporationIdFwStatsVictoryPoints) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.LastWeek != 0 {
+		const prefix string = ",\"last_week\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.LastWeek))
+	}
+	if in.Total != 0 {
+		const prefix string = ",\"total\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Total))
+	}
+	if in.Yesterday != 0 {
+		const prefix string = ",\"yesterday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Yesterday))
+	}
+	out.RawByte('}')
+}
+func easyjson9f888528DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdFwStatsKills) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "last_week":
+			out.LastWeek = int32(in.Int32())
+		case "total":
+			out.Total = int32(in.Int32())
+		case "yesterday":
+			out.Yesterday = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson9f888528EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdFwStatsKills) {
 	out.RawByte('{')
 	first := true
 	_ = first

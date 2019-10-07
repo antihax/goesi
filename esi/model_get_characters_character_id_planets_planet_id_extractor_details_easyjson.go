@@ -124,7 +124,7 @@ func easyjson1bb873dcDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCharactersCharacterIdPlanetsPlanetIdHead
-					easyjson1bb873dcDecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Heads = append(out.Heads, v4)
 					in.WantComma()
 				}
@@ -178,7 +178,7 @@ func easyjson1bb873dcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson1bb873dcEncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -228,71 +228,4 @@ func (v *GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails) UnmarshalJSON(
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson1bb873dcDecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson1bb873dcDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdHead) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "head_id":
-			out.HeadId = int32(in.Int32())
-		case "latitude":
-			out.Latitude = float32(in.Float32())
-		case "longitude":
-			out.Longitude = float32(in.Float32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson1bb873dcEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdHead) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.HeadId != 0 {
-		const prefix string = ",\"head_id\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.Int32(int32(in.HeadId))
-	}
-	if in.Latitude != 0 {
-		const prefix string = ",\"latitude\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Latitude))
-	}
-	if in.Longitude != 0 {
-		const prefix string = ",\"longitude\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Longitude))
-	}
-	out.RawByte('}')
 }

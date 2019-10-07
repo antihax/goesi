@@ -143,7 +143,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v5 PostUniverseIdsAlliance
-					(v5).UnmarshalEasyJSON(in)
+					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi2(in, &v5)
 					out.Alliances = append(out.Alliances, v5)
 					in.WantComma()
 				}
@@ -166,7 +166,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v6 PostUniverseIdsCharacter
-					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi2(in, &v6)
+					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi3(in, &v6)
 					out.Characters = append(out.Characters, v6)
 					in.WantComma()
 				}
@@ -212,7 +212,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v8 PostUniverseIdsCorporation
-					(v8).UnmarshalEasyJSON(in)
+					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi4(in, &v8)
 					out.Corporations = append(out.Corporations, v8)
 					in.WantComma()
 				}
@@ -258,7 +258,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v10 PostUniverseIdsInventoryType
-					(v10).UnmarshalEasyJSON(in)
+					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi5(in, &v10)
 					out.InventoryTypes = append(out.InventoryTypes, v10)
 					in.WantComma()
 				}
@@ -304,7 +304,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v12 PostUniverseIdsStation
-					(v12).UnmarshalEasyJSON(in)
+					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi6(in, &v12)
 					out.Stations = append(out.Stations, v12)
 					in.WantComma()
 				}
@@ -327,7 +327,7 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v13 PostUniverseIdsSystem
-					(v13).UnmarshalEasyJSON(in)
+					easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi7(in, &v13)
 					out.Systems = append(out.Systems, v13)
 					in.WantComma()
 				}
@@ -376,7 +376,7 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v16 > 0 {
 					out.RawByte(',')
 				}
-				(v17).MarshalEasyJSON(out)
+				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi2(out, v17)
 			}
 			out.RawByte(']')
 		}
@@ -395,7 +395,7 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v18 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi2(out, v19)
+				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi3(out, v19)
 			}
 			out.RawByte(']')
 		}
@@ -433,7 +433,7 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v22 > 0 {
 					out.RawByte(',')
 				}
-				(v23).MarshalEasyJSON(out)
+				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi4(out, v23)
 			}
 			out.RawByte(']')
 		}
@@ -471,7 +471,7 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v26 > 0 {
 					out.RawByte(',')
 				}
-				(v27).MarshalEasyJSON(out)
+				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi5(out, v27)
 			}
 			out.RawByte(']')
 		}
@@ -509,7 +509,7 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v30 > 0 {
 					out.RawByte(',')
 				}
-				(v31).MarshalEasyJSON(out)
+				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi6(out, v31)
 			}
 			out.RawByte(']')
 		}
@@ -528,7 +528,7 @@ func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v32 > 0 {
 					out.RawByte(',')
 				}
-				(v33).MarshalEasyJSON(out)
+				easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi7(out, v33)
 			}
 			out.RawByte(']')
 		}
@@ -559,7 +559,7 @@ func (v *PostUniverseIdsOk) UnmarshalJSON(data []byte) error {
 func (v *PostUniverseIdsOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *PostUniverseIdsCharacter) {
+func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi7(in *jlexer.Lexer, out *PostUniverseIdsSystem) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -592,7 +592,282 @@ func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *Post
 		in.Consumed()
 	}
 }
-func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in PostUniverseIdsCharacter) {
+func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi7(out *jwriter.Writer, in PostUniverseIdsSystem) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Id != 0 {
+		const prefix string = ",\"id\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.Id))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	out.RawByte('}')
+}
+func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi6(in *jlexer.Lexer, out *PostUniverseIdsStation) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "id":
+			out.Id = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi6(out *jwriter.Writer, in PostUniverseIdsStation) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Id != 0 {
+		const prefix string = ",\"id\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.Id))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	out.RawByte('}')
+}
+func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *PostUniverseIdsInventoryType) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "id":
+			out.Id = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi5(out *jwriter.Writer, in PostUniverseIdsInventoryType) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Id != 0 {
+		const prefix string = ",\"id\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.Id))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	out.RawByte('}')
+}
+func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *PostUniverseIdsCorporation) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "id":
+			out.Id = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in PostUniverseIdsCorporation) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Id != 0 {
+		const prefix string = ",\"id\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.Id))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	out.RawByte('}')
+}
+func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *PostUniverseIdsCharacter) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "id":
+			out.Id = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in PostUniverseIdsCharacter) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Id != 0 {
+		const prefix string = ",\"id\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.Id))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	out.RawByte('}')
+}
+func easyjsonA38aef0aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *PostUniverseIdsAlliance) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "id":
+			out.Id = int32(in.Int32())
+		case "name":
+			out.Name = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonA38aef0aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in PostUniverseIdsAlliance) {
 	out.RawByte('{')
 	first := true
 	_ = first

@@ -120,7 +120,7 @@ func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCharactersCharacterIdPlanetsPlanetIdContent
-					(v4).UnmarshalEasyJSON(in)
+					easyjson1bb669caDecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Contents = append(out.Contents, v4)
 					in.WantComma()
 				}
@@ -131,9 +131,9 @@ func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.AddError((out.ExpiryTime).UnmarshalJSON(data))
 			}
 		case "extractor_details":
-			(out.ExtractorDetails).UnmarshalEasyJSON(in)
+			easyjson1bb669caDecodeGithubComAntihaxGoesiEsi3(in, &out.ExtractorDetails)
 		case "factory_details":
-			(out.FactoryDetails).UnmarshalEasyJSON(in)
+			easyjson1bb669caDecodeGithubComAntihaxGoesiEsi4(in, &out.FactoryDetails)
 		case "install_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.InstallTime).UnmarshalJSON(data))
@@ -176,7 +176,7 @@ func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjson1bb669caEncodeGithubComAntihaxGoesiEsi2(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -199,7 +199,7 @@ func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.ExtractorDetails).MarshalEasyJSON(out)
+		easyjson1bb669caEncodeGithubComAntihaxGoesiEsi3(out, in.ExtractorDetails)
 	}
 	if true {
 		const prefix string = ",\"factory_details\":"
@@ -209,7 +209,7 @@ func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.FactoryDetails).MarshalEasyJSON(out)
+		easyjson1bb669caEncodeGithubComAntihaxGoesiEsi4(out, in.FactoryDetails)
 	}
 	if true {
 		const prefix string = ",\"install_time\":"
@@ -306,4 +306,223 @@ func (v *GetCharactersCharacterIdPlanetsPlanetIdPin) UnmarshalJSON(data []byte) 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCharactersCharacterIdPlanetsPlanetIdPin) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson1bb669caDecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "schematic_id":
+			out.SchematicId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.SchematicId != 0 {
+		const prefix string = ",\"schematic_id\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.SchematicId))
+	}
+	out.RawByte('}')
+}
+func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "cycle_time":
+			out.CycleTime = int32(in.Int32())
+		case "head_radius":
+			out.HeadRadius = float32(in.Float32())
+		case "heads":
+			if in.IsNull() {
+				in.Skip()
+				out.Heads = nil
+			} else {
+				in.Delim('[')
+				if out.Heads == nil {
+					if !in.IsDelim(']') {
+						out.Heads = make([]GetCharactersCharacterIdPlanetsPlanetIdHead, 0, 5)
+					} else {
+						out.Heads = []GetCharactersCharacterIdPlanetsPlanetIdHead{}
+					}
+				} else {
+					out.Heads = (out.Heads)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v7 GetCharactersCharacterIdPlanetsPlanetIdHead
+					(v7).UnmarshalEasyJSON(in)
+					out.Heads = append(out.Heads, v7)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "product_type_id":
+			out.ProductTypeId = int32(in.Int32())
+		case "qty_per_cycle":
+			out.QtyPerCycle = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.CycleTime != 0 {
+		const prefix string = ",\"cycle_time\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.CycleTime))
+	}
+	if in.HeadRadius != 0 {
+		const prefix string = ",\"head_radius\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.HeadRadius))
+	}
+	if len(in.Heads) != 0 {
+		const prefix string = ",\"heads\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v8, v9 := range in.Heads {
+				if v8 > 0 {
+					out.RawByte(',')
+				}
+				(v9).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
+	}
+	if in.ProductTypeId != 0 {
+		const prefix string = ",\"product_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ProductTypeId))
+	}
+	if in.QtyPerCycle != 0 {
+		const prefix string = ",\"qty_per_cycle\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.QtyPerCycle))
+	}
+	out.RawByte('}')
+}
+func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdContent) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "amount":
+			out.Amount = int64(in.Int64())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdContent) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Amount != 0 {
+		const prefix string = ",\"amount\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int64(int64(in.Amount))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
+	}
+	out.RawByte('}')
 }

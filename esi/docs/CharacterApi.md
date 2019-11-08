@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdCorporationhistory200Ok GetCharactersCharacterIdCorporationhistory(ctx, characterId, optional)
 Get corporation history
 
-Get a list of all the corporations a character has been a member of  ---  This route is cached for up to 3600 seconds
+Get a list of all the corporations a character has been a member of  ---  This route is cached for up to 86400 seconds
 
 ### Required Parameters
 

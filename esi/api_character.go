@@ -599,7 +599,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdBlueprints(ctx context.Con
 
 /*
 CharacterApiService Get corporation history
-Get a list of all the corporations a character has been a member of  ---  This route is cached for up to 86400 seconds
+Get a list of all the corporations a character has been a member of  ---  This route is cached for up to 3600 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdCorporationhistoryOpts - Optional Parameters:

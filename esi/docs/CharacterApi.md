@@ -25,7 +25,7 @@ Method | HTTP request | Description
 > GetCharactersCharacterIdOk GetCharactersCharacterId(ctx, characterId, optional)
 Get character's public information
 
-Public information about a character  ---  This route is cached for up to 3600 seconds
+Public information about a character  ---  This route is cached for up to 86400 seconds
 
 ### Required Parameters
 
@@ -567,7 +567,7 @@ No authorization required
 > float32 PostCharactersCharacterIdCspa(ctx, characterId, characters, optional)
 Calculate a CSPA charge cost
 
-Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  --- 
+Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  ---  [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/cspa/)
 
 ### Required Parameters
 

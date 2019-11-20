@@ -2,7 +2,7 @@
 swagger: "2.0"
 info:
   description: "An OpenAPI for EVE Online"
-  version: "1.2.5"
+  version: "1.2.9"
   title: "EVE Swagger Interface"
 host: "esi.evetech.net"
 schemes:
@@ -5206,7 +5206,7 @@ paths:
       - "Location"
       summary: "Get current ship"
       description: "Get the current ship type, name and id\n\n---\n\nThis route is\
-        \ cached for up to 5 seconds\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/ship/)"
+        \ cached for up to 5 seconds"
       operationId: "get_characters_character_id_ship"
       parameters:
       - name: "character_id"
@@ -25624,7 +25624,8 @@ paths:
       - "Alliance"
       summary: "Get alliance information"
       description: "Public information about an alliance\n\n---\n\nThis route is cached\
-        \ for up to 3600 seconds"
+        \ for up to 3600 seconds\n\n---\nWarning: This route has an upgrade available\n\
+        \n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/)"
       operationId: "get_alliances_alliance_id"
       parameters:
       - name: "alliance_id"
@@ -25738,7 +25739,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "v3"
       x-cached-seconds: 3600
   /v3/characters/{character_id}/assets/:
@@ -27817,7 +27817,7 @@ paths:
       - "Character"
       summary: "Get character's public information"
       description: "Public information about a character\n\n---\n\nThis route is cached\
-        \ for up to 3600 seconds"
+        \ for up to 86400 seconds"
       operationId: "get_characters_character_id"
       parameters:
       - name: "character_id"
@@ -27936,14 +27936,15 @@ paths:
       x-alternate-versions:
       - "dev"
       - "v4"
-      x-cached-seconds: 3600
+      x-cached-seconds: 86400
   /v4/characters/{character_id}/cspa/:
     post:
       tags:
       - "Character"
       summary: "Calculate a CSPA charge cost"
       description: "Takes a source character ID in the url and a set of target character\
-        \ ID's in the body, returns a CSPA charge cost\n\n---\n"
+        \ ID's in the body, returns a CSPA charge cost\n\n---\n\n[Diff of the upcoming\
+        \ changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/cspa/)"
       operationId: "post_characters_character_id_cspa"
       parameters:
       - name: "character_id"
@@ -28052,7 +28053,6 @@ paths:
       - evesso:
         - "esi-characters.read_contacts.v1"
       x-alternate-versions:
-      - "dev"
       - "v4"
   /v4/characters/{character_id}/skills/:
     get:

@@ -567,7 +567,7 @@ No authorization required
 > float32 PostCharactersCharacterIdCspa(ctx, characterId, characters, optional)
 Calculate a CSPA charge cost
 
-Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  ---  [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/cspa/)
+Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  --- 
 
 ### Required Parameters
 

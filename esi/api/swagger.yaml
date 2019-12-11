@@ -27943,8 +27943,7 @@ paths:
       - "Character"
       summary: "Calculate a CSPA charge cost"
       description: "Takes a source character ID in the url and a set of target character\
-        \ ID's in the body, returns a CSPA charge cost\n\n---\n\n[Diff of the upcoming\
-        \ changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/cspa/)"
+        \ ID's in the body, returns a CSPA charge cost\n\n---\n"
       operationId: "post_characters_character_id_cspa"
       parameters:
       - name: "character_id"
@@ -28053,6 +28052,7 @@ paths:
       - evesso:
         - "esi-characters.read_contacts.v1"
       x-alternate-versions:
+      - "dev"
       - "v4"
   /v4/characters/{character_id}/skills/:
     get:
@@ -42391,6 +42391,9 @@ definitions:
         - "OrbitalAttacked"
         - "OrbitalReinforced"
         - "OwnershipTransferred"
+        - "RaffleCreated"
+        - "RaffleExpired"
+        - "RaffleFinished"
         - "ReimbursementMsg"
         - "ResearchMissionAvailableMsg"
         - "RetractsWar"

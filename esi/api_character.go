@@ -2612,7 +2612,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 
 /*
 CharacterApiService Calculate a CSPA charge cost
-Takes a source character ID in the url and a set of target character ID&#39;s in the body, returns a CSPA charge cost  ---  [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/{character_id}/cspa/)
+Takes a source character ID in the url and a set of target character ID&#39;s in the body, returns a CSPA charge cost  ---
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param characters The target characters to calculate the charge for

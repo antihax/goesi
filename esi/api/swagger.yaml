@@ -25624,8 +25624,7 @@ paths:
       - "Alliance"
       summary: "Get alliance information"
       description: "Public information about an alliance\n\n---\n\nThis route is cached\
-        \ for up to 3600 seconds\n\n---\nWarning: This route has an upgrade available\n\
-        \n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/)"
+        \ for up to 3600 seconds"
       operationId: "get_alliances_alliance_id"
       parameters:
       - name: "alliance_id"
@@ -25739,6 +25738,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "v3"
       x-cached-seconds: 3600
   /v3/characters/{character_id}/assets/:

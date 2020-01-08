@@ -50,7 +50,7 @@ No authorization required
 > GetAlliancesAllianceIdOk GetAlliancesAllianceId(ctx, allianceId, optional)
 Get alliance information
 
-Public information about an alliance  ---  This route is cached for up to 3600 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/)
+Public information about an alliance  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 

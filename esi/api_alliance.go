@@ -200,7 +200,7 @@ func (a *AllianceApiService) GetAlliances(ctx context.Context, localVarOptionals
 
 /*
 AllianceApiService Get alliance information
-Public information about an alliance  ---  This route is cached for up to 3600 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/)
+Public information about an alliance  ---  This route is cached for up to 3600 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param allianceId An EVE alliance ID
  * @param optional nil or *GetAlliancesAllianceIdOpts - Optional Parameters:

@@ -29,7 +29,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -151,7 +150,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -293,7 +291,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -414,7 +411,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -542,7 +538,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -634,7 +629,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -780,7 +774,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - in: "body"
@@ -901,7 +894,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -1044,7 +1036,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "from_event"
@@ -1197,7 +1188,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "event_id"
@@ -1355,7 +1345,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -1499,7 +1488,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -1681,7 +1669,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -1839,7 +1826,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -1991,7 +1977,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -2114,7 +2099,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -2251,7 +2235,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fitting_id"
@@ -2353,7 +2336,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -2498,7 +2480,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -2641,7 +2622,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -2787,7 +2767,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -2951,7 +2930,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -3111,7 +3089,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -3249,7 +3226,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -3393,7 +3369,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -3562,7 +3537,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - in: "body"
@@ -3677,7 +3651,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "label_id"
@@ -3785,7 +3758,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -3927,7 +3899,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -4089,7 +4060,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "mail_id"
@@ -4188,7 +4158,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "mail_id"
@@ -4289,7 +4258,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -4450,7 +4418,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -4613,7 +4580,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -4758,7 +4724,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -4901,7 +4866,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -5071,7 +5035,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -5225,7 +5188,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -5362,7 +5324,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -5511,7 +5472,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -5653,7 +5613,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -5791,7 +5750,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "from_id"
@@ -5949,7 +5907,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -6111,7 +6068,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -6268,7 +6224,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -6428,7 +6383,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -6591,7 +6545,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -6752,7 +6705,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -6913,7 +6865,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -7036,7 +6987,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - in: "body"
@@ -7166,7 +7116,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -7342,7 +7291,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -7499,7 +7447,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -7644,7 +7591,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -7825,7 +7771,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -7999,7 +7944,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -8161,7 +8105,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -8332,7 +8275,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -8450,152 +8392,6 @@ paths:
       x-cached-seconds: 3600
       x-required-roles:
       - "Director"
-  /v1/corporations/{corporation_id}/facilities/:
-    get:
-      tags:
-      - "Corporation"
-      summary: "Get corporation facilities"
-      description: "Return a corporation's facilities\n\n---\n\nThis route is cached\
-        \ for up to 3600 seconds\n\n---\nRequires one of the following EVE corporation\
-        \ role(s): Factory_Manager"
-      operationId: "get_corporations_corporation_id_facilities"
-      parameters:
-      - name: "corporation_id"
-        in: "path"
-        description: "An EVE corporation ID"
-        required: true
-        type: "integer"
-        minimum: 1
-        format: "int32"
-        x-exportParamName: "CorporationId"
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      - name: "If-None-Match"
-        in: "header"
-        description: "ETag from a previous request. A 304 will be returned if this\
-          \ matches the current ETag"
-        required: false
-        type: "string"
-        x-exportParamName: "IfNoneMatch"
-        x-optionalDataType: "String"
-      - name: "token"
-        in: "query"
-        description: "Access token to use if unable to set a header"
-        required: false
-        type: "string"
-        x-exportParamName: "Token"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "List of corporation facilities"
-          schema:
-            type: "array"
-            description: "200 ok array"
-            title: "get_corporations_corporation_id_facilities_ok"
-            items:
-              $ref: "#/definitions/get_corporations_corporation_id_facilities_200_ok"
-            maxItems: 1000
-          examples:
-            application/json:
-            - facility_id: 123
-              system_id: 45678
-              type_id: 2502
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        304:
-          description: "Not modified"
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        400:
-          description: "Bad request"
-          schema:
-            $ref: "#/definitions/bad_request"
-          examples:
-            application/json:
-              error: "Bad request message"
-        401:
-          description: "Unauthorized"
-          schema:
-            $ref: "#/definitions/unauthorized"
-          examples:
-            application/json:
-              error: "Unauthorized message"
-        403:
-          description: "Forbidden"
-          schema:
-            $ref: "#/definitions/forbidden"
-          examples:
-            application/json:
-              error: "Forbidden message"
-        420:
-          description: "Error limited"
-          schema:
-            $ref: "#/definitions/error_limited"
-          examples:
-            application/json:
-              error: "Error limited message"
-        500:
-          description: "Internal server error"
-          schema:
-            $ref: "#/definitions/internal_server_error"
-          examples:
-            application/json:
-              error: "Internal server error message"
-        503:
-          description: "Service unavailable"
-          schema:
-            $ref: "#/definitions/service_unavailable"
-          examples:
-            application/json:
-              error: "Service unavailable message"
-        504:
-          description: "Gateway timeout"
-          schema:
-            $ref: "#/definitions/gateway_timeout"
-          examples:
-            application/json:
-              error: "Gateway timeout message"
-      security:
-      - evesso:
-        - "esi-corporations.read_facilities.v1"
-      x-alternate-versions:
-      - "dev"
-      - "legacy"
-      - "v1"
-      x-cached-seconds: 3600
-      x-required-roles:
-      - "Factory_Manager"
   /v1/corporations/{corporation_id}/fw/stats/:
     get:
       tags:
@@ -8621,7 +8417,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -8766,7 +8561,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -8888,7 +8682,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -9071,7 +8864,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -9232,7 +9024,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -9394,7 +9185,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -9558,7 +9348,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -9699,7 +9488,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -9845,7 +9633,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -10000,7 +9787,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -10145,7 +9931,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -10311,7 +10096,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -10480,7 +10264,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -10646,7 +10429,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -10807,7 +10589,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -10970,7 +10751,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -11118,7 +10898,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -11276,7 +11055,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "division"
@@ -11421,489 +11199,6 @@ paths:
       x-required-roles:
       - "Accountant"
       - "Junior_Accountant"
-  /v1/dogma/attributes/:
-    get:
-      tags:
-      - "Dogma"
-      summary: "Get attributes"
-      description: "Get a list of dogma attribute ids\n\n---\n\nThis route expires\
-        \ daily at 11:05"
-      operationId: "get_dogma_attributes"
-      parameters:
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      - name: "If-None-Match"
-        in: "header"
-        description: "ETag from a previous request. A 304 will be returned if this\
-          \ matches the current ETag"
-        required: false
-        type: "string"
-        x-exportParamName: "IfNoneMatch"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "A list of dogma attribute ids"
-          schema:
-            type: "array"
-            description: "200 ok array"
-            title: "get_dogma_attributes_ok"
-            items:
-              type: "integer"
-              format: "int32"
-              description: "200 ok integer"
-              title: "get_dogma_attributes_200_ok"
-            maxItems: 10000
-          examples:
-            application/json:
-            - 1
-            - 2
-            - 3
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        304:
-          description: "Not modified"
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        400:
-          description: "Bad request"
-          schema:
-            $ref: "#/definitions/bad_request"
-          examples:
-            application/json:
-              error: "Bad request message"
-        420:
-          description: "Error limited"
-          schema:
-            $ref: "#/definitions/error_limited"
-          examples:
-            application/json:
-              error: "Error limited message"
-        500:
-          description: "Internal server error"
-          schema:
-            $ref: "#/definitions/internal_server_error"
-          examples:
-            application/json:
-              error: "Internal server error message"
-        503:
-          description: "Service unavailable"
-          schema:
-            $ref: "#/definitions/service_unavailable"
-          examples:
-            application/json:
-              error: "Service unavailable message"
-        504:
-          description: "Gateway timeout"
-          schema:
-            $ref: "#/definitions/gateway_timeout"
-          examples:
-            application/json:
-              error: "Gateway timeout message"
-      x-alternate-versions:
-      - "dev"
-      - "legacy"
-      - "v1"
-  /v1/dogma/attributes/{attribute_id}/:
-    get:
-      tags:
-      - "Dogma"
-      summary: "Get attribute information"
-      description: "Get information on a dogma attribute\n\n---\n\nThis route expires\
-        \ daily at 11:05"
-      operationId: "get_dogma_attributes_attribute_id"
-      parameters:
-      - name: "attribute_id"
-        in: "path"
-        description: "A dogma attribute ID"
-        required: true
-        type: "integer"
-        format: "int32"
-        x-exportParamName: "AttributeId"
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      - name: "If-None-Match"
-        in: "header"
-        description: "ETag from a previous request. A 304 will be returned if this\
-          \ matches the current ETag"
-        required: false
-        type: "string"
-        x-exportParamName: "IfNoneMatch"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "Information about a dogma attribute"
-          schema:
-            $ref: "#/definitions/get_dogma_attributes_attribute_id_ok"
-          examples:
-            application/json:
-              attribute_id: 20
-              default_value: 1
-              description: "Factor by which topspeed increases."
-              display_name: "Maximum Velocity Bonus"
-              high_is_good: true
-              icon_id: 1389
-              name: "speedFactor"
-              published: true
-              unit_id: 124
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        304:
-          description: "Not modified"
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        400:
-          description: "Bad request"
-          schema:
-            $ref: "#/definitions/bad_request"
-          examples:
-            application/json:
-              error: "Bad request message"
-        404:
-          description: "Dogma attribute not found"
-          schema:
-            $ref: "#/definitions/get_dogma_attributes_attribute_id_not_found"
-          examples:
-            application/json:
-              error: "Not found message"
-        420:
-          description: "Error limited"
-          schema:
-            $ref: "#/definitions/error_limited"
-          examples:
-            application/json:
-              error: "Error limited message"
-        500:
-          description: "Internal server error"
-          schema:
-            $ref: "#/definitions/internal_server_error"
-          examples:
-            application/json:
-              error: "Internal server error message"
-        503:
-          description: "Service unavailable"
-          schema:
-            $ref: "#/definitions/service_unavailable"
-          examples:
-            application/json:
-              error: "Service unavailable message"
-        504:
-          description: "Gateway timeout"
-          schema:
-            $ref: "#/definitions/gateway_timeout"
-          examples:
-            application/json:
-              error: "Gateway timeout message"
-      x-alternate-versions:
-      - "dev"
-      - "legacy"
-      - "v1"
-  /v1/dogma/dynamic/items/{type_id}/{item_id}/:
-    get:
-      tags:
-      - "Dogma"
-      summary: "Get dynamic item information"
-      description: "Returns info about a dynamic item resulting from mutation with\
-        \ a mutaplasmid.\n\n---\n\nThis route expires daily at 11:05"
-      operationId: "get_dogma_dynamic_items_type_id_item_id"
-      parameters:
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      - name: "If-None-Match"
-        in: "header"
-        description: "ETag from a previous request. A 304 will be returned if this\
-          \ matches the current ETag"
-        required: false
-        type: "string"
-        x-exportParamName: "IfNoneMatch"
-        x-optionalDataType: "String"
-      - name: "item_id"
-        in: "path"
-        description: "item_id integer"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-exportParamName: "ItemId"
-      - name: "type_id"
-        in: "path"
-        description: "type_id integer"
-        required: true
-        type: "integer"
-        format: "int32"
-        x-exportParamName: "TypeId"
-      responses:
-        200:
-          description: "Details about a dynamic item"
-          schema:
-            $ref: "#/definitions/get_dogma_dynamic_items_type_id_item_id_ok"
-          examples:
-            application/json:
-              created_by: 2112625428
-              dogma_attributes:
-              - attribute_id: 9
-                value: 350
-              dogma_effects:
-              - effect_id: 508
-                is_default: false
-              mutator_type_id: 47845
-              source_type_id: 33103
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        304:
-          description: "Not modified"
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        400:
-          description: "Bad request"
-          schema:
-            $ref: "#/definitions/bad_request"
-          examples:
-            application/json:
-              error: "Bad request message"
-        404:
-          description: "Item not found"
-          schema:
-            $ref: "#/definitions/get_dogma_dynamic_items_type_id_item_id_not_found"
-          examples:
-            application/json:
-              error: "Not found message"
-        420:
-          description: "Error limited"
-          schema:
-            $ref: "#/definitions/error_limited"
-          examples:
-            application/json:
-              error: "Error limited message"
-        500:
-          description: "Internal server error"
-          schema:
-            $ref: "#/definitions/internal_server_error"
-          examples:
-            application/json:
-              error: "Internal server error message"
-        503:
-          description: "Service unavailable"
-          schema:
-            $ref: "#/definitions/service_unavailable"
-          examples:
-            application/json:
-              error: "Service unavailable message"
-        504:
-          description: "Gateway timeout"
-          schema:
-            $ref: "#/definitions/gateway_timeout"
-          examples:
-            application/json:
-              error: "Gateway timeout message"
-      x-alternate-versions:
-      - "dev"
-      - "legacy"
-      - "v1"
-  /v1/dogma/effects/:
-    get:
-      tags:
-      - "Dogma"
-      summary: "Get effects"
-      description: "Get a list of dogma effect ids\n\n---\n\nThis route expires daily\
-        \ at 11:05"
-      operationId: "get_dogma_effects"
-      parameters:
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      - name: "If-None-Match"
-        in: "header"
-        description: "ETag from a previous request. A 304 will be returned if this\
-          \ matches the current ETag"
-        required: false
-        type: "string"
-        x-exportParamName: "IfNoneMatch"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "A list of dogma effect ids"
-          schema:
-            type: "array"
-            description: "200 ok array"
-            title: "get_dogma_effects_ok"
-            items:
-              type: "integer"
-              format: "int32"
-              description: "200 ok integer"
-              title: "get_dogma_effects_200_ok"
-            maxItems: 10000
-          examples:
-            application/json:
-            - 1
-            - 2
-            - 3
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        304:
-          description: "Not modified"
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        400:
-          description: "Bad request"
-          schema:
-            $ref: "#/definitions/bad_request"
-          examples:
-            application/json:
-              error: "Bad request message"
-        420:
-          description: "Error limited"
-          schema:
-            $ref: "#/definitions/error_limited"
-          examples:
-            application/json:
-              error: "Error limited message"
-        500:
-          description: "Internal server error"
-          schema:
-            $ref: "#/definitions/internal_server_error"
-          examples:
-            application/json:
-              error: "Internal server error message"
-        503:
-          description: "Service unavailable"
-          schema:
-            $ref: "#/definitions/service_unavailable"
-          examples:
-            application/json:
-              error: "Service unavailable message"
-        504:
-          description: "Gateway timeout"
-          schema:
-            $ref: "#/definitions/gateway_timeout"
-          examples:
-            application/json:
-              error: "Gateway timeout message"
-      x-alternate-versions:
-      - "dev"
-      - "legacy"
-      - "v1"
   /v1/fleets/{fleet_id}/:
     get:
       tags:
@@ -11921,7 +11216,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -12064,7 +11358,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -12187,7 +11480,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -12369,7 +11661,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -12482,7 +11773,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -12601,7 +11891,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -12707,7 +11996,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -12819,7 +12107,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -12942,7 +12229,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -13118,7 +12404,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -13222,7 +12507,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -13335,7 +12619,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -13441,7 +12724,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "fleet_id"
@@ -13554,7 +12836,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -13689,7 +12970,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -13824,7 +13104,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -13958,7 +13237,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -14075,7 +13353,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -14183,7 +13460,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -14306,7 +13582,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -14420,7 +13695,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -14548,7 +13822,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -14688,7 +13961,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -14846,7 +14118,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -14975,7 +14246,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -15104,7 +14374,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -15254,7 +14523,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -15365,7 +14633,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -15530,7 +14797,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -15678,7 +14944,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -15855,7 +15120,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -15991,7 +15255,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -16121,7 +15384,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "group_id"
@@ -16265,7 +15527,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -16379,7 +15640,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -16519,7 +15779,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "destination"
@@ -16667,7 +15926,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -16784,7 +16042,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -16895,7 +16152,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -17010,7 +16266,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -17122,7 +16377,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "token"
@@ -17208,7 +16462,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "target_id"
@@ -17301,7 +16554,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "token"
@@ -17394,7 +16646,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - in: "body"
@@ -17510,7 +16761,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -17656,7 +16906,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -17787,7 +17036,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -17932,7 +17180,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -18068,7 +17315,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -18211,7 +17457,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -18346,7 +17591,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -18491,7 +17735,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -18603,7 +17846,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "graphic_id"
@@ -18721,7 +17963,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -18865,7 +18106,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "group_id"
@@ -19034,7 +18274,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "language"
@@ -19155,7 +18394,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -19278,7 +18516,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -19418,7 +18655,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -19555,7 +18791,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -19683,7 +18918,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -19832,7 +19066,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -19951,7 +19184,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -20078,7 +19310,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -20195,7 +19426,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "filter"
@@ -20322,7 +19552,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -20432,7 +19661,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -20543,7 +19771,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -20671,7 +19898,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -20793,7 +20019,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -20923,7 +20148,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -21073,7 +20297,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -21231,7 +20454,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - in: "body"
@@ -21354,7 +20576,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -21516,7 +20737,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -21691,7 +20911,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -21847,7 +21066,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -22020,7 +21238,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "label_ids"
@@ -22176,7 +21393,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "label_ids"
@@ -22306,7 +21522,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "token"
@@ -22399,7 +21614,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -22544,7 +21758,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - in: "body"
@@ -22648,7 +21861,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - in: "body"
@@ -22756,7 +21968,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -22893,7 +22104,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -23046,7 +22256,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -23166,7 +22375,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -23303,7 +22511,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -23458,7 +22665,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -23611,7 +22817,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -23734,7 +22939,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - in: "body"
@@ -23867,7 +23071,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -24031,7 +23234,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -24192,7 +23394,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -24376,7 +23577,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -24525,130 +23725,6 @@ paths:
       x-required-roles:
       - "Accountant"
       - "Trader"
-  /v2/dogma/effects/{effect_id}/:
-    get:
-      tags:
-      - "Dogma"
-      summary: "Get effect information"
-      description: "Get information on a dogma effect\n\n---\n\nThis route expires\
-        \ daily at 11:05"
-      operationId: "get_dogma_effects_effect_id"
-      parameters:
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      - name: "effect_id"
-        in: "path"
-        description: "A dogma effect ID"
-        required: true
-        type: "integer"
-        format: "int32"
-        x-exportParamName: "EffectId"
-      - name: "If-None-Match"
-        in: "header"
-        description: "ETag from a previous request. A 304 will be returned if this\
-          \ matches the current ETag"
-        required: false
-        type: "string"
-        x-exportParamName: "IfNoneMatch"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "Information about a dogma effect"
-          schema:
-            $ref: "#/definitions/get_dogma_effects_effect_id_ok"
-          examples:
-            application/json:
-              description: "Requires a high power slot."
-              display_name: "High power"
-              effect_category: 0
-              effect_id: 12
-              icon_id: 293
-              name: "hiPower"
-              post_expression: 131
-              pre_expression: 131
-              published: true
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        304:
-          description: "Not modified"
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            ETag:
-              type: "string"
-              description: "RFC7232 compliant entity tag"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-        400:
-          description: "Bad request"
-          schema:
-            $ref: "#/definitions/bad_request"
-          examples:
-            application/json:
-              error: "Bad request message"
-        404:
-          description: "Dogma effect not found"
-          schema:
-            $ref: "#/definitions/get_dogma_effects_effect_id_not_found"
-          examples:
-            application/json:
-              error: "Not found message"
-        420:
-          description: "Error limited"
-          schema:
-            $ref: "#/definitions/error_limited"
-          examples:
-            application/json:
-              error: "Error limited message"
-        500:
-          description: "Internal server error"
-          schema:
-            $ref: "#/definitions/internal_server_error"
-          examples:
-            application/json:
-              error: "Internal server error message"
-        503:
-          description: "Service unavailable"
-          schema:
-            $ref: "#/definitions/service_unavailable"
-          examples:
-            application/json:
-              error: "Service unavailable message"
-        504:
-          description: "Gateway timeout"
-          schema:
-            $ref: "#/definitions/gateway_timeout"
-          examples:
-            application/json:
-              error: "Gateway timeout message"
-      x-alternate-versions:
-      - "dev"
-      - "v2"
   /v2/fw/systems/:
     get:
       tags:
@@ -24666,7 +23742,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -24816,7 +23891,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -24985,7 +24059,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "destination_id"
@@ -25094,7 +24167,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -25236,7 +24308,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -25379,7 +24450,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -25524,7 +24594,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -25643,7 +24712,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -25766,7 +24834,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -25928,7 +24995,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "event_id"
@@ -26088,7 +25154,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "event_id"
@@ -26195,7 +25260,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -26339,7 +25403,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -26486,7 +25549,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -26692,7 +25754,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -26880,7 +25941,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -27045,7 +26105,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -27190,7 +26249,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -27380,7 +26438,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -27564,7 +26621,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - in: "body"
@@ -27681,7 +26737,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -27836,7 +26891,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -27978,7 +27032,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "token"
@@ -28079,7 +27132,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -28223,7 +27275,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -28353,7 +27404,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "division"
@@ -28538,7 +27588,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -28705,7 +27754,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -28852,7 +27900,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "If-None-Match"
@@ -29027,7 +28074,6 @@ securityDefinitions:
       esi-corporations.read_container_logs.v1: "EVE SSO scope esi-corporations.read_container_logs.v1"
       esi-corporations.read_corporation_membership.v1: "EVE SSO scope esi-corporations.read_corporation_membership.v1"
       esi-corporations.read_divisions.v1: "EVE SSO scope esi-corporations.read_divisions.v1"
-      esi-corporations.read_facilities.v1: "EVE SSO scope esi-corporations.read_facilities.v1"
       esi-corporations.read_fw_stats.v1: "EVE SSO scope esi-corporations.read_fw_stats.v1"
       esi-corporations.read_medals.v1: "EVE SSO scope esi-corporations.read_medals.v1"
       esi-corporations.read_standings.v1: "EVE SSO scope esi-corporations.read_standings.v1"
@@ -31471,28 +30517,6 @@ definitions:
           $ref: "#/definitions/get_corporations_corporation_id_divisions_wallet_wallet"
         maxItems: 7
     description: "200 ok object"
-  get_corporations_corporation_id_facilities_200_ok:
-    required:
-    - "facility_id"
-    - "system_id"
-    - "type_id"
-    properties:
-      facility_id:
-        type: "integer"
-        format: "int64"
-        description: "facility_id integer"
-        title: "get_corporations_corporation_id_facilities_facility_id"
-      system_id:
-        type: "integer"
-        format: "int32"
-        description: "system_id integer"
-        title: "get_corporations_corporation_id_facilities_system_id"
-      type_id:
-        type: "integer"
-        format: "int32"
-        description: "type_id integer"
-        title: "get_corporations_corporation_id_facilities_type_id"
-    description: "200 ok object"
   get_corporations_corporation_id_fw_stats_kills:
     required:
     - "last_week"
@@ -33296,139 +32320,6 @@ definitions:
         description: "Amount paid per unit"
         title: "get_corporations_corporation_id_wallets_division_transactions_unit_price"
     description: "wallet transaction"
-  get_dogma_attributes_attribute_id_ok:
-    required:
-    - "attribute_id"
-    properties:
-      attribute_id:
-        type: "integer"
-        format: "int32"
-        description: "attribute_id integer"
-        title: "get_dogma_attributes_attribute_id_attribute_id"
-      default_value:
-        type: "number"
-        format: "float"
-        description: "default_value number"
-        title: "get_dogma_attributes_attribute_id_default_value"
-      description:
-        type: "string"
-        description: "description string"
-        title: "get_dogma_attributes_attribute_id_description"
-      display_name:
-        type: "string"
-        description: "display_name string"
-        title: "get_dogma_attributes_attribute_id_display_name"
-      high_is_good:
-        type: "boolean"
-        description: "high_is_good boolean"
-        title: "get_dogma_attributes_attribute_id_high_is_good"
-      icon_id:
-        type: "integer"
-        format: "int32"
-        description: "icon_id integer"
-        title: "get_dogma_attributes_attribute_id_icon_id"
-      name:
-        type: "string"
-        description: "name string"
-        title: "get_dogma_attributes_attribute_id_name"
-      published:
-        type: "boolean"
-        description: "published boolean"
-        title: "get_dogma_attributes_attribute_id_published"
-      stackable:
-        type: "boolean"
-        description: "stackable boolean"
-        title: "get_dogma_attributes_attribute_id_stackable"
-      unit_id:
-        type: "integer"
-        format: "int32"
-        description: "unit_id integer"
-        title: "get_dogma_attributes_attribute_id_unit_id"
-    description: "200 ok object"
-  get_dogma_attributes_attribute_id_not_found:
-    properties:
-      error:
-        type: "string"
-        description: "Not found message"
-        title: "get_dogma_attributes_attribute_id_404_not_found"
-    description: "Not found"
-  get_dogma_dynamic_items_type_id_item_id_dogma_attribute:
-    required:
-    - "attribute_id"
-    - "value"
-    properties:
-      attribute_id:
-        type: "integer"
-        format: "int32"
-        description: "attribute_id integer"
-        title: "get_dogma_dynamic_items_type_id_item_id_attribute_id"
-      value:
-        type: "number"
-        format: "float"
-        description: "value number"
-        title: "get_dogma_dynamic_items_type_id_item_id_value"
-    description: "dogma_attribute object"
-  get_dogma_dynamic_items_type_id_item_id_dogma_effect:
-    required:
-    - "effect_id"
-    - "is_default"
-    properties:
-      effect_id:
-        type: "integer"
-        format: "int32"
-        description: "effect_id integer"
-        title: "get_dogma_dynamic_items_type_id_item_id_effect_id"
-      is_default:
-        type: "boolean"
-        description: "is_default boolean"
-        title: "get_dogma_dynamic_items_type_id_item_id_is_default"
-    description: "dogma_effect object"
-  get_dogma_dynamic_items_type_id_item_id_ok:
-    required:
-    - "created_by"
-    - "dogma_attributes"
-    - "dogma_effects"
-    - "mutator_type_id"
-    - "source_type_id"
-    properties:
-      created_by:
-        type: "integer"
-        format: "int32"
-        description: "The ID of the character who created the item"
-        title: "get_dogma_dynamic_items_type_id_item_id_created_by"
-      dogma_attributes:
-        type: "array"
-        description: "dogma_attributes array"
-        title: "get_dogma_dynamic_items_type_id_item_id_dogma_attributes"
-        items:
-          $ref: "#/definitions/get_dogma_dynamic_items_type_id_item_id_dogma_attribute"
-        maxItems: 1000
-      dogma_effects:
-        type: "array"
-        description: "dogma_effects array"
-        title: "get_dogma_dynamic_items_type_id_item_id_dogma_effects"
-        items:
-          $ref: "#/definitions/get_dogma_dynamic_items_type_id_item_id_dogma_effect"
-        maxItems: 1000
-      mutator_type_id:
-        type: "integer"
-        format: "int32"
-        description: "The type ID of the mutator used to generate the dynamic item."
-        title: "get_dogma_dynamic_items_type_id_item_id_mutator_type_id"
-      source_type_id:
-        type: "integer"
-        format: "int32"
-        description: "The type ID of the source item the mutator was applied to create\
-          \ the dynamic item."
-        title: "get_dogma_dynamic_items_type_id_item_id_source_type_id"
-    description: "200 ok object"
-  get_dogma_dynamic_items_type_id_item_id_not_found:
-    properties:
-      error:
-        type: "string"
-        description: "Not found message"
-        title: "get_dogma_dynamic_items_type_id_item_id_404_not_found"
-    description: "Not found"
   get_fleets_fleet_id_ok:
     required:
     - "is_free_move"
@@ -39736,148 +38627,6 @@ definitions:
         minimum: 1
         maximum: 7
     description: "200 ok object"
-  get_dogma_effects_effect_id_modifier:
-    required:
-    - "func"
-    properties:
-      domain:
-        type: "string"
-        description: "domain string"
-        title: "get_dogma_effects_effect_id_domain"
-      effect_id:
-        type: "integer"
-        format: "int32"
-        description: "effect_id integer"
-        title: "get_dogma_effects_effect_id_modifier_effect_id"
-      func:
-        type: "string"
-        description: "func string"
-        title: "get_dogma_effects_effect_id_func"
-      modified_attribute_id:
-        type: "integer"
-        format: "int32"
-        description: "modified_attribute_id integer"
-        title: "get_dogma_effects_effect_id_modified_attribute_id"
-      modifying_attribute_id:
-        type: "integer"
-        format: "int32"
-        description: "modifying_attribute_id integer"
-        title: "get_dogma_effects_effect_id_modifying_attribute_id"
-      operator:
-        type: "integer"
-        format: "int32"
-        description: "operator integer"
-        title: "get_dogma_effects_effect_id_operator"
-    description: "modifier object"
-  get_dogma_effects_effect_id_ok:
-    required:
-    - "effect_id"
-    properties:
-      description:
-        type: "string"
-        description: "description string"
-        title: "get_dogma_effects_effect_id_description"
-      disallow_auto_repeat:
-        type: "boolean"
-        description: "disallow_auto_repeat boolean"
-        title: "get_dogma_effects_effect_id_disallow_auto_repeat"
-      discharge_attribute_id:
-        type: "integer"
-        format: "int32"
-        description: "discharge_attribute_id integer"
-        title: "get_dogma_effects_effect_id_discharge_attribute_id"
-      display_name:
-        type: "string"
-        description: "display_name string"
-        title: "get_dogma_effects_effect_id_display_name"
-      duration_attribute_id:
-        type: "integer"
-        format: "int32"
-        description: "duration_attribute_id integer"
-        title: "get_dogma_effects_effect_id_duration_attribute_id"
-      effect_category:
-        type: "integer"
-        format: "int32"
-        description: "effect_category integer"
-        title: "get_dogma_effects_effect_id_effect_category"
-      effect_id:
-        type: "integer"
-        format: "int32"
-        description: "effect_id integer"
-        title: "get_dogma_effects_effect_id_effect_id"
-      electronic_chance:
-        type: "boolean"
-        description: "electronic_chance boolean"
-        title: "get_dogma_effects_effect_id_electronic_chance"
-      falloff_attribute_id:
-        type: "integer"
-        format: "int32"
-        description: "falloff_attribute_id integer"
-        title: "get_dogma_effects_effect_id_falloff_attribute_id"
-      icon_id:
-        type: "integer"
-        format: "int32"
-        description: "icon_id integer"
-        title: "get_dogma_effects_effect_id_icon_id"
-      is_assistance:
-        type: "boolean"
-        description: "is_assistance boolean"
-        title: "get_dogma_effects_effect_id_is_assistance"
-      is_offensive:
-        type: "boolean"
-        description: "is_offensive boolean"
-        title: "get_dogma_effects_effect_id_is_offensive"
-      is_warp_safe:
-        type: "boolean"
-        description: "is_warp_safe boolean"
-        title: "get_dogma_effects_effect_id_is_warp_safe"
-      modifiers:
-        type: "array"
-        description: "modifiers array"
-        title: "get_dogma_effects_effect_id_modifiers"
-        items:
-          $ref: "#/definitions/get_dogma_effects_effect_id_modifier"
-        maxItems: 100
-      name:
-        type: "string"
-        description: "name string"
-        title: "get_dogma_effects_effect_id_name"
-      post_expression:
-        type: "integer"
-        format: "int32"
-        description: "post_expression integer"
-        title: "get_dogma_effects_effect_id_post_expression"
-      pre_expression:
-        type: "integer"
-        format: "int32"
-        description: "pre_expression integer"
-        title: "get_dogma_effects_effect_id_pre_expression"
-      published:
-        type: "boolean"
-        description: "published boolean"
-        title: "get_dogma_effects_effect_id_published"
-      range_attribute_id:
-        type: "integer"
-        format: "int32"
-        description: "range_attribute_id integer"
-        title: "get_dogma_effects_effect_id_range_attribute_id"
-      range_chance:
-        type: "boolean"
-        description: "range_chance boolean"
-        title: "get_dogma_effects_effect_id_range_chance"
-      tracking_speed_attribute_id:
-        type: "integer"
-        format: "int32"
-        description: "tracking_speed_attribute_id integer"
-        title: "get_dogma_effects_effect_id_tracking_speed_attribute_id"
-    description: "200 ok object"
-  get_dogma_effects_effect_id_not_found:
-    properties:
-      error:
-        type: "string"
-        description: "Not found message"
-        title: "get_dogma_effects_effect_id_404_not_found"
-    description: "Not found"
   get_fw_systems_200_ok:
     required:
     - "contested"
@@ -42736,7 +41485,6 @@ parameters:
     default: "tranquility"
     enum:
     - "tranquility"
-    - "singularity"
     x-exportParamName: "Datasource"
     x-optionalDataType: "String"
   language:

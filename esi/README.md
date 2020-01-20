@@ -95,6 +95,11 @@ Class | Method | HTTP request | Description
 *CorporationApi* | [**GetCorporationsCorporationIdStructures**](docs/CorporationApi.md#getcorporationscorporationidstructures) | **Get** /v3/corporations/{corporation_id}/structures/ | Get corporation structures
 *CorporationApi* | [**GetCorporationsCorporationIdTitles**](docs/CorporationApi.md#getcorporationscorporationidtitles) | **Get** /v1/corporations/{corporation_id}/titles/ | Get corporation titles
 *CorporationApi* | [**GetCorporationsNpccorps**](docs/CorporationApi.md#getcorporationsnpccorps) | **Get** /v1/corporations/npccorps/ | Get npc corporations
+*DogmaApi* | [**GetDogmaAttributes**](docs/DogmaApi.md#getdogmaattributes) | **Get** /v1/dogma/attributes/ | Get attributes
+*DogmaApi* | [**GetDogmaAttributesAttributeId**](docs/DogmaApi.md#getdogmaattributesattributeid) | **Get** /v1/dogma/attributes/{attribute_id}/ | Get attribute information
+*DogmaApi* | [**GetDogmaDynamicItemsTypeIdItemId**](docs/DogmaApi.md#getdogmadynamicitemstypeiditemid) | **Get** /v1/dogma/dynamic/items/{type_id}/{item_id}/ | Get dynamic item information
+*DogmaApi* | [**GetDogmaEffects**](docs/DogmaApi.md#getdogmaeffects) | **Get** /v1/dogma/effects/ | Get effects
+*DogmaApi* | [**GetDogmaEffectsEffectId**](docs/DogmaApi.md#getdogmaeffectseffectid) | **Get** /v2/dogma/effects/{effect_id}/ | Get effect information
 *FactionWarfareApi* | [**GetCharactersCharacterIdFwStats**](docs/FactionWarfareApi.md#getcharacterscharacteridfwstats) | **Get** /v1/characters/{character_id}/fw/stats/ | Overview of a character involved in faction warfare
 *FactionWarfareApi* | [**GetCorporationsCorporationIdFwStats**](docs/FactionWarfareApi.md#getcorporationscorporationidfwstats) | **Get** /v1/corporations/{corporation_id}/fw/stats/ | Overview of a corporation involved in faction warfare
 *FactionWarfareApi* | [**GetFwLeaderboards**](docs/FactionWarfareApi.md#getfwleaderboards) | **Get** /v1/fw/leaderboards/ | List of the top factions in faction warfare
@@ -388,6 +393,15 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdWallets200Ok](docs/GetCorporationsCorporationIdWallets200Ok.md)
  - [GetCorporationsCorporationIdWalletsDivisionJournal200Ok](docs/GetCorporationsCorporationIdWalletsDivisionJournal200Ok.md)
  - [GetCorporationsCorporationIdWalletsDivisionTransactions200Ok](docs/GetCorporationsCorporationIdWalletsDivisionTransactions200Ok.md)
+ - [GetDogmaAttributesAttributeIdNotFound](docs/GetDogmaAttributesAttributeIdNotFound.md)
+ - [GetDogmaAttributesAttributeIdOk](docs/GetDogmaAttributesAttributeIdOk.md)
+ - [GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute](docs/GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute.md)
+ - [GetDogmaDynamicItemsTypeIdItemIdDogmaEffect](docs/GetDogmaDynamicItemsTypeIdItemIdDogmaEffect.md)
+ - [GetDogmaDynamicItemsTypeIdItemIdNotFound](docs/GetDogmaDynamicItemsTypeIdItemIdNotFound.md)
+ - [GetDogmaDynamicItemsTypeIdItemIdOk](docs/GetDogmaDynamicItemsTypeIdItemIdOk.md)
+ - [GetDogmaEffectsEffectIdModifier](docs/GetDogmaEffectsEffectIdModifier.md)
+ - [GetDogmaEffectsEffectIdNotFound](docs/GetDogmaEffectsEffectIdNotFound.md)
+ - [GetDogmaEffectsEffectIdOk](docs/GetDogmaEffectsEffectIdOk.md)
  - [GetFleetsFleetIdMembers200Ok](docs/GetFleetsFleetIdMembers200Ok.md)
  - [GetFleetsFleetIdMembersNotFound](docs/GetFleetsFleetIdMembersNotFound.md)
  - [GetFleetsFleetIdNotFound](docs/GetFleetsFleetIdNotFound.md)

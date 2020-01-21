@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GetCorporationsCorporationIdBlueprints**](CorporationApi.md#GetCorporationsCorporationIdBlueprints) | **Get** /v2/corporations/{corporation_id}/blueprints/ | Get corporation blueprints
 [**GetCorporationsCorporationIdContainersLogs**](CorporationApi.md#GetCorporationsCorporationIdContainersLogs) | **Get** /v2/corporations/{corporation_id}/containers/logs/ | Get all corporation ALSC logs
 [**GetCorporationsCorporationIdDivisions**](CorporationApi.md#GetCorporationsCorporationIdDivisions) | **Get** /v1/corporations/{corporation_id}/divisions/ | Get corporation divisions
+[**GetCorporationsCorporationIdFacilities**](CorporationApi.md#GetCorporationsCorporationIdFacilities) | **Get** /v1/corporations/{corporation_id}/facilities/ | Get corporation facilities
 [**GetCorporationsCorporationIdIcons**](CorporationApi.md#GetCorporationsCorporationIdIcons) | **Get** /v1/corporations/{corporation_id}/icons/ | Get corporation icon
 [**GetCorporationsCorporationIdMedals**](CorporationApi.md#GetCorporationsCorporationIdMedals) | **Get** /v1/corporations/{corporation_id}/medals/ | Get corporation medals
 [**GetCorporationsCorporationIdMedalsIssued**](CorporationApi.md#GetCorporationsCorporationIdMedalsIssued) | **Get** /v1/corporations/{corporation_id}/medals/issued/ | Get corporation issued medals
@@ -210,6 +211,45 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetCorporationsCorporationIdDivisionsOk**](get_corporations_corporation_id_divisions_ok.md)
+
+### Authorization
+
+[evesso](../README.md#evesso)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCorporationsCorporationIdFacilities**
+> []GetCorporationsCorporationIdFacilities200Ok GetCorporationsCorporationIdFacilities(ctx, corporationId, optional)
+Get corporation facilities
+
+Return a corporation's facilities  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Factory_Manager
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+  **corporationId** | **int32**| An EVE corporation ID | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **corporationId** | **int32**| An EVE corporation ID | 
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
+ **token** | **string**| Access token to use if unable to set a header | 
+
+### Return type
+
+[**[]GetCorporationsCorporationIdFacilities200Ok**](get_corporations_corporation_id_facilities_200_ok.md)
 
 ### Authorization
 

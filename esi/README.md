@@ -79,6 +79,7 @@ Class | Method | HTTP request | Description
 *CorporationApi* | [**GetCorporationsCorporationIdBlueprints**](docs/CorporationApi.md#getcorporationscorporationidblueprints) | **Get** /v2/corporations/{corporation_id}/blueprints/ | Get corporation blueprints
 *CorporationApi* | [**GetCorporationsCorporationIdContainersLogs**](docs/CorporationApi.md#getcorporationscorporationidcontainerslogs) | **Get** /v2/corporations/{corporation_id}/containers/logs/ | Get all corporation ALSC logs
 *CorporationApi* | [**GetCorporationsCorporationIdDivisions**](docs/CorporationApi.md#getcorporationscorporationiddivisions) | **Get** /v1/corporations/{corporation_id}/divisions/ | Get corporation divisions
+*CorporationApi* | [**GetCorporationsCorporationIdFacilities**](docs/CorporationApi.md#getcorporationscorporationidfacilities) | **Get** /v1/corporations/{corporation_id}/facilities/ | Get corporation facilities
 *CorporationApi* | [**GetCorporationsCorporationIdIcons**](docs/CorporationApi.md#getcorporationscorporationidicons) | **Get** /v1/corporations/{corporation_id}/icons/ | Get corporation icon
 *CorporationApi* | [**GetCorporationsCorporationIdMedals**](docs/CorporationApi.md#getcorporationscorporationidmedals) | **Get** /v1/corporations/{corporation_id}/medals/ | Get corporation medals
 *CorporationApi* | [**GetCorporationsCorporationIdMedalsIssued**](docs/CorporationApi.md#getcorporationscorporationidmedalsissued) | **Get** /v1/corporations/{corporation_id}/medals/issued/ | Get corporation issued medals
@@ -365,6 +366,7 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdDivisionsHangarHangar](docs/GetCorporationsCorporationIdDivisionsHangarHangar.md)
  - [GetCorporationsCorporationIdDivisionsOk](docs/GetCorporationsCorporationIdDivisionsOk.md)
  - [GetCorporationsCorporationIdDivisionsWalletWallet](docs/GetCorporationsCorporationIdDivisionsWalletWallet.md)
+ - [GetCorporationsCorporationIdFacilities200Ok](docs/GetCorporationsCorporationIdFacilities200Ok.md)
  - [GetCorporationsCorporationIdFwStatsKills](docs/GetCorporationsCorporationIdFwStatsKills.md)
  - [GetCorporationsCorporationIdFwStatsOk](docs/GetCorporationsCorporationIdFwStatsOk.md)
  - [GetCorporationsCorporationIdFwStatsVictoryPoints](docs/GetCorporationsCorporationIdFwStatsVictoryPoints.md)
@@ -624,6 +626,7 @@ Class | Method | HTTP request | Description
  - **esi-corporations.read_container_logs.v1**: EVE SSO scope esi-corporations.read_container_logs.v1
  - **esi-corporations.read_corporation_membership.v1**: EVE SSO scope esi-corporations.read_corporation_membership.v1
  - **esi-corporations.read_divisions.v1**: EVE SSO scope esi-corporations.read_divisions.v1
+ - **esi-corporations.read_facilities.v1**: EVE SSO scope esi-corporations.read_facilities.v1
  - **esi-corporations.read_fw_stats.v1**: EVE SSO scope esi-corporations.read_fw_stats.v1
  - **esi-corporations.read_medals.v1**: EVE SSO scope esi-corporations.read_medals.v1
  - **esi-corporations.read_standings.v1**: EVE SSO scope esi-corporations.read_standings.v1

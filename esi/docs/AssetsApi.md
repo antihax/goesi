@@ -16,7 +16,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdAssets200Ok GetCharactersCharacterIdAssets(ctx, characterId, optional)
 Get character assets
 
-Return a list of the characters assets  ---  This route is cached for up to 3600 seconds
+Return a list of the characters assets  ---  This route is cached for up to 3600 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/assets/)
 
 ### Required Parameters
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdAssets200Ok GetCorporationsCorporationIdAssets(ctx, corporationId, optional)
 Get corporation assets
 
-Return a list of the corporation assets  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Return a list of the corporation assets  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/assets/)
 
 ### Required Parameters
 

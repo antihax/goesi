@@ -25562,7 +25562,8 @@ paths:
       - "Assets"
       summary: "Get character assets"
       description: "Return a list of the characters assets\n\n---\n\nThis route is\
-        \ cached for up to 3600 seconds"
+        \ cached for up to 3600 seconds\n\n---\nWarning: This route has an upgrade\
+        \ available\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/assets/)"
       operationId: "get_characters_character_id_assets"
       parameters:
       - name: "character_id"
@@ -25714,7 +25715,6 @@ paths:
       - evesso:
         - "esi-assets.read_assets.v1"
       x-alternate-versions:
-      - "dev"
       - "v3"
       x-cached-seconds: 3600
   /v3/characters/{character_id}/calendar/{event_id}/:
@@ -26669,7 +26669,8 @@ paths:
       summary: "Get corporation assets"
       description: "Return a list of the corporation assets\n\n---\n\nThis route is\
         \ cached for up to 3600 seconds\n\n---\nRequires one of the following EVE\
-        \ corporation role(s): Director"
+        \ corporation role(s): Director\n\n---\nWarning: This route has an upgrade\
+        \ available\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/assets/)"
       operationId: "get_corporations_corporation_id_assets"
       parameters:
       - name: "corporation_id"
@@ -26821,7 +26822,6 @@ paths:
       - evesso:
         - "esi-assets.read_corporation_assets.v1"
       x-alternate-versions:
-      - "dev"
       - "v3"
       x-cached-seconds: 3600
       x-required-roles:

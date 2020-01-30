@@ -14574,7 +14574,7 @@ paths:
       - "Killmails"
       summary: "Get a single killmail"
       description: "Return a single killmail from its ID and hash\n\n---\n\nThis route\
-        \ is cached for up to 1209600 seconds"
+        \ is cached for up to 30758400 seconds"
       operationId: "get_killmails_killmail_id_killmail_hash"
       parameters:
       - name: "datasource"
@@ -14716,7 +14716,7 @@ paths:
       - "dev"
       - "legacy"
       - "v1"
-      x-cached-seconds: 1209600
+      x-cached-seconds: 30758400
   /v1/loyalty/stores/{corporation_id}/offers/:
     get:
       tags:

@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 > GetKillmailsKillmailIdKillmailHashOk GetKillmailsKillmailIdKillmailHash(ctx, killmailHash, killmailId, optional)
 Get a single killmail
 
-Return a single killmail from its ID and hash  ---  This route is cached for up to 1209600 seconds
+Return a single killmail from its ID and hash  ---  This route is cached for up to 30758400 seconds
 
 ### Required Parameters
 

@@ -431,7 +431,7 @@ func (a *KillmailsApiService) GetCorporationsCorporationIdKillmailsRecent(ctx co
 
 /*
 KillmailsApiService Get a single killmail
-Return a single killmail from its ID and hash  ---  This route is cached for up to 1209600 seconds
+Return a single killmail from its ID and hash  ---  This route is cached for up to 30758400 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param killmailHash The killmail hash for verification
  * @param killmailId The killmail ID to be queried

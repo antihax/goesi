@@ -1159,7 +1159,6 @@ paths:
       - evesso:
         - "esi-calendar.read_calendar_events.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 5
@@ -1316,7 +1315,6 @@ paths:
       - evesso:
         - "esi-calendar.read_calendar_events.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 600
@@ -5721,7 +5719,6 @@ paths:
       - evesso:
         - "esi-wallet.read_character_wallet.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 120
@@ -25875,14 +25872,14 @@ paths:
       - evesso:
         - "esi-calendar.read_calendar_events.v1"
       x-alternate-versions:
-      - "dev"
       - "v3"
       x-cached-seconds: 5
     put:
       tags:
       - "Calendar"
       summary: "Respond to an event"
-      description: "Set your response status to an event\n\n---\n"
+      description: "Set your response status to an event\n\n---\n\n[Diff of the upcoming\
+        \ changes](https://esi.evetech.net/diff/latest/dev/#PUT-/characters/{character_id}/calendar/{event_id}/)"
       operationId: "put_characters_character_id_calendar_event_id"
       parameters:
       - name: "character_id"
@@ -25980,7 +25977,6 @@ paths:
       - evesso:
         - "esi-calendar.respond_calendar_events.v1"
       x-alternate-versions:
-      - "dev"
       - "v3"
   /v3/characters/{character_id}/clones/:
     get:

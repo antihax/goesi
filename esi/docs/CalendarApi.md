@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 > PutCharactersCharacterIdCalendarEventId(ctx, characterId, eventId, response, optional)
 Respond to an event
 
-Set your response status to an event  --- 
+Set your response status to an event  ---  [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#PUT-/characters/{character_id}/calendar/{event_id}/)
 
 ### Required Parameters
 

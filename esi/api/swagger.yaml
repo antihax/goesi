@@ -121,7 +121,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -382,7 +381,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -428,8 +426,8 @@ paths:
             $ref: "#/definitions/get_alliances_alliance_id_icons_ok"
           examples:
             application/json:
-              px128x128: "https://imageserver.eveonline.com/Alliance/503818424_128.png"
-              px64x64: "https://imageserver.eveonline.com/Alliance/503818424_64.png"
+              px128x128: "https://images.evetech.net/Alliance/503818424_128.png"
+              px64x64: "https://images.evetech.net/Alliance/503818424_64.png"
           headers:
             Cache-Control:
               type: "string"
@@ -501,7 +499,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
   /v1/characters/affiliation/:
@@ -25550,7 +25547,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "v3"
       x-cached-seconds: 3600
   /v3/characters/{character_id}/assets/:

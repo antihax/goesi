@@ -2,7 +2,7 @@
 swagger: "2.0"
 info:
   description: "An OpenAPI for EVE Online"
-  version: "1.2.9"
+  version: "1.3.8"
   title: "EVE Swagger Interface"
 host: "esi.evetech.net"
 schemes:
@@ -2733,7 +2733,6 @@ paths:
       - evesso:
         - "esi-clones.read_implants.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 120
@@ -22891,10 +22890,10 @@ paths:
             $ref: "#/definitions/get_characters_character_id_portrait_ok"
           examples:
             application/json:
-              px128x128: "https://imageserver.eveonline.com/Character/95465499_128.jpg"
-              px256x256: "https://imageserver.eveonline.com/Character/95465499_256.jpg"
-              px512x512: "https://imageserver.eveonline.com/Character/95465499_512.jpg"
-              px64x64: "https://imageserver.eveonline.com/Character/95465499_64.jpg"
+              px128x128: "https://images.evetech.net/Character/95465499_128.jpg"
+              px256x256: "https://images.evetech.net/Character/95465499_256.jpg"
+              px512x512: "https://images.evetech.net/Character/95465499_512.jpg"
+              px64x64: "https://images.evetech.net/Character/95465499_64.jpg"
           headers:
             Cache-Control:
               type: "string"
@@ -26113,7 +26112,6 @@ paths:
       - evesso:
         - "esi-clones.read_clones.v1"
       x-alternate-versions:
-      - "dev"
       - "v3"
       x-cached-seconds: 120
   /v3/characters/{character_id}/mail/labels/:

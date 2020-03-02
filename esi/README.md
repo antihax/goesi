@@ -173,7 +173,6 @@ Class | Method | HTTP request | Description
 *PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanetsPlanetId**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanetsplanetid) | **Get** /v3/characters/{character_id}/planets/{planet_id}/ | Get colony layout
 *PlanetaryInteractionApi* | [**GetCorporationsCorporationIdCustomsOffices**](docs/PlanetaryInteractionApi.md#getcorporationscorporationidcustomsoffices) | **Get** /v1/corporations/{corporation_id}/customs_offices/ | List corporation customs offices
 *PlanetaryInteractionApi* | [**GetUniverseSchematicsSchematicId**](docs/PlanetaryInteractionApi.md#getuniverseschematicsschematicid) | **Get** /v1/universe/schematics/{schematic_id}/ | Get schematic information
-*RoutesApi* | [**GetRouteOriginDestination**](docs/RoutesApi.md#getrouteorigindestination) | **Get** /v1/route/{origin}/{destination}/ | Get route
 *SearchApi* | [**GetCharactersCharacterIdSearch**](docs/SearchApi.md#getcharacterscharacteridsearch) | **Get** /v3/characters/{character_id}/search/ | Search on a string
 *SearchApi* | [**GetSearch**](docs/SearchApi.md#getsearch) | **Get** /v2/search/ | Search on a string
 *SkillsApi* | [**GetCharactersCharacterIdAttributes**](docs/SkillsApi.md#getcharacterscharacteridattributes) | **Get** /v1/characters/{character_id}/attributes/ | Get character attributes
@@ -472,7 +471,6 @@ Class | Method | HTTP request | Description
  - [GetMarketsStructuresStructureId200Ok](docs/GetMarketsStructuresStructureId200Ok.md)
  - [GetOpportunitiesGroupsGroupIdOk](docs/GetOpportunitiesGroupsGroupIdOk.md)
  - [GetOpportunitiesTasksTaskIdOk](docs/GetOpportunitiesTasksTaskIdOk.md)
- - [GetRouteOriginDestinationNotFound](docs/GetRouteOriginDestinationNotFound.md)
  - [GetSearchOk](docs/GetSearchOk.md)
  - [GetSovereigntyCampaigns200Ok](docs/GetSovereigntyCampaigns200Ok.md)
  - [GetSovereigntyCampaignsParticipant](docs/GetSovereigntyCampaignsParticipant.md)

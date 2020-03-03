@@ -25,8 +25,8 @@ Class | Method | HTTP request | Description
 *AllianceApi* | [**GetAlliancesAllianceId**](docs/AllianceApi.md#getalliancesallianceid) | **Get** /v3/alliances/{alliance_id}/ | Get alliance information
 *AllianceApi* | [**GetAlliancesAllianceIdCorporations**](docs/AllianceApi.md#getalliancesallianceidcorporations) | **Get** /v1/alliances/{alliance_id}/corporations/ | List alliance&#39;s corporations
 *AllianceApi* | [**GetAlliancesAllianceIdIcons**](docs/AllianceApi.md#getalliancesallianceidicons) | **Get** /v1/alliances/{alliance_id}/icons/ | Get alliance icon
-*AssetsApi* | [**GetCharactersCharacterIdAssets**](docs/AssetsApi.md#getcharacterscharacteridassets) | **Get** /v3/characters/{character_id}/assets/ | Get character assets
-*AssetsApi* | [**GetCorporationsCorporationIdAssets**](docs/AssetsApi.md#getcorporationscorporationidassets) | **Get** /v3/corporations/{corporation_id}/assets/ | Get corporation assets
+*AssetsApi* | [**GetCharactersCharacterIdAssets**](docs/AssetsApi.md#getcharacterscharacteridassets) | **Get** /v4/characters/{character_id}/assets/ | Get character assets
+*AssetsApi* | [**GetCorporationsCorporationIdAssets**](docs/AssetsApi.md#getcorporationscorporationidassets) | **Get** /v4/corporations/{corporation_id}/assets/ | Get corporation assets
 *AssetsApi* | [**PostCharactersCharacterIdAssetsLocations**](docs/AssetsApi.md#postcharacterscharacteridassetslocations) | **Post** /v2/characters/{character_id}/assets/locations/ | Get character asset locations
 *AssetsApi* | [**PostCharactersCharacterIdAssetsNames**](docs/AssetsApi.md#postcharacterscharacteridassetsnames) | **Post** /v1/characters/{character_id}/assets/names/ | Get character asset names
 *AssetsApi* | [**PostCorporationsCorporationIdAssetsLocations**](docs/AssetsApi.md#postcorporationscorporationidassetslocations) | **Post** /v2/corporations/{corporation_id}/assets/locations/ | Get corporation asset locations
@@ -173,6 +173,7 @@ Class | Method | HTTP request | Description
 *PlanetaryInteractionApi* | [**GetCharactersCharacterIdPlanetsPlanetId**](docs/PlanetaryInteractionApi.md#getcharacterscharacteridplanetsplanetid) | **Get** /v3/characters/{character_id}/planets/{planet_id}/ | Get colony layout
 *PlanetaryInteractionApi* | [**GetCorporationsCorporationIdCustomsOffices**](docs/PlanetaryInteractionApi.md#getcorporationscorporationidcustomsoffices) | **Get** /v1/corporations/{corporation_id}/customs_offices/ | List corporation customs offices
 *PlanetaryInteractionApi* | [**GetUniverseSchematicsSchematicId**](docs/PlanetaryInteractionApi.md#getuniverseschematicsschematicid) | **Get** /v1/universe/schematics/{schematic_id}/ | Get schematic information
+*RoutesApi* | [**GetRouteOriginDestination**](docs/RoutesApi.md#getrouteorigindestination) | **Get** /v1/route/{origin}/{destination}/ | Get route
 *SearchApi* | [**GetCharactersCharacterIdSearch**](docs/SearchApi.md#getcharacterscharacteridsearch) | **Get** /v3/characters/{character_id}/search/ | Search on a string
 *SearchApi* | [**GetSearch**](docs/SearchApi.md#getsearch) | **Get** /v2/search/ | Search on a string
 *SkillsApi* | [**GetCharactersCharacterIdAttributes**](docs/SkillsApi.md#getcharacterscharacteridattributes) | **Get** /v1/characters/{character_id}/attributes/ | Get character attributes
@@ -471,6 +472,7 @@ Class | Method | HTTP request | Description
  - [GetMarketsStructuresStructureId200Ok](docs/GetMarketsStructuresStructureId200Ok.md)
  - [GetOpportunitiesGroupsGroupIdOk](docs/GetOpportunitiesGroupsGroupIdOk.md)
  - [GetOpportunitiesTasksTaskIdOk](docs/GetOpportunitiesTasksTaskIdOk.md)
+ - [GetRouteOriginDestinationNotFound](docs/GetRouteOriginDestinationNotFound.md)
  - [GetSearchOk](docs/GetSearchOk.md)
  - [GetSovereigntyCampaigns200Ok](docs/GetSovereigntyCampaigns200Ok.md)
  - [GetSovereigntyCampaignsParticipant](docs/GetSovereigntyCampaignsParticipant.md)

@@ -1144,7 +1144,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdFacilities(ctx conte
 
 /*
 CorporationApiService Get corporation icon
-Get the icon urls for a corporation  ---  This route is cached for up to 3600 seconds
+Get the icon urls for a corporation  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/icons/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdIconsOpts - Optional Parameters:

@@ -641,7 +641,7 @@ func (a *CalendarApiService) GetCharactersCharacterIdCalendarEventIdAttendees(ct
 
 /*
 CalendarApiService Respond to an event
-Set your response status to an event  ---  [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#PUT-/characters/{character_id}/calendar/{event_id}/)
+Set your response status to an event  ---  This route is cached for up to 5 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param eventId The ID of the event requested

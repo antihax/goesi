@@ -2745,7 +2745,6 @@ paths:
       - "dev"
       - "legacy"
       - "v1"
-      - "v2"
       x-cached-seconds: 120
   /v1/characters/{character_id}/industry/jobs/:
     get:
@@ -24491,6 +24490,119 @@ paths:
       x-alternate-versions:
       - "dev"
       - "v2"
+  /v2/fw/systems/:
+    get:
+      tags:
+      - "Faction Warfare"
+      summary: "Ownership of faction warfare systems"
+      description: "An overview of the current ownership of faction warfare solar\
+        \ systems\n\n---\n\nThis route is cached for up to 1800 seconds"
+      operationId: "get_fw_systems"
+      parameters:
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "All faction warfare solar systems"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "get_fw_systems_ok"
+            items:
+              $ref: "#/definitions/get_fw_systems_200_ok"
+            maxItems: 171
+          examples:
+            application/json:
+            - contested: "uncontested"
+              occupier_faction_id: 500001
+              owner_faction_id: 500001
+              solar_system_id: 30002096
+              victory_points: 60
+              victory_points_threshold: 3000
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      x-alternate-versions:
+      - "dev"
+      - "v2"
+      - "v3"
+      x-cached-seconds: 1800
   /v2/search/:
     get:
       tags:
@@ -25874,7 +25986,6 @@ paths:
       x-alternate-versions:
       - "dev"
       - "v3"
-      - "v4"
       x-cached-seconds: 120
   /v3/characters/{character_id}/mail/labels/:
     get:
@@ -39585,6 +39696,50 @@ definitions:
         description: "Not found message"
         title: "get_dogma_effects_effect_id_404_not_found"
     description: "Not found"
+  get_fw_systems_200_ok:
+    required:
+    - "contested"
+    - "occupier_faction_id"
+    - "owner_faction_id"
+    - "solar_system_id"
+    - "victory_points"
+    - "victory_points_threshold"
+    properties:
+      contested:
+        type: "string"
+        description: "contested string"
+        title: "get_fw_systems_contested"
+        enum:
+        - "captured"
+        - "contested"
+        - "uncontested"
+        - "vulnerable"
+      occupier_faction_id:
+        type: "integer"
+        format: "int32"
+        description: "occupier_faction_id integer"
+        title: "get_fw_systems_occupier_faction_id"
+      owner_faction_id:
+        type: "integer"
+        format: "int32"
+        description: "owner_faction_id integer"
+        title: "get_fw_systems_owner_faction_id"
+      solar_system_id:
+        type: "integer"
+        format: "int32"
+        description: "solar_system_id integer"
+        title: "get_fw_systems_solar_system_id"
+      victory_points:
+        type: "integer"
+        format: "int32"
+        description: "victory_points integer"
+        title: "get_fw_systems_victory_points"
+      victory_points_threshold:
+        type: "integer"
+        format: "int32"
+        description: "victory_points_threshold integer"
+        title: "get_fw_systems_victory_points_threshold"
+    description: "200 ok object"
   get_search_ok:
     properties:
       agent:

@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**GetFwLeaderboardsCharacters**](FactionWarfareApi.md#GetFwLeaderboardsCharacters) | **Get** /v1/fw/leaderboards/characters/ | List of the top pilots in faction warfare
 [**GetFwLeaderboardsCorporations**](FactionWarfareApi.md#GetFwLeaderboardsCorporations) | **Get** /v1/fw/leaderboards/corporations/ | List of the top corporations in faction warfare
 [**GetFwStats**](FactionWarfareApi.md#GetFwStats) | **Get** /v1/fw/stats/ | An overview of statistics about factions involved in faction warfare
+[**GetFwSystems**](FactionWarfareApi.md#GetFwSystems) | **Get** /v2/fw/systems/ | Ownership of faction warfare systems
 [**GetFwWars**](FactionWarfareApi.md#GetFwWars) | **Get** /v1/fw/wars/ | Data about which NPC factions are at war
 
 
@@ -223,6 +224,42 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]GetFwStats200Ok**](get_fw_stats_200_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetFwSystems**
+> []GetFwSystems200Ok GetFwSystems(ctx, optional)
+Ownership of faction warfare systems
+
+An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 1800 seconds
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
+
+### Return type
+
+[**[]GetFwSystems200Ok**](get_fw_systems_200_ok.md)
 
 ### Authorization
 

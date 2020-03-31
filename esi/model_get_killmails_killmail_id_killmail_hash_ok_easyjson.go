@@ -27,7 +27,7 @@ func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetKi
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetKillmailsKillmailIdKillmailHashOkList, 0, 1)
+				*out = make(GetKillmailsKillmailIdKillmailHashOkList, 0, 0)
 			} else {
 				*out = GetKillmailsKillmailIdKillmailHashOkList{}
 			}

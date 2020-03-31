@@ -27,7 +27,7 @@ func easyjson13ace497DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCh
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetCharactersCharacterIdClonesOkList, 0, 1)
+				*out = make(GetCharactersCharacterIdClonesOkList, 0, 0)
 			} else {
 				*out = GetCharactersCharacterIdClonesOkList{}
 			}
@@ -113,7 +113,7 @@ func easyjson13ace497DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.Delim('[')
 				if out.JumpClones == nil {
 					if !in.IsDelim(']') {
-						out.JumpClones = make([]GetCharactersCharacterIdClonesJumpClone, 0, 1)
+						out.JumpClones = make([]GetCharactersCharacterIdClonesJumpClone, 0, 0)
 					} else {
 						out.JumpClones = []GetCharactersCharacterIdClonesJumpClone{}
 					}

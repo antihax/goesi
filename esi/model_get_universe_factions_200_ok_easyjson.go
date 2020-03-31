@@ -27,7 +27,7 @@ func easyjsonDac4178DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetUni
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetUniverseFactions200OkList, 0, 1)
+				*out = make(GetUniverseFactions200OkList, 0, 0)
 			} else {
 				*out = GetUniverseFactions200OkList{}
 			}

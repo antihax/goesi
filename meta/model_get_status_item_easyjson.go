@@ -27,7 +27,7 @@ func easyjson3c44e3bdDecodeGithubComAntihaxGoesiMeta(in *jlexer.Lexer, out *GetS
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetStatusItemList, 0, 1)
+				*out = make(GetStatusItemList, 0, 0)
 			} else {
 				*out = GetStatusItemList{}
 			}

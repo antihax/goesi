@@ -27,7 +27,7 @@ func easyjson38812470DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetFw
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetFwLeaderboardsOkList, 0, 1)
+				*out = make(GetFwLeaderboardsOkList, 0, 0)
 			} else {
 				*out = GetFwLeaderboardsOkList{}
 			}

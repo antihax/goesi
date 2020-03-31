@@ -27,7 +27,7 @@ func easyjson71b62f52DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetUn
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetUniverseStationsStationIdOkList, 0, 1)
+				*out = make(GetUniverseStationsStationIdOkList, 0, 0)
 			} else {
 				*out = GetUniverseStationsStationIdOkList{}
 			}

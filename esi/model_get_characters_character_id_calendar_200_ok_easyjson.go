@@ -27,7 +27,7 @@ func easyjsonB74f4c6eDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCh
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetCharactersCharacterIdCalendar200OkList, 0, 1)
+				*out = make(GetCharactersCharacterIdCalendar200OkList, 0, 0)
 			} else {
 				*out = GetCharactersCharacterIdCalendar200OkList{}
 			}

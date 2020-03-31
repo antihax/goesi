@@ -27,7 +27,7 @@ func easyjson52e0404DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCor
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetCorporationsCorporationIdStructures200OkList, 0, 1)
+				*out = make(GetCorporationsCorporationIdStructures200OkList, 0, 0)
 			} else {
 				*out = GetCorporationsCorporationIdStructures200OkList{}
 			}

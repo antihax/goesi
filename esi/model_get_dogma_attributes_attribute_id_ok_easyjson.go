@@ -27,7 +27,7 @@ func easyjson6176f835DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetDo
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetDogmaAttributesAttributeIdOkList, 0, 1)
+				*out = make(GetDogmaAttributesAttributeIdOkList, 0, 0)
 			} else {
 				*out = GetDogmaAttributesAttributeIdOkList{}
 			}

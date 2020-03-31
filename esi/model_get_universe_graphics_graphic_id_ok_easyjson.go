@@ -27,7 +27,7 @@ func easyjsonF7263cfaDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetUn
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetUniverseGraphicsGraphicIdOkList, 0, 1)
+				*out = make(GetUniverseGraphicsGraphicIdOkList, 0, 0)
 			} else {
 				*out = GetUniverseGraphicsGraphicIdOkList{}
 			}

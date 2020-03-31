@@ -27,7 +27,7 @@ func easyjson8356b13dDecodeGithubComAntihaxGoesiMeta(in *jlexer.Lexer, out *GetV
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetVerifyOkList, 0, 1)
+				*out = make(GetVerifyOkList, 0, 0)
 			} else {
 				*out = GetVerifyOkList{}
 			}

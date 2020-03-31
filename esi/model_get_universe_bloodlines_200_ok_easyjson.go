@@ -27,7 +27,7 @@ func easyjson9e281deaDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetUn
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetUniverseBloodlines200OkList, 0, 1)
+				*out = make(GetUniverseBloodlines200OkList, 0, 0)
 			} else {
 				*out = GetUniverseBloodlines200OkList{}
 			}

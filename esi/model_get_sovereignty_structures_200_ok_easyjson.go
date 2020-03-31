@@ -27,7 +27,7 @@ func easyjson1e8c5b0bDecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetSo
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetSovereigntyStructures200OkList, 0, 1)
+				*out = make(GetSovereigntyStructures200OkList, 0, 0)
 			} else {
 				*out = GetSovereigntyStructures200OkList{}
 			}

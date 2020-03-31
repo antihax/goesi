@@ -27,7 +27,7 @@ func easyjson7d9c79f0DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetUn
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetUniverseConstellationsConstellationIdOkList, 0, 1)
+				*out = make(GetUniverseConstellationsConstellationIdOkList, 0, 0)
 			} else {
 				*out = GetUniverseConstellationsConstellationIdOkList{}
 			}

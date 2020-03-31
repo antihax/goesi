@@ -27,7 +27,7 @@ func easyjson29210505DecodeGithubComAntihaxGoesiEsi(in *jlexer.Lexer, out *GetCh
 		in.Delim('[')
 		if *out == nil {
 			if !in.IsDelim(']') {
-				*out = make(GetCharactersCharacterIdPlanetsPlanetIdOkList, 0, 1)
+				*out = make(GetCharactersCharacterIdPlanetsPlanetIdOkList, 0, 0)
 			} else {
 				*out = GetCharactersCharacterIdPlanetsPlanetIdOkList{}
 			}
@@ -134,7 +134,7 @@ func easyjson29210505DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.Delim('[')
 				if out.Pins == nil {
 					if !in.IsDelim(']') {
-						out.Pins = make([]GetCharactersCharacterIdPlanetsPlanetIdPin, 0, 1)
+						out.Pins = make([]GetCharactersCharacterIdPlanetsPlanetIdPin, 0, 0)
 					} else {
 						out.Pins = []GetCharactersCharacterIdPlanetsPlanetIdPin{}
 					}

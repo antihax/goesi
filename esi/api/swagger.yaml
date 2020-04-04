@@ -384,6 +384,7 @@ paths:
               error: "Gateway timeout message"
       x-alternate-versions:
       - "dev"
+      - "legacy"
       - "v1"
       - "v2"
       x-cached-seconds: 3600
@@ -39073,6 +39074,7 @@ definitions:
         - "FighterTube3"
         - "FighterTube4"
         - "FleetHangar"
+        - "FrigateEscapeBay"
         - "Hangar"
         - "HangarAll"
         - "HiSlot0"
@@ -39315,6 +39317,7 @@ definitions:
         - "FighterTube3"
         - "FighterTube4"
         - "FleetHangar"
+        - "FrigateEscapeBay"
         - "Hangar"
         - "HangarAll"
         - "HiSlot0"

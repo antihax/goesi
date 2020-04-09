@@ -4,8 +4,8 @@ All URIs are relative to *https://esi.evetech.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCharactersCharacterIdAssets**](AssetsApi.md#GetCharactersCharacterIdAssets) | **Get** /v4/characters/{character_id}/assets/ | Get character assets
-[**GetCorporationsCorporationIdAssets**](AssetsApi.md#GetCorporationsCorporationIdAssets) | **Get** /v4/corporations/{corporation_id}/assets/ | Get corporation assets
+[**GetCharactersCharacterIdAssets**](AssetsApi.md#GetCharactersCharacterIdAssets) | **Get** /v5/characters/{character_id}/assets/ | Get character assets
+[**GetCorporationsCorporationIdAssets**](AssetsApi.md#GetCorporationsCorporationIdAssets) | **Get** /v5/corporations/{corporation_id}/assets/ | Get corporation assets
 [**PostCharactersCharacterIdAssetsLocations**](AssetsApi.md#PostCharactersCharacterIdAssetsLocations) | **Post** /v2/characters/{character_id}/assets/locations/ | Get character asset locations
 [**PostCharactersCharacterIdAssetsNames**](AssetsApi.md#PostCharactersCharacterIdAssetsNames) | **Post** /v1/characters/{character_id}/assets/names/ | Get character asset names
 [**PostCorporationsCorporationIdAssetsLocations**](AssetsApi.md#PostCorporationsCorporationIdAssetsLocations) | **Post** /v2/corporations/{corporation_id}/assets/locations/ | Get corporation asset locations
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdAssets200Ok GetCharactersCharacterIdAssets(ctx, characterId, optional)
 Get character assets
 
-Return a list of the characters assets  ---  This route is cached for up to 3600 seconds  --- Warning: This route has an upgrade available
+Return a list of the characters assets  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdAssets200Ok GetCorporationsCorporationIdAssets(ctx, corporationId, optional)
 Get corporation assets
 
-Return a list of the corporation assets  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- Warning: This route has an upgrade available
+Return a list of the corporation assets  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
 
 ### Required Parameters
 

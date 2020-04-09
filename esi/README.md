@@ -25,8 +25,8 @@ Class | Method | HTTP request | Description
 *AllianceApi* | [**GetAlliancesAllianceId**](docs/AllianceApi.md#getalliancesallianceid) | **Get** /v3/alliances/{alliance_id}/ | Get alliance information
 *AllianceApi* | [**GetAlliancesAllianceIdCorporations**](docs/AllianceApi.md#getalliancesallianceidcorporations) | **Get** /v1/alliances/{alliance_id}/corporations/ | List alliance&#39;s corporations
 *AllianceApi* | [**GetAlliancesAllianceIdIcons**](docs/AllianceApi.md#getalliancesallianceidicons) | **Get** /v1/alliances/{alliance_id}/icons/ | Get alliance icon
-*AssetsApi* | [**GetCharactersCharacterIdAssets**](docs/AssetsApi.md#getcharacterscharacteridassets) | **Get** /v4/characters/{character_id}/assets/ | Get character assets
-*AssetsApi* | [**GetCorporationsCorporationIdAssets**](docs/AssetsApi.md#getcorporationscorporationidassets) | **Get** /v4/corporations/{corporation_id}/assets/ | Get corporation assets
+*AssetsApi* | [**GetCharactersCharacterIdAssets**](docs/AssetsApi.md#getcharacterscharacteridassets) | **Get** /v5/characters/{character_id}/assets/ | Get character assets
+*AssetsApi* | [**GetCorporationsCorporationIdAssets**](docs/AssetsApi.md#getcorporationscorporationidassets) | **Get** /v5/corporations/{corporation_id}/assets/ | Get corporation assets
 *AssetsApi* | [**PostCharactersCharacterIdAssetsLocations**](docs/AssetsApi.md#postcharacterscharacteridassetslocations) | **Post** /v2/characters/{character_id}/assets/locations/ | Get character asset locations
 *AssetsApi* | [**PostCharactersCharacterIdAssetsNames**](docs/AssetsApi.md#postcharacterscharacteridassetsnames) | **Post** /v1/characters/{character_id}/assets/names/ | Get character asset names
 *AssetsApi* | [**PostCorporationsCorporationIdAssetsLocations**](docs/AssetsApi.md#postcorporationscorporationidassetslocations) | **Post** /v2/corporations/{corporation_id}/assets/locations/ | Get corporation asset locations

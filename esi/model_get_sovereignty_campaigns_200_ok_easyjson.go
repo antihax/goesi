@@ -95,7 +95,7 @@ func easyjsonA4228502DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetS
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -302,7 +302,7 @@ func easyjsonA4228502DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetS
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()

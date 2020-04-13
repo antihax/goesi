@@ -95,7 +95,7 @@ func easyjson8cf1533DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetKi
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()

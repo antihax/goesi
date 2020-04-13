@@ -95,7 +95,7 @@ func easyjsonE4451086DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -174,7 +174,7 @@ func easyjsonE4451086DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetF
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -331,7 +331,7 @@ func easyjsonE4451086DecodeGithubComAntihaxGoesiEsi6(in *jlexer.Lexer, out *GetF
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -386,7 +386,7 @@ func easyjsonE4451086DecodeGithubComAntihaxGoesiEsi5(in *jlexer.Lexer, out *GetF
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -441,7 +441,7 @@ func easyjsonE4451086DecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetF
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -496,7 +496,7 @@ func easyjsonE4451086DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetF
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -653,7 +653,7 @@ func easyjsonE4451086DecodeGithubComAntihaxGoesiEsi9(in *jlexer.Lexer, out *GetF
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -708,7 +708,7 @@ func easyjsonE4451086DecodeGithubComAntihaxGoesiEsi8(in *jlexer.Lexer, out *GetF
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -763,7 +763,7 @@ func easyjsonE4451086DecodeGithubComAntihaxGoesiEsi7(in *jlexer.Lexer, out *GetF
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()

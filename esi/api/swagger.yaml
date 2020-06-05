@@ -515,7 +515,8 @@ paths:
       - "Character"
       summary: "Character affiliation"
       description: "Bulk lookup of character IDs to corporation, alliance and faction\n\
-        \n---\n\nThis route is cached for up to 3600 seconds"
+        \n---\n\nThis route is cached for up to 3600 seconds\n\n---\n[Diff of the\
+        \ upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/affiliation/)"
       operationId: "post_characters_affiliation"
       parameters:
       - in: "body"
@@ -604,7 +605,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -751,7 +751,6 @@ paths:
       - evesso:
         - "esi-characters.read_agents_research.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -2088,7 +2087,6 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 86400
@@ -2226,7 +2224,6 @@ paths:
       - evesso:
         - "esi-characters.read_fatigue.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 300
@@ -4428,7 +4425,6 @@ paths:
       - evesso:
         - "esi-characters.read_medals.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -4736,7 +4732,6 @@ paths:
       - evesso:
         - "esi-characters.read_notifications.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 600
@@ -5491,7 +5486,6 @@ paths:
       - evesso:
         - "esi-characters.read_standings.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -5633,7 +5627,6 @@ paths:
       - evesso:
         - "esi-characters.read_titles.v1"
       x-alternate-versions:
-      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -21506,7 +21499,6 @@ paths:
       - evesso:
         - "esi-characters.read_blueprints.v1"
       x-alternate-versions:
-      - "dev"
       - "v2"
       x-cached-seconds: 3600
   /v2/characters/{character_id}/bookmarks/:
@@ -23294,7 +23286,6 @@ paths:
       - evesso:
         - "esi-characters.read_corporation_roles.v1"
       x-alternate-versions:
-      - "dev"
       - "v2"
       x-cached-seconds: 3600
   /v2/characters/{character_id}/skillqueue/:
@@ -27604,7 +27595,7 @@ paths:
       - "Character"
       summary: "Calculate a CSPA charge cost"
       description: "Takes a source character ID in the url and a set of target character\
-        \ ID's in the body, returns a CSPA charge cost\n\n---\n"
+        \ ID's in the body, returns a CSPA charge cost\n\n---"
       operationId: "post_characters_character_id_cspa"
       parameters:
       - name: "character_id"
@@ -27713,7 +27704,6 @@ paths:
       - evesso:
         - "esi-characters.read_contacts.v1"
       x-alternate-versions:
-      - "dev"
       - "v4"
   /v4/characters/{character_id}/skills/:
     get:
@@ -28647,7 +28637,6 @@ paths:
       - evesso:
         - "esi-characters.read_notifications.v1"
       x-alternate-versions:
-      - "dev"
       - "v5"
       x-cached-seconds: 600
   /v5/corporations/{corporation_id}/assets/:
@@ -42249,6 +42238,7 @@ definitions:
         - "StructureCourierContractChanged"
         - "StructureDestroyed"
         - "StructureFuelAlert"
+        - "StructureImpendingAbandonmentAssetsAtRisk"
         - "StructureItemsDelivered"
         - "StructureItemsMovedToSafety"
         - "StructureLostArmor"

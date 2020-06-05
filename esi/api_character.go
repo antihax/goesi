@@ -2446,7 +2446,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdTitles(ctx context.Context
 
 /*
 CharacterApiService Character affiliation
-Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds
+Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/affiliation/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characters The character IDs to fetch affiliations for. All characters must exist, or none will be returned
  * @param optional nil or *PostCharactersAffiliationOpts - Optional Parameters:

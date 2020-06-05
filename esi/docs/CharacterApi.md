@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 > []PostCharactersAffiliation200Ok PostCharactersAffiliation(ctx, characters, optional)
 Character affiliation
 
-Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds
+Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/affiliation/)
 
 ### Required Parameters
 
@@ -567,7 +567,7 @@ No authorization required
 > float32 PostCharactersCharacterIdCspa(ctx, characterId, characters, optional)
 Calculate a CSPA charge cost
 
-Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  --- 
+Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  ---
 
 ### Required Parameters
 

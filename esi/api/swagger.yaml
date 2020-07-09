@@ -25753,6 +25753,7 @@ paths:
       x-alternate-versions:
       - "dev"
       - "v3"
+      - "v4"
       x-cached-seconds: 3600
   /v3/characters/{character_id}/calendar/{event_id}/:
     get:
@@ -25914,6 +25915,7 @@ paths:
         - "esi-calendar.read_calendar_events.v1"
       x-alternate-versions:
       - "dev"
+      - "legacy"
       - "v3"
       - "v4"
       x-cached-seconds: 5
@@ -26022,6 +26024,7 @@ paths:
         - "esi-calendar.respond_calendar_events.v1"
       x-alternate-versions:
       - "dev"
+      - "legacy"
       - "v3"
       - "v4"
       x-cached-seconds: 5

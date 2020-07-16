@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 > GetCharactersCharacterIdPlanetsPlanetIdOk GetCharactersCharacterIdPlanetsPlanetId(ctx, characterId, planetId, optional)
 Get colony layout
 
-Returns full details on the layout of a single planetary colony, including links, pins and routes. Note: Planetary information is only recalculated when the colony is viewed through the client. Information will not update until this criteria is met.  ---  This route is cached for up to 600 seconds
+Returns full details on the layout of a single planetary colony, including links, pins and routes. Note: Planetary information is only recalculated when the colony is viewed through the client. Information will not update until this criteria is met.  --- 
 
 ### Required Parameters
 
@@ -72,7 +72,6 @@ Name | Type | Description  | Notes
  **characterId** | **int32**| An EVE character ID | 
  **planetId** | **int32**| Planet id of the target planet | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
  **token** | **string**| Access token to use if unable to set a header | 
 
 ### Return type

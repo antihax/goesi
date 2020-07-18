@@ -287,7 +287,6 @@ paths:
         - "v4"
         - "v5"
         - "v6"
-        - "v7"
         x-exportParamName: "VersionA"
       - name: "version_b"
         in: "path"
@@ -307,7 +306,6 @@ paths:
         - "v4"
         - "v5"
         - "v6"
-        - "v7"
         x-exportParamName: "VersionB"
       responses:
         200:
@@ -620,7 +618,6 @@ paths:
         - "v4"
         - "v5"
         - "v6"
-        - "v7"
         x-exportParamName: "Version"
         x-optionalDataType: "String"
       responses:
@@ -942,60 +939,6 @@ paths:
             type: "object"
             description: "ESI v6 swagger 2.0 spec"
             title: "get_v6_swagger_ok"
-            properties: {}
-          headers:
-            Cache-Control:
-              type: "string"
-              description: "The caching mechanism used"
-            Expires:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-            Last-Modified:
-              type: "string"
-              description: "RFC7231 formatted datetime string"
-      x-cached-seconds: 60
-  /v7/swagger.json:
-    get:
-      tags:
-      - "Swagger"
-      summary: "Get v7 swagger spec"
-      description: "The v7 ESI swagger specification."
-      operationId: "get_v7_swagger"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "user_agent"
-        in: "query"
-        description: "Client identifier, takes precedence over headers"
-        required: false
-        type: "string"
-        x-exportParamName: "UserAgent"
-        x-optionalDataType: "String"
-      - name: "X-User-Agent"
-        in: "header"
-        description: "Client identifier, takes precedence over User-Agent"
-        required: false
-        type: "string"
-        x-exportParamName: "XUserAgent"
-        x-optionalDataType: "String"
-      - name: "datasource"
-        in: "query"
-        description: "The server name you would like data from"
-        required: false
-        type: "string"
-        default: "tranquility"
-        enum:
-        - "tranquility"
-        - "singularity"
-        x-exportParamName: "Datasource"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "ESI v7 swagger specification"
-          schema:
-            type: "object"
-            description: "ESI v7 swagger 2.0 spec"
-            title: "get_v7_swagger_ok"
             properties: {}
           headers:
             Cache-Control:
@@ -1352,7 +1295,6 @@ parameters:
     - "v4"
     - "v5"
     - "v6"
-    - "v7"
     x-exportParamName: "Version"
     x-optionalDataType: "String"
   version_a:
@@ -1374,7 +1316,6 @@ parameters:
     - "v4"
     - "v5"
     - "v6"
-    - "v7"
     x-exportParamName: "VersionA"
   version_b:
     name: "version_b"
@@ -1395,5 +1336,4 @@ parameters:
     - "v4"
     - "v5"
     - "v6"
-    - "v7"
     x-exportParamName: "VersionB"

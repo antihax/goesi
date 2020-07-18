@@ -5637,7 +5637,7 @@ paths:
       - "Wallet"
       summary: "Get a character's wallet balance"
       description: "Returns a character's wallet balance\n\n---\n\nThis route is cached\
-        \ for up to 120 seconds"
+        \ for up to 120 seconds\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/)"
       operationId: "get_characters_character_id_wallet"
       parameters:
       - name: "character_id"
@@ -7008,6 +7008,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/corporations/{corporation_id}/assets/names/:
@@ -8445,6 +8446,7 @@ paths:
       - evesso:
         - "esi-corporations.read_divisions.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -8590,6 +8592,7 @@ paths:
       - evesso:
         - "esi-corporations.read_facilities.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -9362,6 +9365,7 @@ paths:
       - evesso:
         - "esi-corporations.read_medals.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -9524,6 +9528,7 @@ paths:
       - evesso:
         - "esi-corporations.read_medals.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -9664,6 +9669,7 @@ paths:
       - evesso:
         - "esi-corporations.track_members.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -9808,6 +9814,7 @@ paths:
       - evesso:
         - "esi-corporations.read_titles.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -9963,6 +9970,7 @@ paths:
       - evesso:
         - "esi-corporations.track_members.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -10109,6 +10117,7 @@ paths:
       - evesso:
         - "esi-corporations.read_corporation_membership.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -10272,6 +10281,7 @@ paths:
       - evesso:
         - "esi-corporations.read_corporation_membership.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -10607,6 +10617,7 @@ paths:
       - evesso:
         - "esi-corporations.read_standings.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -10618,7 +10629,7 @@ paths:
       summary: "Get corporation starbases (POSes)"
       description: "Returns list of corporation starbases (POSes)\n\n---\n\nThis route\
         \ is cached for up to 3600 seconds\n\n---\nRequires one of the following EVE\
-        \ corporation role(s): Director\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/starbases/)"
+        \ corporation role(s): Director"
       operationId: "get_corporations_corporation_id_starbases"
       parameters:
       - name: "corporation_id"
@@ -10766,6 +10777,7 @@ paths:
       - evesso:
         - "esi-corporations.read_starbases.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -10928,6 +10940,7 @@ paths:
       - evesso:
         - "esi-corporations.read_starbases.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -11075,6 +11088,7 @@ paths:
       - evesso:
         - "esi-corporations.read_titles.v1"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -17628,6 +17642,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/asteroid_belts/{asteroid_belt_id}/:
@@ -17749,6 +17764,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/bloodlines/:
@@ -17909,6 +17925,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/categories/:
@@ -18021,6 +18038,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/categories/{category_id}/:
@@ -18186,6 +18204,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/constellations/:
@@ -18297,6 +18316,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/constellations/{constellation_id}/:
@@ -18465,6 +18485,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/graphics/:
@@ -18575,6 +18596,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/graphics/{graphic_id}/:
@@ -18820,6 +18842,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/groups/{group_id}/:
@@ -18828,7 +18851,7 @@ paths:
       - "Universe"
       summary: "Get item group information"
       description: "Get information on an item group\n\n---\n\nThis route expires\
-        \ daily at 11:05\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/groups/{group_id}/)"
+        \ daily at 11:05"
       operationId: "get_universe_groups_group_id"
       parameters:
       - name: "Accept-Language"
@@ -18986,6 +19009,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/ids/:
@@ -19247,6 +19271,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/planets/{planet_id}/:
@@ -19370,6 +19395,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/races/:
@@ -19378,7 +19404,7 @@ paths:
       - "Universe"
       summary: "Get character races"
       description: "Get a list of character races\n\n---\n\nThis route expires daily\
-        \ at 11:05\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/races/)"
+        \ at 11:05"
       operationId: "get_universe_races"
       parameters:
       - name: "Accept-Language"
@@ -19523,6 +19549,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/regions/:
@@ -19633,6 +19660,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/regions/{region_id}/:
@@ -19797,6 +19825,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/schematics/{schematic_id}/:
@@ -20042,6 +20071,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/stars/{star_id}/:
@@ -20158,6 +20188,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/structures/:
@@ -20281,6 +20312,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -20392,6 +20424,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -20504,6 +20537,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/universe/types/:
@@ -20630,6 +20664,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
   /v1/wars/:
@@ -23528,6 +23563,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "v2"
       x-cached-seconds: 3600
   /v2/corporations/{corporation_id}/assets/locations/:
@@ -23824,6 +23860,7 @@ paths:
       - evesso:
         - "esi-corporations.read_blueprints.v1"
       x-alternate-versions:
+      - "dev"
       - "v2"
       x-cached-seconds: 3600
       x-required-roles:
@@ -24166,6 +24203,7 @@ paths:
       - evesso:
         - "esi-corporations.read_container_logs.v1"
       x-alternate-versions:
+      - "dev"
       - "v2"
       x-cached-seconds: 600
       x-required-roles:
@@ -25326,6 +25364,7 @@ paths:
       - evesso:
         - "esi-universe.read_structures.v1"
       x-alternate-versions:
+      - "dev"
       - "v2"
       x-cached-seconds: 3600
   /v2/universe/system_kills/:
@@ -25438,6 +25477,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "v2"
       x-cached-seconds: 3600
   /v3/alliances/{alliance_id}/:
@@ -26627,6 +26667,7 @@ paths:
       - evesso:
         - "esi-corporations.read_corporation_membership.v1"
       x-alternate-versions:
+      - "dev"
       - "v3"
       x-cached-seconds: 3600
   /v3/corporations/{corporation_id}/orders/:
@@ -26810,8 +26851,7 @@ paths:
       description: "Get a list of corporation structures. This route's version includes\
         \ the changes to structures detailed in this blog: https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th\n\
         \n---\n\nThis route is cached for up to 3600 seconds\n\n---\nRequires one\
-        \ of the following EVE corporation role(s): Station_Manager\n\n---\n[Diff\
-        \ of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/structures/)"
+        \ of the following EVE corporation role(s): Station_Manager"
       operationId: "get_corporations_corporation_id_structures"
       parameters:
       - name: "Accept-Language"
@@ -27007,6 +27047,7 @@ paths:
       - evesso:
         - "esi-corporations.read_structures.v1"
       x-alternate-versions:
+      - "dev"
       - "v3"
       x-cached-seconds: 3600
       x-required-roles:
@@ -27787,6 +27828,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "v4"
       x-cached-seconds: 3600
   /v4/corporations/{corporation_id}/wallets/{division}/journal/:
@@ -27974,7 +28016,7 @@ paths:
       - "Universe"
       summary: "Get solar system information"
       description: "Get information on a solar system.\n\n---\n\nThis route expires\
-        \ daily at 11:05\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/systems/{system_id}/)"
+        \ daily at 11:05"
       operationId: "get_universe_systems_system_id"
       parameters:
       - name: "Accept-Language"
@@ -28141,6 +28183,7 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "v4"
   /v5/characters/{character_id}/assets/:
     get:

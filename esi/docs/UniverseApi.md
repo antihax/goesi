@@ -455,7 +455,7 @@ No authorization required
 > GetUniverseGroupsGroupIdOk GetUniverseGroupsGroupId(ctx, groupId, optional)
 Get item group information
 
-Get information on an item group  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/groups/{group_id}/)
+Get information on an item group  ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -571,7 +571,7 @@ No authorization required
 > []GetUniverseRaces200Ok GetUniverseRaces(ctx, optional)
 Get character races
 
-Get a list of character races  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/races/)
+Get a list of character races  ---  This route expires daily at 11:05
 
 ### Required Parameters
 
@@ -983,7 +983,7 @@ No authorization required
 > GetUniverseSystemsSystemIdOk GetUniverseSystemsSystemId(ctx, systemId, optional)
 Get solar system information
 
-Get information on a solar system.  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/systems/{system_id}/)
+Get information on a solar system.  ---  This route expires daily at 11:05
 
 ### Required Parameters
 

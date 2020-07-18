@@ -43,7 +43,7 @@ type WalletApiService service
 
 /*
 WalletApiService Get a character&#39;s wallet balance
-Returns a character&#39;s wallet balance  ---  This route is cached for up to 120 seconds
+Returns a character&#39;s wallet balance  ---  This route is cached for up to 120 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdWalletOpts - Optional Parameters:

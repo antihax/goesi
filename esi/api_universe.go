@@ -1877,7 +1877,7 @@ func (a *UniverseApiService) GetUniverseGroups(ctx context.Context, localVarOpti
 
 /*
 UniverseApiService Get item group information
-Get information on an item group  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/groups/{group_id}/)
+Get information on an item group  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param groupId An Eve item group ID
  * @param optional nil or *GetUniverseGroupsGroupIdOpts - Optional Parameters:
@@ -2397,7 +2397,7 @@ func (a *UniverseApiService) GetUniversePlanetsPlanetId(ctx context.Context, pla
 
 /*
 UniverseApiService Get character races
-Get a list of character races  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/races/)
+Get a list of character races  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUniverseRacesOpts - Optional Parameters:
      * @param "AcceptLanguage" (optional.String) -  Language to use in the response
@@ -4230,7 +4230,7 @@ func (a *UniverseApiService) GetUniverseSystems(ctx context.Context, localVarOpt
 
 /*
 UniverseApiService Get solar system information
-Get information on a solar system.  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/universe/systems/{system_id}/)
+Get information on a solar system.  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param systemId system_id integer
  * @param optional nil or *GetUniverseSystemsSystemIdOpts - Optional Parameters:

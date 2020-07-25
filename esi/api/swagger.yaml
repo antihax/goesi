@@ -23445,6 +23445,159 @@ paths:
       - "legacy"
       - "v2"
       x-cached-seconds: 120
+  /v2/characters/{character_id}/stats/:
+    get:
+      tags:
+      - "Character"
+      summary: "Yearly aggregate stats"
+      description: "Returns aggregate yearly stats for a character\n\n---\n\nThis\
+        \ route is cached for up to 86400 seconds"
+      operationId: "get_characters_character_id_stats"
+      parameters:
+      - name: "character_id"
+        in: "path"
+        description: "An EVE character ID"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "CharacterId"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        - "singularity"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "Character stats"
+          schema:
+            type: "array"
+            description: "List of character aggregate stats"
+            title: "get_characters_character_id_stats_ok"
+            items:
+              $ref: "#/definitions/get_characters_character_id_stats_200_ok"
+            maxItems: 1000
+          examples:
+            application/json:
+            - character:
+                days_of_activity: 365
+                minutes: 1000000
+                sessions_started: 500
+              combat:
+                kills_low_sec: 42
+              year: 2014
+            - character:
+                days_of_activity: 365
+                minutes: 1000000
+                sessions_started: 500
+              combat:
+                kills_null_sec: 1337
+              year: 2015
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        401:
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/unauthorized"
+          examples:
+            application/json:
+              error: "Unauthorized message"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      security:
+      - evesso:
+        - "esi-characterstats.read.v1"
+      x-alternate-versions:
+      - "dev"
+      - "v2"
+      x-cached-seconds: 86400
   /v2/corporations/{corporation_id}/alliancehistory/:
     get:
       tags:
@@ -28848,6 +29001,7 @@ securityDefinitions:
       esi-characters.read_standings.v1: "EVE SSO scope esi-characters.read_standings.v1"
       esi-characters.read_titles.v1: "EVE SSO scope esi-characters.read_titles.v1"
       esi-characters.write_contacts.v1: "EVE SSO scope esi-characters.write_contacts.v1"
+      esi-characterstats.read.v1: "EVE SSO scope esi-characterstats.read.v1"
       esi-clones.read_clones.v1: "EVE SSO scope esi-clones.read_clones.v1"
       esi-clones.read_implants.v1: "EVE SSO scope esi-clones.read_implants.v1"
       esi-contracts.read_character_contracts.v1: "EVE SSO scope esi-contracts.read_character_contracts.v1"
@@ -37444,6 +37598,1531 @@ definitions:
         description: "training_start_sp integer"
         title: "get_characters_character_id_skillqueue_training_start_sp"
     description: "200 ok object"
+  get_characters_character_id_stats_character:
+    properties:
+      days_of_activity:
+        type: "integer"
+        format: "int64"
+        description: "days_of_activity integer"
+        title: "get_characters_character_id_stats_days_of_activity"
+      minutes:
+        type: "integer"
+        format: "int64"
+        description: "minutes integer"
+        title: "get_characters_character_id_stats_minutes"
+      sessions_started:
+        type: "integer"
+        format: "int64"
+        description: "sessions_started integer"
+        title: "get_characters_character_id_stats_sessions_started"
+    description: "character object"
+  get_characters_character_id_stats_combat:
+    properties:
+      cap_drainedby_npc:
+        type: "integer"
+        format: "int64"
+        description: "cap_drainedby_npc integer"
+        title: "get_characters_character_id_stats_cap_drainedby_npc"
+      cap_drainedby_pc:
+        type: "integer"
+        format: "int64"
+        description: "cap_drainedby_pc integer"
+        title: "get_characters_character_id_stats_cap_drainedby_pc"
+      cap_draining_pc:
+        type: "integer"
+        format: "int64"
+        description: "cap_draining_pc integer"
+        title: "get_characters_character_id_stats_cap_draining_pc"
+      criminal_flag_set:
+        type: "integer"
+        format: "int64"
+        description: "criminal_flag_set integer"
+        title: "get_characters_character_id_stats_criminal_flag_set"
+      damage_from_np_cs_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_np_cs_amount integer"
+        title: "get_characters_character_id_stats_damage_from_np_cs_amount"
+      damage_from_np_cs_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_np_cs_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_np_cs_num_shots"
+      damage_from_players_bomb_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_bomb_amount integer"
+        title: "get_characters_character_id_stats_damage_from_players_bomb_amount"
+      damage_from_players_bomb_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_bomb_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_players_bomb_num_shots"
+      damage_from_players_combat_drone_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_combat_drone_amount integer"
+        title: "get_characters_character_id_stats_damage_from_players_combat_drone_amount"
+      damage_from_players_combat_drone_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_combat_drone_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_players_combat_drone_num_shots"
+      damage_from_players_energy_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_energy_amount integer"
+        title: "get_characters_character_id_stats_damage_from_players_energy_amount"
+      damage_from_players_energy_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_energy_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_players_energy_num_shots"
+      damage_from_players_fighter_bomber_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_fighter_bomber_amount integer"
+        title: "get_characters_character_id_stats_damage_from_players_fighter_bomber_amount"
+      damage_from_players_fighter_bomber_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_fighter_bomber_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_players_fighter_bomber_num_shots"
+      damage_from_players_fighter_drone_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_fighter_drone_amount integer"
+        title: "get_characters_character_id_stats_damage_from_players_fighter_drone_amount"
+      damage_from_players_fighter_drone_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_fighter_drone_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_players_fighter_drone_num_shots"
+      damage_from_players_hybrid_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_hybrid_amount integer"
+        title: "get_characters_character_id_stats_damage_from_players_hybrid_amount"
+      damage_from_players_hybrid_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_hybrid_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_players_hybrid_num_shots"
+      damage_from_players_missile_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_missile_amount integer"
+        title: "get_characters_character_id_stats_damage_from_players_missile_amount"
+      damage_from_players_missile_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_missile_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_players_missile_num_shots"
+      damage_from_players_projectile_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_projectile_amount integer"
+        title: "get_characters_character_id_stats_damage_from_players_projectile_amount"
+      damage_from_players_projectile_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_projectile_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_players_projectile_num_shots"
+      damage_from_players_smart_bomb_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_smart_bomb_amount integer"
+        title: "get_characters_character_id_stats_damage_from_players_smart_bomb_amount"
+      damage_from_players_smart_bomb_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_smart_bomb_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_players_smart_bomb_num_shots"
+      damage_from_players_super_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_super_amount integer"
+        title: "get_characters_character_id_stats_damage_from_players_super_amount"
+      damage_from_players_super_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_players_super_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_players_super_num_shots"
+      damage_from_structures_total_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_structures_total_amount integer"
+        title: "get_characters_character_id_stats_damage_from_structures_total_amount"
+      damage_from_structures_total_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_from_structures_total_num_shots integer"
+        title: "get_characters_character_id_stats_damage_from_structures_total_num_shots"
+      damage_to_players_bomb_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_bomb_amount integer"
+        title: "get_characters_character_id_stats_damage_to_players_bomb_amount"
+      damage_to_players_bomb_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_bomb_num_shots integer"
+        title: "get_characters_character_id_stats_damage_to_players_bomb_num_shots"
+      damage_to_players_combat_drone_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_combat_drone_amount integer"
+        title: "get_characters_character_id_stats_damage_to_players_combat_drone_amount"
+      damage_to_players_combat_drone_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_combat_drone_num_shots integer"
+        title: "get_characters_character_id_stats_damage_to_players_combat_drone_num_shots"
+      damage_to_players_energy_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_energy_amount integer"
+        title: "get_characters_character_id_stats_damage_to_players_energy_amount"
+      damage_to_players_energy_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_energy_num_shots integer"
+        title: "get_characters_character_id_stats_damage_to_players_energy_num_shots"
+      damage_to_players_fighter_bomber_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_fighter_bomber_amount integer"
+        title: "get_characters_character_id_stats_damage_to_players_fighter_bomber_amount"
+      damage_to_players_fighter_bomber_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_fighter_bomber_num_shots integer"
+        title: "get_characters_character_id_stats_damage_to_players_fighter_bomber_num_shots"
+      damage_to_players_fighter_drone_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_fighter_drone_amount integer"
+        title: "get_characters_character_id_stats_damage_to_players_fighter_drone_amount"
+      damage_to_players_fighter_drone_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_fighter_drone_num_shots integer"
+        title: "get_characters_character_id_stats_damage_to_players_fighter_drone_num_shots"
+      damage_to_players_hybrid_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_hybrid_amount integer"
+        title: "get_characters_character_id_stats_damage_to_players_hybrid_amount"
+      damage_to_players_hybrid_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_hybrid_num_shots integer"
+        title: "get_characters_character_id_stats_damage_to_players_hybrid_num_shots"
+      damage_to_players_missile_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_missile_amount integer"
+        title: "get_characters_character_id_stats_damage_to_players_missile_amount"
+      damage_to_players_missile_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_missile_num_shots integer"
+        title: "get_characters_character_id_stats_damage_to_players_missile_num_shots"
+      damage_to_players_projectile_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_projectile_amount integer"
+        title: "get_characters_character_id_stats_damage_to_players_projectile_amount"
+      damage_to_players_projectile_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_projectile_num_shots integer"
+        title: "get_characters_character_id_stats_damage_to_players_projectile_num_shots"
+      damage_to_players_smart_bomb_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_smart_bomb_amount integer"
+        title: "get_characters_character_id_stats_damage_to_players_smart_bomb_amount"
+      damage_to_players_smart_bomb_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_smart_bomb_num_shots integer"
+        title: "get_characters_character_id_stats_damage_to_players_smart_bomb_num_shots"
+      damage_to_players_super_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_super_amount integer"
+        title: "get_characters_character_id_stats_damage_to_players_super_amount"
+      damage_to_players_super_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_players_super_num_shots integer"
+        title: "get_characters_character_id_stats_damage_to_players_super_num_shots"
+      damage_to_structures_total_amount:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_structures_total_amount integer"
+        title: "get_characters_character_id_stats_damage_to_structures_total_amount"
+      damage_to_structures_total_num_shots:
+        type: "integer"
+        format: "int64"
+        description: "damage_to_structures_total_num_shots integer"
+        title: "get_characters_character_id_stats_damage_to_structures_total_num_shots"
+      deaths_high_sec:
+        type: "integer"
+        format: "int64"
+        description: "deaths_high_sec integer"
+        title: "get_characters_character_id_stats_deaths_high_sec"
+      deaths_low_sec:
+        type: "integer"
+        format: "int64"
+        description: "deaths_low_sec integer"
+        title: "get_characters_character_id_stats_deaths_low_sec"
+      deaths_null_sec:
+        type: "integer"
+        format: "int64"
+        description: "deaths_null_sec integer"
+        title: "get_characters_character_id_stats_deaths_null_sec"
+      deaths_pod_high_sec:
+        type: "integer"
+        format: "int64"
+        description: "deaths_pod_high_sec integer"
+        title: "get_characters_character_id_stats_deaths_pod_high_sec"
+      deaths_pod_low_sec:
+        type: "integer"
+        format: "int64"
+        description: "deaths_pod_low_sec integer"
+        title: "get_characters_character_id_stats_deaths_pod_low_sec"
+      deaths_pod_null_sec:
+        type: "integer"
+        format: "int64"
+        description: "deaths_pod_null_sec integer"
+        title: "get_characters_character_id_stats_deaths_pod_null_sec"
+      deaths_pod_wormhole:
+        type: "integer"
+        format: "int64"
+        description: "deaths_pod_wormhole integer"
+        title: "get_characters_character_id_stats_deaths_pod_wormhole"
+      deaths_wormhole:
+        type: "integer"
+        format: "int64"
+        description: "deaths_wormhole integer"
+        title: "get_characters_character_id_stats_deaths_wormhole"
+      drone_engage:
+        type: "integer"
+        format: "int64"
+        description: "drone_engage integer"
+        title: "get_characters_character_id_stats_drone_engage"
+      dscans:
+        type: "integer"
+        format: "int64"
+        description: "dscans integer"
+        title: "get_characters_character_id_stats_dscans"
+      duel_requested:
+        type: "integer"
+        format: "int64"
+        description: "duel_requested integer"
+        title: "get_characters_character_id_stats_duel_requested"
+      engagement_register:
+        type: "integer"
+        format: "int64"
+        description: "engagement_register integer"
+        title: "get_characters_character_id_stats_engagement_register"
+      kills_assists:
+        type: "integer"
+        format: "int64"
+        description: "kills_assists integer"
+        title: "get_characters_character_id_stats_kills_assists"
+      kills_high_sec:
+        type: "integer"
+        format: "int64"
+        description: "kills_high_sec integer"
+        title: "get_characters_character_id_stats_kills_high_sec"
+      kills_low_sec:
+        type: "integer"
+        format: "int64"
+        description: "kills_low_sec integer"
+        title: "get_characters_character_id_stats_kills_low_sec"
+      kills_null_sec:
+        type: "integer"
+        format: "int64"
+        description: "kills_null_sec integer"
+        title: "get_characters_character_id_stats_kills_null_sec"
+      kills_pod_high_sec:
+        type: "integer"
+        format: "int64"
+        description: "kills_pod_high_sec integer"
+        title: "get_characters_character_id_stats_kills_pod_high_sec"
+      kills_pod_low_sec:
+        type: "integer"
+        format: "int64"
+        description: "kills_pod_low_sec integer"
+        title: "get_characters_character_id_stats_kills_pod_low_sec"
+      kills_pod_null_sec:
+        type: "integer"
+        format: "int64"
+        description: "kills_pod_null_sec integer"
+        title: "get_characters_character_id_stats_kills_pod_null_sec"
+      kills_pod_wormhole:
+        type: "integer"
+        format: "int64"
+        description: "kills_pod_wormhole integer"
+        title: "get_characters_character_id_stats_kills_pod_wormhole"
+      kills_wormhole:
+        type: "integer"
+        format: "int64"
+        description: "kills_wormhole integer"
+        title: "get_characters_character_id_stats_kills_wormhole"
+      npc_flag_set:
+        type: "integer"
+        format: "int64"
+        description: "npc_flag_set integer"
+        title: "get_characters_character_id_stats_npc_flag_set"
+      probe_scans:
+        type: "integer"
+        format: "int64"
+        description: "probe_scans integer"
+        title: "get_characters_character_id_stats_probe_scans"
+      pvp_flag_set:
+        type: "integer"
+        format: "int64"
+        description: "pvp_flag_set integer"
+        title: "get_characters_character_id_stats_pvp_flag_set"
+      repair_armor_by_remote_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_armor_by_remote_amount integer"
+        title: "get_characters_character_id_stats_repair_armor_by_remote_amount"
+      repair_armor_remote_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_armor_remote_amount integer"
+        title: "get_characters_character_id_stats_repair_armor_remote_amount"
+      repair_armor_self_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_armor_self_amount integer"
+        title: "get_characters_character_id_stats_repair_armor_self_amount"
+      repair_capacitor_by_remote_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_capacitor_by_remote_amount integer"
+        title: "get_characters_character_id_stats_repair_capacitor_by_remote_amount"
+      repair_capacitor_remote_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_capacitor_remote_amount integer"
+        title: "get_characters_character_id_stats_repair_capacitor_remote_amount"
+      repair_capacitor_self_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_capacitor_self_amount integer"
+        title: "get_characters_character_id_stats_repair_capacitor_self_amount"
+      repair_hull_by_remote_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_hull_by_remote_amount integer"
+        title: "get_characters_character_id_stats_repair_hull_by_remote_amount"
+      repair_hull_remote_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_hull_remote_amount integer"
+        title: "get_characters_character_id_stats_repair_hull_remote_amount"
+      repair_hull_self_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_hull_self_amount integer"
+        title: "get_characters_character_id_stats_repair_hull_self_amount"
+      repair_shield_by_remote_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_shield_by_remote_amount integer"
+        title: "get_characters_character_id_stats_repair_shield_by_remote_amount"
+      repair_shield_remote_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_shield_remote_amount integer"
+        title: "get_characters_character_id_stats_repair_shield_remote_amount"
+      repair_shield_self_amount:
+        type: "integer"
+        format: "int64"
+        description: "repair_shield_self_amount integer"
+        title: "get_characters_character_id_stats_repair_shield_self_amount"
+      self_destructs:
+        type: "integer"
+        format: "int64"
+        description: "self_destructs integer"
+        title: "get_characters_character_id_stats_self_destructs"
+      warp_scramble_pc:
+        type: "integer"
+        format: "int64"
+        description: "warp_scramble_pc integer"
+        title: "get_characters_character_id_stats_warp_scramble_pc"
+      warp_scrambledby_npc:
+        type: "integer"
+        format: "int64"
+        description: "warp_scrambledby_npc integer"
+        title: "get_characters_character_id_stats_warp_scrambledby_npc"
+      warp_scrambledby_pc:
+        type: "integer"
+        format: "int64"
+        description: "warp_scrambledby_pc integer"
+        title: "get_characters_character_id_stats_warp_scrambledby_pc"
+      weapon_flag_set:
+        type: "integer"
+        format: "int64"
+        description: "weapon_flag_set integer"
+        title: "get_characters_character_id_stats_weapon_flag_set"
+      webifiedby_npc:
+        type: "integer"
+        format: "int64"
+        description: "webifiedby_npc integer"
+        title: "get_characters_character_id_stats_webifiedby_npc"
+      webifiedby_pc:
+        type: "integer"
+        format: "int64"
+        description: "webifiedby_pc integer"
+        title: "get_characters_character_id_stats_webifiedby_pc"
+      webifying_pc:
+        type: "integer"
+        format: "int64"
+        description: "webifying_pc integer"
+        title: "get_characters_character_id_stats_webifying_pc"
+    description: "combat object"
+  get_characters_character_id_stats_industry:
+    properties:
+      hacking_successes:
+        type: "integer"
+        format: "int64"
+        description: "hacking_successes integer"
+        title: "get_characters_character_id_stats_hacking_successes"
+      jobs_cancelled:
+        type: "integer"
+        format: "int64"
+        description: "jobs_cancelled integer"
+        title: "get_characters_character_id_stats_jobs_cancelled"
+      jobs_completed_copy_blueprint:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_copy_blueprint integer"
+        title: "get_characters_character_id_stats_jobs_completed_copy_blueprint"
+      jobs_completed_invention:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_invention integer"
+        title: "get_characters_character_id_stats_jobs_completed_invention"
+      jobs_completed_manufacture:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture"
+      jobs_completed_manufacture_asteroid:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_asteroid integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_asteroid"
+      jobs_completed_manufacture_asteroid_quantity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_asteroid_quantity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_asteroid_quantity"
+      jobs_completed_manufacture_charge:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_charge integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_charge"
+      jobs_completed_manufacture_charge_quantity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_charge_quantity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_charge_quantity"
+      jobs_completed_manufacture_commodity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_commodity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_commodity"
+      jobs_completed_manufacture_commodity_quantity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_commodity_quantity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_commodity_quantity"
+      jobs_completed_manufacture_deployable:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_deployable integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_deployable"
+      jobs_completed_manufacture_deployable_quantity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_deployable_quantity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_deployable_quantity"
+      jobs_completed_manufacture_drone:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_drone integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_drone"
+      jobs_completed_manufacture_drone_quantity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_drone_quantity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_drone_quantity"
+      jobs_completed_manufacture_implant:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_implant integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_implant"
+      jobs_completed_manufacture_implant_quantity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_implant_quantity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_implant_quantity"
+      jobs_completed_manufacture_module:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_module integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_module"
+      jobs_completed_manufacture_module_quantity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_module_quantity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_module_quantity"
+      jobs_completed_manufacture_other:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_other integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_other"
+      jobs_completed_manufacture_other_quantity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_other_quantity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_other_quantity"
+      jobs_completed_manufacture_ship:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_ship integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_ship"
+      jobs_completed_manufacture_ship_quantity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_ship_quantity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_ship_quantity"
+      jobs_completed_manufacture_structure:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_structure integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_structure"
+      jobs_completed_manufacture_structure_quantity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_structure_quantity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_structure_quantity"
+      jobs_completed_manufacture_subsystem:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_subsystem integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_subsystem"
+      jobs_completed_manufacture_subsystem_quantity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_manufacture_subsystem_quantity integer"
+        title: "get_characters_character_id_stats_jobs_completed_manufacture_subsystem_quantity"
+      jobs_completed_material_productivity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_material_productivity integer"
+        title: "get_characters_character_id_stats_jobs_completed_material_productivity"
+      jobs_completed_time_productivity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_completed_time_productivity integer"
+        title: "get_characters_character_id_stats_jobs_completed_time_productivity"
+      jobs_started_copy_blueprint:
+        type: "integer"
+        format: "int64"
+        description: "jobs_started_copy_blueprint integer"
+        title: "get_characters_character_id_stats_jobs_started_copy_blueprint"
+      jobs_started_invention:
+        type: "integer"
+        format: "int64"
+        description: "jobs_started_invention integer"
+        title: "get_characters_character_id_stats_jobs_started_invention"
+      jobs_started_manufacture:
+        type: "integer"
+        format: "int64"
+        description: "jobs_started_manufacture integer"
+        title: "get_characters_character_id_stats_jobs_started_manufacture"
+      jobs_started_material_productivity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_started_material_productivity integer"
+        title: "get_characters_character_id_stats_jobs_started_material_productivity"
+      jobs_started_time_productivity:
+        type: "integer"
+        format: "int64"
+        description: "jobs_started_time_productivity integer"
+        title: "get_characters_character_id_stats_jobs_started_time_productivity"
+      reprocess_item:
+        type: "integer"
+        format: "int64"
+        description: "reprocess_item integer"
+        title: "get_characters_character_id_stats_reprocess_item"
+      reprocess_item_quantity:
+        type: "integer"
+        format: "int64"
+        description: "reprocess_item_quantity integer"
+        title: "get_characters_character_id_stats_reprocess_item_quantity"
+    description: "industry object"
+  get_characters_character_id_stats_inventory:
+    properties:
+      abandon_loot_quantity:
+        type: "integer"
+        format: "int64"
+        description: "abandon_loot_quantity integer"
+        title: "get_characters_character_id_stats_abandon_loot_quantity"
+      trash_item_quantity:
+        type: "integer"
+        format: "int64"
+        description: "trash_item_quantity integer"
+        title: "get_characters_character_id_stats_trash_item_quantity"
+    description: "inventory object"
+  get_characters_character_id_stats_isk:
+    properties:
+      in:
+        type: "integer"
+        format: "int64"
+        description: "in integer"
+        title: "get_characters_character_id_stats_in"
+      out:
+        type: "integer"
+        format: "int64"
+        description: "out integer"
+        title: "get_characters_character_id_stats_out"
+    description: "isk object"
+  get_characters_character_id_stats_market:
+    properties:
+      accept_contracts_courier:
+        type: "integer"
+        format: "int64"
+        description: "accept_contracts_courier integer"
+        title: "get_characters_character_id_stats_accept_contracts_courier"
+      accept_contracts_item_exchange:
+        type: "integer"
+        format: "int64"
+        description: "accept_contracts_item_exchange integer"
+        title: "get_characters_character_id_stats_accept_contracts_item_exchange"
+      buy_orders_placed:
+        type: "integer"
+        format: "int64"
+        description: "buy_orders_placed integer"
+        title: "get_characters_character_id_stats_buy_orders_placed"
+      cancel_market_order:
+        type: "integer"
+        format: "int64"
+        description: "cancel_market_order integer"
+        title: "get_characters_character_id_stats_cancel_market_order"
+      create_contracts_auction:
+        type: "integer"
+        format: "int64"
+        description: "create_contracts_auction integer"
+        title: "get_characters_character_id_stats_create_contracts_auction"
+      create_contracts_courier:
+        type: "integer"
+        format: "int64"
+        description: "create_contracts_courier integer"
+        title: "get_characters_character_id_stats_create_contracts_courier"
+      create_contracts_item_exchange:
+        type: "integer"
+        format: "int64"
+        description: "create_contracts_item_exchange integer"
+        title: "get_characters_character_id_stats_create_contracts_item_exchange"
+      deliver_courier_contract:
+        type: "integer"
+        format: "int64"
+        description: "deliver_courier_contract integer"
+        title: "get_characters_character_id_stats_deliver_courier_contract"
+      isk_gained:
+        type: "integer"
+        format: "int64"
+        description: "isk_gained integer"
+        title: "get_characters_character_id_stats_isk_gained"
+      isk_spent:
+        type: "integer"
+        format: "int64"
+        description: "isk_spent integer"
+        title: "get_characters_character_id_stats_isk_spent"
+      modify_market_order:
+        type: "integer"
+        format: "int64"
+        description: "modify_market_order integer"
+        title: "get_characters_character_id_stats_modify_market_order"
+      search_contracts:
+        type: "integer"
+        format: "int64"
+        description: "search_contracts integer"
+        title: "get_characters_character_id_stats_search_contracts"
+      sell_orders_placed:
+        type: "integer"
+        format: "int64"
+        description: "sell_orders_placed integer"
+        title: "get_characters_character_id_stats_sell_orders_placed"
+    description: "market object"
+  get_characters_character_id_stats_mining:
+    properties:
+      drone_mine:
+        type: "integer"
+        format: "int64"
+        description: "drone_mine integer"
+        title: "get_characters_character_id_stats_drone_mine"
+      ore_arkonor:
+        type: "integer"
+        format: "int64"
+        description: "ore_arkonor integer"
+        title: "get_characters_character_id_stats_ore_arkonor"
+      ore_bistot:
+        type: "integer"
+        format: "int64"
+        description: "ore_bistot integer"
+        title: "get_characters_character_id_stats_ore_bistot"
+      ore_crokite:
+        type: "integer"
+        format: "int64"
+        description: "ore_crokite integer"
+        title: "get_characters_character_id_stats_ore_crokite"
+      ore_dark_ochre:
+        type: "integer"
+        format: "int64"
+        description: "ore_dark_ochre integer"
+        title: "get_characters_character_id_stats_ore_dark_ochre"
+      ore_gneiss:
+        type: "integer"
+        format: "int64"
+        description: "ore_gneiss integer"
+        title: "get_characters_character_id_stats_ore_gneiss"
+      ore_harvestable_cloud:
+        type: "integer"
+        format: "int64"
+        description: "ore_harvestable_cloud integer"
+        title: "get_characters_character_id_stats_ore_harvestable_cloud"
+      ore_hedbergite:
+        type: "integer"
+        format: "int64"
+        description: "ore_hedbergite integer"
+        title: "get_characters_character_id_stats_ore_hedbergite"
+      ore_hemorphite:
+        type: "integer"
+        format: "int64"
+        description: "ore_hemorphite integer"
+        title: "get_characters_character_id_stats_ore_hemorphite"
+      ore_ice:
+        type: "integer"
+        format: "int64"
+        description: "ore_ice integer"
+        title: "get_characters_character_id_stats_ore_ice"
+      ore_jaspet:
+        type: "integer"
+        format: "int64"
+        description: "ore_jaspet integer"
+        title: "get_characters_character_id_stats_ore_jaspet"
+      ore_kernite:
+        type: "integer"
+        format: "int64"
+        description: "ore_kernite integer"
+        title: "get_characters_character_id_stats_ore_kernite"
+      ore_mercoxit:
+        type: "integer"
+        format: "int64"
+        description: "ore_mercoxit integer"
+        title: "get_characters_character_id_stats_ore_mercoxit"
+      ore_omber:
+        type: "integer"
+        format: "int64"
+        description: "ore_omber integer"
+        title: "get_characters_character_id_stats_ore_omber"
+      ore_plagioclase:
+        type: "integer"
+        format: "int64"
+        description: "ore_plagioclase integer"
+        title: "get_characters_character_id_stats_ore_plagioclase"
+      ore_pyroxeres:
+        type: "integer"
+        format: "int64"
+        description: "ore_pyroxeres integer"
+        title: "get_characters_character_id_stats_ore_pyroxeres"
+      ore_scordite:
+        type: "integer"
+        format: "int64"
+        description: "ore_scordite integer"
+        title: "get_characters_character_id_stats_ore_scordite"
+      ore_spodumain:
+        type: "integer"
+        format: "int64"
+        description: "ore_spodumain integer"
+        title: "get_characters_character_id_stats_ore_spodumain"
+      ore_veldspar:
+        type: "integer"
+        format: "int64"
+        description: "ore_veldspar integer"
+        title: "get_characters_character_id_stats_ore_veldspar"
+    description: "mining object"
+  get_characters_character_id_stats_module:
+    properties:
+      activations_armor_hardener:
+        type: "integer"
+        format: "int64"
+        description: "activations_armor_hardener integer"
+        title: "get_characters_character_id_stats_activations_armor_hardener"
+      activations_armor_repair_unit:
+        type: "integer"
+        format: "int64"
+        description: "activations_armor_repair_unit integer"
+        title: "get_characters_character_id_stats_activations_armor_repair_unit"
+      activations_armor_resistance_shift_hardener:
+        type: "integer"
+        format: "int64"
+        description: "activations_armor_resistance_shift_hardener integer"
+        title: "get_characters_character_id_stats_activations_armor_resistance_shift_hardener"
+      activations_automated_targeting_system:
+        type: "integer"
+        format: "int64"
+        description: "activations_automated_targeting_system integer"
+        title: "get_characters_character_id_stats_activations_automated_targeting_system"
+      activations_bastion:
+        type: "integer"
+        format: "int64"
+        description: "activations_bastion integer"
+        title: "get_characters_character_id_stats_activations_bastion"
+      activations_bomb_launcher:
+        type: "integer"
+        format: "int64"
+        description: "activations_bomb_launcher integer"
+        title: "get_characters_character_id_stats_activations_bomb_launcher"
+      activations_capacitor_booster:
+        type: "integer"
+        format: "int64"
+        description: "activations_capacitor_booster integer"
+        title: "get_characters_character_id_stats_activations_capacitor_booster"
+      activations_cargo_scanner:
+        type: "integer"
+        format: "int64"
+        description: "activations_cargo_scanner integer"
+        title: "get_characters_character_id_stats_activations_cargo_scanner"
+      activations_cloaking_device:
+        type: "integer"
+        format: "int64"
+        description: "activations_cloaking_device integer"
+        title: "get_characters_character_id_stats_activations_cloaking_device"
+      activations_clone_vat_bay:
+        type: "integer"
+        format: "int64"
+        description: "activations_clone_vat_bay integer"
+        title: "get_characters_character_id_stats_activations_clone_vat_bay"
+      activations_cynosural_field:
+        type: "integer"
+        format: "int64"
+        description: "activations_cynosural_field integer"
+        title: "get_characters_character_id_stats_activations_cynosural_field"
+      activations_damage_control:
+        type: "integer"
+        format: "int64"
+        description: "activations_damage_control integer"
+        title: "get_characters_character_id_stats_activations_damage_control"
+      activations_data_miners:
+        type: "integer"
+        format: "int64"
+        description: "activations_data_miners integer"
+        title: "get_characters_character_id_stats_activations_data_miners"
+      activations_drone_control_unit:
+        type: "integer"
+        format: "int64"
+        description: "activations_drone_control_unit integer"
+        title: "get_characters_character_id_stats_activations_drone_control_unit"
+      activations_drone_tracking_modules:
+        type: "integer"
+        format: "int64"
+        description: "activations_drone_tracking_modules integer"
+        title: "get_characters_character_id_stats_activations_drone_tracking_modules"
+      activations_eccm:
+        type: "integer"
+        format: "int64"
+        description: "activations_eccm integer"
+        title: "get_characters_character_id_stats_activations_eccm"
+      activations_ecm:
+        type: "integer"
+        format: "int64"
+        description: "activations_ecm integer"
+        title: "get_characters_character_id_stats_activations_ecm"
+      activations_ecm_burst:
+        type: "integer"
+        format: "int64"
+        description: "activations_ecm_burst integer"
+        title: "get_characters_character_id_stats_activations_ecm_burst"
+      activations_energy_destabilizer:
+        type: "integer"
+        format: "int64"
+        description: "activations_energy_destabilizer integer"
+        title: "get_characters_character_id_stats_activations_energy_destabilizer"
+      activations_energy_vampire:
+        type: "integer"
+        format: "int64"
+        description: "activations_energy_vampire integer"
+        title: "get_characters_character_id_stats_activations_energy_vampire"
+      activations_energy_weapon:
+        type: "integer"
+        format: "int64"
+        description: "activations_energy_weapon integer"
+        title: "get_characters_character_id_stats_activations_energy_weapon"
+      activations_festival_launcher:
+        type: "integer"
+        format: "int64"
+        description: "activations_festival_launcher integer"
+        title: "get_characters_character_id_stats_activations_festival_launcher"
+      activations_frequency_mining_laser:
+        type: "integer"
+        format: "int64"
+        description: "activations_frequency_mining_laser integer"
+        title: "get_characters_character_id_stats_activations_frequency_mining_laser"
+      activations_fueled_armor_repairer:
+        type: "integer"
+        format: "int64"
+        description: "activations_fueled_armor_repairer integer"
+        title: "get_characters_character_id_stats_activations_fueled_armor_repairer"
+      activations_fueled_shield_booster:
+        type: "integer"
+        format: "int64"
+        description: "activations_fueled_shield_booster integer"
+        title: "get_characters_character_id_stats_activations_fueled_shield_booster"
+      activations_gang_coordinator:
+        type: "integer"
+        format: "int64"
+        description: "activations_gang_coordinator integer"
+        title: "get_characters_character_id_stats_activations_gang_coordinator"
+      activations_gas_cloud_harvester:
+        type: "integer"
+        format: "int64"
+        description: "activations_gas_cloud_harvester integer"
+        title: "get_characters_character_id_stats_activations_gas_cloud_harvester"
+      activations_hull_repair_unit:
+        type: "integer"
+        format: "int64"
+        description: "activations_hull_repair_unit integer"
+        title: "get_characters_character_id_stats_activations_hull_repair_unit"
+      activations_hybrid_weapon:
+        type: "integer"
+        format: "int64"
+        description: "activations_hybrid_weapon integer"
+        title: "get_characters_character_id_stats_activations_hybrid_weapon"
+      activations_industrial_core:
+        type: "integer"
+        format: "int64"
+        description: "activations_industrial_core integer"
+        title: "get_characters_character_id_stats_activations_industrial_core"
+      activations_interdiction_sphere_launcher:
+        type: "integer"
+        format: "int64"
+        description: "activations_interdiction_sphere_launcher integer"
+        title: "get_characters_character_id_stats_activations_interdiction_sphere_launcher"
+      activations_micro_jump_drive:
+        type: "integer"
+        format: "int64"
+        description: "activations_micro_jump_drive integer"
+        title: "get_characters_character_id_stats_activations_micro_jump_drive"
+      activations_mining_laser:
+        type: "integer"
+        format: "int64"
+        description: "activations_mining_laser integer"
+        title: "get_characters_character_id_stats_activations_mining_laser"
+      activations_missile_launcher:
+        type: "integer"
+        format: "int64"
+        description: "activations_missile_launcher integer"
+        title: "get_characters_character_id_stats_activations_missile_launcher"
+      activations_passive_targeting_system:
+        type: "integer"
+        format: "int64"
+        description: "activations_passive_targeting_system integer"
+        title: "get_characters_character_id_stats_activations_passive_targeting_system"
+      activations_probe_launcher:
+        type: "integer"
+        format: "int64"
+        description: "activations_probe_launcher integer"
+        title: "get_characters_character_id_stats_activations_probe_launcher"
+      activations_projected_eccm:
+        type: "integer"
+        format: "int64"
+        description: "activations_projected_eccm integer"
+        title: "get_characters_character_id_stats_activations_projected_eccm"
+      activations_projectile_weapon:
+        type: "integer"
+        format: "int64"
+        description: "activations_projectile_weapon integer"
+        title: "get_characters_character_id_stats_activations_projectile_weapon"
+      activations_propulsion_module:
+        type: "integer"
+        format: "int64"
+        description: "activations_propulsion_module integer"
+        title: "get_characters_character_id_stats_activations_propulsion_module"
+      activations_remote_armor_repairer:
+        type: "integer"
+        format: "int64"
+        description: "activations_remote_armor_repairer integer"
+        title: "get_characters_character_id_stats_activations_remote_armor_repairer"
+      activations_remote_capacitor_transmitter:
+        type: "integer"
+        format: "int64"
+        description: "activations_remote_capacitor_transmitter integer"
+        title: "get_characters_character_id_stats_activations_remote_capacitor_transmitter"
+      activations_remote_ecm_burst:
+        type: "integer"
+        format: "int64"
+        description: "activations_remote_ecm_burst integer"
+        title: "get_characters_character_id_stats_activations_remote_ecm_burst"
+      activations_remote_hull_repairer:
+        type: "integer"
+        format: "int64"
+        description: "activations_remote_hull_repairer integer"
+        title: "get_characters_character_id_stats_activations_remote_hull_repairer"
+      activations_remote_sensor_booster:
+        type: "integer"
+        format: "int64"
+        description: "activations_remote_sensor_booster integer"
+        title: "get_characters_character_id_stats_activations_remote_sensor_booster"
+      activations_remote_sensor_damper:
+        type: "integer"
+        format: "int64"
+        description: "activations_remote_sensor_damper integer"
+        title: "get_characters_character_id_stats_activations_remote_sensor_damper"
+      activations_remote_shield_booster:
+        type: "integer"
+        format: "int64"
+        description: "activations_remote_shield_booster integer"
+        title: "get_characters_character_id_stats_activations_remote_shield_booster"
+      activations_remote_tracking_computer:
+        type: "integer"
+        format: "int64"
+        description: "activations_remote_tracking_computer integer"
+        title: "get_characters_character_id_stats_activations_remote_tracking_computer"
+      activations_salvager:
+        type: "integer"
+        format: "int64"
+        description: "activations_salvager integer"
+        title: "get_characters_character_id_stats_activations_salvager"
+      activations_sensor_booster:
+        type: "integer"
+        format: "int64"
+        description: "activations_sensor_booster integer"
+        title: "get_characters_character_id_stats_activations_sensor_booster"
+      activations_shield_booster:
+        type: "integer"
+        format: "int64"
+        description: "activations_shield_booster integer"
+        title: "get_characters_character_id_stats_activations_shield_booster"
+      activations_shield_hardener:
+        type: "integer"
+        format: "int64"
+        description: "activations_shield_hardener integer"
+        title: "get_characters_character_id_stats_activations_shield_hardener"
+      activations_ship_scanner:
+        type: "integer"
+        format: "int64"
+        description: "activations_ship_scanner integer"
+        title: "get_characters_character_id_stats_activations_ship_scanner"
+      activations_siege:
+        type: "integer"
+        format: "int64"
+        description: "activations_siege integer"
+        title: "get_characters_character_id_stats_activations_siege"
+      activations_smart_bomb:
+        type: "integer"
+        format: "int64"
+        description: "activations_smart_bomb integer"
+        title: "get_characters_character_id_stats_activations_smart_bomb"
+      activations_stasis_web:
+        type: "integer"
+        format: "int64"
+        description: "activations_stasis_web integer"
+        title: "get_characters_character_id_stats_activations_stasis_web"
+      activations_strip_miner:
+        type: "integer"
+        format: "int64"
+        description: "activations_strip_miner integer"
+        title: "get_characters_character_id_stats_activations_strip_miner"
+      activations_super_weapon:
+        type: "integer"
+        format: "int64"
+        description: "activations_super_weapon integer"
+        title: "get_characters_character_id_stats_activations_super_weapon"
+      activations_survey_scanner:
+        type: "integer"
+        format: "int64"
+        description: "activations_survey_scanner integer"
+        title: "get_characters_character_id_stats_activations_survey_scanner"
+      activations_target_breaker:
+        type: "integer"
+        format: "int64"
+        description: "activations_target_breaker integer"
+        title: "get_characters_character_id_stats_activations_target_breaker"
+      activations_target_painter:
+        type: "integer"
+        format: "int64"
+        description: "activations_target_painter integer"
+        title: "get_characters_character_id_stats_activations_target_painter"
+      activations_tracking_computer:
+        type: "integer"
+        format: "int64"
+        description: "activations_tracking_computer integer"
+        title: "get_characters_character_id_stats_activations_tracking_computer"
+      activations_tracking_disruptor:
+        type: "integer"
+        format: "int64"
+        description: "activations_tracking_disruptor integer"
+        title: "get_characters_character_id_stats_activations_tracking_disruptor"
+      activations_tractor_beam:
+        type: "integer"
+        format: "int64"
+        description: "activations_tractor_beam integer"
+        title: "get_characters_character_id_stats_activations_tractor_beam"
+      activations_triage:
+        type: "integer"
+        format: "int64"
+        description: "activations_triage integer"
+        title: "get_characters_character_id_stats_activations_triage"
+      activations_warp_disrupt_field_generator:
+        type: "integer"
+        format: "int64"
+        description: "activations_warp_disrupt_field_generator integer"
+        title: "get_characters_character_id_stats_activations_warp_disrupt_field_generator"
+      activations_warp_scrambler:
+        type: "integer"
+        format: "int64"
+        description: "activations_warp_scrambler integer"
+        title: "get_characters_character_id_stats_activations_warp_scrambler"
+      link_weapons:
+        type: "integer"
+        format: "int64"
+        description: "link_weapons integer"
+        title: "get_characters_character_id_stats_link_weapons"
+      overload:
+        type: "integer"
+        format: "int64"
+        description: "overload integer"
+        title: "get_characters_character_id_stats_overload"
+      repairs:
+        type: "integer"
+        format: "int64"
+        description: "repairs integer"
+        title: "get_characters_character_id_stats_repairs"
+    description: "module object"
+  get_characters_character_id_stats_orbital:
+    properties:
+      strike_characters_killed:
+        type: "integer"
+        format: "int64"
+        description: "strike_characters_killed integer"
+        title: "get_characters_character_id_stats_strike_characters_killed"
+      strike_damage_to_players_armor_amount:
+        type: "integer"
+        format: "int64"
+        description: "strike_damage_to_players_armor_amount integer"
+        title: "get_characters_character_id_stats_strike_damage_to_players_armor_amount"
+      strike_damage_to_players_shield_amount:
+        type: "integer"
+        format: "int64"
+        description: "strike_damage_to_players_shield_amount integer"
+        title: "get_characters_character_id_stats_strike_damage_to_players_shield_amount"
+    description: "orbital object"
+  get_characters_character_id_stats_pve:
+    properties:
+      dungeons_completed_agent:
+        type: "integer"
+        format: "int64"
+        description: "dungeons_completed_agent integer"
+        title: "get_characters_character_id_stats_dungeons_completed_agent"
+      dungeons_completed_distribution:
+        type: "integer"
+        format: "int64"
+        description: "dungeons_completed_distribution integer"
+        title: "get_characters_character_id_stats_dungeons_completed_distribution"
+      missions_succeeded:
+        type: "integer"
+        format: "int64"
+        description: "missions_succeeded integer"
+        title: "get_characters_character_id_stats_missions_succeeded"
+      missions_succeeded_epic_arc:
+        type: "integer"
+        format: "int64"
+        description: "missions_succeeded_epic_arc integer"
+        title: "get_characters_character_id_stats_missions_succeeded_epic_arc"
+    description: "pve object"
+  get_characters_character_id_stats_social:
+    properties:
+      add_contact_bad:
+        type: "integer"
+        format: "int64"
+        description: "add_contact_bad integer"
+        title: "get_characters_character_id_stats_add_contact_bad"
+      add_contact_good:
+        type: "integer"
+        format: "int64"
+        description: "add_contact_good integer"
+        title: "get_characters_character_id_stats_add_contact_good"
+      add_contact_high:
+        type: "integer"
+        format: "int64"
+        description: "add_contact_high integer"
+        title: "get_characters_character_id_stats_add_contact_high"
+      add_contact_horrible:
+        type: "integer"
+        format: "int64"
+        description: "add_contact_horrible integer"
+        title: "get_characters_character_id_stats_add_contact_horrible"
+      add_contact_neutral:
+        type: "integer"
+        format: "int64"
+        description: "add_contact_neutral integer"
+        title: "get_characters_character_id_stats_add_contact_neutral"
+      add_note:
+        type: "integer"
+        format: "int64"
+        description: "add_note integer"
+        title: "get_characters_character_id_stats_add_note"
+      added_as_contact_bad:
+        type: "integer"
+        format: "int64"
+        description: "added_as_contact_bad integer"
+        title: "get_characters_character_id_stats_added_as_contact_bad"
+      added_as_contact_good:
+        type: "integer"
+        format: "int64"
+        description: "added_as_contact_good integer"
+        title: "get_characters_character_id_stats_added_as_contact_good"
+      added_as_contact_high:
+        type: "integer"
+        format: "int64"
+        description: "added_as_contact_high integer"
+        title: "get_characters_character_id_stats_added_as_contact_high"
+      added_as_contact_horrible:
+        type: "integer"
+        format: "int64"
+        description: "added_as_contact_horrible integer"
+        title: "get_characters_character_id_stats_added_as_contact_horrible"
+      added_as_contact_neutral:
+        type: "integer"
+        format: "int64"
+        description: "added_as_contact_neutral integer"
+        title: "get_characters_character_id_stats_added_as_contact_neutral"
+      calendar_event_created:
+        type: "integer"
+        format: "int64"
+        description: "calendar_event_created integer"
+        title: "get_characters_character_id_stats_calendar_event_created"
+      chat_messages_alliance:
+        type: "integer"
+        format: "int64"
+        description: "chat_messages_alliance integer"
+        title: "get_characters_character_id_stats_chat_messages_alliance"
+      chat_messages_constellation:
+        type: "integer"
+        format: "int64"
+        description: "chat_messages_constellation integer"
+        title: "get_characters_character_id_stats_chat_messages_constellation"
+      chat_messages_corporation:
+        type: "integer"
+        format: "int64"
+        description: "chat_messages_corporation integer"
+        title: "get_characters_character_id_stats_chat_messages_corporation"
+      chat_messages_fleet:
+        type: "integer"
+        format: "int64"
+        description: "chat_messages_fleet integer"
+        title: "get_characters_character_id_stats_chat_messages_fleet"
+      chat_messages_region:
+        type: "integer"
+        format: "int64"
+        description: "chat_messages_region integer"
+        title: "get_characters_character_id_stats_chat_messages_region"
+      chat_messages_solarsystem:
+        type: "integer"
+        format: "int64"
+        description: "chat_messages_solarsystem integer"
+        title: "get_characters_character_id_stats_chat_messages_solarsystem"
+      chat_messages_warfaction:
+        type: "integer"
+        format: "int64"
+        description: "chat_messages_warfaction integer"
+        title: "get_characters_character_id_stats_chat_messages_warfaction"
+      chat_total_message_length:
+        type: "integer"
+        format: "int64"
+        description: "chat_total_message_length integer"
+        title: "get_characters_character_id_stats_chat_total_message_length"
+      direct_trades:
+        type: "integer"
+        format: "int64"
+        description: "direct_trades integer"
+        title: "get_characters_character_id_stats_direct_trades"
+      fleet_broadcasts:
+        type: "integer"
+        format: "int64"
+        description: "fleet_broadcasts integer"
+        title: "get_characters_character_id_stats_fleet_broadcasts"
+      fleet_joins:
+        type: "integer"
+        format: "int64"
+        description: "fleet_joins integer"
+        title: "get_characters_character_id_stats_fleet_joins"
+      mails_received:
+        type: "integer"
+        format: "int64"
+        description: "mails_received integer"
+        title: "get_characters_character_id_stats_mails_received"
+      mails_sent:
+        type: "integer"
+        format: "int64"
+        description: "mails_sent integer"
+        title: "get_characters_character_id_stats_mails_sent"
+    description: "social object"
+  get_characters_character_id_stats_travel:
+    properties:
+      acceleration_gate_activations:
+        type: "integer"
+        format: "int64"
+        description: "acceleration_gate_activations integer"
+        title: "get_characters_character_id_stats_acceleration_gate_activations"
+      align_to:
+        type: "integer"
+        format: "int64"
+        description: "align_to integer"
+        title: "get_characters_character_id_stats_align_to"
+      distance_warped_high_sec:
+        type: "integer"
+        format: "int64"
+        description: "distance_warped_high_sec integer"
+        title: "get_characters_character_id_stats_distance_warped_high_sec"
+      distance_warped_low_sec:
+        type: "integer"
+        format: "int64"
+        description: "distance_warped_low_sec integer"
+        title: "get_characters_character_id_stats_distance_warped_low_sec"
+      distance_warped_null_sec:
+        type: "integer"
+        format: "int64"
+        description: "distance_warped_null_sec integer"
+        title: "get_characters_character_id_stats_distance_warped_null_sec"
+      distance_warped_wormhole:
+        type: "integer"
+        format: "int64"
+        description: "distance_warped_wormhole integer"
+        title: "get_characters_character_id_stats_distance_warped_wormhole"
+      docks_high_sec:
+        type: "integer"
+        format: "int64"
+        description: "docks_high_sec integer"
+        title: "get_characters_character_id_stats_docks_high_sec"
+      docks_low_sec:
+        type: "integer"
+        format: "int64"
+        description: "docks_low_sec integer"
+        title: "get_characters_character_id_stats_docks_low_sec"
+      docks_null_sec:
+        type: "integer"
+        format: "int64"
+        description: "docks_null_sec integer"
+        title: "get_characters_character_id_stats_docks_null_sec"
+      jumps_stargate_high_sec:
+        type: "integer"
+        format: "int64"
+        description: "jumps_stargate_high_sec integer"
+        title: "get_characters_character_id_stats_jumps_stargate_high_sec"
+      jumps_stargate_low_sec:
+        type: "integer"
+        format: "int64"
+        description: "jumps_stargate_low_sec integer"
+        title: "get_characters_character_id_stats_jumps_stargate_low_sec"
+      jumps_stargate_null_sec:
+        type: "integer"
+        format: "int64"
+        description: "jumps_stargate_null_sec integer"
+        title: "get_characters_character_id_stats_jumps_stargate_null_sec"
+      jumps_wormhole:
+        type: "integer"
+        format: "int64"
+        description: "jumps_wormhole integer"
+        title: "get_characters_character_id_stats_jumps_wormhole"
+      warps_high_sec:
+        type: "integer"
+        format: "int64"
+        description: "warps_high_sec integer"
+        title: "get_characters_character_id_stats_warps_high_sec"
+      warps_low_sec:
+        type: "integer"
+        format: "int64"
+        description: "warps_low_sec integer"
+        title: "get_characters_character_id_stats_warps_low_sec"
+      warps_null_sec:
+        type: "integer"
+        format: "int64"
+        description: "warps_null_sec integer"
+        title: "get_characters_character_id_stats_warps_null_sec"
+      warps_to_bookmark:
+        type: "integer"
+        format: "int64"
+        description: "warps_to_bookmark integer"
+        title: "get_characters_character_id_stats_warps_to_bookmark"
+      warps_to_celestial:
+        type: "integer"
+        format: "int64"
+        description: "warps_to_celestial integer"
+        title: "get_characters_character_id_stats_warps_to_celestial"
+      warps_to_fleet_member:
+        type: "integer"
+        format: "int64"
+        description: "warps_to_fleet_member integer"
+        title: "get_characters_character_id_stats_warps_to_fleet_member"
+      warps_to_scan_result:
+        type: "integer"
+        format: "int64"
+        description: "warps_to_scan_result integer"
+        title: "get_characters_character_id_stats_warps_to_scan_result"
+      warps_wormhole:
+        type: "integer"
+        format: "int64"
+        description: "warps_wormhole integer"
+        title: "get_characters_character_id_stats_warps_wormhole"
+    description: "travel object"
+  get_characters_character_id_stats_200_ok:
+    required:
+    - "year"
+    properties:
+      character:
+        $ref: "#/definitions/get_characters_character_id_stats_character"
+      combat:
+        $ref: "#/definitions/get_characters_character_id_stats_combat"
+      industry:
+        $ref: "#/definitions/get_characters_character_id_stats_industry"
+      inventory:
+        $ref: "#/definitions/get_characters_character_id_stats_inventory"
+      isk:
+        $ref: "#/definitions/get_characters_character_id_stats_isk"
+      market:
+        $ref: "#/definitions/get_characters_character_id_stats_market"
+      mining:
+        $ref: "#/definitions/get_characters_character_id_stats_mining"
+      module:
+        $ref: "#/definitions/get_characters_character_id_stats_module"
+      orbital:
+        $ref: "#/definitions/get_characters_character_id_stats_orbital"
+      pve:
+        $ref: "#/definitions/get_characters_character_id_stats_pve"
+      social:
+        $ref: "#/definitions/get_characters_character_id_stats_social"
+      travel:
+        $ref: "#/definitions/get_characters_character_id_stats_travel"
+      year:
+        type: "integer"
+        format: "int32"
+        description: "Gregorian year for this set of aggregates"
+        title: "get_characters_character_id_stats_year"
+    description: "Aggregate stats for a year"
   get_corporations_corporation_id_alliancehistory_200_ok:
     required:
     - "record_id"

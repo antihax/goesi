@@ -1517,7 +1517,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotificationsContacts(ctx 
 
 /*
 CharacterApiService Get character portraits
-Get portrait urls for a character  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/portrait/)
+Get portrait urls for a character  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdPortraitOpts - Optional Parameters:

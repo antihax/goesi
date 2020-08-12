@@ -23041,7 +23041,7 @@ paths:
       - "Character"
       summary: "Get character portraits"
       description: "Get portrait urls for a character\n\n---\n\nThis route expires\
-        \ daily at 11:05\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/portrait/)"
+        \ daily at 11:05"
       operationId: "get_characters_character_id_portrait"
       parameters:
       - name: "character_id"
@@ -23078,10 +23078,10 @@ paths:
             $ref: "#/definitions/get_characters_character_id_portrait_ok"
           examples:
             application/json:
-              px128x128: "https://images.evetech.net/Character/95465499_128.jpg"
-              px256x256: "https://images.evetech.net/Character/95465499_256.jpg"
-              px512x512: "https://images.evetech.net/Character/95465499_512.jpg"
-              px64x64: "https://images.evetech.net/Character/95465499_64.jpg"
+              px128x128: "https://images.evetech.net/characters/95465499/portrait?tenant=tranquility&size=128"
+              px256x256: "https://images.evetech.net/characters/95465499/portrait?tenant=tranquility&size=256"
+              px512x512: "https://images.evetech.net/characters/95465499/portrait?tenant=tranquility&size=512"
+              px64x64: "https://images.evetech.net/characters/95465499/portrait?tenant=tranquility&size=64"
           headers:
             Cache-Control:
               type: "string"
@@ -23153,7 +23153,9 @@ paths:
             application/json:
               error: "Gateway timeout message"
       x-alternate-versions:
+      - "dev"
       - "v2"
+      - "v3"
   /v2/characters/{character_id}/roles/:
     get:
       tags:
@@ -28644,7 +28646,9 @@ paths:
       - evesso:
         - "esi-characters.read_notifications.v1"
       x-alternate-versions:
+      - "dev"
       - "v5"
+      - "v6"
       x-cached-seconds: 600
   /v5/corporations/{corporation_id}/assets/:
     get:

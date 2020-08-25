@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 > GetCharactersCharacterIdPortraitOk GetCharactersCharacterIdPortrait(ctx, characterId, optional)
 Get character portraits
 
-Get portrait urls for a character  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/portrait/)
+Get portrait urls for a character  ---  This route expires daily at 11:05
 
 ### Required Parameters
 

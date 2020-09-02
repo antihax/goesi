@@ -46,7 +46,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -102,7 +101,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -158,7 +156,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -212,7 +209,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -266,7 +262,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "version_a"
@@ -366,7 +361,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -420,7 +414,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -541,7 +534,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -596,7 +588,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "version"
@@ -659,7 +650,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -713,7 +703,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -767,7 +756,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -821,7 +809,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -875,7 +862,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -929,7 +915,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       responses:
@@ -983,7 +968,6 @@ paths:
         default: "tranquility"
         enum:
         - "tranquility"
-        - "singularity"
         x-exportParamName: "Datasource"
         x-optionalDataType: "String"
       - name: "token"
@@ -1241,7 +1225,6 @@ parameters:
     default: "tranquility"
     enum:
     - "tranquility"
-    - "singularity"
     x-exportParamName: "Datasource"
     x-optionalDataType: "String"
   token:

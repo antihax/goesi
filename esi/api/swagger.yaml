@@ -28760,8 +28760,6 @@ securityDefinitions:
       esi-corporations.read_structures.v1: "EVE SSO scope esi-corporations.read_structures.v1"
       esi-corporations.read_titles.v1: "EVE SSO scope esi-corporations.read_titles.v1"
       esi-corporations.track_members.v1: "EVE SSO scope esi-corporations.track_members.v1"
-      esi-fittings.read_fittings.v1: "EVE SSO scope esi-fittings.read_fittings.v1"
-      esi-fittings.write_fittings.v1: "EVE SSO scope esi-fittings.write_fittings.v1"
       esi-fleets.read_fleet.v1: "EVE SSO scope esi-fleets.read_fleet.v1"
       esi-fleets.write_fleet.v1: "EVE SSO scope esi-fleets.write_fleet.v1"
       esi-industry.read_character_jobs.v1: "EVE SSO scope esi-industry.read_character_jobs.v1"

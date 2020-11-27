@@ -218,12 +218,7 @@ Class | Method | HTTP request | Description
 *UserInterfaceApi* | [**PostUiOpenwindowInformation**](docs/UserInterfaceApi.md#postuiopenwindowinformation) | **Post** /v1/ui/openwindow/information/ | Open Information Window
 *UserInterfaceApi* | [**PostUiOpenwindowMarketdetails**](docs/UserInterfaceApi.md#postuiopenwindowmarketdetails) | **Post** /v1/ui/openwindow/marketdetails/ | Open Market Details
 *UserInterfaceApi* | [**PostUiOpenwindowNewmail**](docs/UserInterfaceApi.md#postuiopenwindownewmail) | **Post** /v1/ui/openwindow/newmail/ | Open New Mail Window
-*WalletApi* | [**GetCharactersCharacterIdWallet**](docs/WalletApi.md#getcharacterscharacteridwallet) | **Get** /v1/characters/{character_id}/wallet/ | Get a character&#39;s wallet balance
-*WalletApi* | [**GetCharactersCharacterIdWalletJournal**](docs/WalletApi.md#getcharacterscharacteridwalletjournal) | **Get** /v6/characters/{character_id}/wallet/journal/ | Get character wallet journal
-*WalletApi* | [**GetCharactersCharacterIdWalletTransactions**](docs/WalletApi.md#getcharacterscharacteridwallettransactions) | **Get** /v1/characters/{character_id}/wallet/transactions/ | Get wallet transactions
 *WalletApi* | [**GetCorporationsCorporationIdWallets**](docs/WalletApi.md#getcorporationscorporationidwallets) | **Get** /v1/corporations/{corporation_id}/wallets/ | Returns a corporation&#39;s wallet balance
-*WalletApi* | [**GetCorporationsCorporationIdWalletsDivisionJournal**](docs/WalletApi.md#getcorporationscorporationidwalletsdivisionjournal) | **Get** /v4/corporations/{corporation_id}/wallets/{division}/journal/ | Get corporation wallet journal
-*WalletApi* | [**GetCorporationsCorporationIdWalletsDivisionTransactions**](docs/WalletApi.md#getcorporationscorporationidwalletsdivisiontransactions) | **Get** /v1/corporations/{corporation_id}/wallets/{division}/transactions/ | Get corporation wallet transactions
 *WarsApi* | [**GetWars**](docs/WarsApi.md#getwars) | **Get** /v1/wars/ | List wars
 *WarsApi* | [**GetWarsWarId**](docs/WarsApi.md#getwarswarid) | **Get** /v1/wars/{war_id}/ | Get war information
 *WarsApi* | [**GetWarsWarIdKillmails**](docs/WarsApi.md#getwarswaridkillmails) | **Get** /v1/wars/{war_id}/killmails/ | List kills for a war
@@ -333,8 +328,6 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdStatsSocial](docs/GetCharactersCharacterIdStatsSocial.md)
  - [GetCharactersCharacterIdStatsTravel](docs/GetCharactersCharacterIdStatsTravel.md)
  - [GetCharactersCharacterIdTitles200Ok](docs/GetCharactersCharacterIdTitles200Ok.md)
- - [GetCharactersCharacterIdWalletJournal200Ok](docs/GetCharactersCharacterIdWalletJournal200Ok.md)
- - [GetCharactersCharacterIdWalletTransactions200Ok](docs/GetCharactersCharacterIdWalletTransactions200Ok.md)
  - [GetContractsPublicBidsContractId200Ok](docs/GetContractsPublicBidsContractId200Ok.md)
  - [GetContractsPublicBidsContractIdForbidden](docs/GetContractsPublicBidsContractIdForbidden.md)
  - [GetContractsPublicBidsContractIdNotFound](docs/GetContractsPublicBidsContractIdNotFound.md)
@@ -393,8 +386,6 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdStructuresService](docs/GetCorporationsCorporationIdStructuresService.md)
  - [GetCorporationsCorporationIdTitles200Ok](docs/GetCorporationsCorporationIdTitles200Ok.md)
  - [GetCorporationsCorporationIdWallets200Ok](docs/GetCorporationsCorporationIdWallets200Ok.md)
- - [GetCorporationsCorporationIdWalletsDivisionJournal200Ok](docs/GetCorporationsCorporationIdWalletsDivisionJournal200Ok.md)
- - [GetCorporationsCorporationIdWalletsDivisionTransactions200Ok](docs/GetCorporationsCorporationIdWalletsDivisionTransactions200Ok.md)
  - [GetDogmaAttributesAttributeIdNotFound](docs/GetDogmaAttributesAttributeIdNotFound.md)
  - [GetDogmaAttributesAttributeIdOk](docs/GetDogmaAttributesAttributeIdOk.md)
  - [GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute](docs/GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute.md)
@@ -659,7 +650,6 @@ Class | Method | HTTP request | Description
  - **esi-ui.open_window.v1**: EVE SSO scope esi-ui.open_window.v1
  - **esi-ui.write_waypoint.v1**: EVE SSO scope esi-ui.write_waypoint.v1
  - **esi-universe.read_structures.v1**: EVE SSO scope esi-universe.read_structures.v1
- - **esi-wallet.read_character_wallet.v1**: EVE SSO scope esi-wallet.read_character_wallet.v1
  - **esi-wallet.read_corporation_wallets.v1**: EVE SSO scope esi-wallet.read_corporation_wallets.v1
 
 Example

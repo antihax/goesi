@@ -153,17 +153,6 @@ Class | Method | HTTP request | Description
 *MailApi* | [**PostCharactersCharacterIdMail**](docs/MailApi.md#postcharacterscharacteridmail) | **Post** /v1/characters/{character_id}/mail/ | Send a new mail
 *MailApi* | [**PostCharactersCharacterIdMailLabels**](docs/MailApi.md#postcharacterscharacteridmaillabels) | **Post** /v2/characters/{character_id}/mail/labels/ | Create a mail label
 *MailApi* | [**PutCharactersCharacterIdMailMailId**](docs/MailApi.md#putcharacterscharacteridmailmailid) | **Put** /v1/characters/{character_id}/mail/{mail_id}/ | Update metadata about a mail
-*MarketApi* | [**GetCharactersCharacterIdOrders**](docs/MarketApi.md#getcharacterscharacteridorders) | **Get** /v2/characters/{character_id}/orders/ | List open orders from a character
-*MarketApi* | [**GetCharactersCharacterIdOrdersHistory**](docs/MarketApi.md#getcharacterscharacteridordershistory) | **Get** /v1/characters/{character_id}/orders/history/ | List historical orders by a character
-*MarketApi* | [**GetCorporationsCorporationIdOrders**](docs/MarketApi.md#getcorporationscorporationidorders) | **Get** /v3/corporations/{corporation_id}/orders/ | List open orders from a corporation
-*MarketApi* | [**GetCorporationsCorporationIdOrdersHistory**](docs/MarketApi.md#getcorporationscorporationidordershistory) | **Get** /v2/corporations/{corporation_id}/orders/history/ | List historical orders from a corporation
-*MarketApi* | [**GetMarketsGroups**](docs/MarketApi.md#getmarketsgroups) | **Get** /v1/markets/groups/ | Get item groups
-*MarketApi* | [**GetMarketsGroupsMarketGroupId**](docs/MarketApi.md#getmarketsgroupsmarketgroupid) | **Get** /v1/markets/groups/{market_group_id}/ | Get item group information
-*MarketApi* | [**GetMarketsPrices**](docs/MarketApi.md#getmarketsprices) | **Get** /v1/markets/prices/ | List market prices
-*MarketApi* | [**GetMarketsRegionIdHistory**](docs/MarketApi.md#getmarketsregionidhistory) | **Get** /v1/markets/{region_id}/history/ | List historical market statistics in a region
-*MarketApi* | [**GetMarketsRegionIdOrders**](docs/MarketApi.md#getmarketsregionidorders) | **Get** /v1/markets/{region_id}/orders/ | List orders in a region
-*MarketApi* | [**GetMarketsRegionIdTypes**](docs/MarketApi.md#getmarketsregionidtypes) | **Get** /v1/markets/{region_id}/types/ | List type IDs relevant to a market
-*MarketApi* | [**GetMarketsStructuresStructureId**](docs/MarketApi.md#getmarketsstructuresstructureid) | **Get** /v1/markets/structures/{structure_id}/ | List orders in a structure
 *OpportunitiesApi* | [**GetCharactersCharacterIdOpportunities**](docs/OpportunitiesApi.md#getcharacterscharacteridopportunities) | **Get** /v1/characters/{character_id}/opportunities/ | Get a character&#39;s completed tasks
 *OpportunitiesApi* | [**GetOpportunitiesGroups**](docs/OpportunitiesApi.md#getopportunitiesgroups) | **Get** /v1/opportunities/groups/ | Get opportunities groups
 *OpportunitiesApi* | [**GetOpportunitiesGroupsGroupId**](docs/OpportunitiesApi.md#getopportunitiesgroupsgroupid) | **Get** /v1/opportunities/groups/{group_id}/ | Get opportunities group
@@ -218,12 +207,7 @@ Class | Method | HTTP request | Description
 *UserInterfaceApi* | [**PostUiOpenwindowInformation**](docs/UserInterfaceApi.md#postuiopenwindowinformation) | **Post** /v1/ui/openwindow/information/ | Open Information Window
 *UserInterfaceApi* | [**PostUiOpenwindowMarketdetails**](docs/UserInterfaceApi.md#postuiopenwindowmarketdetails) | **Post** /v1/ui/openwindow/marketdetails/ | Open Market Details
 *UserInterfaceApi* | [**PostUiOpenwindowNewmail**](docs/UserInterfaceApi.md#postuiopenwindownewmail) | **Post** /v1/ui/openwindow/newmail/ | Open New Mail Window
-*WalletApi* | [**GetCharactersCharacterIdWallet**](docs/WalletApi.md#getcharacterscharacteridwallet) | **Get** /v1/characters/{character_id}/wallet/ | Get a character&#39;s wallet balance
-*WalletApi* | [**GetCharactersCharacterIdWalletJournal**](docs/WalletApi.md#getcharacterscharacteridwalletjournal) | **Get** /v6/characters/{character_id}/wallet/journal/ | Get character wallet journal
-*WalletApi* | [**GetCharactersCharacterIdWalletTransactions**](docs/WalletApi.md#getcharacterscharacteridwallettransactions) | **Get** /v1/characters/{character_id}/wallet/transactions/ | Get wallet transactions
 *WalletApi* | [**GetCorporationsCorporationIdWallets**](docs/WalletApi.md#getcorporationscorporationidwallets) | **Get** /v1/corporations/{corporation_id}/wallets/ | Returns a corporation&#39;s wallet balance
-*WalletApi* | [**GetCorporationsCorporationIdWalletsDivisionJournal**](docs/WalletApi.md#getcorporationscorporationidwalletsdivisionjournal) | **Get** /v4/corporations/{corporation_id}/wallets/{division}/journal/ | Get corporation wallet journal
-*WalletApi* | [**GetCorporationsCorporationIdWalletsDivisionTransactions**](docs/WalletApi.md#getcorporationscorporationidwalletsdivisiontransactions) | **Get** /v1/corporations/{corporation_id}/wallets/{division}/transactions/ | Get corporation wallet transactions
 *WarsApi* | [**GetWars**](docs/WarsApi.md#getwars) | **Get** /v1/wars/ | List wars
 *WarsApi* | [**GetWarsWarId**](docs/WarsApi.md#getwarswarid) | **Get** /v1/wars/{war_id}/ | Get war information
 *WarsApi* | [**GetWarsWarIdKillmails**](docs/WarsApi.md#getwarswaridkillmails) | **Get** /v1/wars/{war_id}/killmails/ | List kills for a war
@@ -298,8 +282,6 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdOk](docs/GetCharactersCharacterIdOk.md)
  - [GetCharactersCharacterIdOnlineOk](docs/GetCharactersCharacterIdOnlineOk.md)
  - [GetCharactersCharacterIdOpportunities200Ok](docs/GetCharactersCharacterIdOpportunities200Ok.md)
- - [GetCharactersCharacterIdOrders200Ok](docs/GetCharactersCharacterIdOrders200Ok.md)
- - [GetCharactersCharacterIdOrdersHistory200Ok](docs/GetCharactersCharacterIdOrdersHistory200Ok.md)
  - [GetCharactersCharacterIdPlanets200Ok](docs/GetCharactersCharacterIdPlanets200Ok.md)
  - [GetCharactersCharacterIdPlanetsPlanetIdContent](docs/GetCharactersCharacterIdPlanetsPlanetIdContent.md)
  - [GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails](docs/GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails.md)
@@ -333,8 +315,6 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdStatsSocial](docs/GetCharactersCharacterIdStatsSocial.md)
  - [GetCharactersCharacterIdStatsTravel](docs/GetCharactersCharacterIdStatsTravel.md)
  - [GetCharactersCharacterIdTitles200Ok](docs/GetCharactersCharacterIdTitles200Ok.md)
- - [GetCharactersCharacterIdWalletJournal200Ok](docs/GetCharactersCharacterIdWalletJournal200Ok.md)
- - [GetCharactersCharacterIdWalletTransactions200Ok](docs/GetCharactersCharacterIdWalletTransactions200Ok.md)
  - [GetContractsPublicBidsContractId200Ok](docs/GetContractsPublicBidsContractId200Ok.md)
  - [GetContractsPublicBidsContractIdForbidden](docs/GetContractsPublicBidsContractIdForbidden.md)
  - [GetContractsPublicBidsContractIdNotFound](docs/GetContractsPublicBidsContractIdNotFound.md)
@@ -380,8 +360,6 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdMembertracking200Ok](docs/GetCorporationsCorporationIdMembertracking200Ok.md)
  - [GetCorporationsCorporationIdNotFound](docs/GetCorporationsCorporationIdNotFound.md)
  - [GetCorporationsCorporationIdOk](docs/GetCorporationsCorporationIdOk.md)
- - [GetCorporationsCorporationIdOrders200Ok](docs/GetCorporationsCorporationIdOrders200Ok.md)
- - [GetCorporationsCorporationIdOrdersHistory200Ok](docs/GetCorporationsCorporationIdOrdersHistory200Ok.md)
  - [GetCorporationsCorporationIdRoles200Ok](docs/GetCorporationsCorporationIdRoles200Ok.md)
  - [GetCorporationsCorporationIdRolesHistory200Ok](docs/GetCorporationsCorporationIdRolesHistory200Ok.md)
  - [GetCorporationsCorporationIdShareholders200Ok](docs/GetCorporationsCorporationIdShareholders200Ok.md)
@@ -393,8 +371,6 @@ Class | Method | HTTP request | Description
  - [GetCorporationsCorporationIdStructuresService](docs/GetCorporationsCorporationIdStructuresService.md)
  - [GetCorporationsCorporationIdTitles200Ok](docs/GetCorporationsCorporationIdTitles200Ok.md)
  - [GetCorporationsCorporationIdWallets200Ok](docs/GetCorporationsCorporationIdWallets200Ok.md)
- - [GetCorporationsCorporationIdWalletsDivisionJournal200Ok](docs/GetCorporationsCorporationIdWalletsDivisionJournal200Ok.md)
- - [GetCorporationsCorporationIdWalletsDivisionTransactions200Ok](docs/GetCorporationsCorporationIdWalletsDivisionTransactions200Ok.md)
  - [GetDogmaAttributesAttributeIdNotFound](docs/GetDogmaAttributesAttributeIdNotFound.md)
  - [GetDogmaAttributesAttributeIdOk](docs/GetDogmaAttributesAttributeIdOk.md)
  - [GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute](docs/GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute.md)
@@ -459,17 +435,6 @@ Class | Method | HTTP request | Description
  - [GetLoyaltyStoresCorporationIdOffers200Ok](docs/GetLoyaltyStoresCorporationIdOffers200Ok.md)
  - [GetLoyaltyStoresCorporationIdOffersNotFound](docs/GetLoyaltyStoresCorporationIdOffersNotFound.md)
  - [GetLoyaltyStoresCorporationIdOffersRequiredItem](docs/GetLoyaltyStoresCorporationIdOffersRequiredItem.md)
- - [GetMarketsGroupsMarketGroupIdNotFound](docs/GetMarketsGroupsMarketGroupIdNotFound.md)
- - [GetMarketsGroupsMarketGroupIdOk](docs/GetMarketsGroupsMarketGroupIdOk.md)
- - [GetMarketsPrices200Ok](docs/GetMarketsPrices200Ok.md)
- - [GetMarketsRegionIdHistory200Ok](docs/GetMarketsRegionIdHistory200Ok.md)
- - [GetMarketsRegionIdHistoryError520](docs/GetMarketsRegionIdHistoryError520.md)
- - [GetMarketsRegionIdHistoryNotFound](docs/GetMarketsRegionIdHistoryNotFound.md)
- - [GetMarketsRegionIdHistoryUnprocessableEntity](docs/GetMarketsRegionIdHistoryUnprocessableEntity.md)
- - [GetMarketsRegionIdOrders200Ok](docs/GetMarketsRegionIdOrders200Ok.md)
- - [GetMarketsRegionIdOrdersNotFound](docs/GetMarketsRegionIdOrdersNotFound.md)
- - [GetMarketsRegionIdOrdersUnprocessableEntity](docs/GetMarketsRegionIdOrdersUnprocessableEntity.md)
- - [GetMarketsStructuresStructureId200Ok](docs/GetMarketsStructuresStructureId200Ok.md)
  - [GetOpportunitiesGroupsGroupIdOk](docs/GetOpportunitiesGroupsGroupIdOk.md)
  - [GetOpportunitiesTasksTaskIdOk](docs/GetOpportunitiesTasksTaskIdOk.md)
  - [GetRouteOriginDestinationNotFound](docs/GetRouteOriginDestinationNotFound.md)
@@ -634,6 +599,8 @@ Class | Method | HTTP request | Description
  - **esi-corporations.read_structures.v1**: EVE SSO scope esi-corporations.read_structures.v1
  - **esi-corporations.read_titles.v1**: EVE SSO scope esi-corporations.read_titles.v1
  - **esi-corporations.track_members.v1**: EVE SSO scope esi-corporations.track_members.v1
+ - **esi-fittings.read_fittings.v1**: EVE SSO scope esi-fittings.read_fittings.v1
+ - **esi-fittings.write_fittings.v1**: EVE SSO scope esi-fittings.write_fittings.v1
  - **esi-fleets.read_fleet.v1**: EVE SSO scope esi-fleets.read_fleet.v1
  - **esi-fleets.write_fleet.v1**: EVE SSO scope esi-fleets.write_fleet.v1
  - **esi-industry.read_character_jobs.v1**: EVE SSO scope esi-industry.read_character_jobs.v1
@@ -648,9 +615,6 @@ Class | Method | HTTP request | Description
  - **esi-mail.organize_mail.v1**: EVE SSO scope esi-mail.organize_mail.v1
  - **esi-mail.read_mail.v1**: EVE SSO scope esi-mail.read_mail.v1
  - **esi-mail.send_mail.v1**: EVE SSO scope esi-mail.send_mail.v1
- - **esi-markets.read_character_orders.v1**: EVE SSO scope esi-markets.read_character_orders.v1
- - **esi-markets.read_corporation_orders.v1**: EVE SSO scope esi-markets.read_corporation_orders.v1
- - **esi-markets.structure_markets.v1**: EVE SSO scope esi-markets.structure_markets.v1
  - **esi-planets.manage_planets.v1**: EVE SSO scope esi-planets.manage_planets.v1
  - **esi-planets.read_customs_offices.v1**: EVE SSO scope esi-planets.read_customs_offices.v1
  - **esi-search.search_structures.v1**: EVE SSO scope esi-search.search_structures.v1
@@ -659,7 +623,6 @@ Class | Method | HTTP request | Description
  - **esi-ui.open_window.v1**: EVE SSO scope esi-ui.open_window.v1
  - **esi-ui.write_waypoint.v1**: EVE SSO scope esi-ui.write_waypoint.v1
  - **esi-universe.read_structures.v1**: EVE SSO scope esi-universe.read_structures.v1
- - **esi-wallet.read_character_wallet.v1**: EVE SSO scope esi-wallet.read_character_wallet.v1
  - **esi-wallet.read_corporation_wallets.v1**: EVE SSO scope esi-wallet.read_corporation_wallets.v1
 
 Example

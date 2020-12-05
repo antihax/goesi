@@ -4843,6 +4843,176 @@ paths:
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
+  /v1/characters/{character_id}/orders/history/:
+    get:
+      tags:
+      - "Market"
+      summary: "List historical orders by a character"
+      description: "List cancelled and expired market orders placed by a character\
+        \ up to 90 days in the past.\n\n---\n\nThis route is cached for up to 3600\
+        \ seconds"
+      operationId: "get_characters_character_id_orders_history"
+      parameters:
+      - name: "character_id"
+        in: "path"
+        description: "An EVE character ID"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "CharacterId"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "page"
+        in: "query"
+        description: "Which page of results to return"
+        required: false
+        type: "integer"
+        default: 1
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "Page"
+        x-optionalDataType: "Int32"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "Expired and cancelled market orders placed by a character"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "get_characters_character_id_orders_history_ok"
+            items:
+              $ref: "#/definitions/get_characters_character_id_orders_history_200_ok"
+            maxItems: 1000
+          examples:
+            application/json:
+            - duration: 30
+              escrow: 45.6
+              is_buy_order: true
+              is_corporation: false
+              issued: "2016-09-03T05:12:25Z"
+              location_id: 456
+              min_volume: 1
+              order_id: 123
+              price: 33.3
+              range: "station"
+              region_id: 123
+              state: "expired"
+              type_id: 456
+              volume_remain: 4422
+              volume_total: 123456
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            X-Pages:
+              type: "integer"
+              format: "int32"
+              description: "Maximum page number"
+              default: 1
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        401:
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/unauthorized"
+          examples:
+            application/json:
+              error: "Unauthorized message"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      security:
+      - evesso:
+        - "esi-markets.read_character_orders.v1"
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
+      x-cached-seconds: 3600
   /v1/characters/{character_id}/planets/:
     get:
       tags:
@@ -5418,6 +5588,300 @@ paths:
       - evesso:
         - "esi-characters.read_titles.v1"
       x-alternate-versions:
+      - "legacy"
+      - "v1"
+      x-cached-seconds: 3600
+  /v1/characters/{character_id}/wallet/:
+    get:
+      tags:
+      - "Wallet"
+      summary: "Get a character's wallet balance"
+      description: "Returns a character's wallet balance\n\n---\n\nThis route is cached\
+        \ for up to 120 seconds\n\n---\n[Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/)"
+      operationId: "get_characters_character_id_wallet"
+      parameters:
+      - name: "character_id"
+        in: "path"
+        description: "An EVE character ID"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "CharacterId"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "Wallet balance"
+          schema:
+            type: "number"
+            format: "double"
+            description: "Wallet balance"
+            title: "get_characters_character_id_wallet_ok"
+          examples:
+            application/json: 29500.01
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        401:
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/unauthorized"
+          examples:
+            application/json:
+              error: "Unauthorized message"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      security:
+      - evesso:
+        - "esi-wallet.read_character_wallet.v1"
+      x-alternate-versions:
+      - "legacy"
+      - "v1"
+      x-cached-seconds: 120
+  /v1/characters/{character_id}/wallet/transactions/:
+    get:
+      tags:
+      - "Wallet"
+      summary: "Get wallet transactions"
+      description: "Get wallet transactions of a character\n\n---\n\nThis route is\
+        \ cached for up to 3600 seconds"
+      operationId: "get_characters_character_id_wallet_transactions"
+      parameters:
+      - name: "character_id"
+        in: "path"
+        description: "An EVE character ID"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "CharacterId"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "from_id"
+        in: "query"
+        description: "Only show transactions happened before the one referenced by\
+          \ this id"
+        required: false
+        type: "integer"
+        format: "int64"
+        x-exportParamName: "FromId"
+        x-optionalDataType: "Int64"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "Wallet transactions"
+          schema:
+            type: "array"
+            description: "Wallet transactions"
+            title: "get_characters_character_id_wallet_transactions_ok"
+            items:
+              $ref: "#/definitions/get_characters_character_id_wallet_transactions_200_ok"
+            maxItems: 2500
+          examples:
+            application/json:
+            - client_id: 54321
+              date: "2016-10-24T09:00:00Z"
+              is_buy: true
+              is_personal: true
+              journal_ref_id: 67890
+              location_id: 60014719
+              quantity: 1
+              transaction_id: 1234567890
+              type_id: 587
+              unit_price: 1
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        401:
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/unauthorized"
+          examples:
+            application/json:
+              error: "Unauthorized message"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      security:
+      - evesso:
+        - "esi-wallet.read_character_wallet.v1"
+      x-alternate-versions:
+      - "dev"
       - "legacy"
       - "v1"
       x-cached-seconds: 3600
@@ -10712,6 +11176,176 @@ paths:
       x-required-roles:
       - "Accountant"
       - "Junior_Accountant"
+  /v1/corporations/{corporation_id}/wallets/{division}/transactions/:
+    get:
+      tags:
+      - "Wallet"
+      summary: "Get corporation wallet transactions"
+      description: "Get wallet transactions of a corporation\n\n---\n\nThis route\
+        \ is cached for up to 3600 seconds\n\n---\nRequires one of the following EVE\
+        \ corporation role(s): Accountant, Junior_Accountant"
+      operationId: "get_corporations_corporation_id_wallets_division_transactions"
+      parameters:
+      - name: "corporation_id"
+        in: "path"
+        description: "An EVE corporation ID"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "CorporationId"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "division"
+        in: "path"
+        description: "Wallet key of the division to fetch journals from"
+        required: true
+        type: "integer"
+        maximum: 7
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "Division"
+      - name: "from_id"
+        in: "query"
+        description: "Only show journal entries happened before the transaction referenced\
+          \ by this id"
+        required: false
+        type: "integer"
+        format: "int64"
+        x-exportParamName: "FromId"
+        x-optionalDataType: "Int64"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "Wallet transactions"
+          schema:
+            type: "array"
+            description: "Wallet transactions"
+            title: "get_corporations_corporation_id_wallets_division_transactions_ok"
+            items:
+              $ref: "#/definitions/get_corporations_corporation_id_wallets_division_transactions_200_ok"
+            maxItems: 2500
+          examples:
+            application/json:
+            - client_id: 54321
+              date: "2016-10-24T09:00:00Z"
+              is_buy: true
+              journal_ref_id: 67890
+              location_id: 60014719
+              quantity: 1
+              transaction_id: 1234567890
+              type_id: 587
+              unit_price: 1
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        401:
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/unauthorized"
+          examples:
+            application/json:
+              error: "Unauthorized message"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      security:
+      - evesso:
+        - "esi-wallet.read_corporation_wallets.v1"
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
+      x-cached-seconds: 3600
+      x-required-roles:
+      - "Accountant"
+      - "Junior_Accountant"
   /v1/dogma/attributes/:
     get:
       tags:
@@ -14222,6 +14856,1012 @@ paths:
       - "dev"
       - "legacy"
       - "v1"
+  /v1/markets/groups/:
+    get:
+      tags:
+      - "Market"
+      summary: "Get item groups"
+      description: "Get a list of item groups\n\n---\n\nThis route expires daily at\
+        \ 11:05"
+      operationId: "get_markets_groups"
+      parameters:
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "A list of item group ids"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "get_markets_groups_ok"
+            items:
+              type: "integer"
+              format: "int32"
+              description: "200 ok integer"
+              title: "get_markets_groups_200_ok"
+            maxItems: 5000
+          examples:
+            application/json:
+            - 1
+            - 2
+            - 3
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
+  /v1/markets/groups/{market_group_id}/:
+    get:
+      tags:
+      - "Market"
+      summary: "Get item group information"
+      description: "Get information on an item group\n\n---\n\nThis route expires\
+        \ daily at 11:05"
+      operationId: "get_markets_groups_market_group_id"
+      parameters:
+      - name: "Accept-Language"
+        in: "header"
+        description: "Language to use in the response"
+        required: false
+        type: "string"
+        default: "en-us"
+        enum:
+        - "de"
+        - "en-us"
+        - "fr"
+        - "ja"
+        - "ru"
+        - "ko"
+        x-exportParamName: "AcceptLanguage"
+        x-optionalDataType: "String"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "language"
+        in: "query"
+        description: "Language to use in the response, takes precedence over Accept-Language"
+        required: false
+        type: "string"
+        default: "en-us"
+        enum:
+        - "de"
+        - "en-us"
+        - "fr"
+        - "ja"
+        - "ru"
+        - "ko"
+        x-exportParamName: "Language"
+        x-optionalDataType: "String"
+      - name: "market_group_id"
+        in: "path"
+        description: "An Eve item group ID"
+        required: true
+        type: "integer"
+        format: "int32"
+        x-exportParamName: "MarketGroupId"
+      responses:
+        200:
+          description: "Information about an item group"
+          schema:
+            $ref: "#/definitions/get_markets_groups_market_group_id_ok"
+          examples:
+            application/json:
+              description: "Small, fast vessels suited to a variety of purposes."
+              market_group_id: 5
+              name: "Standard Frigates"
+              parent_group_id: 1361
+              types:
+              - 582
+              - 583
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            Content-Language:
+              type: "string"
+              description: "The language used in the response"
+              enum:
+              - "de"
+              - "en-us"
+              - "fr"
+              - "ja"
+              - "ru"
+              - "ko"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        404:
+          description: "Market group not found"
+          schema:
+            $ref: "#/definitions/get_markets_groups_market_group_id_not_found"
+          examples:
+            application/json:
+              error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
+  /v1/markets/prices/:
+    get:
+      tags:
+      - "Market"
+      summary: "List market prices"
+      description: "Return a list of prices\n\n---\n\nThis route is cached for up\
+        \ to 3600 seconds"
+      operationId: "get_markets_prices"
+      parameters:
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "A list of prices"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "get_markets_prices_ok"
+            items:
+              $ref: "#/definitions/get_markets_prices_200_ok"
+            maxItems: 20000
+          examples:
+            application/json:
+            - adjusted_price: 306988.09
+              average_price: 306292.67
+              type_id: 32772
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
+      x-cached-seconds: 3600
+  /v1/markets/structures/{structure_id}/:
+    get:
+      tags:
+      - "Market"
+      summary: "List orders in a structure"
+      description: "Return all orders in a structure\n\n---\n\nThis route is cached\
+        \ for up to 300 seconds"
+      operationId: "get_markets_structures_structure_id"
+      parameters:
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "page"
+        in: "query"
+        description: "Which page of results to return"
+        required: false
+        type: "integer"
+        default: 1
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "Page"
+        x-optionalDataType: "Int32"
+      - name: "structure_id"
+        in: "path"
+        description: "Return orders in this structure"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-exportParamName: "StructureId"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "A list of orders"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "get_markets_structures_structure_id_ok"
+            items:
+              $ref: "#/definitions/get_markets_structures_structure_id_200_ok"
+            maxItems: 1000
+          examples:
+            application/json:
+            - duration: 90
+              is_buy_order: false
+              issued: "2016-09-03T05:12:25Z"
+              location_id: 1020988381992
+              min_volume: 1
+              order_id: 4623824223
+              price: 9.9
+              range: "region"
+              type_id: 34
+              volume_remain: 1296000
+              volume_total: 2000000
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            X-Pages:
+              type: "integer"
+              format: "int32"
+              description: "Maximum page number"
+              default: 1
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        401:
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/unauthorized"
+          examples:
+            application/json:
+              error: "Unauthorized message"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      security:
+      - evesso:
+        - "esi-markets.structure_markets.v1"
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
+      x-cached-seconds: 300
+  /v1/markets/{region_id}/history/:
+    get:
+      tags:
+      - "Market"
+      summary: "List historical market statistics in a region"
+      description: "Return a list of historical market statistics for the specified\
+        \ type in a region\n\n---\n\nThis route expires daily at 11:05"
+      operationId: "get_markets_region_id_history"
+      parameters:
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "region_id"
+        in: "path"
+        description: "Return statistics in this region"
+        required: true
+        type: "integer"
+        format: "int32"
+        x-exportParamName: "RegionId"
+      - name: "type_id"
+        in: "query"
+        description: "Return statistics for this type"
+        required: true
+        type: "integer"
+        format: "int32"
+        x-exportParamName: "TypeId"
+      responses:
+        200:
+          description: "A list of historical market statistics"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "get_markets_region_id_history_ok"
+            items:
+              $ref: "#/definitions/get_markets_region_id_history_200_ok"
+            maxItems: 500
+          examples:
+            application/json:
+            - average: 5.25
+              date: "2015-05-01"
+              highest: 5.27
+              lowest: 5.11
+              order_count: 2267
+              volume: 16276782035
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        404:
+          description: "Type not found"
+          schema:
+            $ref: "#/definitions/get_markets_region_id_history_not_found"
+          examples:
+            application/json:
+              error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        422:
+          description: "Not found"
+          schema:
+            $ref: "#/definitions/get_markets_region_id_history_unprocessable_entity"
+          examples:
+            application/json:
+              error: "Unprocessable entity message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+        520:
+          description: "Internal error thrown from the EVE server"
+          schema:
+            $ref: "#/definitions/get_markets_region_id_history_error_520"
+          examples:
+            application/json:
+              error: "Error 520 message"
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
+  /v1/markets/{region_id}/orders/:
+    get:
+      tags:
+      - "Market"
+      summary: "List orders in a region"
+      description: "Return a list of orders in a region\n\n---\n\nThis route is cached\
+        \ for up to 300 seconds"
+      operationId: "get_markets_region_id_orders"
+      parameters:
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "order_type"
+        in: "query"
+        description: "Filter buy/sell orders, return all orders by default. If you\
+          \ query without type_id, we always return both buy and sell orders"
+        required: true
+        type: "string"
+        default: "all"
+        enum:
+        - "buy"
+        - "sell"
+        - "all"
+        x-exportParamName: "OrderType"
+      - name: "page"
+        in: "query"
+        description: "Which page of results to return"
+        required: false
+        type: "integer"
+        default: 1
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "Page"
+        x-optionalDataType: "Int32"
+      - name: "region_id"
+        in: "path"
+        description: "Return orders in this region"
+        required: true
+        type: "integer"
+        format: "int32"
+        x-exportParamName: "RegionId"
+      - name: "type_id"
+        in: "query"
+        description: "Return orders only for this type"
+        required: false
+        type: "integer"
+        format: "int32"
+        x-exportParamName: "TypeId"
+        x-optionalDataType: "Int32"
+      responses:
+        200:
+          description: "A list of orders"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "get_markets_region_id_orders_ok"
+            items:
+              $ref: "#/definitions/get_markets_region_id_orders_200_ok"
+            maxItems: 1000
+          examples:
+            application/json:
+            - duration: 90
+              is_buy_order: false
+              issued: "2016-09-03T05:12:25Z"
+              location_id: 60005599
+              min_volume: 1
+              order_id: 4623824223
+              price: 9.9
+              range: "region"
+              system_id: 30000053
+              type_id: 34
+              volume_remain: 1296000
+              volume_total: 2000000
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            X-Pages:
+              type: "integer"
+              format: "int32"
+              description: "Maximum page number"
+              default: 1
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        404:
+          description: "Not found"
+          schema:
+            $ref: "#/definitions/get_markets_region_id_orders_not_found"
+          examples:
+            application/json:
+              error: "Not found message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        422:
+          description: "Not found"
+          schema:
+            $ref: "#/definitions/get_markets_region_id_orders_unprocessable_entity"
+          examples:
+            application/json:
+              error: "Unprocessable entity message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
+      x-cached-seconds: 300
+  /v1/markets/{region_id}/types/:
+    get:
+      tags:
+      - "Market"
+      summary: "List type IDs relevant to a market"
+      description: "Return a list of type IDs that have active orders in the region,\
+        \ for efficient market indexing.\n\n---\n\nThis route is cached for up to\
+        \ 600 seconds"
+      operationId: "get_markets_region_id_types"
+      parameters:
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "page"
+        in: "query"
+        description: "Which page of results to return"
+        required: false
+        type: "integer"
+        default: 1
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "Page"
+        x-optionalDataType: "Int32"
+      - name: "region_id"
+        in: "path"
+        description: "Return statistics in this region"
+        required: true
+        type: "integer"
+        format: "int32"
+        x-exportParamName: "RegionId"
+      responses:
+        200:
+          description: "A list of type IDs"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "get_markets_region_id_types_ok"
+            items:
+              type: "integer"
+              format: "int32"
+              description: "200 ok integer"
+              title: "get_markets_region_id_types_200_ok"
+            maxItems: 1000
+          examples:
+            application/json:
+            - 587
+            - 593
+            - 597
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            X-Pages:
+              type: "integer"
+              format: "int32"
+              description: "Maximum page number"
+              default: 1
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      x-alternate-versions:
+      - "dev"
+      - "legacy"
+      - "v1"
+      x-cached-seconds: 600
   /v1/opportunities/groups/:
     get:
       tags:
@@ -21038,6 +22678,158 @@ paths:
       - "v2"
       - "v3"
       x-cached-seconds: 60
+  /v2/characters/{character_id}/orders/:
+    get:
+      tags:
+      - "Market"
+      summary: "List open orders from a character"
+      description: "List open market orders placed by a character\n\n---\n\nThis route\
+        \ is cached for up to 1200 seconds"
+      operationId: "get_characters_character_id_orders"
+      parameters:
+      - name: "character_id"
+        in: "path"
+        description: "An EVE character ID"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "CharacterId"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "Open market orders placed by a character"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "get_characters_character_id_orders_ok"
+            items:
+              $ref: "#/definitions/get_characters_character_id_orders_200_ok"
+            maxItems: 305
+          examples:
+            application/json:
+            - duration: 30
+              escrow: 45.6
+              is_buy_order: true
+              is_corporation: false
+              issued: "2016-09-03T05:12:25Z"
+              location_id: 456
+              min_volume: 1
+              order_id: 123
+              price: 33.3
+              range: "station"
+              region_id: 123
+              type_id: 456
+              volume_remain: 4422
+              volume_total: 123456
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        401:
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/unauthorized"
+          examples:
+            application/json:
+              error: "Unauthorized message"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      security:
+      - evesso:
+        - "esi-markets.read_character_orders.v1"
+      x-alternate-versions:
+      - "dev"
+      - "v2"
+      x-cached-seconds: 1200
   /v2/characters/{character_id}/portrait/:
     get:
       tags:
@@ -22357,6 +24149,181 @@ paths:
       x-cached-seconds: 600
       x-required-roles:
       - "Director"
+  /v2/corporations/{corporation_id}/orders/history/:
+    get:
+      tags:
+      - "Market"
+      summary: "List historical orders from a corporation"
+      description: "List cancelled and expired market orders placed on behalf of a\
+        \ corporation up to 90 days in the past.\n\n---\n\nThis route is cached for\
+        \ up to 3600 seconds\n\n---\nRequires one of the following EVE corporation\
+        \ role(s): Accountant, Trader"
+      operationId: "get_corporations_corporation_id_orders_history"
+      parameters:
+      - name: "corporation_id"
+        in: "path"
+        description: "An EVE corporation ID"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "CorporationId"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "page"
+        in: "query"
+        description: "Which page of results to return"
+        required: false
+        type: "integer"
+        default: 1
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "Page"
+        x-optionalDataType: "Int32"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "Expired and cancelled market orders placed on behalf of a\
+            \ corporation"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "get_corporations_corporation_id_orders_history_ok"
+            items:
+              $ref: "#/definitions/get_corporations_corporation_id_orders_history_200_ok"
+            maxItems: 1000
+          examples:
+            application/json:
+            - duration: 30
+              escrow: 45.6
+              is_buy_order: true
+              issued: "2016-09-03T05:12:25Z"
+              issued_by: 2112625428
+              location_id: 456
+              min_volume: 1
+              order_id: 123
+              price: 33.3
+              range: "station"
+              region_id: 123
+              state: "expired"
+              type_id: 456
+              volume_remain: 4422
+              volume_total: 123456
+              wallet_division: 1
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            X-Pages:
+              type: "integer"
+              format: "int32"
+              description: "Maximum page number"
+              default: 1
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        401:
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/unauthorized"
+          examples:
+            application/json:
+              error: "Unauthorized message"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      security:
+      - evesso:
+        - "esi-markets.read_corporation_orders.v1"
+      x-alternate-versions:
+      - "dev"
+      - "v2"
+      x-cached-seconds: 3600
+      x-required-roles:
+      - "Accountant"
+      - "Trader"
   /v2/dogma/effects/{effect_id}/:
     get:
       tags:
@@ -24618,6 +26585,178 @@ paths:
       - "dev"
       - "v3"
       x-cached-seconds: 3600
+  /v3/corporations/{corporation_id}/orders/:
+    get:
+      tags:
+      - "Market"
+      summary: "List open orders from a corporation"
+      description: "List open market orders placed on behalf of a corporation\n\n\
+        ---\n\nThis route is cached for up to 1200 seconds\n\n---\nRequires one of\
+        \ the following EVE corporation role(s): Accountant, Trader"
+      operationId: "get_corporations_corporation_id_orders"
+      parameters:
+      - name: "corporation_id"
+        in: "path"
+        description: "An EVE corporation ID"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "CorporationId"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "page"
+        in: "query"
+        description: "Which page of results to return"
+        required: false
+        type: "integer"
+        default: 1
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "Page"
+        x-optionalDataType: "Int32"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "A list of open market orders"
+          schema:
+            type: "array"
+            description: "200 ok array"
+            title: "get_corporations_corporation_id_orders_ok"
+            items:
+              $ref: "#/definitions/get_corporations_corporation_id_orders_200_ok"
+            maxItems: 1000
+          examples:
+            application/json:
+            - duration: 30
+              escrow: 45.6
+              is_buy_order: true
+              issued: "2016-09-03T05:12:25Z"
+              issued_by: 2112625428
+              location_id: 456
+              min_volume: 1
+              order_id: 123
+              price: 33.3
+              range: "station"
+              region_id: 123
+              type_id: 456
+              volume_remain: 4422
+              volume_total: 123456
+              wallet_division: 1
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            X-Pages:
+              type: "integer"
+              format: "int32"
+              description: "Maximum page number"
+              default: 1
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        401:
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/unauthorized"
+          examples:
+            application/json:
+              error: "Unauthorized message"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      security:
+      - evesso:
+        - "esi-markets.read_corporation_orders.v1"
+      x-alternate-versions:
+      - "dev"
+      - "v3"
+      x-cached-seconds: 1200
+      x-required-roles:
+      - "Accountant"
+      - "Trader"
   /v3/corporations/{corporation_id}/structures/:
     get:
       tags:
@@ -25593,6 +27732,184 @@ paths:
       - "dev"
       - "v4"
       x-cached-seconds: 3600
+  /v4/corporations/{corporation_id}/wallets/{division}/journal/:
+    get:
+      tags:
+      - "Wallet"
+      summary: "Get corporation wallet journal"
+      description: "Retrieve the given corporation's wallet journal for the given\
+        \ division going 30 days back\n\n---\n\nThis route is cached for up to 3600\
+        \ seconds\n\n---\nRequires one of the following EVE corporation role(s): Accountant,\
+        \ Junior_Accountant"
+      operationId: "get_corporations_corporation_id_wallets_division_journal"
+      parameters:
+      - name: "corporation_id"
+        in: "path"
+        description: "An EVE corporation ID"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "CorporationId"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "division"
+        in: "path"
+        description: "Wallet key of the division to fetch journals from"
+        required: true
+        type: "integer"
+        maximum: 7
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "Division"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "page"
+        in: "query"
+        description: "Which page of results to return"
+        required: false
+        type: "integer"
+        default: 1
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "Page"
+        x-optionalDataType: "Int32"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "Journal entries"
+          schema:
+            type: "array"
+            description: "Journal entries"
+            title: "get_corporations_corporation_id_wallets_division_journal_ok"
+            items:
+              $ref: "#/definitions/get_corporations_corporation_id_wallets_division_journal_200_ok"
+            maxItems: 2500
+          examples:
+            application/json:
+            - amount: -1000
+              balance: 100000.0
+              context_id: 2112625428
+              context_id_type: "character_id"
+              date: "2016-10-24T09:00:00Z"
+              description: "CCP Zoetrope transferred cash from C C P's corporate account\
+                \ to CCP SnowedIn's account"
+              first_party_id: 109299958
+              id: 1234567890
+              ref_type: "corporation_account_withdrawal"
+              second_party_id: 95538921
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            X-Pages:
+              type: "integer"
+              format: "int32"
+              description: "Maximum page number"
+              default: 1
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        401:
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/unauthorized"
+          examples:
+            application/json:
+              error: "Unauthorized message"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      security:
+      - evesso:
+        - "esi-wallet.read_corporation_wallets.v1"
+      x-alternate-versions:
+      - "dev"
+      - "v4"
+      x-cached-seconds: 3600
+      x-required-roles:
+      - "Accountant"
+      - "Junior_Accountant"
   /v4/universe/systems/{system_id}/:
     get:
       tags:
@@ -26236,6 +28553,169 @@ paths:
       x-cached-seconds: 3600
       x-required-roles:
       - "Director"
+  /v6/characters/{character_id}/wallet/journal/:
+    get:
+      tags:
+      - "Wallet"
+      summary: "Get character wallet journal"
+      description: "Retrieve the given character's wallet journal going 30 days back\n\
+        \n---\n\nThis route is cached for up to 3600 seconds"
+      operationId: "get_characters_character_id_wallet_journal"
+      parameters:
+      - name: "character_id"
+        in: "path"
+        description: "An EVE character ID"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "CharacterId"
+      - name: "datasource"
+        in: "query"
+        description: "The server name you would like data from"
+        required: false
+        type: "string"
+        default: "tranquility"
+        enum:
+        - "tranquility"
+        x-exportParamName: "Datasource"
+        x-optionalDataType: "String"
+      - name: "If-None-Match"
+        in: "header"
+        description: "ETag from a previous request. A 304 will be returned if this\
+          \ matches the current ETag"
+        required: false
+        type: "string"
+        x-exportParamName: "IfNoneMatch"
+        x-optionalDataType: "String"
+      - name: "page"
+        in: "query"
+        description: "Which page of results to return"
+        required: false
+        type: "integer"
+        default: 1
+        minimum: 1
+        format: "int32"
+        x-exportParamName: "Page"
+        x-optionalDataType: "Int32"
+      - name: "token"
+        in: "query"
+        description: "Access token to use if unable to set a header"
+        required: false
+        type: "string"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "Journal entries"
+          schema:
+            type: "array"
+            description: "Wallet journal entries"
+            title: "get_characters_character_id_wallet_journal_ok"
+            items:
+              $ref: "#/definitions/get_characters_character_id_wallet_journal_200_ok"
+            maxItems: 2500
+          examples:
+            application/json:
+            - amount: -100000
+              balance: 500000.4316
+              context_id: 4
+              context_id_type: "contract_id"
+              date: "2018-02-23T14:31:32Z"
+              description: "Contract Deposit"
+              first_party_id: 2112625428
+              id: 89
+              ref_type: "contract_deposit"
+              second_party_id: 1000132
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            X-Pages:
+              type: "integer"
+              format: "int32"
+              description: "Maximum page number"
+              default: 1
+        304:
+          description: "Not modified"
+          headers:
+            Cache-Control:
+              type: "string"
+              description: "The caching mechanism used"
+            ETag:
+              type: "string"
+              description: "RFC7232 compliant entity tag"
+            Expires:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+            Last-Modified:
+              type: "string"
+              description: "RFC7231 formatted datetime string"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/bad_request"
+          examples:
+            application/json:
+              error: "Bad request message"
+        401:
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/unauthorized"
+          examples:
+            application/json:
+              error: "Unauthorized message"
+        403:
+          description: "Forbidden"
+          schema:
+            $ref: "#/definitions/forbidden"
+          examples:
+            application/json:
+              error: "Forbidden message"
+        420:
+          description: "Error limited"
+          schema:
+            $ref: "#/definitions/error_limited"
+          examples:
+            application/json:
+              error: "Error limited message"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/internal_server_error"
+          examples:
+            application/json:
+              error: "Internal server error message"
+        503:
+          description: "Service unavailable"
+          schema:
+            $ref: "#/definitions/service_unavailable"
+          examples:
+            application/json:
+              error: "Service unavailable message"
+        504:
+          description: "Gateway timeout"
+          schema:
+            $ref: "#/definitions/gateway_timeout"
+          examples:
+            application/json:
+              error: "Gateway timeout message"
+      security:
+      - evesso:
+        - "esi-wallet.read_character_wallet.v1"
+      x-alternate-versions:
+      - "dev"
+      - "v6"
+      x-cached-seconds: 3600
 securityDefinitions:
   evesso:
     type: "oauth2"
@@ -26296,6 +28776,9 @@ securityDefinitions:
       esi-mail.organize_mail.v1: "EVE SSO scope esi-mail.organize_mail.v1"
       esi-mail.read_mail.v1: "EVE SSO scope esi-mail.read_mail.v1"
       esi-mail.send_mail.v1: "EVE SSO scope esi-mail.send_mail.v1"
+      esi-markets.read_character_orders.v1: "EVE SSO scope esi-markets.read_character_orders.v1"
+      esi-markets.read_corporation_orders.v1: "EVE SSO scope esi-markets.read_corporation_orders.v1"
+      esi-markets.structure_markets.v1: "EVE SSO scope esi-markets.structure_markets.v1"
       esi-planets.manage_planets.v1: "EVE SSO scope esi-planets.manage_planets.v1"
       esi-planets.read_customs_offices.v1: "EVE SSO scope esi-planets.read_customs_offices.v1"
       esi-search.search_structures.v1: "EVE SSO scope esi-search.search_structures.v1"
@@ -26304,6 +28787,7 @@ securityDefinitions:
       esi-ui.open_window.v1: "EVE SSO scope esi-ui.open_window.v1"
       esi-ui.write_waypoint.v1: "EVE SSO scope esi-ui.write_waypoint.v1"
       esi-universe.read_structures.v1: "EVE SSO scope esi-universe.read_structures.v1"
+      esi-wallet.read_character_wallet.v1: "EVE SSO scope esi-wallet.read_character_wallet.v1"
       esi-wallet.read_corporation_wallets.v1: "EVE SSO scope esi-wallet.read_corporation_wallets.v1"
 definitions:
   bad_request:
@@ -27608,6 +30092,112 @@ definitions:
         description: "task_id integer"
         title: "get_characters_character_id_opportunities_task_id"
     description: "200 ok object"
+  get_characters_character_id_orders_history_200_ok:
+    required:
+    - "duration"
+    - "is_corporation"
+    - "issued"
+    - "location_id"
+    - "order_id"
+    - "price"
+    - "range"
+    - "region_id"
+    - "state"
+    - "type_id"
+    - "volume_remain"
+    - "volume_total"
+    properties:
+      duration:
+        type: "integer"
+        format: "int32"
+        description: "Number of days the order was valid for (starting from the issued\
+          \ date). An order expires at time issued + duration"
+        title: "get_characters_character_id_orders_history_duration"
+      escrow:
+        type: "number"
+        format: "double"
+        description: "For buy orders, the amount of ISK in escrow"
+        title: "get_characters_character_id_orders_history_escrow"
+      is_buy_order:
+        type: "boolean"
+        description: "True if the order is a bid (buy) order"
+        title: "get_characters_character_id_orders_history_is_buy_order"
+      is_corporation:
+        type: "boolean"
+        description: "Signifies whether the buy/sell order was placed on behalf of\
+          \ a corporation."
+        title: "get_characters_character_id_orders_history_is_corporation"
+      issued:
+        type: "string"
+        format: "date-time"
+        description: "Date and time when this order was issued"
+        title: "get_characters_character_id_orders_history_issued"
+      location_id:
+        type: "integer"
+        format: "int64"
+        description: "ID of the location where order was placed"
+        title: "get_characters_character_id_orders_history_location_id"
+      min_volume:
+        type: "integer"
+        format: "int32"
+        description: "For buy orders, the minimum quantity that will be accepted in\
+          \ a matching sell order"
+        title: "get_characters_character_id_orders_history_min_volume"
+      order_id:
+        type: "integer"
+        format: "int64"
+        description: "Unique order ID"
+        title: "get_characters_character_id_orders_history_order_id"
+      price:
+        type: "number"
+        format: "double"
+        description: "Cost per unit for this order"
+        title: "get_characters_character_id_orders_history_price"
+      range:
+        type: "string"
+        description: "Valid order range, numbers are ranges in jumps"
+        title: "get_characters_character_id_orders_history_range"
+        enum:
+        - "1"
+        - "10"
+        - "2"
+        - "20"
+        - "3"
+        - "30"
+        - "4"
+        - "40"
+        - "5"
+        - "region"
+        - "solarsystem"
+        - "station"
+      region_id:
+        type: "integer"
+        format: "int32"
+        description: "ID of the region where order was placed"
+        title: "get_characters_character_id_orders_history_region_id"
+      state:
+        type: "string"
+        description: "Current order state"
+        title: "get_characters_character_id_orders_history_state"
+        enum:
+        - "cancelled"
+        - "expired"
+      type_id:
+        type: "integer"
+        format: "int32"
+        description: "The type ID of the item transacted in this order"
+        title: "get_characters_character_id_orders_history_type_id"
+      volume_remain:
+        type: "integer"
+        format: "int32"
+        description: "Quantity of items still required or offered"
+        title: "get_characters_character_id_orders_history_volume_remain"
+      volume_total:
+        type: "integer"
+        format: "int32"
+        description: "Quantity of items required or offered at time order was placed"
+        title: "get_characters_character_id_orders_history_volume_total"
+    description: "200 ok object"
   get_characters_character_id_planets_200_ok:
     required:
     - "last_update"
@@ -27725,6 +30315,68 @@ definitions:
         description: "title_id integer"
         title: "get_characters_character_id_titles_title_id"
     description: "200 ok object"
+  get_characters_character_id_wallet_transactions_200_ok:
+    required:
+    - "client_id"
+    - "date"
+    - "is_buy"
+    - "is_personal"
+    - "journal_ref_id"
+    - "location_id"
+    - "quantity"
+    - "transaction_id"
+    - "type_id"
+    - "unit_price"
+    properties:
+      client_id:
+        type: "integer"
+        format: "int32"
+        description: "client_id integer"
+        title: "get_characters_character_id_wallet_transactions_client_id"
+      date:
+        type: "string"
+        format: "date-time"
+        description: "Date and time of transaction"
+        title: "get_characters_character_id_wallet_transactions_date"
+      is_buy:
+        type: "boolean"
+        description: "is_buy boolean"
+        title: "get_characters_character_id_wallet_transactions_is_buy"
+      is_personal:
+        type: "boolean"
+        description: "is_personal boolean"
+        title: "get_characters_character_id_wallet_transactions_is_personal"
+      journal_ref_id:
+        type: "integer"
+        format: "int64"
+        description: "journal_ref_id integer"
+        title: "get_characters_character_id_wallet_transactions_journal_ref_id"
+      location_id:
+        type: "integer"
+        format: "int64"
+        description: "location_id integer"
+        title: "get_characters_character_id_wallet_transactions_location_id"
+      quantity:
+        type: "integer"
+        format: "int32"
+        description: "quantity integer"
+        title: "get_characters_character_id_wallet_transactions_quantity"
+      transaction_id:
+        type: "integer"
+        format: "int64"
+        description: "Unique transaction ID"
+        title: "get_characters_character_id_wallet_transactions_transaction_id"
+      type_id:
+        type: "integer"
+        format: "int32"
+        description: "type_id integer"
+        title: "get_characters_character_id_wallet_transactions_type_id"
+      unit_price:
+        type: "number"
+        format: "double"
+        description: "Amount paid per unit"
+        title: "get_characters_character_id_wallet_transactions_unit_price"
+    description: "wallet transaction"
   get_contracts_public_bids_contract_id_200_ok:
     required:
     - "amount"
@@ -30312,6 +32964,63 @@ definitions:
         minimum: 1
         maximum: 7
     description: "200 ok object"
+  get_corporations_corporation_id_wallets_division_transactions_200_ok:
+    required:
+    - "client_id"
+    - "date"
+    - "is_buy"
+    - "journal_ref_id"
+    - "location_id"
+    - "quantity"
+    - "transaction_id"
+    - "type_id"
+    - "unit_price"
+    properties:
+      client_id:
+        type: "integer"
+        format: "int32"
+        description: "client_id integer"
+        title: "get_corporations_corporation_id_wallets_division_transactions_client_id"
+      date:
+        type: "string"
+        format: "date-time"
+        description: "Date and time of transaction"
+        title: "get_corporations_corporation_id_wallets_division_transactions_date"
+      is_buy:
+        type: "boolean"
+        description: "is_buy boolean"
+        title: "get_corporations_corporation_id_wallets_division_transactions_is_buy"
+      journal_ref_id:
+        type: "integer"
+        format: "int64"
+        description: "-1 if there is no corresponding wallet journal entry"
+        title: "get_corporations_corporation_id_wallets_division_transactions_journal_ref_id"
+      location_id:
+        type: "integer"
+        format: "int64"
+        description: "location_id integer"
+        title: "get_corporations_corporation_id_wallets_division_transactions_location_id"
+      quantity:
+        type: "integer"
+        format: "int32"
+        description: "quantity integer"
+        title: "get_corporations_corporation_id_wallets_division_transactions_quantity"
+      transaction_id:
+        type: "integer"
+        format: "int64"
+        description: "Unique transaction ID"
+        title: "get_corporations_corporation_id_wallets_division_transactions_transaction_id"
+      type_id:
+        type: "integer"
+        format: "int32"
+        description: "type_id integer"
+        title: "get_corporations_corporation_id_wallets_division_transactions_type_id"
+      unit_price:
+        type: "number"
+        format: "double"
+        description: "Amount paid per unit"
+        title: "get_corporations_corporation_id_wallets_division_transactions_unit_price"
+    description: "wallet transaction"
   get_dogma_attributes_attribute_id_ok:
     required:
     - "attribute_id"
@@ -31842,6 +34551,312 @@ definitions:
         description: "Not found message"
         title: "get_loyalty_stores_corporation_id_offers_404_not_found"
     description: "Not found"
+  get_markets_groups_market_group_id_ok:
+    required:
+    - "description"
+    - "market_group_id"
+    - "name"
+    - "types"
+    properties:
+      description:
+        type: "string"
+        description: "description string"
+        title: "get_markets_groups_market_group_id_description"
+      market_group_id:
+        type: "integer"
+        format: "int32"
+        description: "market_group_id integer"
+        title: "get_markets_groups_market_group_id_market_group_id"
+      name:
+        type: "string"
+        description: "name string"
+        title: "get_markets_groups_market_group_id_name"
+      parent_group_id:
+        type: "integer"
+        format: "int32"
+        description: "parent_group_id integer"
+        title: "get_markets_groups_market_group_id_parent_group_id"
+      types:
+        type: "array"
+        description: "types array"
+        title: "get_markets_groups_market_group_id_types"
+        items:
+          type: "integer"
+          format: "int32"
+          description: "type integer"
+          title: "get_markets_groups_market_group_id_type"
+        maxItems: 5000
+    description: "200 ok object"
+  get_markets_groups_market_group_id_not_found:
+    properties:
+      error:
+        type: "string"
+        description: "Not found message"
+        title: "get_markets_groups_market_group_id_404_not_found"
+    description: "Not found"
+  get_markets_prices_200_ok:
+    required:
+    - "type_id"
+    properties:
+      adjusted_price:
+        type: "number"
+        format: "double"
+        description: "adjusted_price number"
+        title: "get_markets_prices_adjusted_price"
+      average_price:
+        type: "number"
+        format: "double"
+        description: "average_price number"
+        title: "get_markets_prices_average_price"
+      type_id:
+        type: "integer"
+        format: "int32"
+        description: "type_id integer"
+        title: "get_markets_prices_type_id"
+    description: "200 ok object"
+  get_markets_structures_structure_id_200_ok:
+    required:
+    - "duration"
+    - "is_buy_order"
+    - "issued"
+    - "location_id"
+    - "min_volume"
+    - "order_id"
+    - "price"
+    - "range"
+    - "type_id"
+    - "volume_remain"
+    - "volume_total"
+    properties:
+      duration:
+        type: "integer"
+        format: "int32"
+        description: "duration integer"
+        title: "get_markets_structures_structure_id_duration"
+      is_buy_order:
+        type: "boolean"
+        description: "is_buy_order boolean"
+        title: "get_markets_structures_structure_id_is_buy_order"
+      issued:
+        type: "string"
+        format: "date-time"
+        description: "issued string"
+        title: "get_markets_structures_structure_id_issued"
+      location_id:
+        type: "integer"
+        format: "int64"
+        description: "location_id integer"
+        title: "get_markets_structures_structure_id_location_id"
+      min_volume:
+        type: "integer"
+        format: "int32"
+        description: "min_volume integer"
+        title: "get_markets_structures_structure_id_min_volume"
+      order_id:
+        type: "integer"
+        format: "int64"
+        description: "order_id integer"
+        title: "get_markets_structures_structure_id_order_id"
+      price:
+        type: "number"
+        format: "double"
+        description: "price number"
+        title: "get_markets_structures_structure_id_price"
+      range:
+        type: "string"
+        description: "range string"
+        title: "get_markets_structures_structure_id_range"
+        enum:
+        - "station"
+        - "region"
+        - "solarsystem"
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "10"
+        - "20"
+        - "30"
+        - "40"
+      type_id:
+        type: "integer"
+        format: "int32"
+        description: "type_id integer"
+        title: "get_markets_structures_structure_id_type_id"
+      volume_remain:
+        type: "integer"
+        format: "int32"
+        description: "volume_remain integer"
+        title: "get_markets_structures_structure_id_volume_remain"
+      volume_total:
+        type: "integer"
+        format: "int32"
+        description: "volume_total integer"
+        title: "get_markets_structures_structure_id_volume_total"
+    description: "200 ok object"
+  get_markets_region_id_history_200_ok:
+    required:
+    - "average"
+    - "date"
+    - "highest"
+    - "lowest"
+    - "order_count"
+    - "volume"
+    properties:
+      average:
+        type: "number"
+        format: "double"
+        description: "average number"
+        title: "get_markets_region_id_history_average"
+      date:
+        type: "string"
+        format: "date"
+        description: "The date of this historical statistic entry"
+        title: "get_markets_region_id_history_date"
+      highest:
+        type: "number"
+        format: "double"
+        description: "highest number"
+        title: "get_markets_region_id_history_highest"
+      lowest:
+        type: "number"
+        format: "double"
+        description: "lowest number"
+        title: "get_markets_region_id_history_lowest"
+      order_count:
+        type: "integer"
+        format: "int64"
+        description: "Total number of orders happened that day"
+        title: "get_markets_region_id_history_order_count"
+      volume:
+        type: "integer"
+        format: "int64"
+        description: "Total"
+        title: "get_markets_region_id_history_volume"
+    description: "200 ok object"
+  get_markets_region_id_history_not_found:
+    properties:
+      error:
+        type: "string"
+        description: "Not found message"
+        title: "get_markets_region_id_history_404_not_found"
+    description: "Not found"
+  get_markets_region_id_history_unprocessable_entity:
+    properties:
+      error:
+        type: "string"
+        description: "Unprocessable entity message"
+        title: "get_markets_region_id_history_422_unprocessable_entity"
+    description: "Unprocessable entity"
+  get_markets_region_id_history_error_520:
+    properties:
+      error:
+        type: "string"
+        description: "Error 520 message"
+        title: "get_markets_region_id_history_520_error_520"
+    description: "Error 520"
+  get_markets_region_id_orders_200_ok:
+    required:
+    - "duration"
+    - "is_buy_order"
+    - "issued"
+    - "location_id"
+    - "min_volume"
+    - "order_id"
+    - "price"
+    - "range"
+    - "system_id"
+    - "type_id"
+    - "volume_remain"
+    - "volume_total"
+    properties:
+      duration:
+        type: "integer"
+        format: "int32"
+        description: "duration integer"
+        title: "get_markets_region_id_orders_duration"
+      is_buy_order:
+        type: "boolean"
+        description: "is_buy_order boolean"
+        title: "get_markets_region_id_orders_is_buy_order"
+      issued:
+        type: "string"
+        format: "date-time"
+        description: "issued string"
+        title: "get_markets_region_id_orders_issued"
+      location_id:
+        type: "integer"
+        format: "int64"
+        description: "location_id integer"
+        title: "get_markets_region_id_orders_location_id"
+      min_volume:
+        type: "integer"
+        format: "int32"
+        description: "min_volume integer"
+        title: "get_markets_region_id_orders_min_volume"
+      order_id:
+        type: "integer"
+        format: "int64"
+        description: "order_id integer"
+        title: "get_markets_region_id_orders_order_id"
+      price:
+        type: "number"
+        format: "double"
+        description: "price number"
+        title: "get_markets_region_id_orders_price"
+      range:
+        type: "string"
+        description: "range string"
+        title: "get_markets_region_id_orders_range"
+        enum:
+        - "station"
+        - "region"
+        - "solarsystem"
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "10"
+        - "20"
+        - "30"
+        - "40"
+      system_id:
+        type: "integer"
+        format: "int32"
+        description: "The solar system this order was placed"
+        title: "get_markets_region_id_orders_system_id"
+      type_id:
+        type: "integer"
+        format: "int32"
+        description: "type_id integer"
+        title: "get_markets_region_id_orders_type_id"
+      volume_remain:
+        type: "integer"
+        format: "int32"
+        description: "volume_remain integer"
+        title: "get_markets_region_id_orders_volume_remain"
+      volume_total:
+        type: "integer"
+        format: "int32"
+        description: "volume_total integer"
+        title: "get_markets_region_id_orders_volume_total"
+    description: "200 ok object"
+  get_markets_region_id_orders_not_found:
+    properties:
+      error:
+        type: "string"
+        description: "Not found message"
+        title: "get_markets_region_id_orders_404_not_found"
+    description: "Not found"
+  get_markets_region_id_orders_unprocessable_entity:
+    properties:
+      error:
+        type: "string"
+        description: "Unprocessable entity message"
+        title: "get_markets_region_id_orders_422_unprocessable_entity"
+    description: "Unprocessable entity"
   get_opportunities_groups_group_id_ok:
     required:
     - "connected_groups"
@@ -33913,6 +36928,104 @@ definitions:
         type: "boolean"
         description: "If the character is online"
         title: "get_characters_character_id_online_online"
+    description: "200 ok object"
+  get_characters_character_id_orders_200_ok:
+    required:
+    - "duration"
+    - "is_corporation"
+    - "issued"
+    - "location_id"
+    - "order_id"
+    - "price"
+    - "range"
+    - "region_id"
+    - "type_id"
+    - "volume_remain"
+    - "volume_total"
+    properties:
+      duration:
+        type: "integer"
+        format: "int32"
+        description: "Number of days for which order is valid (starting from the issued\
+          \ date). An order expires at time issued + duration"
+        title: "get_characters_character_id_orders_duration"
+      escrow:
+        type: "number"
+        format: "double"
+        description: "For buy orders, the amount of ISK in escrow"
+        title: "get_characters_character_id_orders_escrow"
+      is_buy_order:
+        type: "boolean"
+        description: "True if the order is a bid (buy) order"
+        title: "get_characters_character_id_orders_is_buy_order"
+      is_corporation:
+        type: "boolean"
+        description: "Signifies whether the buy/sell order was placed on behalf of\
+          \ a corporation."
+        title: "get_characters_character_id_orders_is_corporation"
+      issued:
+        type: "string"
+        format: "date-time"
+        description: "Date and time when this order was issued"
+        title: "get_characters_character_id_orders_issued"
+      location_id:
+        type: "integer"
+        format: "int64"
+        description: "ID of the location where order was placed"
+        title: "get_characters_character_id_orders_location_id"
+      min_volume:
+        type: "integer"
+        format: "int32"
+        description: "For buy orders, the minimum quantity that will be accepted in\
+          \ a matching sell order"
+        title: "get_characters_character_id_orders_min_volume"
+      order_id:
+        type: "integer"
+        format: "int64"
+        description: "Unique order ID"
+        title: "get_characters_character_id_orders_order_id"
+      price:
+        type: "number"
+        format: "double"
+        description: "Cost per unit for this order"
+        title: "get_characters_character_id_orders_price"
+      range:
+        type: "string"
+        description: "Valid order range, numbers are ranges in jumps"
+        title: "get_characters_character_id_orders_range"
+        enum:
+        - "1"
+        - "10"
+        - "2"
+        - "20"
+        - "3"
+        - "30"
+        - "4"
+        - "40"
+        - "5"
+        - "region"
+        - "solarsystem"
+        - "station"
+      region_id:
+        type: "integer"
+        format: "int32"
+        description: "ID of the region where order was placed"
+        title: "get_characters_character_id_orders_region_id"
+      type_id:
+        type: "integer"
+        format: "int32"
+        description: "The type ID of the item transacted in this order"
+        title: "get_characters_character_id_orders_type_id"
+      volume_remain:
+        type: "integer"
+        format: "int32"
+        description: "Quantity of items still required or offered"
+        title: "get_characters_character_id_orders_volume_remain"
+      volume_total:
+        type: "integer"
+        format: "int32"
+        description: "Quantity of items required or offered at time order was placed"
+        title: "get_characters_character_id_orders_volume_total"
     description: "200 ok object"
   get_characters_character_id_portrait_ok:
     properties:
@@ -36237,6 +39350,119 @@ definitions:
         description: "Type ID of the item being acted upon"
         title: "get_corporations_corporation_id_containers_logs_type_id"
     description: "200 ok object"
+  get_corporations_corporation_id_orders_history_200_ok:
+    required:
+    - "duration"
+    - "issued"
+    - "location_id"
+    - "order_id"
+    - "price"
+    - "range"
+    - "region_id"
+    - "state"
+    - "type_id"
+    - "volume_remain"
+    - "volume_total"
+    - "wallet_division"
+    properties:
+      duration:
+        type: "integer"
+        format: "int32"
+        description: "Number of days the order was valid for (starting from the issued\
+          \ date). An order expires at time issued + duration"
+        title: "get_corporations_corporation_id_orders_history_duration"
+      escrow:
+        type: "number"
+        format: "double"
+        description: "For buy orders, the amount of ISK in escrow"
+        title: "get_corporations_corporation_id_orders_history_escrow"
+      is_buy_order:
+        type: "boolean"
+        description: "True if the order is a bid (buy) order"
+        title: "get_corporations_corporation_id_orders_history_is_buy_order"
+      issued:
+        type: "string"
+        format: "date-time"
+        description: "Date and time when this order was issued"
+        title: "get_corporations_corporation_id_orders_history_issued"
+      issued_by:
+        type: "integer"
+        format: "int32"
+        description: "The character who issued this order"
+        title: "get_corporations_corporation_id_orders_history_issued_by"
+      location_id:
+        type: "integer"
+        format: "int64"
+        description: "ID of the location where order was placed"
+        title: "get_corporations_corporation_id_orders_history_location_id"
+      min_volume:
+        type: "integer"
+        format: "int32"
+        description: "For buy orders, the minimum quantity that will be accepted in\
+          \ a matching sell order"
+        title: "get_corporations_corporation_id_orders_history_min_volume"
+      order_id:
+        type: "integer"
+        format: "int64"
+        description: "Unique order ID"
+        title: "get_corporations_corporation_id_orders_history_order_id"
+      price:
+        type: "number"
+        format: "double"
+        description: "Cost per unit for this order"
+        title: "get_corporations_corporation_id_orders_history_price"
+      range:
+        type: "string"
+        description: "Valid order range, numbers are ranges in jumps"
+        title: "get_corporations_corporation_id_orders_history_range"
+        enum:
+        - "1"
+        - "10"
+        - "2"
+        - "20"
+        - "3"
+        - "30"
+        - "4"
+        - "40"
+        - "5"
+        - "region"
+        - "solarsystem"
+        - "station"
+      region_id:
+        type: "integer"
+        format: "int32"
+        description: "ID of the region where order was placed"
+        title: "get_corporations_corporation_id_orders_history_region_id"
+      state:
+        type: "string"
+        description: "Current order state"
+        title: "get_corporations_corporation_id_orders_history_state"
+        enum:
+        - "cancelled"
+        - "expired"
+      type_id:
+        type: "integer"
+        format: "int32"
+        description: "The type ID of the item transacted in this order"
+        title: "get_corporations_corporation_id_orders_history_type_id"
+      volume_remain:
+        type: "integer"
+        format: "int32"
+        description: "Quantity of items still required or offered"
+        title: "get_corporations_corporation_id_orders_history_volume_remain"
+      volume_total:
+        type: "integer"
+        format: "int32"
+        description: "Quantity of items required or offered at time order was placed"
+        title: "get_corporations_corporation_id_orders_history_volume_total"
+      wallet_division:
+        type: "integer"
+        format: "int32"
+        description: "The corporation wallet division used for this order"
+        title: "get_corporations_corporation_id_orders_history_wallet_division"
+        minimum: 1
+        maximum: 7
+    description: "200 ok object"
   get_dogma_effects_effect_id_modifier:
     required:
     - "func"
@@ -37433,6 +40659,112 @@ definitions:
           title: "get_characters_character_id_search_structure_structure"
         maxItems: 500
     description: "200 ok object"
+  get_corporations_corporation_id_orders_200_ok:
+    required:
+    - "duration"
+    - "issued"
+    - "issued_by"
+    - "location_id"
+    - "order_id"
+    - "price"
+    - "range"
+    - "region_id"
+    - "type_id"
+    - "volume_remain"
+    - "volume_total"
+    - "wallet_division"
+    properties:
+      duration:
+        type: "integer"
+        format: "int32"
+        description: "Number of days for which order is valid (starting from the issued\
+          \ date). An order expires at time issued + duration"
+        title: "get_corporations_corporation_id_orders_duration"
+      escrow:
+        type: "number"
+        format: "double"
+        description: "For buy orders, the amount of ISK in escrow"
+        title: "get_corporations_corporation_id_orders_escrow"
+      is_buy_order:
+        type: "boolean"
+        description: "True if the order is a bid (buy) order"
+        title: "get_corporations_corporation_id_orders_is_buy_order"
+      issued:
+        type: "string"
+        format: "date-time"
+        description: "Date and time when this order was issued"
+        title: "get_corporations_corporation_id_orders_issued"
+      issued_by:
+        type: "integer"
+        format: "int32"
+        description: "The character who issued this order"
+        title: "get_corporations_corporation_id_orders_issued_by"
+      location_id:
+        type: "integer"
+        format: "int64"
+        description: "ID of the location where order was placed"
+        title: "get_corporations_corporation_id_orders_location_id"
+      min_volume:
+        type: "integer"
+        format: "int32"
+        description: "For buy orders, the minimum quantity that will be accepted in\
+          \ a matching sell order"
+        title: "get_corporations_corporation_id_orders_min_volume"
+      order_id:
+        type: "integer"
+        format: "int64"
+        description: "Unique order ID"
+        title: "get_corporations_corporation_id_orders_order_id"
+      price:
+        type: "number"
+        format: "double"
+        description: "Cost per unit for this order"
+        title: "get_corporations_corporation_id_orders_price"
+      range:
+        type: "string"
+        description: "Valid order range, numbers are ranges in jumps"
+        title: "get_corporations_corporation_id_orders_range"
+        enum:
+        - "1"
+        - "10"
+        - "2"
+        - "20"
+        - "3"
+        - "30"
+        - "4"
+        - "40"
+        - "5"
+        - "region"
+        - "solarsystem"
+        - "station"
+      region_id:
+        type: "integer"
+        format: "int32"
+        description: "ID of the region where order was placed"
+        title: "get_corporations_corporation_id_orders_region_id"
+      type_id:
+        type: "integer"
+        format: "int32"
+        description: "The type ID of the item transacted in this order"
+        title: "get_corporations_corporation_id_orders_type_id"
+      volume_remain:
+        type: "integer"
+        format: "int32"
+        description: "Quantity of items still required or offered"
+        title: "get_corporations_corporation_id_orders_volume_remain"
+      volume_total:
+        type: "integer"
+        format: "int32"
+        description: "Quantity of items required or offered at time order was placed"
+        title: "get_corporations_corporation_id_orders_volume_total"
+      wallet_division:
+        type: "integer"
+        format: "int32"
+        description: "The corporation wallet division used for this order."
+        title: "get_corporations_corporation_id_orders_wallet_division"
+        minimum: 1
+        maximum: 7
+    description: "200 ok object"
   get_corporations_corporation_id_structures_service:
     required:
     - "name"
@@ -37952,6 +41284,229 @@ definitions:
         description: "Not found message"
         title: "get_corporations_corporation_id_404_not_found"
     description: "Not found"
+  get_corporations_corporation_id_wallets_division_journal_200_ok:
+    required:
+    - "date"
+    - "description"
+    - "id"
+    - "ref_type"
+    properties:
+      amount:
+        type: "number"
+        format: "double"
+        description: "The amount of ISK given or taken from the wallet as a result\
+          \ of the given transaction. Positive when ISK is deposited into the wallet\
+          \ and negative when ISK is withdrawn"
+        title: "get_corporations_corporation_id_wallets_division_journal_amount"
+      balance:
+        type: "number"
+        format: "double"
+        description: "Wallet balance after transaction occurred"
+        title: "get_corporations_corporation_id_wallets_division_journal_balance"
+      context_id:
+        type: "integer"
+        format: "int64"
+        description: "An ID that gives extra context to the particular transaction.\
+          \ Because of legacy reasons the context is completely different per ref_type\
+          \ and means different things. It is also possible to not have a context_id"
+        title: "get_corporations_corporation_id_wallets_division_journal_context_id"
+      context_id_type:
+        type: "string"
+        description: "The type of the given context_id if present"
+        title: "get_corporations_corporation_id_wallets_division_journal_context_id_type"
+        enum:
+        - "structure_id"
+        - "station_id"
+        - "market_transaction_id"
+        - "character_id"
+        - "corporation_id"
+        - "alliance_id"
+        - "eve_system"
+        - "industry_job_id"
+        - "contract_id"
+        - "planet_id"
+        - "system_id"
+        - "type_id"
+      date:
+        type: "string"
+        format: "date-time"
+        description: "Date and time of transaction"
+        title: "get_corporations_corporation_id_wallets_division_journal_date"
+      description:
+        type: "string"
+        description: "The reason for the transaction, mirrors what is seen in the\
+          \ client"
+        title: "get_corporations_corporation_id_wallets_division_journal_description"
+      first_party_id:
+        type: "integer"
+        format: "int32"
+        description: "The id of the first party involved in the transaction. This\
+          \ attribute has no consistency and is different or non existant for particular\
+          \ ref_types. The description attribute will help make sense of what this\
+          \ attribute means. For more info about the given ID it can be dropped into\
+          \ the /universe/names/ ESI route to determine its type and name"
+        title: "get_corporations_corporation_id_wallets_division_journal_first_party_id"
+      id:
+        type: "integer"
+        format: "int64"
+        description: "Unique journal reference ID"
+        title: "get_corporations_corporation_id_wallets_division_journal_id"
+      reason:
+        type: "string"
+        description: "The user stated reason for the transaction. Only applies to\
+          \ some ref_types"
+        title: "get_corporations_corporation_id_wallets_division_journal_reason"
+      ref_type:
+        type: "string"
+        description: "\"The transaction type for the given. transaction. Different\
+          \ transaction types will populate different attributes. Note: If you have\
+          \ an existing XML API application that is using ref_types, you will need\
+          \ to know which string ESI ref_type maps to which integer. You can look\
+          \ at the following file to see string->int mappings: https://github.com/ccpgames/eve-glue/blob/master/eve_glue/wallet_journal_ref.py\""
+        title: "get_corporations_corporation_id_wallets_division_journal_ref_type"
+        enum:
+        - "acceleration_gate_fee"
+        - "advertisement_listing_fee"
+        - "agent_donation"
+        - "agent_location_services"
+        - "agent_miscellaneous"
+        - "agent_mission_collateral_paid"
+        - "agent_mission_collateral_refunded"
+        - "agent_mission_reward"
+        - "agent_mission_reward_corporation_tax"
+        - "agent_mission_time_bonus_reward"
+        - "agent_mission_time_bonus_reward_corporation_tax"
+        - "agent_security_services"
+        - "agent_services_rendered"
+        - "agents_preward"
+        - "alliance_maintainance_fee"
+        - "alliance_registration_fee"
+        - "asset_safety_recovery_tax"
+        - "bounty"
+        - "bounty_prize"
+        - "bounty_prize_corporation_tax"
+        - "bounty_prizes"
+        - "bounty_reimbursement"
+        - "bounty_surcharge"
+        - "brokers_fee"
+        - "clone_activation"
+        - "clone_transfer"
+        - "contraband_fine"
+        - "contract_auction_bid"
+        - "contract_auction_bid_corp"
+        - "contract_auction_bid_refund"
+        - "contract_auction_sold"
+        - "contract_brokers_fee"
+        - "contract_brokers_fee_corp"
+        - "contract_collateral"
+        - "contract_collateral_deposited_corp"
+        - "contract_collateral_payout"
+        - "contract_collateral_refund"
+        - "contract_deposit"
+        - "contract_deposit_corp"
+        - "contract_deposit_refund"
+        - "contract_deposit_sales_tax"
+        - "contract_price"
+        - "contract_price_payment_corp"
+        - "contract_reversal"
+        - "contract_reward"
+        - "contract_reward_deposited"
+        - "contract_reward_deposited_corp"
+        - "contract_reward_refund"
+        - "contract_sales_tax"
+        - "copying"
+        - "corporate_reward_payout"
+        - "corporate_reward_tax"
+        - "corporation_account_withdrawal"
+        - "corporation_bulk_payment"
+        - "corporation_dividend_payment"
+        - "corporation_liquidation"
+        - "corporation_logo_change_cost"
+        - "corporation_payment"
+        - "corporation_registration_fee"
+        - "courier_mission_escrow"
+        - "cspa"
+        - "cspaofflinerefund"
+        - "datacore_fee"
+        - "dna_modification_fee"
+        - "docking_fee"
+        - "duel_wager_escrow"
+        - "duel_wager_payment"
+        - "duel_wager_refund"
+        - "ess_escrow_transfer"
+        - "factory_slot_rental_fee"
+        - "gm_cash_transfer"
+        - "industry_job_tax"
+        - "infrastructure_hub_maintenance"
+        - "inheritance"
+        - "insurance"
+        - "item_trader_payment"
+        - "jump_clone_activation_fee"
+        - "jump_clone_installation_fee"
+        - "kill_right_fee"
+        - "lp_store"
+        - "manufacturing"
+        - "market_escrow"
+        - "market_fine_paid"
+        - "market_transaction"
+        - "medal_creation"
+        - "medal_issued"
+        - "mission_completion"
+        - "mission_cost"
+        - "mission_expiration"
+        - "mission_reward"
+        - "office_rental_fee"
+        - "operation_bonus"
+        - "opportunity_reward"
+        - "planetary_construction"
+        - "planetary_export_tax"
+        - "planetary_import_tax"
+        - "player_donation"
+        - "player_trading"
+        - "project_discovery_reward"
+        - "project_discovery_tax"
+        - "reaction"
+        - "release_of_impounded_property"
+        - "repair_bill"
+        - "reprocessing_tax"
+        - "researching_material_productivity"
+        - "researching_technology"
+        - "researching_time_productivity"
+        - "resource_wars_reward"
+        - "reverse_engineering"
+        - "security_processing_fee"
+        - "shares"
+        - "skill_purchase"
+        - "sovereignity_bill"
+        - "store_purchase"
+        - "store_purchase_refund"
+        - "structure_gate_jump"
+        - "transaction_tax"
+        - "upkeep_adjustment_fee"
+        - "war_ally_contract"
+        - "war_fee"
+        - "war_fee_surrender"
+      second_party_id:
+        type: "integer"
+        format: "int32"
+        description: "The id of the second party involved in the transaction. This\
+          \ attribute has no consistency and is different or non existant for particular\
+          \ ref_types. The description attribute will help make sense of what this\
+          \ attribute means. For more info about the given ID it can be dropped into\
+          \ the /universe/names/ ESI route to determine its type and name"
+        title: "get_corporations_corporation_id_wallets_division_journal_second_party_id"
+      tax:
+        type: "number"
+        format: "double"
+        description: "Tax amount received. Only applies to tax related transactions"
+        title: "get_corporations_corporation_id_wallets_division_journal_tax"
+      tax_receiver_id:
+        type: "integer"
+        format: "int32"
+        description: "The corporation ID receiving any tax paid. Only applies to tax\
+          \ related transactions"
+        title: "get_corporations_corporation_id_wallets_division_journal_tax_receiver_id"
+    description: "200 ok object"
   get_universe_systems_system_id_planet:
     required:
     - "planet_id"
@@ -38642,6 +42197,226 @@ definitions:
         format: "int32"
         description: "type_id integer"
         title: "get_corporations_corporation_id_assets_type_id"
+    description: "200 ok object"
+  get_characters_character_id_wallet_journal_200_ok:
+    required:
+    - "date"
+    - "description"
+    - "id"
+    - "ref_type"
+    properties:
+      amount:
+        type: "number"
+        format: "double"
+        description: "The amount of ISK given or taken from the wallet as a result\
+          \ of the given transaction. Positive when ISK is deposited into the wallet\
+          \ and negative when ISK is withdrawn"
+        title: "get_characters_character_id_wallet_journal_amount"
+      balance:
+        type: "number"
+        format: "double"
+        description: "Wallet balance after transaction occurred"
+        title: "get_characters_character_id_wallet_journal_balance"
+      context_id:
+        type: "integer"
+        format: "int64"
+        description: "An ID that gives extra context to the particular transaction.\
+          \ Because of legacy reasons the context is completely different per ref_type\
+          \ and means different things. It is also possible to not have a context_id"
+        title: "get_characters_character_id_wallet_journal_context_id"
+      context_id_type:
+        type: "string"
+        description: "The type of the given context_id if present"
+        title: "get_characters_character_id_wallet_journal_context_id_type"
+        enum:
+        - "structure_id"
+        - "station_id"
+        - "market_transaction_id"
+        - "character_id"
+        - "corporation_id"
+        - "alliance_id"
+        - "eve_system"
+        - "industry_job_id"
+        - "contract_id"
+        - "planet_id"
+        - "system_id"
+        - "type_id"
+      date:
+        type: "string"
+        format: "date-time"
+        description: "Date and time of transaction"
+        title: "get_characters_character_id_wallet_journal_date"
+      description:
+        type: "string"
+        description: "The reason for the transaction, mirrors what is seen in the\
+          \ client"
+        title: "get_characters_character_id_wallet_journal_description"
+      first_party_id:
+        type: "integer"
+        format: "int32"
+        description: "The id of the first party involved in the transaction. This\
+          \ attribute has no consistency and is different or non existant for particular\
+          \ ref_types. The description attribute will help make sense of what this\
+          \ attribute means. For more info about the given ID it can be dropped into\
+          \ the /universe/names/ ESI route to determine its type and name"
+        title: "get_characters_character_id_wallet_journal_first_party_id"
+      id:
+        type: "integer"
+        format: "int64"
+        description: "Unique journal reference ID"
+        title: "get_characters_character_id_wallet_journal_id"
+      reason:
+        type: "string"
+        description: "The user stated reason for the transaction. Only applies to\
+          \ some ref_types"
+        title: "get_characters_character_id_wallet_journal_reason"
+      ref_type:
+        type: "string"
+        description: "\"The transaction type for the given. transaction. Different\
+          \ transaction types will populate different attributes.\""
+        title: "get_characters_character_id_wallet_journal_ref_type"
+        enum:
+        - "acceleration_gate_fee"
+        - "advertisement_listing_fee"
+        - "agent_donation"
+        - "agent_location_services"
+        - "agent_miscellaneous"
+        - "agent_mission_collateral_paid"
+        - "agent_mission_collateral_refunded"
+        - "agent_mission_reward"
+        - "agent_mission_reward_corporation_tax"
+        - "agent_mission_time_bonus_reward"
+        - "agent_mission_time_bonus_reward_corporation_tax"
+        - "agent_security_services"
+        - "agent_services_rendered"
+        - "agents_preward"
+        - "alliance_maintainance_fee"
+        - "alliance_registration_fee"
+        - "asset_safety_recovery_tax"
+        - "bounty"
+        - "bounty_prize"
+        - "bounty_prize_corporation_tax"
+        - "bounty_prizes"
+        - "bounty_reimbursement"
+        - "bounty_surcharge"
+        - "brokers_fee"
+        - "clone_activation"
+        - "clone_transfer"
+        - "contraband_fine"
+        - "contract_auction_bid"
+        - "contract_auction_bid_corp"
+        - "contract_auction_bid_refund"
+        - "contract_auction_sold"
+        - "contract_brokers_fee"
+        - "contract_brokers_fee_corp"
+        - "contract_collateral"
+        - "contract_collateral_deposited_corp"
+        - "contract_collateral_payout"
+        - "contract_collateral_refund"
+        - "contract_deposit"
+        - "contract_deposit_corp"
+        - "contract_deposit_refund"
+        - "contract_deposit_sales_tax"
+        - "contract_price"
+        - "contract_price_payment_corp"
+        - "contract_reversal"
+        - "contract_reward"
+        - "contract_reward_deposited"
+        - "contract_reward_deposited_corp"
+        - "contract_reward_refund"
+        - "contract_sales_tax"
+        - "copying"
+        - "corporate_reward_payout"
+        - "corporate_reward_tax"
+        - "corporation_account_withdrawal"
+        - "corporation_bulk_payment"
+        - "corporation_dividend_payment"
+        - "corporation_liquidation"
+        - "corporation_logo_change_cost"
+        - "corporation_payment"
+        - "corporation_registration_fee"
+        - "courier_mission_escrow"
+        - "cspa"
+        - "cspaofflinerefund"
+        - "datacore_fee"
+        - "dna_modification_fee"
+        - "docking_fee"
+        - "duel_wager_escrow"
+        - "duel_wager_payment"
+        - "duel_wager_refund"
+        - "ess_escrow_transfer"
+        - "factory_slot_rental_fee"
+        - "gm_cash_transfer"
+        - "industry_job_tax"
+        - "infrastructure_hub_maintenance"
+        - "inheritance"
+        - "insurance"
+        - "item_trader_payment"
+        - "jump_clone_activation_fee"
+        - "jump_clone_installation_fee"
+        - "kill_right_fee"
+        - "lp_store"
+        - "manufacturing"
+        - "market_escrow"
+        - "market_fine_paid"
+        - "market_transaction"
+        - "medal_creation"
+        - "medal_issued"
+        - "mission_completion"
+        - "mission_cost"
+        - "mission_expiration"
+        - "mission_reward"
+        - "office_rental_fee"
+        - "operation_bonus"
+        - "opportunity_reward"
+        - "planetary_construction"
+        - "planetary_export_tax"
+        - "planetary_import_tax"
+        - "player_donation"
+        - "player_trading"
+        - "project_discovery_reward"
+        - "project_discovery_tax"
+        - "reaction"
+        - "release_of_impounded_property"
+        - "repair_bill"
+        - "reprocessing_tax"
+        - "researching_material_productivity"
+        - "researching_technology"
+        - "researching_time_productivity"
+        - "resource_wars_reward"
+        - "reverse_engineering"
+        - "security_processing_fee"
+        - "shares"
+        - "skill_purchase"
+        - "sovereignity_bill"
+        - "store_purchase"
+        - "store_purchase_refund"
+        - "structure_gate_jump"
+        - "transaction_tax"
+        - "upkeep_adjustment_fee"
+        - "war_ally_contract"
+        - "war_fee"
+        - "war_fee_surrender"
+      second_party_id:
+        type: "integer"
+        format: "int32"
+        description: "The id of the second party involved in the transaction. This\
+          \ attribute has no consistency and is different or non existant for particular\
+          \ ref_types. The description attribute will help make sense of what this\
+          \ attribute means. For more info about the given ID it can be dropped into\
+          \ the /universe/names/ ESI route to determine its type and name"
+        title: "get_characters_character_id_wallet_journal_second_party_id"
+      tax:
+        type: "number"
+        format: "double"
+        description: "Tax amount received. Only applies to tax related transactions"
+        title: "get_characters_character_id_wallet_journal_tax"
+      tax_receiver_id:
+        type: "integer"
+        format: "int32"
+        description: "The corporation ID receiving any tax paid. Only applies to tax\
+          \ related transactions"
+        title: "get_characters_character_id_wallet_journal_tax_receiver_id"
     description: "200 ok object"
 parameters:
   Accept-Language:

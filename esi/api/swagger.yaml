@@ -35318,6 +35318,7 @@ definitions:
         format: "int32"
         description: "ship_type_id integer"
         title: "get_universe_bloodlines_ship_type_id"
+        x-nullable: true
       willpower:
         type: "integer"
         format: "int32"

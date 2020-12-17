@@ -50,7 +50,6 @@ Class | Method | HTTP request | Description
 *CharacterApi* | [**GetCharactersCharacterIdPortrait**](docs/CharacterApi.md#getcharacterscharacteridportrait) | **Get** /v2/characters/{character_id}/portrait/ | Get character portraits
 *CharacterApi* | [**GetCharactersCharacterIdRoles**](docs/CharacterApi.md#getcharacterscharacteridroles) | **Get** /v2/characters/{character_id}/roles/ | Get character corporation roles
 *CharacterApi* | [**GetCharactersCharacterIdStandings**](docs/CharacterApi.md#getcharacterscharacteridstandings) | **Get** /v1/characters/{character_id}/standings/ | Get standings
-*CharacterApi* | [**GetCharactersCharacterIdStats**](docs/CharacterApi.md#getcharacterscharacteridstats) | **Get** /v2/characters/{character_id}/stats/ | Yearly aggregate stats
 *CharacterApi* | [**GetCharactersCharacterIdTitles**](docs/CharacterApi.md#getcharacterscharacteridtitles) | **Get** /v1/characters/{character_id}/titles/ | Get character corporation titles
 *CharacterApi* | [**PostCharactersAffiliation**](docs/CharacterApi.md#postcharactersaffiliation) | **Post** /v1/characters/affiliation/ | Character affiliation
 *CharacterApi* | [**PostCharactersCharacterIdCspa**](docs/CharacterApi.md#postcharacterscharacteridcspa) | **Post** /v4/characters/{character_id}/cspa/ | Calculate a CSPA charge cost
@@ -319,19 +318,6 @@ Class | Method | HTTP request | Description
  - [GetCharactersCharacterIdSkillsOk](docs/GetCharactersCharacterIdSkillsOk.md)
  - [GetCharactersCharacterIdSkillsSkill](docs/GetCharactersCharacterIdSkillsSkill.md)
  - [GetCharactersCharacterIdStandings200Ok](docs/GetCharactersCharacterIdStandings200Ok.md)
- - [GetCharactersCharacterIdStats200Ok](docs/GetCharactersCharacterIdStats200Ok.md)
- - [GetCharactersCharacterIdStatsCharacter](docs/GetCharactersCharacterIdStatsCharacter.md)
- - [GetCharactersCharacterIdStatsCombat](docs/GetCharactersCharacterIdStatsCombat.md)
- - [GetCharactersCharacterIdStatsIndustry](docs/GetCharactersCharacterIdStatsIndustry.md)
- - [GetCharactersCharacterIdStatsInventory](docs/GetCharactersCharacterIdStatsInventory.md)
- - [GetCharactersCharacterIdStatsIsk](docs/GetCharactersCharacterIdStatsIsk.md)
- - [GetCharactersCharacterIdStatsMarket](docs/GetCharactersCharacterIdStatsMarket.md)
- - [GetCharactersCharacterIdStatsMining](docs/GetCharactersCharacterIdStatsMining.md)
- - [GetCharactersCharacterIdStatsModule](docs/GetCharactersCharacterIdStatsModule.md)
- - [GetCharactersCharacterIdStatsOrbital](docs/GetCharactersCharacterIdStatsOrbital.md)
- - [GetCharactersCharacterIdStatsPve](docs/GetCharactersCharacterIdStatsPve.md)
- - [GetCharactersCharacterIdStatsSocial](docs/GetCharactersCharacterIdStatsSocial.md)
- - [GetCharactersCharacterIdStatsTravel](docs/GetCharactersCharacterIdStatsTravel.md)
  - [GetCharactersCharacterIdTitles200Ok](docs/GetCharactersCharacterIdTitles200Ok.md)
  - [GetCharactersCharacterIdWalletJournal200Ok](docs/GetCharactersCharacterIdWalletJournal200Ok.md)
  - [GetCharactersCharacterIdWalletTransactions200Ok](docs/GetCharactersCharacterIdWalletTransactions200Ok.md)
@@ -616,7 +602,6 @@ Class | Method | HTTP request | Description
  - **esi-characters.read_standings.v1**: EVE SSO scope esi-characters.read_standings.v1
  - **esi-characters.read_titles.v1**: EVE SSO scope esi-characters.read_titles.v1
  - **esi-characters.write_contacts.v1**: EVE SSO scope esi-characters.write_contacts.v1
- - **esi-characterstats.read.v1**: EVE SSO scope esi-characterstats.read.v1
  - **esi-clones.read_clones.v1**: EVE SSO scope esi-clones.read_clones.v1
  - **esi-clones.read_implants.v1**: EVE SSO scope esi-clones.read_implants.v1
  - **esi-contracts.read_character_contracts.v1**: EVE SSO scope esi-contracts.read_character_contracts.v1

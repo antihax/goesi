@@ -17416,7 +17416,7 @@ paths:
             title: "get_universe_ancestries_ok"
             items:
               $ref: "#/definitions/get_universe_ancestries_200_ok"
-            maxItems: 42
+            maxItems: 100
           examples:
             application/json:
             - bloodline_id: 1

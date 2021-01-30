@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**GetCharactersCharacterIdWalletJournal**](WalletApi.md#GetCharactersCharacterIdWalletJournal) | **Get** /v6/characters/{character_id}/wallet/journal/ | Get character wallet journal
 [**GetCharactersCharacterIdWalletTransactions**](WalletApi.md#GetCharactersCharacterIdWalletTransactions) | **Get** /v1/characters/{character_id}/wallet/transactions/ | Get wallet transactions
 [**GetCorporationsCorporationIdWallets**](WalletApi.md#GetCorporationsCorporationIdWallets) | **Get** /v1/corporations/{corporation_id}/wallets/ | Returns a corporation&#39;s wallet balance
-[**GetCorporationsCorporationIdWalletsDivisionJournal**](WalletApi.md#GetCorporationsCorporationIdWalletsDivisionJournal) | **Get** /v4/corporations/{corporation_id}/wallets/{division}/journal/ | Get corporations wallet journal
+[**GetCorporationsCorporationIdWalletsDivisionJournal**](WalletApi.md#GetCorporationsCorporationIdWalletsDivisionJournal) | **Get** /v4/corporations/{corporation_id}/wallets/{division}/journal/ | Get corporation wallet journal
 [**GetCorporationsCorporationIdWalletsDivisionTransactions**](WalletApi.md#GetCorporationsCorporationIdWalletsDivisionTransactions) | **Get** /v1/corporations/{corporation_id}/wallets/{division}/transactions/ | Get corporation wallet transactions
 
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 > float64 GetCharactersCharacterIdWallet(ctx, characterId, optional)
 Get a character's wallet balance
 
-Returns a character's wallet balance  ---  This route is cached for up to 120 seconds
+Returns a character's wallet balance  ---  This route is cached for up to 120 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/)
 
 ### Required Parameters
 
@@ -73,6 +73,7 @@ Name | Type | Description  | Notes
  **characterId** | **int32**| An EVE character ID | 
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
+ **page** | **int32**| Which page of results to return | [default to 1]
  **token** | **string**| Access token to use if unable to set a header | 
 
 ### Return type
@@ -94,7 +95,7 @@ Name | Type | Description  | Notes
 > []GetCharactersCharacterIdWalletTransactions200Ok GetCharactersCharacterIdWalletTransactions(ctx, characterId, optional)
 Get wallet transactions
 
-Get wallet transactions of a character going 30 days back  ---  This route is cached for up to 3600 seconds
+Get wallet transactions of a character  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -171,9 +172,9 @@ Name | Type | Description  | Notes
 
 # **GetCorporationsCorporationIdWalletsDivisionJournal**
 > []GetCorporationsCorporationIdWalletsDivisionJournal200Ok GetCorporationsCorporationIdWalletsDivisionJournal(ctx, corporationId, division, optional)
-Get corporations wallet journal
+Get corporation wallet journal
 
-Retrieve the given character's wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds
+Retrieve the given corporation's wallet journal for the given division going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
 
 ### Required Parameters
 
@@ -215,7 +216,7 @@ Name | Type | Description  | Notes
 > []GetCorporationsCorporationIdWalletsDivisionTransactions200Ok GetCorporationsCorporationIdWalletsDivisionTransactions(ctx, corporationId, division, optional)
 Get corporation wallet transactions
 
-Get wallet transactions of a corporation going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+Get wallet transactions of a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
 
 ### Required Parameters
 

@@ -43,7 +43,7 @@ type WalletApiService service
 
 /*
 WalletApiService Get a character&#39;s wallet balance
-Returns a character&#39;s wallet balance  ---  This route is cached for up to 120 seconds
+Returns a character&#39;s wallet balance  ---  This route is cached for up to 120 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdWalletOpts - Optional Parameters:
@@ -238,6 +238,7 @@ Retrieve the given character&#39;s wallet journal going 30 days back  ---  This 
  * @param optional nil or *GetCharactersCharacterIdWalletJournalOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
      * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
+     * @param "Page" (optional.Int32) -  Which page of results to return
      * @param "Token" (optional.String) -  Access token to use if unable to set a header
 
 @return []GetCharactersCharacterIdWalletJournal200Ok
@@ -246,6 +247,7 @@ Retrieve the given character&#39;s wallet journal going 30 days back  ---  This 
 type GetCharactersCharacterIdWalletJournalOpts struct {
 	Datasource  optional.String
 	IfNoneMatch optional.String
+	Page        optional.Int32
 	Token       optional.String
 }
 
@@ -271,6 +273,9 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletJournal(ctx context.Con
 
 	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
 		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Page.IsSet() {
+		localVarQueryParams.Add("page", parameterToString(localVarOptionals.Page.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
 		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
@@ -421,7 +426,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletJournal(ctx context.Con
 
 /*
 WalletApiService Get wallet transactions
-Get wallet transactions of a character going 30 days back  ---  This route is cached for up to 3600 seconds
+Get wallet transactions of a character  ---  This route is cached for up to 3600 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdWalletTransactionsOpts - Optional Parameters:
@@ -803,8 +808,8 @@ func (a *WalletApiService) GetCorporationsCorporationIdWallets(ctx context.Conte
 }
 
 /*
-WalletApiService Get corporations wallet journal
-Retrieve the given character&#39;s wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds
+WalletApiService Get corporation wallet journal
+Retrieve the given corporation&#39;s wallet journal for the given division going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param division Wallet key of the division to fetch journals from
@@ -1006,7 +1011,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionJournal(ct
 
 /*
 WalletApiService Get corporation wallet transactions
-Get wallet transactions of a corporation going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+Get wallet transactions of a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param division Wallet key of the division to fetch journals from

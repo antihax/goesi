@@ -246,6 +246,7 @@ Class | Method | HTTP request | Description
  - [GetAlliancesAllianceIdOk](docs/GetAlliancesAllianceIdOk.md)
  - [GetCharactersCharacterIdAgentsResearch200Ok](docs/GetCharactersCharacterIdAgentsResearch200Ok.md)
  - [GetCharactersCharacterIdAssets200Ok](docs/GetCharactersCharacterIdAssets200Ok.md)
+ - [GetCharactersCharacterIdAssetsNotFound](docs/GetCharactersCharacterIdAssetsNotFound.md)
  - [GetCharactersCharacterIdAttributesOk](docs/GetCharactersCharacterIdAttributesOk.md)
  - [GetCharactersCharacterIdBlueprints200Ok](docs/GetCharactersCharacterIdBlueprints200Ok.md)
  - [GetCharactersCharacterIdBookmarks200Ok](docs/GetCharactersCharacterIdBookmarks200Ok.md)

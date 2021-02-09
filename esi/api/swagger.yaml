@@ -28017,6 +28017,13 @@ paths:
           examples:
             application/json:
               error: "Forbidden message"
+        404:
+          description: "Requested page does not exist"
+          schema:
+            $ref: "#/definitions/get_characters_character_id_assets_not_found"
+          examples:
+            application/json:
+              error: "Requested page does not exist"
         420:
           description: "Error limited"
           schema:
@@ -40052,6 +40059,13 @@ definitions:
         description: "type_id integer"
         title: "get_characters_character_id_assets_type_id"
     description: "200 ok object"
+  get_characters_character_id_assets_not_found:
+    properties:
+      error:
+        type: "string"
+        description: "error message"
+        title: "get_characters_character_id_assets_error"
+    description: "Requested page does not exist"
   get_characters_character_id_notifications_200_ok:
     required:
     - "notification_id"

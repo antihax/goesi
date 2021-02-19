@@ -54,10 +54,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **string**| Language to use in the response | [default to en-us]
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
 
 ### Return type
 
@@ -130,10 +130,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **string**| Language to use in the response | [default to en-us]
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
 
 ### Return type
 
@@ -206,10 +206,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **categoryId** | **int32**| An Eve item category ID | 
- **acceptLanguage** | **string**| Language to use in the response | [default to en-us]
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
 
 ### Return type
 
@@ -282,10 +282,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **constellationId** | **int32**| constellation_id integer | 
- **acceptLanguage** | **string**| Language to use in the response | [default to en-us]
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
 
 ### Return type
 
@@ -320,10 +320,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **string**| Language to use in the response | [default to en-us]
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
 
 ### Return type
 
@@ -471,10 +471,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **int32**| An Eve item group ID | 
- **acceptLanguage** | **string**| Language to use in the response | [default to en-us]
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
 
 ### Return type
 
@@ -585,10 +585,10 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **string**| Language to use in the response | [default to en-us]
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
 
 ### Return type
 
@@ -661,10 +661,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regionId** | **int32**| region_id integer | 
- **acceptLanguage** | **string**| Language to use in the response | [default to en-us]
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
 
 ### Return type
 
@@ -999,10 +999,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemId** | **int32**| system_id integer | 
- **acceptLanguage** | **string**| Language to use in the response | [default to en-us]
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
 
 ### Return type
 
@@ -1076,10 +1076,10 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **typeId** | **int32**| An Eve item type ID | 
- **acceptLanguage** | **string**| Language to use in the response | [default to en-us]
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
  **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
 
 ### Return type
 
@@ -1116,9 +1116,9 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **names** | **[]string**| The names to resolve | 
- **acceptLanguage** | **string**| Language to use in the response | [default to en-us]
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
  **datasource** | **string**| The server name you would like data from | [default to tranquility]
- **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en-us]
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
 
 ### Return type
 

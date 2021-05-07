@@ -109,20 +109,18 @@ func easyjson52e0404DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCo
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.FuelExpires).UnmarshalJSON(data))
 			}
+		case "name":
+			out.Name = string(in.String())
 		case "next_reinforce_apply":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.NextReinforceApply).UnmarshalJSON(data))
 			}
 		case "next_reinforce_hour":
 			out.NextReinforceHour = int32(in.Int32())
-		case "next_reinforce_weekday":
-			out.NextReinforceWeekday = int32(in.Int32())
 		case "profile_id":
 			out.ProfileId = int32(in.Int32())
 		case "reinforce_hour":
 			out.ReinforceHour = int32(in.Int32())
-		case "reinforce_weekday":
-			out.ReinforceWeekday = int32(in.Int32())
 		case "services":
 			if in.IsNull() {
 				in.Skip()
@@ -196,6 +194,16 @@ func easyjson52e0404EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 		}
 		out.Raw((in.FuelExpires).MarshalJSON())
 	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
 	if true {
 		const prefix string = ",\"next_reinforce_apply\":"
 		if first {
@@ -216,16 +224,6 @@ func easyjson52e0404EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 		}
 		out.Int32(int32(in.NextReinforceHour))
 	}
-	if in.NextReinforceWeekday != 0 {
-		const prefix string = ",\"next_reinforce_weekday\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.NextReinforceWeekday))
-	}
 	if in.ProfileId != 0 {
 		const prefix string = ",\"profile_id\":"
 		if first {
@@ -245,16 +243,6 @@ func easyjson52e0404EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 			out.RawString(prefix)
 		}
 		out.Int32(int32(in.ReinforceHour))
-	}
-	if in.ReinforceWeekday != 0 {
-		const prefix string = ",\"reinforce_weekday\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ReinforceWeekday))
 	}
 	if len(in.Services) != 0 {
 		const prefix string = ",\"services\":"

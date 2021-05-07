@@ -43,7 +43,7 @@ type CorporationApiService service
 
 /*
 CorporationApiService Get corporation information
-Public information about a corporation  ---  This route is cached for up to 3600 seconds
+Public information about a corporation  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdOpts - Optional Parameters:
@@ -68,7 +68,7 @@ func (a *CorporationApiService) GetCorporationsCorporationId(ctx context.Context
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v4/corporations/{corporation_id}/"
+	localVarPath := a.client.basePath + "/v5/corporations/{corporation_id}/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -216,7 +216,7 @@ func (a *CorporationApiService) GetCorporationsCorporationId(ctx context.Context
 
 /*
 CorporationApiService Get alliance history
-Get a list of all the alliances a corporation has been a member of  ---  This route is cached for up to 3600 seconds
+Get a list of all the alliances a corporation has been a member of  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/alliancehistory/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdAlliancehistoryOpts - Optional Parameters:
@@ -241,7 +241,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(ctx 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/alliancehistory/"
+	localVarPath := a.client.basePath + "/v3/corporations/{corporation_id}/alliancehistory/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -378,7 +378,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdAlliancehistory(ctx 
 
 /*
 CorporationApiService Get corporation blueprints
-Returns a list of blueprints the corporation owns  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Returns a list of blueprints the corporation owns  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/blueprints/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdBlueprintsOpts - Optional Parameters:
@@ -407,7 +407,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/blueprints/"
+	localVarPath := a.client.basePath + "/v3/corporations/{corporation_id}/blueprints/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -572,7 +572,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdBlueprints(ctx conte
 
 /*
 CorporationApiService Get all corporation ALSC logs
-Returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation  ---  This route is cached for up to 600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation  ---  This route is cached for up to 600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/containers/logs/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdContainersLogsOpts - Optional Parameters:
@@ -601,7 +601,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/containers/logs/"
+	localVarPath := a.client.basePath + "/v3/corporations/{corporation_id}/containers/logs/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -766,7 +766,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdContainersLogs(ctx c
 
 /*
 CorporationApiService Get corporation divisions
-Return corporation hangar and wallet division names, only show if a division is not using the default name  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Return corporation hangar and wallet division names, only show if a division is not using the default name  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/divisions/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdDivisionsOpts - Optional Parameters:
@@ -793,7 +793,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/divisions/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/divisions/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -955,7 +955,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdDivisions(ctx contex
 
 /*
 CorporationApiService Get corporation facilities
-Return a corporation&#39;s facilities  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Factory_Manager
+Return a corporation&#39;s facilities  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Factory_Manager  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/facilities/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdFacilitiesOpts - Optional Parameters:
@@ -982,7 +982,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdFacilities(ctx conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/facilities/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/facilities/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1169,7 +1169,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(ctx context.Co
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/icons/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/icons/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1317,7 +1317,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(ctx context.Co
 
 /*
 CorporationApiService Get corporation medals
-Returns a corporation&#39;s medals  ---  This route is cached for up to 3600 seconds
+Returns a corporation&#39;s medals  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/medals/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdMedalsOpts - Optional Parameters:
@@ -1346,7 +1346,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedals(ctx context.C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/medals/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/medals/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1511,7 +1511,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedals(ctx context.C
 
 /*
 CorporationApiService Get corporation issued medals
-Returns medals issued by a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Returns medals issued by a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/medals/issued/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdMedalsIssuedOpts - Optional Parameters:
@@ -1540,7 +1540,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/medals/issued/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/medals/issued/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1705,7 +1705,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMedalsIssued(ctx con
 
 /*
 CorporationApiService Get corporation members
-Return the current member list of a corporation, the token&#39;s character need to be a member of the corporation.  ---  This route is cached for up to 3600 seconds
+Return the current member list of a corporation, the token&#39;s character need to be a member of the corporation.  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/members/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdMembersOpts - Optional Parameters:
@@ -1732,7 +1732,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v3/corporations/{corporation_id}/members/"
+	localVarPath := a.client.basePath + "/v4/corporations/{corporation_id}/members/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1894,7 +1894,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembers(ctx context.
 
 /*
 CorporationApiService Get corporation member limit
-Return a corporation&#39;s member limit, not including CEO himself  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Return a corporation&#39;s member limit, not including CEO himself  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/members/limit/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdMembersLimitOpts - Optional Parameters:
@@ -1921,7 +1921,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/members/limit/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/members/limit/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2083,7 +2083,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersLimit(ctx con
 
 /*
 CorporationApiService Get corporation&#39;s members&#39; titles
-Returns a corporation&#39;s members&#39; titles  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Returns a corporation&#39;s members&#39; titles  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/members/titles/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdMembersTitlesOpts - Optional Parameters:
@@ -2110,7 +2110,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersTitles(ctx co
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/members/titles/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/members/titles/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2272,7 +2272,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembersTitles(ctx co
 
 /*
 CorporationApiService Track corporation members
-Returns additional information about a corporation&#39;s members which helps tracking their activities  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Returns additional information about a corporation&#39;s members which helps tracking their activities  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/membertracking/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdMembertrackingOpts - Optional Parameters:
@@ -2299,7 +2299,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembertracking(ctx c
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/membertracking/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/membertracking/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2461,7 +2461,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdMembertracking(ctx c
 
 /*
 CorporationApiService Get corporation member roles
-Return the roles of all members if the character has the personnel manager role or any grantable role.  ---  This route is cached for up to 3600 seconds
+Return the roles of all members if the character has the personnel manager role or any grantable role.  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/roles/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdRolesOpts - Optional Parameters:
@@ -2488,7 +2488,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/roles/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/roles/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2650,7 +2650,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRoles(ctx context.Co
 
 /*
 CorporationApiService Get corporation member roles history
-Return how roles have changed for a coporation&#39;s members, up to a month  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Return how roles have changed for a coporation&#39;s members, up to a month  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/roles/history/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdRolesHistoryOpts - Optional Parameters:
@@ -2679,7 +2679,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdRolesHistory(ctx con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/roles/history/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/roles/history/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3038,7 +3038,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdShareholders(ctx con
 
 /*
 CorporationApiService Get corporation standings
-Return corporation standings from agents, NPC corporations, and factions  ---  This route is cached for up to 3600 seconds
+Return corporation standings from agents, NPC corporations, and factions  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/standings/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdStandingsOpts - Optional Parameters:
@@ -3067,7 +3067,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStandings(ctx contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/standings/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/standings/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3261,7 +3261,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbases(ctx contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/starbases/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/starbases/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3426,7 +3426,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbases(ctx contex
 
 /*
 CorporationApiService Get starbase (POS) detail
-Returns various settings and fuels of a starbase (POS)  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Returns various settings and fuels of a starbase (POS)  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/starbases/{starbase_id}/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param starbaseId An EVE starbase (POS) ID
@@ -3455,7 +3455,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStarbasesStarbaseId(
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/starbases/{starbase_id}/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/starbases/{starbase_id}/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"starbase_id"+"}", fmt.Sprintf("%v", starbaseId), -1)
 
@@ -3652,7 +3652,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v3/corporations/{corporation_id}/structures/"
+	localVarPath := a.client.basePath + "/v4/corporations/{corporation_id}/structures/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3823,7 +3823,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdStructures(ctx conte
 
 /*
 CorporationApiService Get corporation titles
-Returns a corporation&#39;s titles  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director
+Returns a corporation&#39;s titles  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Director  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/titles/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param corporationId An EVE corporation ID
  * @param optional nil or *GetCorporationsCorporationIdTitlesOpts - Optional Parameters:
@@ -3850,7 +3850,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/titles/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/titles/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4012,7 +4012,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdTitles(ctx context.C
 
 /*
 CorporationApiService Get npc corporations
-Get a list of npc corporations  ---  This route expires daily at 11:05
+Get a list of npc corporations  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/npccorps/)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetCorporationsNpccorpsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
@@ -4036,7 +4036,7 @@ func (a *CorporationApiService) GetCorporationsNpccorps(ctx context.Context, loc
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v1/corporations/npccorps/"
+	localVarPath := a.client.basePath + "/v2/corporations/npccorps/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

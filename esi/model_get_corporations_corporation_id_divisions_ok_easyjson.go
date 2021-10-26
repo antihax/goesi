@@ -120,7 +120,7 @@ func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCorporationsCorporationIdDivisionsHangarHangar
-					(v4).UnmarshalEasyJSON(in)
+					easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Hangar = append(out.Hangar, v4)
 					in.WantComma()
 				}
@@ -143,7 +143,7 @@ func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v5 GetCorporationsCorporationIdDivisionsWalletWallet
-					easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi2(in, &v5)
+					(v5).UnmarshalEasyJSON(in)
 					out.Wallet = append(out.Wallet, v5)
 					in.WantComma()
 				}
@@ -173,7 +173,7 @@ func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v6 > 0 {
 					out.RawByte(',')
 				}
-				(v7).MarshalEasyJSON(out)
+				easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi2(out, v7)
 			}
 			out.RawByte(']')
 		}
@@ -192,7 +192,7 @@ func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v8 > 0 {
 					out.RawByte(',')
 				}
-				easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi2(out, v9)
+				(v9).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -223,7 +223,7 @@ func (v *GetCorporationsCorporationIdDivisionsOk) UnmarshalJSON(data []byte) err
 func (v *GetCorporationsCorporationIdDivisionsOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdDivisionsWalletWallet) {
+func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdDivisionsHangarHangar) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -256,7 +256,7 @@ func easyjson908d5a0dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdDivisionsWalletWallet) {
+func easyjson908d5a0dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdDivisionsHangarHangar) {
 	out.RawByte('{')
 	first := true
 	_ = first

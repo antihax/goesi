@@ -137,7 +137,7 @@ func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 		case "solar_system_id":
 			out.SolarSystemId = int32(in.Int32())
 		case "victim":
-			(out.Victim).UnmarshalEasyJSON(in)
+			easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi2(in, &out.Victim)
 		case "war_id":
 			out.WarId = int32(in.Int32())
 		default:
@@ -217,7 +217,7 @@ func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Victim).MarshalEasyJSON(out)
+		easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out, in.Victim)
 	}
 	if in.WarId != 0 {
 		const prefix string = ",\"war_id\":"
@@ -254,4 +254,161 @@ func (v *GetKillmailsKillmailIdKillmailHashOk) UnmarshalJSON(data []byte) error 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetKillmailsKillmailIdKillmailHashOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson79bc02b5DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashVictim) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "character_id":
+			out.CharacterId = int32(in.Int32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		case "damage_taken":
+			out.DamageTaken = int32(in.Int32())
+		case "faction_id":
+			out.FactionId = int32(in.Int32())
+		case "items":
+			if in.IsNull() {
+				in.Skip()
+				out.Items = nil
+			} else {
+				in.Delim('[')
+				if out.Items == nil {
+					if !in.IsDelim(']') {
+						out.Items = make([]GetKillmailsKillmailIdKillmailHashItem, 0, 1)
+					} else {
+						out.Items = []GetKillmailsKillmailIdKillmailHashItem{}
+					}
+				} else {
+					out.Items = (out.Items)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v7 GetKillmailsKillmailIdKillmailHashItem
+					(v7).UnmarshalEasyJSON(in)
+					out.Items = append(out.Items, v7)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "position":
+			(out.Position).UnmarshalEasyJSON(in)
+		case "ship_type_id":
+			out.ShipTypeId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson79bc02b5EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashVictim) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AllianceId != 0 {
+		const prefix string = ",\"alliance_id\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.CharacterId != 0 {
+		const prefix string = ",\"character_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CharacterId))
+	}
+	if in.CorporationId != 0 {
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CorporationId))
+	}
+	if in.DamageTaken != 0 {
+		const prefix string = ",\"damage_taken\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.DamageTaken))
+	}
+	if in.FactionId != 0 {
+		const prefix string = ",\"faction_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.FactionId))
+	}
+	if len(in.Items) != 0 {
+		const prefix string = ",\"items\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		{
+			out.RawByte('[')
+			for v8, v9 := range in.Items {
+				if v8 > 0 {
+					out.RawByte(',')
+				}
+				(v9).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
+	}
+	if true {
+		const prefix string = ",\"position\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		(in.Position).MarshalEasyJSON(out)
+	}
+	if in.ShipTypeId != 0 {
+		const prefix string = ",\"ship_type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ShipTypeId))
+	}
+	out.RawByte('}')
 }

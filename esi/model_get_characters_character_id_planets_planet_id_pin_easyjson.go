@@ -133,7 +133,7 @@ func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "extractor_details":
 			easyjson1bb669caDecodeGithubComAntihaxGoesiEsi3(in, &out.ExtractorDetails)
 		case "factory_details":
-			easyjson1bb669caDecodeGithubComAntihaxGoesiEsi4(in, &out.FactoryDetails)
+			(out.FactoryDetails).UnmarshalEasyJSON(in)
 		case "install_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.InstallTime).UnmarshalJSON(data))
@@ -209,7 +209,7 @@ func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson1bb669caEncodeGithubComAntihaxGoesiEsi4(out, in.FactoryDetails)
+		(in.FactoryDetails).MarshalEasyJSON(out)
 	}
 	if true {
 		const prefix string = ",\"install_time\":"
@@ -306,49 +306,6 @@ func (v *GetCharactersCharacterIdPlanetsPlanetIdPin) UnmarshalJSON(data []byte) 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCharactersCharacterIdPlanetsPlanetIdPin) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson1bb669caDecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi4(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "schematic_id":
-			out.SchematicId = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi4(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.SchematicId != 0 {
-		const prefix string = ",\"schematic_id\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.Int32(int32(in.SchematicId))
-	}
-	out.RawByte('}')
 }
 func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails) {
 	isTopLevel := in.IsStart()

@@ -120,7 +120,7 @@ func easyjson29210505DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCharactersCharacterIdPlanetsPlanetIdLink
-					easyjson29210505DecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Links = append(out.Links, v4)
 					in.WantComma()
 				}
@@ -166,7 +166,7 @@ func easyjson29210505DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v6 GetCharactersCharacterIdPlanetsPlanetIdRoute
-					easyjson29210505DecodeGithubComAntihaxGoesiEsi3(in, &v6)
+					easyjson29210505DecodeGithubComAntihaxGoesiEsi2(in, &v6)
 					out.Routes = append(out.Routes, v6)
 					in.WantComma()
 				}
@@ -196,7 +196,7 @@ func easyjson29210505EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v7 > 0 {
 					out.RawByte(',')
 				}
-				easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out, v8)
+				(v8).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -234,7 +234,7 @@ func easyjson29210505EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v11 > 0 {
 					out.RawByte(',')
 				}
-				easyjson29210505EncodeGithubComAntihaxGoesiEsi3(out, v12)
+				easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out, v12)
 			}
 			out.RawByte(']')
 		}
@@ -265,7 +265,7 @@ func (v *GetCharactersCharacterIdPlanetsPlanetIdOk) UnmarshalJSON(data []byte) e
 func (v *GetCharactersCharacterIdPlanetsPlanetIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson29210505DecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson29210505DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdRoute) {
+func easyjson29210505DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdRoute) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -327,7 +327,7 @@ func easyjson29210505DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson29210505EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdRoute) {
+func easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdRoute) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -395,73 +395,6 @@ func easyjson29210505EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in Get
 			}
 			out.RawByte(']')
 		}
-	}
-	out.RawByte('}')
-}
-func easyjson29210505DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdLink) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "destination_pin_id":
-			out.DestinationPinId = int64(in.Int64())
-		case "link_level":
-			out.LinkLevel = int32(in.Int32())
-		case "source_pin_id":
-			out.SourcePinId = int64(in.Int64())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson29210505EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdLink) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.DestinationPinId != 0 {
-		const prefix string = ",\"destination_pin_id\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.Int64(int64(in.DestinationPinId))
-	}
-	if in.LinkLevel != 0 {
-		const prefix string = ",\"link_level\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.LinkLevel))
-	}
-	if in.SourcePinId != 0 {
-		const prefix string = ",\"source_pin_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.SourcePinId))
 	}
 	out.RawByte('}')
 }

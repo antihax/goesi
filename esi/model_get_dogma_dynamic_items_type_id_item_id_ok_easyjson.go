@@ -145,7 +145,7 @@ func easyjson5a3b9194DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetD
 				}
 				for !in.IsDelim(']') {
 					var v5 GetDogmaDynamicItemsTypeIdItemIdDogmaEffect
-					easyjson5a3b9194DecodeGithubComAntihaxGoesiEsi3(in, &v5)
+					(v5).UnmarshalEasyJSON(in)
 					out.DogmaEffects = append(out.DogmaEffects, v5)
 					in.WantComma()
 				}
@@ -208,7 +208,7 @@ func easyjson5a3b9194EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v8 > 0 {
 					out.RawByte(',')
 				}
-				easyjson5a3b9194EncodeGithubComAntihaxGoesiEsi3(out, v9)
+				(v9).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -258,61 +258,6 @@ func (v *GetDogmaDynamicItemsTypeIdItemIdOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetDogmaDynamicItemsTypeIdItemIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson5a3b9194DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson5a3b9194DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetDogmaDynamicItemsTypeIdItemIdDogmaEffect) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "effect_id":
-			out.EffectId = int32(in.Int32())
-		case "is_default":
-			out.IsDefault = bool(in.Bool())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson5a3b9194EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetDogmaDynamicItemsTypeIdItemIdDogmaEffect) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.EffectId != 0 {
-		const prefix string = ",\"effect_id\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.Int32(int32(in.EffectId))
-	}
-	if in.IsDefault {
-		const prefix string = ",\"is_default\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Bool(bool(in.IsDefault))
-	}
-	out.RawByte('}')
 }
 func easyjson5a3b9194DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetDogmaDynamicItemsTypeIdItemIdDogmaAttribute) {
 	isTopLevel := in.IsStart()

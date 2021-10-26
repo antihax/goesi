@@ -4,20 +4,20 @@ All URIs are relative to *https://esi.evetech.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCharactersCharacterId**](CharacterApi.md#GetCharactersCharacterId) | **Get** /v4/characters/{character_id}/ | Get character&#39;s public information
-[**GetCharactersCharacterIdAgentsResearch**](CharacterApi.md#GetCharactersCharacterIdAgentsResearch) | **Get** /v1/characters/{character_id}/agents_research/ | Get agents research
-[**GetCharactersCharacterIdBlueprints**](CharacterApi.md#GetCharactersCharacterIdBlueprints) | **Get** /v2/characters/{character_id}/blueprints/ | Get blueprints
-[**GetCharactersCharacterIdCorporationhistory**](CharacterApi.md#GetCharactersCharacterIdCorporationhistory) | **Get** /v1/characters/{character_id}/corporationhistory/ | Get corporation history
-[**GetCharactersCharacterIdFatigue**](CharacterApi.md#GetCharactersCharacterIdFatigue) | **Get** /v1/characters/{character_id}/fatigue/ | Get jump fatigue
-[**GetCharactersCharacterIdMedals**](CharacterApi.md#GetCharactersCharacterIdMedals) | **Get** /v1/characters/{character_id}/medals/ | Get medals
+[**GetCharactersCharacterId**](CharacterApi.md#GetCharactersCharacterId) | **Get** /v5/characters/{character_id}/ | Get character&#39;s public information
+[**GetCharactersCharacterIdAgentsResearch**](CharacterApi.md#GetCharactersCharacterIdAgentsResearch) | **Get** /v2/characters/{character_id}/agents_research/ | Get agents research
+[**GetCharactersCharacterIdBlueprints**](CharacterApi.md#GetCharactersCharacterIdBlueprints) | **Get** /v3/characters/{character_id}/blueprints/ | Get blueprints
+[**GetCharactersCharacterIdCorporationhistory**](CharacterApi.md#GetCharactersCharacterIdCorporationhistory) | **Get** /v2/characters/{character_id}/corporationhistory/ | Get corporation history
+[**GetCharactersCharacterIdFatigue**](CharacterApi.md#GetCharactersCharacterIdFatigue) | **Get** /v2/characters/{character_id}/fatigue/ | Get jump fatigue
+[**GetCharactersCharacterIdMedals**](CharacterApi.md#GetCharactersCharacterIdMedals) | **Get** /v2/characters/{character_id}/medals/ | Get medals
 [**GetCharactersCharacterIdNotifications**](CharacterApi.md#GetCharactersCharacterIdNotifications) | **Get** /v5/characters/{character_id}/notifications/ | Get character notifications
-[**GetCharactersCharacterIdNotificationsContacts**](CharacterApi.md#GetCharactersCharacterIdNotificationsContacts) | **Get** /v1/characters/{character_id}/notifications/contacts/ | Get new contact notifications
+[**GetCharactersCharacterIdNotificationsContacts**](CharacterApi.md#GetCharactersCharacterIdNotificationsContacts) | **Get** /v2/characters/{character_id}/notifications/contacts/ | Get new contact notifications
 [**GetCharactersCharacterIdPortrait**](CharacterApi.md#GetCharactersCharacterIdPortrait) | **Get** /v2/characters/{character_id}/portrait/ | Get character portraits
-[**GetCharactersCharacterIdRoles**](CharacterApi.md#GetCharactersCharacterIdRoles) | **Get** /v2/characters/{character_id}/roles/ | Get character corporation roles
-[**GetCharactersCharacterIdStandings**](CharacterApi.md#GetCharactersCharacterIdStandings) | **Get** /v1/characters/{character_id}/standings/ | Get standings
-[**GetCharactersCharacterIdTitles**](CharacterApi.md#GetCharactersCharacterIdTitles) | **Get** /v1/characters/{character_id}/titles/ | Get character corporation titles
-[**PostCharactersAffiliation**](CharacterApi.md#PostCharactersAffiliation) | **Post** /v1/characters/affiliation/ | Character affiliation
-[**PostCharactersCharacterIdCspa**](CharacterApi.md#PostCharactersCharacterIdCspa) | **Post** /v4/characters/{character_id}/cspa/ | Calculate a CSPA charge cost
+[**GetCharactersCharacterIdRoles**](CharacterApi.md#GetCharactersCharacterIdRoles) | **Get** /v3/characters/{character_id}/roles/ | Get character corporation roles
+[**GetCharactersCharacterIdStandings**](CharacterApi.md#GetCharactersCharacterIdStandings) | **Get** /v2/characters/{character_id}/standings/ | Get standings
+[**GetCharactersCharacterIdTitles**](CharacterApi.md#GetCharactersCharacterIdTitles) | **Get** /v2/characters/{character_id}/titles/ | Get character corporation titles
+[**PostCharactersAffiliation**](CharacterApi.md#PostCharactersAffiliation) | **Post** /v2/characters/affiliation/ | Character affiliation
+[**PostCharactersCharacterIdCspa**](CharacterApi.md#PostCharactersCharacterIdCspa) | **Post** /v5/characters/{character_id}/cspa/ | Calculate a CSPA charge cost
 
 
 # **GetCharactersCharacterId**
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 > []PostCharactersAffiliation200Ok PostCharactersAffiliation(ctx, characters, optional)
 Character affiliation
 
-Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/affiliation/)
+Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds
 
 ### Required Parameters
 
@@ -527,7 +527,7 @@ No authorization required
 > float32 PostCharactersCharacterIdCspa(ctx, characterId, characters, optional)
 Calculate a CSPA charge cost
 
-Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  ---
+Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  --- 
 
 ### Required Parameters
 

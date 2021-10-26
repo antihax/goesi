@@ -132,7 +132,7 @@ func easyjsonA4228502DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetS
 				}
 				for !in.IsDelim(']') {
 					var v4 GetSovereigntyCampaignsParticipant
-					easyjsonA4228502DecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Participants = append(out.Participants, v4)
 					in.WantComma()
 				}
@@ -230,7 +230,7 @@ func easyjsonA4228502EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonA4228502EncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -290,59 +290,4 @@ func (v *GetSovereigntyCampaigns200Ok) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetSovereigntyCampaigns200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonA4228502DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjsonA4228502DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetSovereigntyCampaignsParticipant) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "alliance_id":
-			out.AllianceId = int32(in.Int32())
-		case "score":
-			out.Score = float32(in.Float32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjsonA4228502EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetSovereigntyCampaignsParticipant) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.AllianceId != 0 {
-		const prefix string = ",\"alliance_id\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.Int32(int32(in.AllianceId))
-	}
-	if in.Score != 0 {
-		const prefix string = ",\"score\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.Score))
-	}
-	out.RawByte('}')
 }

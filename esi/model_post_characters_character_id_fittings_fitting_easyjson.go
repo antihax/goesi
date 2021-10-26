@@ -122,7 +122,7 @@ func easyjsonC29a6102DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *Post
 				}
 				for !in.IsDelim(']') {
 					var v4 PostCharactersCharacterIdFittingsItem
-					(v4).UnmarshalEasyJSON(in)
+					easyjsonC29a6102DecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Items = append(out.Items, v4)
 					in.WantComma()
 				}
@@ -166,7 +166,7 @@ func easyjsonC29a6102EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Pos
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjsonC29a6102EncodeGithubComAntihaxGoesiEsi2(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -216,4 +216,71 @@ func (v *PostCharactersCharacterIdFittingsFitting) UnmarshalJSON(data []byte) er
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *PostCharactersCharacterIdFittingsFitting) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonC29a6102DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjsonC29a6102DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *PostCharactersCharacterIdFittingsItem) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "flag":
+			out.Flag = string(in.String())
+		case "quantity":
+			out.Quantity = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonC29a6102EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in PostCharactersCharacterIdFittingsItem) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Flag != "" {
+		const prefix string = ",\"flag\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.String(string(in.Flag))
+	}
+	if in.Quantity != 0 {
+		const prefix string = ",\"quantity\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Quantity))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
+	}
+	out.RawByte('}')
 }

@@ -128,7 +128,7 @@ func easyjson88215edcDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCharactersCharacterIdMedalsGraphic
-					easyjson88215edcDecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Graphics = append(out.Graphics, v4)
 					in.WantComma()
 				}
@@ -198,7 +198,7 @@ func easyjson88215edcEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson88215edcEncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -278,83 +278,4 @@ func (v *GetCharactersCharacterIdMedals200Ok) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCharactersCharacterIdMedals200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson88215edcDecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson88215edcDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdMedalsGraphic) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "color":
-			out.Color = int32(in.Int32())
-		case "graphic":
-			out.Graphic = string(in.String())
-		case "layer":
-			out.Layer = int32(in.Int32())
-		case "part":
-			out.Part = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson88215edcEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdMedalsGraphic) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Color != 0 {
-		const prefix string = ",\"color\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.Int32(int32(in.Color))
-	}
-	if in.Graphic != "" {
-		const prefix string = ",\"graphic\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Graphic))
-	}
-	if in.Layer != 0 {
-		const prefix string = ",\"layer\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Layer))
-	}
-	if in.Part != 0 {
-		const prefix string = ",\"part\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Part))
-	}
-	out.RawByte('}')
 }

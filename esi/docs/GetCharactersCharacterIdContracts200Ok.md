@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AcceptorId** | **int32** | Who will accept the contract | [default to null]
-**AssigneeId** | **int32** | ID to whom the contract is assigned, can be corporation or character ID | [default to null]
+**AssigneeId** | **int32** | ID to whom the contract is assigned, can be alliance, corporation or character ID | [default to null]
 **Availability** | **string** | To whom the contract is available | [default to null]
 **Buyout** | **float64** | Buyout price (for Auctions only) | [optional] [default to null]
 **Collateral** | **float64** | Collateral price (for Couriers only) | [optional] [default to null]

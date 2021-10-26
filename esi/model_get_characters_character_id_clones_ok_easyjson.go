@@ -104,7 +104,7 @@ func easyjson13ace497DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		}
 		switch key {
 		case "home_location":
-			(out.HomeLocation).UnmarshalEasyJSON(in)
+			easyjson13ace497DecodeGithubComAntihaxGoesiEsi2(in, &out.HomeLocation)
 		case "jump_clones":
 			if in.IsNull() {
 				in.Skip()
@@ -154,7 +154,7 @@ func easyjson13ace497EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		const prefix string = ",\"home_location\":"
 		first = false
 		out.RawString(prefix[1:])
-		(in.HomeLocation).MarshalEasyJSON(out)
+		easyjson13ace497EncodeGithubComAntihaxGoesiEsi2(out, in.HomeLocation)
 	}
 	if len(in.JumpClones) != 0 {
 		const prefix string = ",\"jump_clones\":"
@@ -220,4 +220,59 @@ func (v *GetCharactersCharacterIdClonesOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCharactersCharacterIdClonesOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson13ace497DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson13ace497DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdClonesHomeLocation) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "location_id":
+			out.LocationId = int64(in.Int64())
+		case "location_type":
+			out.LocationType = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson13ace497EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdClonesHomeLocation) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.LocationId != 0 {
+		const prefix string = ",\"location_id\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int64(int64(in.LocationId))
+	}
+	if in.LocationType != "" {
+		const prefix string = ",\"location_type\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.LocationType))
+	}
+	out.RawByte('}')
 }

@@ -114,9 +114,9 @@ func easyjsonB9cd43f2DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "highest_rank":
 			out.HighestRank = int32(in.Int32())
 		case "kills":
-			(out.Kills).UnmarshalEasyJSON(in)
+			easyjsonB9cd43f2DecodeGithubComAntihaxGoesiEsi2(in, &out.Kills)
 		case "victory_points":
-			(out.VictoryPoints).UnmarshalEasyJSON(in)
+			easyjsonB9cd43f2DecodeGithubComAntihaxGoesiEsi3(in, &out.VictoryPoints)
 		default:
 			in.SkipRecursive()
 		}
@@ -175,7 +175,7 @@ func easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Kills).MarshalEasyJSON(out)
+		easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi2(out, in.Kills)
 	}
 	if true {
 		const prefix string = ",\"victory_points\":"
@@ -185,7 +185,7 @@ func easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.VictoryPoints).MarshalEasyJSON(out)
+		easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi3(out, in.VictoryPoints)
 	}
 	out.RawByte('}')
 }
@@ -212,4 +212,138 @@ func (v *GetCharactersCharacterIdFwStatsOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCharactersCharacterIdFwStatsOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonB9cd43f2DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjsonB9cd43f2DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdFwStatsVictoryPoints) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "last_week":
+			out.LastWeek = int32(in.Int32())
+		case "total":
+			out.Total = int32(in.Int32())
+		case "yesterday":
+			out.Yesterday = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdFwStatsVictoryPoints) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.LastWeek != 0 {
+		const prefix string = ",\"last_week\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.LastWeek))
+	}
+	if in.Total != 0 {
+		const prefix string = ",\"total\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Total))
+	}
+	if in.Yesterday != 0 {
+		const prefix string = ",\"yesterday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Yesterday))
+	}
+	out.RawByte('}')
+}
+func easyjsonB9cd43f2DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdFwStatsKills) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "last_week":
+			out.LastWeek = int32(in.Int32())
+		case "total":
+			out.Total = int32(in.Int32())
+		case "yesterday":
+			out.Yesterday = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonB9cd43f2EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdFwStatsKills) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.LastWeek != 0 {
+		const prefix string = ",\"last_week\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.LastWeek))
+	}
+	if in.Total != 0 {
+		const prefix string = ",\"total\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Total))
+	}
+	if in.Yesterday != 0 {
+		const prefix string = ",\"yesterday\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.Yesterday))
+	}
+	out.RawByte('}')
 }

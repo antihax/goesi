@@ -104,7 +104,7 @@ func easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetW
 		}
 		switch key {
 		case "aggressor":
-			(out.Aggressor).UnmarshalEasyJSON(in)
+			easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi2(in, &out.Aggressor)
 		case "allies":
 			if in.IsNull() {
 				in.Skip()
@@ -170,7 +170,7 @@ func easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		const prefix string = ",\"aggressor\":"
 		first = false
 		out.RawString(prefix[1:])
-		(in.Aggressor).MarshalEasyJSON(out)
+		easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi2(out, in.Aggressor)
 	}
 	if len(in.Allies) != 0 {
 		const prefix string = ",\"allies\":"
@@ -296,4 +296,83 @@ func (v *GetWarsWarIdOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetWarsWarIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjsonF6dfc9daDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetWarsWarIdAggressor) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "alliance_id":
+			out.AllianceId = int32(in.Int32())
+		case "corporation_id":
+			out.CorporationId = int32(in.Int32())
+		case "isk_destroyed":
+			out.IskDestroyed = float32(in.Float32())
+		case "ships_killed":
+			out.ShipsKilled = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonF6dfc9daEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetWarsWarIdAggressor) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.AllianceId != 0 {
+		const prefix string = ",\"alliance_id\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.AllianceId))
+	}
+	if in.CorporationId != 0 {
+		const prefix string = ",\"corporation_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.CorporationId))
+	}
+	if in.IskDestroyed != 0 {
+		const prefix string = ",\"isk_destroyed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Float32(float32(in.IskDestroyed))
+	}
+	if in.ShipsKilled != 0 {
+		const prefix string = ",\"ships_killed\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.ShipsKilled))
+	}
+	out.RawByte('}')
 }

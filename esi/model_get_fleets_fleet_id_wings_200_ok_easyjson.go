@@ -124,7 +124,7 @@ func easyjson8515d584DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				}
 				for !in.IsDelim(']') {
 					var v4 GetFleetsFleetIdWingsSquad
-					(v4).UnmarshalEasyJSON(in)
+					easyjson8515d584DecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Squads = append(out.Squads, v4)
 					in.WantComma()
 				}
@@ -174,7 +174,7 @@ func easyjson8515d584EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjson8515d584EncodeGithubComAntihaxGoesiEsi2(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -204,4 +204,59 @@ func (v *GetFleetsFleetIdWings200Ok) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetFleetsFleetIdWings200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson8515d584DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson8515d584DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFleetsFleetIdWingsSquad) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "id":
+			out.Id = int64(in.Int64())
+		case "name":
+			out.Name = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson8515d584EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFleetsFleetIdWingsSquad) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Id != 0 {
+		const prefix string = ",\"id\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int64(int64(in.Id))
+	}
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Name))
+	}
+	out.RawByte('}')
 }

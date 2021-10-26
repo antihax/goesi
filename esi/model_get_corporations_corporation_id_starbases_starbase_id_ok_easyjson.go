@@ -138,7 +138,7 @@ func easyjsonAa81674fDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCorporationsCorporationIdStarbasesStarbaseIdFuel
-					(v4).UnmarshalEasyJSON(in)
+					easyjsonAa81674fDecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Fuels = append(out.Fuels, v4)
 					in.WantComma()
 				}
@@ -266,7 +266,7 @@ func easyjsonAa81674fEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjsonAa81674fEncodeGithubComAntihaxGoesiEsi2(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -336,4 +336,59 @@ func (v *GetCorporationsCorporationIdStarbasesStarbaseIdOk) UnmarshalJSON(data [
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCorporationsCorporationIdStarbasesStarbaseIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonAa81674fDecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjsonAa81674fDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdStarbasesStarbaseIdFuel) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "quantity":
+			out.Quantity = int32(in.Int32())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjsonAa81674fEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdStarbasesStarbaseIdFuel) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Quantity != 0 {
+		const prefix string = ",\"quantity\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int32(int32(in.Quantity))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
+	}
+	out.RawByte('}')
 }

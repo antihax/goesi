@@ -120,7 +120,7 @@ func easyjson30a3ef00DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCharactersCharacterIdMailLabelsLabel
-					easyjson30a3ef00DecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Labels = append(out.Labels, v4)
 					in.WantComma()
 				}
@@ -152,7 +152,7 @@ func easyjson30a3ef00EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson30a3ef00EncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -192,83 +192,4 @@ func (v *GetCharactersCharacterIdMailLabelsOk) UnmarshalJSON(data []byte) error 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCharactersCharacterIdMailLabelsOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson30a3ef00DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson30a3ef00DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdMailLabelsLabel) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "color":
-			out.Color = string(in.String())
-		case "label_id":
-			out.LabelId = int32(in.Int32())
-		case "name":
-			out.Name = string(in.String())
-		case "unread_count":
-			out.UnreadCount = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson30a3ef00EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdMailLabelsLabel) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Color != "" {
-		const prefix string = ",\"color\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.String(string(in.Color))
-	}
-	if in.LabelId != 0 {
-		const prefix string = ",\"label_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.LabelId))
-	}
-	if in.Name != "" {
-		const prefix string = ",\"name\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Name))
-	}
-	if in.UnreadCount != 0 {
-		const prefix string = ",\"unread_count\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.UnreadCount))
-	}
-	out.RawByte('}')
 }

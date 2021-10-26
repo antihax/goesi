@@ -146,7 +146,7 @@ func easyjson315d323dDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetD
 				}
 				for !in.IsDelim(']') {
 					var v4 GetDogmaEffectsEffectIdModifier
-					easyjson315d323dDecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Modifiers = append(out.Modifiers, v4)
 					in.WantComma()
 				}
@@ -320,7 +320,7 @@ func easyjson315d323dEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson315d323dEncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -420,107 +420,4 @@ func (v *GetDogmaEffectsEffectIdOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetDogmaEffectsEffectIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson315d323dDecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson315d323dDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetDogmaEffectsEffectIdModifier) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "domain":
-			out.Domain = string(in.String())
-		case "effect_id":
-			out.EffectId = int32(in.Int32())
-		case "func":
-			out.Func_ = string(in.String())
-		case "modified_attribute_id":
-			out.ModifiedAttributeId = int32(in.Int32())
-		case "modifying_attribute_id":
-			out.ModifyingAttributeId = int32(in.Int32())
-		case "operator":
-			out.Operator = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson315d323dEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetDogmaEffectsEffectIdModifier) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Domain != "" {
-		const prefix string = ",\"domain\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.String(string(in.Domain))
-	}
-	if in.EffectId != 0 {
-		const prefix string = ",\"effect_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.EffectId))
-	}
-	if in.Func_ != "" {
-		const prefix string = ",\"func\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Func_))
-	}
-	if in.ModifiedAttributeId != 0 {
-		const prefix string = ",\"modified_attribute_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ModifiedAttributeId))
-	}
-	if in.ModifyingAttributeId != 0 {
-		const prefix string = ",\"modifying_attribute_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ModifyingAttributeId))
-	}
-	if in.Operator != 0 {
-		const prefix string = ",\"operator\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Operator))
-	}
-	out.RawByte('}')
 }

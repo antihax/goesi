@@ -105,8 +105,6 @@ func easyjsonD2c9dba0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		switch key {
 		case "alliance_id":
 			out.AllianceId = int32(in.Int32())
-		case "ancestry_id":
-			out.AncestryId = int32(in.Int32())
 		case "birthday":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Birthday).UnmarshalJSON(data))
@@ -148,16 +146,6 @@ func easyjsonD2c9dba0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		first = false
 		out.RawString(prefix[1:])
 		out.Int32(int32(in.AllianceId))
-	}
-	if in.AncestryId != 0 {
-		const prefix string = ",\"ancestry_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.AncestryId))
 	}
 	if true {
 		const prefix string = ",\"birthday\":"

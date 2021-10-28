@@ -15,6 +15,7 @@ import (
 
 	"context"
 
+	"github.com/golang-jwt/jwt/v4"
 	"golang.org/x/oauth2"
 )
 
@@ -27,6 +28,18 @@ type SSOAuthenticator struct {
 	// Hide this...
 	oauthConfig *oauth2.Config
 	scopeLock   sync.Mutex
+}
+
+// EVESSOClaims structure for JWT Claims
+type EVESSOClaims struct {
+	Name     string   `json:"name,omitempty"`
+	Owner    string   `json:"owner,omitempty"`
+	Scopes   []string `json:"scp,omitempty"`
+	ClientID string   `json:"azp,omitempty"`
+	Tenant   string   `json:"tenant,omitempty"`
+	Tier     string   `json:"tier,omitempty"`
+	Region   string   `json:"region,omitempty"`
+	jwt.RegisteredClaims
 }
 
 // NewSSOAuthenticator create a new EVE SSO Authenticator.

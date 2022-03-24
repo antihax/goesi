@@ -31,11 +31,26 @@ It is also good manners to provide a user-agent describing the point of use of t
 Example:
 
 ```go
-client := goesi.NewAPIClient(&http.Client, "my esi client http://mysite.com contact <SomeDude> ingame")
-result, response, err := client.V#.Endpoint.Operation(requestContext, requiredParam, &esi.OperationOpts{
-																	Optional1: optional.NewString("someValue"),
-																	Optional2: optional.NewFloat64(1234.56),
-																})
+package main
+
+import (
+	"context"
+	"fmt"
+
+	"github.com/antihax/goesi"
+)
+
+func main() {
+	// create ESI client
+	client := goesi.NewAPIClient(nil, "name@example.com")
+	// call Status endpoint
+	status, _, err := client.ESI.StatusApi.GetStatus(context.Background(), nil)
+	if err != nil {
+		panic(err)
+	}
+	// print current status
+	fmt.Println("Players online: ", status.Players)
+}
 ```
 
 ## Etiquette

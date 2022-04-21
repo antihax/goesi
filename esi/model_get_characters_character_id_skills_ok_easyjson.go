@@ -120,7 +120,7 @@ func easyjson275affcbDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCharactersCharacterIdSkillsSkill
-					easyjson275affcbDecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Skills = append(out.Skills, v4)
 					in.WantComma()
 				}
@@ -154,7 +154,7 @@ func easyjson275affcbEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson275affcbEncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -204,83 +204,4 @@ func (v *GetCharactersCharacterIdSkillsOk) UnmarshalJSON(data []byte) error {
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCharactersCharacterIdSkillsOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson275affcbDecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson275affcbDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCharactersCharacterIdSkillsSkill) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "active_skill_level":
-			out.ActiveSkillLevel = int32(in.Int32())
-		case "skill_id":
-			out.SkillId = int32(in.Int32())
-		case "skillpoints_in_skill":
-			out.SkillpointsInSkill = int64(in.Int64())
-		case "trained_skill_level":
-			out.TrainedSkillLevel = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson275affcbEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCharactersCharacterIdSkillsSkill) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.ActiveSkillLevel != 0 {
-		const prefix string = ",\"active_skill_level\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.Int32(int32(in.ActiveSkillLevel))
-	}
-	if in.SkillId != 0 {
-		const prefix string = ",\"skill_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.SkillId))
-	}
-	if in.SkillpointsInSkill != 0 {
-		const prefix string = ",\"skillpoints_in_skill\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.SkillpointsInSkill))
-	}
-	if in.TrainedSkillLevel != 0 {
-		const prefix string = ",\"trained_skill_level\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.TrainedSkillLevel))
-	}
-	out.RawByte('}')
 }

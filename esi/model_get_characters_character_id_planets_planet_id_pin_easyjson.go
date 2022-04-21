@@ -131,9 +131,9 @@ func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 				in.AddError((out.ExpiryTime).UnmarshalJSON(data))
 			}
 		case "extractor_details":
-			easyjson1bb669caDecodeGithubComAntihaxGoesiEsi3(in, &out.ExtractorDetails)
+			(out.ExtractorDetails).UnmarshalEasyJSON(in)
 		case "factory_details":
-			(out.FactoryDetails).UnmarshalEasyJSON(in)
+			easyjson1bb669caDecodeGithubComAntihaxGoesiEsi3(in, &out.FactoryDetails)
 		case "install_time":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.InstallTime).UnmarshalJSON(data))
@@ -199,7 +199,7 @@ func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson1bb669caEncodeGithubComAntihaxGoesiEsi3(out, in.ExtractorDetails)
+		(in.ExtractorDetails).MarshalEasyJSON(out)
 	}
 	if true {
 		const prefix string = ",\"factory_details\":"
@@ -209,7 +209,7 @@ func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.FactoryDetails).MarshalEasyJSON(out)
+		easyjson1bb669caEncodeGithubComAntihaxGoesiEsi3(out, in.FactoryDetails)
 	}
 	if true {
 		const prefix string = ",\"install_time\":"
@@ -307,7 +307,7 @@ func (v *GetCharactersCharacterIdPlanetsPlanetIdPin) UnmarshalJSON(data []byte) 
 func (v *GetCharactersCharacterIdPlanetsPlanetIdPin) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson1bb669caDecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails) {
+func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -326,37 +326,8 @@ func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetC
 			continue
 		}
 		switch key {
-		case "cycle_time":
-			out.CycleTime = int32(in.Int32())
-		case "head_radius":
-			out.HeadRadius = float32(in.Float32())
-		case "heads":
-			if in.IsNull() {
-				in.Skip()
-				out.Heads = nil
-			} else {
-				in.Delim('[')
-				if out.Heads == nil {
-					if !in.IsDelim(']') {
-						out.Heads = make([]GetCharactersCharacterIdPlanetsPlanetIdHead, 0, 5)
-					} else {
-						out.Heads = []GetCharactersCharacterIdPlanetsPlanetIdHead{}
-					}
-				} else {
-					out.Heads = (out.Heads)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v7 GetCharactersCharacterIdPlanetsPlanetIdHead
-					(v7).UnmarshalEasyJSON(in)
-					out.Heads = append(out.Heads, v7)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
-		case "product_type_id":
-			out.ProductTypeId = int32(in.Int32())
-		case "qty_per_cycle":
-			out.QtyPerCycle = int32(in.Int32())
+		case "schematic_id":
+			out.SchematicId = int32(in.Int32())
 		default:
 			in.SkipRecursive()
 		}
@@ -367,64 +338,15 @@ func easyjson1bb669caDecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetC
 		in.Consumed()
 	}
 }
-func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdExtractorDetails) {
+func easyjson1bb669caEncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCharactersCharacterIdPlanetsPlanetIdFactoryDetails) {
 	out.RawByte('{')
 	first := true
 	_ = first
-	if in.CycleTime != 0 {
-		const prefix string = ",\"cycle_time\":"
+	if in.SchematicId != 0 {
+		const prefix string = ",\"schematic_id\":"
 		first = false
 		out.RawString(prefix[1:])
-		out.Int32(int32(in.CycleTime))
-	}
-	if in.HeadRadius != 0 {
-		const prefix string = ",\"head_radius\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float32(float32(in.HeadRadius))
-	}
-	if len(in.Heads) != 0 {
-		const prefix string = ",\"heads\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		{
-			out.RawByte('[')
-			for v8, v9 := range in.Heads {
-				if v8 > 0 {
-					out.RawByte(',')
-				}
-				(v9).MarshalEasyJSON(out)
-			}
-			out.RawByte(']')
-		}
-	}
-	if in.ProductTypeId != 0 {
-		const prefix string = ",\"product_type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ProductTypeId))
-	}
-	if in.QtyPerCycle != 0 {
-		const prefix string = ",\"qty_per_cycle\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.QtyPerCycle))
+		out.Int32(int32(in.SchematicId))
 	}
 	out.RawByte('}')
 }

@@ -124,7 +124,7 @@ func easyjson3bbccc1aDecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetK
 				}
 				for !in.IsDelim(']') {
 					var v4 GetKillmailsKillmailIdKillmailHashItemsItem
-					easyjson3bbccc1aDecodeGithubComAntihaxGoesiEsi2(in, &v4)
+					(v4).UnmarshalEasyJSON(in)
 					out.Items = append(out.Items, v4)
 					in.WantComma()
 				}
@@ -180,7 +180,7 @@ func easyjson3bbccc1aEncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				easyjson3bbccc1aEncodeGithubComAntihaxGoesiEsi2(out, v6)
+				(v6).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -240,95 +240,4 @@ func (v *GetKillmailsKillmailIdKillmailHashItem) UnmarshalJSON(data []byte) erro
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetKillmailsKillmailIdKillmailHashItem) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson3bbccc1aDecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson3bbccc1aDecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetKillmailsKillmailIdKillmailHashItemsItem) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "flag":
-			out.Flag = int32(in.Int32())
-		case "item_type_id":
-			out.ItemTypeId = int32(in.Int32())
-		case "quantity_destroyed":
-			out.QuantityDestroyed = int64(in.Int64())
-		case "quantity_dropped":
-			out.QuantityDropped = int64(in.Int64())
-		case "singleton":
-			out.Singleton = int32(in.Int32())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson3bbccc1aEncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetKillmailsKillmailIdKillmailHashItemsItem) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.Flag != 0 {
-		const prefix string = ",\"flag\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.Int32(int32(in.Flag))
-	}
-	if in.ItemTypeId != 0 {
-		const prefix string = ",\"item_type_id\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.ItemTypeId))
-	}
-	if in.QuantityDestroyed != 0 {
-		const prefix string = ",\"quantity_destroyed\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.QuantityDestroyed))
-	}
-	if in.QuantityDropped != 0 {
-		const prefix string = ",\"quantity_dropped\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int64(int64(in.QuantityDropped))
-	}
-	if in.Singleton != 0 {
-		const prefix string = ",\"singleton\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Int32(int32(in.Singleton))
-	}
-	out.RawByte('}')
 }

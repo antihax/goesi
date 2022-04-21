@@ -138,7 +138,7 @@ func easyjson52e0404DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetCo
 				}
 				for !in.IsDelim(']') {
 					var v4 GetCorporationsCorporationIdStructuresService
-					(v4).UnmarshalEasyJSON(in)
+					easyjson52e0404DecodeGithubComAntihaxGoesiEsi2(in, &v4)
 					out.Services = append(out.Services, v4)
 					in.WantComma()
 				}
@@ -258,7 +258,7 @@ func easyjson52e0404EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in GetC
 				if v5 > 0 {
 					out.RawByte(',')
 				}
-				(v6).MarshalEasyJSON(out)
+				easyjson52e0404EncodeGithubComAntihaxGoesiEsi2(out, v6)
 			}
 			out.RawByte(']')
 		}
@@ -358,4 +358,59 @@ func (v *GetCorporationsCorporationIdStructures200Ok) UnmarshalJSON(data []byte)
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCorporationsCorporationIdStructures200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson52e0404DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson52e0404DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdStructuresService) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "name":
+			out.Name = string(in.String())
+		case "state":
+			out.State = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson52e0404EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetCorporationsCorporationIdStructuresService) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.Name != "" {
+		const prefix string = ",\"name\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.String(string(in.Name))
+	}
+	if in.State != "" {
+		const prefix string = ",\"state\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.State))
+	}
+	out.RawByte('}')
 }

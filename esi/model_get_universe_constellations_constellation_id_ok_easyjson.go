@@ -108,7 +108,7 @@ func easyjson7d9c79f0DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetU
 		case "name":
 			out.Name = string(in.String())
 		case "position":
-			easyjson7d9c79f0DecodeGithubComAntihaxGoesiEsi2(in, &out.Position)
+			(out.Position).UnmarshalEasyJSON(in)
 		case "region_id":
 			out.RegionId = int32(in.Int32())
 		case "systems":
@@ -172,7 +172,7 @@ func easyjson7d9c79f0EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson7d9c79f0EncodeGithubComAntihaxGoesiEsi2(out, in.Position)
+		(in.Position).MarshalEasyJSON(out)
 	}
 	if in.RegionId != 0 {
 		const prefix string = ",\"region_id\":"
@@ -228,71 +228,4 @@ func (v *GetUniverseConstellationsConstellationIdOk) UnmarshalJSON(data []byte) 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetUniverseConstellationsConstellationIdOk) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson7d9c79f0DecodeGithubComAntihaxGoesiEsi1(l, v)
-}
-func easyjson7d9c79f0DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetUniverseConstellationsConstellationIdPosition) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "x":
-			out.X = float64(in.Float64())
-		case "y":
-			out.Y = float64(in.Float64())
-		case "z":
-			out.Z = float64(in.Float64())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson7d9c79f0EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetUniverseConstellationsConstellationIdPosition) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	if in.X != 0 {
-		const prefix string = ",\"x\":"
-		first = false
-		out.RawString(prefix[1:])
-		out.Float64(float64(in.X))
-	}
-	if in.Y != 0 {
-		const prefix string = ",\"y\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Y))
-	}
-	if in.Z != 0 {
-		const prefix string = ",\"z\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.Float64(float64(in.Z))
-	}
-	out.RawByte('}')
 }

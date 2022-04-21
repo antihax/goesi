@@ -116,7 +116,7 @@ func easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetC
 		case "folder_id":
 			out.FolderId = int32(in.Int32())
 		case "item":
-			(out.Item).UnmarshalEasyJSON(in)
+			easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi3(in, &out.Item)
 		case "label":
 			out.Label = string(in.String())
 		case "location_id":
@@ -191,7 +191,7 @@ func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 		} else {
 			out.RawString(prefix)
 		}
-		(in.Item).MarshalEasyJSON(out)
+		easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi3(out, in.Item)
 	}
 	if in.Label != "" {
 		const prefix string = ",\"label\":"
@@ -248,6 +248,61 @@ func (v *GetCorporationsCorporationIdBookmarks200Ok) UnmarshalJSON(data []byte) 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GetCorporationsCorporationIdBookmarks200Ok) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi1(l, v)
+}
+func easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi3(in *jlexer.Lexer, out *GetCorporationsCorporationIdBookmarksItem) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "item_id":
+			out.ItemId = int64(in.Int64())
+		case "type_id":
+			out.TypeId = int32(in.Int32())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson3851f0d1EncodeGithubComAntihaxGoesiEsi3(out *jwriter.Writer, in GetCorporationsCorporationIdBookmarksItem) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	if in.ItemId != 0 {
+		const prefix string = ",\"item_id\":"
+		first = false
+		out.RawString(prefix[1:])
+		out.Int64(int64(in.ItemId))
+	}
+	if in.TypeId != 0 {
+		const prefix string = ",\"type_id\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.Int32(int32(in.TypeId))
+	}
+	out.RawByte('}')
 }
 func easyjson3851f0d1DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetCorporationsCorporationIdBookmarksCoordinates) {
 	isTopLevel := in.IsStart()

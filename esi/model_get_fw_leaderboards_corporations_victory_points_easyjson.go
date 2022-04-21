@@ -143,7 +143,7 @@ func easyjson857ee9c8DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				}
 				for !in.IsDelim(']') {
 					var v5 GetFwLeaderboardsCorporationsLastWeekLastWeek1
-					(v5).UnmarshalEasyJSON(in)
+					easyjson857ee9c8DecodeGithubComAntihaxGoesiEsi2(in, &v5)
 					out.LastWeek = append(out.LastWeek, v5)
 					in.WantComma()
 				}
@@ -166,7 +166,7 @@ func easyjson857ee9c8DecodeGithubComAntihaxGoesiEsi1(in *jlexer.Lexer, out *GetF
 				}
 				for !in.IsDelim(']') {
 					var v6 GetFwLeaderboardsCorporationsYesterdayYesterday1
-					easyjson857ee9c8DecodeGithubComAntihaxGoesiEsi2(in, &v6)
+					(v6).UnmarshalEasyJSON(in)
 					out.Yesterday = append(out.Yesterday, v6)
 					in.WantComma()
 				}
@@ -215,7 +215,7 @@ func easyjson857ee9c8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v9 > 0 {
 					out.RawByte(',')
 				}
-				(v10).MarshalEasyJSON(out)
+				easyjson857ee9c8EncodeGithubComAntihaxGoesiEsi2(out, v10)
 			}
 			out.RawByte(']')
 		}
@@ -234,7 +234,7 @@ func easyjson857ee9c8EncodeGithubComAntihaxGoesiEsi1(out *jwriter.Writer, in Get
 				if v11 > 0 {
 					out.RawByte(',')
 				}
-				easyjson857ee9c8EncodeGithubComAntihaxGoesiEsi2(out, v12)
+				(v12).MarshalEasyJSON(out)
 			}
 			out.RawByte(']')
 		}
@@ -265,7 +265,7 @@ func (v *GetFwLeaderboardsCorporationsVictoryPoints) UnmarshalJSON(data []byte) 
 func (v *GetFwLeaderboardsCorporationsVictoryPoints) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson857ee9c8DecodeGithubComAntihaxGoesiEsi1(l, v)
 }
-func easyjson857ee9c8DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFwLeaderboardsCorporationsYesterdayYesterday1) {
+func easyjson857ee9c8DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetFwLeaderboardsCorporationsLastWeekLastWeek1) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -298,7 +298,7 @@ func easyjson857ee9c8DecodeGithubComAntihaxGoesiEsi2(in *jlexer.Lexer, out *GetF
 		in.Consumed()
 	}
 }
-func easyjson857ee9c8EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFwLeaderboardsCorporationsYesterdayYesterday1) {
+func easyjson857ee9c8EncodeGithubComAntihaxGoesiEsi2(out *jwriter.Writer, in GetFwLeaderboardsCorporationsLastWeekLastWeek1) {
 	out.RawByte('{')
 	first := true
 	_ = first

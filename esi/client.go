@@ -61,7 +61,6 @@ type APIClient struct {
 
 	// API Services
 	AllianceApi             *AllianceApiService
-	AssetsApi               *AssetsApiService
 	BookmarksApi            *BookmarksApiService
 	CalendarApi             *CalendarApiService
 	CharacterApi            *CharacterApiService
@@ -113,7 +112,6 @@ func NewAPIClient(httpClient *http.Client, userAgent string) *APIClient {
 
 	// API Services
 	c.AllianceApi = (*AllianceApiService)(&c.common)
-	c.AssetsApi = (*AssetsApiService)(&c.common)
 	c.BookmarksApi = (*BookmarksApiService)(&c.common)
 	c.CalendarApi = (*CalendarApiService)(&c.common)
 	c.CharacterApi = (*CharacterApiService)(&c.common)

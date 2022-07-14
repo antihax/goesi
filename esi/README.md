@@ -174,7 +174,6 @@ Class | Method | HTTP request | Description
 *PlanetaryInteractionApi* | [**GetUniverseSchematicsSchematicId**](docs/PlanetaryInteractionApi.md#getuniverseschematicsschematicid) | **Get** /v1/universe/schematics/{schematic_id}/ | Get schematic information
 *RoutesApi* | [**GetRouteOriginDestination**](docs/RoutesApi.md#getrouteorigindestination) | **Get** /v1/route/{origin}/{destination}/ | Get route
 *SearchApi* | [**GetCharactersCharacterIdSearch**](docs/SearchApi.md#getcharacterscharacteridsearch) | **Get** /v3/characters/{character_id}/search/ | Search on a string
-*SearchApi* | [**GetSearch**](docs/SearchApi.md#getsearch) | **Get** /v2/search/ | Search on a string
 *SkillsApi* | [**GetCharactersCharacterIdAttributes**](docs/SkillsApi.md#getcharacterscharacteridattributes) | **Get** /v1/characters/{character_id}/attributes/ | Get character attributes
 *SkillsApi* | [**GetCharactersCharacterIdSkillqueue**](docs/SkillsApi.md#getcharacterscharacteridskillqueue) | **Get** /v2/characters/{character_id}/skillqueue/ | Get character&#39;s skill queue
 *SkillsApi* | [**GetCharactersCharacterIdSkills**](docs/SkillsApi.md#getcharacterscharacteridskills) | **Get** /v4/characters/{character_id}/skills/ | Get character skills
@@ -460,7 +459,6 @@ Class | Method | HTTP request | Description
  - [GetOpportunitiesGroupsGroupIdOk](docs/GetOpportunitiesGroupsGroupIdOk.md)
  - [GetOpportunitiesTasksTaskIdOk](docs/GetOpportunitiesTasksTaskIdOk.md)
  - [GetRouteOriginDestinationNotFound](docs/GetRouteOriginDestinationNotFound.md)
- - [GetSearchOk](docs/GetSearchOk.md)
  - [GetSovereigntyCampaigns200Ok](docs/GetSovereigntyCampaigns200Ok.md)
  - [GetSovereigntyCampaignsParticipant](docs/GetSovereigntyCampaignsParticipant.md)
  - [GetSovereigntyMap200Ok](docs/GetSovereigntyMap200Ok.md)

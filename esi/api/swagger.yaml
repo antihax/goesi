@@ -2153,7 +2153,7 @@ paths:
               format: "int32"
               description: "200 ok integer"
               title: "get_characters_character_id_implants_200_ok"
-            maxItems: 11
+            maxItems: 64
           examples:
             application/json:
             - 1
@@ -19343,7 +19343,7 @@ paths:
             title: "get_characters_character_id_fittings_ok"
             items:
               $ref: "#/definitions/get_characters_character_id_fittings_200_ok"
-            maxItems: 250
+            maxItems: 512
           examples:
             application/json:
             - description: "Awesome Vindi fitting"
@@ -34669,7 +34669,7 @@ definitions:
         title: "get_characters_character_id_fittings_items"
         items:
           $ref: "#/definitions/get_characters_character_id_fittings_item"
-        maxItems: 255
+        maxItems: 512
       name:
         type: "string"
         description: "name string"
@@ -34767,7 +34767,7 @@ definitions:
         title: "post_characters_character_id_fittings_items"
         items:
           $ref: "#/definitions/post_characters_character_id_fittings_item"
-        maxItems: 255
+        maxItems: 512
         minItems: 1
       name:
         type: "string"
@@ -37693,7 +37693,7 @@ definitions:
           format: "int32"
           description: "implant integer"
           title: "get_characters_character_id_clones_implant"
-        maxItems: 11
+        maxItems: 64
       jump_clone_id:
         type: "integer"
         format: "int32"
@@ -37728,7 +37728,7 @@ definitions:
         title: "get_characters_character_id_clones_jump_clones"
         items:
           $ref: "#/definitions/get_characters_character_id_clones_jump_clone"
-        maxItems: 10
+        maxItems: 64
       last_clone_jump_date:
         type: "string"
         format: "date-time"

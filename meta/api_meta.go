@@ -42,7 +42,7 @@ type MetaApiService service
 /*
 MetaApiService Debug request headers
 Echo the request headers for debugging purposes. Note that the &#39;Connection&#39; header and any &#39;X-&#39; headers are not included
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return map[string]string
 */
@@ -129,7 +129,7 @@ func (a *MetaApiService) GetHeaders(ctx context.Context) (map[string]string, *ht
 /*
 MetaApiService Ping route
 Ping the ESI routers
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return string
 */

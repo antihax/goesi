@@ -27484,7 +27484,7 @@ paths:
       - "Character"
       summary: "Get character's public information"
       description: "Public information about a character\n\n---\n\nThis route is cached\
-        \ for up to 86400 seconds"
+        \ for up to 604800 seconds"
       operationId: "get_characters_character_id"
       parameters:
       - name: "character_id"
@@ -27602,7 +27602,7 @@ paths:
       - "dev"
       - "legacy"
       - "v5"
-      x-cached-seconds: 86400
+      x-cached-seconds: 604800
   /v5/characters/{character_id}/assets/:
     get:
       tags:

@@ -43,7 +43,7 @@ type CharacterApiService service
 
 /*
 CharacterApiService Get character&#39;s public information
-Public information about a character  ---  This route is cached for up to 604800 seconds
+Public information about a character  ---  This route is cached for up to 86400 seconds
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdOpts - Optional Parameters:

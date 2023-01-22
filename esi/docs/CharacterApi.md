@@ -24,7 +24,7 @@ Method | HTTP request | Description
 > GetCharactersCharacterIdOk GetCharactersCharacterId(ctx, characterId, optional)
 Get character's public information
 
-Public information about a character  ---  This route is cached for up to 604800 seconds
+Public information about a character  ---  This route is cached for up to 86400 seconds
 
 ### Required Parameters
 

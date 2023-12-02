@@ -10585,7 +10585,7 @@ paths:
             title: "get_fw_stats_ok"
             items:
               $ref: "#/definitions/get_fw_stats_200_ok"
-            maxItems: 4
+            maxItems: 100
           examples:
             application/json:
             - faction_id: 500001
@@ -10703,7 +10703,7 @@ paths:
             title: "get_fw_wars_ok"
             items:
               $ref: "#/definitions/get_fw_wars_200_ok"
-            maxItems: 8
+            maxItems: 100
           examples:
             application/json:
             - against_id: 500002

@@ -2,7 +2,7 @@
 swagger: "2.0"
 info:
   description: "An OpenAPI for EVE Online"
-  version: "1.24"
+  version: "1.25"
   title: "EVE Swagger Interface"
 host: "esi.evetech.net"
 schemes:
@@ -16069,7 +16069,7 @@ paths:
             title: "get_universe_races_ok"
             items:
               $ref: "#/definitions/get_universe_races_200_ok"
-            maxItems: 4
+            maxItems: 6
           examples:
             application/json:
             - alliance_id: 500001
@@ -40237,6 +40237,8 @@ definitions:
         - "StructureItemsMovedToSafety"
         - "StructureLostArmor"
         - "StructureLostShields"
+        - "StructureLowReagentsAlert"
+        - "StructureNoReagentsAlert"
         - "StructureOnline"
         - "StructurePaintPurchased"
         - "StructureServicesOffline"

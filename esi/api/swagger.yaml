@@ -2,7 +2,7 @@
 swagger: "2.0"
 info:
   description: "An OpenAPI for EVE Online"
-  version: "1.25"
+  version: "1.26"
   title: "EVE Swagger Interface"
 host: "esi.evetech.net"
 schemes:
@@ -40111,6 +40111,7 @@ definitions:
         - "CorporationGoalNameChange"
         - "CorporationLeft"
         - "CustomsMsg"
+        - "DailyItemRewardAutoClaimed"
         - "DeclareWar"
         - "DistrictAttacked"
         - "DustAppAcceptedMsg"
@@ -40169,6 +40170,7 @@ definitions:
         - "MadeWarMutual"
         - "MercOfferRetractedMsg"
         - "MercOfferedNegotiationMsg"
+        - "MercenaryDenReinforced"
         - "MissionCanceledTriglavian"
         - "MissionOfferExpirationMsg"
         - "MissionTimeoutMsg"

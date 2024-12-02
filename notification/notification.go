@@ -1,3 +1,4 @@
+// Package notification contains structs for unmarshaling the YAML data of notifications returned from ESI.
 package notification
 
 type AcceptedAlly struct {
@@ -235,6 +236,19 @@ type CorpAllBillMsg struct {
 	DueDate     int64   `yaml:"dueDate"`
 	ExternalID  int32   `yaml:"externalID"`
 	ExternalID2 int32   `yaml:"externalID2"`
+}
+
+// CorpAllBillMsgV2 represents the updated version for this notification type.
+// Use [CorpAllBillMsg] to unmarshal older notifications.
+type CorpAllBillMsgV2 struct {
+	Amount      float64 `yaml:"amount"`
+	BillTypeID  int32   `yaml:"billTypeID"`
+	CreditorID  int32   `yaml:"creditorID"`
+	CurrentDate int64   `yaml:"currentDate"`
+	DebtorID    int32   `yaml:"debtorID"`
+	DueDate     int64   `yaml:"dueDate"`
+	ExternalID  int64   `yaml:"externalID"`
+	ExternalID2 int64   `yaml:"externalID2"`
 }
 
 type CorpAppAcceptMsg struct {
@@ -515,12 +529,24 @@ type IncursionCompletedMsg struct {
 	TopTen         [][]int32 `yaml:"topTen"`
 }
 
+type InfrastructureHubBillAboutToExpire struct {
+	BillID        int32 `yaml:"billID"`
+	CorpID        int32 `yaml:"corpID"`
+	DueDate       int64 `yaml:"dueDate"`
+	SolarSystemID int32 `yaml:"solarSystemID"`
+}
+
 type IndustryTeamAuctionLost struct {
 	SolarSystemID int32             `yaml:"solarSystemID"`
 	SystemBids    map[int32]float64 `yaml:"systemBids"`
 	TeamNameInfo  []interface{}     `yaml:"teamNameInfo"`
 	TotalIsk      float64           `yaml:"totalIsk"`
 	YourAmount    float64           `yaml:"yourAmount"`
+}
+
+type IHubDestroyedByBillFailure struct {
+	SolarSystemID   int32 `yaml:"solarSystemID"`
+	StructureTypeID int64 `yaml:"structureTypeID"`
 }
 
 type InsuranceExpirationMsg struct {
@@ -793,6 +819,18 @@ type OwnershipTransferred struct {
 	ToCorporationName       string        `yaml:"toCorporationName"`
 }
 
+// OwnershipTransferredV2 represents the updated version for this notification type.
+// Use [OwnershipTransferred] to unmarshal older notifications.
+type OwnershipTransferredV2 struct {
+	CharID          int32  `yaml:"charID"`
+	NewOwnerCorpID  int32  `yaml:"newOwnerCorpID"`
+	OldOwnerCorpID  int32  `yaml:"oldOwnerCorpID"`
+	SolarSystemID   int32  `yaml:"solarSystemID"`
+	StructureID     int64  `yaml:"structureID"`
+	StructureName   string `yaml:"structureName"`
+	StructureTypeID int32  `yaml:"structureTypeID"`
+}
+
 type ReimbursementMsg struct {
 	AddCloneInfo  int32 `yaml:"addCloneInfo"`
 	ShipTypeID    int32 `yaml:"shipTypeID"`
@@ -937,6 +975,16 @@ type StructureFuelAlert struct {
 	StructureTypeID       int32         `yaml:"structureTypeID"`
 }
 
+type StructureImpendingAbandonmentAssetsAtRisk struct {
+	DaysUntilAbandon      int32         `yaml:"daysUntilAbandon"`
+	IsCorpOwned           bool          `yaml:"isCorpOwned"`
+	SolarSystemID         int32         `yaml:"solarsystemID"`
+	StructureID           int64         `yaml:"structureID"`
+	StructureLink         string        `yaml:"structureLink"`
+	StructureShowInfoData []interface{} `yaml:"structureShowInfoData"`
+	StructureTypeID       int32         `yaml:"structureTypeID"`
+}
+
 type StructureItemsDelivered struct {
 	CharID                int32         `yaml:"charID"`
 	ListOfTypesAndQty     [][]int32     `yaml:"listOfTypesAndQty"`
@@ -944,6 +992,20 @@ type StructureItemsDelivered struct {
 	StructureID           int64         `yaml:"structureID"`
 	StructureShowInfoData []interface{} `yaml:"structureShowInfoData"`
 	StructureTypeID       int32         `yaml:"structureTypeID"`
+}
+
+type StructureItemsMovedToSafety struct {
+	AssetSafetyDurationFull     int64         `yaml:"assetSafetyDurationFull"`
+	AssetSafetyDurationMinimum  int64         `yaml:"assetSafetyDurationMinimum"`
+	AssetSafetyFullTimestamp    int64         `yaml:"assetSafetyFullTimestamp"`
+	AssetSafetyMinimumTimestamp int64         `yaml:"assetSafetyMinimumTimestamp"`
+	IsCorpOwned                 bool          `yaml:"isCorpOwned"`
+	NewStationID                int32         `yaml:"newStationID"`
+	SolarSystemID               int32         `yaml:"solarsystemID"`
+	StructureID                 int64         `yaml:"structureID"`
+	StructureLink               string        `yaml:"structureLink"`
+	StructureShowInfoData       []interface{} `yaml:"structureShowInfoData"`
+	StructureTypeID             int32         `yaml:"structureTypeID"`
 }
 
 type StructureLostArmor struct {
@@ -1053,11 +1115,55 @@ type TowerResourceAlertMsg struct {
 	} `yaml:"wants"`
 }
 
+type WarAdopted struct {
+	AgainstID    int32 `yaml:"againstID"`
+	AllianceID   int32 `yaml:"allianceID"`
+	DeclaredByID int32 `yaml:"declaredByID"`
+}
+
 type WarAllyOfferDeclinedMsg struct {
 	AggressorID int32 `yaml:"aggressorID"`
 	AllyID      int32 `yaml:"allyID"`
 	CharID      int32 `yaml:"charID"`
 	DefenderID  int32 `yaml:"defenderID"`
+}
+
+type WarDeclared struct {
+	AgainstID    int32         `yaml:"againstID"`
+	Cost         float64       `yaml:"cost"`
+	DeclaredByID int32         `yaml:"declaredByID"`
+	DelayHours   int32         `yaml:"delayHours"`
+	HostileState bool          `yaml:"hostileState"`
+	TimeStarted  int64         `yaml:"timeStarted"`
+	WarHQ        string        `yaml:"warHQ"`
+	WarHQIdType  []interface{} `yaml:"warHQ_IdType"`
+}
+
+type WarHQRemovedFromSpace struct {
+	AgainstID    int32  `yaml:"againstID"`
+	DeclaredByID int32  `yaml:"declaredByID"`
+	TimeDeclared int64  `yaml:"timeDeclared"`
+	WarHQ        string `yaml:"warHQ"`
+}
+
+type WarInherited struct {
+	AgainstID    int32 `yaml:"againstID"`
+	AllianceID   int32 `yaml:"allianceID"`
+	DeclaredByID int32 `yaml:"declaredByID"`
+	OpponentID   int32 `yaml:"opponentID"`
+	QuitterID    int32 `yaml:"quitterID"`
+}
+
+type WarInvalid struct {
+	AgainstID    int32 `yaml:"againstID"`
+	DeclaredByID int32 `yaml:"declaredByID"`
+	EndDate      int64 `yaml:"endDate"`
+}
+
+type WarRetractedByConcord struct {
+	AgainstID    int32 `yaml:"againstID"`
+	DeclaredByID int32 `yaml:"declaredByID"`
+	EndDate      int64 `yaml:"endDate"`
 }
 
 type WarSurrenderDeclinedMsg struct {
@@ -1072,6 +1178,7 @@ type WarSurrenderOfferMsg struct {
 	WarNegotiationID int32   `yaml:"warNegotiationID"`
 }
 
+// Deprecated: Use [MoonminingExtractionStarted] instead.
 type NotificationTypeMoonminingExtractionStarted struct {
 	AutoTime        int64             `yaml:"autoTime"`
 	MoonID          int32             `yaml:"moonID"`

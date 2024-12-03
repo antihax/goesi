@@ -2,7 +2,7 @@
 swagger: "2.0"
 info:
   description: "An OpenAPI for EVE Online"
-  version: "1.26"
+  version: "1.28"
   title: "EVE Swagger Interface"
 host: "esi.evetech.net"
 schemes:
@@ -40108,6 +40108,8 @@ definitions:
         - "CorporationGoalClosed"
         - "CorporationGoalCompleted"
         - "CorporationGoalCreated"
+        - "CorporationGoalExpired"
+        - "CorporationGoalLimitReached"
         - "CorporationGoalNameChange"
         - "CorporationLeft"
         - "CustomsMsg"
@@ -40170,6 +40172,7 @@ definitions:
         - "MadeWarMutual"
         - "MercOfferRetractedMsg"
         - "MercOfferedNegotiationMsg"
+        - "MercenaryDenAttacked"
         - "MercenaryDenReinforced"
         - "MissionCanceledTriglavian"
         - "MissionOfferExpirationMsg"

@@ -3906,7 +3906,7 @@ paths:
       - "Opportunities"
       summary: "Get a character's completed tasks"
       description: "Return a list of tasks finished by a character\n\n---\n\nThis\
-        \ route is cached for up to 3600 seconds"
+        \ route is cached for up to 3600 seconds\n\n---\nWarning: This route is deprecated"
       operationId: "get_characters_character_id_opportunities"
       parameters:
       - name: "character_id"
@@ -4036,6 +4036,7 @@ paths:
       security:
       - evesso:
         - "esi-characters.read_opportunities.v1"
+      deprecated: true
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -12594,7 +12595,7 @@ paths:
       - "Opportunities"
       summary: "Get opportunities groups"
       description: "Return a list of opportunities groups\n\n---\n\nThis route expires\
-        \ daily at 11:05"
+        \ daily at 11:05\n\n---\nWarning: This route is deprecated"
       operationId: "get_opportunities_groups"
       parameters:
       - name: "datasource"
@@ -12697,6 +12698,7 @@ paths:
           examples:
             application/json:
               error: "Gateway timeout message"
+      deprecated: true
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -12707,7 +12709,7 @@ paths:
       - "Opportunities"
       summary: "Get opportunities group"
       description: "Return information of an opportunities group\n\n---\n\nThis route\
-        \ expires daily at 11:05"
+        \ expires daily at 11:05\n\n---\nWarning: This route is deprecated"
       operationId: "get_opportunities_groups_group_id"
       parameters:
       - name: "Accept-Language"
@@ -12861,6 +12863,7 @@ paths:
           examples:
             application/json:
               error: "Gateway timeout message"
+      deprecated: true
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -12871,7 +12874,7 @@ paths:
       - "Opportunities"
       summary: "Get opportunities tasks"
       description: "Return a list of opportunities tasks\n\n---\n\nThis route expires\
-        \ daily at 11:05"
+        \ daily at 11:05\n\n---\nWarning: This route is deprecated"
       operationId: "get_opportunities_tasks"
       parameters:
       - name: "datasource"
@@ -12974,6 +12977,7 @@ paths:
           examples:
             application/json:
               error: "Gateway timeout message"
+      deprecated: true
       x-alternate-versions:
       - "dev"
       - "legacy"
@@ -12984,7 +12988,7 @@ paths:
       - "Opportunities"
       summary: "Get opportunities task"
       description: "Return information of an opportunities task\n\n---\n\nThis route\
-        \ expires daily at 11:05"
+        \ expires daily at 11:05\n\n---\nWarning: This route is deprecated"
       operationId: "get_opportunities_tasks_task_id"
       parameters:
       - name: "datasource"
@@ -13086,6 +13090,7 @@ paths:
           examples:
             application/json:
               error: "Gateway timeout message"
+      deprecated: true
       x-alternate-versions:
       - "dev"
       - "legacy"

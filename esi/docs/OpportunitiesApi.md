@@ -15,7 +15,7 @@ Method | HTTP request | Description
 > []GetCharactersCharacterIdOpportunities200Ok GetCharactersCharacterIdOpportunities(ctx, characterId, optional)
 Get a character's completed tasks
 
-Return a list of tasks finished by a character  ---  This route is cached for up to 3600 seconds
+Return a list of tasks finished by a character  ---  This route is cached for up to 3600 seconds  --- Warning: This route is deprecated
 
 ### Required Parameters
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 > []int32 GetOpportunitiesGroups(ctx, optional)
 Get opportunities groups
 
-Return a list of opportunities groups  ---  This route expires daily at 11:05
+Return a list of opportunities groups  ---  This route expires daily at 11:05  --- Warning: This route is deprecated
 
 ### Required Parameters
 
@@ -90,7 +90,7 @@ No authorization required
 > GetOpportunitiesGroupsGroupIdOk GetOpportunitiesGroupsGroupId(ctx, groupId, optional)
 Get opportunities group
 
-Return information of an opportunities group  ---  This route expires daily at 11:05
+Return information of an opportunities group  ---  This route expires daily at 11:05  --- Warning: This route is deprecated
 
 ### Required Parameters
 
@@ -130,7 +130,7 @@ No authorization required
 > []int32 GetOpportunitiesTasks(ctx, optional)
 Get opportunities tasks
 
-Return a list of opportunities tasks  ---  This route expires daily at 11:05
+Return a list of opportunities tasks  ---  This route expires daily at 11:05  --- Warning: This route is deprecated
 
 ### Required Parameters
 
@@ -166,7 +166,7 @@ No authorization required
 > GetOpportunitiesTasksTaskIdOk GetOpportunitiesTasksTaskId(ctx, taskId, optional)
 Get opportunities task
 
-Return information of an opportunities task  ---  This route expires daily at 11:05
+Return information of an opportunities task  ---  This route expires daily at 11:05  --- Warning: This route is deprecated
 
 ### Required Parameters
 

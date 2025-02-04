@@ -43,7 +43,7 @@ type OpportunitiesApiService service
 
 /*
 OpportunitiesApiService Get a character&#39;s completed tasks
-Return a list of tasks finished by a character  ---  This route is cached for up to 3600 seconds
+Return a list of tasks finished by a character  ---  This route is cached for up to 3600 seconds  --- Warning: This route is deprecated
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param characterId An EVE character ID
  * @param optional nil or *GetCharactersCharacterIdOpportunitiesOpts - Optional Parameters:
@@ -232,7 +232,7 @@ func (a *OpportunitiesApiService) GetCharactersCharacterIdOpportunities(ctx cont
 
 /*
 OpportunitiesApiService Get opportunities groups
-Return a list of opportunities groups  ---  This route expires daily at 11:05
+Return a list of opportunities groups  ---  This route expires daily at 11:05  --- Warning: This route is deprecated
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetOpportunitiesGroupsOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
@@ -389,7 +389,7 @@ func (a *OpportunitiesApiService) GetOpportunitiesGroups(ctx context.Context, lo
 
 /*
 OpportunitiesApiService Get opportunities group
-Return information of an opportunities group  ---  This route expires daily at 11:05
+Return information of an opportunities group  ---  This route expires daily at 11:05  --- Warning: This route is deprecated
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param groupId ID of an opportunities group
  * @param optional nil or *GetOpportunitiesGroupsGroupIdOpts - Optional Parameters:
@@ -558,7 +558,7 @@ func (a *OpportunitiesApiService) GetOpportunitiesGroupsGroupId(ctx context.Cont
 
 /*
 OpportunitiesApiService Get opportunities tasks
-Return a list of opportunities tasks  ---  This route expires daily at 11:05
+Return a list of opportunities tasks  ---  This route expires daily at 11:05  --- Warning: This route is deprecated
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetOpportunitiesTasksOpts - Optional Parameters:
      * @param "Datasource" (optional.String) -  The server name you would like data from
@@ -715,7 +715,7 @@ func (a *OpportunitiesApiService) GetOpportunitiesTasks(ctx context.Context, loc
 
 /*
 OpportunitiesApiService Get opportunities task
-Return information of an opportunities task  ---  This route expires daily at 11:05
+Return information of an opportunities task  ---  This route expires daily at 11:05  --- Warning: This route is deprecated
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param taskId ID of an opportunities task
  * @param optional nil or *GetOpportunitiesTasksTaskIdOpts - Optional Parameters:

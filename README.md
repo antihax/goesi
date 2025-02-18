@@ -1,10 +1,32 @@
 # GoESI "Go Easy" API client for esi
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O5O33VK5S)
 
+An OpenAPI for EVE Online ESI API.
 
-An OpenAPI for EVE Online ESI API
+[![Go Reference](https://pkg.go.dev/badge/antihax/goesi.svg)](https://pkg.go.dev/github.com/antihax/goesi)
+![GitHub License](https://img.shields.io/github/license/antihax/goesi)
 
-A module to allow access to CCP's EVE Online ESI API.
+## Contents
+
+* [Features](#features)
+* [Installation](#installation)
+* [User Guide](#user-guide)
+  * [New Client](#new-client)
+  * [Etiquette](#etiquette)
+  * [Obeying the Cache Times](#obeying-the-cache-times)
+  * [ETags](#etags)
+  * [Authenticating](#authenticating)
+  * [Passing Tokens](#passing-tokens)
+  * [Testing](#testing)
+  * [What about the other stuff?](#what-about-the-other-stuff)
+* [API Documentation](#api-documentation)
+* [Author](#author)
+* [Credits](#credits)
+
+## Features
+
+Goesi is a module to allow access to CCP's EVE Online ESI API.
 This module offers:
 
 * Versioned Endpoints
@@ -15,11 +37,17 @@ This module offers:
 
 ## Installation
 
+You can add goesi to your Go module with the following command:
+
 ```go
     go get github.com/antihax/goesi
 ```
 
-## New Client
+## User Guide
+
+This chapter describes how you can use goesi in your Go project.
+
+### New Client
 
 ```go
 client := goesi.NewAPIClient(&http.Client, "MyApp (someone@somewhere.com dude on slack)")
@@ -53,13 +81,13 @@ func main() {
 }
 ```
 
-## Etiquette
+### Etiquette
 
 * Create a descriptive user agent so CCP can contact you (preferably on devfleet slack).
 * Obey Cache Timers.
-* Obey error rate limits: https://developers.eveonline.com/blog/article/error-limiting-imminent
+* Obey error rate limits: [Error Rate Limiting Imminent](https://developers.eveonline.com/blog/error-rate-limiting-imminent)
 
-## Obeying the Cache Times
+### Obeying the Cache Times
 
 Caching is not implimented by the client and thus it is required to utilize
 a caching http client. It is highly recommended to utilize a client capable
@@ -88,7 +116,7 @@ func main() {
 }
 ```
 
-## ETags
+### ETags
 
 You should support using ETags if you are requesting data that is frequently not changed.
 IF you are using httpcache, it supports etags already. If you are not using a cache
@@ -142,9 +170,9 @@ func main() {
 }
 ```
 
-## Authenticating
+### Authenticating
 
-Register your application at https://developers.eveonline.com/ to get your secretKey, clientID, and scopes.
+Register your application at [EVE Developers](https://developers.eveonline.com/) to get your secretKey, clientID, and scopes.
 
 Obtaining tokens for client requires two HTTP handlers. One to generate and redirect
 to the SSO URL, and one to receive the response.
@@ -235,7 +263,7 @@ func eveSSOAnswer(c *appContext.AppContext, w http.ResponseWriter, r *http.Reque
 }
 ```
 
-## Passing Tokens
+### Passing Tokens
 
 OAuth2 tokens are passed to endpoints via contexts. Example:
 
@@ -246,19 +274,20 @@ OAuth2 tokens are passed to endpoints via contexts. Example:
 
 This is done here rather than at the client so you can use one client for many tokens, saving connections.
 
-## Testing
+### Testing
 
 If you would rather not rely on public ESI for testing, a mock ESI server is available for local and CI use.
-Information here: https://github.com/antihax/mock-esi
+Information here: [mock-esi](https://github.com/antihax/mock-esi)
 
-## What about the other stuff?
+### What about the other stuff?
 
 If you need bleeding edge access, add the endpoint to the generator and rebuild this module.
-Generator is here: https://github.com/antihax/swagger-esi-goclient
+Generator is here: [swagger-esi-goclient](https://github.com/antihax/swagger-esi-goclient)
 
-## Documentation for API Endpoints
+## API Documentation
 
-[ESI Endpoints](./esi/README.md)
+* [ESI Endpoints](./esi/README.md)
+* [Go reference](https://pkg.go.dev/github.com/antihax/goesi)
 
 ## Author
 
@@ -266,10 +295,8 @@ Generator is here: https://github.com/antihax/swagger-esi-goclient
 
 ## Credits
 
-https://github.com/go-resty/resty (MIT license) Copyright Â© 2015-2016 Jeevanandam M (jeeva@myjeeva.com)
- - Uses modified setBody and detectContentType
+* [resty](https://github.com/go-resty/resty) (MIT license) Copyright © 2015-2016 [Jeevanandam M](jeeva@myjeeva.com)
+  * Uses modified setBody and detectContentType
 
-https://github.com/gregjones/httpcache (MIT license) Copyright Â© 2012 Greg Jones (greg.jones@gmail.com)
-  - Uses parseCacheControl and CacheExpires as a helper function
-
-
+* [httpcache](https://github.com/gregjones/httpcache) (MIT license) Copyright © 2012 [Greg Jones](greg.jones@gmail.com)
+  * Uses parseCacheControl and CacheExpires as a helper function

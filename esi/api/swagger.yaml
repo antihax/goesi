@@ -19761,7 +19761,7 @@ paths:
             title: "get_characters_character_id_skillqueue_ok"
             items:
               $ref: "#/definitions/get_characters_character_id_skillqueue_200_ok"
-            maxItems: 150
+            maxItems: 200
           examples:
             application/json:
             - finish_date: "2016-06-29T10:47:00Z"

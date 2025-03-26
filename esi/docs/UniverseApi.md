@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**GetUniverseCategoriesCategoryId**](UniverseApi.md#GetUniverseCategoriesCategoryId) | **Get** /v1/universe/categories/{category_id}/ | Get item category information
 [**GetUniverseConstellations**](UniverseApi.md#GetUniverseConstellations) | **Get** /v1/universe/constellations/ | Get constellations
 [**GetUniverseConstellationsConstellationId**](UniverseApi.md#GetUniverseConstellationsConstellationId) | **Get** /v1/universe/constellations/{constellation_id}/ | Get constellation information
+[**GetUniverseFactions**](UniverseApi.md#GetUniverseFactions) | **Get** /v2/universe/factions/ | Get factions
 [**GetUniverseGraphics**](UniverseApi.md#GetUniverseGraphics) | **Get** /v1/universe/graphics/ | Get graphics
 [**GetUniverseGraphicsGraphicId**](UniverseApi.md#GetUniverseGraphicsGraphicId) | **Get** /v1/universe/graphics/{graphic_id}/ | Get graphic information
 [**GetUniverseGroups**](UniverseApi.md#GetUniverseGroups) | **Get** /v1/universe/groups/ | Get item groups
@@ -289,6 +290,44 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetUniverseConstellationsConstellationIdOk**](get_universe_constellations_constellation_id_ok.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetUniverseFactions**
+> []GetUniverseFactions200Ok GetUniverseFactions(ctx, optional)
+Get factions
+
+Get a list of factions  ---  This route expires daily at 11:05
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | pass through context (authentication, logging, tracing)
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **acceptLanguage** | **string**| Language to use in the response | [default to en]
+ **datasource** | **string**| The server name you would like data from | [default to tranquility]
+ **ifNoneMatch** | **string**| ETag from a previous request. A 304 will be returned if this matches the current ETag | 
+ **language** | **string**| Language to use in the response, takes precedence over Accept-Language | [default to en]
+
+### Return type
+
+[**[]GetUniverseFactions200Ok**](get_universe_factions_200_ok.md)
 
 ### Authorization
 

@@ -179,6 +179,7 @@ Class | Method | HTTP request | Description
 *UniverseApi* | [**GetUniverseCategoriesCategoryId**](docs/UniverseApi.md#getuniversecategoriescategoryid) | **Get** /v1/universe/categories/{category_id}/ | Get item category information
 *UniverseApi* | [**GetUniverseConstellations**](docs/UniverseApi.md#getuniverseconstellations) | **Get** /v1/universe/constellations/ | Get constellations
 *UniverseApi* | [**GetUniverseConstellationsConstellationId**](docs/UniverseApi.md#getuniverseconstellationsconstellationid) | **Get** /v1/universe/constellations/{constellation_id}/ | Get constellation information
+*UniverseApi* | [**GetUniverseFactions**](docs/UniverseApi.md#getuniversefactions) | **Get** /v2/universe/factions/ | Get factions
 *UniverseApi* | [**GetUniverseGraphics**](docs/UniverseApi.md#getuniversegraphics) | **Get** /v1/universe/graphics/ | Get graphics
 *UniverseApi* | [**GetUniverseGraphicsGraphicId**](docs/UniverseApi.md#getuniversegraphicsgraphicid) | **Get** /v1/universe/graphics/{graphic_id}/ | Get graphic information
 *UniverseApi* | [**GetUniverseGroups**](docs/UniverseApi.md#getuniversegroups) | **Get** /v1/universe/groups/ | Get item groups
@@ -454,6 +455,7 @@ Class | Method | HTTP request | Description
  - [GetUniverseConstellationsConstellationIdNotFound](docs/GetUniverseConstellationsConstellationIdNotFound.md)
  - [GetUniverseConstellationsConstellationIdOk](docs/GetUniverseConstellationsConstellationIdOk.md)
  - [GetUniverseConstellationsConstellationIdPosition](docs/GetUniverseConstellationsConstellationIdPosition.md)
+ - [GetUniverseFactions200Ok](docs/GetUniverseFactions200Ok.md)
  - [GetUniverseGraphicsGraphicIdNotFound](docs/GetUniverseGraphicsGraphicIdNotFound.md)
  - [GetUniverseGraphicsGraphicIdOk](docs/GetUniverseGraphicsGraphicIdOk.md)
  - [GetUniverseGroupsGroupIdNotFound](docs/GetUniverseGroupsGroupIdNotFound.md)

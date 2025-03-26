@@ -1220,6 +1220,173 @@ func (a *UniverseApiService) GetUniverseConstellationsConstellationId(ctx contex
 }
 
 /*
+UniverseApiService Get factions
+Get a list of factions  ---  This route expires daily at 11:05
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *GetUniverseFactionsOpts - Optional Parameters:
+     * @param "AcceptLanguage" (optional.String) -  Language to use in the response
+     * @param "Datasource" (optional.String) -  The server name you would like data from
+     * @param "IfNoneMatch" (optional.String) -  ETag from a previous request. A 304 will be returned if this matches the current ETag
+     * @param "Language" (optional.String) -  Language to use in the response, takes precedence over Accept-Language
+
+@return []GetUniverseFactions200Ok
+*/
+
+type GetUniverseFactionsOpts struct {
+	AcceptLanguage optional.String
+	Datasource     optional.String
+	IfNoneMatch    optional.String
+	Language       optional.String
+}
+
+func (a *UniverseApiService) GetUniverseFactions(ctx context.Context, localVarOptionals *GetUniverseFactionsOpts) ([]GetUniverseFactions200Ok, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue GetUniverseFactions200OkList
+	)
+
+	// create path and map variables
+	localVarPath := a.client.basePath + "/v2/universe/factions/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Datasource.IsSet() {
+		localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Language.IsSet() {
+		localVarQueryParams.Add("language", parameterToString(localVarOptionals.Language.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if localVarOptionals != nil && localVarOptionals.AcceptLanguage.IsSet() {
+		localVarHeaderParams["Accept-Language"] = parameterToString(localVarOptionals.AcceptLanguage.Value(), "")
+	}
+	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
+		localVarHeaderParams["If-None-Match"] = parameterToString(localVarOptionals.IfNoneMatch.Value(), "")
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 400 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+		if err == nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+	}
+
+	if localVarHttpResponse.StatusCode >= 400 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		if localVarHttpResponse.StatusCode == 200 {
+			var v []GetUniverseFactions200Ok
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 400 {
+			var v BadRequest
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 420 {
+			var v ErrorLimited
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 500 {
+			var v InternalServerError
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 503 {
+			var v ServiceUnavailable
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
+		if localVarHttpResponse.StatusCode == 504 {
+			var v GatewayTimeout
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("content-type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
 UniverseApiService Get graphics
 Get a list of graphics  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

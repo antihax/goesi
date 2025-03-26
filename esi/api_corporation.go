@@ -1169,7 +1169,7 @@ func (a *CorporationApiService) GetCorporationsCorporationIdIcons(ctx context.Co
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/icons/"
+	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/icons/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)

@@ -424,7 +424,7 @@ func (a *FittingsApiService) PostCharactersCharacterIdFittings(ctx context.Conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/characters/{character_id}/fittings/"
+	localVarPath := a.client.basePath + "/v1/characters/{character_id}/fittings/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)

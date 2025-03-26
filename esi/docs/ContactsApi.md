@@ -4,7 +4,7 @@ All URIs are relative to *https://esi.evetech.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteCharactersCharacterIdContacts**](ContactsApi.md#DeleteCharactersCharacterIdContacts) | **Delete** /v2/characters/{character_id}/contacts/ | Delete contacts
+[**DeleteCharactersCharacterIdContacts**](ContactsApi.md#DeleteCharactersCharacterIdContacts) | **Delete** /v1/characters/{character_id}/contacts/ | Delete contacts
 [**GetAlliancesAllianceIdContacts**](ContactsApi.md#GetAlliancesAllianceIdContacts) | **Get** /v2/alliances/{alliance_id}/contacts/ | Get alliance contacts
 [**GetAlliancesAllianceIdContactsLabels**](ContactsApi.md#GetAlliancesAllianceIdContactsLabels) | **Get** /v1/alliances/{alliance_id}/contacts/labels/ | Get alliance contact labels
 [**GetCharactersCharacterIdContacts**](ContactsApi.md#GetCharactersCharacterIdContacts) | **Get** /v2/characters/{character_id}/contacts/ | Get contacts

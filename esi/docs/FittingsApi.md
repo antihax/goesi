@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteCharactersCharacterIdFittingsFittingId**](FittingsApi.md#DeleteCharactersCharacterIdFittingsFittingId) | **Delete** /v1/characters/{character_id}/fittings/{fitting_id}/ | Delete fitting
 [**GetCharactersCharacterIdFittings**](FittingsApi.md#GetCharactersCharacterIdFittings) | **Get** /v2/characters/{character_id}/fittings/ | Get fittings
-[**PostCharactersCharacterIdFittings**](FittingsApi.md#PostCharactersCharacterIdFittings) | **Post** /v2/characters/{character_id}/fittings/ | Create fitting
+[**PostCharactersCharacterIdFittings**](FittingsApi.md#PostCharactersCharacterIdFittings) | **Post** /v1/characters/{character_id}/fittings/ | Create fitting
 
 
 # **DeleteCharactersCharacterIdFittingsFittingId**

@@ -68,7 +68,7 @@ func (a *ContactsApiService) DeleteCharactersCharacterIdContacts(ctx context.Con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/characters/{character_id}/contacts/"
+	localVarPath := a.client.basePath + "/v1/characters/{character_id}/contacts/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)

@@ -70,7 +70,7 @@ func (a *ClonesApiService) GetCharactersCharacterIdClones(ctx context.Context, c
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v3/characters/{character_id}/clones/"
+	localVarPath := a.client.basePath + "/v2/characters/{character_id}/clones/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)

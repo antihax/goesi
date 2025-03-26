@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**GetCorporationsCorporationIdContainersLogs**](CorporationApi.md#GetCorporationsCorporationIdContainersLogs) | **Get** /v3/corporations/{corporation_id}/containers/logs/ | Get all corporation ALSC logs
 [**GetCorporationsCorporationIdDivisions**](CorporationApi.md#GetCorporationsCorporationIdDivisions) | **Get** /v2/corporations/{corporation_id}/divisions/ | Get corporation divisions
 [**GetCorporationsCorporationIdFacilities**](CorporationApi.md#GetCorporationsCorporationIdFacilities) | **Get** /v2/corporations/{corporation_id}/facilities/ | Get corporation facilities
-[**GetCorporationsCorporationIdIcons**](CorporationApi.md#GetCorporationsCorporationIdIcons) | **Get** /v2/corporations/{corporation_id}/icons/ | Get corporation icon
+[**GetCorporationsCorporationIdIcons**](CorporationApi.md#GetCorporationsCorporationIdIcons) | **Get** /v1/corporations/{corporation_id}/icons/ | Get corporation icon
 [**GetCorporationsCorporationIdMedals**](CorporationApi.md#GetCorporationsCorporationIdMedals) | **Get** /v2/corporations/{corporation_id}/medals/ | Get corporation medals
 [**GetCorporationsCorporationIdMedalsIssued**](CorporationApi.md#GetCorporationsCorporationIdMedalsIssued) | **Get** /v2/corporations/{corporation_id}/medals/issued/ | Get corporation issued medals
 [**GetCorporationsCorporationIdMembers**](CorporationApi.md#GetCorporationsCorporationIdMembers) | **Get** /v4/corporations/{corporation_id}/members/ | Get corporation members

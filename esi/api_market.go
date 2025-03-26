@@ -455,7 +455,7 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrders(ctx context.Contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v3/corporations/{corporation_id}/orders/"
+	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/orders/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -649,7 +649,7 @@ func (a *MarketApiService) GetCorporationsCorporationIdOrdersHistory(ctx context
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/corporations/{corporation_id}/orders/history/"
+	localVarPath := a.client.basePath + "/v1/corporations/{corporation_id}/orders/history/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)

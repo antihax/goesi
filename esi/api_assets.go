@@ -72,7 +72,7 @@ func (a *AssetsApiService) GetCharactersCharacterIdAssets(ctx context.Context, c
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v5/characters/{character_id}/assets/"
+	localVarPath := a.client.basePath + "/v4/characters/{character_id}/assets/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -277,7 +277,7 @@ func (a *AssetsApiService) GetCorporationsCorporationIdAssets(ctx context.Contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v5/corporations/{corporation_id}/assets/"
+	localVarPath := a.client.basePath + "/v4/corporations/{corporation_id}/assets/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 
 	localVarHeaderParams := make(map[string]string)

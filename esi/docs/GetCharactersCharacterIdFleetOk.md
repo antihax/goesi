@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**FleetBossId** | **int64** | Character ID of the current fleet boss | [default to null]
 **FleetId** | **int64** | The character&#39;s current fleet ID | [default to null]
 **Role** | **string** | Member’s role in fleet | [default to null]
 **SquadId** | **int64** | ID of the squad the member is in. If not applicable, will be set to -1 | [default to null]

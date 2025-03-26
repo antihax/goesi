@@ -1166,7 +1166,7 @@ func (a *CharacterApiService) GetCharactersCharacterIdNotifications(ctx context.
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v5/characters/{character_id}/notifications/"
+	localVarPath := a.client.basePath + "/v4/characters/{character_id}/notifications/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2280,7 +2280,7 @@ func (a *CharacterApiService) PostCharactersAffiliation(ctx context.Context, cha
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v2/characters/affiliation/"
+	localVarPath := a.client.basePath + "/v1/characters/affiliation/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -10,13 +10,13 @@ Method | HTTP request | Description
 [**GetCharactersCharacterIdCorporationhistory**](CharacterApi.md#GetCharactersCharacterIdCorporationhistory) | **Get** /v2/characters/{character_id}/corporationhistory/ | Get corporation history
 [**GetCharactersCharacterIdFatigue**](CharacterApi.md#GetCharactersCharacterIdFatigue) | **Get** /v2/characters/{character_id}/fatigue/ | Get jump fatigue
 [**GetCharactersCharacterIdMedals**](CharacterApi.md#GetCharactersCharacterIdMedals) | **Get** /v2/characters/{character_id}/medals/ | Get medals
-[**GetCharactersCharacterIdNotifications**](CharacterApi.md#GetCharactersCharacterIdNotifications) | **Get** /v5/characters/{character_id}/notifications/ | Get character notifications
+[**GetCharactersCharacterIdNotifications**](CharacterApi.md#GetCharactersCharacterIdNotifications) | **Get** /v4/characters/{character_id}/notifications/ | Get character notifications
 [**GetCharactersCharacterIdNotificationsContacts**](CharacterApi.md#GetCharactersCharacterIdNotificationsContacts) | **Get** /v2/characters/{character_id}/notifications/contacts/ | Get new contact notifications
 [**GetCharactersCharacterIdPortrait**](CharacterApi.md#GetCharactersCharacterIdPortrait) | **Get** /v2/characters/{character_id}/portrait/ | Get character portraits
 [**GetCharactersCharacterIdRoles**](CharacterApi.md#GetCharactersCharacterIdRoles) | **Get** /v3/characters/{character_id}/roles/ | Get character corporation roles
 [**GetCharactersCharacterIdStandings**](CharacterApi.md#GetCharactersCharacterIdStandings) | **Get** /v2/characters/{character_id}/standings/ | Get standings
 [**GetCharactersCharacterIdTitles**](CharacterApi.md#GetCharactersCharacterIdTitles) | **Get** /v2/characters/{character_id}/titles/ | Get character corporation titles
-[**PostCharactersAffiliation**](CharacterApi.md#PostCharactersAffiliation) | **Post** /v2/characters/affiliation/ | Character affiliation
+[**PostCharactersAffiliation**](CharacterApi.md#PostCharactersAffiliation) | **Post** /v1/characters/affiliation/ | Character affiliation
 [**PostCharactersCharacterIdCspa**](CharacterApi.md#PostCharactersCharacterIdCspa) | **Post** /v5/characters/{character_id}/cspa/ | Calculate a CSPA charge cost
 
 

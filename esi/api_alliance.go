@@ -535,7 +535,7 @@ func (a *AllianceApiService) GetAlliancesAllianceIdCorporations(ctx context.Cont
 
 /*
 AllianceApiService Get alliance icon
-Get the icon urls for a alliance  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/icons/)
+Get the icon urls for a alliance  ---  This route expires daily at 11:05
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param allianceId An EVE alliance ID
  * @param optional nil or *GetAlliancesAllianceIdIconsOpts - Optional Parameters:

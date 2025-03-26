@@ -261,7 +261,7 @@ func (a *WalletApiService) GetCharactersCharacterIdWalletJournal(ctx context.Con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v6/characters/{character_id}/wallet/journal/"
+	localVarPath := a.client.basePath + "/v5/characters/{character_id}/wallet/journal/"
 	localVarPath = strings.Replace(localVarPath, "{"+"character_id"+"}", fmt.Sprintf("%v", characterId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -839,7 +839,7 @@ func (a *WalletApiService) GetCorporationsCorporationIdWalletsDivisionJournal(ct
 	)
 
 	// create path and map variables
-	localVarPath := a.client.basePath + "/v4/corporations/{corporation_id}/wallets/{division}/journal/"
+	localVarPath := a.client.basePath + "/v3/corporations/{corporation_id}/wallets/{division}/journal/"
 	localVarPath = strings.Replace(localVarPath, "{"+"corporation_id"+"}", fmt.Sprintf("%v", corporationId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"division"+"}", fmt.Sprintf("%v", division), -1)
 

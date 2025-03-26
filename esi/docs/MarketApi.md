@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCharactersCharacterIdOrders**](MarketApi.md#GetCharactersCharacterIdOrders) | **Get** /v2/characters/{character_id}/orders/ | List open orders from a character
 [**GetCharactersCharacterIdOrdersHistory**](MarketApi.md#GetCharactersCharacterIdOrdersHistory) | **Get** /v1/characters/{character_id}/orders/history/ | List historical orders by a character
-[**GetCorporationsCorporationIdOrders**](MarketApi.md#GetCorporationsCorporationIdOrders) | **Get** /v3/corporations/{corporation_id}/orders/ | List open orders from a corporation
-[**GetCorporationsCorporationIdOrdersHistory**](MarketApi.md#GetCorporationsCorporationIdOrdersHistory) | **Get** /v2/corporations/{corporation_id}/orders/history/ | List historical orders from a corporation
+[**GetCorporationsCorporationIdOrders**](MarketApi.md#GetCorporationsCorporationIdOrders) | **Get** /v2/corporations/{corporation_id}/orders/ | List open orders from a corporation
+[**GetCorporationsCorporationIdOrdersHistory**](MarketApi.md#GetCorporationsCorporationIdOrdersHistory) | **Get** /v1/corporations/{corporation_id}/orders/history/ | List historical orders from a corporation
 [**GetMarketsGroups**](MarketApi.md#GetMarketsGroups) | **Get** /v1/markets/groups/ | Get item groups
 [**GetMarketsGroupsMarketGroupId**](MarketApi.md#GetMarketsGroupsMarketGroupId) | **Get** /v1/markets/groups/{market_group_id}/ | Get item group information
 [**GetMarketsPrices**](MarketApi.md#GetMarketsPrices) | **Get** /v1/markets/prices/ | List market prices
